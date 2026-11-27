@@ -1173,12 +1173,12 @@
     "scripts/refresh_paper_bundle.py": "d325a7ee181f15bf453a5400438da482e1407cbd98326f9dabdbe1490156d862",
     "scripts/run_comparator.py": "08fb96667362688db116509d118004f2980a2d19cb151758cd64323eaa37f698",
     "scripts/run_local_comparator.py": "9eff93809db05890ec3b0617a410a6e7f461f3a81a9e1444c2258ea0e79efa63",
-    "scripts/submission_scope.py": "f2ad5fbe536960b2d67f5903a8491ac586d43b5f8156d39409882c0a904e54f1",
-    "scripts/test_comparison_coverage.py": "b0bf142a9286e3e078ac5e2c29317cd291b550a16e9e06f2d8b47c6e0a1006f5",
+    "scripts/submission_scope.py": "b0727b8c3e76580a60ae3029c8e16781242e3e8c9cf6a93c7df49c4dff8afd96",
+    "scripts/test_comparison_coverage.py": "174307ba963f618fdd41b4393aa81001da7e8bc485846feb618ff84a4aafcd33",
     "scripts/test_comparison_groups.py": "163d4716cc8452401ba631eefb0301bdb83e3b773947c1aea980a70518b24516",
-    "scripts/test_construction_provenance.py": "b152dee1d2fa703ac01600226fe4d980e8ef864c7484e9396f7947e101841e4f",
+    "scripts/test_construction_provenance.py": "6ff1e72cc609dc4e5405525bfc4ece4ce26bc5a45e8ae85807448ccfbd85869d",
     "scripts/test_submission_checks.py": "0c9683e30c46ba9b0862c139e7535242a48bae399c5ddbdc5019a9a91d8a03ed",
-    "scripts/test_submission_scope.py": "4c5031e42db0f860bb80259466429dbc7a62a6a03d4d50aa7d9bfeedf3590d4f",
+    "scripts/test_submission_scope.py": "e5968648baed0b26e8e0ace8a1e1cf57c8455b709218ebf47a66abbfecea6e82",
     "scripts/validate_metadata.py": "2db06efe5055a96456de787b2387b03dfc3dd4bc0600d47280528b5b1f7b64b3",
     "SeedRepairChallenge.lean": "8dcd23e389defa902fd9f583d43c90a8591b4219b8668dc34c5a4421ef015189",
     "SeedRepairSolution.lean": "aa18bcb8292549a97624832812fa436fa97d371f56ecb02e55a0138d59278b61",
@@ -1212,5 +1212,7 @@
   "originalKernelAcceptanceAtUTC": "2026-11-25T00:31:50.205747+00:00",
   "kernelReceiptKey": "3cc83b7655ae9a9a7df080b165e2695eca8de2448f67a3613d357d50dfb4b300",
   "kernelReceiptSHA256": "9b5f1afd8a9ca60291aa6efb3267b5d344d0ff99c932b8f0aefc84b2800957c7",
-  "kernelReceiptPath": "submission/kernel-receipts/moderate/3cc83b7655ae9a9a7df080b165e2695eca8de2448f67a3613d357d50dfb4b300"
+  "kernelReceiptPath": "submission/kernel-receipts/moderate/3cc83b7655ae9a9a7df080b165e2695eca8de2448f67a3613d357d50dfb4b300",
+  "nonProofMaintenance": "submission/nonproof-maintenance.json",
+  "kernelProcessesRerunForMaintenance": false
 }

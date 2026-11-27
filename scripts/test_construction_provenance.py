@@ -12,6 +12,7 @@ PROJECT = Path(__file__).resolve().parents[1]
 
 class ProvenanceTest(unittest.TestCase):
     def setUp(self):
+        (PROJECT / ".lake").mkdir(parents=True, exist_ok=True)
         self.temp = TemporaryDirectory(dir=PROJECT / ".lake")
         self.root = Path(self.temp.name)
         assert self.root.resolve().is_relative_to((PROJECT / ".lake").resolve())

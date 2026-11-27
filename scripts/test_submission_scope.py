@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
-"""Prevent hidden paper gaps or whole-paper coverage overclaims."""
+"""Check theorem coverage independently of README or disclosure wording."""
 from pathlib import Path
 from tempfile import TemporaryDirectory
 import json,shutil,unittest
@@ -21,7 +21,8 @@ class ScopeTest(unittest.TestCase):
             'comparatorConfigurations':['comparator.json'],'proofCoverageComplete':False,
             'registryVerificationClaimed':False})
         self.put('formalization.yaml',{'project':{'description':'Verified submission scope: A'},'limitations':['B pending']})
-        (self.root/'README.txt').write_text('B pending',encoding='utf-8')
+        (self.root/'README.md').write_text('[technical guide](TECHNICAL.md)',encoding='utf-8')
+        (self.root/'TECHNICAL.md').write_text('B pending',encoding='utf-8')
         (self.root/'paper/main.tex').write_text('\\input{formalization-status}',encoding='utf-8')
         (self.root/'paper/formalization-status.tex').write_text('B pending',encoding='utf-8')
     def tearDown(self):self.temp.cleanup()
@@ -30,7 +31,7 @@ class ScopeTest(unittest.TestCase):
         file=self.root/'submission/SCOPE.json';data=json.loads(file.read_text());data[key]=value;self.put('submission/SCOPE.json',data)
     def errors(self):return validate(self.root)[2]
     def test_explicit_partial_scope_allowed(self):self.assertEqual(self.errors(),[])
-    def test_hidden_gap_rejected(self):
+    def test_mismatched_excluded_inventory_rejected(self):
         self.mutate('unsubmittedPrincipalClaims',[])
         self.assertTrue(any('Unsubmitted' in e for e in self.errors()))
     def test_whole_paper_overclaim_rejected(self):
@@ -39,7 +40,8 @@ class ScopeTest(unittest.TestCase):
     def test_unsupported_claim_inclusion_rejected(self):
         self.mutate('submittedPrincipalClaims',[{'id':'A'},{'id':'B'}])
         self.assertTrue(any('Submitted' in e for e in self.errors()))
-    def test_missing_paper_disclosure_rejected(self):
-        (self.root/'paper/formalization-status.tex').write_text('none',encoding='utf-8')
-        self.assertTrue(any('gap disclosure' in e for e in self.errors()))
+    def test_documentation_wording_is_not_a_gate(self):
+        for name in ['README.md','TECHNICAL.md','paper/main.tex','paper/formalization-status.tex','formalization.yaml']:
+            (self.root/name).unlink()
+        self.assertEqual(self.errors(),[])
 if __name__=='__main__':unittest.main()

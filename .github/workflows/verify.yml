@@ -21,6 +21,7 @@ jobs:
           python3 scripts/test_construction_provenance.py
           python3 scripts/test_comparison_groups.py
           python3 scripts/test_comparison_coverage.py
+          python3 scripts/test_submission_scope.py
           python3 scripts/check_submission.py
       - uses: leanprover/lean-action@38fbc41a8c28c4cbaec22d7f7de508ec2e7c0dd9
         with:
@@ -41,5 +42,5 @@ jobs:
           sudo apt-get install -y bubblewrap
       - name: Compare independent targets with sandboxed Comparator
         run: python3 scripts/run_comparator.py
-      - name: Require complete principal coverage before submission
+      - name: Check submission preparation
         run: python3 scripts/check_submission_preparation.py --require-sandbox
