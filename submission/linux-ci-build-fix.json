@@ -1,0 +1,23 @@
+{
+  "updatedAtUTC": "2026-11-27T06:46:08.725106+00:00",
+  "previousPublishedCommit": "96b32b681783f9c0064c261282fc0469993e2743",
+  "changedSourceInventoryFiles": [
+    "PaperChallenge.lean",
+    "lakefile.toml",
+    "scripts/check_paper_entry.py"
+  ],
+  "mathematicalStatementTokensUnchanged": true,
+  "permittedAxiomsUnchanged": true,
+  "selectedTargetsUnchanged": true,
+  "changes": [
+    "Changed two orphan documentation comments into ordinary comments; no declaration tokens changed",
+    "Added a consecutive-doc-comment check and refreshed Challenge byte count",
+    "Raised configured proof-build memory ceiling from 1024 to 4096 MiB",
+    "Set routine CI LEAN_NUM_THREADS to 1 and enabled fail-fast build scheduling"
+  ],
+  "fullProofBuildRerun": false,
+  "comparatorRerun": false,
+  "independentKernelChecksRerun": false,
+  "status": "prepared-awaiting-fresh-mechanical-verification",
+  "challengeStatementElaboration": "passed; independent statement module only"
+}

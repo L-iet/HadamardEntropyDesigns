@@ -11,6 +11,8 @@ def main():
     config=json.loads((ROOT/record['configuration']).read_text(encoding='utf-8'))
     paper=(ROOT/record['challenge']).read_text(encoding='utf-8')
     errors=[]
+    if re.search(r'/--(?:(?!-/).)*-/\s*/--', paper, re.S):
+        errors.append('Consecutive documentation comments require a declaration between them')
     if len(paper.encode())>102400 or len(paper.splitlines())>1000:errors.append('Paper Challenge exceeds a hard size limit')
     if config['challenge_module']!='PaperChallenge' or config['solution_module']!='PaperSolution':errors.append('Unexpected paper module names')
     if set(config['permitted_axioms'])!={'propext','Quot.sound','Classical.choice'}:errors.append('Unexpected permitted axioms')

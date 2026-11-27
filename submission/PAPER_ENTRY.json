@@ -58,7 +58,7 @@
     "EntropyDesigns.collisionEntropy",
     "EntropyDesigns.augmentedSign"
   ],
-  "challengeBytes": 22006,
+  "challengeBytes": 22004,
   "challengeLines": 447,
   "hardLimits": {
     "bytes": 102400,
@@ -473,5 +473,20 @@
     "EntropyDesigns.SupportFace.slopeMap",
     "EntropyDesigns.SupportFace.fieldSlopeSeeds",
     "EntropyDesigns.ConcentratedFamily.planeSupport"
-  ]
+  ],
+  "buildFix": "submission/linux-ci-build-fix.json",
+  "challengeStatementElaboration": {
+    "status": "passed",
+    "checkedAtUTC": "2026-11-27T06:46:08.851144+00:00",
+    "command": [
+      "lake",
+      "env",
+      "lean",
+      "-M4096",
+      "PaperChallenge.lean"
+    ],
+    "actualExit": 0,
+    "sourceSHA256": "d7dd9c7da2dd45b8f00c6058d8fdb5efa3e94b80271dcb51a24853b646dceb17",
+    "scope": "Independent statement module only; intentional Challenge placeholders remain. This is not compilation of PaperSolution, a proof comparison, or an independent kernel check."
+  }
 }

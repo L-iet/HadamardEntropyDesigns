@@ -199,3 +199,12 @@ Each identifier below refers to a principal manuscript result. â€œPublic proofâ€
 | `E26.03` | Unconditional polynomial rates | Excluded; see explanation above |
 | `E26.04` | Conditional RH rates | Excluded; see explanation above |
 | `E26.05` | Only sublinearly many extra atoms | Excluded; see explanation above |
+
+## Linux build resource settings
+
+Proof libraries and the paper-level Challenge use a 4 GiB per-process Lean
+memory ceiling. The earlier 1 GiB ceiling caused interpreter memory exceptions
+on Ubuntu. Routine CI requests one Lean/Lake worker thread and stops scheduling
+new jobs after a failure. These resource settings do not change proof statements
+or permitted axioms. Fresh mechanical verification of the changed build
+configuration remains necessary.

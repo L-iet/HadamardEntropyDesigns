@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-24.04
     timeout-minutes: 120
     env:
-      LEAN_NUM_THREADS: '2'
+      LEAN_NUM_THREADS: '1'
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
         with:
@@ -28,7 +28,7 @@ jobs:
         with:
           build: false
       - name: Build proof modules
-        run: lake build
+        run: lake --fail-fast build
       - name: Audit pinned licenses and target axioms
         run: |
           python3 scripts/audit_mathlib_licenses.py

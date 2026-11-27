@@ -1,6 +1,6 @@
 {
   "status": "pending",
-  "reason": "New paper-level packaging has not been locally compiled or compared; user requested no local Lean builds, Comparator or kernel reruns.",
+  "reason": "Parser/runtime-export and Linux build-memory corrections await a fresh full build, axiom audit and mechanical comparison. Historical verification evidence remains separate.",
   "paperEntry": "submission/PAPER_ENTRY.json",
   "historicalEvidence": "submission/history/1fb7daa5e4635a16a353825131a4bfc10990c5b0",
   "proofHashes": {
@@ -1112,7 +1112,7 @@
     "HierarchyChallenge.lean": "a0c615f3592db0b36a651ba623bf8566af81ed9c47d2b39703ab8669021a39b8",
     "HierarchySolution.lean": "9dd920551f56cb2f619c8a629d40056b375b36bf028ace893f63b0d75324990e",
     "lake-manifest.json": "8dd57114805b13e90cf9d0e58d29aa0740efc9afb1df2c777b578d390e11fcf9",
-    "lakefile.toml": "fc886bc45c4914acf0aafc944f2cfb05b29cb0322d148b881684e91c26b269ee",
+    "lakefile.toml": "f6eb770178d3f16e505d64a6cc69dbaba9a11470a609337b30f5c3afefc3c30e",
     "lean-toolchain": "ca5f1f601d34c49079e38d7e7041eb0f2a9c227fbc1df0f404820069a052330c",
     "ModerateChallenge.lean": "aa3b68f0ec94fa3ea537e0dd8fda6321b9d4f700059dbdfa2ccf91801a034ce9",
     "ModerateSolution.lean": "02b7fcd6441571478b0ca5a204caab93467fe701a37171b01f69885f0289022a",
@@ -1183,9 +1183,9 @@
     "WitnessSolution.lean": "37db21f46123b056a99044b1d17a8cfc8b15782df7efa316481f92a0b8308efb",
     "configs/development/comparator-main.json": "ee502ee0719e9b06e85c648ccfc7946fd53e653a5eab8896669c0a9721d382f8",
     "comparator.json": "7f20e51dc7934c6fa0e4f6d8d73d4576aa16a145b3ee3b1939ffeeab1d0b5376",
-    "PaperChallenge.lean": "6f89a7678d8607699dde71305b027fdc374fac9ad531ecc177c7071e6e16cdc6",
+    "PaperChallenge.lean": "d7dd9c7da2dd45b8f00c6058d8fdb5efa3e94b80271dcb51a24853b646dceb17",
     "PaperSolution.lean": "c4596af6b59a235c0163786bead57e7dea3f573ff0fec391aecb9a956419f98e",
-    "scripts/check_paper_entry.py": "bf568902fe3c2c2cb6b2389f4f9f546081e9c7643db99d233f999ebd52018f92"
+    "scripts/check_paper_entry.py": "8988548d12c9ad21b01cd19fb5fc850b981b3f64d63d8af2d90e85bbc9294cf1"
   },
   "notRegistryVerification": true,
   "ready": false,
@@ -1194,5 +1194,6 @@
   "registryVerified": false,
   "principalManuscriptRecordsWithExistingProofs": 84,
   "totalPrincipalManuscriptRecords": 89,
-  "palomarReviewRevision": "submission/palomar-review-update.json"
+  "palomarReviewRevision": "submission/palomar-review-update.json",
+  "linuxCIBuildFix": "submission/linux-ci-build-fix.json"
 }

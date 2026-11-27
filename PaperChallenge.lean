@@ -376,7 +376,7 @@ namespace EntropyDesigns.DenominatorTrades
 
 noncomputable section
 
-/-- A reduced observation trade written in normalized sign coordinates.
+/- A reduced observation trade written in normalized sign coordinates.
 The final two fields preserve precisely the moments of degrees one and two. -/
 
 /-- Two normalized sign arrays agree outside S, have disjoint removed and inserted rows, and preserve all first and second moments of the nonconstant coordinates. -/
@@ -397,7 +397,7 @@ namespace EntropyDesigns.PrimeExponentRigidity
 
 noncomputable section
 
-/-- Every normalized sign-coordinate observation fiber at this order is
+/- Every normalized sign-coordinate observation fiber at this order is
 isolated under reduced degree-two-moment-preserving moves of degree at most R. -/
 
 /-- Every reduced normalized trade from any Hadamard array at this order, replacing at most R observations, has an empty replacement set. -/
