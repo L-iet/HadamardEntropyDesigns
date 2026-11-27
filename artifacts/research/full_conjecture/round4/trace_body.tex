@@ -1,0 +1,181 @@
+\maketitle
+\begin{abstract}
+We give an elementary tangent-trace proof that the orthogonal matrices
+whose every self-tensor power locally minimizes entrywise $p$-energy,
+$p>2$, are exactly scaled real Hadamard matrices. The same argument
+characterizes tensor-stable local maxima for $1<p<2$. On the complex
+unitary group the characterization holds for every $p>0$, $p\ne2$,
+including $p=1$. The real endpoint $p=1$ fails. The proof supplies
+explicit finite-power necessary inequalities, a two-column curvature
+certificate, and a dimension-independent quartic flatness estimate.
+These are characterization and instability results, not a proof of
+real Hadamard existence. Priority has not been established.
+\end{abstract}
+
+\section{Tensor-stable extrema over the real and complex fields}
+Let $F_p(U)=\sum_{ij}|u_{ij}|^p$. A row-orthonormal matrix with $n$
+columns is \emph{flat} if every entry has magnitude $n^{-1/2}$.
+For a square real matrix this says precisely that $\sqrt nU$ is a
+Hadamard matrix. Over $\mathbb C$, it says that $\sqrt nU$ is complex
+Hadamard. We use the real Frobenius metric on the tangent spaces.
+
+\begin{theorem}[Tensor stability]\label{thm:unified}
+Let $n\ge2$ and let $U$ be square orthogonal or unitary.
+\begin{enumerate}
+\item Over $\mathbb R$, for every finite $p>2$, all positive
+self-tensor powers of $U$ are local minima of $F_p$ if and only if
+$U$ is flat. For $1<p<2$, replace minima by maxima.
+\item Over $\mathbb C$, for every finite $p>2$, the same local-minimum
+characterization holds. For every $0<p<2$, the local-maximum
+characterization holds, including $p=1$.
+\end{enumerate}
+Every nonflat critical point in the indicated smooth domain has a
+strict second-variation violation at some finite tensor power. For
+$p<2$ this assertion assumes that its entries are nonzero; a matrix
+with a zero entry is already excluded as a local maximum.
+\end{theorem}
+
+The orthogonal $p>2$ conclusion was established in the preceding
+research pass by a factored direction. Here the proof needs neither
+spectral assumptions on a critical matrix nor a factorization of the
+Hessian witness. The real and complex row-Stiefel analogues also hold
+by the same right-action computation below.
+
+\begin{lemma}[Zeros and the strict moment comparison]\label{lem:moments}
+For $0<p<2$, a row-orthonormal real or complex matrix with a zero entry
+cannot locally maximize $F_p$ under right unitary or orthogonal
+rotations. For a matrix without zero entries put
+\[
+ q=F_p(U),\quad r=\sum_{ij}|u_{ij}|^{p-2},\quad \rho=\frac{r}{nq}.
+\]
+For $p>2$ the same definitions allow zeros. Then $\rho<1$ when
+$p>2$ and $U$ is nonflat, whereas $\rho>1$ when $0<p<2$ and $U$ is
+nonflat. Equality occurs precisely at flat matrices.
+\end{lemma}
+\begin{proof}
+If $u_{ij}=0$, choose $\ell$ with $u_{i\ell}\ne0$ and rotate columns
+$j,\ell$ through angle $t$. In
+$F_p(U(t))+F_p(U(-t))-2F_p(U)$, entries initially nonzero contribute
+$O(t^2)$, since their linear terms cancel. Initially zero entries
+contribute $2c|t|^p+o(|t|^p)$ with total $c>0$. This is positive for
+small nonzero $t$ because $p<2$, contradicting a local maximum.
+This argument also covers the nondifferentiable range $p\le1$.
+
+For $d$ rows list the $dn$ squared magnitudes as $x_i$, so
+$\sum x_i=d$, and set $a=(p-2)/2$. The identity
+\[
+ dnq-dr=\sum_{i<j}(x_i-x_j)(x_i^a-x_j^a)
+\]
+is strictly positive for $a>0$ and strictly negative for $a<0$
+unless all $x_i$ agree. This proves the assertions.
+\end{proof}
+
+\section{The two tangent-trace identities}
+The real identity is proved explicitly in
+Theorem~\ref{thm:trace-test} below. For a square matrix, the trace over
+a Frobenius-orthonormal skew basis is
+\begin{equation}\label{eq:real-trace}
+ \operatorname{Tr}_{\mathbb R}\operatorname{Hess}F_p(U)
+ =\frac p2\big((p-1)r-(n+p-2)q\big).
+\end{equation}
+The formula here denotes the sum of second derivatives along
+$Ue^{tX}$; it is valid without criticality. At a critical point it
+is the tangent-Hessian trace. The normalized basis is
+$(E_{ab}-E_{ba})/\sqrt2$ for $a<b$.
+
+\begin{lemma}[Complex tangent trace]\label{lem:complex-trace}
+For a row-orthonormal complex matrix with $n$ columns,
+\begin{equation}\label{eq:complex-trace}
+ \sum_X\frac{d^2}{dt^2}F_p(Ue^{tX})\bigg|_{t=0}
+ =\frac p2\big(pr-(2n+p-2)q\big),
+\end{equation}
+where the sum is over the Frobenius-orthonormal anti-Hermitian basis
+\[
+ iE_{aa},\qquad (E_{ab}-E_{ba})/\sqrt2,\qquad
+ i(E_{ab}+E_{ba})/\sqrt2\quad(a<b).
+\]
+For $p<2$ assume nonzero entries; for $p>2$ zeros are allowed.
+\end{lemma}
+\begin{proof}
+For a fixed generator, write $z=u_{ij}$, $v=(UX)_{ij}$ and
+$w=(UX^2)_{ij}$. At $z\ne0$, differentiation gives
+\[
+ \frac1p\frac{d^2}{dt^2}|(Ue^{tX})_{ij}|^p\bigg|_{t=0}
+ =|z|^{p-2}|v|^2+(p-2)|z|^{p-4}
+       \big(\Re(\bar zv)\big)^2+|z|^{p-2}\Re(\bar zw).
+\]
+At a zero entry for $p>2$ this second derivative is zero.
+Summing over the stated basis gives, pointwise,
+\[
+ \sum_X |(UX)_{ij}|^2=1,\qquad
+ \sum_X\big(\Re(\bar u_{ij}(UX)_{ij})\big)^2
+       =\frac{|u_{ij}|^2(1-|u_{ij}|^2)}2,
+ \qquad \sum_X X^2=-nI.
+\]
+For the middle identity, the diagonal imaginary generator contributes
+zero; each real and imaginary off-diagonal pair contributes
+$|u_{ij}|^2|u_{ia}|^2/2$. The first identity uses the same pairs and
+the unit norm of row $i$. Substitution and summation over entries
+give \eqref{eq:complex-trace}.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:unified}]
+At $U^{\otimes k}$ the column number is $n^k$ and the two moments are
+$q^k,r^k$. Dividing the real trace by $pn^kq^k/2$ gives
+\[
+ (p-1)\rho^k-1-\frac{p-2}{n^k}.
+\]
+For a nonflat matrix this is eventually negative for $p>2$, and
+eventually positive for $1<p<2$. Dividing the complex trace by the
+same positive quantity gives
+\[
+ p\rho^k-2-\frac{p-2}{n^k},
+\]
+which is eventually negative for $p>2$ and eventually positive for
+every $0<p<2$. A negative trace has a negative summand, and a positive
+trace has a positive summand. This contradicts the appropriate local
+extremum. Lemma~\ref{lem:moments} handles zeros in the maximum case.
+At critical points the exhibited second derivatives are Hessian
+violations. Jensen inequality gives the converse: flat matrices are
+global minima for $p>2$, global maxima for $0<p<2$, and remain flat
+under tensor powers. The row-orthonormal argument is identical; the
+right-rotation curves remain in its manifold.
+\end{proof}
+
+For example, sufficient strict-violation powers in the complex case
+are $k>\log(p/2)/\log(1/\rho)$ for $p>2$ and
+$k>\log(2/p)/\log\rho$ for $0<p<2$. These bounds need not be sharp.
+The real maximum bound is $k>\log(1/(p-1))/\log\rho$.
+Criticality of the seed propagates to tensor powers in the nonzero
+domain: if $W=|U|^{p-2}\circ U$, criticality means $U^*W$ is
+self-adjoint, and the corresponding tensor matrix is $(U^*W)^{\otimes k}$.
+
+\section{Endpoints, prior work, and the existence gap}
+At $p=2$ the energy is constant. The real endpoint $p=1$ fails:
+for every $n>4$, $U=2J_n/n-I_n$ is nonflat, orthogonal, and all its
+self-tensor powers are strict local maxima of $F_1$ on the real
+orthogonal group. Indeed its sign matrix is $A=J_n-2I_n$, and
+\[
+ U^TA=(1-4/n)J_n+2I_n\succ0.
+\]
+Near $U$ the signs are fixed, so the Hessian is
+$-\operatorname{tr}(U^TA X^TX)<0$ for nonzero real skew $X$.
+Tensor powers preserve positivity of this critical matrix.
+This endpoint behavior is consistent with the established real
+almost-Hadamard theory~\cite{BN,BNZ}.
+
+The complex almost-Hadamard conjecture of Banica and Nechita asks
+whether a \emph{single} local maximum of $F_1$ on $U(n)$ must be
+flat~\cite{Complex}. Our complex theorem assumes local maximality at
+\emph{every} self-tensor power. It therefore does not settle that
+stronger one-copy conjecture. In particular, tensor closure of a
+class of balanced critical points does not establish tensor closure
+of local maxima. Targeted searches did not establish bibliographic
+priority for the tensor characterization; no novelty is claimed.
+
+For real Hadamard existence the missing implication is different:
+compactness supplies a local or global minimum in each dimension,
+but it does not supply one whose every tensor power is locally
+minimizing. Lifting and improving a nonflat point changes the
+dimension. Neither this theorem nor its quantitative corollaries
+extract an original-dimensional Hadamard matrix.

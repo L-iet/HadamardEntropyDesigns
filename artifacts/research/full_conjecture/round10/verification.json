@@ -1,0 +1,61 @@
+{
+  "checkedAtUTC": "2026-11-21T04:28:37.424872+00:00",
+  "pages": {
+    "code_pivots.tex": 5,
+    "research.tex": 12
+  },
+  "checkersPassed": [
+    "codes/check.py",
+    "modular/check.py",
+    "exchanges/check_exact.py",
+    "nonlinear/check.py",
+    "code_traps/verify.py",
+    "codes/check_neighbors.py"
+  ],
+  "typesettingChecksPassed": true,
+  "files": {
+    "build.py": "9c1ea52339d8f2834c388694f40bbf942e98ffed5dc785c8cacaf241506ca424",
+    "code_pivots.pdf": "0d17db6a6ce87b6bf0d6e0b662cd373740d7fb2e089b3ce2ab107002d30037b8",
+    "code_pivots.tex": "8b82724e2ba3517b18dcba0e24d4fd9fbd1338314d1b94dd811dae04480d529d",
+    "code_traps\\exchange.json": "4d937e83dc590c42cdfb2c5cf1fbb1cc91ea164d993fb41f44b0564e8cbea3b2",
+    "code_traps\\README.txt": "e154ceb2ab66c55fe84f909ccb2151af73b172b1e6644088a797cc935b08e7a6",
+    "code_traps\\search.json": "44a52f43084e5eb0a675bcc1a7a76f8ddf7ab25d68141698940132eb201d4ef9",
+    "code_traps\\search.py": "e0fcb6b40732bc3f6773c45cbe27804042bdbdaae5493e445be96f83d185ee06",
+    "code_traps\\trap.pdf": "27759187cd3a22ba6806b42a0aff7630e4331e2a485ca10f315f5cd13525acdd",
+    "code_traps\\trap.tex": "b924732540eed613a208b0cdb9af604072791ca5bfa9e6570f2f094413879141",
+    "code_traps\\traps.tex": "d64a6d8c18161b32d6ca2f8162fbc1a3665d02fe8050442d4692876f62497121",
+    "code_traps\\verification.json": "fc3fc61d8846466dd53451d9b6e2358d132947b638e9a2f828caa8c5d9f1842d",
+    "code_traps\\verify.py": "776ddbbde19b21fd914852a69ab9ce27418a94a93e85675a6c5f2056e67a80a6",
+    "codes\\check.py": "cecc4a5432f45c501a883af1984901ca4c0336cb14691bc238e6a96dfb5629be",
+    "codes\\check_neighbors.py": "b540104661b88172a619a7118865f46d21d16a0f6c3ec92aef6b12a78f537321",
+    "codes\\checks.json": "db29830892a5fdd0e1d753649d18e0d4d688aeebacbf6acf2e43ea9d4ca33283",
+    "codes\\codes.tex": "220977df3b03965bb82fd4c7458e5e29a0592a33ffb1dde16d666a08dfa4943e",
+    "codes\\neighbor_checks.json": "f807ebf1718a187fa2ebb723d28d1846672ed9a3e14235e7dbee6ed7c8333198",
+    "codes\\neighbor_counts.tex": "aa6d5082d24f6c091c685d89146a21d0d90c6caf49be3f699b36b705aa8cbac9",
+    "codes\\README.txt": "2e811050d6f51670bb569d7a2437147f6d96c3a08eec54acd6e4bffed5a15df4",
+    "exchanges\\bridges.pdf": "8e20210b7c5fa08b86bd16625be17411261adcbaaf4c71ada5933c17bb8ec7d6",
+    "exchanges\\bridges.tex": "ad833554831b66a990f2728c4d22417ba4d6edc6f09f2d1936fe0eb4b5faa412",
+    "exchanges\\check_exact.py": "2b6edf56206c12e5f551534247b05c7d240fc97c77d7359dee26bc91f0943aae",
+    "exchanges\\README.txt": "f78a2172d5e7102022fca1273445d8b74c99a02470be06f0e1557838dd2d4d95",
+    "modular\\check.py": "a5d82149ec4f882b2076ff2651bc9decd29f5bf491feae4c90288da178dcb537",
+    "modular\\checks.json": "e3c79c0e7f4a5643b2874f1d1d723770b03acf839f1b127ee70bac27ac1d74a8",
+    "modular\\modular.tex": "217afa9e4ff4fdf1f4f07a5b47cc5e8b52095b670c953ac636c9f7cbf36e6513",
+    "modular\\README.txt": "3544d49394b9dce3968e68e0fb251796cff5ef7e5e25e175add0471d11dcdf2d",
+    "NEXT_QUESTIONS.txt": "8169b8ba05b1c1b887aae947d97ead86b52ba28ddf384444186a54ace7b21f87",
+    "nonlinear\\check.py": "d5fafc518b6a5518c9d3b6b5b3d8cfeb3a87203d5ab63f448ea1b4b225f7faaf",
+    "nonlinear\\checks.json": "d528d0b79c9ca61ec00f9b49a01602cc6bcecde9505835af06ac7a78bb766615",
+    "nonlinear\\quantitative.tex": "cd95452951d7ac7646f028b14bfd42fbe2b703dfbb6f580991d22e7b0e9627e2",
+    "nonlinear\\README.txt": "94b1e84981b1df0e4fab38b366febebdd2833552a449747b6482d9075c5686f2",
+    "PRIOR_ART.txt": "99ab799eb3e2476cbcf709dd7272e78370d311f2f54ea08f1899a8b293da482b",
+    "README.txt": "b5b337e353faaa2b8bb673febb210ffc9121e2096898061106c7da61705236e4",
+    "research.pdf": "5677ee59a02d13c4d29c4df21284650afbb235a292a77a777eb18c4ecc1e0af1",
+    "research.tex": "a4b2c88ad6d64677a23433a45b10f76680b75325f6ae849d176405aec27056d4"
+  },
+  "scope": {
+    "hadamardConjectureProved": false,
+    "unknownOrderConstructed": false,
+    "noveltyEstablished": false,
+    "leanFormalization": false,
+    "gitCommits": false
+  }
+}

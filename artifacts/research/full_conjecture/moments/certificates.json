@@ -1,0 +1,1059 @@
+{
+  "status": "elementary proven restrictions and constructions; no Hadamard proof",
+  "shellConstructions": [
+    {
+      "d": 2,
+      "runs": 4,
+      "shellMultiplicities": {
+        "0": 1,
+        "1": 1,
+        "2": 1
+      },
+      "maximumWeight": 2,
+      "sharpWeightLowerBound": 2,
+      "permutationSymmetryRunLowerBound": 2,
+      "centralWindowLowerIndex": 1
+    },
+    {
+      "d": 3,
+      "runs": 4,
+      "shellMultiplicities": {
+        "0": 1,
+        "2": 1
+      },
+      "maximumWeight": 2,
+      "sharpWeightLowerBound": 2,
+      "permutationSymmetryRunLowerBound": 3,
+      "centralWindowLowerIndex": 1
+    },
+    {
+      "d": 4,
+      "runs": 12,
+      "shellMultiplicities": {
+        "0": 2,
+        "2": 1,
+        "3": 1
+      },
+      "maximumWeight": 3,
+      "sharpWeightLowerBound": 3,
+      "permutationSymmetryRunLowerBound": 4,
+      "centralWindowLowerIndex": 1
+    },
+    {
+      "d": 5,
+      "runs": 12,
+      "shellMultiplicities": {
+        "0": 2,
+        "3": 1
+      },
+      "maximumWeight": 3,
+      "sharpWeightLowerBound": 3,
+      "permutationSymmetryRunLowerBound": 10,
+      "centralWindowLowerIndex": 2
+    },
+    {
+      "d": 6,
+      "runs": 40,
+      "shellMultiplicities": {
+        "0": 5,
+        "3": 1,
+        "4": 1
+      },
+      "maximumWeight": 4,
+      "sharpWeightLowerBound": 4,
+      "permutationSymmetryRunLowerBound": 15,
+      "centralWindowLowerIndex": 2
+    },
+    {
+      "d": 7,
+      "runs": 40,
+      "shellMultiplicities": {
+        "0": 5,
+        "4": 1
+      },
+      "maximumWeight": 4,
+      "sharpWeightLowerBound": 4,
+      "permutationSymmetryRunLowerBound": 35,
+      "centralWindowLowerIndex": 3
+    },
+    {
+      "d": 8,
+      "runs": 140,
+      "shellMultiplicities": {
+        "0": 14,
+        "4": 1,
+        "5": 1
+      },
+      "maximumWeight": 5,
+      "sharpWeightLowerBound": 5,
+      "permutationSymmetryRunLowerBound": 56,
+      "centralWindowLowerIndex": 3
+    },
+    {
+      "d": 9,
+      "runs": 140,
+      "shellMultiplicities": {
+        "0": 14,
+        "5": 1
+      },
+      "maximumWeight": 5,
+      "sharpWeightLowerBound": 5,
+      "permutationSymmetryRunLowerBound": 84,
+      "centralWindowLowerIndex": 3
+    },
+    {
+      "d": 10,
+      "runs": 504,
+      "shellMultiplicities": {
+        "0": 42,
+        "5": 1,
+        "6": 1
+      },
+      "maximumWeight": 6,
+      "sharpWeightLowerBound": 6,
+      "permutationSymmetryRunLowerBound": 210,
+      "centralWindowLowerIndex": 4
+    },
+    {
+      "d": 11,
+      "runs": 504,
+      "shellMultiplicities": {
+        "0": 42,
+        "6": 1
+      },
+      "maximumWeight": 6,
+      "sharpWeightLowerBound": 6,
+      "permutationSymmetryRunLowerBound": 330,
+      "centralWindowLowerIndex": 4
+    },
+    {
+      "d": 12,
+      "runs": 1848,
+      "shellMultiplicities": {
+        "0": 132,
+        "6": 1,
+        "7": 1
+      },
+      "maximumWeight": 7,
+      "sharpWeightLowerBound": 7,
+      "permutationSymmetryRunLowerBound": 792,
+      "centralWindowLowerIndex": 5
+    },
+    {
+      "d": 13,
+      "runs": 1848,
+      "shellMultiplicities": {
+        "0": 132,
+        "7": 1
+      },
+      "maximumWeight": 7,
+      "sharpWeightLowerBound": 7,
+      "permutationSymmetryRunLowerBound": 1287,
+      "centralWindowLowerIndex": 5
+    },
+    {
+      "d": 14,
+      "runs": 6864,
+      "shellMultiplicities": {
+        "0": 429,
+        "7": 1,
+        "8": 1
+      },
+      "maximumWeight": 8,
+      "sharpWeightLowerBound": 8,
+      "permutationSymmetryRunLowerBound": 3003,
+      "centralWindowLowerIndex": 6
+    },
+    {
+      "d": 15,
+      "runs": 6864,
+      "shellMultiplicities": {
+        "0": 429,
+        "8": 1
+      },
+      "maximumWeight": 8,
+      "sharpWeightLowerBound": 8,
+      "permutationSymmetryRunLowerBound": 5005,
+      "centralWindowLowerIndex": 6
+    },
+    {
+      "d": 16,
+      "runs": 25740,
+      "shellMultiplicities": {
+        "0": 1430,
+        "8": 1,
+        "9": 1
+      },
+      "maximumWeight": 9,
+      "sharpWeightLowerBound": 9,
+      "permutationSymmetryRunLowerBound": 8008,
+      "centralWindowLowerIndex": 6
+    },
+    {
+      "d": 17,
+      "runs": 25740,
+      "shellMultiplicities": {
+        "0": 1430,
+        "9": 1
+      },
+      "maximumWeight": 9,
+      "sharpWeightLowerBound": 9,
+      "permutationSymmetryRunLowerBound": 19448,
+      "centralWindowLowerIndex": 7
+    },
+    {
+      "d": 18,
+      "runs": 97240,
+      "shellMultiplicities": {
+        "0": 4862,
+        "9": 1,
+        "10": 1
+      },
+      "maximumWeight": 10,
+      "sharpWeightLowerBound": 10,
+      "permutationSymmetryRunLowerBound": 31824,
+      "centralWindowLowerIndex": 7
+    },
+    {
+      "d": 19,
+      "runs": 97240,
+      "shellMultiplicities": {
+        "0": 4862,
+        "10": 1
+      },
+      "maximumWeight": 10,
+      "sharpWeightLowerBound": 10,
+      "permutationSymmetryRunLowerBound": 75582,
+      "centralWindowLowerIndex": 8
+    },
+    {
+      "d": 20,
+      "runs": 369512,
+      "shellMultiplicities": {
+        "0": 16796,
+        "10": 1,
+        "11": 1
+      },
+      "maximumWeight": 11,
+      "sharpWeightLowerBound": 11,
+      "permutationSymmetryRunLowerBound": 125970,
+      "centralWindowLowerIndex": 8
+    },
+    {
+      "d": 21,
+      "runs": 369512,
+      "shellMultiplicities": {
+        "0": 16796,
+        "11": 1
+      },
+      "maximumWeight": 11,
+      "sharpWeightLowerBound": 11,
+      "permutationSymmetryRunLowerBound": 293930,
+      "centralWindowLowerIndex": 9
+    },
+    {
+      "d": 22,
+      "runs": 1410864,
+      "shellMultiplicities": {
+        "0": 58786,
+        "11": 1,
+        "12": 1
+      },
+      "maximumWeight": 12,
+      "sharpWeightLowerBound": 12,
+      "permutationSymmetryRunLowerBound": 497420,
+      "centralWindowLowerIndex": 9
+    },
+    {
+      "d": 23,
+      "runs": 1410864,
+      "shellMultiplicities": {
+        "0": 58786,
+        "12": 1
+      },
+      "maximumWeight": 12,
+      "sharpWeightLowerBound": 12,
+      "permutationSymmetryRunLowerBound": 1144066,
+      "centralWindowLowerIndex": 10
+    },
+    {
+      "d": 24,
+      "runs": 5408312,
+      "shellMultiplicities": {
+        "0": 208012,
+        "12": 1,
+        "13": 1
+      },
+      "maximumWeight": 13,
+      "sharpWeightLowerBound": 13,
+      "permutationSymmetryRunLowerBound": 1961256,
+      "centralWindowLowerIndex": 10
+    },
+    {
+      "d": 25,
+      "runs": 5408312,
+      "shellMultiplicities": {
+        "0": 208012,
+        "13": 1
+      },
+      "maximumWeight": 13,
+      "sharpWeightLowerBound": 13,
+      "permutationSymmetryRunLowerBound": 3268760,
+      "centralWindowLowerIndex": 10
+    },
+    {
+      "d": 26,
+      "runs": 20801200,
+      "shellMultiplicities": {
+        "0": 742900,
+        "13": 1,
+        "14": 1
+      },
+      "maximumWeight": 14,
+      "sharpWeightLowerBound": 14,
+      "permutationSymmetryRunLowerBound": 7726160,
+      "centralWindowLowerIndex": 11
+    },
+    {
+      "d": 27,
+      "runs": 20801200,
+      "shellMultiplicities": {
+        "0": 742900,
+        "14": 1
+      },
+      "maximumWeight": 14,
+      "sharpWeightLowerBound": 14,
+      "permutationSymmetryRunLowerBound": 13037895,
+      "centralWindowLowerIndex": 11
+    },
+    {
+      "d": 28,
+      "runs": 80233200,
+      "shellMultiplicities": {
+        "0": 2674440,
+        "14": 1,
+        "15": 1
+      },
+      "maximumWeight": 15,
+      "sharpWeightLowerBound": 15,
+      "permutationSymmetryRunLowerBound": 30421755,
+      "centralWindowLowerIndex": 12
+    },
+    {
+      "d": 29,
+      "runs": 80233200,
+      "shellMultiplicities": {
+        "0": 2674440,
+        "15": 1
+      },
+      "maximumWeight": 15,
+      "sharpWeightLowerBound": 15,
+      "permutationSymmetryRunLowerBound": 51895935,
+      "centralWindowLowerIndex": 12
+    },
+    {
+      "d": 30,
+      "runs": 310235040,
+      "shellMultiplicities": {
+        "0": 9694845,
+        "15": 1,
+        "16": 1
+      },
+      "maximumWeight": 16,
+      "sharpWeightLowerBound": 16,
+      "permutationSymmetryRunLowerBound": 119759850,
+      "centralWindowLowerIndex": 13
+    },
+    {
+      "d": 31,
+      "runs": 310235040,
+      "shellMultiplicities": {
+        "0": 9694845,
+        "16": 1
+      },
+      "maximumWeight": 16,
+      "sharpWeightLowerBound": 16,
+      "permutationSymmetryRunLowerBound": 206253075,
+      "centralWindowLowerIndex": 13
+    },
+    {
+      "d": 32,
+      "runs": 1202160780,
+      "shellMultiplicities": {
+        "0": 35357670,
+        "16": 1,
+        "17": 1
+      },
+      "maximumWeight": 17,
+      "sharpWeightLowerBound": 17,
+      "permutationSymmetryRunLowerBound": 471435600,
+      "centralWindowLowerIndex": 14
+    },
+    {
+      "d": 33,
+      "runs": 1202160780,
+      "shellMultiplicities": {
+        "0": 35357670,
+        "17": 1
+      },
+      "maximumWeight": 17,
+      "sharpWeightLowerBound": 17,
+      "permutationSymmetryRunLowerBound": 818809200,
+      "centralWindowLowerIndex": 14
+    },
+    {
+      "d": 34,
+      "runs": 4667212440,
+      "shellMultiplicities": {
+        "0": 129644790,
+        "17": 1,
+        "18": 1
+      },
+      "maximumWeight": 18,
+      "sharpWeightLowerBound": 18,
+      "permutationSymmetryRunLowerBound": 1855967520,
+      "centralWindowLowerIndex": 15
+    },
+    {
+      "d": 35,
+      "runs": 4667212440,
+      "shellMultiplicities": {
+        "0": 129644790,
+        "18": 1
+      },
+      "maximumWeight": 18,
+      "sharpWeightLowerBound": 18,
+      "permutationSymmetryRunLowerBound": 3247943160,
+      "centralWindowLowerIndex": 15
+    },
+    {
+      "d": 36,
+      "runs": 18150270600,
+      "shellMultiplicities": {
+        "0": 477638700,
+        "18": 1,
+        "19": 1
+      },
+      "maximumWeight": 19,
+      "sharpWeightLowerBound": 19,
+      "permutationSymmetryRunLowerBound": 5567902560,
+      "centralWindowLowerIndex": 15
+    },
+    {
+      "d": 37,
+      "runs": 18150270600,
+      "shellMultiplicities": {
+        "0": 477638700,
+        "19": 1
+      },
+      "maximumWeight": 19,
+      "sharpWeightLowerBound": 19,
+      "permutationSymmetryRunLowerBound": 12875774670,
+      "centralWindowLowerIndex": 16
+    },
+    {
+      "d": 38,
+      "runs": 70690527600,
+      "shellMultiplicities": {
+        "0": 1767263190,
+        "19": 1,
+        "20": 1
+      },
+      "maximumWeight": 20,
+      "sharpWeightLowerBound": 20,
+      "permutationSymmetryRunLowerBound": 22239974430,
+      "centralWindowLowerIndex": 16
+    },
+    {
+      "d": 39,
+      "runs": 70690527600,
+      "shellMultiplicities": {
+        "0": 1767263190,
+        "20": 1
+      },
+      "maximumWeight": 20,
+      "sharpWeightLowerBound": 20,
+      "permutationSymmetryRunLowerBound": 51021117810,
+      "centralWindowLowerIndex": 17
+    },
+    {
+      "d": 40,
+      "runs": 275693057640,
+      "shellMultiplicities": {
+        "0": 6564120420,
+        "20": 1,
+        "21": 1
+      },
+      "maximumWeight": 21,
+      "sharpWeightLowerBound": 21,
+      "permutationSymmetryRunLowerBound": 88732378800,
+      "centralWindowLowerIndex": 17
+    }
+  ],
+  "cubeIsolationCertificate": {
+    "d": 7,
+    "n": 8,
+    "oldPatternCounts": {
+      "0": 1,
+      "85": 1,
+      "102": 1,
+      "51": 1,
+      "120": 1,
+      "45": 1,
+      "30": 1,
+      "75": 1
+    },
+    "newPatternCounts": {
+      "119": 1,
+      "34": 1,
+      "17": 1,
+      "68": 1,
+      "120": 1,
+      "45": 1,
+      "30": 1,
+      "75": 1
+    },
+    "removedMasks": [
+      0,
+      85,
+      102,
+      51
+    ],
+    "addedMasks": [
+      119,
+      34,
+      17,
+      68
+    ],
+    "translatedCoordinateSubcubesTested": 939,
+    "legalCoordinateCubeMovesAtEitherEndpoint": 0,
+    "tradeDegree": 4
+  },
+  "tripleConversionCertificates": [
+    {
+      "d": 4,
+      "L": 1,
+      "feasibleByTheorem": false
+    },
+    {
+      "d": 4,
+      "L": 2,
+      "feasibleByTheorem": true,
+      "commonTripleMoveMultiplicity": 1,
+      "witness": {
+        "0": 0,
+        "1": 1,
+        "2": 1,
+        "4": 1,
+        "8": 1,
+        "3": 0,
+        "5": 0,
+        "9": 0,
+        "6": 0,
+        "10": 0,
+        "12": 0,
+        "7": 1,
+        "11": 1,
+        "13": 1,
+        "14": 1
+      }
+    },
+    {
+      "d": 4,
+      "L": 3,
+      "feasibleByTheorem": true,
+      "commonTripleMoveMultiplicity": 1,
+      "witness": {
+        "0": 2,
+        "1": 0,
+        "2": 0,
+        "4": 0,
+        "8": 0,
+        "3": 1,
+        "5": 1,
+        "9": 1,
+        "6": 1,
+        "10": 1,
+        "12": 1,
+        "7": 1,
+        "11": 1,
+        "13": 1,
+        "14": 1
+      }
+    },
+    {
+      "d": 4,
+      "L": 4,
+      "feasibleByTheorem": true,
+      "commonTripleMoveMultiplicity": 2,
+      "witness": {
+        "0": 0,
+        "1": 2,
+        "2": 2,
+        "4": 2,
+        "8": 2,
+        "3": 0,
+        "5": 0,
+        "9": 0,
+        "6": 0,
+        "10": 0,
+        "12": 0,
+        "7": 2,
+        "11": 2,
+        "13": 2,
+        "14": 2
+      }
+    },
+    {
+      "d": 4,
+      "L": 5,
+      "feasibleByTheorem": true,
+      "commonTripleMoveMultiplicity": 2,
+      "witness": {
+        "0": 2,
+        "1": 1,
+        "2": 1,
+        "4": 1,
+        "8": 1,
+        "3": 1,
+        "5": 1,
+        "9": 1,
+        "6": 1,
+        "10": 1,
+        "12": 1,
+        "7": 2,
+        "11": 2,
+        "13": 2,
+        "14": 2
+      }
+    },
+    {
+      "d": 4,
+      "L": 6,
+      "feasibleByTheorem": true,
+      "commonTripleMoveMultiplicity": 3,
+      "witness": {
+        "0": 0,
+        "1": 3,
+        "2": 3,
+        "4": 3,
+        "8": 3,
+        "3": 0,
+        "5": 0,
+        "9": 0,
+        "6": 0,
+        "10": 0,
+        "12": 0,
+        "7": 3,
+        "11": 3,
+        "13": 3,
+        "14": 3
+      }
+    },
+    {
+      "d": 4,
+      "L": 7,
+      "feasibleByTheorem": true,
+      "commonTripleMoveMultiplicity": 3,
+      "witness": {
+        "0": 2,
+        "1": 2,
+        "2": 2,
+        "4": 2,
+        "8": 2,
+        "3": 1,
+        "5": 1,
+        "9": 1,
+        "6": 1,
+        "10": 1,
+        "12": 1,
+        "7": 3,
+        "11": 3,
+        "13": 3,
+        "14": 3
+      }
+    },
+    {
+      "d": 4,
+      "L": 8,
+      "feasibleByTheorem": true,
+      "commonTripleMoveMultiplicity": 4,
+      "witness": {
+        "0": 0,
+        "1": 4,
+        "2": 4,
+        "4": 4,
+        "8": 4,
+        "3": 0,
+        "5": 0,
+        "9": 0,
+        "6": 0,
+        "10": 0,
+        "12": 0,
+        "7": 4,
+        "11": 4,
+        "13": 4,
+        "14": 4
+      }
+    },
+    {
+      "d": 4,
+      "L": 9,
+      "feasibleByTheorem": true,
+      "commonTripleMoveMultiplicity": 4,
+      "witness": {
+        "0": 2,
+        "1": 3,
+        "2": 3,
+        "4": 3,
+        "8": 3,
+        "3": 1,
+        "5": 1,
+        "9": 1,
+        "6": 1,
+        "10": 1,
+        "12": 1,
+        "7": 4,
+        "11": 4,
+        "13": 4,
+        "14": 4
+      }
+    },
+    {
+      "d": 5,
+      "L": 1,
+      "feasibleByTheorem": false
+    },
+    {
+      "d": 5,
+      "L": 2,
+      "feasibleByTheorem": false
+    },
+    {
+      "d": 5,
+      "L": 3,
+      "feasibleByTheorem": true,
+      "commonTripleMoveMultiplicity": 1,
+      "witness": {
+        "0": 2,
+        "1": 0,
+        "2": 0,
+        "4": 0,
+        "8": 0,
+        "16": 0,
+        "3": 0,
+        "5": 0,
+        "9": 0,
+        "17": 0,
+        "6": 0,
+        "10": 0,
+        "18": 0,
+        "12": 0,
+        "20": 0,
+        "24": 0,
+        "7": 1,
+        "11": 1,
+        "19": 1,
+        "13": 1,
+        "21": 1,
+        "25": 1,
+        "14": 1,
+        "22": 1,
+        "26": 1,
+        "28": 1
+      }
+    },
+    {
+      "d": 5,
+      "L": 4,
+      "feasibleByTheorem": false
+    },
+    {
+      "d": 5,
+      "L": 5,
+      "feasibleByTheorem": false
+    },
+    {
+      "d": 5,
+      "L": 6,
+      "feasibleByTheorem": true,
+      "commonTripleMoveMultiplicity": 2,
+      "witness": {
+        "0": 4,
+        "1": 0,
+        "2": 0,
+        "4": 0,
+        "8": 0,
+        "16": 0,
+        "3": 0,
+        "5": 0,
+        "9": 0,
+        "17": 0,
+        "6": 0,
+        "10": 0,
+        "18": 0,
+        "12": 0,
+        "20": 0,
+        "24": 0,
+        "7": 2,
+        "11": 2,
+        "19": 2,
+        "13": 2,
+        "21": 2,
+        "25": 2,
+        "14": 2,
+        "22": 2,
+        "26": 2,
+        "28": 2
+      }
+    },
+    {
+      "d": 5,
+      "L": 7,
+      "feasibleByTheorem": false
+    },
+    {
+      "d": 5,
+      "L": 8,
+      "feasibleByTheorem": false
+    },
+    {
+      "d": 5,
+      "L": 9,
+      "feasibleByTheorem": true,
+      "commonTripleMoveMultiplicity": 3,
+      "witness": {
+        "0": 6,
+        "1": 0,
+        "2": 0,
+        "4": 0,
+        "8": 0,
+        "16": 0,
+        "3": 0,
+        "5": 0,
+        "9": 0,
+        "17": 0,
+        "6": 0,
+        "10": 0,
+        "18": 0,
+        "12": 0,
+        "20": 0,
+        "24": 0,
+        "7": 3,
+        "11": 3,
+        "19": 3,
+        "13": 3,
+        "21": 3,
+        "25": 3,
+        "14": 3,
+        "22": 3,
+        "26": 3,
+        "28": 3
+      }
+    }
+  ],
+  "centralRayConductorBounds": [
+    {
+      "d": 3,
+      "sylvesterOrder": 4,
+      "paleyOrder": 4,
+      "paleyPrimePower": 3,
+      "paleyType": 1,
+      "centralRayConductorUpperBound": 0,
+      "firstDecompositions": [
+        {
+          "n": 4,
+          "sylvesterBlocks": 0,
+          "paleyBlocks": 1
+        },
+        {
+          "n": 8,
+          "sylvesterBlocks": 0,
+          "paleyBlocks": 2
+        },
+        {
+          "n": 12,
+          "sylvesterBlocks": 0,
+          "paleyBlocks": 3
+        }
+      ]
+    },
+    {
+      "d": 7,
+      "sylvesterOrder": 8,
+      "paleyOrder": 20,
+      "paleyPrimePower": 9,
+      "paleyType": 2,
+      "centralRayConductorUpperBound": 16,
+      "firstDecompositions": [
+        {
+          "n": 16,
+          "sylvesterBlocks": 2,
+          "paleyBlocks": 0
+        },
+        {
+          "n": 20,
+          "sylvesterBlocks": 0,
+          "paleyBlocks": 1
+        },
+        {
+          "n": 24,
+          "sylvesterBlocks": 3,
+          "paleyBlocks": 0
+        }
+      ]
+    },
+    {
+      "d": 11,
+      "sylvesterOrder": 16,
+      "paleyOrder": 20,
+      "paleyPrimePower": 9,
+      "paleyType": 2,
+      "centralRayConductorUpperBound": 48,
+      "firstDecompositions": [
+        {
+          "n": 48,
+          "sylvesterBlocks": 3,
+          "paleyBlocks": 0
+        },
+        {
+          "n": 52,
+          "sylvesterBlocks": 2,
+          "paleyBlocks": 1
+        },
+        {
+          "n": 56,
+          "sylvesterBlocks": 1,
+          "paleyBlocks": 2
+        }
+      ]
+    },
+    {
+      "d": 19,
+      "sylvesterOrder": 32,
+      "paleyOrder": 20,
+      "paleyPrimePower": 9,
+      "paleyType": 2,
+      "centralRayConductorUpperBound": 112,
+      "firstDecompositions": [
+        {
+          "n": 112,
+          "sylvesterBlocks": 1,
+          "paleyBlocks": 4
+        },
+        {
+          "n": 116,
+          "sylvesterBlocks": 3,
+          "paleyBlocks": 1
+        },
+        {
+          "n": 120,
+          "sylvesterBlocks": 0,
+          "paleyBlocks": 6
+        }
+      ]
+    },
+    {
+      "d": 31,
+      "sylvesterOrder": 32,
+      "paleyOrder": 164,
+      "paleyPrimePower": 81,
+      "paleyType": 2,
+      "centralRayConductorUpperBound": 1120,
+      "firstDecompositions": [
+        {
+          "n": 1120,
+          "sylvesterBlocks": 35,
+          "paleyBlocks": 0
+        },
+        {
+          "n": 1124,
+          "sylvesterBlocks": 30,
+          "paleyBlocks": 1
+        },
+        {
+          "n": 1128,
+          "sylvesterBlocks": 25,
+          "paleyBlocks": 2
+        }
+      ]
+    },
+    {
+      "d": 63,
+      "sylvesterOrder": 64,
+      "paleyOrder": 164,
+      "paleyPrimePower": 81,
+      "paleyType": 2,
+      "centralRayConductorUpperBound": 2400,
+      "firstDecompositions": [
+        {
+          "n": 2400,
+          "sylvesterBlocks": 17,
+          "paleyBlocks": 8
+        },
+        {
+          "n": 2404,
+          "sylvesterBlocks": 35,
+          "paleyBlocks": 1
+        },
+        {
+          "n": 2408,
+          "sylvesterBlocks": 12,
+          "paleyBlocks": 10
+        }
+      ]
+    },
+    {
+      "d": 127,
+      "sylvesterOrder": 128,
+      "paleyOrder": 164,
+      "paleyPrimePower": 81,
+      "paleyType": 2,
+      "centralRayConductorUpperBound": 4960,
+      "firstDecompositions": [
+        {
+          "n": 4960,
+          "sylvesterBlocks": 8,
+          "paleyBlocks": 24
+        },
+        {
+          "n": 4964,
+          "sylvesterBlocks": 17,
+          "paleyBlocks": 17
+        },
+        {
+          "n": 4968,
+          "sylvesterBlocks": 26,
+          "paleyBlocks": 10
+        }
+      ]
+    },
+    {
+      "d": 999,
+      "sylvesterOrder": 1024,
+      "paleyOrder": 1460,
+      "paleyPrimePower": 729,
+      "paleyType": 2,
+      "centralRayConductorUpperBound": 371280,
+      "firstDecompositions": [
+        {
+          "n": 371280,
+          "sylvesterBlocks": 220,
+          "paleyBlocks": 100
+        },
+        {
+          "n": 371284,
+          "sylvesterBlocks": 76,
+          "paleyBlocks": 201
+        },
+        {
+          "n": 371288,
+          "sylvesterBlocks": 297,
+          "paleyBlocks": 46
+        }
+      ]
+    }
+  ],
+  "importantScope": "anchored move-order restriction does not exclude translated low-dimensional moves",
+  "passed": true
+}

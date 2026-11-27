@@ -1,0 +1,30 @@
+{
+  "compiledAtUTC": "2026-11-05T04:13:41.644882+00:00",
+  "pages": 7,
+  "latexChecksPassed": true,
+  "dataTableMatchesComputedReport": true,
+  "files": {
+    "paper\\extensions.tex": "853e68859aa892284f342ecf15b81815cd2882ae057097916e8b2838acfd5804",
+    "paper\\extensions.pdf": "4fd3759f674351bfa435676dcb224b77fba29e0f8096dd4f3bfb0107b237daf4",
+    "data\\covering.json": "2dfeb3a324b126d3ac6421fbd85c815af7968e78592bd361e9633623c5ac9cae",
+    "data\\entropy.json": "4f3c293f481f617cc3b91979a7a8866060c9558af47fc81a6845f02fbd14a3e0",
+    "data\\lean-check.json": "4b1b66721957b091fffe70e8ccd2df9b2d054d43b8e12c2f81d0c191dffa6435",
+    "lean\\QuantitativeFlatness.lean": "4a7d6bd859f4ed4b5d895e60a065eef9f291ff636b2749870ca948ca90202009"
+  },
+  "scope": {
+    "mainHadamardExponentGrowthImproved": false,
+    "paperProofs": [
+      "quantitative flatness",
+      "quantitative conditioning correction",
+      "second-order covering entropy",
+      "maximal-determinant consequence",
+      "finite radix certificate"
+    ],
+    "newLeanProofs": [
+      "quantitative flatness",
+      "finite conditioning from a gap certificate"
+    ],
+    "priorityEstablished": false,
+    "existingLeanRepositoryEdited": false
+  }
+}

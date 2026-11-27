@@ -1,0 +1,16 @@
+{
+  "license": "Apache-2.0",
+  "author": "Joshua Mark",
+  "ORCID": "https://orcid.org/0009-0003-5905-2382",
+  "source": "EntropyDesigns/PaleySecond.lean",
+  "mathematicalReference": {
+    "author": "R. E. A. C. Paley",
+    "title": "On Orthogonal Matrices",
+    "year": 1933,
+    "doi": "10.1002/sapm1933121311"
+  },
+  "implementation": "Original formal proof; reuses original Apache-2.0 character identities and pinned permissively licensed mathlib. No external implementation copied.",
+  "privateDraftActualCompilerExit": 0,
+  "privateDraftLog": ".lake/paley-second-draft-4.log",
+  "verification": "Fresh integrated build/audit and independent comparison required."
+}

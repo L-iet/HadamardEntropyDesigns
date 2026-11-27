@@ -1,0 +1,32 @@
+{
+  "key": "15635fa827c0c872ef091eb611ef5c41ebd4dfa0891f215cd18691d8cc868c76",
+  "metadata": {
+    "group": "quantum-bounds",
+    "configPath": "comparator-quantum-bounds.json",
+    "configSHA256": "8bf75e4c8fbb2a68cfd4609e933ed267df2e09a304c2fdb8b387e4055e7c0516",
+    "theoremNames": [
+      "EntropyDesigns.Quantum.uniform_tight_povm_operator_bounds",
+      "EntropyDesigns.Quantum.actual_tensor_povm_no_activation"
+    ],
+    "definitionNames": [],
+    "exports": {
+      "challenge": "5718da11d6cfe41577c918d53b768d890c1114c5211f3a6b6cd7eaaeab0dbf47",
+      "solution": "006ab1e4204c3f8b6bf9abe381eadae6e29b439a790b49a244ea8b2130c352c7"
+    },
+    "environment": {
+      "toolchain": "leanprover/lean4:v4.35.0",
+      "toolchainSHA256": "ca5f1f601d34c49079e38d7e7041eb0f2a9c227fbc1df0f404820069a052330c",
+      "binaries": {
+        "lean": "ec7a472d1c12a09b0c0c718f7427c2be527b3f5f07810fdbe076c2507c7a91ea",
+        "lake": "023feb24d3e7244fe671dba79f1cd1affc6c7a7cacfe497bf3675febb506578c",
+        "leanexport": "bda24bb3fafaf299ba472f944942d6293294b76559fafc9f166badd7c0f981b3",
+        "leanchecker": "9ef6baeb28d5e28897d5ed6dddd60ff81e511d97374013ece435dff38e9e0137",
+        "nanoda_bin": "de57d9dd7f647eb57398bc3dab4dcaa1d64f961f3f49964d5455fbddc73b35a8"
+      }
+    }
+  },
+  "capturedAtUTC": "2026-11-24T20:26:11.952873+00:00",
+  "reportSHA256": "20fd20da8940f69b18c7eb3fce9ee9aaae4b8f3edbac888d0b88ae776bab008a",
+  "logSHA256": "125a3b9b2884fddc9a2bb2354fe3ca1adcf8209d4f8115fb28898ec7d5b972e4",
+  "scope": "Immutable original Comparator exit0 with explicit Lean/NanoDa acceptance of the exact exports/config/checker environment. Local diagnostic, not registry verification."
+}

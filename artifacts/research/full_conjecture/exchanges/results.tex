@@ -1,0 +1,140 @@
+% Standalone section fragment. Uses amsmath, amssymb, amsthm and hyperref.
+% These elementary reductions are not claimed to have new bibliographic priority.
+\section{A sharper obstruction to bounded row-exchange augmentation}
+
+This pass gives a concrete negative result: replacing two rows is not
+enough for every augmenting exchange. The following finite certificate
+raises the necessary universal deletion bound from two to at least three.
+It does not establish any universal upper bound.
+
+\subsection{A small-dimensional exact enumeration theorem}
+\begin{proposition}[Cube intersections through information coordinates]
+Let $V\subseteq\mathbb R^n$ be a $q$-dimensional linear subspace. Then
+$|V\cap\{\pm1\}^n|\le2^q$. There is a set of $q$ coordinate positions
+such that the projection to those positions is injective on $V$.
+Consequently, if $V$ is given by rational linear equations, all its
+sign vectors can be enumerated by testing at most $2^q$ assignments,
+using exact rational arithmetic. Antipodal normalization reduces this
+to $2^{q-1}$ assignments when $q>0$.
+\end{proposition}
+\begin{proof}
+Choose a basis matrix for $V$ and $q$ linearly independent coordinate
+rows. Projection to those coordinates is an isomorphism onto
+$\mathbb R^q$. A sign vector projects to a sign vector, so there are
+at most $2^q$ possibilities. Each choice determines a unique candidate
+in $V$; check whether all remaining coordinates are signs. For rational
+data, elimination and all checks are exact. Negation pairs all nonzero
+cube vectors, allowing one information coordinate to be fixed positive.
+\end{proof}
+
+For a partial matrix with $m$ orthogonal rows at order $n$, deleting $k$
+rows leaves a kernel of dimension $q=n-m+k$. The enumeration cost is
+therefore exponential in the defect plus the deletion count, not in
+the full order. After enumeration, a $(k+1)$-clique in the candidate
+orthogonality graph is exactly an augmenting exchange for that deletion
+set. This gives an exact decision procedure for a specified exchange,
+not a theorem that such an exchange exists.
+
+There is also a rigid equality case, useful when classifying residual
+frames rather than only counting candidates.
+\begin{proposition}[Maximum cube intersections are duplication spaces]
+The bound $|V\cap\{\pm1\}^n|=2^q$ holds if and only if, after
+permuting and negating coordinates, $V$ consists of vectors constant
+on each of $q$ nonempty coordinate blocks.
+If $V$ is the residual space of a partial Hadamard matrix, all these
+blocks have size $n/q$. In that case completion is equivalent to the
+existence of a Hadamard matrix of order $q$.
+\end{proposition}
+\begin{proof}
+Choose information coordinates as above. Equality means every sign
+assignment to them extends to a sign vector. Each other coordinate is
+a linear form $f(\varepsilon)=\sum_i a_i\varepsilon_i$ taking only
+values $\pm1$ on the full $q$-cube. Its maximum is
+$\sum_i|a_i|=1$, whereas averaging $f^2$ gives $\sum_i a_i^2=1$.
+These two equalities force at most one nonzero coefficient, which is
+$+1$ or $-1$. Thus every coordinate is a signed copy of an information
+coordinate. The converse is immediate.
+
+For a partial Hadamard residual space, the orthogonal projector has
+constant diagonal $q/n$. The projector on a duplication block of size
+$s$ has diagonal $1/s$, so $s=n/q$ for every block. Inner products of
+sign vectors are then $(n/q)$ times the inner products of their $q$
+block values. A full orthogonal basis of sign vectors exists precisely
+when those block values form an order-$q$ Hadamard matrix.
+\end{proof}
+
+This shows why even a maximal number of sign candidates is not, without
+additional structure, an automatic completion theorem: the smaller
+Hadamard existence problem appears explicitly in the equality case.
+
+\subsection{An exact order-twenty-four certificate}
+Encode a sign row $x$ by the integer whose bit $j$ is one exactly when
+$x_j=-1$; the least significant bit is coordinate zero. The sixteen
+rows in this example are
+\begin{align*}
+ &0,\ 16773120,\ 16519104,\ 10359454,\ 7684730,\ 5820908,\ 9389414,\ 1547504,\\
+ &6736278,\ 11838780,\ 3701846,\ 13790378,\ 10646512,\ 2963882,\ 12892774,\ 5974836.
+\end{align*}
+Each row has length $24$. All distinct row pairs differ in exactly
+twelve positions, so their dot products vanish.
+
+\begin{proposition}[A three-row deletion barrier]
+This partial matrix has no augmenting exchange that deletes at most
+two rows. Deleting three rows does admit an augmenting exchange and
+a subsequent full completion. Thus any universal row-exchange
+augmentation theorem must permit at least three deletions.
+\end{proposition}
+\begin{proof}[Exact finite certificate]
+Independently of the low-dimensional enumeration procedure, the
+verifier exhausts all $2^{23}=8388608$ sign vectors normalized to have
+coordinate zero positive. For each vector, record the set of original
+rows to which it is \emph{not} orthogonal. Only vectors with at most
+two such rows can participate after at most two deletions. There are
+exactly $56$: sixteen have a singleton nonorthogonality support, and
+forty have support of size two. No vector has empty support.
+
+For each of the sixteen single-row deletions there is exactly one
+normalized candidate. Of the $\binom{16}{2}=120$ two-row deletions,
+one hundred have exactly two candidates, and twenty have four
+candidates. None of the latter candidate sets contains three mutually
+orthogonal rows. This exhausts all $1+16+120=137$ deletion sets and
+rules out an augmentation deleting at most two rows.
+
+Delete rows with zero-based indices $0,5,6$. Insert the four rows
+encoded by
+\[
+ 353924,\quad1104648,\quad2786850,\quad4759768.
+\]
+The thirteen retained rows and these four new rows are pairwise
+orthogonal. The resulting seventeen rows complete by adding
+\[
+ 5133676,\ 7583694,\ 9432922,\ 10076646,\ 10684492,\ 12653842,\ 15326908.
+\]
+The verifier checks the full order-$24$ Gram matrix by exact Hamming
+distances. The positive certificate and the exhaustive negative
+certificate together prove that the minimal deletion count is three.
+\end{proof}
+
+This is a counterexample to universal two-row augmentation, not a
+counterexample to Hadamard existence. It also demonstrates that
+``single-row frozen'' understates the actual obstruction: some
+two-row deletions have genuinely new candidates, but their mutual
+orthogonality graph still prevents an augmentation.
+
+The matrix was obtained from the first terminal case in a fixed-seed
+thirty-run order-$24$ experiment with a canonical three-row prefix.
+The row-count histogram was nineteen terminal sixteen-row matrices,
+two terminal twelve-row matrices, and nine full matrices. Those
+frequencies describe the sampling algorithm only. No claim about all
+partial matrices or all equivalence classes is inferred from them.
+
+\subsection{Files and independent reproduction}
+All files for this pass are in \path{research/full_conjecture/exchanges/}.
+Run \path{sample.py}, \path{augment.py}, then \path{verify.py}.
+The first two scripts use exact free-coordinate enumeration and clique
+search. The independent verifier does not use that enumeration or
+rational elimination: it traverses the entire normalized sign cube,
+records nonorthogonality supports, and checks every small deletion set.
+Its report is \path{verification.json}; the complete compact list of
+relevant candidate supports is in \path{independent24.json}.
+No Lean claim or bibliographic novelty claim is made.

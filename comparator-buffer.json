@@ -1,0 +1,14 @@
+{
+  "challenge_module": "BufferChallenge",
+  "solution_module": "BufferSolution",
+  "theorem_names": [
+    "EntropyDesigns.sparse_uniform_affine_buffer_obstruction"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "enable_nanoda": true
+}

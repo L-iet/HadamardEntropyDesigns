@@ -1,0 +1,195 @@
+\section{Exactness of the real relaxation for two-zero weighing completion}
+\label{sec:real-weighing-exactness}
+
+The eight-state completion test admits a stronger interpretation.
+For a weighing matrix with two zeros per row at an admissible order,
+allowing arbitrary real entries in the holes does not enlarge the
+class of matrices that can be completed. A real completion either
+already supplies a sign state or produces a conference matrix from
+which a sign completion can be recovered. We also classify the
+continuous solution families and sharpen the eight-fill bound.
+
+Throughout $4\mid n$, $n\ge4$, and $W$ is $W(n,n-2)$. Use the
+previous pass's row and column normalization: all zero positions
+are diagonal two-square blocks, and
+\[
+ F=\begin{pmatrix}1&1\\1&-1\end{pmatrix},\qquad
+ A_{ij}=\tfrac12W_{ij}F\in\mathcal D\quad(i\ne j),
+\]
+where $\mathcal D$ is the eight-element signed-permutation group.
+Put
+\[
+ I=\begin{pmatrix}1&0\\0&1\end{pmatrix},\quad
+ J=\begin{pmatrix}0&1\\-1&0\end{pmatrix},\quad
+ D=\begin{pmatrix}1&0\\0&-1\end{pmatrix},\quad
+ S=\begin{pmatrix}0&1\\1&0\end{pmatrix}.
+\]
+Let $\mathcal R=\operatorname{span}_{\mathbb R}\{I,J\}$ and
+$\mathcal F=\operatorname{span}_{\mathbb R}\{D,S\}$.
+The orthogonal group $O(2)$ consists exactly of the unit coefficient
+circles in these two planes.
+
+\subsection{A linear kernel controls every real completion}
+A real zero-supported completion has diagonal fill blocks
+$X_i=R_iF$, $R_i\in O(2)$, and satisfies
+\[
+ A_{ij}R_j^{\mathsf T}+R_iA_{ji}^{\mathsf T}=0.
+\]
+For a root $R=R_0$, define
+\[
+ R_j=-A_{j0}R^{\mathsf T}A_{0j}\quad(j>0).
+\]
+Let $K\subseteq M_2(\mathbb R)$ be the homogeneous linear space
+where all remaining cross equations hold. A root gives a real
+completion exactly when $R\in K\cap O(2)$; it gives a Hadamard
+filling exactly when $R\in K\cap\mathcal D$.
+
+\begin{lemma}[The only possible component sections]
+Before imposing any additional consequences of the weighing
+property, each of $K\cap\mathcal R$ and $K\cap\mathcal F$ is zero,
+the whole plane, a coordinate-axis line, or one of the two diagonal
+lines in the displayed coefficient bases.
+\end{lemma}
+\begin{proof}
+After multiplying the cross equation for $i,j>0$ on the left and
+right by signed permutations, it becomes
+\[
+ R+L_{ij}R^{\mathsf T}Q_{ij}=0,
+\]
+where
+\[
+ L_{ij}=A_{0j}A_{ij}^{\mathsf T}A_{i0},\qquad
+ Q_{ij}=A_{0i}A_{ji}^{\mathsf T}A_{j0}
+\]
+are signed permutations. The operator
+$R\mapsto-L_{ij}R^{\mathsf T}Q_{ij}$ is Frobenius-orthogonal.
+It either interchanges the two planes, forcing their pure-component
+solutions to zero, or preserves them and acts on each coefficient
+pair by a signed permutation. The fixed space of a two-dimensional
+signed permutation is zero, a full plane, an axis line, or a
+diagonal line. Intersecting these fixed spaces introduces no other
+line directions. This proves the assertion.
+\end{proof}
+
+\subsection{A diagonal real state produces a conference completion}
+The next argument invokes the classical conference normalization
+theorem, not an unproved rounding principle. Geramita--Verner,
+\emph{Orthogonal Designs with Zero Diagonal}, Theorem 2,
+\url{https://doi.org/10.4153/CJM-1976-028-3}, restates the
+Delsarte--Goethals--Seidel result: a conference matrix at order
+$0\bmod4$ can be made skew by sign changes. Equivalently its
+unique zero per row and column can be filled by a signed permutation
+$Y$ so that $U+Y$ is Hadamard. Both fills $Y$ and $-Y$ work.
+
+\begin{lemma}[Conference conversion]
+If $K$ contains a diagonal line in either coefficient plane, then
+that entire plane is contained in $K$.
+\end{lemma}
+\begin{proof}
+Normalize a diagonal root to an orthogonal matrix $R$. Its entries
+are all $\pm1/\sqrt2$. Every propagated $R_i$ has the same entry
+form, so $R_iF$ has exactly one nonzero $\pm\sqrt2$ in each row
+and column. Thus the real fill is $X=\sqrt2T$, where $T$ is a
+block diagonal signed permutation supported on half the zero
+positions of $W$.
+
+The completion equations give
+$WT^{\mathsf T}+TW^{\mathsf T}=0$. Hence
+$C=WT^{\mathsf T}$ is skew, has diagonal two-square blocks zero,
+and satisfies $CC^{\mathsf T}=(n-2)I$. The integer matrix
+\[
+ U=C+I_n
+\]
+has entries $0,\pm1$ and $UU^{\mathsf T}=(n-1)I$: it is a
+conference matrix, with its single remaining zero in each row at
+the off-diagonal position of the corresponding coordinate pair.
+Apply the classical conference theorem, first permuting its zero
+matching onto the diagonal if needed. It supplies a signed
+permutation $Y$ on these remaining zeros such that both $U\pm Y$
+are Hadamard. The paired diagonal blocks of $U$ are $I_2$, so
+orthogonality forces $Y_i^{\mathsf T}=-Y_i$, that is $Y_i=\pm J$.
+
+Undoing $T$ gives the two sign completions
+\[
+ H_\pm=(U\pm Y)T=W+(I_n\pm Y)T.
+\]
+The matrices $T$ and $YT$ have complementary supports inside each
+original zero block. Thus each hole receives one sign and every
+nonzero entry of $W$ remains unchanged. At the root the two fill
+states are
+\[
+ R_\pm=\frac{(I_2\pm Y_0)T_0F}{2}.
+\]
+They lie in the same orientation plane as the original diagonal
+root $T_0F/\sqrt2$, and are linearly independent because $Y_0=\pm J$
+has no real eigenvector. Both belong to $K$. Their span is therefore
+the entire component plane, as asserted.
+\end{proof}
+
+\begin{theorem}[Exact real feasibility and solution topology]
+A real matrix $H$ with $HH^{\mathsf T}=nI_n$, obtained by changing
+only zeros of $W$, exists if and only if a zero-preserving Hadamard
+filling exists. More precisely each component section
+$K\cap\mathcal R$, $K\cap\mathcal F$ is only zero, a coordinate
+axis, or the full plane. Each axis contributes two isolated
+completions, both sign-valued. Each full plane contributes a full
+circle of real completions containing exactly four sign fillings.
+There are no isolated nonsign real completions.
+\end{theorem}
+\begin{proof}
+The preceding lemmas exclude an isolated diagonal-line section.
+Every nonzero permitted section intersects $O(2)$ and contains
+signed-permutation roots. Conversely a real orthogonal root lies
+in one of these sections. The counts follow by intersecting an
+axis or a plane with its unit coefficient circle, and the root
+propagation is injective. A nonsign real root can therefore occur
+only on one of the full circles, not as an isolated solution.
+\end{proof}
+
+This is an exactness theorem for this specific real feasibility
+relaxation. It does not claim that arbitrary approximate real
+fillings can be stably rounded, or that real feasibility always
+holds. The unfillable order-twelve example has both sections zero.
+
+\subsection{At most six fillings beyond order four}
+\begin{proposition}[A sharper cardinality bound]
+For $n\ge8$ the number of zero-preserving Hadamard fillings belongs
+to $\{0,2,4,6\}$ and is at most six. The bound six is attained.
+At order four there are exactly eight fillings.
+\end{proposition}
+\begin{proof}
+Each component contributes zero, two or four sign roots. If both
+planes were full, $K$ would be all of $M_2(\mathbb R)$. At $n\ge8$
+there is a block triangle and hence at least one equation
+$R+LR^{\mathsf T}Q=0$. It cannot hold identically. Substituting
+$R=I$ would give $Q=-L^{\mathsf T}$ and thus
+$R=LR^{\mathsf T}L^{\mathsf T}$ for every matrix. This map reverses
+products; if it were the identity, all two-square matrices would
+commute, a contradiction. Thus $K$ is proper and eight is impossible.
+The skew order-four conference tensor with $F$ has one full plane
+and one axis, attaining six at order eight. For $n=4$ there are
+only two blocks and no triangle constraints; every one of the
+eight roots works. The displayed set gives necessary possibilities;
+no assertion that every listed value occurs at every order is made.
+\end{proof}
+
+\subsection{Exact checks and a nonsign circle point}
+The verifier checks the real kernel sections for the four basic
+cases: order four has two full planes and eight fillings; the
+skew-conference tensor at order eight has an axis and a full plane,
+giving six; the symmetric-conference tensor at order twelve has
+one axis and two fillings; the inconsistent order-twelve example
+has no real or sign completion. It also exhausts all 256 normalized
+$W(8,6)$ matrices with standard zero support and first-row/sign
+normalizations. Every case has one axis and one full plane and
+exactly six sign fillings.
+
+For a concrete nonsign real completion, the order-eight full
+reflection plane contains the rational root $(3D+4S)/5$.
+Its resulting completion has exact Gram $8I$ and nonsign hole
+entries. The converter is separately tested at diagonal states:
+it constructs the two conference fills and checks both resulting
+Hadamard matrices and the independence of their root states using
+only integer and rational arithmetic. No isolated diagonal-line
+example was found; the conversion theorem explains why none can
+occur. No novelty or all-order Hadamard existence claim is made.

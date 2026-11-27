@@ -1,0 +1,18 @@
+{
+  "challenge_module": "AffineChallenge",
+  "solution_module": "AffineSolution",
+  "theorem_names": [
+    "EntropyDesigns.affine_hadamard_seed_observable_budget",
+    "EntropyDesigns.twelve_seed_nonaffine_budget",
+    "EntropyDesigns.twenty_seed_nonaffine_budget",
+    "EntropyDesigns.degree_one_boolean_code_dimension",
+    "EntropyDesigns.residue_four_support_indicator_not_affine"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "enable_nanoda": true
+}

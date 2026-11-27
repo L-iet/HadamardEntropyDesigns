@@ -1,0 +1,15 @@
+{
+  "challenge_module": "QuantumBoundsChallenge",
+  "solution_module": "QuantumBoundsSolution",
+  "theorem_names": [
+    "EntropyDesigns.Quantum.uniform_tight_povm_operator_bounds",
+    "EntropyDesigns.Quantum.actual_tensor_povm_no_activation"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "enable_nanoda": true
+}

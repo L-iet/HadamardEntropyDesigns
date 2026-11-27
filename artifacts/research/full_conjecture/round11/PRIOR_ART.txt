@@ -1,0 +1,49 @@
+PRIMARY-SOURCE CONTEXT; NOVELTY NOT ESTABLISHED
+
+Finite polar geometry and dual polar graphs:
+Brouwer et al., The smallest eigenvalues of Hamming graphs, Johnson
+graphs and other distance-regular graphs with classical parameters.
+https://doi.org/10.1016/j.jctb.2018.04.005
+The code-neighbor graph, generator counts, and spectral ingredients
+are classical. The proofs here expose the sign-count inputs rather
+than claim new finite-geometry identities.
+
+MacWilliams, A theorem on the distribution of weights in a systematic
+code, Bell System Technical Journal42 (1963),79-94.
+https://doi.org/10.1002/j.1538-7305.1963.tb04003.x
+The exact census uses the classical transform. Its original checker
+implements the written binomial formula, not external source code.
+
+Carlet, Kiss and Nagy, Simplicity conditions for binary orthogonal arrays.
+https://arxiv.org/abs/2204.00835
+Orthogonal arrays, simplicity, and atom/multiplicity bounds are
+established background. The sharp distance and repair family is
+proved explicitly here without a bibliographic novelty claim.
+
+The tenth-pass provenance file remains applicable to modular
+Hadamard codes, maximal partial frames, and code neighbors.
+Wei, Generalized Hamming weights for linear codes (1991):
+https://doi.org/10.1109/18.133259
+The standard weight hierarchy gives exact retained-row loss budgets
+through the annihilator evaluation map. No novelty is claimed for
+generalized weights or their definition.
+No exhaustive citation-chain or equivalence-classification search
+was performed for the newly generated finite witnesses.
+No external messages, publications or unlicensed code imports.
+
+Bush, Orthogonal Arrays of Index Unity (1952):
+https://doi.org/10.1214/aoms/1177729387
+The finite-field index-one array is classical.
+Plotkin, Binary codes with specified minimum distance (1960):
+https://doi.org/10.1109/TIT.1960.1057584
+The squared-sum coding bound is classical.
+Paley, On Orthogonal Matrices (1933):
+https://doi.org/10.1002/sapm1933121311
+Paley prime-power orders and Sylvester tensor products make the
+relative-stability sequence nonvacuous at already-known orders.
+
+A bounded web search for pairwise independence, entropy stability,
+Hadamard laws and convex mixtures did not locate a matching theorem.
+This does not establish priority. The spanning-omitted-slopes
+construction and simultaneous entropy/distance counterexample require
+a deeper citation review before any claim of novelty or submission.

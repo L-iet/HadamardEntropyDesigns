@@ -1,0 +1,18 @@
+{
+  "challenge_module": "BarrierChallenge",
+  "solution_module": "BarrierSolution",
+  "theorem_names": [
+    "EntropyDesigns.Concentration.face_optimum_barrier_bound",
+    "EntropyDesigns.Concentration.face_optimum_strict_local_collision",
+    "EntropyDesigns.Concentration.face_optimum_small_outside_collision",
+    "EntropyDesigns.Concentration.face_optimum_better_requires_outside_mass",
+    "EntropyDesigns.Concentration.face_optimum_path_barrier"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "enable_nanoda": true
+}

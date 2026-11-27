@@ -1,0 +1,70 @@
+{
+  "license": "Apache-2.0",
+  "author": "Joshua Mark",
+  "ORCID": "https://orcid.org/0009-0003-5905-2382",
+  "privatePilot": {
+    "status": "passed",
+    "scope": "Private staged Boolean degree barrier pilot only; not owned snapshot or registry verification",
+    "leanKernelAccepted": true,
+    "nanodaAccepted": true,
+    "theoremNames": [
+      "EntropyDesigns.lowDegreeBooleanCode_finrank",
+      "EntropyDesigns.lowDegreeBooleanCode_duality",
+      "EntropyDesigns.lowDegreeBooleanCode_extension_criterion",
+      "EntropyDesigns.four_bit_cubic_extension",
+      "EntropyDesigns.five_bit_affine_complement_cubic_extension",
+      "EntropyDesigns.booleanSupport_extension_criterion_all_degrees",
+      "EntropyDesigns.minimal_binary_seed_growing_degree"
+    ],
+    "definitionNames": [],
+    "sourceHashes": {
+      "GrowthPilotChallenge.lean": "3a21b0796d9207625331f14b8d10ef74fa9fdecadf7e5f9b2f8c92448adf0a52",
+      "GrowthPilotSolution.lean": "5a2c61c331b93bf85a376003e290c848baeae82bbd226d25250cbab34a375b6d",
+      "comparator.json": "74ee36b8cc2b8aca8f48de7c4c39b1d43486995ef086c454f9471a9528dbcb63"
+    },
+    "exports": {
+      "challenge": "7bde9f5cc927df6611d4b8cd28fbda3298bd330d907148416abf68bbc7b6c803",
+      "solution": "84547d64bca231d56699752ad97f234e0bdad8256559bb9ded0605f9ea5f6fcf"
+    }
+  },
+  "compileReceipts": [
+    {
+      "module": "BooleanArrayRankDraft",
+      "actualExit": 0,
+      "sourceSHA256": "4162bdbffbd0b81e3b3a3d396e450d4d541e26132809cfefd7e784b455c8c5bc",
+      "oleanSHA256": "72c6cc7f5a7fac1ee4cbee08e58ad25825ff1c36eb09dfe6104eda1ade0f16c3"
+    },
+    {
+      "module": "BooleanDimensionDraft",
+      "actualExit": 0,
+      "sourceSHA256": "417d2b8f15d60b66cb548ca1cfae969f21424e29a62becbb2d7496e945e30e30",
+      "oleanSHA256": "4c1db3fa8f33ecb829fc48226a691e02cd1fe5199b6ec0c8ea732c1c47ce40c6"
+    },
+    {
+      "module": "BooleanBoundaryDraft",
+      "actualExit": 0,
+      "sourceSHA256": "31ec358f8f3a80ae83466d5e482b7936d4b982e6079097da347b160ce243fc07",
+      "oleanSHA256": "900609fc009708b65176fecad5e1dd8d95e7b9c32d10cb770d1ab70fdb92b9ee"
+    },
+    {
+      "module": "BooleanEncodingDraft",
+      "actualExit": 0,
+      "sourceSHA256": "2a6c0e63af45b6b4cadb0c7e04b538b4845807fd5f0345fa837e94624c6fc0e9",
+      "oleanSHA256": "998a3f5260506f52dcbf8011ce757564169c2f475e205fde45e59cd448da48e1"
+    },
+    {
+      "module": "GrowthPilotChallenge",
+      "actualExit": 0,
+      "sourceSHA256": "ef64c6218053fd013d0f38f093a77bfdc6d0d7cf831ff71271a766e2172dde22",
+      "oleanSHA256": "292c25e21138dc204f9d13a7b5c5ef67449b70fef7a56b96eebec6d6214a9e63"
+    },
+    {
+      "module": "GrowthPilotSolution",
+      "actualExit": 0,
+      "sourceSHA256": "565d8ba78318cd90e1223849e366562cb958b317b6c84aa81b4269585f774227",
+      "oleanSHA256": "f056453c5b4ebca329f3ef9dca905dbc80fc9ab1d67def7175ad084b48b31fd3"
+    }
+  ],
+  "axiomAudit": "'EntropyDesigns.lowDegreeBooleanCode_finrank' depends on axioms: [propext, Classical.choice, Quot.sound]\n'EntropyDesigns.lowDegreeBooleanCode_duality' depends on axioms: [propext, Classical.choice, Quot.sound]\n'EntropyDesigns.lowDegreeBooleanCode_extension_criterion' depends on axioms: [propext, Classical.choice, Quot.sound]\n'EntropyDesigns.four_bit_cubic_extension' depends on axioms: [propext, Classical.choice, Quot.sound]\n'EntropyDesigns.five_bit_affine_complement_cubic_extension' depends on axioms: [propext, Classical.choice, Quot.sound]\n'EntropyDesigns.booleanSupport_extension_criterion_all_degrees' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'EntropyDesigns.minimal_binary_seed_growing_degree' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+  "scope": "Full E18.04 growing-degree theorem, using the stronger N-2-output sufficient condition, and full-degree E18.02 boundary. Integrated six-group verification required."
+}

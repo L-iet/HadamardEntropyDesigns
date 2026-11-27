@@ -1,0 +1,134 @@
+\section{Optimal concentration on the same support is still a poor global solution}
+\label{sec:design-concentration}
+Keep the source support $S$ from Theorem~\ref{thm:design-sharp-distance}:
+$k$ independent seed blocks in $V=\mathbb F_2^s$, $h=2^s$, all their
+nonzero additive characters, and the $k-1$ mixed bits
+$\chi_e(x_1+x_j)$. This section optimizes collision over \emph{all}
+exactly isotropic weights on that support, rather than just its original
+uniform $h^k$-atom law. The finite-field array used for attainment is a
+classical index-one orthogonal-array construction; see K. A. Bush,
+\emph{Orthogonal Arrays of Index Unity} (1952),
+\url{https://doi.org/10.1214/aoms/1177729387}. It is credited as an
+input, not a new design or Hadamard construction. Priority for the
+combined concentration and distance statements is unestablished.
+
+\begin{theorem}[Exact fixed-support collision optimum]
+\label{thm:design-face-optimum}
+For $2\le k\le h$, every unbiased pairwise-independent law supported
+on $S$ has atom masses at most $1/h^2$ and collision at most $1/h^2$.
+The upper bound is attained. Every attaining law is uniform on $h^2$
+atoms; its projection onto any two seed blocks is a bijection onto
+$V^2$. Thus its seed rows form an $\mathrm{OA}(h^2,k,h,2)$, equivalently
+an index-one strength-two array (with additional mixed-bit constraints).
+\end{theorem}
+\begin{proof}
+All nonzero additive characters of block $i$ are observed. Means and
+cross-pair moments therefore give
+$\mathbb E\chi_\alpha(x_i)\chi_\beta(x_j)=0$ whenever
+$(\alpha,\beta)\ne(0,0)$. Fourier inversion says the block pair
+$(x_i,x_j)$ is uniform on $V^2$. An individual full seed atom has
+mass at most its block-pair marginal $1/h^2$, so
+$C=\sum w_x^2\le1/h^2$. Equality forces every positive weight to be
+$1/h^2$, and pairwise uniformity then forces each block-pair projection
+of its $h^2$ rows to be bijective.
+
+To attain the bound, identify $V$ with the additive group of
+$\mathbb F_h$, choose distinct slopes $t_1,\ldots,t_k\in\mathbb F_h$,
+and set $x_j=A+t_jB$ for uniform independent $A,B\in\mathbb F_h$.
+All block characters are distinct nonzero linear forms in $(A,B)$:
+if $\alpha(A+t_iB)=\beta(A+t_jB)$, comparison of the $A$ terms gives
+$\alpha=\beta$; for $i\ne j$, invertibility of multiplication by
+$t_i+t_j$ then forces $\alpha=0$, excluded. The mixed characters are
+$e((t_1+t_j)B)$; they are distinct nonzero forms with zero $A$ part,
+so they differ from all block forms as well. Every observed bit is
+therefore a distinct nonzero character of the two-block seed. The
+resulting law is unbiased and pairwise independent. Two block seeds
+recover $(A,B)$, so its support has $h^2$ distinct atoms.
+\end{proof}
+
+\begin{theorem}[Simultaneous face optimum, strict trap, and sharp distance]
+\label{thm:design-concentrated-trap}
+Now let $k,h$ be powers of two with $h>2(k-1)$ and $n=kh$.
+The finite-field law $\mu_*$ above is a global collision maximizer among
+isotropic laws supported on $S$, and a strict local collision maximum
+in the \emph{full} pairwise-independent law polytope on $n-1$ bits.
+Its collision is $1/h^2$, while the full global optimum is $1/(kh)$.
+Furthermore
+\[
+ \inf_{\nu\in\mathcal H_n}\|\mu_*-\nu\|_{\rm TV}=1-1/k.
+\]
+Exactly $h^2(1-1/k)$ observation replacements suffice and are necessary
+to turn its $h^2$ distinct rows into $h/k$ Hadamard blocks, while keeping
+collision $1/h^2$. Taking $h=k^2$ makes the local-to-global collision
+ratio $1/k\to0$ simultaneously with distance $1-1/k\to1$.
+\end{theorem}
+\begin{proof}
+The fixed-support maximum was just proved. For strict local maximality,
+consider any two distinct slopes. Their block character spaces are
+complementary $s$-dimensional subspaces of the $2s$-dimensional seed
+dual: their intersection is zero by the same slope argument. Every
+character of $(A,B)$ is consequently a constant, observed bit, or product
+of two observed bits. These degree-at-most-two real monomials span all
+functions on the $h^2$-atom support $U$ of $\mu_*$. Exact first and second
+moments therefore determine every weight on $U$ uniquely.
+A uniform measure with this property strictly exposes itself by its
+own gradient: for feasible $q$,
+$\mu_*\cdot(q-\mu_*)=-q(U^c)/h^2$, with equality only at $q=\mu_*$.
+A strictly exposed vertex of a finite polytope is a strict local maximum
+of the squared Euclidean norm: the negative linear directional term
+dominates its quadratic increment in a sufficiently small neighborhood.
+A quantitative version follows below.
+
+The universal support witness gives distance at least $1-1/k$ because
+$U\subset S$ and $\omega(S)=h$. For each fixed $B=b$, the $h$ points
+$x_j=A+t_jb$ form one offset clique from the preceding completion
+construction. The $h$ such cliques partition $U$. Complete them all by
+Walsh block mixing. Their completions are disjoint, each intersects $U$
+in its own $h$-clique, and averaging their Hadamard laws gives mass
+$\mu_*/k$ on $U$. This attains distance $1-1/k$ exactly. Taking any
+$h/k$ cliques and the union of their completions retains $h^2/k$ original
+rows out of $h^2$, attains the replacement lower bound, and keeps all
+rows distinct. The normalized Walsh order-$n$ matrix attains global
+collision $1/n$, which the standard atom bound shows is optimal.
+\end{proof}
+
+\begin{proposition}[A certified local barrier]
+\label{prop:design-concentrated-barrier}
+Put $m=h^2$ and $b=q(U^c)$ for a feasible competing law $q$. Then
+\[
+ C(q)-1/m\le-2b/m+(m+1)b^2.
+\]
+Hence every $0<b<2/[m(m+1)]$ strictly lowers collision, and every
+continuous feasible path from $\mu_*$ to a better law passes through
+collision at most $1/m-1/[m^2(m+1)]$. This barrier is not claimed optimal.
+\end{proposition}
+\begin{proof}
+Represent each seed character $\chi$ by a degree-at-most-two observable
+monomial $\psi_\chi$ using the complementary block spaces. The polynomials
+\[
+ F_u=\frac1m\sum_\chi\chi(u)\psi_\chi
+\]
+restrict to indicators of individual atoms on $U$ and satisfy
+$|F_u|\le1$ on the entire observable cube. Fixed moments give
+$q(u)+\mathbb E_q[\mathbf1_{U^c}F_u]=1/m$, so
+$|q(u)-1/m|\le b$. Thus
+$\|q-\mu_*\|_2^2\le mb^2+b^2$, while
+$\mu_*\cdot(q-\mu_*)=-b/m$. Expanding collision proves the inequality.
+Any better endpoint must have $b\ge2/[m(m+1)]$; continuity crosses
+$b=1/[m(m+1)]$, where the displayed collision loss is $1/[m^2(m+1)]$.
+\end{proof}
+
+These results show that even globally optimizing collision on a large,
+explicit, exactly isotropic support can leave an arbitrarily poor strict
+local solution that is almost maximally far from all Hadamard mixtures.
+The finite-field attainment theorem solves that support face completely;
+it does not solve the original all-order Hadamard existence problem.
+
+\begin{corollary}[Moderate-support regimes]
+\label{cor:design-moderate-support}
+Taking $h=2k$ gives $n=2k^2$ and a strict local maximum on just
+$m=h^2=2n$ atoms, with collision $1/(2n)$ and exact distance
+$1-\sqrt{2/n}$ from $\mathcal H_n$. Taking $h=k^2$ instead gives
+$n=k^3$, $m=k^4=n^{4/3}$, collision-to-global ratio $n^{-1/3}$,
+and exact distance $1-n^{-1/3}$ from $\mathcal H_n$.
+\end{corollary}

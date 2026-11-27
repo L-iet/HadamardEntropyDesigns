@@ -1,0 +1,23 @@
+{
+  "passed": true,
+  "completionChecks": [
+    {
+      "n": 4,
+      "blochRank": 1,
+      "quaternaryCompletion": true
+    },
+    {
+      "n": 8,
+      "blochRank": 1,
+      "quaternaryCompletion": true
+    },
+    {
+      "n": 6,
+      "blochRank": 2,
+      "quaternaryCompletion": true
+    }
+  ],
+  "codimensionOne": true,
+  "abstractResidualBlochRank": 3,
+  "classicalAutomaticCompletionInput": "Real codimension-four Hadamard completion; not proved by these finite tests."
+}

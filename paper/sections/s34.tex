@@ -1,0 +1,26 @@
+\section{A summary input for the quantitative stability transfer}
+\begin{theorem}[Spanning-slope input]
+Let $h=2^s$, let $k$ be a known Hadamard order, and assume
+$s\le h-k<h/2$. There is an exactly unbiased pairwise-independent
+uniform law on $h^2$ atoms and $kh-1$ bits. It is a strict local
+collision maximum in the full moment polytope, and has collision
+$1/h^2$ and total variation distance exactly $1-1/k$ from the convex
+hull of all order-$kh$ Hadamard laws. Its additive R\'enyi entropy
+excess is $\log(h/k)$ for every entropy order.
+\end{theorem}
+\begin{proof}
+The spanning-slope construction and sharp distance are proved in
+Theorem~\ref{s25:thm:design-spanning-slopes}. The compressed law has
+$h^2$ equal-weight atoms, so every positive-order R\'enyi entropy,
+including the Shannon limit, equals $\log(h^2)$. Subtracting
+$\log(kh)$ gives $\log(h/k)$ as stated. The same theorem proves
+existence of the required omitted slope set under $s\le h-k<h/2$.
+\end{proof}
+
+\paragraph{Formalization.}
+The independent \texttt{SequenceChallenge} verifies this summary input. The construction derives its auxiliary
+arithmetic hypotheses, produces an actual complete finite witness,
+and proves that the same Hadamard optimizer attains the entropy
+minimum for every positive order and for min-entropy. The common
+excess is exactly $\log(h/k)$.
+

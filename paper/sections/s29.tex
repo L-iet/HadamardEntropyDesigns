@@ -1,0 +1,185 @@
+% Source: round13/quantum/quantum.tex
+\section{Flat real POVMs: exact commuting rigidity and a descent obstruction}
+For an unbiased pairwise-independent law on $n-1$ sign bits write
+$v_x=(1,x)\in\{\pm1\}^n$ and keep only positive-weight atoms.
+Then $\sum_xw_xv_xv_x^T=I_n$. Set
+\[
+ u_x=v_x/\sqrt n,\quad P_x=u_xu_x^T,\quad
+ E_x=nw_xP_x=w_xv_xv_x^T,\quad\lambda_x=nw_x.
+\]
+The $E_x$ form a real rank-one positive operator-valued measurement
+(POVM): they are positive semidefinite and sum to identity.
+Here ``flat'' means that the unit vectors have entries of magnitude
+$1/\sqrt n$, not merely that the effect weights are equal.
+Distinct atoms with the first coordinate normalized positive give
+distinct nonparallel directions. The POVM inequality $E_x\le I_n$
+implies $0<\lambda_x\le1$.
+
+\begin{theorem}[Exact projective and commuting criteria]
+For such a distinct-direction flat POVM the following are equivalent:
+the law is a uniform Hadamard law; every $E_x$ is a projection;
+the effects commute pairwise; and
+$\sum_{x,y}\|[E_x,E_y]\|_F^2=0$.
+Its total projectivity defect is exactly
+\[
+ \sum_x\operatorname{tr}(E_x-E_x^2)=n-n^2C(w).
+\]
+Writing $s_{xy}=v_x\cdot v_y$ and $A=\sum_xE_x^2$, its ordered
+commutator energy is
+\[
+ \mathcal J=2\sum_{x,y}w_x^2w_y^2s_{xy}^2(n^2-s_{xy}^2)
+ =2\left[\operatorname{tr}(A^2)-
+                 \sum_{x,y}(\operatorname{tr}(E_xE_y))^2\right].
+\]
+\end{theorem}
+\begin{proof}
+The eigenvalue of $E_x$ on its image is $\lambda_x$, so
+$\operatorname{tr}E_x=nw_x$ and $\operatorname{tr}E_x^2=n^2w_x^2$.
+Two nonzero rank-one symmetric effects commute precisely when their
+directions are orthogonal or parallel: their products are scalar
+multiples of $u_xu_y^T$ and $u_yu_x^T$. Parallelism is excluded here.
+Thus commuting forces mutually orthogonal directions. Completeness
+then requires exactly $n$ of them, each with eigenvalue one, giving
+the normalized rows of a Hadamard matrix. Conversely those rows give
+commuting projections. A sum of squared norms vanishes exactly when
+each commutator does. Finally expand
+$[E_x,E_y]=w_xw_ys_{xy}(v_xv_y^T-v_yv_x^T)$ and use
+$\|v_x\|^2=\|v_y\|^2=n$ to obtain the energy formula.
+\end{proof}
+\paragraph{Formalization of the exact criteria.}
+Three independent \texttt{QuantumChallenge} targets cover all four
+projectivity and commutativity criteria, the exact projectivity defect,
+and both ordered commutator-energy identities. The formal Hadamard-law
+predicate contains a genuine mathlib Hadamard matrix on the given sign
+directions, an explicit bijection of the outcomes with the coordinates,
+and uniform weights. The hypotheses retain positive weights, distinct
+normalized directions, sign entries, and the actual identity
+$\sum_xE_x=I_n$. Finite rank-one matrix algebra proves the trace and
+Frobenius identities. No definition placeholders occur in the challenge.
+The subsequent quantitative and tensor theorem has separate obligations.
+
+Aggregating duplicate directions is essential to the commuting
+criterion: splitting one projector into several parallel effects
+would otherwise give a commuting but nonprojective measurement.
+
+\begin{theorem}[Uniform tight frames are uniformly almost commuting]
+If the law is uniform on $m$ atoms, put $\lambda=n/m$. Then
+\[
+ \max_x\|E_x-E_x^2\|_{\rm op}=\lambda(1-\lambda),\qquad
+ \max_{x,y}\|[E_x,E_y]\|_{\rm op}^2
+ \le\lambda^3(1-\lambda),\qquad
+ \mathcal J/n\le2\lambda^2(1-\lambda).
+\]
+For every positive integer $r$, the normalized projectivity defect
+of the self-tensor POVM is $1-(nC(w))^r$.
+No self-tensor power becomes projective or commuting unless the
+original POVM was already a Hadamard measurement.
+\end{theorem}
+\begin{proof}
+Write $c_{xy}=u_x\cdot u_y$. Tightness gives
+$\lambda\sum_yc_{xy}^2=1$, and hence
+$\sum_{y\ne x}c_{xy}^2=(1-\lambda)/\lambda$.
+The effect is $\lambda P_x$, with $P_x$ a unit rank-one projection,
+so its projectivity norm is exactly $\lambda(1-\lambda)$.
+
+Here an elementary contraction bound suffices for the commutator.
+For unit vectors $u,v$ and any $z$, put $c=u\cdot v$,
+$a=v\cdot z$, and $b=u\cdot z$.
+Cauchy--Schwarz applied to $v-cu$ and $z-bu$ gives
+\[
+ (a-cb)^2\le(1-c^2)(\|z\|^2-b^2).
+\]
+Consequently $\|au-bv\|^2\le\|z\|^2$, so
+$\|uv^T-vu^T\|_{\rm op}\le1$.
+Since $[E_x,E_y]=\lambda^2c_{xy}(u_xu_y^T-u_yu_x^T)$,
+its operator norm is at most $\lambda^2|c_{xy}|$.
+For $x\ne y$, the off-diagonal tightness identity bounds
+$c_{xy}^2\le(1-\lambda)/\lambda$; for $x=y$ the commutator is zero.
+This proves the squared operator-norm estimate.
+The preceding exact Frobenius identity gives
+$\|[E_x,E_y]\|_F^2=2\lambda^4c_{xy}^2(1-c_{xy}^2)$.
+Bounding $1-c_{xy}^2\le1$ and summing over $y\ne x$, then $x$,
+gives the stated normalized energy estimate.
+
+For arbitrary positive-weight sign laws in the original setting,
+form the actual product weights and product sign directions on $r$
+copies. Finite product summation proves their normalization,
+tightness, distinctness, and collision $C(w)^r$.
+Their dimension is $n^r$, so the exact defect identity gives
+normalized defect $1-(nC(w))^r$.
+The tight-frame atom bound gives $0\le nC(w)\le1$; for $r>0$ this
+defect vanishes exactly when $nC(w)=1$.
+Nonnegativity of the individual base projectivity defects then
+forces every base effect to be a projection. The exact criteria
+identify this condition with a Hadamard measurement.
+Applying those same criteria to the actual tensor law excludes
+commuting activation as well as projective activation.
+\end{proof}
+
+\paragraph{Quantitative formalization.}
+The independent \texttt{QuantumBoundsChallenge} has two theorem
+targets and no definition holes. The first gives the pointwise
+projectivity formula, an attained maximum of the actual Euclidean
+matrix operator norms, every squared commutator norm bound, and the
+normalized total energy bound. Its norm estimates use the direct
+Cauchy--Schwarz contraction above and mathlib's star-algebra
+equivalence between matrices and Euclidean continuous linear maps.
+The second constructs the actual product weights and sign directions,
+proves tensor tightness and the exact normalized defect, and proves
+that tensor projectivity or commutativity is equivalent to the
+original law being a genuine Hadamard measurement.
+The subsequent dilation obstruction has separate support-distance
+formalization obligations.
+
+\subsection{Even flat dilations with vanishing overhead do not ensure descent}
+The finite-dimensional real dilation is explicit. The $m\times n$
+matrix $W$ with rows $\sqrt{w_x}v_x^T$ satisfies $W^TW=I_n$, and
+$E_x=W^T|x\rangle\langle x|W$. Complete its orthonormal columns to
+a real orthogonal matrix. This is the elementary finite-rank
+Naimark construction; the added columns have no automatic flatness.
+
+In fact the character construction established in the earlier
+stability branch gives a stronger counterexample. Use $h=2^s$,
+known Hadamard order $k<h$, $g=h-k\ge s$, and slopes
+$T\subset\mathbb F_h$ of size $k$ containing zero, whose omitted
+set spans $\mathbb F_h$ and has size $g<h/2$.
+For seeds $(a,b)$, the observed blocks are all nonconstant characters
+of $a+tb$, $t\in T$, plus the mixed characters $\chi_e(tb)$ for
+$t\ne0$. The resulting flat real POVM has
+$m=h^2$, $n=kh$, and $\lambda=k/h$.
+All augmented columns are distinct Walsh characters on the two
+seeds. Thus $W$ is literally $n$ columns of a normalized real Walsh
+matrix of order $m$: an \emph{exact flat real dilation already exists}.
+Its dimension overhead is $m/n-1=h/k-1$.
+
+The source orthogonality graph is exactly $h$ disjoint cliques of
+size $h$, and completing these cliques using a known order-$k$
+Hadamard matrix gives
+\[
+ \inf_{q\in\mathcal H_n}\|w-q\|_{\rm TV}=1-1/k,
+\]
+where $\mathcal H_n$ denotes mixtures of normalized real Hadamard
+laws. Along the established known-order subsequences $k/h\to1$ and
+$g\to\infty$, both effectwise defects, the normalized commutator
+energy and the relative dilation overhead tend to zero, while this
+distance tends to one. Therefore there is no dimension-independent
+flat-real projectivization estimate tending to zero from these
+defects. The counterexample even starts with an explicit flat
+Naimark dilation, so flat dilation alone cannot supply the descent.
+
+The distance here uses the common outcome labels given by actual
+normalized sign directions. On the maximally mixed state $I_n/n$,
+the measurement outcome probabilities are exactly $w_x$. Thus the
+same lower bound applies to any measurement distance that dominates
+the outcome TV distance for that input with these labels. No claim
+is made for arbitrary relabeling, postprocessing, or unrestricted
+complex projective measurements. This distinction matters: the
+dimension-deficient Naimark and POVM-simulation literature, for
+example Kotowski--Oszmaniec, allows different projective directions
+and noise/postprocessing; see
+\url{https://arxiv.org/abs/2501.09339}. Their usage of nearly flat
+effects concerns weights, not the entrywise flatness required here.
+The present identities and classical dilation are not claimed new;
+the quantitative obstruction inherits the earlier sign-law theorem
+and does not prove missing Hadamard existence.
+

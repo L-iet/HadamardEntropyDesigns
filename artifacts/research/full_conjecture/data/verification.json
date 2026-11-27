@@ -1,0 +1,28 @@
+{
+  "passed": true,
+  "partialMatrixShape": [
+    12,
+    20
+  ],
+  "balancedSignVectorsExhaustedUpToNegation": 92378,
+  "allOtherVectorsExcludedByFirstRow": true,
+  "singleRowReplacementCandidateCounts": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+  ],
+  "singleExchangeScope": "all twelve row deletions",
+  "twoForThreeExchangeAndFullCompletionChecked": true,
+  "sequenceCertificatesChecked": 12,
+  "proofOfFullConjecture": false,
+  "leanFormalization": false
+}

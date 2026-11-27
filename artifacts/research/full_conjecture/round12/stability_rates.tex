@@ -1,0 +1,309 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,mathtools,hyperref}
+\setlength{\emergencystretch}{3em}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\newcommand{\E}{\mathbb E}
+\newcommand{\tr}{\operatorname{tr}}
+\title{Quantitative near-square instability\\from established Hadamard constructions}
+\author{Joshua Mark\thanks{ORCID: \href{https://orcid.org/0009-0003-5905-2382}{0009-0003-5905-2382}. AI tools assisted with derivation, independent review, computation and exposition.}}
+\date{20 November 2026 --- research draft; priority not established}
+\begin{document}\maketitle
+
+\section*{Inputs from the preceding work}
+The unconditional multiplier input is
+$\tau(u)=O(\log u/\log\log u)$ for positive odd $u$.
+Its proof and formalization are preserved in the main project.
+Define $T(x)=\max(2,\max_{u\le x,\ u\text{ odd}}\tau(u))$.
+Eventual monotonicity and a finite initial buffer give
+$T(x)=O(\log x/\log\log x)$, and Sylvester doubling gives
+a Hadamard matrix of order $2^{T(x)}v$ for every integer $1\le v\le x$.
+
+\begin{theorem}[Spanning-slope input, proved in the eleventh pass]
+\label{thm:design-spanning-slopes}
+Let $h=2^s$, let $k$ be a known Hadamard order, and assume
+$s\le h-k<h/2$. There is an exactly unbiased pairwise-independent
+uniform law on $h^2$ atoms and $kh-1$ bits. It is a strict local
+collision maximum in the full moment polytope, and has collision
+$1/h^2$ and total variation distance exactly $1-1/k$ from the convex
+hull of all order-$kh$ Hadamard laws. Its additive R\'enyi entropy
+excess is $\log(h/k)$ for every entropy order.
+\end{theorem}
+The proof is in \path{../round11/global_repair.tex}, Sections 2--4:
+finite-field affine slopes provide exact moments, and an omitted
+additive-spanning slope set forces the support orthogonality graph
+to consist of $h$ disjoint $h$-cliques. No small-repair assertion
+or unproved Hadamard existence assumption is inserted here.
+\section{Quantitative stability counterexamples from ordinary prime gaps}
+\label{sec:stability-prime-gaps}
+This section replaces the irrational-rotation subsequence with a construction
+at every sufficiently large dyadic seed order. No prime progression is
+needed. We use the established Baker--Harman--Pintz theorem that
+$[x-x^{21/40},x]$ contains a prime for all sufficiently large $x$:
+\emph{The difference between consecutive primes, II} (2001), Theorem 1,
+\url{https://www.cs.umd.edu/~gasarch/BLOGPAPERS/BakerHarmanPintz.pdf}.
+We do not claim $21/40$ is the best current prime-gap exponent.
+The separate conditional improvement uses ordinary RH, not GRH for
+arithmetic progressions. No new Hadamard orders are asserted.
+
+\begin{lemma}[No residue-class restriction is needed]
+\label{lem:stability-any-prime}
+For every odd prime $p$, a Hadamard matrix of order $k=2(p+1)$ exists.
+\end{lemma}
+\begin{proof}
+For $p\equiv1\pmod4$, this is classical Paley type II. For
+$p\equiv3\pmod4$, Paley type I gives order $p+1$, which doubles to
+$2(p+1)$. Both constructions originate in Paley,
+\emph{On Orthogonal Matrices} (1933),
+\url{https://doi.org/10.1002/sapm1933121311}.
+\end{proof}
+
+\begin{theorem}[An ordinary-prime-gap transfer]
+\label{thm:stability-prime-transfer}
+Suppose $0<\theta<1$ and every sufficiently large interval
+$[x-x^\theta,x]$ contains a prime. For every sufficiently large power
+of two $h$, there is an explicitly searchable known Hadamard order
+$k<h$ with
+\[
+ h-k=\Theta(h^\theta),\qquad k/h\to1.
+\]
+At the known Hadamard order $n=kh$, there is an exact unbiased
+pairwise-independent uniform $h^2$-atom law $\mu_h$ on $n-1$ bits,
+a strict local collision maximum, for which
+\begin{align*}
+ C(\mu_h)&=1/h^2, & C_{\rm global}&=1/n,\\
+ C(\mu_h)/C_{\rm global}&=1-\Theta(n^{-(1-\theta)/2}),&
+ \operatorname{dist}_{\rm TV}(\mu_h,\mathcal H_n)
+ &=1-1/k=1-\Theta(n^{-1/2}),\\
+ 1/n-C(\mu_h)&=\Theta(n^{-(3-\theta)/2}).
+\end{align*}
+All moments are exact; there is no approximate-isotropy assumption.
+\end{theorem}
+\begin{proof}
+Let $X=h/2$, $A=\lceil X^\theta\rceil$, and $y=X-A$.
+Choose the largest prime $p\le y$. The input theorem, applied at $y$,
+gives $p\ge y-y^\theta$. Set $k=2(p+1)$, so
+\[
+ 2A-2\le g:=h-k\le2A+2y^\theta-2\le4A-2.
+\]
+Thus $g=\Theta(h^\theta)$, and eventually
+$\log_2h\le g<h/2$. The lemma supplies $H_k$, hence $H_n$ by tensoring
+with Walsh order $h$.
+
+Choose an omitted-slope set $R\subset\mathbb F_h\setminus\{0\}$ of
+size $g$ containing an additive basis, and put
+$P=\mathbb F_h\setminus R$. For uniform $A_0,B_0\in\mathbb F_h$, observe
+all nonzero additive characters of each seed block
+$x_t=A_0+tB_0$, $t\in P$, and the mixed bits $\chi_e(x_0+x_t)$,
+$t\in P\setminus\{0\}$. This is the spanning-omitted-slopes construction
+of Theorem~\ref{thm:design-spanning-slopes}: it has $h^2$ distinct atoms,
+exact moments, and is a strict local maximum because two block character
+spaces generate every seed character through products. Its orthogonality
+graph is $h$ disjoint $h$-cliques; their order-$k$ block completions give
+exact distance $1-1/k$ from all Hadamard mixtures. Collision is $1/h^2$,
+whereas the known full optimum is $1/(kh)$.
+Finally $n\asymp h^2$, and
+\[
+ 1-\frac{C(\mu_h)}{1/n}=\frac gh,\qquad
+ \frac1n-C(\mu_h)=\frac{g}{kh^2}.
+\]
+These identities give all rates.
+\end{proof}
+
+\begin{corollary}[Unconditional polynomial rates]
+\label{cor:stability-bhp-rate}
+Unconditionally the theorem holds with $\theta=21/40$. In particular
+\[
+ 1-C(\mu_h)/(1/n)=\Theta(n^{-19/80}),\qquad
+ 1/n-C(\mu_h)=\Theta(n^{-99/80}),\qquad
+ \operatorname{dist}_{\rm TV}(\mu_h,\mathcal H_n)=1-\Theta(n^{-1/2}).
+\]
+The order selection is a finite descending prime search below
+$h/2-\lceil(h/2)^{21/40}\rceil$; the asymptotic theorem does not claim
+a numerical value for the Baker--Harman--Pintz threshold.
+\end{corollary}
+
+\subsection{A separate improvement under ordinary RH}
+Dudek proves on RH that for every $x\ge2$ there is a prime in
+$(x-\frac4\pi\sqrt{x}\log x,x]$:
+\emph{On the Riemann hypothesis and the difference between primes},
+\url{https://arxiv.org/abs/1402.6417}. This is a primary, explicit
+ordinary-prime result; no arithmetic-progression hypothesis is used.
+\begin{corollary}[Conditional RH rates]\label{cor:stability-rh-rate}
+Assuming RH, the same construction can be chosen at every sufficiently
+large dyadic $h$ with
+\[
+ h-k=\Theta(\sqrt h\log h),\quad
+ 1-C(\mu_h)/(1/n)=\Theta(n^{-1/4}\log n),\quad
+ 1/n-C(\mu_h)=\Theta(n^{-5/4}\log n),
+\]
+while the exact distance remains $1-\Theta(n^{-1/2})$.
+\end{corollary}
+\begin{proof}
+Use $A=\lceil\frac4\pi\sqrt X\log X\rceil$ and $y=X-A$ in the
+preceding argument. The function $\frac4\pi\sqrt x\log x$ is increasing
+for $x\ge2$, so the prime supplied at $y$ gives
+$2A-2\le h-k\le4A-2$. The remaining proof is unchanged.
+\end{proof}
+
+\paragraph{Entropy and the scale of a possible stability theorem.}
+Every Renyi entropy, including Shannon and min-entropy, of the uniform
+source equals $\log h^2$. The minimum among feasible laws at known order
+$n$ is $\log n$, by the atom bound and the Hadamard law. Thus all these
+entropy excesses are simultaneously
+$\log(h/k)=\Theta(n^{-19/80})$ in the unconditional construction,
+and $\Theta(n^{-1/4}\log n)$ under RH, although distance tends to one.
+These examples refute a dimension-free stability modulus based on relative
+collision deficit or entropy excess. They also quantify absolute-deficit
+counterexamples, at the exponents above. They do not exclude much smaller
+dimension-dependent absolute collision windows, such as the earlier
+order-$n^{-4}$ extraction condition. All positive existence inputs here
+are classical known Hadamard constructions.
+
+\begin{corollary}[Only sublinearly many extra atoms]
+\label{cor:stability-support-excess}
+The unconditional source support size satisfies
+\[
+ |\operatorname{supp}\mu_h|=n+\Theta(n^{61/80}).
+\]
+Under RH it can instead be $n+\Theta(n^{3/4}\log n)$, while its exact
+distance from all Hadamard mixtures still tends to one.
+\end{corollary}
+\begin{proof}
+The atom count is $h^2$ and $h^2-n=h(h-k)$. Substitute the corresponding
+prime-gap scale and $n\asymp h^2$.
+\end{proof}
+\section{A transfer from existing Hadamard-order gap bounds}
+\label{sec:stability-hadamard-gap-transfer}
+The prime construction is an independent published-input route. More
+generally, any uniform gap theorem for \emph{known Hadamard orders}
+can be used directly, potentially giving substantially stronger rates.
+The following statement deliberately isolates its hypothesis; applying a
+particular gap bound requires proving or citing that bound separately.
+
+\begin{theorem}[Uniform Hadamard-gap transfer]
+\label{thm:stability-hadamard-gap-transfer}
+Suppose $G$ is nonnegative and nondecreasing, $G(x)=o(x)$, and every
+sufficiently large interval $[x-G(x),x]$ contains a known Hadamard order.
+For dyadic $h=2^s$ put $A(h)=G(h)+s+1$. Then for every sufficiently large
+$h$ there is a known Hadamard order $k$ with
+\[
+ 2A(h)\le h-k\le3A(h).
+\]
+Consequently there is a uniform $h^2$-atom exactly isotropic strict local
+collision maximum on $n-1$ bits, $n=kh$, with exact distance $1-1/k$
+from all Hadamard mixtures and
+\[
+ \text{relative collision deficit}=\Theta(A(h)/h),\quad
+ \text{absolute deficit}=\Theta(A(h)/h^3),\quad
+ |\operatorname{supp}\mu|-n=\Theta(hA(h)).
+\]
+\end{theorem}
+\begin{proof}
+Apply the gap hypothesis at $x=h-2A(h)$. It gives
+$k\in[x-G(x),x]$, with $G(x)\le G(h)\le A(h)$.
+Thus $2A(h)\le h-k\le3A(h)$, and eventually
+$s\le h-k<h/2$. Choose the omitted slopes to contain an additive basis
+and apply Theorem~\ref{thm:design-spanning-slopes}. Its exact identities
+are $1-C/(1/n)=(h-k)/h$, $1/n-C=(h-k)/(kh^2)$, and
+$h^2-n=h(h-k)$. Since $k\sim h$, the stated estimates follow.
+\end{proof}
+
+For a polynomial gap input $G(x)=Cx^\theta$, $0<\theta<1$, the same
+exponents as the prime-gap transfer result. For a subpolynomial input
+\[
+ G(x)=\exp\!\left(O\!\left(\frac{\log x}{\log\log x}\right)\right)
+\]
+with a nondecreasing majorant, the conclusion strengthens to
+\begin{align*}
+ \text{relative deficit}&=n^{-1/2+o(1)},&
+ \text{absolute deficit}&=n^{-3/2+o(1)},\\
+ |\operatorname{supp}\mu|&=n+n^{1/2+o(1)},&
+ \operatorname{dist}_{\rm TV}(\mu,\mathcal H_n)&=1-\Theta(n^{-1/2}).
+\end{align*}
+These are conditional on the stated gap input, not on RH or any
+arithmetic-progression conjecture. In particular, a gap theorem already
+proved elsewhere in the project can be inserted here with its exact
+scope and provenance. This transfer does not independently prove that
+gap theorem or the Hadamard conjecture.
+\section{Instantiating the stability transfer with the project's multiplier theorem}
+\label{sec:stability-project-input}
+
+The uniform Hadamard-gap input is already available in the current
+project, not an additional prime-distribution assumption. Precisely,
+\path{../../../papers/hadamard_multibase_final.tex}, the uniform-gap
+theorem, proves that for each large integer $x$ there is
+$d\le\exp(D\log x/\log\log x)$ such that every integer $y\le x$ has a
+Hadamard order in $(y,y+d]$. Its formal counterpart is
+\path{../../../lean/HadamardMultibase/CompleteResults.lean},
+\path{Complete.quantitative_gap_bound}. We use the theorem as stated;
+no files in that proof or its verification manifests are changed.
+
+Here is an even more direct dyadic construction using just the
+unconditional multiplier input and the uniform buffer lemma of the
+arithmetic branch. For $h=2^s$ large choose
+\[
+ S(h)=\max\{T(h),\lceil\log_2s\rceil\},\qquad
+ g=2^{S(h)},\qquad k=h-g.
+\]
+Since $T(h)=O(\log h/\log\log h)$, eventually
+$S(h)\le s-2$, while $g\ge s$ and
+\[
+                 g=\exp(O(\log h/\log\log h))=h^{o(1)}.
+\]
+The integer $q=2^{s-S(h)}-1$ is positive odd and at most $h$.
+Its admissible exponent is at most $T(h)\le S(h)$, so
+\[
+                    k=2^{S(h)}q
+\]
+is a known Hadamard order. This choice is uniform in all sufficiently
+large dyadic $h$ and does not use GRH, prime gaps, or an
+irrational-rotation subsequence.
+
+\begin{corollary}[Unconditional near-square instability from the multiplier bound]
+\label{cor:stability-project-rate}
+At orders $n=kh$ obtained above, there are exactly isotropic uniform
+laws on $m=h^2$ atoms, on $n-1$ bits, with
+\[
+ \begin{split}
+ C(\mu)/(1/n)&=1-n^{-1/2+o(1)},\\
+ 1/n-C(\mu)&=n^{-3/2+o(1)},\\
+ m&=n+n^{1/2+o(1)},\\
+ \operatorname{dist}_{\rm TV}(\mu,\mathcal H_n)
+       &=1-(1+o(1))n^{-1/2}.
+ \end{split}
+\]
+They are strict local collision maxima. Their common additive
+R\'enyi entropy excess is $n^{-1/2+o(1)}$.
+Both $H_k$ and $H_n$ exist unconditionally from the project's
+proved inputs.
+\end{corollary}
+\begin{proof}
+The construction gives $s\le g<h/2$. Choose $g$ nonzero omitted
+slopes containing an additive basis and apply the spanning-slope
+theorem of the preceding pass. It yields exact isotropy, strict
+local maximality, collision $1/h^2$, and exact distance $1-1/k$.
+Tensoring $H_k$ and Walsh $H_h$ gives $H_n$.
+Since $n\sim h^2$ and $g=h^{o(1)}$, the identities
+\[
+ 1-\frac{C}{1/n}=\frac gh,\quad
+ \frac1n-C=\frac{g}{kh^2},\quad
+ m-n=hg,\quad
+ H_\alpha(\mu)-\log n=\log(h/k)\sim g/h
+\]
+give all the assertions.
+\end{proof}
+
+Thus the project's own unconditional existence theorem gives a
+stronger asymptotic stability counterexample than the independent
+ordinary-prime-gap route, even assuming RH in that prime route.
+The RH rate remains useful as an independently sourced comparison.
+The positive all-order existence question is unchanged: these
+counterexamples occur at orders where matrices are already known.
+They concern full $n-1$-bit isotropy, not the punctured extraction input.
+
+\end{document}

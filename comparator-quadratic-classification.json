@@ -1,0 +1,28 @@
+{
+  "challenge_module": "QuadraticClassificationChallenge",
+  "solution_module": "QuadraticClassificationSolution",
+  "theorem_names": [
+    "EntropyDesigns.QuadraticRefinement.every_twelve_labels_five_frame",
+    "EntropyDesigns.QuadraticRefinement.independent_omitted_seven_frame",
+    "EntropyDesigns.QuadraticRefinement.plane_omitted_frame_sharp",
+    "EntropyDesigns.QuadraticRefinement.independent_omitted_frame_sharp",
+    "EntropyDesigns.QuadraticRefinement.twelve_label_quadratic_classification",
+    "EntropyDesigns.QuadraticRefinement.twelve_label_at_least_five",
+    "EntropyDesigns.QuadraticRefinement.twelve_label_no_eight"
+  ],
+  "definition_names": [
+    "EntropyDesigns.bitSign",
+    "EntropyDesigns.squarefreeBooleanMonomial",
+    "EntropyDesigns.lowDegreeBooleanCode",
+    "EntropyDesigns.booleanSupportVector",
+    "EntropyDesigns.omittedBooleanVectors",
+    "EntropyDesigns.IsUniformBinaryPairwiseIndependent",
+    "EntropyDesigns.QuadraticRefinement.HasQuadraticObservableFrame"
+  ],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "enable_nanoda": true
+}

@@ -1,0 +1,49 @@
+{
+  "checkedAtUTC": "2026-11-21T02:54:51.700005+00:00",
+  "pages": {
+    "tensor_trace.tex": 6,
+    "research.tex": 10,
+    "sharpen/activation.tex": 2
+  },
+  "checkersPassed": [
+    "check_trace.py",
+    "sharpen/check.py",
+    "exponents/check_exact.py",
+    "exponents/check_complex.py",
+    "descent/check.py"
+  ],
+  "typesettingChecksPassed": true,
+  "files": {
+    "build.py": "cb23137c145167b68918b8b70f04090926ac48671f62bc7275c5e42f3fdc93ad",
+    "check_trace.py": "131d2fe14b62e091e5c7dcc54ae7436e542f28e8fcf341736295a5db83e6e188",
+    "descent\\check.py": "7005412f5f4b658b3dfb2f7d75daf706aea55d9162f2a78dde6184f1c1b00134",
+    "descent\\checks.json": "d0f913c887fddf13d2089b803b45bb116422d6a6e37d5ec6204c2e09fcb2b5e2",
+    "descent\\descent.tex": "36e45a29dc44d10eef820a6f28c2dd4f910225e920eefd90b9cdfc61b42bf83c",
+    "descent\\README.txt": "63a7930c59b5c7edc70c95cedd517f053c81dbd3ec5343f4c9d3ca7e9781f203",
+    "exponents\\check_complex.py": "e46cd11b100495b5e6c48b9be3ad5d828c926e2efeea253f3958ba99d4ae5a2a",
+    "exponents\\check_exact.py": "14201324bbaefd3d3855ff20cc6b6409765edff21ecccb55f2f157850dbe173b",
+    "exponents\\README.txt": "8b6ab67a749e4e421f9c55adf29b8cfb6fea5127c745d8b779da44ae97e3ef9f",
+    "exponents\\subquadratic_tensor.pdf": "1afd1ce69e4e42462f29481fe1d706fd15f28e87c9536e5956468635156106d0",
+    "exponents\\subquadratic_tensor.tex": "875ec0ebc90030431881c6d79123a827b2fa69e63b32492b6afbae568f22cf08",
+    "quantitative.tex": "74dcb0573c8a88004cc07826fe4199a274be66ef94f9e5ea4eb416f09c1c9d90",
+    "README.txt": "2c4c5227460e9a553f5ab1ca17d60c6e3531c78b2a7e2bb43acf096f14553d17",
+    "research.pdf": "aae1e025c154e0d6e9862f92bd62e44295ec76ab4b745a0c4974823cb639d7a7",
+    "research.tex": "7de7eae4a299bcab96599a4b8cd4c95c2ffbcc7c27c532e14f813a89a851b998",
+    "sharpen\\activation.pdf": "a873cf349a1ade67a3ae9db1a3ecad856ceb691a8a19b7060cdaef2b10ba708b",
+    "sharpen\\activation.tex": "f7eabb1faee9079c9c2f7c6dc31217414bc1d1088cf964c916323a2eca5cad12",
+    "sharpen\\check.py": "7a08a2aa9c8ef57170af526db120692e2e2569dca111653e90c885a214271bd6",
+    "sharpen\\checks.json": "ed742f6984af6f60861266993f93d59f46f7e1041a71d3ea931b1918e0024c3d",
+    "tensor_trace.pdf": "d89dd34fff9c67f487461baf0b974a43a0ef662e62c93b879d9e06fdd9b52fca",
+    "tensor_trace.tex": "d0301288ea7d03f82e48edb859119317407eec543d4aa7ae6b14169c6e927c5c",
+    "trace_body.tex": "31365a89adf6bb398392c5293e1b436a68a91f1d11006d739e8d38507e73564e",
+    "trace_checks.json": "09af0f6d3cd77417a2d545edfeae043a1a0d1146304eb035e59f92e8fc010882",
+    "NEXT_QUESTIONS.txt": "51bd57629738442af0efaa86129301f1d20261951081041c47aa207b197ad0c8"
+  },
+  "scope": {
+    "hadamardConjectureProved": false,
+    "complexOneCopyConjectureProved": false,
+    "noveltyEstablished": false,
+    "leanFormalization": false,
+    "gitCommits": false
+  }
+}

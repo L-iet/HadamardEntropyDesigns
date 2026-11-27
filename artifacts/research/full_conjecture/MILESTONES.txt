@@ -1,0 +1,384 @@
+RESEARCH MILESTONE: TENSOR STABILITY
+Recorded 20 November 2026. Responsible human author: Joshua Mark.
+ORCID: https://orcid.org/0009-0003-5905-2382
+
+For every finite real p>2, every nonflat critical point U of
+F_p(U)=sum_ij |u_ij|^p on O(n), n>=2, has a negative tangent-Hessian
+direction at some finite self-tensor power U^(tensor k).
+Consequently U is a scaled real Hadamard matrix if and only if every
+self-tensor power of U is a local minimum of the corresponding energy.
+The proof also applies to real matrices with orthonormal rows.
+
+Preserved proof: round3/geometry/tensor_stability.tex
+Readable paper: round3/geometry/tensor_stability.pdf (5 pages)
+Exact finite checks: round3/geometry/check.py and checks.json (39 cases)
+Integrity and scope record: round3/verification.json
+Broader third research report: round3/research.pdf (13 pages)
+
+The mathematical proof establishes the uniform assertion; the finite
+checks are supporting checks, not a replacement for that proof.
+Priority and novelty have not been established by a comprehensive
+literature review. This theorem does not prove existence of a Hadamard
+matrix in any additional dimension. A lifted descent direction lives
+in a larger orthogonal group; no descent to the original dimension
+has been proved. Lean formalization is deferred. No Git commit made.
+
+Further research and refinements are recorded separately in round4/.
+
+FOURTH-PASS EXTENSION (same research session)
+The tangent-trace proof in round4/tensor_trace.tex/pdf now extends
+the characterization to real local maxima for 1<p<2 and to complex
+unitary local maxima for every 0<p<2, including p=1. Complex local
+minima for p>2 are characterized as well. For kth-power quartic local
+minimality, normalized energy is below 3^(1/k) over the reals and
+2^(1/k) over the complex numbers; the normalized squared distance
+to a flat entry array is O(1/k). This does not make the rounded array
+orthogonal. The proof is by explicit tangent-trace identities and
+strict comparison of adjacent entry moments.
+
+Exact activation examples can require five copies before negative
+curvature. The fourth pass also gives explicit projection/extraction
+obstructions. Full report: round4/research.pdf (10 pages).
+Main standalone paper: round4/tensor_trace.pdf (6 pages).
+All five checkers passed; round4/verification.json records hashes.
+The earlier round3 manifest still matches every covered file.
+Both the real Hadamard conjecture and the complex one-copy
+almost-Hadamard conjecture remain unresolved. Priority remains open.
+
+FIFTH-PASS RESULT: RESIDUE-SENSITIVE COLLISION ENTROPY
+For d>=2 unbiased pairwise-independent sign variables, put
+N=4*ceil((d+1)/4). Their collision probability is at most1/N,
+and collision and Shannon entropy are at least log N.
+Equality forces uniform support of size N and an explicit completion
+of the augmented sign matrix to H(N) in at most three columns.
+Conversely H(N) attains both entropy bounds. The proof treats all
+four residue classes using second moments, parity and Bessel.
+Proof: round5/collision_entropy.tex/pdf (3 pages).
+Full fifth-pass report: round5/research.tex/pdf (13 pages).
+
+The pass also proves quantitative fixed-dimension extraction criteria,
+including approximate first/second moments, and entropy windows.
+Its independent audit and six exact checkers are recorded in round5/.
+No equality-attainment theorem at all admissible orders was proved.
+Such attainment would be equivalent to the full Hadamard conjecture.
+Prior-art comparison with weighted orthogonal arrays and coding
+theory remains necessary; no novelty assertion is made.
+
+SIXTH PASS: RIGOROUS NEAR-EQUALITY ROUNDING AND ATTAINMENT OBSTRUCTIONS
+The fifth-pass theorem above remains preserved unchanged.
+For n=1 mod4 and N=n+3, an exactly isotropic sign law with collision
+deficit at most1/(1024N^4) can be explicitly rounded: choose exactly
+N heavy atoms, uniformize, and use integer Gram entries to recover
+exact isotropy. Three-column completion then constructs H(N).
+Proof: round6/collision_stability.tex/pdf (2 pages).
+This theorem does not construct its required near-optimal input.
+
+An infinite character-code family gives strict local collision maxima
+at admissible orders with trap/global ratio tending to zero, and a
+positive escape barrier. Full coordinate permutation invariance also
+prevents equality for all d>=5 and forces nearly maximal Shannon
+entropy. A separate constructive family has augmentation deletion
+cost1 but full-completion deletion cost t; a sharp exchange budget
+is attained throughout its repair sequence. Integral rank-eight
+completions still fail the sign condition in explicit examples.
+Full proofs and source credit: round6/research.tex/pdf (10 pages).
+Four exact checkers and PDF checks passed. No universal attainment
+theorem, full Hadamard proof, Lean changes or Git commits were made.
+
+SEVENTH PASS: EXPLICIT ESCAPE AND EXACT MOMENT CORRECTION
+Every trap in the earlier infinite two-block character family now has
+an explicit optimal-overlap bridge to a2h-atom global law. The best
+straight bridge has exact collision loss1/(2h^3); a finite character
+rewiring route preserves all required moments and never decreases
+collision at jump endpoints. This constructs a special power-of-two
+family, not a missing-order Hadamard matrix.
+Proof: round7/code_escape.tex/pdf (3 pages).
+
+Exact nonnegative Fourier moment correction has a proved collision
+identity and sufficient input window. At multiples N>=20, even the
+minimal feasible affine buffer cannot repair a nonisotropic uniform
+N-point candidate into that window. Additive coverage also forces the
+smallest fixed binary-linear seed to remain uniform, despite allowing
+arbitrary seed weights. Those restrictions do not exclude nonlinear
+or larger-seed constructions.
+
+The repair branch supplies weighted parity-witness budgets and an
+exact saturated-lattice alternative. A concrete odd-kernel coset has
+minimum squared norm40 rather than the24 needed for a sign row.
+Full report: round7/research.tex/pdf (10 pages).
+Five exact checkers and PDF checks passed. The near-extremal weighted
+input is still unconstructed at unknown orders. Novelty is not
+established; no full conjecture proof, Lean changes or Git commits.
+
+EIGHTH PASS: NONLINEAR BENCHMARKS AND AN EXACT ENTROPY-ORDER DIAGRAM
+Explicit minimal-binary-seed encodings of known H12 and H20 have
+minimum maximum Boolean degree exactly3, with sharp affine-column
+counts3and5. Binary rank and Reed-Muller dimension show growing degree
+is necessary for full encodings at large N=4mod8. These encode known
+Paley orders; they do not construct a new Hadamard order.
+Proof and manifests: round8/nonlinear_encodings.tex/pdf (3 pages).
+
+The four-bit moment polytope has an analytic26-vertex description.
+Its global Renyi entropy minimum changes from uniform8-point laws
+to the weighted11-point family at unique alpha* between6and7.
+Both families remain strict local minima for every finite alpha>1.
+Proof: round8/renyi_transition.tex/pdf (3 pages).
+
+Adaptive correction now has explicit rank and positivity margins.
+Any exact law on at mostN points in the N-4-bit target must already
+be uniformN, so adaptive weights cannot repair a failed minimal
+support. A concrete one-row/five-row augmentation also disproves
+monotonicity of odd-kernel minimum as a construction potential.
+Full report: round8/research.tex/pdf (8 pages).
+Four exact checkers and PDF checks passed. The missing distribution
+at unknown orders remains unconstructed; novelty remains unverified.
+No full Hadamard proof, Lean changes or Git commits were made.
+
+NINTH PASS: SUPPORT RIGIDITY, NONLINEAR CRITERIA AND EXACT EXCHANGES
+Binary rank bounds force an exact N-point target at N=4mod8 to
+replace all but at most r+4 points of an r-dimensional binary code.
+A known-Paley-order subsequence has vanishing moment error and is
+arbitrarily close to an exactly feasible law, yet is asymptotically
+at total variation distance one from every minimal-support law.
+Proof: round9/rank_rounding.tex/pdf (2 pages).
+
+For encodings of an existing H_N, degree at most r-2 on a prescribed
+binary support is possible exactly when the omitted labels affinely
+span the seed space. Sharper punctured-target obstructions include
+exhaustively checked quadratic bounds on both twelve-label orbits.
+The four-bit model has explicit improving circuit edges and a globally
+optimal collision escape barrier 1/288, even among continuous paths.
+A modular lifting identity subtracts an explicit column-pair count
+from the modular candidate count under stated hypotheses; its scope
+is an eight-divisible class, not the four-mod-eight class.
+Full report: round9/research.tex/pdf (9 pages).
+Four exact checkers and typesetting checks passed. These results do
+not construct the missing distribution at an unknown order or prove
+the full conjecture. Novelty remains unverified. No Lean changes or
+Git commits were made.
+
+TENTH PASS: COMPATIBLE CODES, COUNTED NEIGHBORS AND A TWO-ROW ESCAPE
+For N=4q with q odd, modularly orthogonal sign classes are exactly
+orthogonal within each sign-product parity. If both parities occur,
+each has at most four classes. A self-orthogonal module containing
+five real orthogonal rows therefore has a compatible set of sign words.
+For r>=5 the modular extension correction is exactly E=M_q-r; the
+four-row boundary has an additional closed-quadruple correction.
+
+An exact prime-field self-dual-code pivot preserves all old sign rows
+when a real extension is available. One known-order H20 experiment
+increases the count8 to20. A different self-dual code yields a terminal
+12-by-20 frame; exhaustive enumeration of524288 normalized signs proves
+that no new row preserves11 old rows. Deleting exactly two specified
+rows permits ten new rows and a full H20 in one self-dual neighbor.
+The minimum old-row loss is thus exactly two for this certificate.
+
+A general restricted-neighbor incidence identity gives an explicit
+surplus criterion for an improving code move. At retained codimension
+one, the modular sign pool is the union of exactly two self-dual codes.
+The terminal example has pool22, shared10 and code counts12 and20,
+explaining compatibility of the replacement rows without clique search.
+This does not establish a positive surplus uniformly at unknown orders.
+
+The other branches give exact monotone concentration until a possibly
+suboptimal vertex, a counterexample to promoting selected-target bridge
+barriers to global barriers, and an explicit low-degree moment-error
+floor under exact balance and uniform seed weights.
+Short code report: round10/code_pivots.tex/pdf (5 pages).
+Full report: round10/research.tex/pdf (12 pages).
+Six exact checkers, independent mathematical audit, typesetting and
+visual PDF checks passed. Earlier verification manifests remain intact.
+No full conjecture proof or unknown-order matrix was obtained. Novelty
+remains unverified. No Lean changes, imported external code or Git
+commits were made.
+
+ELEVENTH PASS: EXACT RELATIVE-STABILITY COUNTEREXAMPLE AND REPAIR GEOMETRY
+At infinitely many KNOWN Hadamard orders n_j, there are exactly unbiased
+pairwise-independent laws on n_j-1 bits with n_j*C(mu_j) tending to1,
+while their TV distance from the convex hull of ALL Hadamard laws tends
+to1. All Renyi entropies, including Shannon and min-entropy, have the
+same additive excess log(h/k) tending to0. The laws are uniform vertices
+and strict local collision maxima of the full moment polytope.
+This disproves a dimension-independent small-repair guarantee from
+relative collision or additive entropy excess, even with exact moments.
+It does not contradict a fixed-dimension theorem or establish the
+punctured N-4-bit distribution needed by the extraction argument.
+
+Construction: finite-field slopes yield h^2 atoms with collision1/h^2.
+Choose h power2 and k near h, omit an additive-spanning slope set of
+size h-k. The support orthogonality graph is exactly h disjoint K_h,
+so its exact distance to all order-kh Hadamard mixtures is1-1/k.
+Paley orders k=3^(2u+1)+1 and irrational-rotation density provide an
+infinite known-order subsequence with k/h tending to1 and h-k>=log2h.
+A checked example has256 atoms on191 bits, collision1/256 versus
+optimum1/192, and exact distance11/12 from every Hadamard mixture.
+In a separate divisible power-of-two regime, sharp row-replacement
+costs1-1/k are attained with unchanged endpoint collision.
+Proof: round11/global_repair.tex/pdf (7 pages).
+
+The code branches give an exact weighted-grid solution to codimension-
+two compatibility; global completion moments with a second-moment
+certificate stronger than the mean; and an exact census of all2441406
+neighbors of the specified order20 terminal code. Exactly42 improve,
+all reaching20. Generalized Hamming weights give optimal retention
+budgets2,3,4,6,7,8,9,10,11,12 for retained codimensions1through10.
+Full report: round11/research.tex/pdf (14 pages).
+
+Eight exact checkers, independent mathematical audits, typesetting
+and visual PDF checks passed. Prior verification hashes remain intact.
+The full conjecture, unknown-order count surplus and bibliographic
+novelty remain unresolved. No external proof code, Lean changes,
+Git commits, submissions or publications were made.
+
+TWELFTH PASS: QUANTITATIVE HALF-FRAMES, NEAR-SQUARE INSTABILITY AND DILATIONS
+Assuming only Dirichlet GRH for power-of-two conductors, the existing
+unconditional multiplier theorem gives, for all sufficiently large4|n,
+r(n)>=n/2-B*sqrt(n)*exp(Klogn/loglogn). The argument uses a uniform
+power-of-two buffer before selecting a prime power, and the correct
+progression residue n-1 moduloQ. No GRH announcement was verified or
+imported. This partial-matrix theorem remains explicitly conditional.
+Proof: round12/conditional_partial.tex/pdf (3 pages).
+
+The same multiplier input gives a stronger UNCONDITIONAL quantitative
+stability counterexample than ordinary RH prime gaps. For every large
+h=2^s chooseS=max(T(h),ceil(log2s)), g=2^S, k=h-g. The odd-part buffer
+suppliesH_k, and omitted slopes spanning the additive seed space give
+exactly isotropic strict local maxima at known ordern=kh with
+n+n^(1/2+o(1)) atoms, relative collision deficit n^(-1/2+o(1)), absolute
+deficit n^(-3/2+o(1)), and distance1-(1+o(1))/sqrt(n) from ALL Hadamard
+mixtures. Full n-1-bit isotropy is not the punctured extraction input.
+Independent published-prime-gap and ordinaryRH comparisons are included.
+Proof: round12/stability_rates.tex/pdf (5 pages).
+
+Cubic completion moments correctly include dependent collinear triples.
+They certify20 rather than19 classes in the stronger H20 benchmark,
+and improve9 to11 in the weaker one, still below its required17.
+No uniform completion-count surplus theorem follows.
+
+A real/rational completion of [A|B] with prescribed opposite cornerB^T
+is parameterized by a scaled O(b-a), with rational points provided by
+four-square quaternion blocks. Sign constraints remain. The structured
+[SylvesterH8|first8PaleyH12] frame has exact preserving extension maximum
+12, not20; deleting exactly one original row yields a fullH20. All twelve
+self-dual codes and the repaired matrix are checked. A general rounding
+threshold yields an explicit positive quartic gap for any real completion
+of an uncompletable prescribed sign frame.
+Full report: round12/research.tex/pdf (11 pages).
+
+Four exact branch checkers, independent mathematical audits, clean
+LaTeX checks and visual PDF review passed. Prior manifests remain intact.
+The full conjecture, all-order count surplus and novelty remain unresolved.
+No Lean edits, external proof code, commits, publications or submissions.
+
+THIRTEENTH PASS -- 20 NOVEMBER 2026
+Four approaches documented in round13/research.tex/pdf (10 pages).
+Exact checkers, independent review, clean compilation, visual PDF review,
+and manifest audits for rounds3--13 passed. Lean repository stays clean.
+
+Spectral: nonzero rank-two Gram error has squared Frobenius energy
+8A(n-A), integer 1<=A<=n/2. Energy8(n-1) alone, without rank assumption,
+forces a unique one-entry Hadamard repair. Rectangular-flip examples
+show higher-energy rank-two defects can require at least two rows and
+columns and exactly four entry changes. See spectral_repair.tex/pdf.
+
+Weighing: W(n,n-2), 4|n, has forced K22 zero blocks and Had2 offblocks.
+All prescribed-zero sign fillings reduce to eight roots in O(n^2).
+Explicit W(12,10) has no real zero-supported orthogonal completion;
+two triangle constraints force a scalar orthogonal root and then zero.
+
+Four-phase: rho4=||F entrywise-fourth||op/n equals1 exactly when a
+complex Hadamard matrix can be phase-converted to BH(n,4). Normalized
+squared Frobenius distance from any quaternary matrix is at least
+(1-rho4)/8, even after phases/permutations. Fourier_m has
+rho4=sqrt(gcd(m,4)/m), with the same upper bound for its Dita-type
+block deformations. This obstructs a family, not an order.
+See phase_route.tex/pdf; known conference examples checked exactly.
+
+Quantum: distinct-direction flat real rank-one POVMs commute exactly
+at Hadamard laws. Existing exact sign-law examples have vanishing
+projectivity/commutator defects and explicit flat Walsh dilations of
+vanishing relative overhead, yet fixed-sign-label TV distance from
+all Hadamard mixtures tends to1. Unrestricted complex simulation is
+not excluded; no flat descent theorem is obtained.
+
+All-order existence, a global threshold-reaching repair algorithm,
+and bibliographic priority remain unresolved. No Lean edits, external
+proof code, git commits, publications or submissions.
+
+FOURTEENTH PASS -- 20 NOVEMBER 2026
+Full report round14/research.tex/pdf (10 pages); focused constructive
+certificate round14/phase_rounding.tex/pdf (3 pages).
+
+Positive phase rounding: for unit-modulus F, letD=n^4-||(F^4)(F^4)*||F^2
+(entrywise powers), beta=maxoffGram. At evenn,
+beta+sqrt(D/n)<sqrt2 guarantees an explicit pivot dephasing rounds to
+BH(n,4). Allscores plus verification needO(n^3) scalaroperations.
+For exactcomplexHad, D<2n or1-rho4^4<2/n^3 suffices. No allorderinput
+crossing this dimension-dependent boundary has been constructed.
+
+Weighing: real zero-supported completion iff sign completion for
+W(n,n-2),4|n. Diagonal root states convert via a classicalconference
+theorem to two independent sign roots. Each root-plane section is
+zero, an axis, or fullplane. Nonsign solutions occur only on circles
+containing four sign fillings. At n>=8 at most six signfills, sharp;
+n4 has eight. Exactconverter, rationalcircle and256normalizedW8 checks.
+
+Spectral: exactentryflip calculus; explicitA8 energy152 has no improving
+one/twoflip, optimal singleflip escape barrier8, and threeflips lower
+to128. A8 tensorHad_m givesstrict one/twoflip traps at arbitrarily
+largeknownorders, minimum costs16m-8 and32(m-1), energy152m^3.
+Thus universal greedy one/twoentry descent cannot supply the proof.
+
+Qubitgeometry: for complexpartialV(n byn-2), residualK=nI-VV*, the
+BlochGramB_ij=|Kij|^2/2-1 hasrank<=2 iff complexflatcompletion exists.
+Quaternary evenorder inputs quantize the phases. Classical real
+codim4completion (Hall, explicitlycredited) rulesoutrank3 by12versus8
+antipodaldirections, giving automatic quaternary two-columncompletion.
+This doesnot produce the largepartialframe at anunknownorder.
+
+Allfour exactcheckers, independentrounding/weighing audits, cleanTeX,
+visualPDFreview, and rounds3--14 manifestaudits passed. Leanrepo clean.
+Fullconjecture and novelty unresolved. No externalproofcode, Leanedits,
+gitcommits, publication or submission.
+
+FIFTEENTH PASS -- 20 NOVEMBER 2026
+Full report: round15/research.tex/pdf (8 pages).
+Focused theorem: round15/phase_escape.tex/pdf (2 pages).
+
+Every real non-Hadamard sign matrix is a strict saddle of squared
+Gram error on the complex phase torus. Constant-energy pairwise
+unitary row/column mixing supplies zero-curvature tangents. Their
+Hessian images either construct a negative direction, or force a
+scaled partial isometry whose two kernels supply one. An exact
+integer direction and Gaussian-rational Cayley backtracking give
+a finite strictly decreasing phase step. This escapes all real
+discrete traps but does not guarantee convergence or quantization.
+All 512 normalized order-four matrices and larger/singular cases
+were checked exactly; the general result has a paper proof.
+
+Using classical real completion with at most seven missing rows,
+even-order quaternary frames missing at most three columns complete.
+A systematic Gaussian-rational kernel algorithm checks at most 21
+candidate columns in total. Defect four reduces to a 64-test first
+column gate; automatic success is not asserted. Classical input is
+explicitly credited, and the large starting partial frame is missing.
+
+Hadamard row layers have energy m^2 times the sum of base energies.
+The explicit tensor trap has a three-strip escape with exact strip
+barrier 8m^2 and a four-block-row monotone repair to Hadamard; this
+uses 4m ordinary row updates and changes 7m^2 entries, not optimally
+claimed. It is a repair of that family, not a general convergence rule.
+
+A normalized H4/2 four-row switch preserves the weighing equation
+exactly when all fully occupied selected columns have sign product -1.
+It repairs the previous bad W(12,10) by moving its zero pairing and
+producing two Hadamard fillings. Fixed-support changes confined to
+two zero-row pairs are only signed row equivalences, so support
+motion avoids a proved local rigidity obstruction. No universal
+switch availability or iteration theorem is supplied.
+
+All four exact checkers, independent phase/weighing proof audits,
+strict TeX checks, visual PDF review and rounds3--15 manifest audits
+passed. Lean repository remains clean. Full conjecture and priority
+remain unresolved. No Lean edits, external proof code, git commits,
+publication or submission.

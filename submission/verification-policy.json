@@ -1,0 +1,26 @@
+{
+  "license": "Apache-2.0",
+  "mode": "Preparation of declared verified submission scope",
+  "allowedFoundationalAxioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "additionalAxiomsPermitted": false,
+  "proofHolesPermittedInSolutions": false,
+  "independentChallengesRetained": true,
+  "repeatedLocalIndependentKernelRuns": "Deferred by explicit author request; historical receipts preserved",
+  "preflightCommand": "python scripts/check_submission_preparation.py",
+  "strictReadinessCommand": "python scripts/check_submission.py --ready",
+  "strictReadinessGateUnchanged": true,
+  "notRegistryVerification": true,
+  "furtherFormalization": "paused by author",
+  "sandboxedScopeCommand": "python scripts/check_submission_preparation.py --require-sandbox",
+  "unsubmittedPrincipalClaims": [
+    "E07.03",
+    "E08.02",
+    "E26.03",
+    "E26.04",
+    "E26.05"
+  ]
+}

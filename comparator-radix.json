@@ -1,0 +1,15 @@
+{
+  "challenge_module": "RadixChallenge",
+  "solution_module": "RadixSolution",
+  "theorem_names": [
+    "EntropyDesigns.finite_radix_hadamard_bound",
+    "HadamardMultibase.autocorrelation._proof_2"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "enable_nanoda": true
+}

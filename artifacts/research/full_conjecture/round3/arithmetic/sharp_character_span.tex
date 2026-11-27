@@ -1,0 +1,183 @@
+% Reviewed branch fragment; requires theorem/proposition/proof environments.
+\section{The exact energy floor of the full quadratic-character template}
+The earlier constructions used one particular arrangement of a quadratic
+character, constants, and the all-one polynomial. The following result
+shows that their minimum energies cannot be improved by taking arbitrary
+integer linear combinations of those same three ingredients, even with
+independent shifts in the four channels. This is a restriction on a
+construction template, not on unrestricted Hadamard existence. No claim
+of bibliographic novelty is made.
+
+Let $m>1$ be odd, $R_m=\Z[z]/(z^m-1)$, $z^*=z^{-1}$ and
+$J=1+z+\cdots+z^{m-1}$. Suppose $L$ has coefficient zero at the
+identity, all other coefficients in $\{\pm1\}$, and
+\[
+ LL^*=m\cdot1-J,\qquad L^*=\eta L,\qquad \eta\in\{+1,-1\}.
+\]
+For prime $m=p$, the quadratic character polynomial has these
+properties with $\eta=(-1)^{(p-1)/2}$. Its coefficients take both signs:
+augmentation of the norm identity forces $L(1)=0$.
+Consider the four-channel family
+\begin{equation}\label{eq:fullspan}
+ A_i=z^{r_i}(u_iL+v_i\cdot1+w_iJ),\qquad
+ u_i,v_i,w_i,r_i\in\Z.
+\end{equation}
+Require every coefficient of every $A_i$ to be odd and
+$\sum_iA_iA_i^*=4t\cdot1$.
+
+\begin{theorem}[Sharp floor in the full character span]\label{thm:spanfloor}
+If $m\equiv3\pmod4$ and $L^*=-L$, the least possible energy in
+\eqref{eq:fullspan} is
+\[
+ T_-(m)=\frac{m^2+6m+21}{16}.
+\]
+If $m\equiv1\pmod4$, $m\ge5$, and $L^*=L$, the least possible energy is
+\[
+ T_+(m)=\frac{m^2+2m+5}{8}.
+\]
+Both minima are attained by explicit odd-coefficient choices. The
+integers $T_\pm(m)$ are odd. These are global minima within the whole
+family, not only within the earlier special constructions.
+\end{theorem}
+\begin{proof}
+Shifts do not change the individual Hermitian norms and preserve
+coefficient parity, so omit them. Since the nonidentity coefficients
+of $L$ include both signs, coefficientwise oddness is equivalent to
+\begin{equation}\label{eq:spanparity}
+ u_i\equiv v_i\equiv1-w_i\pmod2.
+\end{equation}
+Put $S=\sum_i u_i^2$, $V=\sum_i v_i^2$, and $W=\sum_i w_i^2$.
+Since $LJ=0$, the norm sum is
+\[
+ (mS+V)\cdot1+
+ \left(-S+2\sum_iw_iv_i+mW\right)J
+ +(1+\eta)\left(\sum_i u_iv_i\right)L.
+\]
+The three polynomials $1,J,L$ are linearly independent over $\mathbb Q$.
+Consequently scalarity requires
+\begin{equation}\label{eq:spanconditions}
+ 2w\mathbin{\cdot}v=S-mW,\qquad 4t=mS+V,
+\end{equation}
+and in the symmetric case also $u\mathbin{\cdot}v=0$.
+The energy $t$ is odd, since $4m$ odd coefficients have squared sum
+$4$ modulo eight. Also $W>0$: otherwise scalarity forces $S=0$,
+contradicting~\eqref{eq:spanparity}. Cauchy--Schwarz gives the useful
+universal inequality
+\begin{equation}\label{eq:spanCS}
+ t\ge\frac{mS+(S-mW)^2/(4W)}4
+   =\frac{(S+mW)^2}{16W}.
+\end{equation}
+
+In the skew case, first suppose $W\ge2$. Then $t\ge m^2/8$, while
+\[
+ \frac{m^2}{8}-(T_-(m)-2)
+ =\frac{(m-3)^2+2}{16}>0.
+\]
+Since $t$ and $T_-(m)$ are odd integers, this implies $t\ge T_-(m)$.
+If $W=1$, exactly one $w_i$ is $+1$ or $-1$ and the other three
+vanish. Thus three $u_i$ and three corresponding $v_i$ are odd,
+giving $S\ge3$ and
+\[
+ V\ge\frac{(S-m)^2}{4}+3.
+\]
+It follows that
+\[
+ t\ge\frac{mS+(S-m)^2/4+3}{4}
+ =\frac{(m+S)^2}{16}+\frac34
+ \ge T_-(m).
+\]
+For attainment write $m=4k+3$, and take
+\[
+ (A_1,A_2,A_3,A_4)=(L+1,L+1,L+1,J-2k).
+\]
+The first three norm sums contribute $(3m+3)1-3J$, while the last
+contributes $4k^2\cdot1+3J$, giving energy $T_-(m)=k^2+3k+3$.
+
+In the symmetric case, $u\cdot v=0$ and
+\eqref{eq:spanparity} imply that the number of odd $w_i$ is even.
+Hence $W$ is a positive even integer. If $W\ge4$,
+\eqref{eq:spanCS} gives $t\ge m^2/4$. Since
+\[
+ \frac{m^2}{4}-(T_+(m)-2)
+ =\frac{(m-1)^2+10}{8}>0,
+\]
+odd integrality again gives $t\ge T_+(m)$. If $W=2$, exactly two
+$w_i$ are $\pm1$; the other two vanish. Their corresponding $u_i,v_i$
+are odd, so $S\ge2$. Applying Cauchy--Schwarz only on the two
+nonzero-$w_i$ coordinates yields
+\[
+ V\ge\frac{(S-2m)^2}{8}+2.
+\]
+Thus
+\[
+ t\ge\frac{mS+(S-2m)^2/8+2}{4}
+ =\frac{(S+2m)^2}{32}+\frac12\ge T_+(m).
+\]
+For attainment, write $m=4k+1$ and set
+\[
+ (A_1,A_2,A_3,A_4)=(L+1,L-1,J-2k,J-2k).
+\]
+The two $L$ norms have cancelling $L$ terms; their $J$ coefficient
+is $-2$, while the last two norms have $J$ coefficient $+2$.
+The scalar energy is $2k^2+2k+1=T_+(m)$.
+\end{proof}
+
+\begin{corollary}[Only three prime lengths can reach the binary boundary]
+For the quadratic character polynomial at an odd prime $p$, the full
+family~\eqref{eq:fullspan} reaches energy $t=p$ if and only if
+$p\in\{3,5,7\}$. In particular no prime $p\ge11$ can be settled
+by rescaling, independently shifting, or taking arbitrary integer
+linear combinations of a quadratic character, its zero-position
+monomial, and $J$ in the four channels.
+\end{corollary}
+\begin{proof}
+For skew lengths,
+$T_-(p)-p=(p-3)(p-7)/16$; for symmetric lengths,
+$T_+(p)-p=(p-1)(p-5)/8$. The displayed attaining constructions
+reach the boundary at $3,5,7$ and have larger minimum energy at all
+other odd primes. At the boundary every coefficient is a sign.
+\end{proof}
+
+This also covers affine relabelings of the quadratic character:
+$\chi(aj+b)$ is, up to sign, a shift of $\chi(j)$, with its unique
+zero shifted at the same time. It does not cover arbitrary changes
+at additional positions, nonquadratic characters, or general sequence
+quadruples. In particular it is not an obstruction to Hadamard matrices
+of the corresponding orders.
+
+\subsection{Fixing only two character channels already excludes infinitely many primes}
+Let $p\equiv3\pmod4$, and let two channels be the binary sequences
+$z^r(L+\varepsilon)$ and $z^s(L+\delta)$, where
+$\varepsilon,\delta\in\{\pm1\}$. Their row sums have squares one.
+If two otherwise unrestricted binary channels complete these to a
+four-sequence complementary set, augmentation forces their row sums
+$a,b$ to satisfy
+\[
+ a^2+b^2=4p-2.
+\]
+Both are odd; equivalently
+$((a+b)/2)^2+((a-b)/2)^2=2p-1$.
+For $p\equiv11\pmod{36}$, the integer $2p-1$ is three modulo nine,
+so its $3$-adic valuation is exactly one. A sum of two squares cannot
+have that valuation: divisibility by three forces both summands to
+be divisible by three, making the valuation at least two. Thus no
+such completion exists at these primes, regardless of how the other
+two channels are chosen. Dirichlet's theorem supplies infinitely many
+primes in the class $11\pmod{36}$; an English translation of the
+original memoir is available at \url{https://arxiv.org/abs/0808.1408}.
+
+Fixing three binary character channels imposes the stronger necessary
+condition that $4p-3$ be a square. With only one fixed channel, the
+remaining augmentation equation is a sum of three odd squares equal
+to $4p-1\equiv3\pmod8$ and has no obstruction from the three-square
+theorem. This does not assert that the full sequence constraints are
+then solvable.
+
+\paragraph{Scope and reproduction.}
+The exact checker constructs the attaining matrices for primes through
+$101$, checks their periodic autocorrelations, samples scalar templates
+with arbitrary integer coefficients, and verifies the two-channel
+congruence obstruction at small primes. The infinite assertions rest
+on the proofs, not on these tests. These restrictions identify the
+precise need to leave the quadratic-character affine span; they do not
+improve the main Hadamard exponent bound or prove new all-order existence.

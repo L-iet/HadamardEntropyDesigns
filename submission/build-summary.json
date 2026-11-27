@@ -1,0 +1,12 @@
+{
+  "status": "passed",
+  "reportedAtUTC": "2026-11-25T16:37:22.281922+00:00",
+  "commands": [
+    "lake build",
+    "lake build Challenge"
+  ],
+  "intentionalChallengePlaceholders": 862,
+  "proofHashRecord": "submission/proof-hashes.json",
+  "comparisonCheckedAtUTC": "2026-11-25T11:37:06.301143+00:00",
+  "scope": "Recorded full proof/Challenge build for the saved canonical source snapshot; this summary does not rerun the build."
+}

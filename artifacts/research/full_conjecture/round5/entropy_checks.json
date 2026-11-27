@@ -1,0 +1,38 @@
+{
+  "passed": true,
+  "saturatedAtomCases": [
+    {
+      "n": 4,
+      "supportSize": 4,
+      "largestAtom": "1/4",
+      "collision": "1/4"
+    },
+    {
+      "n": 6,
+      "supportSize": 11,
+      "largestAtom": "1/6",
+      "collision": "7/72"
+    },
+    {
+      "n": 8,
+      "supportSize": 36,
+      "largestAtom": "1/8",
+      "collision": "3/80"
+    },
+    {
+      "n": 10,
+      "supportSize": 127,
+      "largestAtom": "1/10",
+      "collision": "23/1400"
+    },
+    {
+      "n": 12,
+      "supportSize": 463,
+      "largestAtom": "1/12",
+      "collision": "53/6048"
+    }
+  ],
+  "thresholdAlgebraCases": 49,
+  "unextendible4by12BlockSumCases": 256,
+  "externalInput": "Seven-row completion theorem is cited, not independently reverified."
+}

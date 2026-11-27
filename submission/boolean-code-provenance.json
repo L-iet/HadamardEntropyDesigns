@@ -1,0 +1,68 @@
+{
+  "license": "Apache-2.0",
+  "author": "Joshua Mark",
+  "ORCID": "https://orcid.org/0009-0003-5905-2382",
+  "privatePilot": {
+    "status": "passed",
+    "scope": "Private staged Boolean-code extension pilot only; not owned snapshot or registry verification",
+    "leanKernelAccepted": true,
+    "nanodaAccepted": true,
+    "theoremNames": [
+      "EntropyDesigns.lowDegreeBooleanCode_finrank",
+      "EntropyDesigns.lowDegreeBooleanCode_duality",
+      "EntropyDesigns.lowDegreeBooleanCode_extension_criterion",
+      "EntropyDesigns.four_bit_cubic_extension",
+      "EntropyDesigns.five_bit_affine_complement_cubic_extension"
+    ],
+    "definitionNames": [],
+    "sourceHashes": {
+      "BooleanPilotChallenge.lean": "63452c09a55769967052ed8526cfea3388d4b95554ee8657968ee2fe6d1a75aa",
+      "BooleanPilotSolution.lean": "8a0a4c746ef986914465cca48bc47b78535b6f8c492cfa3acb086217c904c765",
+      "comparator.json": "ceb09426cfbca422108afd4c32fb8ba7cef561732b8902766aa82020ee49319c"
+    },
+    "exports": {
+      "challenge": "7439c0983c448bd89ecea5a54e5c9cf57528090faa6e37c9c30a10fa51296f0e",
+      "solution": "4c553bc955c05e2a88ab1a0e8946e6cd0a813bbce808139778e0cf896bc7bb8d"
+    }
+  },
+  "compileReceipts": [
+    {
+      "module": "BooleanPolynomialDraft",
+      "actualExit": 0,
+      "sourceSHA256": "881ca4666ae344f8a87d95a6cbea350eecbe3fb0cc2fb5c04d559cb5b0d0c349",
+      "oleanSHA256": "023b1d9c182242935e9e73ee1b3f56c300441940754b69c9742d05da1aa68835"
+    },
+    {
+      "module": "BooleanRestrictionDraft",
+      "actualExit": 0,
+      "sourceSHA256": "6f7ed4874487bcd27a64a52b863ab3a3cba86f7ee37f24af054a245486328bc0",
+      "oleanSHA256": "a823dfd40ff1c1bb81b0b3edd2e4aac6321a7910df827405ba69c3d1e52827a6"
+    },
+    {
+      "module": "BooleanAffineDraft",
+      "actualExit": 0,
+      "sourceSHA256": "7c564371b6298037e9b30f9865f03e848f4461f1c70ac900a9c29d993b652ec2",
+      "oleanSHA256": "a8777bf50b844e802493cab44eb84729f36c21c75f2fff7caef9451dbe080572"
+    },
+    {
+      "module": "BooleanPilotChallenge",
+      "actualExit": 0,
+      "sourceSHA256": "6d2c7e6c6fd3b3228d51081cc3c84d437b76b5c3e9a19654aaa1c012861e1bf6",
+      "oleanSHA256": "9a3e49d89857a1930335015e8c57c5fbfeb3289b44acb12901b5e33c6f5b30cb"
+    },
+    {
+      "module": "BooleanPilotSolution",
+      "actualExit": 0,
+      "sourceSHA256": "b93d30896a69669312b0fd3c73b6d20ce122cbe30330db07aaf956a60227305d",
+      "oleanSHA256": "07375ad8e8fb8de4c1129846a80e2f5eb28ef0ca4c322363b55f17a7c35484e9"
+    }
+  ],
+  "axiomAudit": [
+    "'EntropyDesigns.lowDegreeBooleanCode_finrank' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'EntropyDesigns.lowDegreeBooleanCode_duality' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'EntropyDesigns.lowDegreeBooleanCode_extension_criterion' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'EntropyDesigns.four_bit_cubic_extension' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'EntropyDesigns.five_bit_affine_complement_cubic_extension' depends on axioms: [propext, Classical.choice, Quot.sound]"
+  ],
+  "scope": "Full E18.02 extension criterion and both geometric special cases. Original proof from monomials, finite-dimensional duality and affine spans; no external coding-theory code. Integrated six-group verification required."
+}

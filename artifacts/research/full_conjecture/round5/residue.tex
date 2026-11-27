@@ -1,0 +1,140 @@
+\section{A collision-entropy bound in every residue class}
+\label{sec:residue-bound}
+Let $d\ge2$ unbiased pairwise-independent sign variables have joint
+law $w$ on $\{\pm1\}^d$. Set
+\[
+ n=d+1,\qquad N=4\left\lceil\frac n4\right\rceil,
+ \qquad C(w)=\sum_xw_x^2.
+\]
+The integer $N$ is the smallest multiple of four at least $d+1$.
+The standard orthogonal-frame argument gives the atom bound
+$w_x\le1/n$; the entropy connection and its exact $N=n$ case are
+background~\cite{GP}. The residue-sensitive statement below is a
+derivation in this research pass; bibliographic priority is unestablished.
+
+\begin{theorem}[Residue-sensitive collision bound and equality]
+\label{thm:residue-bound}
+For every such law,
+\[
+ C(w)\le\frac1N,\qquad
+ H_2(w):=-\log C(w)\ge\log N,\qquad H(w)\ge\log N.
+\]
+If $C(w)=1/N$, the law is uniform on exactly $N$ atoms and their
+augmented sign matrix admits completion by $N-n\le3$ columns to a
+Hadamard matrix of order $N$. Conversely any order-$N$ Hadamard matrix
+gives a law attaining both entropy bounds. Consequently attainment
+of either entropy lower bound is equivalent to Hadamard existence
+at order $N$.
+\end{theorem}
+
+\begin{proof}
+Write $v_x=(1,x)\in\{\pm1\}^n$. Unbiased pairwise independence says
+\begin{equation}\label{eq:residue-frame}
+ \sum_xw_xv_xv_x^T=I_n.
+\end{equation}
+Thus $\sum_yw_y(v_x\cdot v_y)^2=n$ for each $x$, and
+$\sum_{x,y}w_xw_y(v_x\cdot v_y)^2=n$.
+In particular $w_x\le1/n$.
+
+\emph{Case $n\equiv0\pmod4$.}
+The atom bound gives $C\le1/n$. Equality forces every positive weight
+to equal $1/n$. The square augmented matrix has orthogonal columns
+by \eqref{eq:residue-frame}, and is Hadamard.
+
+\emph{Case $n\equiv3\pmod4$.}
+All dot products are odd. Distinct augmented atoms cannot be negatives
+of one another, and their squared dot products are at least one.
+Consequently
+\[
+ n\ge n^2C+(1-C),\qquad C\le\frac1{n+1}.
+\]
+Equality forces every distinct pair to have dot product $\pm1$.
+The pointwise identity then reads
+$n=n^2w_x+1-w_x$, forcing $w_x=1/(n+1)$.
+Let $V$ have these $N=n+1$ augmented rows. Then $V^TV=NI_n$;
+$K=NI_N-VV^T$ is positive semidefinite of rank one with diagonal
+one. Hence $K=ss^T$ for a sign vector $s$. Appending $s$ gives
+$[V\ s][V\ s]^T=NI_N$.
+
+\emph{Case $n\equiv2\pmod4$.}
+Here $n\ge6$. Divide the atoms by their parity
+$\epsilon_x=\prod_i x_i$; let their total masses be $a,1-a$.
+Two atoms in the same class have dot product $2\pmod4$, while
+cross-class dot products are $0\pmod4$. Therefore
+\[
+ n\ge n^2C+4\big(a^2+(1-a)^2-C\big)
+       \ge(n^2-4)C+2,
+\]
+giving $C\le1/(n+2)$. Equality forces $a=1/2$, within-class
+distinct dot products of magnitude two, and cross-class orthogonality.
+For a fixed atom the pointwise identity is then
+$n=n^2w_x+4(1/2-w_x)$, so $w_x=1/(n+2)$.
+For the resulting $N\times n$ matrix $V$, the positive semidefinite
+residual $K=NI_N-VV^T$ has rank two and diagonal two. Cross-class
+blocks vanish, so each of the two nonempty diagonal blocks has rank
+one. Write them $2ss^T$ and $2tt^T$, with $s,t$ sign vectors.
+Append rows $(s_i,s_i)$ on the first class and $(t_i,-t_i)$ on the
+second. These two added columns have row Gram matrix $K$, completing
+$V$ to a Hadamard matrix.
+
+\emph{Case $n\equiv1\pmod4$.}
+Here $n\ge5$. For any pair of atoms set
+$q_{xy}=\epsilon_x\epsilon_y(v_x\cdot v_y)$.
+Their Hamming distance shows $q_{xy}\equiv1\pmod4$. Thus
+\[
+ q_{xy}^2+2q_{xy}-3\ge0,
+\]
+with equality precisely at $q_{xy}\in\{-3,1\}$.
+Put $z=\sum_xw_x\epsilon_xv_x$. Since the $n$ coordinate functions
+of $v$ are orthonormal in $L^2(w)$, Bessel inequality gives
+$\|z\|^2\le\mathbb E\epsilon^2=1$. Equivalently, this follows by
+expanding $\mathbb E(\epsilon-z\cdot v)^2=1-\|z\|^2$.
+Summing the polynomial over pairs and retaining its diagonal terms gives
+\[
+ (n-1)(n+3)C\le n+2\|z\|^2-3\le n-1,
+\]
+so $C\le1/(n+3)$.
+
+At equality, $\epsilon_x=z\cdot v_x$ on the positive-weight support,
+and distinct pairs have $q_{xy}\in\{-3,1\}$. The polynomial's
+pointwise expectation equals
+$n+2\epsilon_xv_x\cdot z-3=n-1$; its only nonzero contribution
+comes from $y=x$. Hence again $w_x=1/(n+3)$.
+Switch row $v_x$ to $v'_x=\epsilon_xv_x$ and form $V'$.
+Its residual $K=NI_N-V'V'^T$ is positive semidefinite of rank three,
+has diagonal three, and off-diagonal entries in $\{3,-1\}$.
+Represent it as a Gram matrix of length-$\sqrt3$ vectors. Inner
+product three identifies equal vectors. Distinct types have Gram
+matrix $4I_t-J_t$, which is positive semidefinite only if $t\le4$.
+Assign the types distinct rows of
+\[
+ T=\begin{pmatrix}1&1&1\\1&-1&-1\\-1&1&-1\\-1&-1&1\end{pmatrix}.
+\]
+The resulting $N\times3$ sign matrix $R$ has $RR^T=K$.
+Then $[V'\ R]$ is a Hadamard matrix. This is an explicit completion;
+no external small-rank classification is needed.
+
+For the converse normalize the first column of an order-$N$ Hadamard
+matrix to all positive and keep $n$ columns including that column.
+The $N$ resulting rows are distinct: full rows differ in $N/2$
+coordinates, whereas at most three columns were deleted. For $N\ge8$
+this leaves a difference; at $N=4$, $n\ge3$ and at most one column
+was deleted. The uniform law on the remaining $d$ coordinates is
+unbiased and pairwise independent, with $C=1/N$ and $H=\log N$.
+Finally $H\ge-\log C$ by Jensen inequality, so equality in the Shannon
+lower bound forces $C=1/N$ as well.
+\end{proof}
+
+For example, four, five or six unbiased pairwise-independent sign bits
+each have Shannon entropy at least $\log8$. Eight, nine or ten such
+bits each have entropy at least $\log12$, attained by truncating an
+order-$12$ Hadamard matrix. These statements concern joint entropy,
+not min-entropy; a single atom can still saturate $1/(d+1)$.
+For $d=1$ the formula would be false, which is why $d\ge2$ is explicit.
+
+\paragraph{The unresolved step.}
+This proves a universal bound and a complete equality classification.
+It does not prove that an equality law exists in every admissible
+dimension. Such attainment for all $d$ is equivalent to the full
+Hadamard conjecture. The parity and Bessel argument gives a precise
+information-theoretic target; it does not by itself reach that target.

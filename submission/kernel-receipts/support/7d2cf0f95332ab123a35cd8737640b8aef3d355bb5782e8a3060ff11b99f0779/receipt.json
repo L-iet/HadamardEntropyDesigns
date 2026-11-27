@@ -1,0 +1,39 @@
+{
+  "key": "7d2cf0f95332ab123a35cd8737640b8aef3d355bb5782e8a3060ff11b99f0779",
+  "metadata": {
+    "group": "support",
+    "configPath": "comparator-support.json",
+    "configSHA256": "810e3bb3c89d7f5ae1178e6c8b00169629b7b7e2bee62f2301d9bc240d21c6d2",
+    "theoremNames": [
+      "EntropyDesigns.fixedSupport_degree_sub_two_extension_iff",
+      "EntropyDesigns.fixed_support_hadamard_degree_criterion",
+      "EntropyDesigns.fixed_support_pairwise_observables_criterion",
+      "EntropyDesigns.degree_sub_two_encoding_iff_complement_capacity",
+      "EntropyDesigns.minimal_seed_degree_saturation",
+      "EntropyDesigns.four_omitted_labels_degree_exact",
+      "EntropyDesigns.punctured_reed_muller_radical_dimensions",
+      "EntropyDesigns.punctured_observable_bounds",
+      "EntropyDesigns.four_omitted_punctured_encoding_impossible"
+    ],
+    "definitionNames": [],
+    "exports": {
+      "challenge": "4528f345c9558f08e3c365a1cb84ab892898dce8cf1972c7c2a83ae5f1f228c3",
+      "solution": "91a67e7cccc49df49a5bea9e03ea2fa3fd78d28c7c966156058eb1a0db5bf848"
+    },
+    "environment": {
+      "toolchain": "leanprover/lean4:v4.35.0",
+      "toolchainSHA256": "ca5f1f601d34c49079e38d7e7041eb0f2a9c227fbc1df0f404820069a052330c",
+      "binaries": {
+        "lean": "ec7a472d1c12a09b0c0c718f7427c2be527b3f5f07810fdbe076c2507c7a91ea",
+        "lake": "023feb24d3e7244fe671dba79f1cd1affc6c7a7cacfe497bf3675febb506578c",
+        "leanexport": "bda24bb3fafaf299ba472f944942d6293294b76559fafc9f166badd7c0f981b3",
+        "leanchecker": "9ef6baeb28d5e28897d5ed6dddd60ff81e511d97374013ece435dff38e9e0137",
+        "nanoda_bin": "de57d9dd7f647eb57398bc3dab4dcaa1d64f961f3f49964d5455fbddc73b35a8"
+      }
+    }
+  },
+  "capturedAtUTC": "2026-11-24T19:19:56.023068+00:00",
+  "reportSHA256": "8b149c0b6e2d05160f99ca5df98b9816297cec5615846e33f8c05f41a6a121c0",
+  "logSHA256": "125a3b9b2884fddc9a2bb2354fe3ca1adcf8209d4f8115fb28898ec7d5b972e4",
+  "scope": "Immutable original Comparator exit0 with explicit Lean/NanoDa acceptance of the exact exports/config/checker environment. Local diagnostic, not registry verification."
+}

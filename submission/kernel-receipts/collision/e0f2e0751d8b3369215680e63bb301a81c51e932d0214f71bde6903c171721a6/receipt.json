@@ -1,0 +1,37 @@
+{
+  "key": "e0f2e0751d8b3369215680e63bb301a81c51e932d0214f71bde6903c171721a6",
+  "metadata": {
+    "group": "collision",
+    "configPath": "comparator-collision.json",
+    "configSHA256": "12561d291a81b6e5d4ae5c270cd9bd37bdbcc9c74d6628228970fe62193e3e59",
+    "theoremNames": [
+      "EntropyDesigns.SymmetricEntropy.symmetric_collision_upper",
+      "EntropyDesigns.SymmetricEntropy.collision_envelope_strict",
+      "EntropyDesigns.SymmetricEntropy.maximumSymmetricCollision_spec",
+      "EntropyDesigns.SymmetricEntropy.maximumSymmetricCollision_theta",
+      "EntropyDesigns.SymmetricEntropy.symmetric_no_attainment",
+      "EntropyDesigns.SymmetricEntropy.exists_matching_symmetric_law",
+      "EntropyDesigns.SymmetricEntropy.small_symmetric_attainment"
+    ],
+    "definitionNames": [],
+    "exports": {
+      "challenge": "122c202bedb84a6de658a0b46acaaca2f52b773033c495dab5560e79f3ccd10f",
+      "solution": "5e6e414ba4c2720df341003e2f92b7172f3672e133ae95fe2e3fa5f72ac36735"
+    },
+    "environment": {
+      "toolchain": "leanprover/lean4:v4.35.0",
+      "toolchainSHA256": "ca5f1f601d34c49079e38d7e7041eb0f2a9c227fbc1df0f404820069a052330c",
+      "binaries": {
+        "lean": "ec7a472d1c12a09b0c0c718f7427c2be527b3f5f07810fdbe076c2507c7a91ea",
+        "lake": "023feb24d3e7244fe671dba79f1cd1affc6c7a7cacfe497bf3675febb506578c",
+        "leanexport": "bda24bb3fafaf299ba472f944942d6293294b76559fafc9f166badd7c0f981b3",
+        "leanchecker": "9ef6baeb28d5e28897d5ed6dddd60ff81e511d97374013ece435dff38e9e0137",
+        "nanoda_bin": "de57d9dd7f647eb57398bc3dab4dcaa1d64f961f3f49964d5455fbddc73b35a8"
+      }
+    }
+  },
+  "capturedAtUTC": "2026-11-24T19:19:30.786150+00:00",
+  "reportSHA256": "99181c31aead5bdbb43195e7f20b04f4838f59c9a4ccbc2b736df2e445bd31c5",
+  "logSHA256": "125a3b9b2884fddc9a2bb2354fe3ca1adcf8209d4f8115fb28898ec7d5b972e4",
+  "scope": "Immutable original Comparator exit0 with explicit Lean/NanoDa acceptance of the exact exports/config/checker environment. Local diagnostic, not registry verification."
+}

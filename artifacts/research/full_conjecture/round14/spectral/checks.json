@@ -1,0 +1,69 @@
+{
+  "passed": true,
+  "baseRowsNegativeBitmasks": [
+    84,
+    44,
+    30,
+    230,
+    133,
+    73,
+    111,
+    51
+  ],
+  "baseEnergy": 152,
+  "singleIncreaseCounts": {
+    "8": 21,
+    "40": 28,
+    "72": 15
+  },
+  "allBasePairs": 2016,
+  "basePairIncreaseCounts": {
+    "0": 110,
+    "32": 429,
+    "64": 696,
+    "96": 547,
+    "128": 192,
+    "160": 42
+  },
+  "allBaseTriples": 41664,
+  "minimumTripleChange": -24,
+  "optimalBarrier": 8,
+  "barrierWitnessPath": [
+    152,
+    160,
+    152,
+    128
+  ],
+  "allNormalizedOrderFourCases": 512,
+  "orderFourLocalMinima": {
+    "0": 6
+  },
+  "tensorLifts": [
+    {
+      "hadamardFactor": 2,
+      "order": 16,
+      "energy": 1216,
+      "minimumSingleIncrease": 24,
+      "minimumPairIncrease": 32,
+      "pairWitness": [
+        0,
+        1
+      ],
+      "allPairFormulasEvaluated": 32640,
+      "directPairRecomputations": 32640
+    },
+    {
+      "hadamardFactor": 4,
+      "order": 32,
+      "energy": 9728,
+      "minimumSingleIncrease": 56,
+      "minimumPairIncrease": 96,
+      "pairWitness": [
+        0,
+        1
+      ],
+      "allPairFormulasEvaluated": 523776,
+      "directPairRecomputations": 2039
+    }
+  ]
+}

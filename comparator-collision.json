@@ -1,0 +1,20 @@
+{
+  "challenge_module": "CollisionChallenge",
+  "solution_module": "CollisionSolution",
+  "theorem_names": [
+    "EntropyDesigns.SymmetricEntropy.symmetric_collision_upper",
+    "EntropyDesigns.SymmetricEntropy.collision_envelope_strict",
+    "EntropyDesigns.SymmetricEntropy.maximumSymmetricCollision_spec",
+    "EntropyDesigns.SymmetricEntropy.maximumSymmetricCollision_theta",
+    "EntropyDesigns.SymmetricEntropy.symmetric_no_attainment",
+    "EntropyDesigns.SymmetricEntropy.exists_matching_symmetric_law",
+    "EntropyDesigns.SymmetricEntropy.small_symmetric_attainment"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "enable_nanoda": true
+}

@@ -1,0 +1,1194 @@
+{
+  "n": 24,
+  "rows": [
+    0,
+    16773120,
+    16519104,
+    10359454,
+    7684730,
+    5820908,
+    9389414,
+    1547504,
+    6736278,
+    11838780,
+    3701846,
+    13790378,
+    10646512,
+    2963882,
+    12892774,
+    5974836
+  ],
+  "allNormalizedSignVectorsTested": 8388608,
+  "smallNonorthogonalitySupports": [
+    [
+      0,
+      1
+    ],
+    [
+      780860,
+      32772
+    ],
+    [
+      1408212,
+      1152
+    ],
+    [
+      1547504,
+      128
+    ],
+    [
+      1865366,
+      1032
+    ],
+    [
+      2004658,
+      136
+    ],
+    [
+      2170798,
+      8194
+    ],
+    [
+      2572042,
+      8224
+    ],
+    [
+      2963882,
+      8192
+    ],
+    [
+      3259274,
+      8256
+    ],
+    [
+      3496746,
+      8208
+    ],
+    [
+      3701846,
+      1024
+    ],
+    [
+      3841138,
+      1152
+    ],
+    [
+      3960516,
+      1028
+    ],
+    [
+      4099808,
+      132
+    ],
+    [
+      4845360,
+      32776
+    ],
+    [
+      4896204,
+      48
+    ],
+    [
+      5133676,
+      96
+    ],
+    [
+      5429068,
+      8224
+    ],
+    [
+      5820908,
+      32
+    ],
+    [
+      5974836,
+      32768
+    ],
+    [
+      6222152,
+      34
+    ],
+    [
+      6358782,
+      18
+    ],
+    [
+      6736278,
+      256
+    ],
+    [
+      6760026,
+      48
+    ],
+    [
+      7151866,
+      8208
+    ],
+    [
+      7447258,
+      80
+    ],
+    [
+      7684730,
+      16
+    ],
+    [
+      8772824,
+      32896
+    ],
+    [
+      9151942,
+      80
+    ],
+    [
+      9229978,
+      32776
+    ],
+    [
+      9389414,
+      64
+    ],
+    [
+      9684806,
+      8256
+    ],
+    [
+      9902300,
+      136
+    ],
+    [
+      10076646,
+      96
+    ],
+    [
+      10359454,
+      8
+    ],
+    [
+      10477890,
+      66
+    ],
+    [
+      10646512,
+      4096
+    ],
+    [
+      11066458,
+      33792
+    ],
+    [
+      11325128,
+      32772
+    ],
+    [
+      11838780,
+      512
+    ],
+    [
+      12195934,
+      1032
+    ],
+    [
+      12454604,
+      12
+    ],
+    [
+      12892774,
+      16384
+    ],
+    [
+      13200156,
+      32896
+    ],
+    [
+      13339448,
+      33792
+    ],
+    [
+      13790378,
+      2048
+    ],
+    [
+      13966800,
+      132
+    ],
+    [
+      14423954,
+      12
+    ],
+    [
+      15447172,
+      18
+    ],
+    [
+      15684644,
+      66
+    ],
+    [
+      15980036,
+      8194
+    ],
+    [
+      16260434,
+      1028
+    ],
+    [
+      16371876,
+      34
+    ],
+    [
+      16519104,
+      4
+    ],
+    [
+      16773120,
+      2
+    ]
+  ],
+  "deletionChecks": [
+    {
+      "deleted": [],
+      "candidateCount": 0
+    },
+    {
+      "deleted": [
+        0
+      ],
+      "candidateCount": 1
+    },
+    {
+      "deleted": [
+        1
+      ],
+      "candidateCount": 1
+    },
+    {
+      "deleted": [
+        2
+      ],
+      "candidateCount": 1
+    },
+    {
+      "deleted": [
+        3
+      ],
+      "candidateCount": 1
+    },
+    {
+      "deleted": [
+        4
+      ],
+      "candidateCount": 1
+    },
+    {
+      "deleted": [
+        5
+      ],
+      "candidateCount": 1
+    },
+    {
+      "deleted": [
+        6
+      ],
+      "candidateCount": 1
+    },
+    {
+      "deleted": [
+        7
+      ],
+      "candidateCount": 1
+    },
+    {
+      "deleted": [
+        8
+      ],
+      "candidateCount": 1
+    },
+    {
+      "deleted": [
+        9
+      ],
+      "candidateCount": 1
+    },
+    {
+      "deleted": [
+        10
+      ],
+      "candidateCount": 1
+    },
+    {
+      "deleted": [
+        11
+      ],
+      "candidateCount": 1
+    },
+    {
+      "deleted": [
+        12
+      ],
+      "candidateCount": 1
+    },
+    {
+      "deleted": [
+        13
+      ],
+      "candidateCount": 1
+    },
+    {
+      "deleted": [
+        14
+      ],
+      "candidateCount": 1
+    },
+    {
+      "deleted": [
+        15
+      ],
+      "candidateCount": 1
+    },
+    {
+      "deleted": [
+        0,
+        1
+      ],
+      "candidateCount": 2
+    },
+    {
+      "deleted": [
+        0,
+        2
+      ],
+      "candidateCount": 2
+    },
+    {
+      "deleted": [
+        0,
+        3
+      ],
+      "candidateCount": 2
+    },
+    {
+      "deleted": [
+        0,
+        4
+      ],
+      "candidateCount": 2
+    },
+    {
+      "deleted": [
+        0,
+        5
+      ],
+      "candidateCount": 2
+    },
+    {
+      "deleted": [
+        0,
+        6
+      ],
+      "candidateCount": 2
+    },
+    {
+      "deleted": [
+        0,
+        7
+      ],
+      "candidateCount": 2
+    },
+    {
+      "deleted": [
+        0,
+        8
+      ],
+      "candidateCount": 2
+    },
+    {
+      "deleted": [
+        0,
+        9
+      ],
+      "candidateCount": 2
+    },
+    {
+      "deleted": [
+        0,
+        10
+      ],
+      "candidateCount": 2
+    },
+    {
+      "deleted": [
+        0,
+        11
+      ],
+      "candidateCount": 2
+    },
+    {
+      "deleted": [
+        0,
+        12
+      ],
+      "candidateCount": 2
+    },
+    {
+      "deleted": [
+        0,
+        13
+      ],
+      "candidateCount": 2
+    },
+    {
+      "deleted": [
+        0,
+        14
+      ],
+      "candidateCount": 2
+    },
+    {
+      "deleted": [
+        0,
+        15
+      ],
+      "candidateCount": 2
+    },
+    {
+      "deleted": [
+        1,
+        2
+      ],
+      "candidateCount": 2
+    },
+    {
+      "deleted": [
+        1,
+        3
+      ],
+      "candidateCount": 2
+    },
+    {
+      "deleted": [
+        1,
+        4
+      ],
+      "candidateCount": 4
+    },
+    {
+      "deleted": [
+        1,
+        5
+      ],
+      "candidateCount": 4
+    },
+    {
+      "deleted": [
+        1,
+        6
+      ],
+      "candidateCount": 4
+    },
+    {
+      "deleted": [
+        1,
+        7
+      ],
+      "candidateCount": 2
+    },
+    {
+      "deleted": [
+        1,
+        8
+      ],
+      "candidateCount": 2
+    },
+    {
+      "deleted": [
+        1,
+        9
+      ],
+      "candidateCount": 2
+    },
+    {
+      "deleted": [
+        1,
+        10
+      ],
+      "candidateCount": 2
+    },
+    {
+      "deleted": [
+        1,
+        11
+      ],
+      "candidateCount": 2
+    },
+    {
+      "deleted": [
+        1,
+        12
+      ],
+      "candidateCount": 2
+    },
+    {
+      "deleted": [
+        1,
+        13
+      ],
+      "candidateCount": 4
+    },
+    {
+      "deleted": [
+        1,
+        14
+      ],
+      "candidateCount": 2
+    },
+    {
+      "deleted": [
+        1,
+        15
+      ],
+      "candidateCount": 2
+    },
+    {
+      "deleted": [
+        2,
+        3
+      ],
+      "candidateCount": 4
+    },
+    {
+      "deleted": [
+        2,
+        4
+      ],
+      "candidateCount": 2
+    },
+    {
+      "deleted": [
+        2,
+        5
+      ],
+      "candidateCount": 2
+    },
+    {
+      "deleted": [
+        2,
+        6
+      ],
+      "candidateCount": 2
+    },
+    {
+      "deleted": [
+        2,
+        7
+      ],
+      "candidateCount": 4
+    },
+    {
+      "deleted": [
+        2,
+        8
+      ],
+      "candidateCount": 2
+    },
+    {
+      "deleted": [
+        2,
+        9
+      ],
+      "candidateCount": 2
+    },
+    {
+      "deleted": [
+        2,
+        10
+      ],
+      "candidateCount": 4
+    },
+    {
+      "deleted": [
+        2,
+        11
+      ],
+      "candidateCount": 2
+    },
+    {
+      "deleted": [
+        2,
+        12
+      ],
+      "candidateCount": 2
+    },
+    {
+      "deleted": [
+        2,
+        13
+      ],
+      "candidateCount": 2
+    },
+    {
+      "deleted": [
+        2,
+        14
+      ],
+      "candidateCount": 2
+    },
+    {
+      "deleted": [
+        2,
+        15
+      ],
+      "candidateCount": 4
+    },
+    {
+      "deleted": [
+        3,
+        4
+      ],
+      "candidateCount": 2
+    },
+    {
+      "deleted": [
+        3,
+        5
+      ],
+      "candidateCount": 2
+    },
+    {
+      "deleted": [
+        3,
+        6
+      ],
+      "candidateCount": 2
+    },
+    {
+      "deleted": [
+        3,
+        7
+      ],
+      "candidateCount": 4
+    },
+    {
+      "deleted": [
+        3,
+        8
+      ],
+      "candidateCount": 2
+    },
+    {
+      "deleted": [
+        3,
+        9
+      ],
+      "candidateCount": 2
+    },
+    {
+      "deleted": [
+        3,
+        10
+      ],
+      "candidateCount": 4
+    },
+    {
+      "deleted": [
+        3,
+        11
+      ],
+      "candidateCount": 2
+    },
+    {
+      "deleted": [
+        3,
+        12
+      ],
+      "candidateCount": 2
+    },
+    {
+      "deleted": [
+        3,
+        13
+      ],
+      "candidateCount": 2
+    },
+    {
+      "deleted": [
+        3,
+        14
+      ],
+      "candidateCount": 2
+    },
+    {
+      "deleted": [
+        3,
+        15
+      ],
+      "candidateCount": 4
+    },
+    {
+      "deleted": [
+        4,
+        5
+      ],
+      "candidateCount": 4
+    },
+    {
+      "deleted": [
+        4,
+        6
+      ],
+      "candidateCount": 4
+    },
+    {
+      "deleted": [
+        4,
+        7
+      ],
+      "candidateCount": 2
+    },
+    {
+      "deleted": [
+        4,
+        8
+      ],
+      "candidateCount": 2
+    },
+    {
+      "deleted": [
+        4,
+        9
+      ],
+      "candidateCount": 2
+    },
+    {
+      "deleted": [
+        4,
+        10
+      ],
+      "candidateCount": 2
+    },
+    {
+      "deleted": [
+        4,
+        11
+      ],
+      "candidateCount": 2
+    },
+    {
+      "deleted": [
+        4,
+        12
+      ],
+      "candidateCount": 2
+    },
+    {
+      "deleted": [
+        4,
+        13
+      ],
+      "candidateCount": 4
+    },
+    {
+      "deleted": [
+        4,
+        14
+      ],
+      "candidateCount": 2
+    },
+    {
+      "deleted": [
+        4,
+        15
+      ],
+      "candidateCount": 2
+    },
+    {
+      "deleted": [
+        5,
+        6
+      ],
+      "candidateCount": 4
+    },
+    {
+      "deleted": [
+        5,
+        7
+      ],
+      "candidateCount": 2
+    },
+    {
+      "deleted": [
+        5,
+        8
+      ],
+      "candidateCount": 2
+    },
+    {
+      "deleted": [
+        5,
+        9
+      ],
+      "candidateCount": 2
+    },
+    {
+      "deleted": [
+        5,
+        10
+      ],
+      "candidateCount": 2
+    },
+    {
+      "deleted": [
+        5,
+        11
+      ],
+      "candidateCount": 2
+    },
+    {
+      "deleted": [
+        5,
+        12
+      ],
+      "candidateCount": 2
+    },
+    {
+      "deleted": [
+        5,
+        13
+      ],
+      "candidateCount": 4
+    },
+    {
+      "deleted": [
+        5,
+        14
+      ],
+      "candidateCount": 2
+    },
+    {
+      "deleted": [
+        5,
+        15
+      ],
+      "candidateCount": 2
+    },
+    {
+      "deleted": [
+        6,
+        7
+      ],
+      "candidateCount": 2
+    },
+    {
+      "deleted": [
+        6,
+        8
+      ],
+      "candidateCount": 2
+    },
+    {
+      "deleted": [
+        6,
+        9
+      ],
+      "candidateCount": 2
+    },
+    {
+      "deleted": [
+        6,
+        10
+      ],
+      "candidateCount": 2
+    },
+    {
+      "deleted": [
+        6,
+        11
+      ],
+      "candidateCount": 2
+    },
+    {
+      "deleted": [
+        6,
+        12
+      ],
+      "candidateCount": 2
+    },
+    {
+      "deleted": [
+        6,
+        13
+      ],
+      "candidateCount": 4
+    },
+    {
+      "deleted": [
+        6,
+        14
+      ],
+      "candidateCount": 2
+    },
+    {
+      "deleted": [
+        6,
+        15
+      ],
+      "candidateCount": 2
+    },
+    {
+      "deleted": [
+        7,
+        8
+      ],
+      "candidateCount": 2
+    },
+    {
+      "deleted": [
+        7,
+        9
+      ],
+      "candidateCount": 2
+    },
+    {
+      "deleted": [
+        7,
+        10
+      ],
+      "candidateCount": 4
+    },
+    {
+      "deleted": [
+        7,
+        11
+      ],
+      "candidateCount": 2
+    },
+    {
+      "deleted": [
+        7,
+        12
+      ],
+      "candidateCount": 2
+    },
+    {
+      "deleted": [
+        7,
+        13
+      ],
+      "candidateCount": 2
+    },
+    {
+      "deleted": [
+        7,
+        14
+      ],
+      "candidateCount": 2
+    },
+    {
+      "deleted": [
+        7,
+        15
+      ],
+      "candidateCount": 4
+    },
+    {
+      "deleted": [
+        8,
+        9
+      ],
+      "candidateCount": 2
+    },
+    {
+      "deleted": [
+        8,
+        10
+      ],
+      "candidateCount": 2
+    },
+    {
+      "deleted": [
+        8,
+        11
+      ],
+      "candidateCount": 2
+    },
+    {
+      "deleted": [
+        8,
+        12
+      ],
+      "candidateCount": 2
+    },
+    {
+      "deleted": [
+        8,
+        13
+      ],
+      "candidateCount": 2
+    },
+    {
+      "deleted": [
+        8,
+        14
+      ],
+      "candidateCount": 2
+    },
+    {
+      "deleted": [
+        8,
+        15
+      ],
+      "candidateCount": 2
+    },
+    {
+      "deleted": [
+        9,
+        10
+      ],
+      "candidateCount": 2
+    },
+    {
+      "deleted": [
+        9,
+        11
+      ],
+      "candidateCount": 2
+    },
+    {
+      "deleted": [
+        9,
+        12
+      ],
+      "candidateCount": 2
+    },
+    {
+      "deleted": [
+        9,
+        13
+      ],
+      "candidateCount": 2
+    },
+    {
+      "deleted": [
+        9,
+        14
+      ],
+      "candidateCount": 2
+    },
+    {
+      "deleted": [
+        9,
+        15
+      ],
+      "candidateCount": 2
+    },
+    {
+      "deleted": [
+        10,
+        11
+      ],
+      "candidateCount": 2
+    },
+    {
+      "deleted": [
+        10,
+        12
+      ],
+      "candidateCount": 2
+    },
+    {
+      "deleted": [
+        10,
+        13
+      ],
+      "candidateCount": 2
+    },
+    {
+      "deleted": [
+        10,
+        14
+      ],
+      "candidateCount": 2
+    },
+    {
+      "deleted": [
+        10,
+        15
+      ],
+      "candidateCount": 4
+    },
+    {
+      "deleted": [
+        11,
+        12
+      ],
+      "candidateCount": 2
+    },
+    {
+      "deleted": [
+        11,
+        13
+      ],
+      "candidateCount": 2
+    },
+    {
+      "deleted": [
+        11,
+        14
+      ],
+      "candidateCount": 2
+    },
+    {
+      "deleted": [
+        11,
+        15
+      ],
+      "candidateCount": 2
+    },
+    {
+      "deleted": [
+        12,
+        13
+      ],
+      "candidateCount": 2
+    },
+    {
+      "deleted": [
+        12,
+        14
+      ],
+      "candidateCount": 2
+    },
+    {
+      "deleted": [
+        12,
+        15
+      ],
+      "candidateCount": 2
+    },
+    {
+      "deleted": [
+        13,
+        14
+      ],
+      "candidateCount": 2
+    },
+    {
+      "deleted": [
+        13,
+        15
+      ],
+      "candidateCount": 2
+    },
+    {
+      "deleted": [
+        14,
+        15
+      ],
+      "candidateCount": 2
+    }
+  ],
+  "noAugmentationDeletingAtMost": 2,
+  "threeForFourExchangeChecked": true,
+  "full24CompletionGramChecked": true,
+  "passed": true
+}

@@ -1,0 +1,14 @@
+{
+  "challenge_module": "CofiniteChallenge",
+  "solution_module": "CofiniteSolution",
+  "theorem_names": [
+    "EntropyDesigns.explicit_cofinite_central_ray"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "enable_nanoda": true
+}

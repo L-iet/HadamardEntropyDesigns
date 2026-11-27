@@ -1,0 +1,14 @@
+{
+  "challenge_module": "CubicChallenge",
+  "solution_module": "CubicSolution",
+  "theorem_names": [
+    "EntropyDesigns.sharp_cubic_seed_benchmarks"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "enable_nanoda": true
+}

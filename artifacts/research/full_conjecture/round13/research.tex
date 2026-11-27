@@ -1,0 +1,684 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,mathtools,hyperref}
+\setlength{\emergencystretch}{3em}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\newcommand{\E}{\mathbb E}
+\newcommand{\tr}{\operatorname{tr}}
+\title{Four-phase constructions, weighing completion,\\and exact Gram-defect repair}
+\author{Joshua Mark\thanks{ORCID: \href{https://orcid.org/0009-0003-5905-2382}{0009-0003-5905-2382}. AI tools assisted with derivation, independent review, computation and exposition.}}
+\date{20 November 2026 --- research draft; priority not established}
+\begin{document}\maketitle
+
+\begin{abstract}
+Four formulations of the real Hadamard existence problem are examined.
+For complex Hadamard matrices, the operator norm of the entrywise fourth
+power exactly detects conversion to the quaternary phase alphabet and
+gives a quantitative obstruction for Fourier-block families.
+For weighing matrices with two zeros per row, all zero-preserving
+Hadamard completions reduce to eight root choices; an explicit
+order-twelve example has no real completion supported on its zeros.
+Rank-two Gram errors have an integer-quantized energy spectrum, and
+the energy $8(n-1)$ alone certifies a unique one-entry Hadamard repair.
+Finally, flat quantum measurements give exact commuting criteria,
+but even flat dilations with vanishing relative dimension overhead
+do not ensure nearby projective descent with fixed sign labels.
+These results provide local certificates and obstructions, not an
+all-order construction. Bibliographic priority is not established.
+\end{abstract}
+The full conjecture asks for a real sign matrix $H$ with
+$HH^T=nI_n$ for every positive $n$ divisible by four.
+Each section below keeps its additional hypotheses explicit.
+The finite checks certify examples; the general statements have paper proofs.
+\section{A four-phase route and a quantitative Fourier obstruction}
+\label{sec:four-phase-route}
+
+A quaternary Hadamard matrix $B$ of order $m$, also denoted
+$\mathrm{BH}(m,4)$, has entries in $\mu_4=\{1,-1,i,-i\}$ and
+$BB^*=mI_m$. Such matrices give real Hadamard matrices of order
+$2m$. This is a classical construction, not a new existence theorem;
+see Butson, \emph{Generalized Hadamard matrices} (1962),
+\url{https://doi.org/10.1090/S0002-9939-1962-0142557-0},
+and Egan et al., the morphism discussion in
+\url{https://ajc.maths.uq.edu.au/pdf/73/ajc_v73_p501.pdf}.
+
+This route permits arbitrary complex phases as an initial search
+space, which is nonempty in every dimension, but the final four-phase
+constraint must actually be met. The results below give an exact
+phase criterion and a quantitative obstruction to some obvious
+Fourier deformations. Priority for the combined observations remains
+unestablished; neither gives an all-order existence theorem.
+
+\subsection{Exact realification and the missing monomial structure}
+For a complex matrix $Z$ write $\mathcal R(Z)$ for its realification,
+replacing $x+iy$ by $\left(\begin{smallmatrix}x&-y\\y&x\end{smallmatrix}\right)$.
+It respects products and sends conjugate transpose to real transpose.
+For $B\in\mathrm{BH}(m,4)$, put
+\[
+                   H=\mathcal R((1+i)B).
+\]
+Its entries are signs and $HH^T=2mI_{2m}$. Thus proving
+$\mathrm{BH}(2t,4)$ existence for every positive $t$ would suffice
+for the full real Hadamard conjecture. No converse or proof of this
+stronger target is being assumed.
+
+\begin{proposition}[A signed complex-structure criterion]
+\label{quat:structure}
+A real Hadamard matrix $H$ of order $2m$ is equivalent, by row/column
+permutations and sign changes, to such a realification if and only if there are signed
+permutation matrices $J_{\rm row},J_{\rm col}$ with
+\[
+ J_{\rm row}^2=J_{\rm col}^2=-I,\qquad
+                         HJ_{\rm col}=J_{\rm row}H.
+\]
+\end{proposition}
+\begin{proof}
+Each signed permutation squaring to $-I$ pairs coordinates, with
+opposite signs on each two-cycle. Signed permutations of coordinates
+put each into the canonical block form
+$J=\operatorname{diag}(\left(\begin{smallmatrix}0&-1\\1&0\end{smallmatrix}\right))$.
+Transform rows and columns independently. The intertwining equation
+becomes $H'J=JH'$, so every two-square block is
+$\left(\begin{smallmatrix}a&-b\\b&a\end{smallmatrix}\right)$ with
+$a,b\in\{\pm1\}$. Hence $H'=\mathcal R(Z)$ and
+$ZZ^*=2mI_m$. Dividing $Z$ by $1+i$ gives a quaternary matrix
+of Gram $mI_m$. The converse follows by taking the canonical $J$
+on both sides of the displayed realification.
+\end{proof}
+
+The signed-permutation condition is essential. For any even-order
+scaled orthogonal $H$ and any orthogonal complex structure $J_{\rm col}$,
+one can set $J_{\rm row}=HJ_{\rm col}H^T/(2m)$. This always gives
+an intertwiner and a real orthogonal complex structure, but usually
+not a signed permutation. It need not pair individual coordinates,
+so it does not give a four-phase matrix. The checker verifies this
+failure for the default adjacent pairing on a normalized Paley $H_{12}$;
+it does not claim that no other pairing works.
+
+\subsection{An invariant that detects four-phase accessibility}
+Let $F$ be any complex Hadamard matrix of order $n$ with unit-modulus
+entries. Write $F^{\circ4}$ for its entrywise fourth power and define
+\[
+                 \rho_4(F)=\frac{\|F^{\circ4}\|_{\rm op}}n.
+\]
+Multiplying rows or columns by unit phases, or permuting them, does
+not change $\rho_4$, since these operations induce unitary monomial
+operations on $F^{\circ4}$.
+
+\begin{theorem}[Exact criterion and quantitative separation]
+\label{quat:phase-defect}
+One has $\rho_4(F)\le1$, with equality if and only if $F$ can be
+converted into a quaternary Hadamard matrix by row and column phases.
+For every matrix $F'$ equivalent to $F$ under row/column phases and
+permutations, and every matrix $Q$ with entries in $\mu_4$,
+\[
+              \frac{\|F'-Q\|_F^2}{n^2}
+                    \ge\frac{1-\rho_4(F)}8.
+\]
+The comparison matrix $Q$ need not be Hadamard.
+\end{theorem}
+\begin{proof}
+The Frobenius norm of $M=F^{\circ4}$ is $n$, so its operator norm
+is at most $n$. Equality is equivalent to $M$ having rank one.
+A rank-one matrix with unit-modulus entries factors as $M_{ij}=u_i v_j$
+with unit $u_i,v_j$; choose fourth-root row and column phases to
+remove them. The transformed entries then have fourth power one,
+and the Hadamard Gram is preserved. The reverse implication is immediate.
+
+For the quantitative bound, set $M'=(F')^{\circ4}$ and let $J_n$
+be the all-one matrix. Since $|z^4-w^4|\le4|z-w|$ on the unit circle,
+\[
+ 16\|F'-Q\|_F^2\ge\|M'-J_n\|_F^2
+ =2n^2-2\operatorname{Re}(\mathbf1^TM'\mathbf1)
+ \ge2n^2-2n\|M'\|_{\rm op}.
+\]
+Use invariance of the operator norm under the phase and permutation
+changes to obtain the result.
+\end{proof}
+
+This criterion is a spectral version of the classical four-cycle
+phase invariants of complex Hadamard equivalence. The relevant
+background and the block deformation construction below are discussed
+in Tadej--\.Zyczkowski, \emph{A concise guide to complex Hadamard matrices},
+\url{https://arxiv.org/abs/quant-ph/0512154}.
+It does not show that an optimizer of $\rho_4$ reaches one.
+
+\subsection{Fourier blocks retain a definite obstruction}
+Let $\mathcal F_m=(\zeta_m^{ij})_{0\le i,j<m}$ and $d=\gcd(m,4)$.
+Direct character orthogonality gives
+\[
+ (\mathcal F_m^{\circ4}(\mathcal F_m^{\circ4})^*)_{ij}
+ =\begin{cases}m&m\mid4(i-j),\\0&\text{otherwise}.\end{cases}
+\]
+There are $m/d$ all-one blocks of size $d$ after row reordering, so
+\[
+ \operatorname{rank}(\mathcal F_m^{\circ4})=m/d,\qquad
+ \rho_4(\mathcal F_m)=\sqrt{d/m}.
+\]
+In particular Fourier row/column phases can produce a quaternary
+matrix exactly when $m$ divides four. Arbitrary phases do not remove
+this obstruction.
+
+More generally take an order-$r$ complex Hadamard matrix $A$,
+unit phases $u_{bi}$, and the classical block family
+\[
+ F_{(a,i),(b,j)}=A_{ab}u_{bi}\zeta_m^{ij}.
+\]
+It is Hadamard: inner products vanish in the Fourier factor for
+distinct $i$, and otherwise reduce to those of $A$.
+Every fourth-power block has operator norm $\sqrt{md}$.
+For a vector partitioned into $r$ blocks, the triangle and
+Cauchy--Schwarz inequalities therefore bound the full operator norm
+by $r\sqrt{md}$. Consequently
+\[
+ \rho_4(F)\le\sqrt{d/m},\qquad
+ \inf_{F'\sim F,\ Q\in\mu_4^{rm\times rm}}
+ \frac{\|F'-Q\|_F^2}{(rm)^2}
+ \ge\frac{1-\sqrt{d/m}}8.
+\]
+Thus these Fourier-block deformations cannot reach the four-phase
+target when $m\nmid4$, even with arbitrarily chosen deformation phases.
+This excludes one search family, not every continuous path through
+complex Hadamard matrices.
+
+At order six the distinction is concrete: Fourier $\mathcal F_6$
+has $\rho_4=1/\sqrt3<1$, whereas a symmetric conference matrix $C$
+of order six gives $B=I+iC\in\mathrm{BH}(6,4)$, with $\rho_4(B)=1$.
+Its realification gives the classical $H_{12}$. The checker verifies
+this and the corresponding orders fourteen and eighteen in exact
+Gaussian-integer arithmetic, producing real orders twenty-eight
+and thirty-six. The conference construction comes from Paley's
+known prime-field matrices, not an unknown-order existence argument.
+
+The sufficient research target is now precise: find a four-phase
+complex Hadamard matrix at every even order, or force $\rho_4=1$
+somewhere in each corresponding complex-Hadamard space.
+Those spaces are nonempty, but their Fourier phase or block
+families alone cannot supply the general conclusion.
+\section{Two-zero weighing matrices: an eight-choice algorithm and a real obstruction}
+\label{sec:weighing-fill}
+
+A weighing matrix $W(n,k)$ has entries $0,\pm1$ and satisfies
+$WW^{\mathsf T}=kI_n$. We ask whether its zero entries can be
+filled by signs, preserving every nonzero entry, to give a Hadamard
+matrix of the \emph{same} order. This constraint is stronger than
+merely knowing that the order admits some Hadamard matrix.
+The orthogonal-design viewpoint is classical; see Geramita--Verner,
+\emph{Orthogonal Designs with Zero Diagonal}, Theorems 1--2,
+\url{https://doi.org/10.4153/CJM-1976-028-3}.
+The structural proofs and explicit finite certificate below are
+independently derived. No bibliographic priority is claimed.
+
+\subsection{One zero: a signed-cycle criterion and the classical positive case}
+In $W(n,n-1)$ each row and column has exactly one zero, so a column
+permutation puts all zeros on the diagonal. A filling has the form
+$W+\operatorname{diag}(d_i)$, with $d_i\in\{\pm1\}$. Its Gram
+matrix is $nI$ exactly when
+\[
+ d_id_j=-w_{ij}w_{ji}\quad(i\ne j).
+\]
+Thus completion is equivalent to the complete signed graph with edge
+labels $s_{ij}=-w_{ij}w_{ji}$ being balanced: the product around every
+triangle is $1$. Taking $d_0=1$ determines all other signs
+$d_i=s_{0i}$; check the remaining edges. There are either zero or
+two fillings, the latter differing by global negation of the fill.
+This gives an $O(n^2)$ test and a triangle certificate on failure.
+
+For conference matrices this reproduces a classical theorem:
+at $n\equiv0\pmod4$, row and column sign changes make the matrix
+skew-symmetric, so diagonal filling always succeeds. At
+$n\equiv2\pmod4$, $n>2$, the matrix is similarly equivalent to a
+symmetric conference matrix and same-order Hadamard filling is
+impossible. These normalization statements are the
+Delsarte--Goethals--Seidel result restated as Theorem 2 in the cited
+primary article, not a new existence assertion.
+
+\subsection{Two zeros force much more structure than arbitrary cycles}
+Put
+\[
+ F=\begin{pmatrix}1&1\\1&-1\end{pmatrix},\qquad
+ \mathcal D=\{2\times2\text{ signed permutation matrices}\},
+ \qquad|\mathcal D|=8.
+\]
+
+\begin{theorem}[Forced block structure]
+Let $4\mid n$ and $W$ be $W(n,n-2)$. After independently permuting
+rows and columns, its zeros are precisely the diagonal $2\times2$
+blocks. Every off-diagonal $2\times2$ block is itself Hadamard.
+Equivalently, with $m=n/2$,
+\[
+ A=\tfrac12W(I_m\otimes F)
+\]
+has zero diagonal blocks and off-diagonal blocks $A_{ij}\in\mathcal D$,
+and $AA^{\mathsf T}=(m-1)I_n$.
+\end{theorem}
+\begin{proof}
+Two row zero-neighborhoods each have size two. If their intersection
+has size $t$, their nonzero overlap has size $n-4+t$, which must be
+even for their sign products to sum to zero. Hence $t$ is zero or
+two. Each column has exactly two zeros, so rows with the same
+two-element neighborhood occur in pairs, and distinct neighborhoods
+are disjoint. The zero support is a union of $K_{2,2}$ components,
+not longer bipartite cycles. This proves the block normalization.
+
+Every row of an off-diagonal block $W_{ij}$ consists of two signs.
+Multiplication by $F/2$ turns it into a row with one nonzero sign,
+so $A$ is integral, with one nonzero entry per row of each
+off-diagonal block. Also $AA^{\mathsf T}=(m-1)I_n$.
+As $m$ is even, reduction modulo two makes $A$ orthogonal and
+invertible. Let $L$ be the subspace of vectors constant on each
+coordinate pair. The action of $A$ on $L$ is $J_m-I_m$, whose
+square is $I_m$ over $\mathbb F_2$ because $m$ is even.
+Consequently $A^{\mathsf T}|_L=A^{-1}|_L=J_m-I_m$ as well.
+Applied to a pair indicator, this says that the two column sums
+of every off-diagonal block are both odd. Since that block already
+has exactly one nonzero entry in each row, it must have exactly
+one in each column too. It is therefore a signed permutation.
+Finally $W_{ij}=A_{ij}F$ is Hadamard.
+\end{proof}
+
+\begin{theorem}[All sign fillings in quadratic time]
+For a normalized $W(n,n-2)$, all zero-preserving Hadamard fillings
+can be listed by testing eight initial states. There are at most
+eight fillings, and the test uses $O(n^2)$ integer operations.
+Specifically, a filling has diagonal blocks $S_i=R_iF$,
+$R_i\in\mathcal D$. Choose $R_0\in\mathcal D$, force
+\[
+ R_j=-A_{j0}R_0^{\mathsf T}A_{0j}\quad(j>0),
+\]
+and accept exactly when
+\[
+ A_{ij}R_j^{\mathsf T}+R_iA_{ji}^{\mathsf T}=0
+ \quad\text{for every }i<j.
+\]
+Each accepted state gives one complete Hadamard matrix.
+\end{theorem}
+\begin{proof}
+Let $X$ be supported on the zero blocks. Inside each row pair,
+the cross terms $WX^{\mathsf T}+XW^{\mathsf T}$ vanish, so the
+Hadamard equations force $S_iS_i^{\mathsf T}=2I_2$. Thus $S_i$
+is a two-square Hadamard matrix and $R_i=S_iF/2$ is a signed
+permutation. Different pairs have $XX^{\mathsf T}=0$, leaving
+exactly the displayed cross equations. The equations with pair
+$0,j$ solve uniquely for $R_j$ as shown, since $A_{0j}$ and
+$A_{j0}$ are orthogonal. All forced states remain in $\mathcal D$.
+Testing the other pairs is necessary and sufficient, and all
+fillings arise this way. There are eight roots and $O(n^2)$
+constant-size block operations per root. The order-four example
+below has eight fillings, so the cardinality bound is sharp.
+\end{proof}
+
+Thus the general two-zero problem is not an unconstrained
+exponential search over the $2n$ missing signs. Its obstruction
+is a small matrix consistency condition around block triangles.
+Nevertheless consistency can fail, even over the reals.
+
+\subsection{An explicit $W(12,10)$ that cannot be filled even by real entries}
+Let $I$ be the two-square identity and put
+\[
+ D=\begin{pmatrix}1&0\\0&-1\end{pmatrix},\quad
+ S=\begin{pmatrix}0&1\\1&0\end{pmatrix},\quad
+ J=DS=\begin{pmatrix}0&1\\-1&0\end{pmatrix}.
+\]
+Define the following six-square \emph{block} matrix, whose entries
+are two-square matrices:
+\[
+ A=\begin{pmatrix}
+0&I&D&D&D&D\\
+S&0&-I&-I&I&I\\
+S&-D&0&I&-D&D\\
+S&-D&I&0&D&-D\\
+S&D&-D&D&0&-I\\
+S&D&D&-D&-I&0
+\end{pmatrix},\qquad W=A(I_6\otimes F).
+\]
+Direct integer block multiplication gives $AA^{\mathsf T}=5I_{12}$,
+so $WW^{\mathsf T}=10I_{12}$. Its nonzero entries are signs and
+its zeros are exactly the diagonal two-square blocks.
+
+Suppose first that even \emph{real} zero replacements could give
+a matrix $H$ with $HH^{\mathsf T}=12I_{12}$. As in the preceding
+proof the fill blocks have $S_iS_i^{\mathsf T}=2I$, so
+$R_i=S_iF/2\in O(2)$, and the same propagation formula applies.
+Writing $R=R_0$, the specified blocks give
+\[
+ R_1=-SR^{\mathsf T},\qquad
+ R_2=R_4=-SR^{\mathsf T}D.
+\]
+The pair $1,2$ cross equation becomes
+$DRS+SR^{\mathsf T}D=0$, equivalently
+\[
+ R+JR^{\mathsf T}J=0.
+\]
+For every real two-square matrix,
+$JR^{\mathsf T}J=R-\operatorname{tr}(R)I$, so $R$ must be
+scalar. Its orthogonality then forces $R=\lambda I$ with
+$\lambda=\pm1$. But pair $2,4$ requires
+$RS+SR^{\mathsf T}=0$, or $2\lambda S=0$, a contradiction.
+This proves that no real orthogonal completion can change only
+the zero entries, and in particular no sign filling exists.
+Hadamard matrices of order twelve do exist; the obstruction
+concerns this prescribed set of nonzero entries.
+
+The checker embeds the full integer $W$, verifies its Gram matrix,
+and records a failing block pair for each of the eight root states.
+Six states already fail on triangle $0,1,2$; the remaining scalar
+states fail on triangle $0,2,4$. The symbolic argument above
+certifies the stronger real obstruction without numerical optimization.
+
+\subsection{Positive cases and the limit of the route}
+For an order-$m$ conference matrix $C$ in symmetric or skew form,
+$C\otimes F$ is a weighing matrix of order $2m$ and weight $2m-2$.
+If $C$ is skew, use a constant symmetric $R_i\in\mathcal D$;
+if $C$ is symmetric, use a constant skew $R_i\in\mathcal D$.
+The cross equations then vanish and produce a same-order Hadamard
+matrix. These are familiar conference constructions, not new orders.
+Exact checks find respectively eight fillings at order four,
+six for the skew-conference tensor at order eight, and two for
+the symmetric-conference tensor at order twelve.
+
+The results separate two tasks: constructing a near-full weighing
+matrix, and ensuring its small missing support has compatible
+orthogonal-design structure. One zero per row has the classical
+positive conference answer at admissible orders. Two zeros per
+row permit a complete polynomial test, but the explicit counterexample
+shows that existence of such a weighing matrix does not itself
+force zero-preserving completion. Nothing here proves an all-order
+Hadamard existence theorem or excludes repairs that also modify
+some nonzero entries.
+\section{Rank-two Gram defects: quantization and exact one-entry rounding}
+\label{sec:spectral-rank-two}
+Let $H\in\{-1,1\}^{n\times n}$, $4\mid n$, and
+$E=HH^T-nI$. We study real rank, not binary rank. Small-rank Gram
+perturbations are not assumed to preserve the sign constraint under
+polar decomposition. The results below instead exploit the integer
+square determinant and parity. Switching is classical background; see
+Orrick, \emph{Switching operations for Hadamard matrices},
+\url{https://arxiv.org/abs/math/0507515}. The elementary rectangular
+flip calculation is included explicitly. Priority is unestablished.
+
+\begin{theorem}[Complete energy quantization at rank two]
+\label{thm:spectral-quantization}
+If $E\ne0$ and $\operatorname{rank}_{\mathbb R}E=2$, there is an integer
+$A\in\{1,\ldots,n/2\}$ with
+\[
+ \|E\|_F^2=8A(n-A),\qquad
+ |\det H|=n^{(n-2)/2}(n-2A).
+\]
+The two nonzero eigenvalues of $E$ are
+$\pm2\sqrt{A(n-A)}$. In particular the smallest possible nonzero
+rank-two defect is $8(n-1)$. If $H_n$ exists, every listed value is
+attained by flipping $A$ entries in one of its rows.
+\end{theorem}
+\begin{proof}
+The zero diagonal gives trace zero, so the two nonzero eigenvalues are
+$\lambda,-\lambda$, with $0<\lambda\le n$ by positivity of $HH^T$.
+Also $\lambda^2=\sum_{i<j}E_{ij}^2\in4\mathbb Z$, because every
+row inner product is even. Taking determinants gives
+\[
+ (\det H)^2=n^{n-2}(n^2-\lambda^2).
+\]
+Thus the nonnegative integer $n^2-\lambda^2$ is a rational square:
+its square root is $|\det H|/n^{(n-2)/2}$. A rational number whose
+square is an integer is itself an integer; call it $d$. Since
+$d^2\equiv0\pmod4$, $d$ is even. Set $A=(n-d)/2$.
+Then $1\le A\le n/2$ and $\lambda^2=n^2-d^2=4A(n-A)$.
+For the attainment statement, keep $n-1$ Hadamard rows fixed and replace
+the last by a version with $A$ signs flipped. The defect is a nonzero
+star of rank two. Orthogonal expansion in the Hadamard row basis gives
+$\lambda^2=n^2-(n-2A)^2=4A(n-A)$.
+\end{proof}
+
+\begin{theorem}[Energy-only one-entry repair certificate]
+\label{thm:spectral-one-entry}
+If any sign matrix of order $4\mid n$ satisfies
+$\|HH^T-nI\|_F^2=8(n-1)$, it has a unique Hadamard neighbor obtained
+by changing one entry. This statement needs no rank hypothesis.
+Consequently a matrix with $\operatorname{rank}E\le2$ and
+$\|E\|_F^2\le8(n-1)$ is either already Hadamard or admits this exact
+one-entry repair.
+\end{theorem}
+\begin{proof}
+Partition rows by parity of their numbers of negative entries, with
+class sizes $a,b$. Same-parity inner products are divisible by four;
+opposite-parity inner products are congruent to two modulo four.
+If all rows have the same parity, $\|E\|_F^2$ is divisible by $32$,
+whereas $8(n-1)$ is not. Hence $a,b>0$. The cross-parity pairs alone
+contribute at least $8ab\ge8(n-1)$. Equality forces
+$\{a,b\}=\{1,n-1\}$, every cross correlation to be $\pm2$, and all
+other correlations zero. Thus $E$ is a star.
+
+Delete its center row $v$ to obtain $(n-1)$ orthogonal sign rows $R$.
+The matrix $P=nI-R^TR$ is positive semidefinite of rank one with diagonal
+one. It is therefore $uu^T$ for a sign vector $u$, and $Ru=0$.
+Orthogonal expansion gives
+\[
+ (v\cdot u)^2=n^2-\|Rv\|^2=n^2-4(n-1)=(n-2)^2.
+\]
+Choose the sign of $u$ to make $v\cdot u=n-2$; then $v,u$ differ in
+exactly one entry. Replacing $v$ by $u$ repairs the matrix. This is
+an integer algorithm: take $u_i=P_{i0}$, then choose its overall sign.
+No other row can support a one-entry repair, because a nonzero star
+edge avoiding that row would remain unchanged. Within the center row,
+its orthogonal complement is the line $\mathbb Ru$, whose only sign
+vectors are $\pm u$, and only one is at distance one. This proves
+uniqueness. The last assertion follows from rank-two quantization;
+a nonzero rank-one symmetric zero-diagonal matrix does not exist.
+\end{proof}
+
+\begin{lemma}[Rectangular flips explain, but do not classify, rank two]
+\label{lem:spectral-rectangle}
+Suppose a Hadamard matrix $H_0$ contains an $r\times c$ rank-one sign
+rectangle, with sign vectors $u,v$ supported on its row and column sets.
+Flip that rectangle to obtain $H=H_0-2uv^T$, and put $A=rc$.
+Then $A\le n$. If $0<A<n$, the Gram defect has rank two and energy
+$8A(n-A)$; if $A=n$ the flip preserves Hadamard orthogonality.
+\end{lemma}
+\begin{proof}
+On the selected rows, $H_0v=cu$. The defect is
+$uw^T+wu^T$, where $w=-2H_0v+2cu$ vanishes on those rows.
+Thus $u,w$ have disjoint supports. Since $\|H_0v\|^2=nc$,
+$\|w\|^2=4c(n-rc)$ and $\|u\|^2=r$. Positivity yields $rc\le n$,
+and the two nonzero eigenvalues are
+$\pm\|u\|\|w\|=\pm2\sqrt{A(n-A)}$ when $A<n$.
+\end{proof}
+
+\begin{proposition}[Rank two does not ensure a one-row or one-column repair]
+\label{prop:spectral-nontrivial-repair}
+There are explicit order-eight and order-twelve matrices with rank-two
+Gram defect that require at least two rows and two columns to be altered
+in any repair. Their minimum total number of entry changes is exactly
+four. The order-twelve example is nonsingular.
+\end{proposition}
+\begin{proof}
+In Walsh order eight, or the normalized Paley order twelve matrix, the
+rectangle on rows $0,1$ and columns $0,2$ is all positive. Flip it.
+The row defect graph is respectively $K_{2,2}$ or $K_{2,4}$, with all
+nonzero correlations of magnitude four; the column defect graph has
+the same respective form. Any unchanged nonorthogonal row or column
+pair prevents repair, and both graphs have minimum vertex cover two.
+To lower-bound total entry changes, let $f_i$ count changes in row $i$.
+Every initially nonorthogonal pair needs
+$2(f_i+f_j)\ge|E_{ij}|$. Summing over $K_{2,b}$ gives
+$2b\sum_i f_i\ge 8b$, hence at least four changes. Reversing the
+rectangle attains four. The order-twelve example has $A=4$, so its
+nonzero determinant is $12^5(12-8)=4\cdot12^5$.
+The checker verifies every stated graph and repair directly.
+\end{proof}
+
+More generally the same argument gives a global repair lower bound:
+for arbitrary nonnegative edge weights $w_{ij}$ with positive maximum
+weighted degree $\Delta$, every Hadamard repair changes at least
+\[
+ \frac{\sum_{i<j}w_{ij}|E_{ij}|}{2\Delta}
+\]
+entries. This is a concrete defect-graph budget certificate, not a
+sufficiency theorem. Rank-two quantization and the one-entry threshold
+provide a certified local rounding case; beyond it neither rank two nor
+real polar orthogonalization alone establishes a flat repair.
+
+\paragraph{The underlying defect graph.}
+Every real symmetric rank-two matrix with zero diagonal has form
+$uv^T+vu^T$ with disjoint nonempty supports for $u,v$. Indeed write
+$E=\lambda(xx^T-yy^T)$ using orthonormal eigenvectors. The zero diagonal
+gives $x_i^2=y_i^2$; the vectors
+$u=\sqrt{\lambda/2}(x+y)$ and
+$v=\sqrt{\lambda/2}(x-y)$ have disjoint supports and give the factorization.
+Thus the nonzero-defect graph is complete bipartite, possibly with isolated
+vertices. This structural fact does not say that every such sign matrix
+is a single rectangular flip of a Hadamard matrix; no such classification
+or general repair theorem is claimed.
+\section{Flat real POVMs: exact commuting rigidity and a descent obstruction}
+For an unbiased pairwise-independent law on $n-1$ sign bits write
+$v_x=(1,x)\in\{\pm1\}^n$ and keep only positive-weight atoms.
+Then $\sum_xw_xv_xv_x^T=I_n$. Set
+\[
+ u_x=v_x/\sqrt n,\quad P_x=u_xu_x^T,\quad
+ E_x=nw_xP_x=w_xv_xv_x^T,\quad\lambda_x=nw_x.
+\]
+The $E_x$ form a real rank-one positive operator-valued measurement
+(POVM): they are positive semidefinite and sum to identity.
+Here ``flat'' means that the unit vectors have entries of magnitude
+$1/\sqrt n$, not merely that the effect weights are equal.
+Distinct atoms with the first coordinate normalized positive give
+distinct nonparallel directions. The POVM inequality $E_x\le I_n$
+implies $0<\lambda_x\le1$.
+
+\begin{theorem}[Exact projective and commuting criteria]
+For such a distinct-direction flat POVM the following are equivalent:
+the law is a uniform Hadamard law; every $E_x$ is a projection;
+the effects commute pairwise; and
+$\sum_{x,y}\|[E_x,E_y]\|_F^2=0$.
+Its total projectivity defect is exactly
+\[
+ \sum_x\operatorname{tr}(E_x-E_x^2)=n-n^2C(w).
+\]
+Writing $s_{xy}=v_x\cdot v_y$ and $A=\sum_xE_x^2$, its ordered
+commutator energy is
+\[
+ \mathcal J=2\sum_{x,y}w_x^2w_y^2s_{xy}^2(n^2-s_{xy}^2)
+ =2\left[\operatorname{tr}(A^2)-
+                 \sum_{x,y}(\operatorname{tr}(E_xE_y))^2\right].
+\]
+\end{theorem}
+\begin{proof}
+The eigenvalue of $E_x$ on its image is $\lambda_x$, so
+$\operatorname{tr}E_x=nw_x$ and $\operatorname{tr}E_x^2=n^2w_x^2$.
+Two nonzero rank-one symmetric effects commute precisely when their
+directions are orthogonal or parallel: their products are scalar
+multiples of $u_xu_y^T$ and $u_yu_x^T$. Parallelism is excluded here.
+Thus commuting forces mutually orthogonal directions. Completeness
+then requires exactly $n$ of them, each with eigenvalue one, giving
+the normalized rows of a Hadamard matrix. Conversely those rows give
+commuting projections. A sum of squared norms vanishes exactly when
+each commutator does. Finally expand
+$[E_x,E_y]=w_xw_ys_{xy}(v_xv_y^T-v_yv_x^T)$ and use
+$\|v_x\|^2=\|v_y\|^2=n$ to obtain the energy formula.
+\end{proof}
+Aggregating duplicate directions is essential to the commuting
+criterion: splitting one projector into several parallel effects
+would otherwise give a commuting but nonprojective measurement.
+
+\begin{theorem}[Uniform tight frames are uniformly almost commuting]
+If the law is uniform on $m$ atoms, put $\lambda=n/m$. Then
+\[
+ \max_x\|E_x-E_x^2\|_{\rm op}=\lambda(1-\lambda),\qquad
+ \max_{x,y}\|[E_x,E_y]\|_{\rm op}^2
+ \le\lambda^3(1-\lambda),\qquad
+ \mathcal J/n\le2\lambda^2(1-\lambda).
+\]
+For every positive integer $r$, the normalized projectivity defect
+of the self-tensor POVM is $1-(nC(w))^r$.
+No self-tensor power becomes projective or commuting unless the
+original POVM was already a Hadamard measurement.
+\end{theorem}
+\begin{proof}
+Write $c_{xy}=u_x\cdot u_y$. Tightness gives
+$\lambda\sum_yc_{xy}^2=1$, and hence
+$\sum_{y\ne x}c_{xy}^2=(1-\lambda)/\lambda$.
+The rank-two commutator has operator norm
+$\lambda^2|c_{xy}|\sqrt{1-c_{xy}^2}$ and squared Frobenius norm
+$2\lambda^4c_{xy}^2(1-c_{xy}^2)$. Bounding $1-c_{xy}^2\le1$
+and summing proves both estimates. Tensor collision is $C(w)^r$,
+so the defect identity gives the displayed normalized value.
+If some base commutator is nonzero, fix any other nonzero effect $E_z$.
+The tensor effects with first factors $E_x,E_y$ and the remaining
+factors $E_z$ have commutator
+$[E_x,E_y]\otimes(E_z^2)^{\otimes(r-1)}\ne0$. This excludes
+commuting activation, and projectivity is excluded by the defect.
+\end{proof}
+
+\subsection{Even flat dilations with vanishing overhead do not ensure descent}
+The finite-dimensional real dilation is explicit. The $m\times n$
+matrix $W$ with rows $\sqrt{w_x}v_x^T$ satisfies $W^TW=I_n$, and
+$E_x=W^T|x\rangle\langle x|W$. Complete its orthonormal columns to
+a real orthogonal matrix. This is the elementary finite-rank
+Naimark construction; the added columns have no automatic flatness.
+
+In fact the character construction established in the earlier
+stability branch gives a stronger counterexample. Use $h=2^s$,
+known Hadamard order $k<h$, $g=h-k\ge s$, and slopes
+$T\subset\mathbb F_h$ of size $k$ containing zero, whose omitted
+set spans $\mathbb F_h$ and has size $g<h/2$.
+For seeds $(a,b)$, the observed blocks are all nonconstant characters
+of $a+tb$, $t\in T$, plus the mixed characters $\chi_e(tb)$ for
+$t\ne0$. The resulting flat real POVM has
+$m=h^2$, $n=kh$, and $\lambda=k/h$.
+All augmented columns are distinct Walsh characters on the two
+seeds. Thus $W$ is literally $n$ columns of a normalized real Walsh
+matrix of order $m$: an \emph{exact flat real dilation already exists}.
+Its dimension overhead is $m/n-1=h/k-1$.
+
+The source orthogonality graph is exactly $h$ disjoint cliques of
+size $h$, and completing these cliques using a known order-$k$
+Hadamard matrix gives
+\[
+ \inf_{q\in\mathcal H_n}\|w-q\|_{\rm TV}=1-1/k,
+\]
+where $\mathcal H_n$ denotes mixtures of normalized real Hadamard
+laws. Along the established known-order subsequences $k/h\to1$ and
+$g\to\infty$, both effectwise defects, the normalized commutator
+energy and the relative dilation overhead tend to zero, while this
+distance tends to one. Therefore there is no dimension-independent
+flat-real projectivization estimate tending to zero from these
+defects. The counterexample even starts with an explicit flat
+Naimark dilation, so flat dilation alone cannot supply the descent.
+
+The distance here uses the common outcome labels given by actual
+normalized sign directions. On the maximally mixed state $I_n/n$,
+the measurement outcome probabilities are exactly $w_x$. Thus the
+same lower bound applies to any measurement distance that dominates
+the outcome TV distance for that input with these labels. No claim
+is made for arbitrary relabeling, postprocessing, or unrestricted
+complex projective measurements. This distinction matters: the
+dimension-deficient Naimark and POVM-simulation literature, for
+example Kotowski--Oszmaniec, allows different projective directions
+and noise/postprocessing; see
+\url{https://arxiv.org/abs/2501.09339}. Their usage of nearly flat
+effects concerns weights, not the entrywise flatness required here.
+The present identities and classical dilation are not claimed new;
+the quantitative obstruction inherits the earlier sign-law theorem
+and does not prove missing Hadamard existence.
+
+\section{The remaining existence steps}
+The quaternary route requires an actual four-phase construction at every
+even order, beyond the Fourier-block families excluded here. This is a
+sufficient stronger target, not an assumed equivalence with all real
+Hadamard existence. The weighing route requires compatible global
+block data: even two zeros per row do not force completion of a
+prescribed matrix. The Gram-error result is a local repair theorem;
+we have no procedure reaching its threshold in every admissible order.
+The quantum formulation does not remove the requirement of entrywise
+real flatness, and unrestricted measurement simulation is a different task.
+
+Useful next tests are to construct quaternary families outside the
+Fourier-block orbit, classify the two-zero triangle constraints by
+signed-permutation holonomy, and find a globally convergent sign-matrix
+operation that reaches the certified repair energy without a target
+Hadamard matrix as an input. No such all-order mechanism is proved here.
+No Lean code, git commits, publication or submission is part of this pass.
+\end{document}

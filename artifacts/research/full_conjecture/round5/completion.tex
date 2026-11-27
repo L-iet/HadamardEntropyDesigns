@@ -1,0 +1,47 @@
+\section{A lattice-theoretic lead and a sharp small-defect boundary}
+\label{sec:completion-lead}
+The classical completion theorem suggests studying the orthogonal
+complement of a partial Hadamard matrix through arithmetic quadratic
+forms. It is not an automatic solution: rational orthogonality,
+integrality and sign entries are different requirements.
+
+Let $X$ have $n-r$ orthogonal sign rows of length $n$, so
+$XX^T=nI$. A real orthogonal completion $Y$ satisfies
+\[
+ Y^TY=nI-X^TX.
+\]
+The right side has rank $r$, diagonal entries $r$, integer entries,
+and rigid congruences inherited from signs. Completing $X$ to a
+Hadamard matrix asks for a factorization of this specific Gram matrix
+by an $r\times n$ \emph{sign} matrix. A general real, rational, or
+integer Gram factorization is a weaker problem.
+
+\begin{proposition}[Eight missing rows can already be fatal]
+\label{prop:eight-defect}
+Let $K$ be a Hadamard matrix of order $m$ and let $s>1$ be odd.
+Repeating every column $s$ times gives an $m\times ms$ partial
+Hadamard matrix with no additional orthogonal sign row.
+In particular there is an unextendible $4\times12$ example, with
+eight missing rows, although Hadamard matrices of order $12$ exist.
+\end{proposition}
+\begin{proof}
+The repeated matrix is $X=K\otimes(1,\ldots,1)$, and
+$XX^T=msI_m$. For a putative new sign row, let $b_j$ be its sum
+on the $j$th length-$s$ block. Orthogonality says $Kb=0$, so $b=0$
+by invertibility of $K$. Each $b_j$ is a sum of an odd number of
+signs and cannot be zero. Take $m=4,s=3$ for the example.
+\end{proof}
+This example is classical: the $4\times12$ pattern is displayed
+in Verheiden's Section 4~\cite{Verheiden}. Our proof makes its block
+obstruction explicit. Combined with his seven-row theorem, it shows
+that universal completion based only on the number of missing rows
+cannot be pushed from seven to eight.
+
+The thesis also uses arithmetic results of Kneser and others to
+restrict denominators of rational Gram completions. This is a
+concrete route for further research: classify the residual Gram
+forms and identify additional structure permitting sign factorizations
+at rank eight and beyond. An $E_8$ explanation or an all-rank
+completion theorem is not established here. In particular, the
+unextendible example shows that any useful theorem must select or
+modify the partial rows, rather than complete every possible choice.

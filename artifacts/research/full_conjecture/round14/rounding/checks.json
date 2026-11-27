@@ -1,0 +1,51 @@
+{
+  "passed": true,
+  "arithmetic": "exact Gaussian rationals",
+  "cases": [
+    {
+      "parameterDenominator": 1,
+      "deficit": "0",
+      "bestFourthError": "0",
+      "roundingError": "0",
+      "sufficientHypothesis": true,
+      "selectedRoundedMatrixHadamard": true
+    },
+    {
+      "parameterDenominator": 2,
+      "deficit": "73728/625",
+      "bestFourthError": "9216/625",
+      "roundingError": "8/5",
+      "sufficientHypothesis": false,
+      "selectedRoundedMatrixHadamard": true
+    },
+    {
+      "parameterDenominator": 8,
+      "deficit": "520224768/17850625",
+      "bestFourthError": "65028096/17850625",
+      "roundingError": "16/65",
+      "sufficientHypothesis": false,
+      "selectedRoundedMatrixHadamard": true
+    },
+    {
+      "parameterDenominator": 64,
+      "deficit": "140668777267200/281749955297281",
+      "bestFourthError": "17583597158400/281749955297281",
+      "roundingError": "16/4097",
+      "sufficientHypothesis": true,
+      "selectedRoundedMatrixHadamard": true
+    },
+    {
+      "parameterDenominator": 1024,
+      "deficit": "2361178737837342720000/1208930431307244676055041",
+      "bestFourthError": "295147342229667840000/1208930431307244676055041",
+      "roundingError": "16/1048577",
+      "sufficientHypothesis": true,
+      "selectedRoundedMatrixHadamard": true
+    }
+  ],
+  "nonorthogonalInput": {
+    "maximumCorrelationSquared": "4/1048577",
+    "fourthDeficit": "1328163040033505280000/1208930431307244676055041",
+    "sufficientTwoObjectiveBound": true
+  }
+}

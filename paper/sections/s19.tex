@@ -1,0 +1,75 @@
+% Source: round8/weights/weights.tex
+
+Let $S=\{x_1,\ldots,x_s\}\subseteq\{\pm1\}^d$ consist of distinct
+vectors. Put $k=1+d+\binom d2$ and let $A$ be the $k\times s$ matrix
+whose rows are evaluations on $S$ of the characters of degrees zero,
+one and two. Set $b=(1,0,\ldots,0)^T$. A probability vector $p$ is
+unbiased and pairwise independent precisely when $Ap=b$.
+
+\begin{theorem}[Actual positive correction with an explicit margin]
+Suppose $A$ has full row rank, and define
+\[
+ R=A^T(AA^T)^{-1},\quad
+ \gamma=\max_j\sum_a|R_{ja}|,\quad
+ m=Ap-b,\quad \tau=\|m\|_\infty.
+\]
+For any probability vector $p$ with $p_{\min}\ge\gamma\tau$, the
+vector $q=p-Rm$ is a nonnegative probability vector on the same
+support and satisfies $Aq=b$. In particular this is an exact
+distribution correction, not an unconstrained projection being
+mistaken for a probability law. It obeys
+\[
+ \|q-p\|_\infty\le\gamma\tau,\quad
+ d_{\rm TV}(p,q)\le s\gamma\tau/2,\quad
+ C(q)\ge C(p)-2\gamma\tau.
+\]
+\end{theorem}
+\begin{proof}
+Full row rank gives $AR=I_k$, so $Aq=b$. The definition of $\gamma$
+gives $|(Rm)_j|\le\gamma\tau$, proving positivity and both distance
+bounds. The degree-zero equation of $Aq=b$ says $\sum q_j=1$.
+Finally write $h=q-p$; then
+$C(q)=C(p)+2\sum p_jh_j+\sum h_j^2\ge C(p)-2\|h\|_\infty$.
+\end{proof}
+All inverse entries, rank conditions and margins are exact rational
+calculations for rational input weights. If $A$ is not full row rank,
+one may instead solve on its column span, but first must verify
+$b\in\operatorname{range}A$; small residual alone does not imply this.
+The positivity margin must still be checked. The theorem gives no
+license to omit either condition.
+
+For $d=n-1$, $n\equiv1\pmod4$, $N=n+3$, the extra hypotheses
+\[
+ C(p)\ge1/N,\qquad \gamma\tau\le1/(2048N^4)
+\]
+place $q$ in the round6 extraction window and thus allow exact
+Hadamard extraction. This is a sufficient criterion on a supplied
+distribution and support, not a construction satisfying it in every
+unknown order. The conditioning of the support enters explicitly
+through $\gamma$, and tiny reservoir weights enter through $p_{\min}$.
+
+\begin{theorem}[No adaptive reweighting on a minimal-size support]
+Let $N\ge8$ be divisible by four, $d=N-4$, and $S$ have at most $N$
+distinct sign vectors. If an unbiased pairwise-independent law exists
+on $S$, its positive support has exactly $N$ members and its weights
+are all $1/N$. Its augmented sign rows complete to a Hadamard matrix
+of order $N$.
+Consequently, if the uniform law on a given $N$-point set is not
+isotropic, no reweighting on that same set can make it isotropic.
+\end{theorem}
+\begin{proof}
+If the positive support has size $t\le N$, Cauchy--Schwarz gives
+$C\ge1/t\ge1/N$. The residue-sensitive collision bound proved in
+round5 gives $C\le1/N$. Hence $t=N$ and equality in Cauchy--Schwarz
+forces uniform weights. The equality case of that same bound gives
+the rank-three tetrahedral completion to a Hadamard matrix of order
+$N$.
+\end{proof}
+This obstruction applies to every adaptive weight correction on the
+specified support, rather than only the scalar Fourier buffers of
+round7. Such a correction must change or enlarge a failed minimal
+support. Conversely the full-row-rank correction theorem necessarily
+uses $s\ge k$, which exceeds $N$ when $d=N-4\ge4$. Its hypotheses
+therefore address genuinely richer supports and cannot covertly
+circumvent the minimal-support obstruction.
+

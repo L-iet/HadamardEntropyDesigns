@@ -1,0 +1,7 @@
+Hadamard multi-base formalization
+Copyright 2026 Joshua Mark
+
+Project contributions are provided under the Apache License, Version 2.0.
+AI assistance and review limits are disclosed in formalization.yaml.
+Dependencies retain their Apache-2.0 or MIT terms; see DEPENDENCIES.md.
+No endorsement or registry acceptance is asserted.

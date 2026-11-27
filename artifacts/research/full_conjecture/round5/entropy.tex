@@ -1,0 +1,129 @@
+\section{Entropy concentration: a sufficient bridge with a measurable gap}
+\label{sec:entropy-bridge}
+We use natural logarithms. Let $\mu$ be a balanced pairwise-independent
+probability measure on $n-1$ sign bits. Put
+$H(\mu)=-\sum_x\mu_x\log\mu_x$ and $C(\mu)=\sum_x\mu_x^2$.
+The background equality $H(\mu)=\log n$ if and only if its support
+is an equally weighted Hadamard design is established by
+Gavinsky--Pudl\'ak, Theorem 4.1~\cite{GP}. The quantitative implication
+below follows from the collision certificate of
+Theorem~\ref{thm:discrete-rounding}; we do not assert priority.
+
+\begin{corollary}[A positive entropy window suffices]\label{cor:entropy-window}
+For even $n\ge4$, define
+\[
+ \varepsilon_n=-\log\left(1-\frac4{(n-1)(n^2-4)}\right)>0.
+\]
+If $H(\mu)<\log n+\varepsilon_n$, the support of $\mu$ contains
+$n$ mutually orthogonal augmented sign vectors. In particular it
+contains an order-$n$ Hadamard matrix. Here
+$\varepsilon_n\sim4/n^3$.
+\end{corollary}
+\begin{proof}
+Jensen inequality gives
+$\log C=\log\mathbb E_{x\sim\mu}\mu_x
+\ge\mathbb E_{x\sim\mu}\log\mu_x=-H(\mu)$.
+The assumed entropy bound therefore implies
+\[
+ C>\frac1n-\frac4{n(n-1)(n^2-4)}.
+\]
+Apply Corollary~\ref{cor:discrete-gap}.
+\end{proof}
+This is a fixed-dimension extraction criterion with a nonzero window;
+it is not a construction of measures in that window. It changes an
+exact entropy target to an explicit approximation target, but attaining
+that target for all admissible orders is still unproved.
+
+\subsection{Why optimal min-entropy is insufficient}
+The entropy in this criterion cannot be replaced by min-entropy
+$H_{\min}(\mu)=-\log\max_x\mu_x$.
+\begin{proposition}[One saturated atom in every even dimension]
+\label{prop:minentropy-counter}
+For every even $n\ge4$ there is a balanced pairwise-independent measure
+on $n-1$ bits with $H_{\min}=\log n$. At $n=6$ this holds although
+no Hadamard matrix of order $6$ exists.
+\end{proposition}
+\begin{proof}
+Put mass $1/n$ on the all-positive vector and spread the remaining
+mass $(n-1)/n$ uniformly on the slice
+\[
+ \left\{x\in\{\pm1\}^{n-1}:\sum_i x_i=-1\right\}.
+\]
+Within the slice, permutation symmetry gives
+$\mathbb E x_i=-1/(n-1)$ and
+$\mathbb E x_ix_j=-1/(n-1)$ for distinct $i,j$, the latter by
+expanding $(\sum x_i)^2=1$. Mixing in the positive atom makes both
+moments zero. The slice has $\binom{n-1}{(n-2)/2}\ge n-1$ elements,
+so no other atom has mass exceeding $1/n$.
+At $n=6$ the ten slice atoms each have mass $1/12$, and the positive
+atom has mass $1/6$. Nevertheless a real Hadamard matrix of order
+$6$ is impossible: three orthogonal sign rows, after normalizing
+the first to all positive, would force their two positive supports
+to intersect in $6/4$ positions.
+\end{proof}
+Thus an information-theoretic bridge must control collision or Shannon
+entropy, not just the mass of the heaviest outcome. The construction
+and the implication are derived here; the general atom bound
+$\mu_x\le1/n$ is background~\cite{GP}.
+
+\subsection{A larger self-contained window when new rows are allowed}
+If only existence is required, an orthogonal clique of $n-1$ rows
+already suffices. Indeed, for its row matrix $X$,
+$P=I-X^TX/n$ is a rank-one orthogonal projection with every diagonal
+entry equal to $1/n$. Writing $P=zz^T$ with $\|z\|=1$ forces
+$|z_j|=n^{-1/2}$; the row $\sqrt n z^T$ is the final sign row.
+Using the merging argument with target clique size $n-1$ gives the
+self-contained sufficient condition
+\[
+ (n^2-4)C>n+E-\frac4{n-2}.
+\]
+At $E=0$, this is
+\[
+ C>\frac1n-\frac8{n(n-2)(n^2-4)}.
+\]
+It is also implied by
+$H(w)<\log n-\log(1-8/((n-2)(n^2-4)))$.
+The extra row need not lie in the original support. This entropy
+window is asymptotic to $8/n^3$ and needs no external classification.
+
+\subsection{A stronger existence window using a classical completion theorem}
+Verheiden's 1978 thesis, Theorem 4.5 on printed pages 22--23,
+states that every $(n-r)\times n$ partial Hadamard matrix, with
+$4\mid n$ and $r\le7$, completes to a full Hadamard
+matrix~\cite{Verheiden}. We inspected the original scanned statement
+and proof discussion. Its small-rank classification uses computation;
+we have not independently reproduced that classification. The next
+corollary explicitly uses this external mathematical input.
+
+\begin{corollary}[Completion-assisted rounding]\label{cor:completion-rounding}
+Let $4\mid n$, $n\ge12$, and let $w$ be any probability measure on
+$n-1$ sign bits, with $C$ and moment defect $E$ as in
+Theorem~\ref{thm:discrete-rounding}. If
+\[
+ (n^2-4)C>n+E-\frac4{n-8},
+\]
+then a Hadamard matrix of order $n$ exists. If $E=0$, it suffices that
+\[
+ C>\frac1n-\frac{32}{n(n-8)(n^2-4)}.
+\]
+Equivalently a sufficient Shannon-entropy window is
+\[
+ H(w)<\log n-\log\left(1-\frac{32}{(n-8)(n^2-4)}\right).
+\]
+The entropy conclusion here assumes $E=0$.
+\end{corollary}
+\begin{proof}
+The ordered orthogonality edge weight in the proof of
+Theorem~\ref{thm:discrete-rounding} exceeds $1-1/(n-8)$.
+Its deterministic weight-merging argument therefore extracts a clique
+of at least $n-7$ augmented sign vectors. Select $n-7$ of them and
+apply the stated completion theorem. Algebra gives the collision
+threshold; Jensen inequality gives the entropy version.
+\end{proof}
+Unlike the self-contained certificate, this conclusion allows the
+last seven rows to be outside the original support. The correction
+is asymptotic to $32/n^4$ in collision probability and $32/n^3$ in
+Shannon entropy. It still supplies no measure attaining the window.
+Weight merging is an extraction step; it does not preserve the
+pairwise-independence constraints and cannot be iterated as a
+moment-preserving construction without a separate argument.

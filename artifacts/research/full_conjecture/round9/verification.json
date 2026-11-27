@@ -1,0 +1,51 @@
+{
+  "checkedAtUTC": "2026-11-21T04:07:11.834971+00:00",
+  "pages": {
+    "rank_rounding.tex": 2,
+    "research.tex": 9
+  },
+  "checkersPassed": [
+    "check_rank.py",
+    "nonlinear/check.py",
+    "exchanges/check_exact.py",
+    "lattice/check.py"
+  ],
+  "typesettingChecksPassed": true,
+  "files": {
+    "build.py": "9cb97ee712f5704c21de89db571fab516b535cbf81fe33f4d8b2ab412b58ad7c",
+    "check_rank.py": "05a99ac972bb48bec0aa40aff37b5f0738260c4c67d0a7e09d5a54b5af420854",
+    "exchanges\\check_exact.py": "93592eabfd79323cc97cdb954a2fed18bf3a248f1641a2995c0b190a9fdf2dbc",
+    "exchanges\\exchanges.pdf": "f8e71f8e13e0bceb28d2f3ba92e82534c33f9d8aec7595b9a7f307adf63c022a",
+    "exchanges\\exchanges.tex": "c971039fcb5482ae88a6c804f8e22124e2670ae4eb6535eadda93fdecc3c90b2",
+    "exchanges\\README.txt": "b8b9ee5d28c53e8ff811b4f9ca97ba30db13cd7affec27627cc1e3aad581114b",
+    "lattice\\check.py": "43c70641612e63bd03affd1e6a4e74f5ce7eb3e860916ed9f5a9c008399961e3",
+    "lattice\\checks.json": "5404fa1508f133b0b6479d4570944cbc835c994e4f6c22cbcd392c79ecd13ca6",
+    "lattice\\lattice.tex": "08e8d1612beffa7c51fe1d10e0045bd5cad96e45cad2c9929043352a47b074fc",
+    "lattice\\README.txt": "79c3c252cd683fb4f17e3bdc859117eb518026143599f8f9d1e741322397301a",
+    "nonlinear\\check.py": "48c36702aa6d5b0b8a589f3507c2f7a1d3feb675e9bdb6f22650f76114265039",
+    "nonlinear\\checks.json": "d7a2d97a59c7989af91b6766d24ebfa2608dd85234ab801e63af3fa82645ff53",
+    "nonlinear\\README.txt": "f0e36f7c1b404d0506a1deb8f2647458e690dbfcb30053d5990eb9dc0a3b013a",
+    "nonlinear\\search.py": "2d8640931c5535621545233a09372030809298af96c2bdda6c38645c69635efb",
+    "nonlinear\\search7.py": "38c5dc9ba6e2a31c08c44abb6bb372e5b34a018c5d9a00cf900d7a2b00cb9228",
+    "nonlinear\\search_plane.py": "5462b9ba825a5570995c59d7a461f5088678f36d22db6e2037a8adc710d3f97f",
+    "nonlinear\\search_plane5.py": "a225d3abb254aae2172eef00af8fdfe5add899be61a258890eabf61f56722c1b",
+    "nonlinear\\search_plane6.py": "7693c5854f81b3d8902dd829813668fda002d1942303b9fa803d571cda757ed9",
+    "nonlinear\\support.tex": "cb0f15fa6d135f9562b90befd2979553781af0ce0ccdf60e7ce12f38077714b8",
+    "PRIOR_ART.txt": "6dd5fa24513d66bb85ea19ae975cdde5bab4ef41dfb344dc783ddcaca3a20369",
+    "rank_checks.json": "f9c1c2dd1dddddead3bfaf5e28c7712d9d27bf4dc22248f98278236256cafb5e",
+    "rank_rigidity.tex": "b556941c95deb0f688544fd4d07cb0e4e1f6c3df06827e62f3048f8dfb396046",
+    "rank_rounding.pdf": "35185b15a15f7fd6b9732d561bf73a6f90a70d4f08ffb11f92feabee0d65c204",
+    "rank_rounding.tex": "73ff82d66c81a540141171943d4a9567029dafcd6c5e57d9e8daea8257d411f3",
+    "README.txt": "0a7a7faa8fcf6a665c2ed60d89671c57e23d9e9c5ac570e168de1192c526b45b",
+    "research.pdf": "14e8dceab179562ef98f6cde765b7bb61f87330d538904014756e6cba0928e25",
+    "research.tex": "4ca358fcf52b1ab86b8d4d8e22fd61a031fc595f09daca8841f77eec3544028a",
+    "NEXT_QUESTIONS.txt": "115aaa07c928892f595926adac560b065b7f454cff2cf05425a6c79fccacd69a"
+  },
+  "scope": {
+    "hadamardConjectureProved": false,
+    "unknownOrderDistributionConstructed": false,
+    "noveltyEstablished": false,
+    "leanFormalization": false,
+    "gitCommits": false
+  }
+}

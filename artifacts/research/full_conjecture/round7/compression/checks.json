@@ -1,0 +1,46 @@
+{
+  "passed": true,
+  "cases": [
+    {
+      "s": 2,
+      "h": 4,
+      "trapAtoms": 16,
+      "compressedAtoms": 8,
+      "overlap": 4,
+      "jumps": 3,
+      "rankDrops": 1,
+      "directBridgeMinimum": "7/128",
+      "directBridgeMinimumParameter": "1/4",
+      "piecewiseBridgeMinimum": "3/64",
+      "maximalCliqueCompletions": 2
+    },
+    {
+      "s": 3,
+      "h": 8,
+      "trapAtoms": 64,
+      "compressedAtoms": 16,
+      "overlap": 8,
+      "jumps": 7,
+      "rankDrops": 2,
+      "directBridgeMinimum": "15/1024",
+      "directBridgeMinimumParameter": "1/8",
+      "piecewiseBridgeMinimum": "3/256",
+      "maximalCliqueCompletions": 2
+    },
+    {
+      "s": 4,
+      "h": 16,
+      "trapAtoms": 256,
+      "compressedAtoms": 32,
+      "overlap": 16,
+      "jumps": 15,
+      "rankDrops": 3,
+      "directBridgeMinimum": "31/8192",
+      "directBridgeMinimumParameter": "1/16",
+      "piecewiseBridgeMinimum": "3/1024",
+      "maximalCliqueCompletions": 2
+    }
+  ],
+  "allMomentChecksExact": true,
+  "allPairKernelIdentitiesVerified": true
+}

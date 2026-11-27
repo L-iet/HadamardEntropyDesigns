@@ -1,0 +1,137 @@
+\section{Global completion moments and the drift of an unguided code walk}
+\label{sec:completion-moments}
+
+Let $p$ be an odd prime, $N=4p$, and let $G$ be a totally isotropic
+subspace of $\mathbb F_p^N$ contained in a self-dual code. Write
+$\dim G=N/2-h$, where $h\ge2$. The quotient
+$V=G^\perp/G$ is a split nondegenerate orthogonal space of dimension
+$2h$. A sign class is normalized by its first coordinate being $+1$.
+Every sign vector in $G^\perp$ is isotropic modulo $p$ because its
+norm is $N$. Let $b$ count sign classes in $G$ itself, and assign
+weight $w_\ell$ to each isotropic projective point $\ell$ of $V$:
+it is the number of sign classes whose nonzero quotient lies on
+$\ell$. Put
+\[
+ W=\sum_\ell w_\ell,\qquad S_2=\sum_\ell w_\ell^2,\qquad
+ T=\sum_{\substack{\ell\ne k\\\ell\perp k}}w_\ell w_k.
+\]
+The last sum is ordered. These definitions count actual sign classes,
+not arbitrary vectors of the finite-field code.
+
+\begin{theorem}[Exact first and second completion moments]
+\label{mom:two}
+Choose uniformly among all self-dual codes $C$ containing $G$ and
+put $Y=|S(C)|-b$. With $D_1=p^{h-1}+1$ and $D_2=p^{h-2}+1$,
+\[
+ \mathbb E Y=\frac{W}{D_1},\qquad
+ \mathbb E Y^2=\frac{S_2}{D_1}+\frac{T}{D_1D_2}.
+\]
+If $W>0$, at least one such code satisfies
+\[
+ |S(C)|\ \ge\
+ b+\left\lceil\frac{S_2+T/D_2}{W}\right\rceil.
+\]
+\end{theorem}
+\begin{proof}
+The number of maximal totally isotropic subspaces of a split
+$2h$-space is
+\[
+ L_h=2\prod_{j=1}^{h-1}(p^j+1),\qquad L_0=1.
+\]
+For completeness, the hyperbolic equation is $x\cdot y=0$ with
+$x,y\in\mathbb F_p^h$. Its nonzero solutions, modulo scalar, number
+$(p^h-1)(p^{h-1}+1)/(p-1)$: when $x\ne0$ there are $p^{h-1}$
+choices of $y$, and when $x=0$ there are $p^h-1$ nonzero choices.
+Each maximal isotropic subspace has $(p^h-1)/(p-1)$ projective points.
+Counting incidences at one point, whose quotient has dimension
+$2(h-1)$, gives $L_h=(p^{h-1}+1)L_{h-1}$.
+There are two isotropic lines when $h=1$, giving the formula.
+
+A specified isotropic point belongs to a uniformly chosen generator
+with probability $L_{h-1}/L_h=1/D_1$. Two distinct orthogonal points
+span an isotropic plane and co-occur with probability
+$L_{h-2}/L_h=1/(D_1D_2)$. Nonorthogonal points never co-occur.
+Expanding $Y=\sum_\ell w_\ell\,1_{\{\ell\subset C/G\}}$ proves both
+moment formulas. Finally $Y^2\le(\max Y)Y$, so the maximum is at least
+$\mathbb E Y^2/\mathbb E Y$, with the stated integer rounding.
+\end{proof}
+
+If $G$ contains five orthogonal real sign rows, the parity theorem
+of the tenth pass makes the sign classes of each completion code
+pairwise orthogonal over the integers. Thus the condition
+\[
+ b+\left\lceil(S_2+T/D_2)/W\right\rceil\ge N-3
+\]
+is sufficient for a Hadamard matrix, by the earlier three-row
+completion theorem. It is a count certificate, not a uniform
+existence theorem: a proof still has to supply a $G$ and sufficiently
+large counts. Finite-polar-space incidence is classical; the
+calculation is included to expose precisely the needed input.
+The code-neighbor graph is a classical hyperbolic dual polar graph;
+see the dual-polar section of Brouwer et al.,
+\emph{The smallest eigenvalues of Hamming graphs, Johnson graphs and
+other distance-regular graphs with classical parameters},
+\url{https://doi.org/10.1016/j.jctb.2018.04.005}.
+No priority is claimed for these incidence or spectral ingredients.
+
+\subsection{Exact benchmark where a second moment helps}
+Use the first eight stored rows of the twelve-row order-twenty
+terminal frame in
+\path{../round10/code_traps/search.json}. Their residue span has
+dimension eight and contains $b=9$ sign classes. Here $h=2$, and
+exact enumeration gives
+\[
+ W=42,\qquad S_2=96,\qquad T=588,\qquad D_1=6,\quad D_2=2.
+\]
+The mean total sign count is $9+7=16$, below $N-3=17$.
+The second-moment bound instead gives
+\[
+ \max |S(C)|\ge9+\lceil65/7\rceil=19,
+\]
+and therefore certifies a full completion. This is a known-order
+benchmark, not an unknown-order construction.
+
+Retaining only the first five rows gives $h=5$, $b=5$, and
+$W=S_2=1092$, $T=370512$. The same bound certifies only nine total
+classes, short of seventeen. A large pool alone does not suffice;
+its incidence structure and the retained space both matter.
+At order twelve the checker exhausts all eight self-dual completions
+of a specified rank-four retained space, verifying both moment
+identities directly. Their additional sign counts are all eight.
+
+\subsection{An exact mean drift for random neighbors}
+The restricted-neighbor identity of the tenth pass implies a useful
+diagnostic. Fix the retained space $G$ and choose each next code
+uniformly among self-dual neighbors containing $G$. Define
+\[
+ d_h=\frac{p^h-1}{p-1},\qquad
+ \mu=b+\frac{W}{1+p^{h-1}},\qquad
+ \rho_h=\frac{d_h-1-p^{h-1}}{d_h}.
+\]
+\begin{proposition}[Exact expected sign count along the walk]
+For every starting code $C_0\supset G$ and every integer $t\ge0$,
+\[
+ \mathbb E |S(C_t)|=\mu+\rho_h^t(|S(C_0)|-\mu).
+\]
+For $h=2$, $\rho_h=0$. For $h\ge3$, $0<\rho_h<1/p$.
+\end{proposition}
+\begin{proof}
+The preceding pass proved
+\[
+ \sum_{C'\sim C,\ C'\supset G}(|S(C')|-|S(C)|)
+ =b+W-|S(C)|-(|S(C)|-b)p^{h-1}.
+\]
+There are $d_h$ such neighbors. Dividing and rearranging gives
+$\mathbb E[|S(C_{t+1})|\mid C_t]
+=\mu+\rho_h(|S(C_t)|-\mu)$. Iterate conditional expectations.
+For $h\ge2$,
+$\rho_h=(p^{h-1}-p)/(p^h-1)$, which gives the stated bounds.
+\end{proof}
+
+When a code has more than the global mean number of sign classes,
+an unguided neighbor step lowers that number in expectation.
+This statement does not rule out improving neighbors or guided
+search; the exact order-twenty census in the other branch finds
+such neighbors. The formula explains why unrestricted averaging
+does not itself prove an improving move. No assertion of universal
+positive drift or of all-order Hadamard existence follows.

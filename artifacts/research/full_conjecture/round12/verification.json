@@ -1,0 +1,57 @@
+{
+  "checkedAtUTC": "2026-11-21T05:20:06.585084+00:00",
+  "pages": {
+    "conditional_partial.tex": 3,
+    "stability_rates.tex": 5,
+    "research.tex": 11
+  },
+  "checkersPassed": [
+    "arithmetic/check.py",
+    "stability/check.py",
+    "moments/check.py",
+    "dilations/check.py"
+  ],
+  "typesettingChecksPassed": true,
+  "files": {
+    "arithmetic\\arithmetic.tex": "f5b25fe1869db9803e03469b0bc25e7c12aa6257eac4410016651f2b4edc6a38",
+    "arithmetic\\check.py": "186264e4111c948edadddeb80684fd4798b2a5df24c0da84d69a3125f0cc14c6",
+    "arithmetic\\checks.json": "4847ae9a318ac9b1080770c3ea8a8331b8a31add9da68cf5c13cff83e774dfc5",
+    "arithmetic\\README.txt": "0a24767bea7b6a63c3617e6519cf6bf1aee6a57c5e6389599219dd56b24afd8c",
+    "build.py": "88fc6d82802434c9e941b9f1dde225440c408f5d7d9b0fa4826571def0358c6b",
+    "conditional_partial.pdf": "654730df1ae9ce203895ad0ea5ef15c984abb84747069440069674a45abd9ea8",
+    "conditional_partial.tex": "80f460ac56331b0107d3bd5b890a21d9fa70327e780c85f1c30f58aaf4124227",
+    "dilations\\check.py": "454965ac40afd088775cae4b003c7b401c805c3ba12941bbddd111ee4c90da99",
+    "dilations\\checks.json": "9c5bd0b6236e6a88eba034d153cf21ece25d8672c9a3914217cd1352047214ce",
+    "dilations\\dilations.tex": "c3dcdd34c6e1b734c75bb2612880d6ff059a134f1a6c577814df193aa56b26f3",
+    "dilations\\README.txt": "1271d03ee5b4932cbad70d3544ed799712eded6d6bef211d399f0786cefab15b",
+    "moments\\check.py": "b99e3c5a9ffd4ad5b82c65d9a19c10dda63ca51ffabd409ed796a32e747d67d5",
+    "moments\\checks.json": "45475a5196d8e82e8172abb33c5f673e9224096a2470845053c37bbb4f857e25",
+    "moments\\paper.pdf": "ab7a8ef4ea0ad60fc1de86e8d309f8d983577041397e343a48d13671954f5207",
+    "moments\\paper.tex": "f35f63c7c5d7f45bdf954beb534a7f25a10dc44269fe656f670f97885f3ba006",
+    "moments\\README.txt": "a7f9c356eacc95735863534c9cb95789eb271574076f7db4a43a3acb3bd1ec7c",
+    "moments\\third.tex": "230f5880cc76f9c54a4adedc009c5b43c1d7206a70773b56cffd30ef43915fc6",
+    "NEXT_QUESTIONS.txt": "b2fe2c8691ef9e9297a53aca7a779723b23c1c5f4f028093c801e7b970054299",
+    "PRIOR_ART.txt": "e9cd7eddb9d4c5b97d556e2bf86c99fa6dab95780876029e11b8963d3a3c08e8",
+    "README.txt": "9dd604623b4e13af761e0ad47332217e097ac1d6dbf4a488c804933b75507856",
+    "research.pdf": "34834c02bc6e86d7943b9493fce678020ac14c57ee8af82878bf8538d41ebba8",
+    "research.tex": "51d36e811a8f97bbed853cd9645748564b7b15a27fe1470afb2b0cafaeea0cc1",
+    "stability\\check.py": "d2073c904331346037d87ad52fa71aa948880db744aa5c52f0b65201767dba98",
+    "stability\\checks.json": "7d408e8a457e24b33cee7bd97b6f9db0d4638ad56265fd54ae8df62f9ffc7b80",
+    "stability\\gap_transfer.tex": "f94c0b08781e6a75c6a9dd543a028883b7f5727eb9189faf30df5167bf3165d2",
+    "stability\\prime_rates.tex": "f3ecb3d5cfcf8e3f59c7ff36558b56fcbf0d4e564528403e762fa9879d101a3c",
+    "stability\\project_input.tex": "59b1f536c7be1af43e946e8a5f99e9226a34e05b30549d19de9d39844b9560a3",
+    "stability\\README.txt": "153867b9ec240d7beab4b946e0d833c7e92d9a1a0725f3f7211fb8b4eb0d429e",
+    "stability_rates.pdf": "3f92096d4062c308536fb1671ae71770e4a759fd6c498e0762edf2fac020ba87",
+    "stability_rates.tex": "928d1cfd5b368b08721b6d663478ab00c7fd4a0a76bc24eabaea46484f8fa6c9"
+  },
+  "scope": {
+    "hadamardConjectureProved": false,
+    "unknownOrderConstructed": false,
+    "GRHVerified": false,
+    "arithmeticPartialBoundConditional": true,
+    "projectMultiplierAndStabilityRatesUnconditional": true,
+    "noveltyEstablished": false,
+    "leanFormalization": false,
+    "gitCommits": false
+  }
+}

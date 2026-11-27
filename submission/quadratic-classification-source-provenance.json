@@ -1,0 +1,2311 @@
+{
+  "license": "Apache-2.0",
+  "author": "Joshua Mark",
+  "ORCID": "https://orcid.org/0009-0003-5905-2382",
+  "scope": "Original complete actual twelve-label quadratic-observable classification; public rebuild and all-group verification pending.",
+  "privatePilotReceiptSHA256": "4fe1c68a8231db2c01308244cb64fa5395ca8bf15fa1bb9b77063406f1c338cb",
+  "sourceFiles": [
+    {
+      "file": "EntropyQuadraticClassification/AffineBalance.lean",
+      "privateModule": "AffineBalance",
+      "privateSourceSHA256": "fa52adcc18aa79899aae464b00f0fdb550f3cd845271c68e3567dea9bfe8cf21",
+      "privateReceiptSHA256": "af1355204c17b91ab9df9bbc7a0d899b720150af74aa3bd39308b58537fea5eb",
+      "stagedCanonicalLFSHA256": "7480357fca01b174022228c6f90ea86a689a3384cf6896912d63d50a4dd77f4a"
+    },
+    {
+      "file": "EntropyQuadraticClassification/ArbitraryCheckUpper.lean",
+      "privateModule": "ArbitraryCheckUpper",
+      "privateSourceSHA256": "3a3a28cd8a132e46394dfdb80a1f1852d1a0430a20754ba4085b77473853571b",
+      "privateReceiptSHA256": "46ecaf7c0419cddf737d63ad4a505bc85d84dcd71241874115885f3db7645fde",
+      "stagedCanonicalLFSHA256": "6b19c3d47884565fe2b7585ce708960511711b2f11ee7d898bad70f68d0d156f"
+    },
+    {
+      "file": "EntropyQuadraticClassification/BalancedWitnesses.lean",
+      "privateModule": "BalancedWitnesses",
+      "privateSourceSHA256": "fbad1f9397b98620d640203e479b0373d4e3065d913e995af704a9aad0c88982",
+      "privateReceiptSHA256": "b6aaaa3b84d77d22c6b44af37511907a56eb3b20e2ada2df29da26cb04fb92e5",
+      "stagedCanonicalLFSHA256": "14bd7c5965f0f73537a31187b74780eab8ba48d1687e8764efbc1548aeac3fa5"
+    },
+    {
+      "file": "EntropyQuadraticClassification/BinarySupports.lean",
+      "privateModule": "BinarySupports",
+      "privateSourceSHA256": "c37eb54143fcadde90ea27db0c0f87e083fa77f1d6d6850c2656b8ea16d4d4a9",
+      "privateReceiptSHA256": "df0e577edf88cf488b34b8615868783a0f7cfcb0e5e066702da586038becd7aa",
+      "stagedCanonicalLFSHA256": "45ad4babe3774343f0698e6d2997897b04799b0df56bd6366cfb5ae1eb03fc73"
+    },
+    {
+      "file": "EntropyQuadraticClassification/BlockNormalization.lean",
+      "privateModule": "BlockNormalization",
+      "privateSourceSHA256": "01d20132c27ea2796e0bad8d0633fd32e3e91c2555ab55c6cea3351b33492cb0",
+      "privateReceiptSHA256": "ca94d1c7d0c4aa96fbc543556ad0699ba237b0f7b51ddfe534008fccf38a0ff1",
+      "stagedCanonicalLFSHA256": "e4dd6cf124c52546c93e7e5b4a3adbb89d13983f4209a400c3e6b9ffbcb30f36"
+    },
+    {
+      "file": "EntropyQuadraticClassification/BlockWitnesses.lean",
+      "privateModule": "BlockWitnesses",
+      "privateSourceSHA256": "d3d7dc8aac56d7fc3b081ddbe0bebdb2a139e523d806d48530c04ff8a6c02d29",
+      "privateReceiptSHA256": "63c3d865a514f51526461e789f6c0a39d513151ca045753957811f391624e8fc",
+      "stagedCanonicalLFSHA256": "891c337269ccf4ca400e9caa3e6a5c56ef00b47767710c833be328d9ab668408"
+    },
+    {
+      "file": "EntropyQuadraticClassification/CachedColoringRule.lean",
+      "privateModule": "CachedColoringRule",
+      "privateSourceSHA256": "067c919dee9cdb321b2f62ce39e47d88281fd481124bfd710336d2193acf4c42",
+      "privateReceiptSHA256": "1b8079f408731bb5d1dfa11441de23f508062784358ba817f01990191f352b02",
+      "stagedCanonicalLFSHA256": "1d9ac849f51cc94059a92919ecda42a21b1682c7961d205d9922b3fa4fb9d4f4"
+    },
+    {
+      "file": "EntropyQuadraticClassification/CanonicalBlocks.lean",
+      "privateModule": "CanonicalBlocks",
+      "privateSourceSHA256": "7f45e69abc810b5d6efad3835baad8d4871e26d8bd43016b4c6d7854a8dca5c7",
+      "privateReceiptSHA256": "f0aa9b72cce263892ca6b1b0ab6a4791e0aa76b1a34a663f9490415888ade002",
+      "stagedCanonicalLFSHA256": "9ecd8228094341a4ea33825c4ff37dc4ea9318f47221f3416ef3d54e84f1de1d"
+    },
+    {
+      "file": "EntropyQuadraticClassification/CanonicalGraphTransfer.lean",
+      "privateModule": "CanonicalGraphTransfer",
+      "privateSourceSHA256": "57921ef9d425610e7b010459736a4a10aa5937c5f89228d3b1b6889bba678652",
+      "privateReceiptSHA256": "e91bd2086c17fe6a9553131d83837696d15ace5afa7fec7adf2a62a136856975",
+      "stagedCanonicalLFSHA256": "8b6a04dc4ff7e3d9ff607cbf709847c9d3a3a5d58579ec5f27bffaac8174807e"
+    },
+    {
+      "file": "EntropyQuadraticClassification/CheckDimensions.lean",
+      "privateModule": "CheckDimensions",
+      "privateSourceSHA256": "a1672b5ca00f04524248cfe838b1365b65acd6d1208e53339ad9ce9af263cb5f",
+      "privateReceiptSHA256": "597adff0e78d04268cd00d2aec1f887d197fc8c4954b42c17791a4a6d3dd89f8",
+      "stagedCanonicalLFSHA256": "120376def3b8b8e65783157a956e44134449d80533a142bfe40a27f599a8953c"
+    },
+    {
+      "file": "EntropyQuadraticClassification/CheckGenerators.lean",
+      "privateModule": "CheckGenerators",
+      "privateSourceSHA256": "364993b419b703c9dacc1b7c652b640acd25b8fe9d0f9911d0a71e21310c6d0b",
+      "privateReceiptSHA256": "ae74840ce2b55a15d5020820b37cb3ab7d9ac5402b403dab127db8dba656e217",
+      "stagedCanonicalLFSHA256": "8dd3d140572f3d0c707f2da935719d0eaa71015635bff0abb8a053989e653f96"
+    },
+    {
+      "file": "EntropyQuadraticClassification/CliqueCertificateRules.lean",
+      "privateModule": "CliqueCertificateRules",
+      "privateSourceSHA256": "8a612326a74ab883972b54a444387e65ecc8573b16db7b73cb6c5535a2b343b9",
+      "privateReceiptSHA256": "2d650e2ef24e61999ee5284e1b4101e237a3b4a7cc12e177583a77d579ad46e2",
+      "stagedCanonicalLFSHA256": "57b93a0c056b68082aca4ff13567015a40cc76a93653a57ae014c7b6aa7464f1"
+    },
+    {
+      "file": "EntropyQuadraticClassification/ConstantWeightChecks.lean",
+      "privateModule": "ConstantWeightChecks",
+      "privateSourceSHA256": "47c379d575744c788b8ad062e29eba5779125776c543d918a58f715bd82a00fc",
+      "privateReceiptSHA256": "651023e78d1118f66a50437107f7add7acc3193b6efefe18a8555617db2be2ad",
+      "stagedCanonicalLFSHA256": "82e31d957029ba2333c57e4b745e9f3e9f7985d4b35ea3bf32dcb011f751ff90"
+    },
+    {
+      "file": "EntropyQuadraticClassification/EncodedParityGraph.lean",
+      "privateModule": "EncodedParityGraph",
+      "privateSourceSHA256": "91582213f057ea6a6550cb2a6ee434955595cd1d39fdf9d3d5ac55fd7b8b6c6d",
+      "privateReceiptSHA256": "f1db15a01bc383a654702eb2f8966758955b760596b4e2e8b79e3f5a1116fffc",
+      "stagedCanonicalLFSHA256": "8c794b644a28d10fab54d38b5a2a1da502a4a2de75a5f9c795cbc2fc5b1bd7b7"
+    },
+    {
+      "file": "EntropyQuadraticClassification/FiberTransport.lean",
+      "privateModule": "FiberTransport",
+      "privateSourceSHA256": "e3bbdf1fb02cd9874884fe3ca5a390586b948d943615fd5f8eb207a558903276",
+      "privateReceiptSHA256": "7d752173c422b2057b4b9e285c2a186550422fd98333054e61d24c30e2ca80d4",
+      "stagedCanonicalLFSHA256": "488f3ae5aa5c7c980d8939b9de099db4920cc7b763b7f6f76fc1b4c8c4b9fc8e"
+    },
+    {
+      "file": "EntropyQuadraticClassification/FrameSupportEquivalence.lean",
+      "privateModule": "FrameSupportEquivalence",
+      "privateSourceSHA256": "659e82a217b20be662950605cab7f8adb946687433ac05685ae329d40d70d027",
+      "privateReceiptSHA256": "94508184dbebddf1073480de3130dfb867db380c798229cd63a2cbcae7789c51",
+      "stagedCanonicalLFSHA256": "4215519b009765e199671f61d2cb719d25863d9a71dc2289c6b7df2f902f11c2"
+    },
+    {
+      "file": "EntropyQuadraticClassification/GaussOrthogonality.lean",
+      "privateModule": "GaussOrthogonality",
+      "privateSourceSHA256": "94528996515c6665148ebf5def75bac7d23b8eaa8470058a4249ae08a9051dd5",
+      "privateReceiptSHA256": "91cb77dbfe4530d9a4cd580a0fc466fb602ef168f14cc9104830bc667b8a7ea9",
+      "stagedCanonicalLFSHA256": "18b6e9c89d513d5eda20d16f3da79ae8d7180d5e156b2846f81be67679c40c78"
+    },
+    {
+      "file": "EntropyQuadraticClassification/HalfWeightParity.lean",
+      "privateModule": "HalfWeightParity",
+      "privateSourceSHA256": "ad1f6199f3d45c2e37164ae3ed0cf64547c7de8ae23cc813fa863c5978003274",
+      "privateReceiptSHA256": "d1051057e2b0b7103b39f40a47e95ad7add874d4554a2cb6d716024f715d3dde",
+      "stagedCanonicalLFSHA256": "21173518996307ec8f6b0722997e4223e849192b944fee0500b0d3f2193ab89e"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCacheBridge0.lean",
+      "privateModule": "IndependentCacheBridge0",
+      "privateSourceSHA256": "9b74148fdd87b823110a11483725287b1404376dabcd790caca6d62a0a6cebac",
+      "privateReceiptSHA256": "ddf0e68f82d6a9589dbcf243d59f294fb2d81c19bbb6fab1bf0fe11298339ef6",
+      "stagedCanonicalLFSHA256": "9e999c946755c2e3039c447f4a78e7607e34723a69b658848b094a3adebb6e1a"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCacheBridge1.lean",
+      "privateModule": "IndependentCacheBridge1",
+      "privateSourceSHA256": "6afece903443bf0351ce8410ec2587f141708acbe7c46d27c89c01c5217ec7c8",
+      "privateReceiptSHA256": "8cd2419071ad90ddaf979e193c2bc3f4456711e12beac030ce5d472f05483632",
+      "stagedCanonicalLFSHA256": "6196b2be1f19aaedaaf449c99e9e8c67bff8cad097da3bcc5764d109cf78996d"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCacheBridge10.lean",
+      "privateModule": "IndependentCacheBridge10",
+      "privateSourceSHA256": "931932837b32cd3e22ea0bff4c684e1cf2f263e1c6ce77361568a45d5aab5916",
+      "privateReceiptSHA256": "542f95fb38d6ca362ef344bba5f07308f9cb19de5e89f3c1aed208912e8d59eb",
+      "stagedCanonicalLFSHA256": "4e715362fd0de1fd8b2a062c43ede808ff8ac9efdb7b94fd160e0c452e20c0f9"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCacheBridge11.lean",
+      "privateModule": "IndependentCacheBridge11",
+      "privateSourceSHA256": "ecb5c91c76c6443cc710ef7aec7421b63ea2511178aab459274d7be6aa22349d",
+      "privateReceiptSHA256": "42642033cdd5672b59b389a9cafe542c641301a8e94b59b256fc89918d82f6ee",
+      "stagedCanonicalLFSHA256": "1afbccab0113ca8e4a3af8b83b180feebdb5af64fd748ec194cdc77d09ebc0b6"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCacheBridge12.lean",
+      "privateModule": "IndependentCacheBridge12",
+      "privateSourceSHA256": "777cba1ac0d050128582d2716337ad9c4308bb0adea6566ec916736e6fb3cca4",
+      "privateReceiptSHA256": "6492c9ddef04e72446e091e8110112f0afcc66d14b0196ab6232f4d2792bc7d1",
+      "stagedCanonicalLFSHA256": "c2e3787d6d3bb8cd1183791f035939e3f049962ed183b81710cd397a409ad83a"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCacheBridge13.lean",
+      "privateModule": "IndependentCacheBridge13",
+      "privateSourceSHA256": "34abd062761286e57ccde69ba00d0b29f9ca11020af6a5168c6bdd42e8bbbf74",
+      "privateReceiptSHA256": "6d8c71e0b5c44ddb2e3cc8e001bee99b089b169a5a9b60b9f2c5174b80e87cb1",
+      "stagedCanonicalLFSHA256": "72ff49e7da280e4c96aab4261f2a87d449e7c4b97d81604f477c3db7adb738da"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCacheBridge14.lean",
+      "privateModule": "IndependentCacheBridge14",
+      "privateSourceSHA256": "4ce2d2a8fe333bd75ea7957e48a55439ec8849878387f30911fdc38d1bbadd62",
+      "privateReceiptSHA256": "73debb560606a4f723f23f7a8633245a93c9f12bea457994de117eacc261e039",
+      "stagedCanonicalLFSHA256": "66285b910d9dc4d4f6cc24e05a4a49cdf3f78114b2c81b558cf81c6eeef248b7"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCacheBridge15.lean",
+      "privateModule": "IndependentCacheBridge15",
+      "privateSourceSHA256": "8dbe774bcecd799a86f771464d583857106335a93e16c055c2c983d7b2d5b0af",
+      "privateReceiptSHA256": "143e71dcef51864c3731f130ac167e40c125f69c96f87bb1774022b54496c3a8",
+      "stagedCanonicalLFSHA256": "21ff3ba02b4bf17e575fcc58c524f41468e1957eed8be2af43f2caae6d57c926"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCacheBridge16.lean",
+      "privateModule": "IndependentCacheBridge16",
+      "privateSourceSHA256": "df082346520b790b423abd001501ee2c6266eae4f24e6c726fef670e564aadd2",
+      "privateReceiptSHA256": "5ee3857423e8722d59e151740381aeb36f45646d5d532091a5814eb993cb9546",
+      "stagedCanonicalLFSHA256": "a1b71183c987a251638dfa93c0db032f3232156757eef11906887886b0fbdd02"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCacheBridge2.lean",
+      "privateModule": "IndependentCacheBridge2",
+      "privateSourceSHA256": "3adaa4bb2fe5e2626f2cfbc0c5883fb768a2e3fd54b33a95086df5fdb9bc5ca1",
+      "privateReceiptSHA256": "3281922adb3f6b50783f64561d332a92a9b0300c88088b2fdda7ce3778f62bc5",
+      "stagedCanonicalLFSHA256": "adde6c058ffcac74b9c68d5404b4c2711d559c465628eccf1615a3cd9faaef91"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCacheBridge3.lean",
+      "privateModule": "IndependentCacheBridge3",
+      "privateSourceSHA256": "34e0f398b89f3e2be322096c489d54ee2a0dd7f843ef0a0c2ef0b36c696b8a20",
+      "privateReceiptSHA256": "79612355cce763aac669496a8333f9b8ad70d112f09b3fdc84bd843e7714ca71",
+      "stagedCanonicalLFSHA256": "8a77893bacef8aa5f218e168bf857781e4e36667e89c4a504926c6d0f24cbca9"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCacheBridge4.lean",
+      "privateModule": "IndependentCacheBridge4",
+      "privateSourceSHA256": "08d459d4411ce790f2071f638365a732d6287b1f0d2da327a2d5649822ec93cd",
+      "privateReceiptSHA256": "641a49c9faea0b98d9d743a2eb242a510b9dd3a6ca84721ebd00840f41ca12a2",
+      "stagedCanonicalLFSHA256": "02e4d5422fdadddd59c5d79d2042a556152b8b59a29b7eb21b221dc31edce5b2"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCacheBridge5.lean",
+      "privateModule": "IndependentCacheBridge5",
+      "privateSourceSHA256": "e15a4d15a174f01f5060e38fd30f42ba555e1cc1a8f416dc3cd74025e4305f86",
+      "privateReceiptSHA256": "ccb8851659c06756827b2f3c101bb2ceaebc1a83ffec6c522ded878401ca5c98",
+      "stagedCanonicalLFSHA256": "922ebd28c35d2bb8aac811a82691ce13b0e0b9566a1adbbf140b05727db35a96"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCacheBridge6.lean",
+      "privateModule": "IndependentCacheBridge6",
+      "privateSourceSHA256": "1313d846e2128a123a4b22506ab87a08af42f01d47306936d4eaf620e7c161a3",
+      "privateReceiptSHA256": "61cf592c2ffdc14262a93167e5e5c2cfea40c8c03f0edfa0d7fcbbac313acecd",
+      "stagedCanonicalLFSHA256": "37c539d71e3a3bfbcae38803732ff9555efcc2419b9e21e5490c860393a1c1dd"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCacheBridge7.lean",
+      "privateModule": "IndependentCacheBridge7",
+      "privateSourceSHA256": "4bc66d57a702e04cd5375ba480cabca6cefd8e02354c3b3a14239733e0ded738",
+      "privateReceiptSHA256": "8bae17711dcfb280bc77333a3fe875df733fd594baf6f4c0eeaa0041841a1f6a",
+      "stagedCanonicalLFSHA256": "ddf2fca61a105895bf4d767cc00350b872cd57bd3c7603c6c8ec5874d2a43ed1"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCacheBridge8.lean",
+      "privateModule": "IndependentCacheBridge8",
+      "privateSourceSHA256": "a223a100b77f5b28765387038a221834b3a35b0016f6658c4c4da5d96132bc85",
+      "privateReceiptSHA256": "256da49acbce3bc1173b66a587f4084015d62bf2583223425e9f1194c4abcd30",
+      "stagedCanonicalLFSHA256": "d8639ee4db0378884e7a9af0b0fcd70b8d17b90c72ada04d3d06f5ee7600e5f3"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCacheBridge9.lean",
+      "privateModule": "IndependentCacheBridge9",
+      "privateSourceSHA256": "4ff31a610caaa2882671b4991af09307ce0a75e0993929331fd77247fe022a6c",
+      "privateReceiptSHA256": "179761aa41f7c477273248abe7a60120a54f586e0fa8d1bebd1475ae5132c186",
+      "stagedCanonicalLFSHA256": "16d55696f6717a1431c718fdb93e5e4fea294f9ad5357ca0eb665e204d575210"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch0.lean",
+      "privateModule": "IndependentCachedBranch0",
+      "privateSourceSHA256": "fea4551aae26473b211fe39f224fb3b18ad3d81dd3ef6a3f4be600618ecd7981",
+      "privateReceiptSHA256": "12ab000b147b4c151a203080ae7c9b5de595232ae28155adc94fa4bd2f2ff18f",
+      "stagedCanonicalLFSHA256": "a6618886b89788915482b460b3e23d896dd267169d69d0b50f014d076dba8572"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch1.lean",
+      "privateModule": "IndependentCachedBranch1",
+      "privateSourceSHA256": "edb49b023b89e1bf9e0230672a55e5fccb18a0ebccd98a06e786c04b910eb4f3",
+      "privateReceiptSHA256": "15323fd61de1787a80d842c0e718b7f653b0457c86655b882493c132dc5dc772",
+      "stagedCanonicalLFSHA256": "f9e82e9a8d317d91964bc43258e73cb0f3e45548d91c6348aeae54ac8f98616b"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch10.lean",
+      "privateModule": "IndependentCachedBranch10",
+      "privateSourceSHA256": "eef597a31cee27b6c2811d844ca5cece38f91ea8f6534d8166fd8711a24d10c7",
+      "privateReceiptSHA256": "274cfd1ab6b3e8fec02ee0eb368d3f01d574caaa4486f948aaf63ae98af89abe",
+      "stagedCanonicalLFSHA256": "b54e865e2f6368f01732eed3b35106cba2d02a09c76cae17f80281574babd267"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch100.lean",
+      "privateModule": "IndependentCachedBranch100",
+      "privateSourceSHA256": "ea9376ae8c64e7a76997f88ec53282f0207a4b76eb1aff1517a7c863dcc5e29e",
+      "privateReceiptSHA256": "492b336c216e780abe0790ac2b63136a1fef6b8c0ba25e192a5a3e96eb770c30",
+      "stagedCanonicalLFSHA256": "92e235681c3828d31a1151b25541bf8cd181ba92e6dd4ef767ce859e3b2e52e1"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch101.lean",
+      "privateModule": "IndependentCachedBranch101",
+      "privateSourceSHA256": "527a0e38217cec7f43fc69315d82454b90f691e4282920779069435ff4b04d98",
+      "privateReceiptSHA256": "2dede91138483c871001a909c733471a451144db8915db47c335e92b71883446",
+      "stagedCanonicalLFSHA256": "492bdf7bf45fd6184a007efedaaa64db3cc1bb550f8f92e941e5150f00295d62"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch102.lean",
+      "privateModule": "IndependentCachedBranch102",
+      "privateSourceSHA256": "683fa6b6382fcb7899b35b3dff6a0273613ed246436b3f9fe8e6d18615ce372e",
+      "privateReceiptSHA256": "91fc5737b146fd09ef229df31768bf0b94ae1833435afadc193ac801e0c2b433",
+      "stagedCanonicalLFSHA256": "2a7059ddb4d6475a302e1de55cf18d789c3c0a3b0e5de43596c0097d595fe130"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch103.lean",
+      "privateModule": "IndependentCachedBranch103",
+      "privateSourceSHA256": "5c0e968fd46d705c910b19c295d9e3078792a980542b2769b20b2dca688de4b5",
+      "privateReceiptSHA256": "0e9d31491e2bab1262049cc5a9cc55ecc14afaf512120a332ba0543a07ac32e0",
+      "stagedCanonicalLFSHA256": "fd5e1c101d1a99809ac23ea34f07aea264fd0b05ea9b925ff829b1e1b8e2832f"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch104.lean",
+      "privateModule": "IndependentCachedBranch104",
+      "privateSourceSHA256": "4d79ae41e30348ec9fe371169fe4d7d8b46d71a6d0eb819625c5642f551d7ec4",
+      "privateReceiptSHA256": "89e767d63f6258145696068994d7d985075f096b612893d17048f688978ebec6",
+      "stagedCanonicalLFSHA256": "3fd6533e9875dd8e32a9c21186ab037fb2ba28aef13cb9aa0aa0fd3e4f5087de"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch105.lean",
+      "privateModule": "IndependentCachedBranch105",
+      "privateSourceSHA256": "8543b2386c666eb9886d9afd840297174de26e44d658c1cbb9767bfa71314a11",
+      "privateReceiptSHA256": "23e5d555c91bb40b962f4c6d520472202d3cacadd04b4b1ab18e336c1a6e7ce3",
+      "stagedCanonicalLFSHA256": "77e67f4f3f8697b1ed786e854872003cbbfa55d62a8c53d32076c79916e39a96"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch106.lean",
+      "privateModule": "IndependentCachedBranch106",
+      "privateSourceSHA256": "ebd08972f6303519a795a74cd2f1c50a2e8e8c0aa469cb8b0e0b3d5331152622",
+      "privateReceiptSHA256": "8a40f10381b887374eb79fc2cbe2b6650feeadbf3c9b27d3c7d61517000f62cc",
+      "stagedCanonicalLFSHA256": "241f535c35d03f5a656a2dd2aadca2085fb3f1de8d256871a2f9d5cfc6760642"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch107.lean",
+      "privateModule": "IndependentCachedBranch107",
+      "privateSourceSHA256": "66ed92a4ef0f4dff9ec2079ef6a8fa8dd024674ba250322faad27e222e649b86",
+      "privateReceiptSHA256": "6db8290407bfe5bfb1fe1aa219e78b2adf27ddce9ad0830c8d682108ccc289ed",
+      "stagedCanonicalLFSHA256": "87c99524aee2c90fe680ba6221c2ee676a839a3e4d9a3ffd2aef906f45f28b51"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch108.lean",
+      "privateModule": "IndependentCachedBranch108",
+      "privateSourceSHA256": "ffe14267e6524560e4aa4bf10966486de9ec6a4efdfa78b458a70d52d5efb903",
+      "privateReceiptSHA256": "e571672bf78d03143fabfb5d9237b60e24a18c85e414e240cee2f28c7720db5d",
+      "stagedCanonicalLFSHA256": "46b17c544ba2a8ddb578f75ce0d252fd82c80398b57d2609a123cd6d9272237b"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch109.lean",
+      "privateModule": "IndependentCachedBranch109",
+      "privateSourceSHA256": "8620519acdd0324a4fa2e2071e06f4362b1d3de132435b249bd5ab3635e6d545",
+      "privateReceiptSHA256": "78855eee079e66fc4396aac58715b0998d824771265045d1d42a5721ac48f7b8",
+      "stagedCanonicalLFSHA256": "f19228c314b02132484c32602f6f464a5ee69163b8a54fc3dc5c900f987f9e1a"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch11.lean",
+      "privateModule": "IndependentCachedBranch11",
+      "privateSourceSHA256": "00687c4523384c0fe572a7f557bc99f557b8e9a8d9cc776612b589840eeb30fa",
+      "privateReceiptSHA256": "7220407160ebee9fcb0acfb7d19281bc8e79aa77ba8029bdbc5239ac3a694436",
+      "stagedCanonicalLFSHA256": "02bc130fa01956c569af8b5bc2f7df9c43c39b42a026ff34a2d875ab11fce57f"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch110.lean",
+      "privateModule": "IndependentCachedBranch110",
+      "privateSourceSHA256": "2cc79dbdb6a04412f1b1bc1235fee87c2a9d6c26669c9d487ed5145f82932c24",
+      "privateReceiptSHA256": "efe175c3375fb12929815c69d5ec3380b15080ff1bc4470110b84bab5311fbde",
+      "stagedCanonicalLFSHA256": "dd4b74ae373da7835780bbbb95908b79b838228cd016a0cf40238f873aedca04"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch111.lean",
+      "privateModule": "IndependentCachedBranch111",
+      "privateSourceSHA256": "71cfcf4e264e7d28ae9ba3cc62ae6f5f8980af4e4d5fc6b46055511edcc675c0",
+      "privateReceiptSHA256": "a8364b2230033e28f61bf8426f5a0a0c541a80ec52980db3ea828724ac8a4428",
+      "stagedCanonicalLFSHA256": "7fd1f5dd84e05eae9c39bcc71238ab012ecc7c764c3a8432ec8d306d04592444"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch112.lean",
+      "privateModule": "IndependentCachedBranch112",
+      "privateSourceSHA256": "dfc97497b65e6dd817149ce2f6cf044bf8bd9e4f52feff8457f358ebe8c8db4d",
+      "privateReceiptSHA256": "b211151fcca141b2e59f31537d103bd6aba56907880e1e50a44715c30e734312",
+      "stagedCanonicalLFSHA256": "d58e8bdf9b07b25121fbaae68b1dc0db149057fee897b227dd411e00fa604c6e"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch113.lean",
+      "privateModule": "IndependentCachedBranch113",
+      "privateSourceSHA256": "2a6c677cb9f86bba42f71af405ec42b29fcabb66a9b5109832ed74443b891a06",
+      "privateReceiptSHA256": "5d3e134835996bb90e47900722e84244d339dc36de9f913818fb9fda39028acd",
+      "stagedCanonicalLFSHA256": "974d33f4a606482c2550c434649a62116b1b8c59c897c7ba90750fd87e1f3247"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch114.lean",
+      "privateModule": "IndependentCachedBranch114",
+      "privateSourceSHA256": "af2eaac5df9f3b5cae4992ed44266242f6d1b304c3fa3fec36d74c7da8ff3efe",
+      "privateReceiptSHA256": "809bf00f802f8c67e7a402e6a7643e311f2ddc42da8cfc57e01bb7392c9db01b",
+      "stagedCanonicalLFSHA256": "ab2d7e3e7905e06c3d118eb267e2e5a7e4e771e1525daef1f065fd9065c569c1"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch115.lean",
+      "privateModule": "IndependentCachedBranch115",
+      "privateSourceSHA256": "3570ae33fb4fb8948de725a0268c806d22548e3822440a78b924c78514e02f73",
+      "privateReceiptSHA256": "0080e5432f118081d561c24e774b4445649546a782150431cfae26e3117551d8",
+      "stagedCanonicalLFSHA256": "7e611311ea0e375e9e5a627799cb89b48d0c5827c353f67b66c0fec44986e1b7"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch116.lean",
+      "privateModule": "IndependentCachedBranch116",
+      "privateSourceSHA256": "5e30b9e976b607f1fd91a3c08be3da37cf34ea20040e5987eb2bf6b770be5c6d",
+      "privateReceiptSHA256": "95238ed9ad56eab5765259da724f0ff0aab62865af7290f34c23d3f382c18d35",
+      "stagedCanonicalLFSHA256": "5bd528289a35301d45652ffabd41c02417c25da420c096711b36733c79ac9140"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch117.lean",
+      "privateModule": "IndependentCachedBranch117",
+      "privateSourceSHA256": "5f89562f6f13d0081f85ad60ba0f1ed7b31b26c373f245f77b0ca938c07d9295",
+      "privateReceiptSHA256": "b16213f4dd13335f48044b8fbcb90e901875f370ab142a0db9bb16d1dbdbbb74",
+      "stagedCanonicalLFSHA256": "0f39d248f8a737906da8547dc02c11508603898a7ca0e1d072c14ba62004f8c4"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch118.lean",
+      "privateModule": "IndependentCachedBranch118",
+      "privateSourceSHA256": "4d43b85d2bd0c901c2d9c8fb3d5156621ceb197a5174866f4c2117a2f846917e",
+      "privateReceiptSHA256": "fba33413a6f1fa552bbc774fd4dc1c2019ea05bf0da712dad7655e130af58d75",
+      "stagedCanonicalLFSHA256": "683c5622cd040c1e82f19b05bf167b5e28768a24e0fcb51d7edc42032932d9e8"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch119.lean",
+      "privateModule": "IndependentCachedBranch119",
+      "privateSourceSHA256": "aaff1326be3343fa6522ef06a044ad79cc830d015ffcf7612b3f82cba641ef66",
+      "privateReceiptSHA256": "39469ba60752280a92bb60879baa24d7dfb1fbf1f20d270f28abed5fcb7982ed",
+      "stagedCanonicalLFSHA256": "01d60ece5c1c25fd1cf7cbd759634a6566fab95310cb2ec60e2414799e6c6a8d"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch12.lean",
+      "privateModule": "IndependentCachedBranch12",
+      "privateSourceSHA256": "6300c01aeef22d95ecf0f8070261d363057cc62e832e0babed30e7fd026518f2",
+      "privateReceiptSHA256": "dd77451b15e2603bc7f9e6bcc4e8efb5abd1efcea5644d1b90015077ba968080",
+      "stagedCanonicalLFSHA256": "ad068e0acf1bf7cfe96d92b50207c7ec8dc4d4aa2d6b06646351f44d4940b7b7"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch120.lean",
+      "privateModule": "IndependentCachedBranch120",
+      "privateSourceSHA256": "a686dc92578cceaaec9d237eaa744c21c562ddcf09fc64602ad0d62554967280",
+      "privateReceiptSHA256": "4b123bf77113d173afb3a042ba9f2401c468c7cc7d7d1d134dba7d1e03e8b265",
+      "stagedCanonicalLFSHA256": "72dabb6b3ac770c31d6b3b2047381beb427f9af3f376628df58cf43706d71e13"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch121.lean",
+      "privateModule": "IndependentCachedBranch121",
+      "privateSourceSHA256": "390979e5268715e4cc3b45b0a3f110c0fed3577c6071bad0d2cae272c2354e5a",
+      "privateReceiptSHA256": "c64229441ef5c4ca1e2d3f29b961b8ce45d6b30d13b43424ed835d9740f5dec5",
+      "stagedCanonicalLFSHA256": "b93fc5c7cd221e20e88e6853eb029eaf05b12b1c1ec9e6ca0281e98ec4a8e70b"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch122.lean",
+      "privateModule": "IndependentCachedBranch122",
+      "privateSourceSHA256": "e7b563faef8ac7ff65b70d80ae57faadb986aa6984fe579ff67826b52f759ad9",
+      "privateReceiptSHA256": "4bc0d0a5df434233bf529f685c2b3d01579d7f27b09f391337a7309d1379f8d2",
+      "stagedCanonicalLFSHA256": "5e45bf949017c33698ad7ab53088720000a7505b6c1ea93b18f85941bffa7b3b"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch123.lean",
+      "privateModule": "IndependentCachedBranch123",
+      "privateSourceSHA256": "2435dbfa2568eec175796f8aa8e53ac8cc7f1f1f93d7ca871c9e0dce6e8d1a0d",
+      "privateReceiptSHA256": "8b1dc9621732dea082726572599228a741dc66d1051afc48e323e418b602892d",
+      "stagedCanonicalLFSHA256": "6aeaca943bbbc3dbf8d8d984d9594ff4af049aeded64b451457746b15f1b0451"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch124.lean",
+      "privateModule": "IndependentCachedBranch124",
+      "privateSourceSHA256": "3bfa1fac3d54baf4f2796bf3c181821cde0d3fe5933ef2c204c69f62e252a090",
+      "privateReceiptSHA256": "bbbbb8697724ddf32b5f5af9acfe9f73a70e0012cf7eb82a0ae97bd278c3f6fd",
+      "stagedCanonicalLFSHA256": "38393687900b40610265fade66bbe71b207edb52790a8c2ef041f6d9c68dee27"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch125.lean",
+      "privateModule": "IndependentCachedBranch125",
+      "privateSourceSHA256": "87b9a0a0543861166a154ae37632fa315a40b5ae39d9a1306cfad88a04733a96",
+      "privateReceiptSHA256": "ba24b772b5b68e663d76d4d518524ecdbd8c0905e974cf505cfe70a6252b317d",
+      "stagedCanonicalLFSHA256": "cebddeb482bcf8ddc399c79e5097c094878ac68ed78c393e58da1e64556765d4"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch126.lean",
+      "privateModule": "IndependentCachedBranch126",
+      "privateSourceSHA256": "8a080d58da49d45137afc62bc8c051a3cf6ca4ae05c348f2f27ef497025eb7ae",
+      "privateReceiptSHA256": "71d37074f3502d25bd35c839902d5bf59dbe2e78fd4691a1c9776fef3d8cb345",
+      "stagedCanonicalLFSHA256": "65e17add9fb5589653c977d5241ce9767a494b5acae0aa6b292d4ad361dfb03b"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch127.lean",
+      "privateModule": "IndependentCachedBranch127",
+      "privateSourceSHA256": "404e3f50974004af0db98023aa8f24479aed9afb2ef7844ea3a1dd27a69928ae",
+      "privateReceiptSHA256": "ebb8b2cca7ffdb0994952232856394c4994ae1e70039d0718d4ee743d3dc329a",
+      "stagedCanonicalLFSHA256": "8cd5be0ae09c99e28bcade558af1f34ce319192ae01895f013e02e9088a103cd"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch128.lean",
+      "privateModule": "IndependentCachedBranch128",
+      "privateSourceSHA256": "dc6c5b712bc6a5d56b9bdc85fd93ca9d38bd0bd06d6d472f1c2a7f3b0a8aeae0",
+      "privateReceiptSHA256": "1e34cab427db91fbdbde7be755d36e1c3bf225c382c9f2402074e93398ab1215",
+      "stagedCanonicalLFSHA256": "f326fb772b81bd7f173a35e004f6b2cd369f6c3503b457a038b02c927c172aa6"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch129.lean",
+      "privateModule": "IndependentCachedBranch129",
+      "privateSourceSHA256": "3c4ec8a5e1e4b2b1719e5db95f1a425249ebc96e5f2023013d80f07fea3794c0",
+      "privateReceiptSHA256": "c265bbb8ed228d1ea7af01e7f49186f95c29ea9751ec1124b312659b4be94c95",
+      "stagedCanonicalLFSHA256": "c93e1d2e240f5feb5f547939a232e48a62173f63f0594532815162be197555e1"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch13.lean",
+      "privateModule": "IndependentCachedBranch13",
+      "privateSourceSHA256": "acabba223d6745bbb192f48860c1e6e4c7295fabcf7a087f26a7f43dc04e2110",
+      "privateReceiptSHA256": "8987ff5fe1a4d02ab96ee94a0225a6bf0e2d939329ab73308b1ed999ba722170",
+      "stagedCanonicalLFSHA256": "c6380798f595d5a85554c05c42df3cc4c05c29554b9b0e714cb4eab8425d40ea"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch130.lean",
+      "privateModule": "IndependentCachedBranch130",
+      "privateSourceSHA256": "b2173665ca8efaea41b874a68b55ed126535a183ec58d38779f3992773ae00d3",
+      "privateReceiptSHA256": "2fda458b2739255778733b0f03716b7cd706bbd36c43d2dda71ce393146a376f",
+      "stagedCanonicalLFSHA256": "e2338b52ef048b0b2a0fa18f5758a4fa6778c0ba32a8a135e5f5611930cfa9ae"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch131.lean",
+      "privateModule": "IndependentCachedBranch131",
+      "privateSourceSHA256": "9a54a3ae0284802910601b4a9974ea8146984e48f72e35f676a38671527b1273",
+      "privateReceiptSHA256": "a7e3427465a1fd0533fd430279e48b291ca01ef1044ffc632151703d2c719f43",
+      "stagedCanonicalLFSHA256": "dc707ae5f300cca9b68cf39dd80f8f2d7ca40313026999d0652034156b247e4b"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch132.lean",
+      "privateModule": "IndependentCachedBranch132",
+      "privateSourceSHA256": "c66835b7ecacfd8f7f0668ed8f558260d646d67aa0dece5650638092b06ee852",
+      "privateReceiptSHA256": "0d3d7ca541eefde370af8244c607d4a69638a5dfe5c0aac3b870e11054e7e6d4",
+      "stagedCanonicalLFSHA256": "44acc6d6dbafcf63c95a3df23520fd8dd891aac01a1c37ab4f03d93025233b9e"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch133.lean",
+      "privateModule": "IndependentCachedBranch133",
+      "privateSourceSHA256": "5444bd913c5d0081266719bbfdefde33d6f351d2772c2512d6d506679d1aa602",
+      "privateReceiptSHA256": "2bad3461a9aa23977d1eb9ca8ff8602a1bf334996d86bcc547ca2dd0328f38d5",
+      "stagedCanonicalLFSHA256": "27be3c5dfec0adce7b8ca539edff919cc468cbda0e8033992427b2c73d3d1a59"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch134.lean",
+      "privateModule": "IndependentCachedBranch134",
+      "privateSourceSHA256": "ebaf26bf0e606ea6c51d0ac9a0140985f71b7431b01884ff23704d384e3a7fd3",
+      "privateReceiptSHA256": "4adc1dc645e658180a6a32f41c5eb572eb2026701c642a2f18fae88a8b9e1b5b",
+      "stagedCanonicalLFSHA256": "d834bfbb1200311cf7e4d66f17309dca5060538144cd70b0b80c2fe237c21d30"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch135.lean",
+      "privateModule": "IndependentCachedBranch135",
+      "privateSourceSHA256": "2785ca0f9b362f3dcdf7d5945a0bccb93e628d602c274c312d77ace6cd51b431",
+      "privateReceiptSHA256": "b0fc3c52e93c13dc140ca9e14229f296973ee6da208470be47f1c653c9fc10d6",
+      "stagedCanonicalLFSHA256": "63c6542e894379270e0a4bc0154a3473f5944fe85c3efd38d9dc4057dcc9c59d"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch136.lean",
+      "privateModule": "IndependentCachedBranch136",
+      "privateSourceSHA256": "3476e38189a2bd5bd72f1060f06f559cd3b7d2bcca1a9a7498bd11e05c9d65d3",
+      "privateReceiptSHA256": "7cae66da44774b5d49dab859bb9d6c1127ff101f5f17693b15b7d64ccf6c6c71",
+      "stagedCanonicalLFSHA256": "7aaaf50c78242ffe79228953d26024c0d9c530c7c5ac24d0446ff2799d5a2a98"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch137.lean",
+      "privateModule": "IndependentCachedBranch137",
+      "privateSourceSHA256": "bb8c1b06e786940fb47e691873538a4f309143f7ba0acb05fd7680e90f90381f",
+      "privateReceiptSHA256": "79d8e6361f8bb05adb52bd299f99269ddceb95f874463779181d2cc0ab4a418a",
+      "stagedCanonicalLFSHA256": "7c8cabe6c1289432d36d5781dfb3b6445fb2ea4cbc84f8ecdd5495bd87700590"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch138.lean",
+      "privateModule": "IndependentCachedBranch138",
+      "privateSourceSHA256": "9d5edcae81a001056e15b4d30524337b607b3543eb75813c83680d78da420b58",
+      "privateReceiptSHA256": "0997c7e90d21e89ad87e3acc7d6c22bb83715018bcb9f5a6fa34622c45375568",
+      "stagedCanonicalLFSHA256": "187c3a7415c8b9e2c3025f6682031ce050a5e15fdf17911839408f8f51563ec5"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch139.lean",
+      "privateModule": "IndependentCachedBranch139",
+      "privateSourceSHA256": "01c22e8ba35e5afbd2b93665580c9ce05f6713c00f1b00d10fb106a4fb780c84",
+      "privateReceiptSHA256": "0f65b3f123a8052e60137705d29579a262c7962ba5a684a82d30945c732b347b",
+      "stagedCanonicalLFSHA256": "55106c552eec71512280b57e3eea553420e700ade8632c63e465cbc663159e5e"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch14.lean",
+      "privateModule": "IndependentCachedBranch14",
+      "privateSourceSHA256": "d094c0d6645f18016f36b8a288a4418da0eb7c08c7d69bde801de33ff773c3a5",
+      "privateReceiptSHA256": "6fde9d08482d0ec60329cb1302cc3eba6626ae78da26c91acb818ef9d8dd6e0a",
+      "stagedCanonicalLFSHA256": "a23fdaec0c9fb8f37c399472ad354cbddbc0c5cdfbf8147a9cac27f0ade35abe"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch140.lean",
+      "privateModule": "IndependentCachedBranch140",
+      "privateSourceSHA256": "f9d3a8532c044a5f19f7d178adca8a8dc95db724bd072d298d67e630cb1abf98",
+      "privateReceiptSHA256": "65c1edd91e112537185093469819167d3dd3580bfd8a4e4a7f45df8075d3e8a0",
+      "stagedCanonicalLFSHA256": "1ff576252d010f181b9c4bd2dd34c33bb895d1cae079dc549b41fe595e46bf05"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch141.lean",
+      "privateModule": "IndependentCachedBranch141",
+      "privateSourceSHA256": "0290381602999995a010bfe2d67f86f7babbc00b08fa47345d808cd974e802b4",
+      "privateReceiptSHA256": "b42c5699d3e5f50b56457b64c98b6aa214d7dc4931e801e6b3cefc5301f500e2",
+      "stagedCanonicalLFSHA256": "dff1187e11f77e5928ce8ba9177c6813db22a8a07d504bcbb776ded6dd90378c"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch142.lean",
+      "privateModule": "IndependentCachedBranch142",
+      "privateSourceSHA256": "cd98d0a4b720f6f4372cde4b184ccb5cc36232ccefab96c93814522fe227a131",
+      "privateReceiptSHA256": "975cf20cb75e978d218bd601ce713c1803eb2beeb2bf2fdfa836a8a578f55943",
+      "stagedCanonicalLFSHA256": "240a638110e7bb62eb83e6d073ddb5271552d4b89925805c9a63b8f655ed0f6e"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch143.lean",
+      "privateModule": "IndependentCachedBranch143",
+      "privateSourceSHA256": "77f096a808c75eca161962cbe8d409f3639956ee797ff3ed122e3c9f06bafe29",
+      "privateReceiptSHA256": "1b980ac411d332caaa24ac2b05fb1134fb1f6b4e0e183f4c270bed6f0a930793",
+      "stagedCanonicalLFSHA256": "0c7bfab16f165ee5b32bfc5c7fec9e0047f24553181f53a8914e6aca0ffe841a"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch144.lean",
+      "privateModule": "IndependentCachedBranch144",
+      "privateSourceSHA256": "dceb0ac2fc0e443236ea20e1cb6a6ca7dc51bef22fba4e8d2e1ec117a6f78a61",
+      "privateReceiptSHA256": "3703df16a99068eb477a09958e0f3a0eea203d5ed1736e755a99516c106a81b3",
+      "stagedCanonicalLFSHA256": "aa559ee407022ed7258f06f6051d7aa7bfdecd1ca20b8096cf5134e9112199cc"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch145.lean",
+      "privateModule": "IndependentCachedBranch145",
+      "privateSourceSHA256": "881b078a2df0796e66e3975103b1f88088967608136c9ec404f80c54366ac8be",
+      "privateReceiptSHA256": "28f669b24d1d29c043921fb5b8fa1ab5af581c2281cae4d68fc1433bf36d0935",
+      "stagedCanonicalLFSHA256": "a779e00730f44f7061e885034a19d358bde644836c9f645609a35b4c7bb1e465"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch146.lean",
+      "privateModule": "IndependentCachedBranch146",
+      "privateSourceSHA256": "0a4d26b3f2117654e6d76d199f8b417a49c013dceb4e544741f688d1fd64fb38",
+      "privateReceiptSHA256": "f2ecaa005d8fb8f613a01a6b4b1590b3e7a6a8f8a9be283b7acecf07794a6407",
+      "stagedCanonicalLFSHA256": "b1558288b106bd14d3f78ccb5cc4904f63c3cc05255b473f40be40f079364ac4"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch147.lean",
+      "privateModule": "IndependentCachedBranch147",
+      "privateSourceSHA256": "c39329b969aeddfca998046621921812b8d110e8c7c56842007b8e6152f97abd",
+      "privateReceiptSHA256": "00c81089ed1e7bc1480fbd34f2b9c32ef3ae5f38a13ce37e926c68bfe948fcdf",
+      "stagedCanonicalLFSHA256": "7a52de5bdf730517fd4fc601441efc2cd41dfb01014e86d6c85121c0c85af442"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch148.lean",
+      "privateModule": "IndependentCachedBranch148",
+      "privateSourceSHA256": "d8837c2e31350fec764a396907b6dd91e672a3fdbbf00f50072d32245f7d9863",
+      "privateReceiptSHA256": "3266bb1a45042190d77eaf77e6a41506b02864f1e8447cfaffd2867427af45bc",
+      "stagedCanonicalLFSHA256": "911c2e97b58d424fb78a96103522a589b5dbfbde67a3aed012f2de7517a6fe66"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch149.lean",
+      "privateModule": "IndependentCachedBranch149",
+      "privateSourceSHA256": "6084f879e56d68d198fd98ba0c55583a8e574a1d2149ad387760180a9fcb5ebc",
+      "privateReceiptSHA256": "6444678ea806bd64bda7f2d9c8c44d6bae316ef28d952aff0c069f20286701ff",
+      "stagedCanonicalLFSHA256": "33faf9d230e4eb2eaf30ff9bdf88836d90961faa7ddab67b98e83117d7295940"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch15.lean",
+      "privateModule": "IndependentCachedBranch15",
+      "privateSourceSHA256": "d5ecec8a6b371efd4c6f97630818831f825ab033d3d206f0700b64a3eaeed0db",
+      "privateReceiptSHA256": "1d8c62827b0cbd90c0f270ce7c968fd5553646e487e0d002252041e42ae23cbd",
+      "stagedCanonicalLFSHA256": "47bf4ef9fb959699cc29a9801ded6e326633ee1c5dc4e1631c7e06f53819c8f9"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch150.lean",
+      "privateModule": "IndependentCachedBranch150",
+      "privateSourceSHA256": "63cf2a98aee78355c92d0f103885b7ff41c7f6cdeab780e0e6b194b63de4ffa4",
+      "privateReceiptSHA256": "8435ab3a3bf4bd8329c83acc16198019d32064be5c135edfe8402db3990e4fb4",
+      "stagedCanonicalLFSHA256": "04a739c7614cc9bad537dce542440023b510bf77841245b025e84a0f746381af"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch151.lean",
+      "privateModule": "IndependentCachedBranch151",
+      "privateSourceSHA256": "198f7a43508eb74870fbbaa119020c1a9343149a5dd166892e4acc2b03c70b08",
+      "privateReceiptSHA256": "3ece1be194f4cc0053ce6ec8a1becc4c970db3ce57c06847495164172503e8b7",
+      "stagedCanonicalLFSHA256": "d104aa0e42dca7ee51fc13986967f10f3a19dcd71951c5ca47d9d25184f90613"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch152.lean",
+      "privateModule": "IndependentCachedBranch152",
+      "privateSourceSHA256": "d5838fc03134222a8a39497bc973703cc9cc898f016ef8ffdd0b6827fafb8c06",
+      "privateReceiptSHA256": "40bfed3a4e90ba6d58714aa744439ff224e946833e3c35014ecb5401529b83ec",
+      "stagedCanonicalLFSHA256": "f2d46556cf21522d0a3b4aa4172cd363f45c427c3ac689a1b581ad81348342d6"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch153.lean",
+      "privateModule": "IndependentCachedBranch153",
+      "privateSourceSHA256": "ca8283ca63f84a3b28b342d1ae9ab44fb559d19bfd9a6379c27ab73623f136e2",
+      "privateReceiptSHA256": "5b09b15c1c961eb207cd10f24a6f91f5074bd310f8c0ff72d4b70c198ed77219",
+      "stagedCanonicalLFSHA256": "f01cc0720c94cadffae6951b922c4c9272088d8e47edaa179a8c98b521efbd97"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch154.lean",
+      "privateModule": "IndependentCachedBranch154",
+      "privateSourceSHA256": "edeb86c1f04837820a0c08a3b80acbab0d6d2f3c8141866ae83b2bdb2f2e9e48",
+      "privateReceiptSHA256": "99ab6e4630e452d057cd3575847d01fe8d2589fda26e3077b0d53f5bef155bb3",
+      "stagedCanonicalLFSHA256": "c043cd9d4e03b6f6275290c2c47bcdb667ab5fc10577df98c1e0a87e49bc0b08"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch155.lean",
+      "privateModule": "IndependentCachedBranch155",
+      "privateSourceSHA256": "afe1cef935f2fa67b13555ce3470958457022f9e2127fb8ea99984a4dcc0f025",
+      "privateReceiptSHA256": "a604937122de6f54a843520326dd781e94f3b412333b2370f0eb7022d2f02f69",
+      "stagedCanonicalLFSHA256": "6c1b24f4e3e879ec8b00d1c57af6485ff81a799baf154947c5cb566275db2cda"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch156.lean",
+      "privateModule": "IndependentCachedBranch156",
+      "privateSourceSHA256": "d6cb0c865b1e07c2ade3256820e7143efd20b49aebd104898a17c269c9053cf7",
+      "privateReceiptSHA256": "8c684817bcd13bae8aaa0c8ead43b33019ea875a2b69bed377b69f4929aa2762",
+      "stagedCanonicalLFSHA256": "f98918cd4bd7c35f6f66845a760561d0cf6d5553264793867718ffd836b1f6a9"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch157.lean",
+      "privateModule": "IndependentCachedBranch157",
+      "privateSourceSHA256": "fff2de613e3442d12aa77525b6e40867b4aa0afe29637593443f5567849b2110",
+      "privateReceiptSHA256": "03f1bae7d40b0d063f1fef7e2dd747b81dda88f172a89540b2fa358149065810",
+      "stagedCanonicalLFSHA256": "e9ef57a20be6b623bf2c5241fe5efed357c414698a6c2a3240cf63dbc314ad74"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch158.lean",
+      "privateModule": "IndependentCachedBranch158",
+      "privateSourceSHA256": "0b661a52de9f5fd87222cd1b2a3adcd72e8972ab26f0fbf39473ebc6a9290c31",
+      "privateReceiptSHA256": "006f2ee1967433f0c42f2f75ac7e0e997845541e509aa48ed2360f776418a749",
+      "stagedCanonicalLFSHA256": "0bd544b6163939183db438caf6a52bf60afe218349316ae96687178d62a62fc4"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch159.lean",
+      "privateModule": "IndependentCachedBranch159",
+      "privateSourceSHA256": "8989794068de811540ff956c9c6954e3f105115d9c7dc0974712d721c796f322",
+      "privateReceiptSHA256": "c2e1fbbdd8dbc7681f7d8cd54db3181ef3f4783f5980c018f4a406885d06e5f7",
+      "stagedCanonicalLFSHA256": "6c80beb6b20ed7a00a64f42100d819b948e4dd89f911592f6481fb03fc73869a"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch16.lean",
+      "privateModule": "IndependentCachedBranch16",
+      "privateSourceSHA256": "8c79e7e2ad52ee43cb70b21e3ad6bd1c2897c53d114274684860a9db2b97ffea",
+      "privateReceiptSHA256": "293e4cd7740ebbcb3ba3c450638bd079e292cc7201379aaf5b86939292bedc15",
+      "stagedCanonicalLFSHA256": "4e7f8e19fcb853a5aed4d1e974898e203c6a836fd52816a17e9f627bbc8785fd"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch160.lean",
+      "privateModule": "IndependentCachedBranch160",
+      "privateSourceSHA256": "023a0701770b948ccbf07e99e612aec4a0351cc31886cdb909d93e014b98dcb4",
+      "privateReceiptSHA256": "68bf150849f3c213be525984cecf61ac132be1ee2c4ac7f8710dbf2eef1601b6",
+      "stagedCanonicalLFSHA256": "cee486e40da4fc9c0654c2a488a139d3081d7b1e2392e1b857d1918813ee7f21"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch161.lean",
+      "privateModule": "IndependentCachedBranch161",
+      "privateSourceSHA256": "6ee6e5c94a4a610aa692fb3e43ca7d84f05f508fc9f9e7b301128dd824fd1fab",
+      "privateReceiptSHA256": "0d69329a0677f0d75b0ea2550ae65a6f6205e1d37ee87f1950e8c887646a7020",
+      "stagedCanonicalLFSHA256": "9317f06bfaeb524d60060952c456e765f701af3ebc1a181511a61f3b40a94109"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch162.lean",
+      "privateModule": "IndependentCachedBranch162",
+      "privateSourceSHA256": "d766ac2ef88eec6e0da2352d665823ce9a144b57b8bf50a08bcef558d48c35be",
+      "privateReceiptSHA256": "199ffd28d3791855fcdceda507579d518da6c9ee48318cf6d5879c74d611d458",
+      "stagedCanonicalLFSHA256": "761fe90f62c7607678396c6879a5492e8a12f2a57d4913002ac1bc9012059f55"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch163.lean",
+      "privateModule": "IndependentCachedBranch163",
+      "privateSourceSHA256": "527fcb7536705e82860bb60e2560a11a3f357845c16e2577d7b17fd8e9c90ab8",
+      "privateReceiptSHA256": "979885397c285695914b618cd46e815d4a7c22e7e55905c6572b2fbdb9eceb0d",
+      "stagedCanonicalLFSHA256": "824d7b5ddcd4543970aefc144733c74f6c2665049d6ab7a20baa138abe8db54b"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch164.lean",
+      "privateModule": "IndependentCachedBranch164",
+      "privateSourceSHA256": "9eab471a919bddb46dd36cc813ce8fda4569bf3677b6e46692ebfa186fe769eb",
+      "privateReceiptSHA256": "db9ef2d71ef9a05121e14069d043f67dcac6703c5162d8f39d09e27daa650cde",
+      "stagedCanonicalLFSHA256": "8df7f208c88d8850895e2eccc1f78849e67af29d6bd288c6977363e9b9acee49"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch165.lean",
+      "privateModule": "IndependentCachedBranch165",
+      "privateSourceSHA256": "1c256816b724c480f09bed14145658d17e39fcf09939a657d1d4864256ee1870",
+      "privateReceiptSHA256": "1ff26619f0990206e6fa18d4e2cc2fad1ad7a67d3bc349ba2e387fbb378e48a4",
+      "stagedCanonicalLFSHA256": "87cc75fc7c41181a4133047fbc91c08731964fc7459df4eb3d2ad4429bd5bb16"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch166.lean",
+      "privateModule": "IndependentCachedBranch166",
+      "privateSourceSHA256": "41ab68a3750698ce2781ea424908dac31d4f0dd92995971e477a6262bd0c341a",
+      "privateReceiptSHA256": "e472e0541fc52f229d1a70956ee72caf6f175e5dadb8357f4d141366ed78a1e2",
+      "stagedCanonicalLFSHA256": "ae11111fd421c32f5c6e4eb90d7a4a2e26c6f6f7f2301a621b236bbe875c7d51"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch167.lean",
+      "privateModule": "IndependentCachedBranch167",
+      "privateSourceSHA256": "a4d621e9cbe0cfa983d362c8a6e47385a083a9d7f37a98f99ae3211b125338c7",
+      "privateReceiptSHA256": "7fdf3b59becda3788f984c7ff66518a6382a3289cbe3f41a706a6ccaeb4ed164",
+      "stagedCanonicalLFSHA256": "e73b1a2fafff107c32b7fe0924b3759573cae4ef3a1309543a043d8c69ae173e"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch168.lean",
+      "privateModule": "IndependentCachedBranch168",
+      "privateSourceSHA256": "dd16ab7a2272b2c8edea318d958ef83f87c0cb2a5fa1b2cc1648362661491c52",
+      "privateReceiptSHA256": "83af23dcdd1567fc69fb5a6708a34d6d98c393c0c2aa7889ba21ab229559d6f1",
+      "stagedCanonicalLFSHA256": "f5023f0375bff358d60ca4c4890a10ff4470ff296523e3f3edc31121bfb5e8d3"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch169.lean",
+      "privateModule": "IndependentCachedBranch169",
+      "privateSourceSHA256": "1f8b7f2d2a72d74b6dccb0a4d3428cd1226e068ce8333defbd2e95486592ee9b",
+      "privateReceiptSHA256": "29912443608425e5e7ab11f0e3a4f2d828e71b4877533394dbcf1ef86c83d416",
+      "stagedCanonicalLFSHA256": "e6b4b6aad37c86feb626908698321d28260eec7a98d22ba7364a0b1ccd6f0881"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch17.lean",
+      "privateModule": "IndependentCachedBranch17",
+      "privateSourceSHA256": "e5380411c66364aa76af0b552f1f162d581ffb90ad4666eb624ad1d89fb21bd1",
+      "privateReceiptSHA256": "c2fccbeb4b20c36efa2605f22029736e9b743c603ce5db30eaa13f0ca8da4a50",
+      "stagedCanonicalLFSHA256": "f09d27ea6b377906b5c144478e17e6000cb1d589447b21ded1ab256f3c0a7d2f"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch170.lean",
+      "privateModule": "IndependentCachedBranch170",
+      "privateSourceSHA256": "e02f43138fa8d90a11d024a43d97da0b96f2507d44b763a1e8a86c9e61a8f1d2",
+      "privateReceiptSHA256": "f9a036b57ab495cf270284a7b2b6e84070eb66c6528c01f1d63b5e01f7d741c6",
+      "stagedCanonicalLFSHA256": "79500698a995ea2cd6a2a190a588aafdfdf616c6337617efece0af7b0e1cba97"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch171.lean",
+      "privateModule": "IndependentCachedBranch171",
+      "privateSourceSHA256": "90ac9b2c28e2ed0b95eeee22e316c4b43c5c505642c723c3f4000959552ad78a",
+      "privateReceiptSHA256": "cdaf844cb3b95ed103ec910a6b2c827f3c9a75b38d8d92a81cbacb6477541e22",
+      "stagedCanonicalLFSHA256": "7ffc2b546c1d89a9b8ae38cd47187527663d2fe99ee527f7fdbd7beb7710c359"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch172.lean",
+      "privateModule": "IndependentCachedBranch172",
+      "privateSourceSHA256": "a9f123728111f83f1e156484207510590812239b05a69bf999152ae98a377e27",
+      "privateReceiptSHA256": "2f675450661920dc502c976a2e16f3ec1826a5fae382f8ac8ad493bf3843ee71",
+      "stagedCanonicalLFSHA256": "413952f18a51c074eb6567534c8b72ff30bfa0f6f6280bbb4a615444e7a2f02e"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch173.lean",
+      "privateModule": "IndependentCachedBranch173",
+      "privateSourceSHA256": "b806bdd8b2d5d4b239fabfbeab0d0e94e02767c6ae26ab5b296a2776a49fa9df",
+      "privateReceiptSHA256": "5238566ba2b97c1880408491b384fcf437d39bac7c0f84e7d19d5f3ed005e335",
+      "stagedCanonicalLFSHA256": "efb429b5b93198a47752edf0822d7cde9768560dc0212eb928977ad0da4ad009"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch174.lean",
+      "privateModule": "IndependentCachedBranch174",
+      "privateSourceSHA256": "3dc23412f31c2df0df589e45d87ca29bc725d8d88cb6d4cffa3fdead9573eedb",
+      "privateReceiptSHA256": "e703231058182a769f79ca0d974fcbe02f2836bc8055cdd0cff7512ff6de2470",
+      "stagedCanonicalLFSHA256": "dc61fe04612c2359a9273cbd761250b5b3a366379b655619b86eed32fc509c65"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch175.lean",
+      "privateModule": "IndependentCachedBranch175",
+      "privateSourceSHA256": "c3b2a5c1a2a7714b0777eaa1c5b6c97e5ab5774b2400148a4735a301df536599",
+      "privateReceiptSHA256": "c91b57209e9246f1092b7e4d380fbb8df9869c3b07c59065dfce42fc44e7205e",
+      "stagedCanonicalLFSHA256": "92299629bbc5acfe60036f116d0fa56f2016254f477c1433a680159565f4b818"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch176.lean",
+      "privateModule": "IndependentCachedBranch176",
+      "privateSourceSHA256": "a86cdcae1f182fe57d82b0cea7b7823fe2a39ea584d2ef8b2c95ca9b702c6a8f",
+      "privateReceiptSHA256": "941c3ff35b6051397b7a896788f2a9f3b0f3f636487773711e3380bde224795b",
+      "stagedCanonicalLFSHA256": "eb8b2f29e6a56b21b1fa843a460c05189c2f4d4d5945eca739f01873a53de164"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch177.lean",
+      "privateModule": "IndependentCachedBranch177",
+      "privateSourceSHA256": "8007e0a908a35e50e892418c7794a7621e59235c896051c425c72e7d3b11009a",
+      "privateReceiptSHA256": "1ecae3837fe1d4f81dc596756d3954334d685e109eb399749508dcbcf5676a5c",
+      "stagedCanonicalLFSHA256": "81f90954cc05be50c9b811f564c5164b429e20576b888d6fbc33b05d717204cd"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch178.lean",
+      "privateModule": "IndependentCachedBranch178",
+      "privateSourceSHA256": "9134d22fad09cd08133030645ea79c8abec22c3d4e094d966e77bda0d2ab4b70",
+      "privateReceiptSHA256": "3399e80fdccf966eddb34ec32f80edc9812d9b8e282d885238052e24885d899e",
+      "stagedCanonicalLFSHA256": "0ae21d40d3afd86064927394c7f751c500c7037efae28082010a80c4030f5e3f"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch179.lean",
+      "privateModule": "IndependentCachedBranch179",
+      "privateSourceSHA256": "4e072f0ad8f5fca0bf6a534467b473843efa3f6a9faa6f9a3bbea30982dc5dc4",
+      "privateReceiptSHA256": "f31257e0a51b859f1e1f2706c096352663b975756605483d5279380aef951153",
+      "stagedCanonicalLFSHA256": "e7b89e63fb4d2be3645604865b4a1adfb34b9d34711981dd544530944f187bd2"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch18.lean",
+      "privateModule": "IndependentCachedBranch18",
+      "privateSourceSHA256": "d9ad18cd319fc9b1894b3e269bd9d5d313cd66785f270f0c5eda2ea63d979a96",
+      "privateReceiptSHA256": "4f587a8accf3066aa27802f6eb97a65558c6ace46bf5cea296c1338ce8094889",
+      "stagedCanonicalLFSHA256": "671649fd24222ea35b1a440a4ddf684b06448795383b15402184ec602d91f71c"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch180.lean",
+      "privateModule": "IndependentCachedBranch180",
+      "privateSourceSHA256": "4f6988e2f9a23b9b8d7e1d9d0c552900eb9868a46a0274bd9e94d4ce4b6475d8",
+      "privateReceiptSHA256": "b3f083d0c6fe0ab8f69bc92d844d144f985a18d71f1e2b111f02ef1847ddecb5",
+      "stagedCanonicalLFSHA256": "7030f33006dee3a6e37bcc3650c873a9bab43bd6789baf9f0e906e974d6d280f"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch181.lean",
+      "privateModule": "IndependentCachedBranch181",
+      "privateSourceSHA256": "35dcd1c57af0cd4be0cb8cc6998cf8a05b219fad79fb7096c83fc8871458f57c",
+      "privateReceiptSHA256": "ea542d78f846792bf1f40f22ff68a9737f926255c103e570cd90b45cb79a1840",
+      "stagedCanonicalLFSHA256": "73a20649cc5918f52d70b8aef597cf54269b77b3e47f8ff374af5b8b7d11e61e"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch182.lean",
+      "privateModule": "IndependentCachedBranch182",
+      "privateSourceSHA256": "fdf12a31cb9259eb1373453406b4ae1029f738dbb736313a89fb0057649aa606",
+      "privateReceiptSHA256": "f7d61f287c5889eb9c326b0cef8b30d64a47acd63532344bca5561a0487b27ae",
+      "stagedCanonicalLFSHA256": "0bb33abc623ce961e10334deb9a8e17673df5391eb5c01349b1835fc90750364"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch183.lean",
+      "privateModule": "IndependentCachedBranch183",
+      "privateSourceSHA256": "a8b076e09c7bb4d7cbff302fdc1c9e07ed97f3c2154fd5499108b41c08d45065",
+      "privateReceiptSHA256": "0832fc5f7a93be44ac84749988382a7a1146e38cb108ae5da0bdc711527ee0a0",
+      "stagedCanonicalLFSHA256": "06e14d4384571d244e5f22733dd13ec13808e15526df5aeceffc0b5e22b24d27"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch184.lean",
+      "privateModule": "IndependentCachedBranch184",
+      "privateSourceSHA256": "cc45cad1de074a4c1739765ad56a9841e162cd4c4d033b2b9c65bde3773ebf57",
+      "privateReceiptSHA256": "b189e8a5bdd880d8b0a096efe7cfd0bf7687907336eef286f38910d106d45450",
+      "stagedCanonicalLFSHA256": "aa6584480fc977ed14396ad4c9dfa27aeecf54feb06056f4e2093149efc588b0"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch185.lean",
+      "privateModule": "IndependentCachedBranch185",
+      "privateSourceSHA256": "d3529845a6e2c84b8477d79ce85b3cb64dc6a6da99c659db02a43f0ba00f773d",
+      "privateReceiptSHA256": "4ed3e6b03363fc02fdb063cb18465028b0b054dba4cb5e6c6b42f5612bdf3c03",
+      "stagedCanonicalLFSHA256": "de47ea865e245b7f5217cb63b11e86429b89b89fbd8ab86b17133e78609ff7fe"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch186.lean",
+      "privateModule": "IndependentCachedBranch186",
+      "privateSourceSHA256": "a055607ab1da234bf62b87aef2ae881adc83f4969a06a40b59a6c7830913a99e",
+      "privateReceiptSHA256": "1bef526707ddcbfe48eaa4c8341bbcda577aec874c3f7e95e017562b0d0d5642",
+      "stagedCanonicalLFSHA256": "7f083e43d8d78faf29e032d8a1a1a70ed0c5acb0b939b0d9c508d2de0e364f4c"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch187.lean",
+      "privateModule": "IndependentCachedBranch187",
+      "privateSourceSHA256": "f40586e79f3b918b482789878936bcb6f3e1ee27a21c025433d25cb51b376238",
+      "privateReceiptSHA256": "953857befa6ed4f0993c057034b3c3aad612daacba049c54a1a0843b30687118",
+      "stagedCanonicalLFSHA256": "7d73dfaa3c9f76b40f30f12af67972878e4143ea889c02f36d3d10990ef81116"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch188.lean",
+      "privateModule": "IndependentCachedBranch188",
+      "privateSourceSHA256": "7ee42eb5b30ccec4c61e62444bbc34547cef7da53174e93ec1771d652114744d",
+      "privateReceiptSHA256": "fc2a5127d424622ae5a93134b7714e2b4b045584d8e0383fd37114a569c216f8",
+      "stagedCanonicalLFSHA256": "cef13c1d426f8721da1d3e61af2048ff8fb018986453ad5aea3d5a7398f5fa55"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch189.lean",
+      "privateModule": "IndependentCachedBranch189",
+      "privateSourceSHA256": "b4398a9a06fcb27dda682e06dacfba2e3d70aeadece490be08d164a15ac2ace9",
+      "privateReceiptSHA256": "8100bfb28273513536180e69203f526f9515164766b57176d60127ee203b403f",
+      "stagedCanonicalLFSHA256": "e9e6d128b8c6f2b11b8a27923c7d581fb7752311e9b46bc87bb9d5caaceaf8e7"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch19.lean",
+      "privateModule": "IndependentCachedBranch19",
+      "privateSourceSHA256": "0fc093341187d75d6dfa4268778628b85b6eea1a7c83ed82c52ddfa2d39e5de3",
+      "privateReceiptSHA256": "54a1877349276c0024a9d2df3ba90e5040e51c6f78302b7843c87d1ee68fcb7b",
+      "stagedCanonicalLFSHA256": "f323422ebb308f9b2ee333e35de395250ab484eeddb1070fd155756cd0e7a009"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch190.lean",
+      "privateModule": "IndependentCachedBranch190",
+      "privateSourceSHA256": "4c34aec3d23ab87c37ecfe4de0d91a107bedb5876ea3757f460a7720237a9509",
+      "privateReceiptSHA256": "028df4b116b9580d9b45d30d87ebfee581f83f41a941fbad5f2bfafb55f1b39e",
+      "stagedCanonicalLFSHA256": "03306642ac230c65ac3de59fc40816a24a2e8bc523ff3057d52bc408f9f579f6"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch191.lean",
+      "privateModule": "IndependentCachedBranch191",
+      "privateSourceSHA256": "c199604419a7b59038b10d3b62f9e1a202744f68fb80e9452c804ada0f7dd370",
+      "privateReceiptSHA256": "1741b6ecdc2a9c7e8d715f56653a509e99d36043a25818d5c48431b79af75a2e",
+      "stagedCanonicalLFSHA256": "a9e36c0b1eead2aa402b4b07a044f6c94e40c816ad3c399e1a25aad0a08dfe17"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch192.lean",
+      "privateModule": "IndependentCachedBranch192",
+      "privateSourceSHA256": "e7e6e214535792882052345a5bcd18d245c600c6b76c3591e4484aa644a40358",
+      "privateReceiptSHA256": "7d86bb0c5d1ac96541d278fdcbc346d796ef59e5440feb54c1a404b67ffc4346",
+      "stagedCanonicalLFSHA256": "8dadb353fc7f23e6e23b976c160ff99ba8639af6cfdb5c49595dddeee7819b68"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch193.lean",
+      "privateModule": "IndependentCachedBranch193",
+      "privateSourceSHA256": "d96ec918f81f064e0e52dcc7b0b88bb834b49b02ed962f598b9495c316ab335c",
+      "privateReceiptSHA256": "970ae545f3431c57067dd92da2add3b2a41e4e72748ba495ea4c3de615778a76",
+      "stagedCanonicalLFSHA256": "6f7829c7513c52f6fa0fcbd40d5e907e4bdc1f0e45c7754539eeb9743bb3f4a7"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch194.lean",
+      "privateModule": "IndependentCachedBranch194",
+      "privateSourceSHA256": "1e36981656fe12d7efaf5cdfdd4acf20ba56c555f5889373b31c0fe47b43d14b",
+      "privateReceiptSHA256": "da3fec45db8a8a5aa76b45ae232d92fc1b8a3f5961f846cea8b1f646f536ead8",
+      "stagedCanonicalLFSHA256": "ccdbd4000edc474309e9ab1366e1bd011f9c69bd1f80d45c45207541f330eee4"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch195.lean",
+      "privateModule": "IndependentCachedBranch195",
+      "privateSourceSHA256": "c766595cb3668859f3476299fcc9b10c1ebd6c9af07a54953df33f0fe26bc313",
+      "privateReceiptSHA256": "88be00a36b7eb192d67d0c3e96f169242a60aca94f11dc8ae0df0934d7f4a406",
+      "stagedCanonicalLFSHA256": "3ebc09a105e6b22f28eb96a58f1221a18b574d24b6e1b10bcae85df1838753b4"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch196.lean",
+      "privateModule": "IndependentCachedBranch196",
+      "privateSourceSHA256": "123fe7c901a56c09e194e82a66e04304e483d7d3e7a30cb33d253515df81f5b0",
+      "privateReceiptSHA256": "6123972b6deb0670b56ef48232a67343cd5e87be325eb730b9e69182fc70b41c",
+      "stagedCanonicalLFSHA256": "f667f0f1938cbc8e6785330d91689fb502f14b31da2fa97020553e77f7a28ac5"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch197.lean",
+      "privateModule": "IndependentCachedBranch197",
+      "privateSourceSHA256": "670b9e5f5b787ccfb61bd461d556d495be07b86dc80c28b850f3c223b092ef1a",
+      "privateReceiptSHA256": "c235e1f21d54451b84467b5d64536d4f15485af12a49059386e93c332d0cda88",
+      "stagedCanonicalLFSHA256": "a7f09d685b28d2254921038afbffdee7e19ba70c2945aba5def1fd382a4a30ed"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch198.lean",
+      "privateModule": "IndependentCachedBranch198",
+      "privateSourceSHA256": "ed4678fc04511e8cf5dc888b4490d870e1a8e0cebad9e1de9ebc31696f5ce7b2",
+      "privateReceiptSHA256": "a5f7137bbbb0537d3464a5f14f829d7aff3538d51150bfb045278f9401ece13a",
+      "stagedCanonicalLFSHA256": "d88dac96693e0b1779bba63f2ff21dbb78409b465466adf75528e3aff8be9439"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch199.lean",
+      "privateModule": "IndependentCachedBranch199",
+      "privateSourceSHA256": "23a4393272e337af137e149e1cfceebfe13ee0750143c01788ce3e7b9e238cac",
+      "privateReceiptSHA256": "1ded9f6ffe26c7d06319d2324ffe200306a44f98d43340278a59b69b964a205f",
+      "stagedCanonicalLFSHA256": "29866591a2230f662d6b51b833ca4a8a5afa19313d15964e9f294dde175622e1"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch2.lean",
+      "privateModule": "IndependentCachedBranch2",
+      "privateSourceSHA256": "fbfc3cc99a040eb7f3c0cd4535c4ce5e260df57d9918f00de4af6f8956f6141c",
+      "privateReceiptSHA256": "69b4a9360d130380c572c4630eb31143699c6ab4cea93602fc0e899d82d105f4",
+      "stagedCanonicalLFSHA256": "96b4d64762654dd7da398b3c3bf4d7f281032bdcb21f7f207319659cbb4ca8b2"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch20.lean",
+      "privateModule": "IndependentCachedBranch20",
+      "privateSourceSHA256": "d455eed83f01ef60a6020d69587b8fef8002107a51a33d0491c8471c49e2bdf7",
+      "privateReceiptSHA256": "ae35f5d8e82db56dd6369b9c8676bab4cb3fa0fa8593e03cb1b8709bf86843ed",
+      "stagedCanonicalLFSHA256": "d288eb4f03d8af3b47caca1e963631c762e57ec3437a2d02dba1af59177c04f8"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch200.lean",
+      "privateModule": "IndependentCachedBranch200",
+      "privateSourceSHA256": "252a93f91eaa5c18514b3b30693091a580f0fc4f2bdaef5ecbb4ccbbbc6b45bb",
+      "privateReceiptSHA256": "8adbbad6a5f50ac9d9c2e840e72209a0a78a6e003b7d5be413406ead631e1de4",
+      "stagedCanonicalLFSHA256": "7b93e6478613ec926d3f5a0891f4d065001a040f90df8be28a5de068ab44532a"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch201.lean",
+      "privateModule": "IndependentCachedBranch201",
+      "privateSourceSHA256": "6ec12e24ed9c108cb0c4415a55472a9f4303fb545851c0f081e6008bef90dd06",
+      "privateReceiptSHA256": "dfa3d0afbdeb81c122d4fcd583239991d88486fa02e964663a75a2927d8717e1",
+      "stagedCanonicalLFSHA256": "b26dcf02f79d8330f6e169b93a7bd6f5e0cfbd1163a219a543390d83f9bddfaa"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch202.lean",
+      "privateModule": "IndependentCachedBranch202",
+      "privateSourceSHA256": "140725fd5a6ab0f7580cca2c3cedf4608076a50460082b38431aab78ab7ba909",
+      "privateReceiptSHA256": "787c16d19637c4aa9344a08279471be56082909ebf6d78efd43f2c7e5111263a",
+      "stagedCanonicalLFSHA256": "e3cb34daf60244175a661b793d1e643bedc176c2aaaff0d5e7129993f745ea15"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch203.lean",
+      "privateModule": "IndependentCachedBranch203",
+      "privateSourceSHA256": "57604f55b4b9ba681163b5da4cb30426fb700d11209f9e66808a62bbf8449e39",
+      "privateReceiptSHA256": "072b3b8f965c237a69bf3e218421c0ffb41afb442dec03c329ebe3cf8fe606d1",
+      "stagedCanonicalLFSHA256": "0ff34dc9c3d07c792f7edaaa0a502020d0b7c824150083fb2f3b9a647a31e872"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch204.lean",
+      "privateModule": "IndependentCachedBranch204",
+      "privateSourceSHA256": "9e1af8bf941954ffee27d0e6ea921ed03daa077f7fcbaaa0209630dc3b96bd6a",
+      "privateReceiptSHA256": "4a1fc7022fb2449e61380333f834d7be3c5ddb09f5da57f2035bffb503f05531",
+      "stagedCanonicalLFSHA256": "58080a497d7a3f5538991d40d2ab371f2b228f1489d68429988b319cc3b17858"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch205.lean",
+      "privateModule": "IndependentCachedBranch205",
+      "privateSourceSHA256": "a058712e39549528880aaca93aca5888490c6d537e6df74cd292c33075562a00",
+      "privateReceiptSHA256": "bc55113ab2b31640d204213c9b846d566a43b5503042137af8f662b7708760cc",
+      "stagedCanonicalLFSHA256": "80011cae470a1d66089bd40c773b146aaf023167bf5ed920c11446938e5abad0"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch206.lean",
+      "privateModule": "IndependentCachedBranch206",
+      "privateSourceSHA256": "ac06d28313f08beb0b546da18cecd96e639517b25ed58fbde71640b7e4383d67",
+      "privateReceiptSHA256": "8a5eac17057f26d8216c108e93c37858c65d24d509c6aa8f847948d5e517fc2a",
+      "stagedCanonicalLFSHA256": "2a76bbaa4c723f084d8850506381823f53d0d012cd59b663f88bbf0744472ff7"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch207.lean",
+      "privateModule": "IndependentCachedBranch207",
+      "privateSourceSHA256": "dc113d63a54959881ee4f09b3843138c11800f10294cc01a680db6a604e99b62",
+      "privateReceiptSHA256": "150a8b67b82d9a118733ffb03b18c884663ea9ae5fe41cde03b0e289d8951a9c",
+      "stagedCanonicalLFSHA256": "df20efa880e9f8c25a7b485c3873b1c174f92a43a3eaa2af05eac4b153505d89"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch208.lean",
+      "privateModule": "IndependentCachedBranch208",
+      "privateSourceSHA256": "9835f3a2d857aff9a7a180c58617f9c84c7e1dc6fb780c63b0255f9b45e99e17",
+      "privateReceiptSHA256": "f8f477fab2b0b5da9e2febcb732cb2b1fc5cee2b8e457715cc1400515f08b076",
+      "stagedCanonicalLFSHA256": "4bb1ef76e8044f8869732617d1bf7b0d0c934a50ce41fad180d0b7e5c2da7f37"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch209.lean",
+      "privateModule": "IndependentCachedBranch209",
+      "privateSourceSHA256": "99c8e32701288145e7b4c43d5225ec4b5316f0dcfe7316d588b234d9cb6f0c74",
+      "privateReceiptSHA256": "f7c9529c01692ec45016389235e86c7e40ae20fcce030e08b9648a69baf94c48",
+      "stagedCanonicalLFSHA256": "652c7ff331216d200fdc04b6f989a0d20a0ce6c18a299e8e970b6c0d8109cc6b"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch21.lean",
+      "privateModule": "IndependentCachedBranch21",
+      "privateSourceSHA256": "9fab2867cbc4380b99540f00b837b7e316d8185cbbc4293fa7f19a25791aa961",
+      "privateReceiptSHA256": "df169842221461b7d1485133e52dba2893f3673cb23bc7141e4dd2bebd5df05f",
+      "stagedCanonicalLFSHA256": "5e89a8e34615fdedba3bf3dcf9dbc2f964ff4666430ec4a31258916390f8eed7"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch210.lean",
+      "privateModule": "IndependentCachedBranch210",
+      "privateSourceSHA256": "51fc4c41c35949673d31d936d21d50d2943848cb1ac77c0742c91cf66b6831e6",
+      "privateReceiptSHA256": "c98d21deddc406668d9165949fba110e8e4a46cda8a64d5f718a2efbe6cf830d",
+      "stagedCanonicalLFSHA256": "b1c0f0fea92a1444ef20205e91965d5943415d68a4f8f19a5ab1ee8562dfe9c4"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch211.lean",
+      "privateModule": "IndependentCachedBranch211",
+      "privateSourceSHA256": "99c3c9b11008a783e573d3cca6956a85709a04439cc7a5730d35f2a79a263f3d",
+      "privateReceiptSHA256": "361cd9a6440cf1ea8cde6d9b26ebe00114361bf38a65c769f5bae47f37ce2708",
+      "stagedCanonicalLFSHA256": "c1e0237886fffa4064bfc3bfc21471bba861ffbb58f36721409d88f600c3d3d7"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch212.lean",
+      "privateModule": "IndependentCachedBranch212",
+      "privateSourceSHA256": "1864bc6b4091f325b473f4f3d06021fff79b11e3becd25551e288413efabd621",
+      "privateReceiptSHA256": "e6484189ce931cb10df51b8f2862ffb80cd82c76cff5b7316cc95578b41743cb",
+      "stagedCanonicalLFSHA256": "949e97740538e8ca9f8d3ad323be87e0a97d0b62645caad75c2050af47f99b1e"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch213.lean",
+      "privateModule": "IndependentCachedBranch213",
+      "privateSourceSHA256": "536ecd6b26607883997895228133cff8b7116609ed1285a40b1be7711c5aa072",
+      "privateReceiptSHA256": "71e1a2b86398acefd7797827e8fda483765c5750c6fef4a2847441b7c919b0be",
+      "stagedCanonicalLFSHA256": "be4b0abca9856941c8b755dcb010cefd99f4fbaf1a670f557be7a5ed0f2c048d"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch214.lean",
+      "privateModule": "IndependentCachedBranch214",
+      "privateSourceSHA256": "3faaf983598c97ab4d7fdeceb101b9dac09c260fe33573118d4597da575ae22a",
+      "privateReceiptSHA256": "6b02469b58a4ee978007b63fe5a8caf31924eda50ba2f87c48721fb2ecbdb55d",
+      "stagedCanonicalLFSHA256": "2270705872eb274cf0e7e6b97ee032befa41e4e8667334dba69dbbb8e2a3f5a6"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch215.lean",
+      "privateModule": "IndependentCachedBranch215",
+      "privateSourceSHA256": "8cd5b885ed783d59bd93b5952f7e8ec6d0103206563b98cfdbef669faae0b55e",
+      "privateReceiptSHA256": "a574574855230a71ef33ffe77c83f37c58c08e1f6c58a86c39c560d379c8d7fc",
+      "stagedCanonicalLFSHA256": "8df32a7038ff2a92fbdf720c1d9e144e8c31aea46a2045e537d4aa6146a5cd97"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch216.lean",
+      "privateModule": "IndependentCachedBranch216",
+      "privateSourceSHA256": "c15d9b5e549fc1fbf7dad2bf80dd869ee6828ce21a54785bfd60aa89fd1e0b14",
+      "privateReceiptSHA256": "9be29fdf81f7a52424efae17bf540aba2d980f919157265d11452026bb04474c",
+      "stagedCanonicalLFSHA256": "7d14cbaa6672bfd700259da5f91b5b017924e4da4c3ed509c4661163e8f7aa77"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch217.lean",
+      "privateModule": "IndependentCachedBranch217",
+      "privateSourceSHA256": "7b208b9884882d55922bbe78a528e6749d8eddc9014dff803654b9a89526c029",
+      "privateReceiptSHA256": "3ed6d194bbcb23feb1e0c203645421ddae9f605e7448fbdaa63ccc73836dbe1d",
+      "stagedCanonicalLFSHA256": "7562c77e5f6e95efdd7a0a4f24702bd0bc1d1d1641a2321395000f5b3803200f"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch218.lean",
+      "privateModule": "IndependentCachedBranch218",
+      "privateSourceSHA256": "c2935bd5d039f60b15eb7d2f1d8751567728de3bfde6343c88fdc916659c5caf",
+      "privateReceiptSHA256": "dffa744a76008862b5d620eb7257362a87d4f76211e95de5c0998924aca9bcd5",
+      "stagedCanonicalLFSHA256": "9be4f20fb9186fb1a5abe84d9c40d044b25556a44b441f94b4435b8f69bd8594"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch219.lean",
+      "privateModule": "IndependentCachedBranch219",
+      "privateSourceSHA256": "92943606fe28a9b660938ba0f73afbc82e4971577b4a6bbc34a8945805b454cf",
+      "privateReceiptSHA256": "7ec72bd8fc23d71051176b3a783519762e9788b890097d7bb414cddaef6c0ff7",
+      "stagedCanonicalLFSHA256": "db86d3cb24138d29a014259607f79d0f86199b84f358a024735bff68b4a23ce0"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch22.lean",
+      "privateModule": "IndependentCachedBranch22",
+      "privateSourceSHA256": "cdf0f22e35faf24989e31c0d4e02cdf6b2c93519625f603cfc59b3f4c92bfee9",
+      "privateReceiptSHA256": "4cb423931f92a09acfcbd0c6a2c0dad728db192ecf1181c8ffa69d438b545890",
+      "stagedCanonicalLFSHA256": "6fb5f2b774a51e10be0aab763bde236fc5c5a44b1312fb7c7959cdc3bad330b9"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch220.lean",
+      "privateModule": "IndependentCachedBranch220",
+      "privateSourceSHA256": "f5d1d75a86d95b5b725657ec226517acd91689565c3c8368780f5f1940e9e342",
+      "privateReceiptSHA256": "c56fa09efb8113c29f90aed142ea68b798068f093b54fc92d269bd3654b906e3",
+      "stagedCanonicalLFSHA256": "379a1587ec6857b411492f6e721a4e34f4a893aeba2901f99de98cd04947444e"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch221.lean",
+      "privateModule": "IndependentCachedBranch221",
+      "privateSourceSHA256": "de355206089dd2cb6c22489f2d3bf1483f1ca3044e5ecd1968dcbcb3b7efdd52",
+      "privateReceiptSHA256": "bfb31db9c890a6db3cfbc8c66812d5f78c584bf51623add020489c43242ad23f",
+      "stagedCanonicalLFSHA256": "a21f9eacae5c566a3acde562ee352ed1731f96dff26fe37148453990793fa027"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch222.lean",
+      "privateModule": "IndependentCachedBranch222",
+      "privateSourceSHA256": "eca86b40add100b786dd2fb8b61b2ae1c8b770b913bbf6cdef09155623bf7a81",
+      "privateReceiptSHA256": "124b909c792c9326dcd72faccce51beee679fc06f38d6e17a162b85f349e3e78",
+      "stagedCanonicalLFSHA256": "deaae0954f5726cb0bd6fa91bb3c066fec337d79dea25a933a4b96c0d9a1329a"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch223.lean",
+      "privateModule": "IndependentCachedBranch223",
+      "privateSourceSHA256": "d6ef73467b7b16b46c29f05cb7f7c8660b7b9c4012b12932d95b2d4a6bba1863",
+      "privateReceiptSHA256": "a13bb98acc0b419c2920ec8b6c475fe0a7e0495b8aa0c5e305cbb6e9232a0a4c",
+      "stagedCanonicalLFSHA256": "ac04d2cedee3b3be9782c428e11327d0e7466179f6f522802136fbe2d57f7ade"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch224.lean",
+      "privateModule": "IndependentCachedBranch224",
+      "privateSourceSHA256": "33a04325cdf41f5c97ba4362b4309b90c9321369782b00389af0a3d282cd88a1",
+      "privateReceiptSHA256": "9b7266a51eaade20b67107233a5a384700f97be8fcb0d5e26fd943c26837f09e",
+      "stagedCanonicalLFSHA256": "2093723daba9a93715f9ae308a15bcfb00632eac0af3c840ddc1b9f323823c28"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch225.lean",
+      "privateModule": "IndependentCachedBranch225",
+      "privateSourceSHA256": "1f7463757d61caeed5e13a7f861c0a2212f2b97eb31773ceccc4534602a10d87",
+      "privateReceiptSHA256": "1d8b4d817610a09756c48e63298dc3faf2e9062728457e0fcfb68412b4342673",
+      "stagedCanonicalLFSHA256": "3581e40dd71463a736f2f7010e5d9dd7d95e043f2195b510d7dde897e79a769e"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch226.lean",
+      "privateModule": "IndependentCachedBranch226",
+      "privateSourceSHA256": "15d2467d4a7d9677f7bc5fca2f21d8d36dc8b9509b5bc2517e701976df2ff29e",
+      "privateReceiptSHA256": "9c11d8f371e9ffc65be1c085ffc4a7936742c8ac3db5a7d132a019655c9ad754",
+      "stagedCanonicalLFSHA256": "efc861b53232568bb716ffc293f334d729efddb9f58f0304f45de97d56f8f023"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch227.lean",
+      "privateModule": "IndependentCachedBranch227",
+      "privateSourceSHA256": "4a0782749376854533e5dc20e62f8272efcd5e3328590b05017c22e17de2d906",
+      "privateReceiptSHA256": "9939ba00a73f0a689b929ed127fbe7cccf1622a2b59f37dbd06168f8c3ec3c8b",
+      "stagedCanonicalLFSHA256": "05bfaf58c5f67424889ff13f950804ebec3d1b52e664d0dea74aacc54a03068e"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch228.lean",
+      "privateModule": "IndependentCachedBranch228",
+      "privateSourceSHA256": "9bfc7b14dbdb4d951a2f721356982b1e306c4c8a8fbcaee179de0b936b109ed1",
+      "privateReceiptSHA256": "2917d57a080ee9259a2de7d6762c1a0ef86c6a3ce8251ce98182a7f95f325a55",
+      "stagedCanonicalLFSHA256": "94dbe2579dbb15aa888c45b3ab141965fdd6b6799dd47a3a9035e8f4cd4731e2"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch229.lean",
+      "privateModule": "IndependentCachedBranch229",
+      "privateSourceSHA256": "4d5f640d7e27dde6dc39924cf51f5774b2b08be43593fc87b2047f0c6598c1f1",
+      "privateReceiptSHA256": "4aafaffbdae07cf562cb8c2a8acefd995a894de5442309c953582bf0527e266b",
+      "stagedCanonicalLFSHA256": "5c814bc5afad64d1a3839cd44a3d36c6e379edc25660e0cedc8b14317576ecbb"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch23.lean",
+      "privateModule": "IndependentCachedBranch23",
+      "privateSourceSHA256": "92cd1732098bbfc68978369eb37fe3ce0ae160e6ada3dda66e679e420de53f31",
+      "privateReceiptSHA256": "bccdc2c068993adaedc994a48e833391fe4d16524aa07f1f894b4e0ad8767646",
+      "stagedCanonicalLFSHA256": "727dcdb60408013f30acc59e04de458061831575c9a8d7871d442ca956085962"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch230.lean",
+      "privateModule": "IndependentCachedBranch230",
+      "privateSourceSHA256": "5b64e027eceb9c091d9a0e968e4700daf22cdb9d1473744f1d0a5e21af51e26a",
+      "privateReceiptSHA256": "c13e4dda0a8caf93e44d25309182385d299e62645ca84fbb97d370f8a2c6c694",
+      "stagedCanonicalLFSHA256": "d903c1b388fca2bee23571e2bfc748d7aae9f2263f8f874a5b52328e5765c335"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch231.lean",
+      "privateModule": "IndependentCachedBranch231",
+      "privateSourceSHA256": "e276704480db61545964b3d1b7f4764da0ba22ea54f28f0c0a7a9010dd4ee79f",
+      "privateReceiptSHA256": "4dbf6057555837ac991bd2450655fed076190854fffa742c4a3ad32f05fdfa28",
+      "stagedCanonicalLFSHA256": "0094a97414eb85080dfc3d9252bce65f715abb7deb45deb4601392c1e899a5c5"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch232.lean",
+      "privateModule": "IndependentCachedBranch232",
+      "privateSourceSHA256": "e26049238996416954668f032cff0ab054f9252a6bba975d432ea11f8f6e7148",
+      "privateReceiptSHA256": "1fbda41d9cd8a4eb950caa91f77820f75b9392cd9c88137f49b2ba9254c16ac8",
+      "stagedCanonicalLFSHA256": "2f0a12f1aa556ebe321a8d606f3ac8febc644567547be0f3569065b5b95dbfa9"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch233.lean",
+      "privateModule": "IndependentCachedBranch233",
+      "privateSourceSHA256": "235029225ef68a34b375303679c14aa2c402a73376df68c7e7fbfb7d3ac44e40",
+      "privateReceiptSHA256": "7f44b5af21b2b47329e0c94c3b1512ce3d6f3b585c39c1b64c6c0bbf900b8de3",
+      "stagedCanonicalLFSHA256": "891530f9917e76b1c06845bcb24a57a73ca324f301a9ba69ea14791c68cf8d6e"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch234.lean",
+      "privateModule": "IndependentCachedBranch234",
+      "privateSourceSHA256": "4ff93ee3493458afed95f024057d46123a1db1ee502c48ea8111ff19debb1c5f",
+      "privateReceiptSHA256": "e77ae8280c1e911389739068619323a49e74fd120fb9cf6b02967691f93ef107",
+      "stagedCanonicalLFSHA256": "82806784d5c6d23512399aa116bac03a7c1678f79efb8875a9831c464b75f8a7"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch235.lean",
+      "privateModule": "IndependentCachedBranch235",
+      "privateSourceSHA256": "68cfb0d4d074af9e86b8d538ae097ed486a20845560b8488d64f6d57d8086b95",
+      "privateReceiptSHA256": "da230e9557291e6356580a2534a1ff1b9c3f307a01f18f4cb9173298df2b003d",
+      "stagedCanonicalLFSHA256": "8b057e41bb956acd5d580083f0adae9d8ad0d16bc18415da832f51f6e8154202"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch236.lean",
+      "privateModule": "IndependentCachedBranch236",
+      "privateSourceSHA256": "d99bb3e3c7773fbdbd1c57b1afa3df7bd339837e47eae12f958e07cbd0ac57b0",
+      "privateReceiptSHA256": "5eafb00048a12b2eca2f9f6c5f4a9a62e136a9ed7693b8013c2b312f0c5a5518",
+      "stagedCanonicalLFSHA256": "2f1dc050f4f8ad4f26b3e3b68f74461cbb0e8e107056cf32827c270b35f64461"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch237.lean",
+      "privateModule": "IndependentCachedBranch237",
+      "privateSourceSHA256": "5ce5d2f163b7b684eaeeb91549188d007767560ca41be27ecf1cad429e422d87",
+      "privateReceiptSHA256": "2581f80e038b4f0d51d2f324c5b3dd72c75c0cd0d3fe3c6ca0a17b8c3c21b6b4",
+      "stagedCanonicalLFSHA256": "b78256ed34c9d27288717fce2fa5b209845c14275bf34b3583a1752f08a9b45a"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch238.lean",
+      "privateModule": "IndependentCachedBranch238",
+      "privateSourceSHA256": "9807d5b5538544c0bab7d44f5521f16cb3267cba859fbb7676785e8732f51c2b",
+      "privateReceiptSHA256": "ded2d38a3b26b9d6a3dbdc1c5e56f9bcb81cd59abb1f32c2004777e2084ea6fa",
+      "stagedCanonicalLFSHA256": "7eb9dd9a389774772df4f5af7b7b19a3674c2a879e2cac51cc89f00235ff26b7"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch239.lean",
+      "privateModule": "IndependentCachedBranch239",
+      "privateSourceSHA256": "43bcbddd56d8b3c3116fb15eb98cc43d05a3f13b3032e8042dae8dfd618cb779",
+      "privateReceiptSHA256": "e230539a29f6a48c57ae7e18d50dfb8a164dc5f239cff5d42c9dfca29dcdc561",
+      "stagedCanonicalLFSHA256": "7e56e7e76d5861b9e6e6f1e654246a582e32825ddab24d1ff2af22d4cceaa83e"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch24.lean",
+      "privateModule": "IndependentCachedBranch24",
+      "privateSourceSHA256": "9340857bbddd6f3ed040d573e86271af6f7d1a4a9b93825972ad2ad7670de4af",
+      "privateReceiptSHA256": "73296dff243a08f3ee36e53744f4454ce640f8d99b583185b07096ead3906693",
+      "stagedCanonicalLFSHA256": "be9a53e4ff01a7d3ff99a114769c216247f01a5d9364853a6ebcd358b5d98b1f"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch240.lean",
+      "privateModule": "IndependentCachedBranch240",
+      "privateSourceSHA256": "c57d0a0b6c4fd0790667f7cf9015aa5324c82a8dc5d8658286d77e24801dfcec",
+      "privateReceiptSHA256": "c3babefa12f9ad1378092e94426204d0afe89a88f196c4fa027371fd56572c63",
+      "stagedCanonicalLFSHA256": "50c4840add28b36e1892319c1f97a6d13d934b34ec2e049206c9b044989c455e"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch241.lean",
+      "privateModule": "IndependentCachedBranch241",
+      "privateSourceSHA256": "5da6e4ba53513d15c311696fada8fdf50216a93cdccff2ea3b4469ada98fbb94",
+      "privateReceiptSHA256": "20c35240c9597c51a21542adbe9de438a0f2ba67049ef1529631051dd7026829",
+      "stagedCanonicalLFSHA256": "71e22cdcc080cf0e4a331966c0c6b8df202084d1139cdbcea759d3290146168a"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch242.lean",
+      "privateModule": "IndependentCachedBranch242",
+      "privateSourceSHA256": "8ab8b57ff7b0c7a135df1693d820d5236334ab3dbf0139f015851bceee6e79b1",
+      "privateReceiptSHA256": "9d283fea3873076acffd2d79d2388537e12b5617c1d9f837f5398667ac94bfad",
+      "stagedCanonicalLFSHA256": "2fee7b02f6d35efb384a85b364f63aca429b9d0666e895f79649d10024e31a3a"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch243.lean",
+      "privateModule": "IndependentCachedBranch243",
+      "privateSourceSHA256": "a03a98c1d94e79dd7a4e4a5115bcf3bfa7cd6c12f752739c5bbcbc04bc9ec479",
+      "privateReceiptSHA256": "c41931ded35d223c385a7c7ac996654f8adadd2566e268dce5809226f100789a",
+      "stagedCanonicalLFSHA256": "075fafb52f1925268728fa90f4203cecf33f1553593830b8797ffccd90e27798"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch244.lean",
+      "privateModule": "IndependentCachedBranch244",
+      "privateSourceSHA256": "5ac53fb5b1f7a8c5a2d6d3f626e0c3085ff3887da70219d26b9838f2de0fe01c",
+      "privateReceiptSHA256": "f8c1c8dbbab2f6cc9334e438e15ab3cbe7d3f338aa53f2bc6b9d29af91128a1e",
+      "stagedCanonicalLFSHA256": "07891b756778f6f45e1420e86724c83b6ffd6a4831487db5ece191254f8e7c04"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch245.lean",
+      "privateModule": "IndependentCachedBranch245",
+      "privateSourceSHA256": "0be42fcdf721974433eb23bdf0f35f5c143455c740a9e6b89337106fe1d536a9",
+      "privateReceiptSHA256": "43d632b9ff5355eb2048004f06c899c0680fa52c7358ae056f1b8e33b18635c8",
+      "stagedCanonicalLFSHA256": "fe88591614411ea3d616fee04d8d3deafbf29e891e3465b569b714ccca73411c"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch25.lean",
+      "privateModule": "IndependentCachedBranch25",
+      "privateSourceSHA256": "0b962893dd9d4d171aebb3b44f778c105c9f041335e76c728c4c1cc5f31b3d57",
+      "privateReceiptSHA256": "59e2967193c3925c22f09eeb8e8a96018abea443f64558403edd77205f8fb222",
+      "stagedCanonicalLFSHA256": "b80a4cca8d8b081459d620202896c3b33b8fc8f2b51c8558fe16eb5d63a3da34"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch26.lean",
+      "privateModule": "IndependentCachedBranch26",
+      "privateSourceSHA256": "27de17adf024b87c7df0357b7ade5a6d82cf9b4561605c92c5f6287ce8814f5a",
+      "privateReceiptSHA256": "46f1e2c91e6e8c4e6f3acf3223b353a2b95e12ec3aa5ba2139b139caf544c0b9",
+      "stagedCanonicalLFSHA256": "4d54ba36d61ee1d1116041ac8c8a8a8bc9ecdb9996be58f22368181a63f288a6"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch27.lean",
+      "privateModule": "IndependentCachedBranch27",
+      "privateSourceSHA256": "07c78e1478b266a114f635f33d6c71702357af38e621890089744be00ea444b6",
+      "privateReceiptSHA256": "3d62b925b47d061b2e9cb40b78a40f3217df2079ab6700617e5c6f8715feb0a8",
+      "stagedCanonicalLFSHA256": "5c9ac54cdd493ce0f40d8e9c6935acc77175997966ad4747572030ddf6802942"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch28.lean",
+      "privateModule": "IndependentCachedBranch28",
+      "privateSourceSHA256": "ebe7c074ed2ea18a4ee587910f715ddf4e0a5b3b9a0f9fd4f65d838aedf58d98",
+      "privateReceiptSHA256": "3178a7c144d2033825ece260af19d45e6fd403a79bc323a57514e2f5d3686a6c",
+      "stagedCanonicalLFSHA256": "5079d5346db131647be31d64396e9e6bdc1104e94bab47253378846d205a0848"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch29.lean",
+      "privateModule": "IndependentCachedBranch29",
+      "privateSourceSHA256": "ac660b3f55d1ea94a40e2d5905f1372e0ec177df684a3c3504cf42ffa73307b4",
+      "privateReceiptSHA256": "43e6bda31467786816cf22c7af4e10550e19bccc0cd5905d81fdf3a02f978fb8",
+      "stagedCanonicalLFSHA256": "aa40cb08a3a7ba1892a3782cd947e7e760d035afc36cc52b170b53690d6fd3b3"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch3.lean",
+      "privateModule": "IndependentCachedBranch3",
+      "privateSourceSHA256": "24f9144a0e9498b690977a8309da042249629847cd4d2e6a5520f7b069c7f3eb",
+      "privateReceiptSHA256": "efa7894ddc8aa4fab0ef3256ef1357f15c81da38eca85ff85e83b852ed89a2dd",
+      "stagedCanonicalLFSHA256": "157a4c475e884f6f9ae50487cc9377d55badf2e9769fc45f466b985c056e98e2"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch30.lean",
+      "privateModule": "IndependentCachedBranch30",
+      "privateSourceSHA256": "10d74c46d5b4f9a9de8c421810429ccdf23b225948fdf4af3dd045a7b850a50c",
+      "privateReceiptSHA256": "973c09c82409a13f41cfd81f41966a1f15cc52707657edfb8bbd09f38d5d11af",
+      "stagedCanonicalLFSHA256": "b8c4ae9078641f52c479416661c0bb8d7e075ba3ca4c84ee67c397a3db188713"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch31.lean",
+      "privateModule": "IndependentCachedBranch31",
+      "privateSourceSHA256": "4520b6cb7f0b3656c19da34419e083b43979e2139cb049cd125218b7fd596139",
+      "privateReceiptSHA256": "7ff17fa383a55bf80abcba726a5926036b96a9b8183ab7c1bf068b5dc83c97c8",
+      "stagedCanonicalLFSHA256": "2078ab0016545baa309d8104e154651d01f23b83fb66cb46232f9bec0d8fbdf0"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch32.lean",
+      "privateModule": "IndependentCachedBranch32",
+      "privateSourceSHA256": "43aff7fe75806307cc83e57bdafa2ab7acdb200ce9d265264a04ba7bf81119a8",
+      "privateReceiptSHA256": "2870450836823131adbe5aae03e55fc7c39a2756b9d262026e805110af8d2db6",
+      "stagedCanonicalLFSHA256": "4b166338423b631f4056adb99c1937ecfc5c19427704b6ff3c9031234b6f0bde"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch33.lean",
+      "privateModule": "IndependentCachedBranch33",
+      "privateSourceSHA256": "0a87e43b319684de0303a7d2460f329e45fcbb2e3064e3a37a49dbf777c17968",
+      "privateReceiptSHA256": "f9782621faeefaf2260572f042455ee68951ab90bf867cf9f591edbfd7ce08a2",
+      "stagedCanonicalLFSHA256": "9d47ca7869c15dd4a47393b04a46b6890121071c3957fb615759ba5cf6fa8fb3"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch34.lean",
+      "privateModule": "IndependentCachedBranch34",
+      "privateSourceSHA256": "101b2fb8fe972d21da31afa7514862ec29e175764be180592ade7a141e2b60b3",
+      "privateReceiptSHA256": "a261c5ee8f022cf6896097fbfe17823b01932b787040c15fed23fb3c09ab58e7",
+      "stagedCanonicalLFSHA256": "9cf67091017b4d97c1c20f009a44fb5d3f260388f461f2f678aadefef146e22a"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch35.lean",
+      "privateModule": "IndependentCachedBranch35",
+      "privateSourceSHA256": "c571f8dae5da57d04d6ae401f9eae44ff5432cd1f707fd49f4ee9205b03eb905",
+      "privateReceiptSHA256": "4f7109fa8f678b906869a5eaac617fbcf6b3ba28258567ce1838a9eb456c38f3",
+      "stagedCanonicalLFSHA256": "f0b536a5d63bce6279df6d5ad2b5e579ce8ee187d342f9299f1331c24622b8c5"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch36.lean",
+      "privateModule": "IndependentCachedBranch36",
+      "privateSourceSHA256": "568da8465a8b9cd20fdff99fa3752d99f65b49744510b19c79f872587903dd85",
+      "privateReceiptSHA256": "e98d77afd5f499949ebe2c3bc6d15d7701044b222a51544708000c3681154a30",
+      "stagedCanonicalLFSHA256": "814d75adaf74990c8669f5b9445451db21ce4bb904813079276aaa81a4a43d2f"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch37.lean",
+      "privateModule": "IndependentCachedBranch37",
+      "privateSourceSHA256": "44b52b9d9564490f7e036a2c4326dcf088f54b1cfaf43ee6edfded513b1113fb",
+      "privateReceiptSHA256": "830fea7ecdfa77f3b472900d283e3e3e3709fb0eab3512f324f8569b176ba9b7",
+      "stagedCanonicalLFSHA256": "f05538e638f92f3c9357e1c6578ff2e2518227873963ec0da307a671c075d41f"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch38.lean",
+      "privateModule": "IndependentCachedBranch38",
+      "privateSourceSHA256": "8ff71316ee3a56072893edd104bba601b06905113874bb9af3ec0059f4c9cafb",
+      "privateReceiptSHA256": "3bcca9a57462f8c552574d89906c12a96d34a84fa4f4690f9827e20c1daf127d",
+      "stagedCanonicalLFSHA256": "59245b30c759a3ba3b6f5f4a44a17e7bd9b997ad74a86a5fc72d955c91537589"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch39.lean",
+      "privateModule": "IndependentCachedBranch39",
+      "privateSourceSHA256": "9e5ade7911156c7ecee916d227cf09c7f3e4dd6380e8ad96feeb72ab3e41210e",
+      "privateReceiptSHA256": "9e48494f4786f7d258aacd4748cc088b887d849d2312d0a47f397e26c2ced1bb",
+      "stagedCanonicalLFSHA256": "e8338d30e43362557cf43fc1e41258467b079ca5c5ef6a05675c522b64ec1a0b"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch4.lean",
+      "privateModule": "IndependentCachedBranch4",
+      "privateSourceSHA256": "e31d43b26ade40a1a4e024a8ac2bc778f885ea7a59a7cfaa6ae668aa15b94eea",
+      "privateReceiptSHA256": "85c7e5efb5987cc93936c2ccebb393b44d12f2dfc6afef5fdee0f2c3ca6a9a21",
+      "stagedCanonicalLFSHA256": "19dc9a94c4edc43f6736b49d2a23239437e1a61d130b441c869144d25df9acdf"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch40.lean",
+      "privateModule": "IndependentCachedBranch40",
+      "privateSourceSHA256": "e27c47a4765125a42f31a81383fb42d355ecc47f2b6f5e8d64663aefc25b014f",
+      "privateReceiptSHA256": "e0955cf61aea62a3d542e791b489d270b90101f76d1e01ec8b0f4a910e58a12d",
+      "stagedCanonicalLFSHA256": "1e1d216f2ac06271567c9582e459e4490df6e046dfa72fb0154b5dfe366d8478"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch41.lean",
+      "privateModule": "IndependentCachedBranch41",
+      "privateSourceSHA256": "54fb6e39a4e7e0d6779cfa4d53f27d438be3ffbf3bb65dba0d0ae68110b010b3",
+      "privateReceiptSHA256": "2c89c8dbddbc70b5db1d8b070e70593a77c374e043790fed9b0b585893131f23",
+      "stagedCanonicalLFSHA256": "390acb0b4e5691f3d3478113ac22a34136acac4581e3d33615feae91991e9a95"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch42.lean",
+      "privateModule": "IndependentCachedBranch42",
+      "privateSourceSHA256": "b1226e0e71f64dfc4f6d13f984eaf6b8a9c0720707535c8e522752aa94b4ed29",
+      "privateReceiptSHA256": "965294f79d7ee949f887ec8bb09b0d76b4711baa45a68c7eb001889ccc049bfd",
+      "stagedCanonicalLFSHA256": "c7dba14a5cda25dd051ed8b63bf5b76536ff8d6277559d8128a25eb5de2a9b34"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch43.lean",
+      "privateModule": "IndependentCachedBranch43",
+      "privateSourceSHA256": "caa76bad18942e76b67531d7cf0f2b821927c620580a4ec4e6aef6edf77e100f",
+      "privateReceiptSHA256": "737e5ce4cc154473f653de4ff2adf6d752c628deda1c4c66d2ed0bb309e980d0",
+      "stagedCanonicalLFSHA256": "e2a0778a74a24df63849b00ed1cafc4ebffeaaaf96bf34ec660201ba5fb0389b"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch44.lean",
+      "privateModule": "IndependentCachedBranch44",
+      "privateSourceSHA256": "af14554166c46105d4cfccdd62254d45462192d69f380ffa1003b47712b8bffe",
+      "privateReceiptSHA256": "797b56b8387f3b62fe7ae3a1d272139a27f3f6023abe8bfb21bfe9804ed0a341",
+      "stagedCanonicalLFSHA256": "97b9838a1afd076f64949b51954dc4427ff44f82e94536e3845839221bcd40f8"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch45.lean",
+      "privateModule": "IndependentCachedBranch45",
+      "privateSourceSHA256": "fbff014f858e5a5dbb65a28e736f183ab7cf2c58a69049e44dabe664887c5ad7",
+      "privateReceiptSHA256": "f8a74e2757cf5cc32b1811cc415eee0f7f00132999c35301f5d75911475d1f19",
+      "stagedCanonicalLFSHA256": "49ee649074661bc1db3618a8c0b43c377be8b0c24bf5623a9c5b60841287ea62"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch46.lean",
+      "privateModule": "IndependentCachedBranch46",
+      "privateSourceSHA256": "41852b4126a78627fd4e10fee866bea7fb6e55ce4e4e82dc1d05910672c66831",
+      "privateReceiptSHA256": "4a9e119d68bd2b01a9b79a6c1b7920cd9170437d5301aa11b31d3c88da414459",
+      "stagedCanonicalLFSHA256": "4458d5e2a29571fb2f4b95ce476dfdb044e657f1aabd6479ac0c48c86298bd91"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch47.lean",
+      "privateModule": "IndependentCachedBranch47",
+      "privateSourceSHA256": "5abc407d348938dfd50ea9b6d5e1fb3817ebba2287b5ec9f00e86e8ea61a3d69",
+      "privateReceiptSHA256": "a220823ebe1aa5e3e8405fef3304d265ec1462d8df46c7a29952ca87d2e2b6d7",
+      "stagedCanonicalLFSHA256": "7922394a3024f24b336ac0e7c00574336840f5f1d1400327f3d3a932022e075d"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch48.lean",
+      "privateModule": "IndependentCachedBranch48",
+      "privateSourceSHA256": "ca9015b0d1090a9388c0a3c30d3498b8e053cfce8c5265865fc31d99aa824df3",
+      "privateReceiptSHA256": "e44faf11de174dcc5f5c532f3cad9f9d0cf1f9840edde345e831e90e243c1a82",
+      "stagedCanonicalLFSHA256": "d9f5647358862dda6708d328c129edcbabf57b3bc1a61308b677e51e11325519"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch49.lean",
+      "privateModule": "IndependentCachedBranch49",
+      "privateSourceSHA256": "b35afa6344fefaf5da8814b9742d75b74384707e60542e409301fa1d29638895",
+      "privateReceiptSHA256": "db922e9e1a7ef36f1d33181a170a9fefcfbf233ff0391b768745fdfb5b454055",
+      "stagedCanonicalLFSHA256": "b3bc8cd74f0fb237da8429b892b2e7e68794219019c33e60cfb2f00f6dedd1c8"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch5.lean",
+      "privateModule": "IndependentCachedBranch5",
+      "privateSourceSHA256": "d6cbde5991973bf76d8b12aa1c0770bd257d0b4b84a50340bd3349f6bb6e115b",
+      "privateReceiptSHA256": "b2ea19b4dc4799f50c8a5f9cf2298e528e0fce3487c0aa108cd7cea1e6b14f88",
+      "stagedCanonicalLFSHA256": "c7eb840f0bd380168be853df57287b274e9002af3dabd495c81c95cb147ea1b2"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch50.lean",
+      "privateModule": "IndependentCachedBranch50",
+      "privateSourceSHA256": "3537dcc21977106f01be57527989c90984ba405d44ab880163ecbc008cfa1d66",
+      "privateReceiptSHA256": "a9ca83dad8ffaf6c2284eab6a60f6db1c0f694a150c40b8a2b15c7ee0eba6131",
+      "stagedCanonicalLFSHA256": "3cb5796e19580d4d216d5c737e81282da6ee8a566bd7d3e3e32f355c7b296f0a"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch51.lean",
+      "privateModule": "IndependentCachedBranch51",
+      "privateSourceSHA256": "29dabe0a8c9c63eb5fe08b099171dba406e553bebd651760157707fa47b31155",
+      "privateReceiptSHA256": "7749d3ffd3a976f7214085b0409cc84f86a4085227b8f74d38a8bf72cac490c9",
+      "stagedCanonicalLFSHA256": "dd0d70f11e0b783758c48743b630ee4de29f14ea16d784e7fbdeada89c506c53"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch52.lean",
+      "privateModule": "IndependentCachedBranch52",
+      "privateSourceSHA256": "7db2743d10a3bc22850e2c439249b038a0fa15f9a44525bda44fefd960a15ae9",
+      "privateReceiptSHA256": "be28b73491fa9d2b91b7913a528b58aa454a0e7898734c36bf8bc7d105b399dd",
+      "stagedCanonicalLFSHA256": "91da610892469a7ddad39d54849391fa0ae9b16ea99df12bfe7daba85f274e63"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch53.lean",
+      "privateModule": "IndependentCachedBranch53",
+      "privateSourceSHA256": "e13b0675f6f2afc3b7dd451fd884d21a5b9f06fc8428eeedede65354d0ace1e3",
+      "privateReceiptSHA256": "b37c45bce0a4d0665e2b77616366154028b4113ffca3060e5074dfa9a893059b",
+      "stagedCanonicalLFSHA256": "4f2552d82bfd96b5a020f5856d997744940eddff69c1249c918c5618d70b63c9"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch54.lean",
+      "privateModule": "IndependentCachedBranch54",
+      "privateSourceSHA256": "a22b5370869419fdf4b8034218d8a4deae7c4281dbb71697316800a0c045bbcc",
+      "privateReceiptSHA256": "f90ce1e5b50094da980af6d55a90305ef148b225fedf38e48abbdd5f14e877ca",
+      "stagedCanonicalLFSHA256": "ee3dffcb57e1df9c4718d66f32ce060b96be10616fe03776ebc6fcae629455fe"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch55.lean",
+      "privateModule": "IndependentCachedBranch55",
+      "privateSourceSHA256": "bf47561b5d0ad1319b54ef97fbddb0e65dab5aaa60742b4687d829215436a179",
+      "privateReceiptSHA256": "985d5c7ef0ad39d174d6c545e166c541344d95243e499ade175e0fe9ed3f59f3",
+      "stagedCanonicalLFSHA256": "1a6636fa5f1b18f6f93cbb99ce9a7ed40e1651eda8df53c848d1ddd4def95f0d"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch56.lean",
+      "privateModule": "IndependentCachedBranch56",
+      "privateSourceSHA256": "ca63f6c99a0efbbe84f4a14d4a6efb01353e1e926b8b62095590b562e935f7cb",
+      "privateReceiptSHA256": "7720ce5b2b7d3c9f83a25d51a71649ec351bf439fec646b2c3aa95a72a719a77",
+      "stagedCanonicalLFSHA256": "f2fea138d06db502b08cbfe97d1e9453d1fcbfb86a10bb1bea67c2faee3d64a8"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch57.lean",
+      "privateModule": "IndependentCachedBranch57",
+      "privateSourceSHA256": "70633ace3e7841f323106df98463a97c61125eb0f7100fb09d2b0960f4ee797f",
+      "privateReceiptSHA256": "dfc9a7c727db5b981a6803e6cec3aa27715efd32b736821c3a634639eec304d8",
+      "stagedCanonicalLFSHA256": "01f0b5cd985d0cf77dcb15796e27fb3bd49767b505309a8d475e75ca02a8f4cb"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch58.lean",
+      "privateModule": "IndependentCachedBranch58",
+      "privateSourceSHA256": "668bd5ddb2cec682f78432c563dd5f9a5dd5f6c702e9e5df74b7e61a63726fad",
+      "privateReceiptSHA256": "294f779592d977a103557cf4c1a8b7c86e2561f512f3020ba3c72d666c248635",
+      "stagedCanonicalLFSHA256": "faacb08498ce3faff72331c9b7bf2f2297d0110822fa7d7fa8bdbabab2cc6531"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch59.lean",
+      "privateModule": "IndependentCachedBranch59",
+      "privateSourceSHA256": "be2dd5b7c8842d963b161587b5f3a762aed24a9eecca9ec0be35838fff3e0675",
+      "privateReceiptSHA256": "aef09fdd2a4a1b5802bda0e1328c50d291b016e0ca2e38f278bbd05b533c4ac1",
+      "stagedCanonicalLFSHA256": "07bc9c84220f25f56b91ed89e1c10b917a829fd8b9e4b1596e75542b7a3e0d36"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch6.lean",
+      "privateModule": "IndependentCachedBranch6",
+      "privateSourceSHA256": "713fa38db7094caebf7d1c30c368941490c1f934a4ded27b739b4f4a9cdd39fc",
+      "privateReceiptSHA256": "d9e0dc49bd2f2622e354ebb34447139c69c88a0a82713a46e441d72540602750",
+      "stagedCanonicalLFSHA256": "a45a1e800e9cc54598b05a1cc8cdd2a58c645789fe67a616af80e5c7a325d253"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch60.lean",
+      "privateModule": "IndependentCachedBranch60",
+      "privateSourceSHA256": "583df94b8bc6997461aa0f03a680cc03c795c9ddfef8843b48aebacf605a0c38",
+      "privateReceiptSHA256": "28dcba55926552aad2383c315c167fe7052a9c322b81e8a0d1c85b08af7fd283",
+      "stagedCanonicalLFSHA256": "8f7f17f9a97c15468be7f6830f26fd5811e392a33b089f60ec7d265dcb934b3d"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch61.lean",
+      "privateModule": "IndependentCachedBranch61",
+      "privateSourceSHA256": "7fff746d253005481d2eb022c7c5882d9a6f69b3a913ab8c9c240e0931d00669",
+      "privateReceiptSHA256": "fe19e593666b8c90b5ec336b21b63af586fb439e5915b50bdfddcace67e4873a",
+      "stagedCanonicalLFSHA256": "37b1b62458ea51a8397ba43cb742343abb43800165257da6bb00de5a8862f7fa"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch62.lean",
+      "privateModule": "IndependentCachedBranch62",
+      "privateSourceSHA256": "ff9d6770b030a2553b874cda76475c3f9845c43c203f8e70f3daca7b2385bbac",
+      "privateReceiptSHA256": "05985e739c0f203eea632cf2afb4b96c712e45024a8aac2b1948858f36780357",
+      "stagedCanonicalLFSHA256": "acf1cdc92e13b7fe7a2a6fb647d156d21f5ddfca8b7c999379606ffcc95b2ed5"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch63.lean",
+      "privateModule": "IndependentCachedBranch63",
+      "privateSourceSHA256": "c2838b5fe2c66f40f2fa4ac3166c681ca1eeba59655307e87fafbd4a2566ef53",
+      "privateReceiptSHA256": "52db9307160614f7438bbe2da37ea9f127034dc49844eac1b168d94d1907ecaf",
+      "stagedCanonicalLFSHA256": "c63dfd4c8066e9002948b9b3cdff04a82b6033058429e69766d307a9e1374d29"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch64.lean",
+      "privateModule": "IndependentCachedBranch64",
+      "privateSourceSHA256": "d9af34f1beb80a7b04e5569fe33bc9a3b3858366adb61fb3d9d2c60465358de4",
+      "privateReceiptSHA256": "6bfb70bac6c99d69b14b13390e1f88db5348b989a5eb4c364d30bbb56e07bb22",
+      "stagedCanonicalLFSHA256": "8026b8091005d8b9cd0ca89c764bf0522a68f909136b9c9ab018fcdb00bfcd0f"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch65.lean",
+      "privateModule": "IndependentCachedBranch65",
+      "privateSourceSHA256": "b26d380f33732b6ea2c7d4469fdc1f2d6652172b5b53297e5df25be007523fb3",
+      "privateReceiptSHA256": "5098d6a71b1f05218971eb67b86a1a536711a397b7af123056dee55d845901c9",
+      "stagedCanonicalLFSHA256": "d4a7c6efa27589361f355476a304ed03b58cd4ae93dbbe4f50a1381cd70d7fc5"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch66.lean",
+      "privateModule": "IndependentCachedBranch66",
+      "privateSourceSHA256": "922a83a7596e4252ea0f88144341276873489be36dc83de239dc7d134ac318fb",
+      "privateReceiptSHA256": "55675005cdb5592993ddfa7e3b1822f3886b1bae332ff526fd41d734f68896ee",
+      "stagedCanonicalLFSHA256": "8c7f0c584384bb470362e4b1ff9a8bb14b601d36bb0e1d0bcb5bf5694a071678"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch67.lean",
+      "privateModule": "IndependentCachedBranch67",
+      "privateSourceSHA256": "63e97d0649e5fe73ed678d1ff12c577d6d57998fbd354192325faa4dcd371a33",
+      "privateReceiptSHA256": "ac174acae3687730341073dc13391b8cfa0fd53f1e8854d1d5d53a5b64d72a7d",
+      "stagedCanonicalLFSHA256": "7ec042fb1412d85ad7ccf2caff2ab611558809c37bc6ad0fcdcd27eee7ef217a"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch68.lean",
+      "privateModule": "IndependentCachedBranch68",
+      "privateSourceSHA256": "ca5c4013394ccab169494f13d80503e67934b28ff4e1e7540cfe088d24616279",
+      "privateReceiptSHA256": "5618b65e7a92f7a32a24016d836c9ffb23a40960ac0b32fe885c218b4ca14246",
+      "stagedCanonicalLFSHA256": "76374f2508011b7b843190e5acd72560bc7e7ef90cb80c44fc3fa6ec58dbe491"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch69.lean",
+      "privateModule": "IndependentCachedBranch69",
+      "privateSourceSHA256": "abfaf8c7bd8743134551042541fe87a4d1d177a25ed4465e03f8a2ec8aa26583",
+      "privateReceiptSHA256": "2a64eaf6f1074c0f76a530b79247b7b54bdac4516a924fa867e426f096160196",
+      "stagedCanonicalLFSHA256": "06c0000ab9f9048de69eed69d221298543190537dc95c72eb5c7ebc60d72fa8b"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch7.lean",
+      "privateModule": "IndependentCachedBranch7",
+      "privateSourceSHA256": "0f7cda6c644685713122ed6760ea2e5171d570b32fcf0eaf64577470b683c9a2",
+      "privateReceiptSHA256": "82e10e3406a14c3a7277f61d1e10cafd2334bec3d1d80a36208f89729d646cfe",
+      "stagedCanonicalLFSHA256": "4c104b0a957dd60ade40d7936d998a09a80ce9f4445120a4fd2ea4ebc809f8dd"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch70.lean",
+      "privateModule": "IndependentCachedBranch70",
+      "privateSourceSHA256": "746fff77235d259e7d071ecd21b9b306f3271d9f6cf1a36d1ac880021d453665",
+      "privateReceiptSHA256": "20c05cd1ea504865f80d6eb570623dd00dc5e46a67ec18d4932a4575f708a54e",
+      "stagedCanonicalLFSHA256": "20ff1d8dc3fdb0cd5e8507b56e54f19eb5b9b69186c87703ac860fc1df7cf070"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch71.lean",
+      "privateModule": "IndependentCachedBranch71",
+      "privateSourceSHA256": "e43853d9814dc985bf3dab6ba83443269a24c91a0ccdbfdd090712028d7b39fa",
+      "privateReceiptSHA256": "4a6c15d0a1a1c0bba6676c37c90e7cedd48f4e3d712bf216f8236325f7104573",
+      "stagedCanonicalLFSHA256": "f4ef9b2242988a7851a84b85584a8e28d0ec9716b7677049a472d9158e2deace"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch72.lean",
+      "privateModule": "IndependentCachedBranch72",
+      "privateSourceSHA256": "5d30076de09869295f1c289e152aa94c2d3e0b30a2a8b6329281b503bc2b2e0c",
+      "privateReceiptSHA256": "8352ac2cd5ff63e0bce4f8785e75d0e5d2a8b8f624c4b8a0804f9709707d9559",
+      "stagedCanonicalLFSHA256": "96abdcbfee179c59c3a243996c43d95dd7436815df5417cad124a3132f148e83"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch73.lean",
+      "privateModule": "IndependentCachedBranch73",
+      "privateSourceSHA256": "56f782cbac68492cd864007cb4922b5b814fad45d1e211765ea15c71e820fdbb",
+      "privateReceiptSHA256": "e4ed5ada22c5ef2af66e0f28767ab93d1b796bc7a09662f9bfe04db4443075db",
+      "stagedCanonicalLFSHA256": "6a6f2804a74bf3675aa45568cfeb9eaa93e0bd7902967157e71aa78d82c74388"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch74.lean",
+      "privateModule": "IndependentCachedBranch74",
+      "privateSourceSHA256": "9910d3621cd79e199e48b7d856848430419bfa66b6cccdbb1e47ff0ed85cce7f",
+      "privateReceiptSHA256": "2cb58450c11961ffa4fd6006271a0943994b20b106fe3a55f97dbe6229ff8226",
+      "stagedCanonicalLFSHA256": "db0aa93eb3527ee45930e729d6418cd46671a9dccd8f1553504fff4f04b7c934"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch75.lean",
+      "privateModule": "IndependentCachedBranch75",
+      "privateSourceSHA256": "41df3f5b534bd2b70140d4983c01a97355bf95374ae3457e6f2ef0e0c97f6fa3",
+      "privateReceiptSHA256": "0292714ea82438b7c619805d9fc675f17f25776f4fd79548ea1291590ce73438",
+      "stagedCanonicalLFSHA256": "3ce8f529ece8828d8237f8c31d034d9fe370289a1bfed6d732d9f9c637a03988"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch76.lean",
+      "privateModule": "IndependentCachedBranch76",
+      "privateSourceSHA256": "3fc60d3c4378cd9f1967f99d8ea7f30f2cdb0b71657c3e7d1f938b358a157359",
+      "privateReceiptSHA256": "74e834cfa1e1d62c86b773085ed9bcb51b3c6166a092f3bd01d70bedd553aa9f",
+      "stagedCanonicalLFSHA256": "8f1f3368b7cabfb869cfc7bccb791cadb3e14a2a8b8ffd79e55ddbdaa8993f8f"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch77.lean",
+      "privateModule": "IndependentCachedBranch77",
+      "privateSourceSHA256": "bcfbf6689173d92ae707fddd8fb108276c7ac2834ad97fd2e4294963afb1848b",
+      "privateReceiptSHA256": "42ce6db3533c283a1c867396dca28aec478c3ba64704edf9440f53be0d8246a4",
+      "stagedCanonicalLFSHA256": "25490a0da79687eae15a70bb1e3dc21b3e4efa02ed02afe332fe77ba2d1396e1"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch78.lean",
+      "privateModule": "IndependentCachedBranch78",
+      "privateSourceSHA256": "d919fa333f1b8ef0592ae9386cd06b2f709e8491325193157dbf2be1abc2f18a",
+      "privateReceiptSHA256": "8d3850fb9099b9711feb0cc2d9241ee84f1eb9c5c0d8b56d2688b8df5080f121",
+      "stagedCanonicalLFSHA256": "c6c6cbe9db1abac1d8e48dd558a6ee0761ebb67a986a32dc7920aca403b495b7"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch79.lean",
+      "privateModule": "IndependentCachedBranch79",
+      "privateSourceSHA256": "737bac425683cef5339a42b5cda11848b9ec026beebcc31bdb2957fc4805462a",
+      "privateReceiptSHA256": "b1cb23ec99edc89f1e3f4cd70c5981f3b8224396ddef063c2f7d73b5549c27ea",
+      "stagedCanonicalLFSHA256": "5dc4289d219953a0b83b79ced31cc8da3aa914a785d152f803639d0a6da0ceb8"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch8.lean",
+      "privateModule": "IndependentCachedBranch8",
+      "privateSourceSHA256": "1f2347238049af04513939701dc5fbde358395c6898c9007bf3780bcfeffa44b",
+      "privateReceiptSHA256": "ace55008894d1a3c3d11edbce6adf032f6ec9053e62f92429d761dd0bd0b735c",
+      "stagedCanonicalLFSHA256": "19c642fd5a29d8ddc6a8772700ddf1e099126af39aea0bb87a51f372575de3ed"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch80.lean",
+      "privateModule": "IndependentCachedBranch80",
+      "privateSourceSHA256": "19e9164046b9035b3fc769228fb1a713752c45c0f5b444572dc0af35a3f45631",
+      "privateReceiptSHA256": "202755f3154e7001576c4c56dbe8755a7e11162df61adb3ffcb5e5d497e6c8f8",
+      "stagedCanonicalLFSHA256": "b63803453be4ab7c75ec50c74fef4125ed49a542b3c6d5a9c0a38b291c5d4849"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch81.lean",
+      "privateModule": "IndependentCachedBranch81",
+      "privateSourceSHA256": "f8c4f5d9d0a6a50aa8dc1d4f3a0f45d4cd30d6ca7a947e8c1c3c98075403d891",
+      "privateReceiptSHA256": "adb230841cdd7b455a6e92a90fa8f0cedd1aaf8e118fbfca55039f2ba5318bef",
+      "stagedCanonicalLFSHA256": "eb8e472128c4df8ef164990eec7330ab62dfcf440bc828522686057f62698206"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch82.lean",
+      "privateModule": "IndependentCachedBranch82",
+      "privateSourceSHA256": "7dbda30bc2ef57dd72ad66d96dd4d68d2f4578aad2db685c901b5e173d2687b7",
+      "privateReceiptSHA256": "63e7ea523fef48ed6636efba247ab778adc0adf858f503979fab24d646ee3cea",
+      "stagedCanonicalLFSHA256": "e6fa47f9e511b200f0b73d3463a86c8e0fca883949e7dcdec1240278626d7eef"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch83.lean",
+      "privateModule": "IndependentCachedBranch83",
+      "privateSourceSHA256": "3358f2e46db682830cf72b3b7bab4aafc389ec3225bca033fb7a0cc427b22d14",
+      "privateReceiptSHA256": "d5dcbbbaf0d8e291e223f45485691da21c69a13522b9af22e6c3e53be2301a2d",
+      "stagedCanonicalLFSHA256": "c00cd7633d835f99b7b1a8e5778c38faf138594397a9af2678ad1d58165a8d09"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch84.lean",
+      "privateModule": "IndependentCachedBranch84",
+      "privateSourceSHA256": "c8b9b6316408e7034f455636f24a94464ceac10f901d0d46e40f882bf68a035e",
+      "privateReceiptSHA256": "012325d9545223210d7a98e980cc22b4123f6b81b644619b39aaa00185ae7e4c",
+      "stagedCanonicalLFSHA256": "7091862218d7854d9c96cffc2500aa5e3d5fbe1c23bf3da6d60da458d44eacfc"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch85.lean",
+      "privateModule": "IndependentCachedBranch85",
+      "privateSourceSHA256": "639ba5c42ec29d0092390dbefdc88c6583a3a20f99146ae8f3ed9b4c86799991",
+      "privateReceiptSHA256": "5b1119a9c6c8f72b2ceccc41add14c2a6fce76aef21244dfbc00921049d70eae",
+      "stagedCanonicalLFSHA256": "cc6964db29e3cd2bc85043bb7fb9ab6122f4ff44c1b1d760c56cfba57502e176"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch86.lean",
+      "privateModule": "IndependentCachedBranch86",
+      "privateSourceSHA256": "4034037de4aef46bfbfa96ddc7ed395f36091adffd4b6a24d27f3da7cf5fb57a",
+      "privateReceiptSHA256": "5455fea3ffe05d823646be1caeae3687c7dd9a80d2b97e0044edfb0b85a062dc",
+      "stagedCanonicalLFSHA256": "8640f874bba30539126b9011c40c547089a0179f90e1acd3cee29a58735b7660"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch87.lean",
+      "privateModule": "IndependentCachedBranch87",
+      "privateSourceSHA256": "817acc978976b513d505e1f263982cef2e1b9efe3753e76563b31aaab5ecc90f",
+      "privateReceiptSHA256": "1ee9744f2f0ae6183e01de578c7d9d4a6f91948fb048bfe2c62696ab7f2eebce",
+      "stagedCanonicalLFSHA256": "122fc7c8ae62eba923cf2a346d1c272302588f8cab35f7d8988d36fcb8c7bea8"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch88.lean",
+      "privateModule": "IndependentCachedBranch88",
+      "privateSourceSHA256": "490528974994127ad9658bda91d5033510e8a64cf76ee4c0f0f9565d843ef23a",
+      "privateReceiptSHA256": "f8b799a19f7440426e5b13a0c63e2f46ddc4bcb4e597d57ce8dd9e795a1d6b5e",
+      "stagedCanonicalLFSHA256": "1f5be65f036b99b5b8d09e404e947a38883d72397ee1693559e575e6692f801d"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch89.lean",
+      "privateModule": "IndependentCachedBranch89",
+      "privateSourceSHA256": "6ca32bba1222ef881c555327af16f81072888b190ab963017f407967e7c220ee",
+      "privateReceiptSHA256": "93ded38c83970980ffbb6b15fcbec831f8f853a91dabfa07cc8f1cccd0c11c5a",
+      "stagedCanonicalLFSHA256": "c82f7f7804748d9d5ef5f8d7c0e27b1630007b3daccb334ef90e53a6073b88b4"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch9.lean",
+      "privateModule": "IndependentCachedBranch9",
+      "privateSourceSHA256": "9c9b39ba840e86676abe8fcc651f27b21266faca9c7094e4a2fa733d3ad8e1db",
+      "privateReceiptSHA256": "8a4b64c512548a9adc31720d547b2f7da4a746637015f431570b5cdf56e8a1db",
+      "stagedCanonicalLFSHA256": "6098e409fc1307746a4e2548ca781966097b9042b9eb66a070e2b6c835a9098a"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch90.lean",
+      "privateModule": "IndependentCachedBranch90",
+      "privateSourceSHA256": "e102548f2730c469cb1eac482f6d3833707a741e6f419925d2e713e7354608cb",
+      "privateReceiptSHA256": "5821793b6d78e5a23a6e61866114aee04802ad76ea4da53b1a9725047754d4c2",
+      "stagedCanonicalLFSHA256": "0399f85942aac00d2ab47ef6f692f1a87db0cc31ddc8714bb4e722b8d0b3f81f"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch91.lean",
+      "privateModule": "IndependentCachedBranch91",
+      "privateSourceSHA256": "7a4db0569a8e2841a3e4fe2c6d4116bbe52ca405499d0a8608f66ec65f8946bb",
+      "privateReceiptSHA256": "67dbb9debb5e85c4ddfb43855173492790a1a696d4fbedefe324b5eff34c4783",
+      "stagedCanonicalLFSHA256": "43edda89ec8a02c04d6bed97aa495567cfd4231feaf423cf5fcdcc5e1eb2c415"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch92.lean",
+      "privateModule": "IndependentCachedBranch92",
+      "privateSourceSHA256": "bf8f3e6675529a4a25dcd17cc5028a362f2fa37e50b979e8d6ea8d92e980ab13",
+      "privateReceiptSHA256": "7d57b2418b666e2297a21d95a37a29fe1756d353bf6b1e5815ec8be56c713ad6",
+      "stagedCanonicalLFSHA256": "a872b32698ec43161c6017b9cebe405fde4277c4688921a2ccfc5d46a1e5b060"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch93.lean",
+      "privateModule": "IndependentCachedBranch93",
+      "privateSourceSHA256": "53c620db3145863cc53cd807f640d7a1218baea3d526f265b5f942c896ec3fa2",
+      "privateReceiptSHA256": "ccb8382ee564245e98431308569d68da0938f76e1a1e6a467571debfa2ff3eca",
+      "stagedCanonicalLFSHA256": "39aac66f75712d7648235f4f4f8fb3872652a39732b0a6e84eea02579430798b"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch94.lean",
+      "privateModule": "IndependentCachedBranch94",
+      "privateSourceSHA256": "389911e53577e801fb92d1fc020d1ecd4d09ebff6b76445ad152c892c1f6cbda",
+      "privateReceiptSHA256": "99adb0b44e97f1c68077f4f5646cd13815e82be2709346a5a8b85b08fb16c664",
+      "stagedCanonicalLFSHA256": "4887f3a95af7c3e7560285ebdb4b269eda999b0f3b57c7e597d738df1e69bd6d"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch95.lean",
+      "privateModule": "IndependentCachedBranch95",
+      "privateSourceSHA256": "bc8278ff63c6b96fbc460cc97afd7dfabd91d57e419dbd906e9e47638de28532",
+      "privateReceiptSHA256": "e5ae68f75252c87cf6a6aaa880baaa496aa8fc298a02a9ac7e52ac99db652b62",
+      "stagedCanonicalLFSHA256": "c02db6e38b545909596ab1cc42d3aa58c365ed948592e3916b2e482f8cb79064"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch96.lean",
+      "privateModule": "IndependentCachedBranch96",
+      "privateSourceSHA256": "5aee6813c9be2e22d9bb3af2542627ca19a527af059b07f81e24570ceff9b92b",
+      "privateReceiptSHA256": "226cc96fe6f76afb63980b743a6ac24f8fb9e055cbc8d707ba4bce2c653f9a23",
+      "stagedCanonicalLFSHA256": "ff63264bd86c9d3b7a8a04101e3976ffd6c1b6c251bf40d2aa98c57a5da76b0e"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch97.lean",
+      "privateModule": "IndependentCachedBranch97",
+      "privateSourceSHA256": "3c6c744bebdbe439cb75f0ae23c36fa993792aa6d3e51512ca0a71a0896b5835",
+      "privateReceiptSHA256": "fa258a0a3d75942c11c96475581b63b6c42b799ef997e0809439a8c5ddb83ada",
+      "stagedCanonicalLFSHA256": "75d61ee3967ec6f8e85e8ddcbc41604b21b6b8c0e4b3630091824b18c4b31a6a"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch98.lean",
+      "privateModule": "IndependentCachedBranch98",
+      "privateSourceSHA256": "ebc9416f6f74d6c105126b020fc8c66d006b0e8c5b20678ea97e45e7f1a00e5b",
+      "privateReceiptSHA256": "8808ba56ab507c8c122c244bbc0ff00cb60fb1b30c6bdaa640e6829f235fe2db",
+      "stagedCanonicalLFSHA256": "e29eb187c7080d3e9060a9f9ed54113d17858d3c027858df3708b7fa5974e260"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedBranch99.lean",
+      "privateModule": "IndependentCachedBranch99",
+      "privateSourceSHA256": "a45c4958781069bcf5f0e8dd6a05efc1f3bb9a8b33118deb3113f61517654fd1",
+      "privateReceiptSHA256": "ba387263c0217467db624fe8a2dc402818bee69c01ac276ba867df8e8295763e",
+      "stagedCanonicalLFSHA256": "30d7ce7c1ef1dba12cd9f2ab0deda57e1ad22ef1d4e7db51a5d63084e592d815"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCachedGraph.lean",
+      "privateModule": "IndependentCachedGraph",
+      "privateSourceSHA256": "b794e8e007feb272e375da2f56f985c306ef334d4851c6240fc0405437c72c72",
+      "privateReceiptSHA256": "0f6588b450372d8dd3c929f1c33df3b738674aa5c451589c1241ffdc9d6b7b1e",
+      "stagedCanonicalLFSHA256": "2389a822904cecc50b7975c70a74a06ceda0667d09a2d791f81549cce71a5975"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCanonicalBound.lean",
+      "privateModule": "IndependentCanonicalBound",
+      "privateSourceSHA256": "87fea439ff1ddfecb53196fde60c4e18d3464ae44509dbffbda31639b5f99f57",
+      "privateReceiptSHA256": "de3d4745caf75f1d78d2b338bc7918b76e3f96baa20c366ebbd6f6856f3e52c1",
+      "stagedCanonicalLFSHA256": "6457972de4c2e12b7247b5491df1da46778aa33d5af10f1308d023de94955d99"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCoverage0.lean",
+      "privateModule": "IndependentCoverage0",
+      "privateSourceSHA256": "8eb812803029f2d059efac0e40a2f05a0a546569b6c9b4aaf19509b30f2a5fde",
+      "privateReceiptSHA256": "3a1d5155f4b5b579b5999ef77e9e88956daa554f620484add41e92218f463480",
+      "stagedCanonicalLFSHA256": "8719e8be6aea48fd58de8dae3a60cb5e085f7334d522109e8dca316a3c3cf9d4"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCoverage1.lean",
+      "privateModule": "IndependentCoverage1",
+      "privateSourceSHA256": "9aa3900023280595592a9e225282e7026e817e4159408aa4c500cf5cf57c6a8e",
+      "privateReceiptSHA256": "abb1a3589786bc8e22eaa35356309adaa509c0338ae6f15d17672e3e4de866bf",
+      "stagedCanonicalLFSHA256": "8e1b243400f616a2f764adbdb17d48ade29f401af45d08a6f95a345dd8c9cca2"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCoverage2.lean",
+      "privateModule": "IndependentCoverage2",
+      "privateSourceSHA256": "f092c0fa0820835c0cfa7a4faf2a1d7897cb9eab9abc3640d281ea75624938ac",
+      "privateReceiptSHA256": "20ebf8f99d7df3882bd0d9e60c93b6a40928066cb52ada29a6275d0e5f2cfe06",
+      "stagedCanonicalLFSHA256": "36fb8c12e04f9f2c76bc5a551ab630f3941fb148ee31b4212738f58d776adc3e"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCoverage3.lean",
+      "privateModule": "IndependentCoverage3",
+      "privateSourceSHA256": "baa905fc3946b7ae85d33c46a592f2085defa10330356d4be6be09c184715a79",
+      "privateReceiptSHA256": "6d7c11fa525d4f29d378c2fdb060f5a4a0199bae4254919eeb1e5a9bc32856a9",
+      "stagedCanonicalLFSHA256": "4feaa0474697cb06e8238f196643995b63375eb774b35e554bd65463d20db35d"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCoverage4.lean",
+      "privateModule": "IndependentCoverage4",
+      "privateSourceSHA256": "6f5d2b2c3c6148c567204fea25dd34e01e29450ece254c397b98b62318b21eca",
+      "privateReceiptSHA256": "a82491bffc4eb8ac9319c8e62bc8fa514080fe82e2698ff9e1f2448aac5c5863",
+      "stagedCanonicalLFSHA256": "fcc271b36b38d804c026353c6852c0981d815c00a26f470dae96408c04aff815"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCoverage5.lean",
+      "privateModule": "IndependentCoverage5",
+      "privateSourceSHA256": "b78cd7d16e54d64c6a53a444b0756a6fb522a77e37c8b75fd07dcd6ba950ca64",
+      "privateReceiptSHA256": "87e7f9153d09364c8a65b32003c657201856df58f22b18a0055a665542f48bc9",
+      "stagedCanonicalLFSHA256": "c41c3ca23aec6e28fa10c68a896e6f51c25933e5a619e0b3c5b40c77c7ddb937"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCoverage6.lean",
+      "privateModule": "IndependentCoverage6",
+      "privateSourceSHA256": "c3ac69758d2c6178f79ae783bec203a5f3b4eea95947af8590394a3f05ef9d16",
+      "privateReceiptSHA256": "661f27ef03421b7b15b8c7eec060eb07cd95c635afa8169bb94360abebd97660",
+      "stagedCanonicalLFSHA256": "b1ffbfce21fedc9a9c6e8812e5d3fda6d29a76954acca118fe60e36364caa272"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentCoverage7.lean",
+      "privateModule": "IndependentCoverage7",
+      "privateSourceSHA256": "d4d5fde0fe96c87595e9a8fabd36e0b21c869835994d2d56f54693fce78461b2",
+      "privateReceiptSHA256": "b528e53c379265bb296dda2a107ac1be76d73c72859d62c5b50108e241afafe0",
+      "stagedCanonicalLFSHA256": "15fc00dd2ebdbab6f56f15123c751429f4798eef0e00af05de1927c04fa1f10c"
+    },
+    {
+      "file": "EntropyQuadraticClassification/IndependentNormalizedBound.lean",
+      "privateModule": "IndependentNormalizedBound",
+      "privateSourceSHA256": "6ab04c054321d27fdd35839eb90ed53808edc6dd46473ff816d149f6204eea94",
+      "privateReceiptSHA256": "e655374b2c7927f13f362bedd5108e5bbc99334b54e1e799ff64b66594251a72",
+      "stagedCanonicalLFSHA256": "2e7f2a1be0c466e5c85b4e4d7e5d68dc9eb998619348b890d298c3254908bc5e"
+    },
+    {
+      "file": "EntropyQuadraticClassification/NormalizeAnchors.lean",
+      "privateModule": "NormalizeAnchors",
+      "privateSourceSHA256": "f19a1cb6314e75b6058216e2ecb12eebf2a098c5497df623ed7865ab11a5be9e",
+      "privateReceiptSHA256": "c64e239827157019fd11beb84fc8ade8d7a03802f40bd42db52d8597d34bafb4",
+      "stagedCanonicalLFSHA256": "4b248d9a0ead287dd66404cba36519acf6798f288a75a2dfda36aa672848ade5"
+    },
+    {
+      "file": "EntropyQuadraticClassification/NormalizeBlocks.lean",
+      "privateModule": "NormalizeBlocks",
+      "privateSourceSHA256": "e4368ccb94c28a8622efc446853a9e5c5b231770a6b988ab62d2de3bc5c96fc1",
+      "privateReceiptSHA256": "286a583332102a85672de5b68345ee637689f6eca82c3d2b9458a0d17f1164c4",
+      "stagedCanonicalLFSHA256": "44b6044a158c76f6e00ec44698690cc1b0362b1724b4e6173f336e37ec444f26"
+    },
+    {
+      "file": "EntropyQuadraticClassification/ObservableSupports.lean",
+      "privateModule": "ObservableSupports",
+      "privateSourceSHA256": "e4f43d01c0c13078a0f53ce1f93a7da2ad3337456c0f67c8c100c26142f1d2ac",
+      "privateReceiptSHA256": "ba6eb55ab3bc3c9b7333fa735ab7adbd005da85b962a8228ae69c688e104c185",
+      "stagedCanonicalLFSHA256": "2379882b4e812369ee23793dc109d95776a144234b249754a987ba2ace23b618"
+    },
+    {
+      "file": "EntropyQuadraticClassification/OrbitCliqueBasics.lean",
+      "privateModule": "OrbitCliqueBasics",
+      "privateSourceSHA256": "365c4442ec8a6b91118908994d216dbb60e5baedaa4cc062c7f93d9c6e3c5209",
+      "privateReceiptSHA256": "5226bdaa967a674e771eaba76878391978eb07d1bcf6ddb153ef77985c2ef03a",
+      "stagedCanonicalLFSHA256": "d9c9d423589fe4444824882862f19e98aefc496d680935278b8e6c658595c7e0"
+    },
+    {
+      "file": "EntropyQuadraticClassification/ParityKernels.lean",
+      "privateModule": "ParityKernels",
+      "privateSourceSHA256": "baca3c860de0ca40bca613c7057f7cd048a9f14452c8ded9830e5a6988d0575f",
+      "privateReceiptSHA256": "42e765f40d189b18447a24889a47f32727ccdc31abb3faba8a7f91b2029ba574",
+      "stagedCanonicalLFSHA256": "c76a56c14b58810f41e59c7d0fda4c69b6989dbf34a583fd91a833342a79f2f9"
+    },
+    {
+      "file": "EntropyQuadraticClassification/ParityPartitions.lean",
+      "privateModule": "ParityPartitions",
+      "privateSourceSHA256": "28118b80a805399fa07c509ac740ef7aac6cdcaf7cfc70b31734bd876924c970",
+      "privateReceiptSHA256": "103000fd866c2a01692824e3fdf8402b676cc950882d99a102e02d6393c2f7a0",
+      "stagedCanonicalLFSHA256": "05326f28c53f7eb9eb1558826f9a0d961e1f18e8dd26159bbb5e0eb409190c0d"
+    },
+    {
+      "file": "EntropyQuadraticClassification/PlaneBranch0.lean",
+      "privateModule": "PlaneBranch0",
+      "privateSourceSHA256": "7c7b3bb5467519123a4d3581d765dd55e85b59e76c479d38238cf89a1c58f09a",
+      "privateReceiptSHA256": "48ec5b88bb28b50dc8bf028aeb929747af9a98e3f353cffa47ddccb1f1867cfc",
+      "stagedCanonicalLFSHA256": "c4a568ec853a8716abda0bc47ba3674324c6cd4fd8cd7910632341f70365d491"
+    },
+    {
+      "file": "EntropyQuadraticClassification/PlaneBranch1.lean",
+      "privateModule": "PlaneBranch1",
+      "privateSourceSHA256": "1292ffea7d2a47b9811fa406377d6777d4e9ee64fab975a9c1477c6be07d8c21",
+      "privateReceiptSHA256": "604118019b434b0e16dfabbd8dfe1b93f8831fdd6a0e41fa430df3f11d51eb6d",
+      "stagedCanonicalLFSHA256": "0546e88f4d5df4698729c5a54e724147bab52e87fe35fba703a3f8405f44b494"
+    },
+    {
+      "file": "EntropyQuadraticClassification/PlaneBranch2.lean",
+      "privateModule": "PlaneBranch2",
+      "privateSourceSHA256": "269b8b00a0ae23e1ea29ded82ec33bcbd33eaeacf89c11fc1159e565eeda7fbc",
+      "privateReceiptSHA256": "a6a4a4c5ac81024bf912761438b11d547d8ffbb3286c6ae8165ca3d36b0db2ab",
+      "stagedCanonicalLFSHA256": "32ce10352c4c06444d4c6061836897e48cca73f6e9091fafac28e2b277a7df67"
+    },
+    {
+      "file": "EntropyQuadraticClassification/PlaneBranch3.lean",
+      "privateModule": "PlaneBranch3",
+      "privateSourceSHA256": "6fc6adf7fa7abad265235f4c6842e5829ea64f6b8c958d6022a0a8160e61b18a",
+      "privateReceiptSHA256": "b00181c86a12c247f5378c35df837de430c4062b9970faa2f6d00d82d1cc0463",
+      "stagedCanonicalLFSHA256": "54b255019d12441cfa29cca022cdd21b1f1aedb772ebd0f2ce4090615fb4d1fb"
+    },
+    {
+      "file": "EntropyQuadraticClassification/PlaneBranch4.lean",
+      "privateModule": "PlaneBranch4",
+      "privateSourceSHA256": "4591ca0cce1ccb1a135d22c8e17bef047ee8129ec1a8b412ed224a37005fc32d",
+      "privateReceiptSHA256": "2cf63a3802570ad52ab82bcac8f152241dbf413ce09f87763de8bc12cb94aceb",
+      "stagedCanonicalLFSHA256": "d4cbb52bffc6eb9f38c9a581555b67c124a41cf4fe0b8abf3ef7afd87dd197b5"
+    },
+    {
+      "file": "EntropyQuadraticClassification/PlaneBranch5.lean",
+      "privateModule": "PlaneBranch5",
+      "privateSourceSHA256": "196914f0a5408d4aa4e868c1c44d04975e7ba3f13201009e3a99bbc5b5d275ba",
+      "privateReceiptSHA256": "52f64743adfa5e6486222aa95c16de2ef3df962f14fad5ca9f92a90ef7f5168f",
+      "stagedCanonicalLFSHA256": "eb170d643faa921fe3aae21086820c0ca6b4c13c2918dd78443c343f31ae5d77"
+    },
+    {
+      "file": "EntropyQuadraticClassification/PlaneBranch6.lean",
+      "privateModule": "PlaneBranch6",
+      "privateSourceSHA256": "dd9e5b6f96821f8deaac8e75ed19b1c4cbb51cc3d81252da09011959da9a96fb",
+      "privateReceiptSHA256": "82d0114dd612ac2bcfc5e35d2dcf0443379ed5cac44d0a4ab72783940db3e4a0",
+      "stagedCanonicalLFSHA256": "f49c43cf2a8045f4ec440883acfc88f1352c8258cc34d4e61dcb39be4faa6b2d"
+    },
+    {
+      "file": "EntropyQuadraticClassification/PlaneCoverage0.lean",
+      "privateModule": "PlaneCoverage0",
+      "privateSourceSHA256": "fd75f3d10a3a739f8632ba35d5a3118ca608c2a4659bdda7a691abd1367aa2a6",
+      "privateReceiptSHA256": "c98fd4b1e7207f89611c3e6e1e5c1ebd3bb153bb886e050760f90c74c9e8aef6",
+      "stagedCanonicalLFSHA256": "fbb3299e3deac119946459a58bfa9845bf56a888436fa5b2d81c4ade22f90c1b"
+    },
+    {
+      "file": "EntropyQuadraticClassification/PlaneCoverage1.lean",
+      "privateModule": "PlaneCoverage1",
+      "privateSourceSHA256": "44fb6043038ed4c3f3d4dc1d921f7a04894316a5b388377d9d54f5b7f1e5ce33",
+      "privateReceiptSHA256": "593762e4ba3585cb3a931c6f4f4190465ab68d207c0e9b486f2b3ca753ab0a23",
+      "stagedCanonicalLFSHA256": "19fe2498b6d3f2c85e73a24197e311379c78a82c27b958761807c374dee67f83"
+    },
+    {
+      "file": "EntropyQuadraticClassification/PlaneCoverage2.lean",
+      "privateModule": "PlaneCoverage2",
+      "privateSourceSHA256": "8b4d20dfee9a142e658116d5bf54f46613187b97fa00fd9896050a2e38632313",
+      "privateReceiptSHA256": "82f9dcf7632d3e652b870e4782407f8d270b0e543b461e9eeffbff4a6bc342f4",
+      "stagedCanonicalLFSHA256": "91b67d48ee5151bfe2ddb8d0c3156edf7bdcc6dc17d493db28e2e0a396e7611b"
+    },
+    {
+      "file": "EntropyQuadraticClassification/PlaneCoverage3.lean",
+      "privateModule": "PlaneCoverage3",
+      "privateSourceSHA256": "ae382c40609b72242e371d78339b51c963581e792da50a7d4005cc69c06d1acc",
+      "privateReceiptSHA256": "7aa4dbd7718ea8f6c2fc8798acf66cfd0f53644182cef2588fdde0a306dbe130",
+      "stagedCanonicalLFSHA256": "ee71eb0557f26a37255e5e189ce450bbd7a51e5a9b7169802d2bcdd0a583fd60"
+    },
+    {
+      "file": "EntropyQuadraticClassification/PlaneCoverage4.lean",
+      "privateModule": "PlaneCoverage4",
+      "privateSourceSHA256": "739d3291a460f624d3a84ff7d0ce50e7bc9b807cc597786480734384c6b7d7cb",
+      "privateReceiptSHA256": "d204b86ab27bce8de28d4108215c132d67efb1695ee5c2765f211a4e00580859",
+      "stagedCanonicalLFSHA256": "47c402ba13051e4dcb573b06e88391f4d9436576fe91406e0f38d7064383634d"
+    },
+    {
+      "file": "EntropyQuadraticClassification/PlaneCoverage5.lean",
+      "privateModule": "PlaneCoverage5",
+      "privateSourceSHA256": "4e954f53e4ccf92d059cd48006dfc5c477de8e7db6d4408304fab6b515bda94f",
+      "privateReceiptSHA256": "48313070028488c2055a8dbc15cbbb6ffc45354a909269f5909f240f762155c4",
+      "stagedCanonicalLFSHA256": "ad206b6876b8da0fe1384de25c001fb00d270a5aa2f93b0d1af56d79e78a104a"
+    },
+    {
+      "file": "EntropyQuadraticClassification/PlaneCoverage6.lean",
+      "privateModule": "PlaneCoverage6",
+      "privateSourceSHA256": "52ca7b5dddb103b26c54e68aedc592883d1893d0ff7fb64781e32b1200ce2166",
+      "privateReceiptSHA256": "da9f3e7e5c00aec17f33c37829b05ddd47014262e1c1cfb1314a56a1b547b804",
+      "stagedCanonicalLFSHA256": "a185351c211cf2c5467ac58b7d2b1f47e875c8296b7c8b9d4e2346e07e8b33be"
+    },
+    {
+      "file": "EntropyQuadraticClassification/PlaneCoverage7.lean",
+      "privateModule": "PlaneCoverage7",
+      "privateSourceSHA256": "bdfabe2e85e1ba5b3e1fa38d1141b680676168369092e8fbb50313b7803bc087",
+      "privateReceiptSHA256": "8d1d5c63acf21ff6fd7d20789038bf450424f85e33f2ec31f0434acdfcf237e6",
+      "stagedCanonicalLFSHA256": "4fb5aaf0b7ec4782316e3f9d198aad0f10872b813d16ff7d1ee3a51e006582d7"
+    },
+    {
+      "file": "EntropyQuadraticClassification/PlaneNormalizedBound.lean",
+      "privateModule": "PlaneNormalizedBound",
+      "privateSourceSHA256": "4d3442224ac88b7c6def701cb60fbe895bd83ddc1fefedea281e82d39794ded7",
+      "privateReceiptSHA256": "d6a43ab4c7619d399b2582572ec0c058d37947f7fcdc78213ad5c7db593642c5",
+      "stagedCanonicalLFSHA256": "b3544d555630fdfa171f36bf92e6bc25388f2de1814e9251afa56804ce02c6d3"
+    },
+    {
+      "file": "EntropyQuadraticClassification/QuadraticCheckTypes.lean",
+      "privateModule": "QuadraticCheckTypes",
+      "privateSourceSHA256": "6410cd379e7b8f80273cec0dc6521d4f7d07b3a4b8c5cf8c44a70dbc01a05ad4",
+      "privateReceiptSHA256": "83bddf24efbd64a62ad829a351c77501155a010976364facdefbd4dd013ca042",
+      "stagedCanonicalLFSHA256": "d3b06fc20381c6b73c81bdff8a15117ad54b049efd079717d476ee92dcc24fac"
+    },
+    {
+      "file": "EntropyQuadraticClassification/QuadraticCompleteClassification.lean",
+      "privateModule": "QuadraticCompleteClassification",
+      "privateSourceSHA256": "aaf7feb1c2f0bc2bdc865d3eed4fb055d75aa934ff611faf6ded3e3625625e50",
+      "privateReceiptSHA256": "a8c7a9f5e49ff1208b20631a577844667c969c6aa70508901e093e9875d615dd",
+      "stagedCanonicalLFSHA256": "93dbffd3faaf7147943ade95407ac3f6a3559d379f6c6f912aeb148174a1f27a"
+    },
+    {
+      "file": "EntropyQuadraticClassification/QuadraticDualWeight.lean",
+      "privateModule": "QuadraticDualWeight",
+      "privateSourceSHA256": "819f75e677548d7a8ebd773f0ef81674fb8422de92f565ac487405690355f52c",
+      "privateReceiptSHA256": "c25a7675670706399651f23413ebdcc5db35efe46465fc421cd70f080e095323",
+      "stagedCanonicalLFSHA256": "d60b2a480eda45de92d687276b251ced849948d0dde7681b194f8906f725b0c9"
+    },
+    {
+      "file": "EntropyQuadraticClassification/QuadraticFrameUpper.lean",
+      "privateModule": "QuadraticFrameUpper",
+      "privateSourceSHA256": "99c9a86f11870bfaec080639cf1d9bb101f4c2b534f01ac5576039e973585e98",
+      "privateReceiptSHA256": "9fb4638114a310699e7d71fc84b26687f27ffa63ee76a44c062671b3dae6bb7f",
+      "stagedCanonicalLFSHA256": "789be734de99a086a7ff02cd5fca4ae7f420dba17fde839283885cc197cccbdf"
+    },
+    {
+      "file": "EntropyQuadraticClassification/QuadraticLowerFrames.lean",
+      "privateModule": "QuadraticLowerFrames",
+      "privateSourceSHA256": "96eba0b1eb563d8920d9a5fdb1adcfc7629e26e0e75ad6b70d11e0e878d02371",
+      "privateReceiptSHA256": "a4f69af536509efde34cbf8ba24f8306bb216cb14495c7ba9b751afb9a6d2a23",
+      "stagedCanonicalLFSHA256": "8c47828a01ba1b5601860be587c1fc917625ce1f0de7916bb6e873daef1e2d2e"
+    },
+    {
+      "file": "EntropyQuadraticClassification/QuadraticPlaneSharp.lean",
+      "privateModule": "QuadraticPlaneSharp",
+      "privateSourceSHA256": "ee9adfea826ea95cbd0c78db51b630a7d303ddd4d81f698fa39bed14ceea6fc8",
+      "privateReceiptSHA256": "31b006d7c574f9a59f8f24a2aa0be7898f7b9e0e6bc78bb0f50281a28936c336",
+      "stagedCanonicalLFSHA256": "46ae85277e9618babdd750784479ee70020b07867f26746741eedb8698557717"
+    },
+    {
+      "file": "EntropyQuadraticClassification/SupportObservables.lean",
+      "privateModule": "SupportObservables",
+      "privateSourceSHA256": "6d0a06179f2d6c0f0321ecc713f7a1a18cc3157fe9f800c728049e48acbb5439",
+      "privateReceiptSHA256": "c4ffd811457bef1e2b5c6f55feb5d7d683d04a26effed0c16a0e969b2b6c3205",
+      "stagedCanonicalLFSHA256": "39e9ca61e68d322858fac3f8fa6059bc6fe27801795178ef4ff1a0bedb855d8f"
+    },
+    {
+      "file": "EntropyQuadraticClassification/SupportPacking.lean",
+      "privateModule": "SupportPacking",
+      "privateSourceSHA256": "2de244b0d76f9a38da726eca51499fb836678760943d5c5c9f84109b234e1e8d",
+      "privateReceiptSHA256": "4c81ebe2fd387a83565e164672fd4f3430308fcbcaca3441645e805c8b3edd4e",
+      "stagedCanonicalLFSHA256": "1ba40d312874a00e76f019e4ee88d68e5fc2307344f382993e64c04dc6ccd4d5"
+    },
+    {
+      "file": "EntropyQuadraticClassification/SupportPullback.lean",
+      "privateModule": "SupportPullback",
+      "privateSourceSHA256": "66946f44a3d24ca04b42ae3e5514777a14142c46d436c7aeade65122c8ee4650",
+      "privateReceiptSHA256": "62417a4b85f3a0f4be135b8eda06699cf2692ce68ec589eeb5c450ed6cabb678",
+      "stagedCanonicalLFSHA256": "e094695d5a18c7a3c4a2c2c373c21899e50e46ac93a08252473b50302b9e27b9"
+    },
+    {
+      "file": "EntropyQuadraticClassification/ThreeBlockEquiv.lean",
+      "privateModule": "ThreeBlockEquiv",
+      "privateSourceSHA256": "c854a276133052996c5158098eb304c08f0d9fce59c5dd86e36f52b8eece924f",
+      "privateReceiptSHA256": "4a6b822e21ccceafdc27785137776548521f791bc4140d5d0760614831a22163",
+      "stagedCanonicalLFSHA256": "d350aa73e1a9c382b904c731f8455a65ea0075dc37245bba8293643c096c8fdd"
+    },
+    {
+      "file": "EntropyQuadraticClassification/Transvections.lean",
+      "privateModule": "Transvections",
+      "privateSourceSHA256": "fe3d134547685330941b0e89ef03f9e94e3fc0641958536e8b3d5c3feea7601f",
+      "privateReceiptSHA256": "6a9441c268901836e0a2f5866d3c00270ab1b991fa198afbb21736a6437dfa1a",
+      "stagedCanonicalLFSHA256": "7399c01bdca2e154c300dd31c6508bdfd50ca72bd2c61e9b248d19c5e3dc1034"
+    },
+    {
+      "file": "EntropyQuadraticClassification/TwoBlockEquiv.lean",
+      "privateModule": "TwoBlockEquiv",
+      "privateSourceSHA256": "1c2aa4aae006d3e3e52894ba5f9e39e2208b71ff0f74c89f37252e1ada969e47",
+      "privateReceiptSHA256": "f6d34f3d0b6acd13459998312223e8f8e87290807c7654346ae0af7a20a81f53",
+      "stagedCanonicalLFSHA256": "67ac2e29d83690e1b07143454073d406fa375c570fb6d4f10398e6d3ef454209"
+    }
+  ],
+  "theoremNames": [
+    "EntropyDesigns.QuadraticRefinement.every_twelve_labels_five_frame",
+    "EntropyDesigns.QuadraticRefinement.independent_omitted_seven_frame",
+    "EntropyDesigns.QuadraticRefinement.plane_omitted_frame_sharp",
+    "EntropyDesigns.QuadraticRefinement.independent_omitted_frame_sharp",
+    "EntropyDesigns.QuadraticRefinement.twelve_label_quadratic_classification",
+    "EntropyDesigns.QuadraticRefinement.twelve_label_at_least_five",
+    "EntropyDesigns.QuadraticRefinement.twelve_label_no_eight"
+  ],
+  "definitionNames": [
+    "EntropyDesigns.bitSign",
+    "EntropyDesigns.squarefreeBooleanMonomial",
+    "EntropyDesigns.lowDegreeBooleanCode",
+    "EntropyDesigns.booleanSupportVector",
+    "EntropyDesigns.omittedBooleanVectors",
+    "EntropyDesigns.IsUniformBinaryPairwiseIndependent",
+    "EntropyDesigns.QuadraticRefinement.HasQuadraticObservableFrame"
+  ],
+  "externalCodeAdded": false,
+  "notRegistryVerification": true
+}

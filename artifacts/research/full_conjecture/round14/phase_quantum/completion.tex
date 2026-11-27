@@ -1,0 +1,127 @@
+\section{A positive codimension-two bridge through qubit geometry}
+Let $V\in\mathbb C^{n\times(n-2)}$ have unit-modulus entries and
+$V^*V=nI_{n-2}$. Its residual Gram matrix
+\[
+ K=nI_n-VV^*
+\]
+is positive semidefinite of rank two, with diagonal entries two.
+It has a factorization $K=RR^*$ with $R\in\mathbb C^{n\times2}$,
+$R^*R=nI_2$, and every row of $R$ has squared norm two.
+Define the real matrix
+\[
+ B_{ij}=\frac{|K_{ij}|^2}{2}-1.
+\]
+
+\begin{theorem}[An exact rank test for a two-column flat completion]
+The matrix $B$ is a Gram matrix of unit vectors in $\mathbb R^3$.
+The partial complex Hadamard matrix $V$ can be completed by two
+unit-modulus columns if and only if $\operatorname{rank}B\le2$.
+\end{theorem}
+\begin{proof}
+For each row $r_i$ of $R$, let $u_i=r_i^T/\sqrt2$ and form its unit
+Bloch vector $b_i\in\mathbb R^3$. The elementary two-dimensional
+identity $b_i\cdot b_j=2|u_i^*u_j|^2-1$ gives $B_{ij}$.
+All other residual factors are obtained by a common two-dimensional
+unitary change of basis. Such a factor has both entry moduli one
+in every row exactly when every corresponding qubit has equal
+coordinate probabilities, that is, every $b_i$ is perpendicular to
+a fixed unit measurement axis. Such an axis exists exactly when
+the Bloch vectors span dimension at most two. Explicitly, for a
+unit normal $s$, diagonalize the traceless Hermitian matrix
+$s\cdot\sigma$, whose eigenvalues are $\pm1$. Zero expectation in
+each $u_i$ forces its two eigenbasis probabilities to be $1/2$.
+This constructs the required residual factor.
+\end{proof}
+
+\begin{theorem}[Quaternary input needs no extra phase freedom]
+Suppose $n$ is even and $V$ has entries in $\mu_4$.
+Then $B_{ij}\in\{-1,0,1\}$, and $\operatorname{rank}B\le3$.
+Whenever $\operatorname{rank}B\le2$, the two completing columns
+can also be chosen in $\mu_4$. Thus complex and quaternary
+completability are equivalent for this codimension-two input.
+\end{theorem}
+\begin{proof}
+The off-diagonal $K_{ij}$ are Gaussian integers with real and
+imaginary parts of even sum, since they are sums of the even number
+$n-2$ of fourth roots. Positive semidefiniteness gives $|K_{ij}|\le2$.
+Thus their squared magnitudes are $0,2,4$, proving the assertion on
+$B$. Distinct Bloch vectors are consequently parallel, antiparallel,
+or orthogonal, and lie on at most three mutually orthogonal axes.
+
+If the rank is at most two, rotate their plane to the equator.
+After a common phase choice the residual rows have the form
+$a_i(1,\delta_i)$ with $|a_i|=1$ and
+$\delta_i\in\{1,-1,i,-i\}$. For two nonorthogonal rows,
+\[
+ K_{ij}=a_i\overline{a_j}(1+\delta_i\overline{\delta_j}).
+\]
+If the two $\delta$ values agree, the Gaussian integer $K_{ij}$
+has modulus two, so division by two is a fourth root. If the axes
+differ, its modulus is $\sqrt2$, so division by $1+i$ or $1-i$
+is again a fourth root. Therefore $a_i\overline{a_j}\in\mu_4$
+on every nonorthogonality edge. For rank two this graph is connected:
+states on one axis are nonorthogonal to every state on the other.
+A global phase makes all $a_i$ fourth roots. In rank one the two
+antipodal groups are disconnected but mutually orthogonal; choose
+their common phases independently without changing $K$.
+This also makes every $a_i$ a fourth root. The resulting residual
+matrix has entries in $\mu_4$ and the same Gram $K$, and appending
+it to $V$ gives the required quaternary matrix.
+\end{proof}
+The proof is an exact algorithm using only $K$: take a reference
+Bloch axis from a row of $B$, choose an orthogonal second axis if
+needed, and label their antipodes by $1,-1,i,-i$. Along nonzero
+$K_{ij}$ edges solve the displayed phase ratio, starting one phase
+at one in each connected component. All recovered phases are in
+$\mu_4$. This avoids numerical extraction of a Bloch rotation.
+
+\begin{theorem}[Automatic quaternary completion using a classical real input]
+Every even-order quaternary partial Hadamard matrix missing two
+columns has a quaternary completion.
+This assertion uses the classical real codimension-four Hadamard
+completion theorem as an input; it is not proved here from scratch.
+\end{theorem}
+\begin{proof}
+The case $n=2$ is immediate. For $n\ge4$, realify $(1+i)V$ to a
+real sign matrix of size $2n\times(2n-4)$ with column Gram $2nI$.
+Classical real completion supplies four sign columns $Q$ with
+\[
+ QQ^T=2\mathcal R(K).
+\]
+On the other hand $\sqrt2\mathcal R(R)$ is a full-column-rank real
+factor with that same Gram. The two factors differ by a right
+orthogonal matrix, preserving the number of antipodal row directions.
+
+If $B$ had rank three, the previous discrete inner-product argument
+would give three orthogonal Bloch axes. Moreover $R^*R=nI_2$
+implies $\sum_i b_i=0$, so both antipodes of each axis occur.
+There would be at least six distinct complex lines represented by
+the rows $r_i$. Realification contributes two different orthogonal
+real row directions from each complex line; different complex lines
+cannot share a nonzero real direction. Thus
+$\sqrt2\mathcal R(R)$, and hence $Q$, would have at least twelve
+antipodal real row classes. Four real sign coordinates have only
+eight such classes. This is impossible. Therefore the Bloch rank is
+at most two, and the preceding constructive theorem completes $V$
+within $\mu_4$.
+\end{proof}
+
+The real codimension-four input is classical Hall--Verheiden
+completion theory. Primary sources include E. Verheiden,
+\emph{Integral and rational completions of combinatorial matrices},
+J. Combinatorial Theory A 25 (1978), 267--276, and his dissertation
+\url{https://thesis.caltech.edu/2899/}. The latter explicitly records
+Hall's four-row theorem and its extension to seven. The criterion
+and its two-dimensional quantum interpretation are presented as a
+structural and algorithmic bridge; bibliographic novelty is not asserted.
+The codimension-one statement is simpler: its residual has rank one
+and diagonal one, and one of its columns directly supplies the
+missing fourth-root column up to phase. Neither result supplies
+the missing large partial frame at an unknown order.
+
+The checker verifies the Bloch rank, phase-graph algorithm, and exact
+Gaussian Gram identities at orders four, six and eight. A bounded
+search of small quaternary partial frames found no rank-three input,
+consistent with the classical-completion consequence. A three-axis
+abstract Gaussian residual is also tested to distinguish the
+residual geometry from a realizable quaternary partial frame.

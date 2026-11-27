@@ -1,0 +1,47 @@
+{
+  "checkedAtUTC": "2026-11-21T03:23:52.127824+00:00",
+  "pages": {
+    "collision_stability.tex": 2,
+    "research.tex": 10
+  },
+  "checkersPassed": [
+    "stability/check_exact.py",
+    "attainment/check.py",
+    "check_symmetry.py",
+    "completion/check.py"
+  ],
+  "typesettingChecksPassed": true,
+  "files": {
+    "attainment\\check.py": "16844fe6c2f5627175075282e2915b2f8250434a2bb9adc2caa9ea143e46190b",
+    "attainment\\checks.json": "e8f41d3e1156d3a98461cb23ec23bc4a797be07a6b58d107596fefabe29e642d",
+    "attainment\\d4_vertices.json": "27f0830d5c56dc220d015696e6b3727f38d3b474b5996db050d4b601d0e4d66b",
+    "attainment\\explore_d4.py": "52ca9e2fb8fadd6857d1d5ba119ce6936addb7980008acb256a1021cbb3b2503",
+    "attainment\\README.txt": "cd5e185f98dfd4ef360c5e1cfbecf4560c34b5ec4eba53b7948d70bac2fd9d17",
+    "attainment\\traps.tex": "b9fb4a67871e055dcb26c8fd687037a525352d8ffce81be9a6a9955e5ffd783e",
+    "build.py": "33019726823974290193dca1f653e48d459064335796455090a6cf23358a3ea5",
+    "check_symmetry.py": "e411d0add84f4f50a389c0d595ff478cc0d1fc552d408d01f64164ac95d388f5",
+    "collision_stability.pdf": "e426aa3b75afa4e1a95cc1ae235feb93243ee69cf18ad89c2cbc3d30d3c1cfaf",
+    "collision_stability.tex": "fd0afbad699d105d4e2586cf906838d75f0ed1b4a32105488a93788bc9872747",
+    "completion\\check.py": "b6fb69c86d936b731622f9f0ddc0b540800b26ecfc1a6d2b17b3d08b8fe82403",
+    "completion\\checks.json": "a48e9f29c5c4b0a6ab7bdafc4fd7e9481211214cfe237db41acd80e9a86b9626",
+    "completion\\completion.tex": "ad97b2f05c98e29303e2dce51a35f7dac6f967680a9224bbf3229721f1433131",
+    "completion\\README.txt": "9c135d0e067f3f8f7c25cc98250ec580c8ac025eb05f36a97b53837fad526763",
+    "README.txt": "ee376e78bf47dcbb3b2fff3b93e2fe60535e01852532cb5e7d8082fa5e52a77c",
+    "research.pdf": "4fd7f04ffabae8c310dc470e3b6b4e91285561cfc9a642f7abf7be0c7815f6a3",
+    "research.tex": "84e1b7a32ab79b3fe660ade33bd1325bc93221971ec3a2c1f0601d65433080c9",
+    "stability\\check_exact.py": "68784953cc85d10d04bf0bae00922b38aa7bf09b3b92f998b8fe7b5886c6caa0",
+    "stability\\README.txt": "c4015ebb75bcbaaffd6ef873514ca9937dc2f555b41a47a46fab5eef7af74a92",
+    "stability\\stability.pdf": "2dba453c019c09f5bbf3f149b60b32fc056a7dc8cda3b40ad24d9b82f530ad90",
+    "stability\\stability.tex": "62a0a2a52b6eea211d383bee6422cf601243e2f65d0ba94a4d40d50c17e12b6d",
+    "symmetry.tex": "865b0fa85c6555df0d3c48ffff2ccb45c98e253082f1921ff8dbb7d2cb953389",
+    "symmetry_checks.json": "18627a25d75c00ceab69488e7f17d87dcf38ecc568e57a8d3c5a778f2817cf3e",
+    "NEXT_QUESTIONS.txt": "c720f123ef71218affbedc39e36d7f63341d70fd09e4400d742c83e6ca581cb5"
+  },
+  "scope": {
+    "hadamardConjectureProved": false,
+    "universalAttainmentProved": false,
+    "noveltyEstablished": false,
+    "leanFormalization": false,
+    "gitCommits": false
+  }
+}

@@ -1,0 +1,91 @@
+\section{An exact local count identity and a two-code decomposition}
+\label{sec:neighbor-counts}
+
+The preceding pivot suggests counting over code neighbors, rather
+than asking for an extension preserving every row. The following
+identity makes that approach quantitative. Here $p$ is an odd prime,
+$N=4p$, $m=N/2$, $C=C^\perp$, and $G\subsetneq C$ has dimension
+$s=m-h$, $h\ge1$. Put
+\[
+ r_C=|S(C)|,\quad b_G=|S(G)|,\quad
+ M_G=|\{v\in\{\pm1\}^N:v_1=1,\ v\bmod p\in G^\perp\}|.
+\]
+Let $\mathcal N_G(C)$ be the self-dual codes $C'\ne C$ with
+$\dim(C\cap C')=m-1$ and $G\subseteq C'$.
+
+\begin{theorem}[Exact restricted-neighbor incidence count]
+\label{code:neighbor-average}
+There are $(p^h-1)/(p-1)$ codes in $\mathcal N_G(C)$, and
+\[
+ \boxed{\quad
+ \sum_{C'\in\mathcal N_G(C)}\bigl(|S(C')|-r_C\bigr)
+ =M_G-r_C-(r_C-b_G)p^{h-1}.\quad}
+\]
+In particular, if the right-hand side is positive, some neighbor
+strictly increases the sign count while preserving $G$.
+\end{theorem}
+\begin{proof}
+A hyperplane $D$ of $C$ containing $G$ has $D^\perp/D$ a nondegenerate
+two-dimensional hyperbolic space. It has exactly two isotropic lines,
+one giving $C$ and the other a unique neighbor $C'$.
+To see the last assertion directly, choose isotropic $e$ on the first
+line and $f$ with $e\cdot f=1$, then replace $f$ by
+$f-(f\cdot f)e/2$. In the resulting basis the norm is $2xy$,
+so the isotropic lines are precisely the two coordinate axes.
+Counting hyperplanes of $C/G$ gives the stated neighbor count.
+
+Each normalized sign vector outside $C$ but in $G^\perp$ is isotropic,
+since its norm is $N=0$ modulo $p$. It belongs to exactly one of
+these neighbors, namely
+$(C\cap v^\perp)+\langle v\rangle$. Thus the total number of
+new sign classes, counted over the neighbors, is $M_G-r_C$.
+An old sign class in $G$ is never lost. An old class outside $G$
+is excluded by precisely $p^{h-1}$ hyperplanes containing $G$,
+the difference between the hyperplane counts in dimensions
+$h$ and $h-1$. Summing gains minus losses proves the identity.
+\end{proof}
+
+This is a finite incidence identity in the classical geometry of
+self-dual code neighbors. It is not a general positivity theorem.
+In particular, at $G=0$ its right-hand side is
+$2^{N-1}-r_C(1+p^{m-1})$, which can be negative even when the
+code has far fewer than $N$ sign classes. Unrestricted averaging
+therefore does not guarantee a useful move.
+
+\begin{corollary}[A modular pool splits into two codes]
+\label{code:two-codes}
+If $G$ has dimension $m-1$, there is exactly one other self-dual
+code $C'$ containing $G$, and
+\[
+ \{ \text{sign classes in }G^\perp\}=S(C)\cup S(C'),\qquad
+ S(C)\cap S(C')=S(G),\qquad
+ |S(C')|=M_G-r_C+b_G.
+\]
+If $G$ contains five orthogonal sign rows, the sign words of each
+code separately form a real orthogonal frame.
+\end{corollary}
+\begin{proof}
+An isotropic residue in $G^\perp$ projects to one of the two
+isotropic lines of $G^\perp/G$, hence belongs to $C$ or $C'$.
+Their intersection is $G$. Count the union, and apply
+Corollary~\ref{code:five} for real orthogonality.
+\end{proof}
+
+This removes a compatibility search in the codimension-one case.
+For the terminal twelve-row order-twenty certificate, the ten rows
+retained after deleting indices $3,8$ span such a $G$, and exact
+enumeration gives
+\[
+ r_C=12,\qquad b_G=10,\qquad M_G=22,\qquad |S(C')|=20.
+\]
+The twelve exact extensions of the retained frame consist of the two
+deleted old classes and the ten new classes. The two-code theorem,
+rather than an independent guess that all candidates are compatible,
+explains the resulting completion.
+
+The checker also verifies the incidence identity for all four
+neighbors containing a specified four-dimensional subspace of a
+self-dual ternary code at order twelve. These are finite examples.
+An all-order lower bound on the modular pool, or a guarantee that
+some choice of retained space makes the displayed surplus positive,
+has not been established.

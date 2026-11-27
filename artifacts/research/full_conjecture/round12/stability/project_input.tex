@@ -1,0 +1,75 @@
+\section{Instantiating the stability transfer with the project's multiplier theorem}
+\label{sec:stability-project-input}
+
+The uniform Hadamard-gap input is already available in the current
+project, not an additional prime-distribution assumption. Precisely,
+\path{../../../papers/hadamard_multibase_final.tex}, the uniform-gap
+theorem, proves that for each large integer $x$ there is
+$d\le\exp(D\log x/\log\log x)$ such that every integer $y\le x$ has a
+Hadamard order in $(y,y+d]$. Its formal counterpart is
+\path{../../../lean/HadamardMultibase/CompleteResults.lean},
+\path{Complete.quantitative_gap_bound}. We use the theorem as stated;
+no files in that proof or its verification manifests are changed.
+
+Here is an even more direct dyadic construction using just the
+unconditional multiplier input and the uniform buffer lemma of the
+arithmetic branch. For $h=2^s$ large choose
+\[
+ S(h)=\max\{T(h),\lceil\log_2s\rceil\},\qquad
+ g=2^{S(h)},\qquad k=h-g.
+\]
+Since $T(h)=O(\log h/\log\log h)$, eventually
+$S(h)\le s-2$, while $g\ge s$ and
+\[
+                 g=\exp(O(\log h/\log\log h))=h^{o(1)}.
+\]
+The integer $q=2^{s-S(h)}-1$ is positive odd and at most $h$.
+Its admissible exponent is at most $T(h)\le S(h)$, so
+\[
+                    k=2^{S(h)}q
+\]
+is a known Hadamard order. This choice is uniform in all sufficiently
+large dyadic $h$ and does not use GRH, prime gaps, or an
+irrational-rotation subsequence.
+
+\begin{corollary}[Unconditional near-square instability from the multiplier bound]
+\label{cor:stability-project-rate}
+At orders $n=kh$ obtained above, there are exactly isotropic uniform
+laws on $m=h^2$ atoms, on $n-1$ bits, with
+\[
+ \begin{split}
+ C(\mu)/(1/n)&=1-n^{-1/2+o(1)},\\
+ 1/n-C(\mu)&=n^{-3/2+o(1)},\\
+ m&=n+n^{1/2+o(1)},\\
+ \operatorname{dist}_{\rm TV}(\mu,\mathcal H_n)
+       &=1-(1+o(1))n^{-1/2}.
+ \end{split}
+\]
+They are strict local collision maxima. Their common additive
+R\'enyi entropy excess is $n^{-1/2+o(1)}$.
+Both $H_k$ and $H_n$ exist unconditionally from the project's
+proved inputs.
+\end{corollary}
+\begin{proof}
+The construction gives $s\le g<h/2$. Choose $g$ nonzero omitted
+slopes containing an additive basis and apply the spanning-slope
+theorem of the preceding pass. It yields exact isotropy, strict
+local maximality, collision $1/h^2$, and exact distance $1-1/k$.
+Tensoring $H_k$ and Walsh $H_h$ gives $H_n$.
+Since $n\sim h^2$ and $g=h^{o(1)}$, the identities
+\[
+ 1-\frac{C}{1/n}=\frac gh,\quad
+ \frac1n-C=\frac{g}{kh^2},\quad
+ m-n=hg,\quad
+ H_\alpha(\mu)-\log n=\log(h/k)\sim g/h
+\]
+give all the assertions.
+\end{proof}
+
+Thus the project's own unconditional existence theorem gives a
+stronger asymptotic stability counterexample than the independent
+ordinary-prime-gap route, even assuming RH in that prime route.
+The RH rate remains useful as an independently sourced comparison.
+The positive all-order existence question is unchanged: these
+counterexamples occur at orders where matrices are already known.
+They concern full $n-1$-bit isotropy, not the punctured extraction input.

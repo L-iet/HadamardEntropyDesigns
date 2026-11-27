@@ -1,0 +1,692 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,mathtools,hyperref}
+\setlength{\emergencystretch}{3em}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\newcommand{\E}{\mathbb E}
+\newcommand{\tr}{\operatorname{tr}}
+\title{Constructive code escape, exact moment repair,\\and arithmetic obstructions}
+\author{Joshua Mark\thanks{ORCID: \href{https://orcid.org/0009-0003-5905-2382}{0009-0003-5905-2382}. AI tools assisted with derivation, independent review, computation and exposition.}}
+\date{20 November 2026 --- research draft; priority not established}
+\begin{document}\maketitle
+
+\begin{abstract}
+We investigate construction of the near-extremal sign distributions
+needed for Hadamard extraction. We give exact Fourier moment repair
+with quantified concentration cost, and prove that even its minimal
+affine buffer fails on nonisotropic uniform nearest-order candidates
+at sufficiently large orders. An additive-cover theorem rules out
+arbitrary reweighting of the smallest binary linear seed as a way
+around its power-of-two support barrier. Conversely, explicit
+character rewiring escapes all traps in a special infinite family,
+with an optimal-overlap straight bridge and constructive completion.
+Odd-integer lattice witnesses provide a separate repair diagnostic
+whose parity and Euclidean-shortness limitations are made explicit.
+No general construction of the required distribution at unknown
+orders is obtained, and the full Hadamard conjecture remains open.
+Novelty is not asserted pending further prior-art review.
+\end{abstract}
+The standing extraction target is the following. For $N\ge8$ divisible
+by four, an unbiased pairwise-independent law on $N-4$ sign bits
+with collision at least $1/N-1/(1024N^4)$ constructs a Hadamard
+matrix of order $N$. The proof is preserved in
+\path{../round6/collision_stability.tex}. This pass tests actual
+construction and correction mechanisms against that target, rather
+than assuming its input exists.
+
+\section{Exact correction of low-order moments}
+
+Let $P$ be any probability law on the $d$-dimensional sign cube,
+$M=2^d$, and $\chi_S(x)=\prod_{i\in S}x_i$. Write
+\[
+ m_S=\sum_xP(x)\chi_S(x),\qquad
+ f(x)=\sum_{1\le|S|\le2}m_S\chi_S(x),\quad
+ B=\max_x f(x),\quad L=\sum_{1\le|S|\le2}|m_S|.
+\]
+All quantities are computable from a finite law. In particular
+$0\le B\le L$. Let $C(P)=\sum_xP(x)^2$.
+
+\begin{theorem}[Nonnegative exact correction]
+The law
+\[
+ Q(x)=\frac{P(x)+(B-f(x))/M}{1+B}
+\]
+is nonnegative, normalized, unbiased and pairwise independent. Its
+total variation distance from $P$ is at most $B/(1+B)$, and
+\begin{equation}\label{correction:collision}
+ C(Q)=\frac1M+
+ \frac{C(P)-(1+\sum_{1\le|S|\le2}m_S^2)/M}{(1+B)^2}
+ \ \ge\ \frac{C(P)}{(1+B)^2}.
+\end{equation}
+\end{theorem}
+\begin{proof}
+Nonnegativity is immediate from $B\ge f$. Uniform cube orthogonality
+gives $\sum f=0$ and $M^{-1}\sum f\chi_S=m_S$ for the specified
+sets $S$, so the low-order moments cancel exactly. If $B>0$, define
+$R(x)=(B-f(x))/(MB)$, a probability law. Then
+$Q=(P+BR)/(1+B)$, proving the variation bound and pointwise
+$Q\ge P/(1+B)$, hence the collision lower bound. If $B=0$, then
+$f=0$ and $Q=P$. For the exact identity expand the square, using
+$\sum P f=\sum m_S^2$ and $M^{-1}\sum f^2=\sum m_S^2$.
+\end{proof}
+
+The smallest nonnegative buffer in this same affine ansatz is exactly
+\[
+ \beta_* =\max\{0,\max_x(f(x)-MP(x))\}.
+\]
+Replacing $B$ by any $\beta\ge\beta_*$ preserves normalization,
+exact low-order moment cancellation, and the equality in
+\eqref{correction:collision}. The mixture interpretation and its simple
+variation/collision lower bounds require $\beta\ge B$; they must not
+be asserted for the potentially smaller $\beta_*$. Thus the explicit
+universal construction is conservative, not an optimal repair theorem.
+
+\begin{theorem}[A sufficient input window for exact extraction]
+Let $d=n-1$, $n\equiv1\pmod4$, $n\ge5$, and $N=n+3$.
+If $C(P)\ge1/N$ and $B\le1/(2048N^3)$, the corrected law satisfies
+\[
+ 0\le1/N-C(Q)\le1/(1024N^4).
+\]
+Consequently the quantitative residue-one extraction theorem of round6
+constructs a Hadamard matrix of order $N$ from $Q$.
+It suffices to replace the assumption on $B$ by the stronger,
+easier-to-check condition $L\le1/(2048N^3)$.
+\end{theorem}
+\begin{proof}
+Exact isotropy of the augmented rows $(1,x)$ follows from the
+corrected moments, and the residue collision bound gives $C(Q)\le1/N$.
+The first theorem gives
+\[
+ 1/N-C(Q)\le\frac1N\left(1-\frac1{(1+B)^2}\right)
+ \le 2B/N\le1/(1024N^4).
+\]
+Apply the round6 stability theorem. This implication assumes the two
+stated input properties and does not produce such an input in unknown
+Hadamard orders.
+\end{proof}
+
+\begin{theorem}[Quantization obstruction for a uniform row candidate]
+In the same parameters, suppose $P$ is uniform on $N$ distinct sign
+rows, and at least one first or second moment is nonzero. The universal
+$B$-buffer correction above satisfies
+\[
+ 1/N-C(Q)\ge1/(2N^2),
+\]
+so it cannot enter the round6 extraction window.
+\end{theorem}
+\begin{proof}
+Since $N$ is even, each moment is an even integer divided by $N$;
+a nonzero one has magnitude at least $2/N$. Uniform expectation
+gives $|m_S|=|\mathbb E_{\rm unif} f\chi_S|
+\le\mathbb E_{\rm unif}|f|\le2B$, since $f$ has mean zero
+and positive part at most $B$. Thus $B\ge1/N$.
+Here $C(P)=1/N$ and $M=2^{N-4}\ge2N$ for $N\ge8$.
+The exact collision identity yields
+\[
+ 1/N-C(Q)\ge(1/N-1/M)\left(1-(1+B)^{-2}\right)
+ \ge\frac1{2N}\left(1-(1+1/N)^{-2}\right)
+ \ge\frac1{2N^2}.
+\]
+The last inequality is equivalent to $N^2-N-1\ge0$.
+\end{proof}
+This obstruction concerns the specified guaranteed buffer, not every
+correction scheme or the smaller $\beta_*$. It explains why repairing
+an arbitrary nearly orthogonal nearest-order sign matrix by adding a
+uniform Fourier buffer is inadequate. For uniform $N$-row candidates,
+the sufficient error condition of the preceding theorem forces all
+low-order moments to vanish already by integer quantization.
+\section{Why even the minimal affine Fourier buffer is insufficient}
+\label{sec:minimal-buffer-obstruction}
+The preceding Fourier correction is useful for appropriately weighted,
+very accurate inputs. Here we show a limitation that also applies to
+the \emph{smallest} nonnegative buffer, rather than just its universal
+upper bound. The argument uses elementary low-degree concentration;
+it does not exclude other nonlinear correction procedures.
+
+Let $N\ge20$ be a multiple of four, $d=N-4$, $M=2^d$ and
+$K=d(d+1)/2$. Let $P$ be uniform on $N$ distinct points of the
+$d$-bit cube. For $1\le|S|\le2$, let
+$m_S=\mathbb E_P\chi_S$, and put
+\[
+ f(x)=\sum_{1\le|S|\le2}m_S\chi_S(x),\qquad
+ \sigma^2=\sum_Sm_S^2.
+\]
+For any feasible buffer $\beta\ge0$, consider
+\[
+ Q_\beta(x)=\frac{P(x)+(\beta-f(x))/M}{1+\beta}.
+\]
+Its least nonnegative choice is
+$\beta_* =\max(0,\max_x(f(x)-MP(x)))$.
+
+\begin{theorem}[Sparse uniform candidates cannot enter the extraction window]
+\label{thm:minimal-buffer-obstruction}
+If $P$ is not already unbiased and pairwise independent, then every
+nonnegative correction $Q_\beta$ in this family satisfies
+\[
+ \frac1N-C(Q_\beta)\ge\frac1{8N^2\sqrt K}>
+ \frac1{8N^3}>\frac1{1024N^4}.
+\]
+In particular none enters the sufficient window proved in round six.
+If $P$ is already exactly isotropic, its uniform $N$ atoms already
+give a Hadamard matrix by the residue equality theorem.
+\end{theorem}
+\begin{proof}
+All expectations in the next paragraph are under the uniform cube.
+Fourier orthogonality gives $\mathbb E f=0$ and
+$\mathbb E f^2=\sigma^2$. Cauchy--Schwarz gives
+$\|f\|_\infty\le\sqrt K\sigma$, so
+\[
+ \mathbb E|f|\ge\frac{\sigma}{\sqrt K},\qquad
+ \mathbb E f_+=\tfrac12\mathbb E|f|
+       \ge\frac{\sigma}{2\sqrt K}.
+\]
+Let $T$ be the $N$-point support of $P$. Its contribution to
+$\mathbb E f_+$ is at most $(N/M)\sqrt K\sigma$.
+Since $M\ge4NK$, a positive contribution of at least
+$\sigma/(4\sqrt K)$ remains outside $T$. Hence
+\[
+ \beta_*\ge\max_{x\notin T}f(x)
+          \ge\frac{\sigma}{4\sqrt K}.
+\]
+A nonzero $m_S$ is an even integer divided by $N$; therefore
+$\sigma\ge2/N$, and
+$\beta\ge\beta_0:=1/(2N\sqrt K)$.
+
+The exact collision identity for the correction, valid for every
+feasible $\beta$, is
+\[
+ C(Q_\beta)=\frac1M+
+ \frac{1/N-(1+\sigma^2)/M}{(1+\beta)^2}
+ \le\frac1M+\frac{1/N-1/M}{(1+\beta_0)^2}.
+\]
+Here the negative $\sigma^2$ term was discarded \emph{before}
+comparing denominators, so no unproved sign assumption is needed.
+Since $M\ge2N$, $\beta_0\le1$, and
+$1-(1+\beta_0)^{-2}\ge\beta_0/2$, subtraction from $1/N$ gives
+the claimed lower bound. Also $\sqrt K<N$.
+
+For completeness, $2^{16}=65536\ge4\cdot20\cdot136$ verifies
+$M\ge4NK$ at $N=20$. Increasing $N$ by four multiplies $M$ by
+$16$, while $NK$ grows by a factor at most
+$(24/20)(20\cdot21)/(16\cdot17)=63/34<2$.
+Thus the inequality holds for all stated $N$.
+\end{proof}
+
+The conclusion concerns sparse \emph{uniform} starting laws. It does
+not negate the correction theorem for nonuniform weighted candidates
+whose initial concentration and moment accuracy are both sufficient.
+Finding such candidates is still an existence problem, not a
+consequence of the correction identity.
+\section{An additive-cover obstruction to small binary-seed constructions}
+\label{sec:character-rigidity}
+This section concerns a specific construction class, not arbitrary
+pairwise-independent laws. The observed bits are fixed linear
+characters of a binary seed; the seed distribution itself is allowed
+to be completely nonuniform. This distinction matters because
+rewiring the observed characters can escape a code trap, whereas
+changing only the seed weights may be impossible.
+
+Let $G=\mathbb F_2^r$, $L=2^r$, and let
+$B\subset G\setminus\{0\}$ be $d$ distinct masks spanning $G$.
+For a seed law $p$ write
+\[
+ \chi_b(z)=(-1)^{b\cdot z},\qquad
+ \widehat p(c)=\sum_{z\in G}p_z\chi_c(z),\qquad
+ A=\{0\}\cup B.
+\]
+The observed sign vector is $X(z)=(\chi_b(z))_{b\in B}$.
+Spanning makes this map injective, so its collision probability equals
+$\sum_zp_z^2$.
+
+\begin{theorem}[Complete rigidity from additive coverage]
+\label{thm:character-cover}
+The observed bits are unbiased and pairwise independent if and only if
+\[
+ \widehat p(c)=0\quad\text{for every }c\in(A+A)\setminus\{0\}.
+\]
+Consequently, if $A+A=G$, the only feasible seed law is uniform.
+In particular this holds whenever $|A|>L/2$.
+If $c\notin A+A$, the family
+\[
+ p_t(z)=\frac{1+t\chi_c(z)}L,\qquad -1\le t\le1,
+\]
+is feasible and has collision $(1+t^2)/L$. At $t=\pm1$ it is uniform
+on an affine hyperplane of size $L/2$ and doubles the collision.
+Thus missing additive directions give explicit compression steps,
+whereas full coverage forbids every seed-reweighting step.
+\end{theorem}
+\begin{proof}
+The coordinate means are $\widehat p(b)$, and distinct pair
+correlations are $\widehat p(b+b')$. These masks, together with zero,
+are exactly $A+A$. If they cover $G$, Fourier inversion forces
+$p_z=1/L$. If $|A|>L/2$, then for each $c\in G$ the sets
+$A$ and $A+c$ intersect, implying $c\in A+A$.
+For a missing $c$, character orthogonality gives the displayed law
+normalization, nonnegativity, vanishing required Fourier coefficients,
+and collision. Moreover $c\ne0$, so its two level sets are affine
+hyperplanes of size $L/2$. No selected mask is zero or identified
+with another after restriction: either failure would put $c$ in
+$A+A$. Thus the compression retains all observed moments.
+\end{proof}
+
+The character construction and finite-group Fourier identities are
+classical; see Luby--Wigderson, \emph{Pairwise Independence and
+Derandomization}, Sections 1.1--1.2,
+\url{https://www.math.ias.edu/~avi/PUBLICATIONS/LubyWig2005.pdf}.
+The proof above is included to make the precise construction-class
+restriction explicit; no priority claim is made.
+
+\begin{corollary}[The smallest binary seed forces a power-of-two law]
+\label{cor:minimum-seed}
+If $r=\lceil\log_2(d+1)\rceil$, any feasible law with these linear
+observables is uniform on $L=2^r$ distinct atoms, even when arbitrary
+seed weights are allowed.
+For a non-power-of-two multiple of four $N\ge12$, take $d=N-4$.
+Then this construction class has collision deficit
+\[
+ \frac1N-C=\frac1N-\frac1L>\frac2{N^2},
+\]
+far larger than the sufficient extraction window $1/(1024N^4)$.
+\end{corollary}
+\begin{proof}
+Minimality of $r$ implies $d+1>L/2$, so apply the theorem.
+For the stated $N$, $L\ge N+4$ and $L<2N$, since both $L,N$ are
+multiples of four and $N-3$ lies strictly between the preceding and
+current powers of two. Hence
+$(L-N)/(NL)\ge4/(NL)>2/N^2$.
+\end{proof}
+For example $N=12,d=8$ forces sixteen equally weighted atoms in the
+smallest binary seed, with collision $1/16$ instead of $1/12$.
+This happens even though an order-twelve Hadamard matrix exists.
+The obstruction belongs to the linear-observable model; it is not
+an obstruction to Hadamard existence.
+
+\begin{proposition}[Approximate moment version]\label{prop:approx-character}
+Suppose $A+A=G$ and every observed mean and pair correlation has
+absolute value at most $\varepsilon$. Then
+\[
+ C(p)=\frac1L\left(1+\sum_{c\ne0}\widehat p(c)^2\right)
+ \le\frac1L+\frac{L-1}{L}\varepsilon^2.
+\]
+In particular, if $C(p)\ge1/N-\eta$ with $N<L$, necessarily
+\[
+ \varepsilon^2\ge
+ \frac{L/N-1-L\eta}{L-1}
+\]
+whenever the right side is positive.
+\end{proposition}
+\begin{proof}
+Coverage makes each nonzero Fourier coefficient an observed mean or
+pair correlation. Parseval identity gives the formula and the bound.
+Rearranging gives the last assertion.
+\end{proof}
+Thus allowing very small moment errors does not silently bypass the
+power-of-two barrier in this model. A broader distribution strategy
+must change the observables, use a larger seed with nontrivial Fourier
+freedom, or employ genuinely nonlinear constructions. The theorem
+does not rule out any of those alternatives.
+\section{Optimal-overlap escape from the character traps}
+\label{sec:compression-escape}
+This section gives an explicit nonlocal escape for the special character
+traps of the preceding pass. It does not produce the missing distributions
+at arbitrary admissible orders. The only background is orthogonality of
+finite-group characters; a primary account of pairwise-independent finite
+field constructions is Luby--Wigderson, Sections 1.1--1.2,
+\url{https://www.math.ias.edu/~avi/PUBLICATIONS/LubyWig2005.pdf}.
+The Walsh and block constructions here are classical ingredients; priority
+for these landscape statements has not been established.
+
+Put $h=2^s$, $s\ge2$, and identify the two seed spaces with
+$V=\mathbb F_2^s$. Fix a nonzero linear functional $e$ on $V$.
+For independent uniform $a,b\in V$, the trap law $\mu$ has observed bits
+\[
+ (\chi_\alpha(a))_{\alpha\ne0},\qquad
+ (\chi_\beta(b))_{\beta\ne0},\qquad
+ \chi_e(a+b),
+ \quad\text{where }\chi_\alpha(a)=(-1)^{\alpha(a)}.
+\]
+There are $2h-1$ bits and $h^2$ distinct atoms. Append the constant
+coordinate and write $r(a,b)$ for the augmented sign row of length $2h$.
+The endpoint law $\nu$ is instead generated by uniform $a\in V$ and
+$t\in\mathbb F_2$:
+\begin{equation}\label{eq:compression-endpoint}
+ (\chi_\alpha(a))_{\alpha\ne0},\qquad
+ ((-1)^t\chi_\beta(a))_{\beta\ne0},\qquad (-1)^t.
+\end{equation}
+Its masks are exactly the nonzero characters on $V\oplus\mathbb F_2$,
+so it is balanced pairwise independent and uniform on $2h$ atoms.
+This directly constructs the compressed endpoint.
+
+\begin{theorem}[Maximum overlap and optimal straight bridge]
+\label{thm:compression-optimal-overlap}
+Every pairwise-orthogonal subset of augmented trap rows has size at most
+$h$, and $h$ is attained. Consequently every global collision maximizer
+on $2h-1$ unbiased pairwise-independent bits has at most $h$ atoms in
+common with the trap. The endpoint \eqref{eq:compression-endpoint}
+attains this maximum overlap. Along the feasible affine bridge
+$\mu_\lambda=(1-\lambda)\mu+\lambda\nu$,
+\[
+ C(\mu_\lambda)=\frac{1-\lambda+(h/2)\lambda^2}{h^2},\qquad
+ \min_{0\le\lambda\le1}C(\mu_\lambda)
+ =\frac{1-1/(2h)}{h^2},
+\]
+with the minimum at $\lambda=1/h$.
+Among all straight mixture bridges from this trap to a global maximizer,
+this minimum is as large as possible. The optimal collision loss is
+exactly $1/(2h^3)$.
+\end{theorem}
+\begin{proof}
+Character orthogonality gives
+\[
+ r(a,b)\cdot r(a',b')=
+ h\mathbf1_{a=a'}+h\mathbf1_{b=b'}-1+
+ (-1)^{e(a+a'+b+b')}.
+\]
+Distinct orthogonal rows therefore have different $a$ coordinates,
+different $b$ coordinates, and the same value of $e(a+b)$.
+In particular there are at most $h$. All diagonal seeds $(a,a)$ have
+mixed bit $+1$ and form an orthogonal $h$-set.
+
+The endpoint contains precisely these diagonal trap atoms in its $t=0$
+half. Its $t=1$ half has no trap atoms: that would require
+$\chi_\beta(b)=-\chi_\beta(a)$ for every nonzero $\beta$, impossible
+when $s\ge2$, since multiplying the conditions for two distinct nonzero
+functionals contradicts the condition for their sum. Thus the overlap
+has exactly $h$ atoms and
+$\mu\cdot\nu=h/(h^2\cdot2h)=1/(2h^2)$.
+Expanding the squared norm proves the bridge formula and minimum.
+
+The global collision bound is $1/(2h)$, attained by $\nu$. Indeed the
+standard atom bound is $w_x\le1/(2h)$; equality in
+$\sum w_x^2\le1/(2h)$ forces uniform weights on $2h$ atoms, and their
+augmented rows must be orthogonal. Every other global endpoint therefore
+has collision $1/(2h)$ and cross inner product with $\mu$ at most
+$1/(2h^2)$. Its mixture collision is pointwise no larger than the
+formula above. Evaluating at $\lambda=1/h$ proves optimality among
+straight bridges. No optimality over arbitrary curved paths is asserted.
+\end{proof}
+
+\begin{proposition}[Complete any maximum overlap subset]
+\label{prop:compression-complete-clique}
+Every orthogonal $h$-subset of the augmented trap support extends to an
+order-$2h$ Hadamard matrix with exactly $h$ trap rows.
+\end{proposition}
+\begin{proof}
+The preceding characterization says its seed pairs form the graph of a
+bijection $b=\pi(a)$ with constant mixed bit $(-1)^{e(a+\pi(a))}=c$.
+Arrange the columns as $(1,A\text{-bits})$ and
+$(\text{mixed bit},B\text{-bits})$. The selected rows are
+$[H_1\ H_2]$, where $H_1$ is the Walsh matrix of $V$ and $H_2$ is
+another such matrix with permuted rows and its constant column multiplied
+by $c$. Both are Hadamard matrices of order $h$. Append the $h$ rows
+$[H_1\ -H_2]$. Direct block multiplication gives an order-$2h$ Hadamard
+matrix. It contains the selected trap rows and cannot contain more than
+$h$ by the theorem.
+\end{proof}
+
+\subsection{Moment-preserving jumps with nondecreasing endpoint collision}
+The same escape can be organized into elementary character substitutions.
+This is a discontinuous algorithm on feasible distributions, not a
+continuous collision-ascent flow. Label a character mask by a pair of
+functionals on $V\oplus V$. Initially the observed masks are
+\[
+ (\alpha,0)\ (\alpha\ne0),\quad (0,\beta)\ (\beta\ne0),\quad(e,e).
+\]
+First swap the columns labeled $(0,e)$ and $(e,e)$. Then for each
+$\beta\ne0,e$, replace the mask in its $B$-column by $(\beta,e)$.
+All masks remain distinct and nonzero throughout. The final mask list is
+$(\alpha,0)$, $(\beta,e)$ for $\beta\ne0$, and $(0,e)$, which generates
+the endpoint law above.
+
+\begin{proposition}[Finite nonlocal rewiring]\label{prop:compression-jumps}
+The $h-1$ jumps just described preserve unbiased pairwise independence
+at every endpoint. Endpoint collision never decreases. Exactly $s-1$
+jumps halve the support size and double collision; the other $h-s$
+jumps preserve support size. If each jump is interpolated by its straight
+feasible segment, the entire piecewise affine path has minimum collision
+$3/(4h^2)$.
+\end{proposition}
+\begin{proof}
+A uniform linear-character law with mask-span rank $r$ is uniform on
+$2^r$ atoms. After the initial swap, every replacement mask lies in the
+span of the unchanged first-block masks and the unchanged mask $(0,e)$.
+Thus no replacement increases rank; each drops it by at most one.
+The initial and final ranks are $2s$ and $s+1$, proving the counts.
+
+For a one-column replacement let $r_0$ be the rank of the retained masks.
+The new mask is in their span. If the old mask is outside that span, the
+new support is a codimension-one subcode of the old support of size $m$.
+The cross inner product of the uniform laws is $1/m$, so the segment
+collision is $(1+\lambda^2)/m$. If the old mask is inside the retained
+span, both supports have size $m$; their intersection has size $m/2$,
+since two distinct linear functionals disagree on half the retained
+code. The segment collision is
+$(1-\lambda+\lambda^2)/m$, minimized at $3/(4m)$.
+For the initial swap the supports also have size $h^2$ and intersect in
+$h^2/2$ atoms: the unchanged masks determine the seed, and the swap
+fixes its row precisely when $\chi_e(a)=1$. (The nonzero $B$ masks
+other than $e$ still span the second seed space for $s\ge2$.) Hence
+its segment has minimum $3/(4h^2)$. Subsequent $m\le h^2$ cannot
+produce a smaller minimum.
+\end{proof}
+
+\paragraph{What is and is not compressed.}
+A linear quotient of the original seed that retains all observed masks
+cannot do this: the observed masks and their pairwise sums cover the
+entire dual group, so every nonzero quotient kernel identifies two masks
+or kills a mask. The algorithm changes the observed characters instead.
+It exploits the special two-block structure; no corresponding rewiring
+rule for arbitrary admissible dimensions is proved. The direct bridge
+has a much smaller collision loss than the column-by-column path, while
+the jump endpoints themselves never lose collision.
+\section{Parity witnesses, weighted repair budgets, and their exact limit}
+\label{sec:parity-repair}
+
+The odd-block argument extends to arbitrary integer witnesses, including
+overlapping or unequal odd blocks. The extension supplies explicit
+constraints on \emph{which} rows a repair must remove. Saturated-lattice
+duality also identifies exactly what these certificates detect: absence
+of an all-odd integer kernel vector. A certified order-twenty-four
+example shows why that arithmetic test still falls short of sign
+extension. Arithmetic completion is a classical subject; a relevant
+primary source is Verheiden's thesis,
+\emph{Arithmetical Properties of Combinatorial Matrices} (1978),
+\url{https://thesis.caltech.edu/2899/}, and his article
+\emph{Integral and rational completions of Hadamard matrices},
+\url{https://doi.org/10.1016/0097-3165(80)90028-X}.
+The results below have self-contained proofs; no novelty claim is made.
+
+\begin{theorem}[Weighted odd-witness budget]
+Let $P$ have $r$ orthogonal sign rows $p_1,\ldots,p_r$ of length $N$,
+and let $f\in\mathbb Z^N$ have odd coordinate sum. Set
+\[
+ R=NI_N-P^{\mathsf T}P,\qquad
+ C_f=f^{\mathsf T}Rf
+     =N\|f\|^2-\sum_i(p_i\cdot f)^2\ge0.
+\]
+If rows indexed by $D$ are deleted and $L$ mutually orthogonal sign
+rows are inserted, orthogonal also to all retained rows, then
+\[
+ L\le C_f+\sum_{i\in D}(p_i\cdot f)^2.
+\]
+Consequently full completion requires
+\[
+ \sum_{i\in D}\bigl((p_i\cdot f)^2-1\bigr)
+       \ge N-r-C_f.
+\]
+Every odd-sum integer $f$ gives such an inequality, so a collection
+of witnesses gives simultaneous weighted constraints on row selection.
+\end{theorem}
+\begin{proof}
+Bessel's inequality for orthogonal rows of squared norm $N$ bounds
+the sum of squared inner products with $f$ by $N\|f\|^2$.
+For every sign row $v$, $v\cdot f\equiv\sum_j f_j\equiv1\pmod2$,
+so $(v\cdot f)^2\ge1$. Subtracting the contributions of the retained
+rows proves the first inequality. A full completion inserts
+$L=N-r+|D|$, giving the second.
+\end{proof}
+
+For a signed indicator $f$ of an odd block of size $s$, the constant
+is $C_f=Ns-\sum_i(p_i\cdot f)^2$. The theorem applies independently
+to every block, with no equality-of-sizes or disjointness assumption.
+If $f$ lies in the rational row span of $P$, then $C_f=0$ and no
+additional sign row exists. The budget then depends only on the
+deleted rows' squared overlaps with the witness.
+
+\begin{proposition}[The first possible parity deficit is eight]
+Assume $4\mid N$ and write $d=N-r$. For every odd-sum integer $f$,
+\[
+ C_f\equiv d\pmod8.
+\]
+Thus for $0\le d\le7$ these witness inequalities automatically give
+$C_f\ge d$; they cannot certify failure of full completion without
+row deletion. At $d=8$, the value $C_f=0$ is possible.
+\end{proposition}
+\begin{proof}
+Every $p_i\cdot f$ is odd, hence its square is $1$ modulo $8$.
+Also $\|f\|^2$ is odd, so $N\|f\|^2\equiv N\pmod8$ because
+$4\mid N$. Therefore $C_f\equiv N-r\pmod8$.
+Nonnegativity gives the remaining assertion. The repeated $4\times12$
+seed supplies the value zero at defect eight. This congruence alone
+does not prove the classical seven-row completion theorem.
+\end{proof}
+
+\subsection{What the certificate detects exactly}
+\begin{theorem}[Saturated-lattice alternative]
+For any rational row space $V\subseteq\mathbb Q^N$, exactly one of
+the following holds:
+\begin{enumerate}
+\item $V\cap\mathbb Z^N$ contains a vector with odd coordinate sum;
+\item $V^\perp\cap\mathbb Z^N$ contains a vector all of whose
+coordinates are odd.
+\end{enumerate}
+For a partial Hadamard row space, the first case supplies a zero-budget
+witness. The second case supplies arithmetic parity feasibility,
+but does not assert a sign vector exists.
+\end{theorem}
+\begin{proof}
+Put $\Lambda=V\cap\mathbb Z^N$ and
+$K=V^\perp\cap\mathbb Z^N$. Both are primitive: an integer multiple
+lying in the relevant rational subspace implies the original vector
+lies there. A primitive subgroup of $\mathbb Z^N$ has a basis
+extendible to an integer unimodular basis, so reduction modulo $2$
+preserves its rank. If $\dim V=r$, the images $\bar\Lambda,\bar K$
+in $\mathbb F_2^N$ have dimensions $r,N-r$ and are orthogonal.
+Thus $\bar K=\bar\Lambda^\perp$. The all-ones vector lies in
+$\bar K$ exactly when every vector of $\bar\Lambda$ has even
+coordinate sum. This is precisely the stated alternative.
+\end{proof}
+
+There is a simple exact algorithm for this alternative. Starting with
+an independent integer row basis, find a dependence modulo $2$.
+The corresponding sum of basis rows has even entries; divide it by
+$2$ and replace any participating row. Rational span is preserved,
+and the squared covolume decreases by a factor $4$. As it stays a
+positive integer, the procedure terminates with independent reductions
+modulo $2$. Its row lattice has odd index in the saturated lattice,
+so it has the same reduction modulo $2$. An odd-sum basis row is
+therefore a complete certificate for the first case. Otherwise select
+a full-rank odd minor, set free kernel coordinates to $1$, and solve
+for the pivot coordinates. Their denominators are odd, and clearing
+those denominators produces the all-odd integer kernel vector.
+The accompanying checker implements this procedure from scratch.
+
+\subsection{Sparse certificates beyond uniform repeated seeds}
+For the earlier terminal $16\times24$ frame, encoded by row masks
+\[
+\begin{gathered}
+0,16773120,16519104,10359454,7684730,5820908,9389414,1547504,\\
+6736278,11838780,3701846,13790378,10646512,2963882,12892774,5974836,
+\end{gathered}
+\]
+with bit $j$ indicating entry $-1$ at zero-based coordinate $j$,
+there are two particularly short witnesses:
+\[
+ f=e_2+e_8+e_{19},\qquad g=e_9-e_{10}+e_{22}.
+\]
+Direct integer calculation gives $C_f=C_g=0$ and
+$\|f\|^2=\|g\|^2=3$. This certifies unextendibility without
+enumerating candidate sign rows. The row indices having absolute
+overlap $3$ are respectively
+\[
+ A=\{0,4,5,6,7,11,15\},\qquad
+ B=\{4,6,7,9,10,14,15\};
+\]
+all other overlaps have magnitude $1$. Any augmenting exchange must
+delete a row from each of $A$ and $B$. These necessary conditions
+do not by themselves establish the previously certified three-row
+exchange barrier, but they give concrete filters for a repair search.
+
+There is also a positive case where the weighted budget selects an
+optimal constructive route. In the repeated order-twelve tensor
+family after $k$ fibers have been repaired, a triple-indicator
+witness has zero budget. Original repeated rows have overlap
+magnitude $3$, while installed affine-plane rows have overlap
+magnitude $1$. Deleting $a$ original rows and $b$ installed rows
+can therefore insert at most $9a+b$ rows. Net growth is at most
+$8a$, so deleting only installed rows cannot augment the frame.
+Full completion requires at least $t-k$ more original-row deletions,
+regardless of how many installed rows are removed. The explicit fiber
+repair attains this bound: sacrifice one original row and insert the
+nine words $(x,y,x+y,x-y)$ over $\mathbb F_3$, interpreted as one
+negative position per triple. This supplies a certified choice of
+which class of rows to preserve during constructive repair.
+
+\subsection{Odd integer feasibility still misses a Euclidean gap}
+The lattice alternative has an explicit limitation. Consider the
+$12\times24$ partial frame with row masks
+\[
+\begin{gathered}
+0,16773120,16519104,9656012,13838682,14783914,\\
+1944718,11409518,15230494,5921970,3487346,13018356.
+\end{gathered}
+\]
+Its rows are orthogonal. Its integer kernel contains
+\[
+\begin{split}
+v={}&(-1,-1,3,-1,1,1,-3,-1,1,1,-1,1,\\
+&1,-1,-1,-1,1,-1,1,-1,1,-1,1,1),
+\end{split}
+\]
+with $\|v\|^2=40$. Nevertheless its odd integer kernel has no vector
+of squared norm $24$ or $32$, so its shortest odd vector has squared
+norm exactly $40$.
+
+Here this last assertion is a finite exact certificate. Rational
+elimination selects twelve free coordinates. Enumerating their
+$2^{11}=2048$ sign assignments up to global negation rules out norm
+$24$. A norm-$32$ all-odd vector would have exactly one coordinate
+of magnitude $3$ and every other coordinate of magnitude $1$.
+If that exceptional coordinate is a pivot, it is covered by the same
+2048 assignments. If it is free, there are another
+$12\cdot2^{11}=24576$ assignments to check. None gives norm $32$.
+Every all-odd vector has squared norm congruent to $24$ modulo $8$,
+and the displayed vector attains the next possibility, $40$.
+The verifier performs all these checks with exact integer and rational
+arithmetic. Thus the frame has no sign extension despite passing the
+all-odd kernel feasibility test. Real progress beyond parity requires
+controlling the short-vector problem, not merely clearing denominator
+or congruence obstructions.
+
+\section{The remaining construction problem}
+The special-family escape is a genuine construction and an optimal
+straight mixture bridge, but its endpoint has power-of-two order.
+Fixed linear observables in the smallest binary seed force uniformity,
+and the minimal-buffer theorem prevents a uniform nonisotropic
+nearest-order row candidate from reaching the extraction window by
+that correction alone. The positive correction theorem instead
+requires concentrated, accurately weighted inputs; their general
+construction is still missing.
+
+Arithmetic witnesses can diagnose and guide some row exchanges,
+but absence of a parity obstruction need not give a sign row: a
+shortest-vector issue remains in the odd kernel coset. These results
+suggest testing larger or nonlinear seeds, adaptive corrections
+beyond the one-buffer ansatz, and metric-aware lattice repairs.
+They do not prove that any of these strategies works in every
+admissible dimension. No Lean code or Git commit was made.
+\end{document}

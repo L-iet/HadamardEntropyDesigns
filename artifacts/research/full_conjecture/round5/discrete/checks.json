@@ -1,0 +1,87 @@
+{
+  "passed": true,
+  "roundingExamples": [
+    {
+      "n": 4,
+      "collision": "199980001/800000000",
+      "error": "0",
+      "extractedClique": 4
+    },
+    {
+      "n": 4,
+      "collision": "199980017/800000000",
+      "error": "1/3125000",
+      "extractedClique": 4
+    },
+    {
+      "n": 8,
+      "collision": "319940003/2560000000",
+      "error": "0",
+      "extractedClique": 8
+    },
+    {
+      "n": 8,
+      "collision": "1599700271/12800000000",
+      "error": "1/781250",
+      "extractedClique": 8
+    }
+  ],
+  "sharpFiveBitCollision": "1/8",
+  "fiveBitGraphTriangleFree": true,
+  "atomBoundSharpExampleCollision": "7/72",
+  "modularExamples": [
+    {
+      "n": 16,
+      "prime": 3,
+      "offDiagonal": 12,
+      "modPrimeSquaredFails": true
+    },
+    {
+      "n": 28,
+      "prime": 3,
+      "offDiagonal": 24,
+      "modPrimeSquaredFails": true
+    },
+    {
+      "n": 24,
+      "prime": 5,
+      "offDiagonal": 20,
+      "modPrimeSquaredFails": true
+    },
+    {
+      "n": 44,
+      "prime": 5,
+      "offDiagonal": 40,
+      "modPrimeSquaredFails": true
+    },
+    {
+      "n": 32,
+      "prime": 7,
+      "offDiagonal": 28,
+      "modPrimeSquaredFails": true
+    },
+    {
+      "n": 60,
+      "prime": 7,
+      "offDiagonal": 56,
+      "modPrimeSquaredFails": true
+    }
+  ],
+  "equalityReconstructions": [
+    {
+      "order": 8,
+      "deletedColumnPairs": 21,
+      "completed": true
+    },
+    {
+      "order": 16,
+      "deletedColumnPairs": 105,
+      "completed": true
+    },
+    {
+      "order": 32,
+      "deletedColumnPairs": 12,
+      "completed": true
+    }
+  ]
+}

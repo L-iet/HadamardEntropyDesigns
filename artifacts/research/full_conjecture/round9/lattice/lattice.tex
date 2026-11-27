@@ -1,0 +1,161 @@
+\section{Exact lifting of modular sign extensions with a column-pair correction}
+\label{sec:modular-sign-lifting}
+
+Finite-field residue constraints can retain information that an
+all-odd integer kernel test misses. They also admit exact generating
+polynomial and Fourier counts. Counting through code enumerators and
+character sums is classical; a foundational primary source is
+MacWilliams, \emph{A Theorem on the Distribution of Weights in a
+Systematic Code} (1963),
+\url{https://doi.org/10.1002/j.1538-7305.1963.tb04003.x}.
+Here we derive a specific lifting theorem: in a range of dimensions,
+every spurious modular sign extension is a two-coordinate perturbation
+of an existing row. A simple column statistic subtracts all such
+spurious solutions exactly. No novelty claim is made pending a
+targeted prior-art review.
+
+Let $P$ have $r$ orthogonal sign rows of length $N$. A modular sign
+extension modulo $q$ is a vector $v\in\{\pm1\}^N$ satisfying
+$Pv\equiv0\pmod q$; an exact extension satisfies $Pv=0$ over the
+integers. Count both kinds up to negation. Write their counts as
+$M_q(P)$ and $E(P)$, and put
+\[
+ A(P)=\#\left\{\{a,b\}:a<b,\quad
+ \left|\sum_{i=1}^r p_{ia}p_{ib}\right|=r-2\right\}.
+\]
+This statistic is computable in $O(rN^2)$ integer operations.
+
+\begin{theorem}[Exact modular count with a column-pair correction]
+Suppose $q\ge3$ is odd,
+\[
+ N=4(q+1),\qquad r>\frac{4(q+1)^2}{q^2}.
+\]
+Then
+\[
+ \boxed{E(P)=M_q(P)-A(P).}
+\]
+More precisely, every modular sign extension which is not exact differs
+in exactly two coordinates from the sign or negative of a unique
+existing row. Such nonexact classes correspond bijectively to the
+column pairs counted by $A(P)$.
+\end{theorem}
+\begin{proof}
+Let $d_i=p_i\cdot v$. Any two existing rows have Hamming distance
+$N/2=2(q+1)$, which is even. Hence their sign products have the same
+parity, and all $d_i$ are congruent modulo $4$: either all are zero
+modulo $4$, or all are $2$ modulo $4$.
+Each $d_i$ is even and divisible by odd $q$. In the second case,
+$|d_i|=2q$, because the next possible magnitude $6q$ exceeds
+$N=4q+4$. Bessel's inequality would then give
+\[
+ 4q^2r=\sum_i d_i^2\le N\|v\|^2=N^2,
+\]
+contradicting the row-count hypothesis.
+Thus every $d_i$ is divisible by $4q$, and its only possibilities
+are $0,4q,-4q$. Two nonzero values would contribute
+$32q^2>N^2$, again contradicting Bessel. If all vanish, the extension
+is exact. Otherwise there is a unique index $i$ with
+$|p_i\cdot v|=4q=N-4$. After negating $v$ if necessary, it differs
+from $p_i$ in exactly two coordinates $a,b$.
+
+For every $j\ne i$, orthogonality to $v$ and $p_i$ gives
+$p_{ja}p_{ia}+p_{jb}p_{ib}=0$. Consequently the column products
+$p_{ja}p_{jb}$ have the same sign for all $j\ne i$ and its opposite
+sign for row $i$. Their sum has absolute value $r-2$.
+
+Conversely, each column pair with this property has a unique exceptional
+row $i$, since the hypotheses imply $r>2$. Flip those two coordinates
+of $p_i$. The resulting vector has inner product $N-4=4q$ with
+$p_i$ and zero with every other row, so is a nonexact modular extension.
+No resulting class can come from two different rows: it would then
+lie within Hamming distance two of signs of two orthogonal rows,
+whose mutual distance is $N/2\ge8$, whereas the triangle inequality
+would bound it by four. The flipped pair is unique once the row is
+fixed. This proves the bijection and count formula.
+\end{proof}
+
+In particular, if all distinct columns have absolute correlation
+strictly below $r-2$, then modular sign extensions are automatically
+exact. This is a sufficient \emph{lifting} theorem, not an assertion
+that modular solutions always exist.
+
+\subsection{An exact algebraic certificate and positivity criterion}
+When $q$ is prime, let $c_j\in\mathbb F_q^r$ be column $j$ of $P$.
+In the integral group algebra of $\mathbb F_q^r$, form
+\[
+ \Phi_P=\prod_{j=1}^N(X^{c_j}+X^{-c_j}),\qquad
+ C_q(P)=[X^0]\Phi_P.
+\]
+Expanding the product counts sign choices with zero residue, so
+$C_q(P)=2M_q(P)$. Under the theorem's hypotheses,
+\[
+ \boxed{E(P)=\tfrac12 C_q(P)-A(P).}
+\]
+Thus the exact computable inequality $C_q(P)>2A(P)$ suffices for a
+sign extension; equality certifies that none exists. Character
+orthogonality gives the equivalent Fourier expression
+\[
+ C_q(P)=\frac1{q^r}\sum_{a\in\mathbb F_q^r}
+          \prod_{j=1}^N2\cos\left(\frac{2\pi\,a\cdot c_j}{q}\right).
+\]
+The group-algebra expression permits integer computation without
+floating-point trigonometry. Alternatively modular row reduction of
+rank $s$ enumerates at most $2^{N-s-1}$ sign assignments to information
+coordinates. The structural correction avoids an additional integer
+orthogonality test for every surviving modular candidate.
+
+For a nonvacuous correction example, take rows $0,1,2,3,4,5,6,8$ of
+the order-$16$ Sylvester matrix. With $q=3$ one obtains
+\[
+ C_3(P)=88,\qquad M_3(P)=44,\qquad A(P)=8,\qquad E(P)=36.
+\]
+The verifier independently computes $C_3(P)$ by integer group-algebra
+multiplication and by modular information-coordinate enumeration.
+
+\subsection{The order-twenty-four repair benchmarks}
+For $N=24$, use $q=5$. The row-count condition is simply $r\ge6$.
+The following exact results concern the two previously recorded
+terminal frames and the two single-row deletions of the twelve-row
+frame. All counts are antipodal classes.
+\[
+\begin{array}{c|r|r|r|r|r}
+\text{frame}&r&\max_{a<b}|c_a\cdot c_b|&M_3&M_5&E\\\hline
+\text{terminal twelve-row}&12&8&72&0&0\\
+\text{terminal sixteen-row}&16&4&76&0&0\\
+\text{delete row zero}&11&7&72&2&2\\
+\text{delete row one}&11&7&182&16&16
+\end{array}
+\]
+In every row the column statistic $A(P)$ is zero, explaining why the
+modulo-$5$ candidate sets coincide exactly with the real extension
+sets. Modulo $3$ alone instead gives many false positives. In
+particular the twelve-row frame passes all-odd integer feasibility
+and modulo-$3$ sign feasibility, but fails modulo-$5$ sign feasibility.
+This is a concrete stronger residue obstruction, not a denominator
+or parity obstruction.
+
+The sixteen-row frame has rank $16$ modulo $5$, so its nonexistence
+certificate tests only $2^7=128$ information assignments with elementary
+finite-field arithmetic. The twelve-row frame uses $2^{11}=2048$.
+The two versus sixteen exact candidates after deletion also recover
+the different repair possibilities, after testing their mutual
+orthogonality. Candidate existence alone still does not ensure that
+enough candidates are compatible for an augmenting exchange.
+
+\subsection{A general moment bound outside the lifting dimension}
+There is a weaker sufficient condition without the special relation
+$N=4(q+1)$. For even $N$ and odd $q$, let $S_q$ be the modular sign
+classes and put
+\[
+ T_q=|S_q|,\qquad B_q=\sum_{v\in S_q}\|Pv\|^2.
+\]
+A nonexact modular class has at least one nonzero inner product, an
+even multiple of $q$, so its energy is at least $4q^2$. Consequently
+\[
+ E(P)\ge T_q-\frac{B_q}{4q^2}.
+\]
+In particular $B_q<4q^2T_q$ certifies an exact extension. This first
+moment estimate is often weak; the theorem above succeeds by fully
+classifying the possible nonzero energies and their column-pair
+geometry. Neither criterion currently proves positivity uniformly
+for all admissible orders.

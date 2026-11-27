@@ -1,0 +1,782 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,mathtools,hyperref}
+\setlength{\emergencystretch}{3em}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\newcommand{\E}{\mathbb E}
+\newcommand{\tr}{\operatorname{tr}}
+\title{Compatible modular codes, exact lifting,\\and concentration barriers}
+\author{Joshua Mark\thanks{ORCID: \href{https://orcid.org/0009-0003-5905-2382}{0009-0003-5905-2382}. AI tools assisted with derivation, independent review, computation and exposition.}}
+\date{20 November 2026 --- research draft; priority not established}
+\begin{document}\maketitle
+
+\begin{abstract}
+We derive a parity rigidity theorem for modularly orthogonal sign
+families of length $4q$, $q$ odd. In a self-orthogonal residue code
+containing five real orthogonal rows, all sign words are mutually
+compatible. Over a prime field an exact extension gives a self-dual
+neighbor preserving all old sign words; at the known order twenty,
+one such change raises the sign count from eight to twenty.
+A second order-twenty example is terminal: no new sign row preserves
+eleven of its twelve rows. An exact two-row replacement unlocks ten
+new rows and a complete matrix, again in one self-dual neighbor.
+An exact neighbor-incidence identity gives a quantitative surplus
+criterion; in a codimension-one retained space the entire modular
+sign pool splits between just two self-dual codes.
+We also classify modular false positives at orders congruent to four
+modulo eight, give exact monotone concentration moves and limits of
+specified-target bridge barriers, and strengthen a low-degree model
+obstruction to an explicit moment-error floor.
+None of these results proves a sufficiently large sign count at
+unknown orders. The full conjecture and bibliographic novelty remain
+unresolved.
+\end{abstract}
+The standing distribution target remains exact unbiased pairwise
+independence on $N-4$ bits and collision at least
+$1/N-1/(1024N^4)$; the proven extraction implication is in
+\path{../round6/collision_stability.tex}. Here we investigate an
+alternative global residue-code model as well as its obstructions.
+\section{Compatible codewords and a change of self-dual code}
+\label{sec:compatible-codes}
+
+Put $N=4q$ with $q\ge3$ odd. A sign class means a pair $\{v,-v\}$;
+use the representative whose first coordinate is positive. Set
+$\pi(v)=\prod_jv_j$, which is well-defined on classes because $N$ is even.
+We call a family modularly orthogonal if all its pairwise inner products
+are divisible by $q$. The following proof requires no primality.
+
+\begin{theorem}[Two-parity rigidity]\label{code:parity}
+In a modularly orthogonal family of distinct sign classes, the
+classes of each fixed parity are pairwise orthogonal over the reals.
+If both parities occur, each parity has at most four classes.
+Consequently any such family with at least nine classes is a real
+partial Hadamard matrix, and every family has at most $N$ classes.
+The mixed-parity bound of eight is sharp for every odd $q\ge3$.
+\end{theorem}
+\begin{proof}
+For distinct nonantipodal signs $u,v$, their inner product is even,
+divisible by odd $q$, and strictly between $-4q$ and $4q$. It is
+therefore $0$ or $\pm2q$. Since
+\[
+ \pi(u)\pi(v)=(-1)^{(N-u\cdot v)/2},
+\]
+equal parities force zero and opposite parities force $\pm2q$.
+Within one parity the normalized rows are orthonormal. Against
+any normalized row of the opposite parity, every squared inner
+product is $1/4$. Bessel's inequality limits the first class to
+four rows, and then does the same for the second.
+If only one parity occurs there are at most $N$ orthogonal rows;
+otherwise there are at most eight, which is less than $N$.
+
+For sharpness start with the four rows of $H_4$. Adjoin the four
+antipodal classes of sign vectors of the form
+$\frac12\sum_{i=1}^4\sigma_i h_i$ that have all entries $\pm1$.
+The two sets are orthogonal bases of $\mathbb R^4$ whose cross
+inner products are $\pm2$. Repeat each coordinate $q$ times.
+This gives four classes of each parity, with cross products
+$\pm2q$ and within-class products zero.
+\end{proof}
+
+This is an elementary rigidity result within the classical subject
+of modular Hadamard matrices, not a priority claim; see Marrero and
+Butson, \emph{Modular Hadamard matrices and related designs} (1973),
+\url{https://doi.org/10.1016/0097-3165(73)90073-3}.
+The modulus here grows with the target order. Existence theorems
+for a fixed small modulus cannot simply supply this hypothesis.
+
+\begin{corollary}[Five rows remove compatibility tests]\label{code:five}
+Let $C$ be a submodule of $(\mathbb Z/q\mathbb Z)^N$ with
+$C\subseteq C^\perp$, and let
+\[
+ S(C)=\{v\in\{\pm1\}^N:v\bmod q\in C,\ v_1=1\}.
+\]
+If $C$ contains five mutually orthogonal sign rows, every pair of
+distinct members of $S(C)$ is orthogonal over the reals.
+Thus $5\le |S(C)|\le N$.
+\end{corollary}
+\begin{proof}
+The five prescribed orthogonal classes all have the same parity.
+One opposite-parity class in $C$ would violate the four-row Bessel
+bound. All sign classes in $C$ consequently have this same parity,
+and Theorem~\ref{code:parity} applies.
+\end{proof}
+
+This changes the task from finding a clique among modular candidates
+to counting sign words in one self-orthogonal code. It does not prove
+that the count is large. In particular a dual kernel $P^\perp$ of a
+short frame is usually not self-orthogonal; this corollary must not
+be applied to that entire candidate set.
+Five initial orthogonal rows do exist without assuming $H_N$:
+write $N=12+8k$ and concatenate the first five rows of a fixed
+$H_{12}$ with $k$ copies of the first five rows of $H_8$.
+Their modular row span is self-orthogonal, but this construction
+alone supplies no useful lower bound beyond five sign classes.
+
+\subsection{A precise restricted-alphabet existence criterion}
+The elementary three-column completion theorem proved in
+\path{../round5/collision_entropy.tex} says that $N-3$ orthogonal
+sign rows of length $N$ can be completed to a full Hadamard matrix.
+For $N\ge12$, $N-3\ge9$. The preceding theorem therefore gives:
+\[
+ \begin{split}
+ H_N\text{ exists}\quad\Longleftrightarrow\quad&
+ \text{some self-orthogonal submodule }C\subseteq
+ (\mathbb Z/q\mathbb Z)^N\\[-2pt]
+ &\text{has }|S(C)|\ge N-3.
+ \end{split}
+\]
+For the forward implication take the module generated by the rows
+of $H_N$, whose inner products are zero modulo $q$, including the
+diagonal $N$. For the reverse implication the sign words are a
+partial Hadamard matrix by Theorem~\ref{code:parity}, and complete
+its $N-3$ rows. This is an equivalent target, not a count estimate.
+One may equivalently require the module to be self-dual. Indeed the
+row module of a full $H_N$ is self-dual even for composite odd $q$:
+if $Hz=qy$ for integer lifts, then $H^TH=4qI$ implies
+$4z=H^Ty$. Since four is invertible modulo $q$, the residue of
+$z$ belongs to the row module. Self-orthogonality gives the reverse
+inclusion. This is the classical Hadamard-code construction, not
+a new self-dual-code existence theorem; see Munemasa and Tamura,
+\emph{The codes and the lattices of Hadamard matrices},
+\url{https://doi.org/10.1016/j.ejc.2011.11.007}.
+
+Only odd $q$ are needed for the full conjecture: write an arbitrary
+multiple of four as $4q\,2^k$ with $q$ odd, and tensor an order-$4q$
+matrix with a Sylvester matrix of order $2^k$. The case $q=1$
+is already Sylvester. Neither this reduction nor the criterion
+establishes existence at the remaining odd multipliers.
+
+\subsection{A self-dual neighbor preserving existing sign rows}
+Now assume $q=p$ is an odd prime and work over $\mathbb F_p$.
+Let $C=C^\perp$ be self-dual, with at least five orthogonal sign
+classes in $S(C)$. If a sign vector $v$ is orthogonal over the
+integers to every member of $S(C)$ but does not belong to $C$, put
+\[
+ C'=(C\cap v^\perp)+\langle v\rangle.
+\]
+\begin{proposition}[Exact code pivot]\label{code:pivot}
+The space $C'$ is self-dual, $\dim(C\cap C')=N/2-1$, and
+$S(C)\subsetneq S(C')$. Conversely, if no real sign extension of
+$S(C)$ exists, no self-orthogonal code preserving every member
+of $S(C)$ can acquire a new sign class.
+\end{proposition}
+\begin{proof}
+The functional $c\mapsto c\cdot v$ on $C$ is nonzero since
+$C=C^\perp$ and $v\notin C$, so its kernel has dimension $N/2-1$.
+Also $v\cdot v=N=0$ in $\mathbb F_p$. The displayed sum is
+self-orthogonal of dimension $N/2$, hence self-dual.
+It contains the old sign words because their real inner products
+with $v$ vanish, and it contains the new class of $v$.
+The assumption $v\notin C$ is automatic for a new real extension:
+an extension is not one of the classes being extended, whereas
+membership in $C$ would put its normalized representative in $S(C)$.
+The converse follows from the same corollary: any acquired class
+would be a real extension of all preserved classes.
+\end{proof}
+
+Thus repeated extension-guided pivots strictly increase the sign
+count and stop after at most $N-|S(C)|$ moves, either at a full matrix
+or at a genuinely terminal partial frame. This is not an algorithm
+that escapes terminal frames. Moving to a different code can remove
+an artificial restriction, but cannot make an incompatible new row
+orthogonal to all existing rows.
+
+\subsection{Exact known-order experiments}
+The verifier exhausts all self-dual ternary codes containing the
+first five rows of a specified Paley $H_{12}$. Their span has rank
+five, and there are exactly two self-dual extensions, each with
+twelve sign classes. These are results for that prescribed seed,
+not a classification of all five-row frames.
+
+At order twenty, a deterministic finite-field construction extends
+the first five rows of a Paley $H_{20}$ to a self-dual code over
+$\mathbb F_5$. Exhausting its $2^9$ normalized sign assignments in
+systematic coordinates yields only eight classes. This disproves
+the suggestion that any self-dual extension containing five rows
+automatically gives a full matrix. The eight-row frame has rank
+eight modulo five. Enumerating its modular kernel gives forty
+classes: the eight existing rows and thirty-two exact extensions.
+Using the first extension in a single pivot gives
+\[
+             |S(C)|=8\quad\longrightarrow\quad |S(C')|=20.
+\]
+All twenty rows are checked pairwise over the integers.
+The finite-field bases and the extension witness are recorded in
+\path{codes/checks.json}.
+
+Finally self-duality alone need not give even one sign word.
+Over $\mathbb F_3$, the length-four code generated by
+$(1,0,1,1)$ and $(0,1,1,-1)$ is self-dual and has no word of full
+support. Its threefold direct sum is a self-dual length-twelve code
+with no sign words. A useful general lower bound must use more than
+dimension and self-duality. No count near $N$ has been proved at
+unknown orders.
+\section{A terminal code trap with an optimal two-row escape}
+
+This certificate concerns order twenty, where Hadamard matrices are
+already known. It gives an exact trap for monotone row addition and
+an exact minimal-loss escape in the self-dual-code construction.
+
+\begin{theorem}[Finite certified example]
+There is a self-dual ten-dimensional code $C\subseteq\mathbb F_5^{20}$
+with exactly twelve antipodal classes of sign words. Representatives
+with first coordinate $+1$ form a real orthogonal $12\times20$ sign
+frame $P$, and span $C$ over $\mathbb F_5$.
+No further sign row is orthogonal to every row of $P$.
+Every new sign class is orthogonal to at most ten old rows, so no
+one-row deletion admits even one genuinely new row.
+Deleting the two old rows indexed $3,8$ (zero based) permits a full
+Hadamard completion of the remaining ten rows. Its mod-five code
+$C'$ is a self-dual neighbor: $\dim(C\cap C')=9$.
+One explicit neighbor pivot takes the sign count from twelve to twenty.
+Thus two is the exact minimum number of old rows lost in such an escape.
+\end{theorem}
+
+The complete basis and twelve sign representatives are stored in
+\texttt{search.json}. The construction starts with the first five rows
+of the Paley order-twenty matrix and extends their span over
+$\mathbb F_5$ using deterministic seed $2026112000$.
+The construction is only a way to find the certificate; correctness
+is checked from its stored entries. The code basis is self-orthogonal
+of rank ten. Enumerating its $2^9=512$ systematic sign assignments
+finds exactly twelve normalized sign words, of mod-five rank ten;
+their real Gram matrix is $20I_{12}$.
+If a new sign row were exactly orthogonal to $P$, its residue would
+belong to $C^\perp=C$, hence to the already exhausted twelve classes.
+Every such class fails orthogonality to itself, proving terminality.
+
+An independent binary enumeration checks all $2^{19}=524288$
+normalized sign words using only integer Hamming distances. Excluding
+the twelve existing words, its compatibility counts are
+\[
+\begin{array}{c|rrrrrrrrrrr}
+\text{compatible}&0&1&2&3&4&5&6&7&8&9&10\\\hline
+\text{new classes}&262840&6840&27092&48948&67344&58976&34920&12600&3992&616&108
+\end{array}
+\]
+No new word is orthogonal to eleven or twelve old rows. The 108
+best words group by their two nonorthogonal old rows. For the pair
+$(3,8)$, all ten available words are mutually orthogonal; together
+with the ten retained old words they give Gram matrix $20I_{20}$.
+Their normalized negative-coordinate bit masks are
+\[
+7676,126672,307898,444300,581982,645928,683178,816740,855582,886242.
+\]
+Bit $j$ represents coordinate $j$, with bit one denoting a minus sign.
+The retained old rows have modular rank nine, the completed code
+rank ten, and the union of the old and new code bases rank eleven.
+These prove the claimed intersection dimension. If $v$ is the first
+new row, then
+\[
+ C'=(C\cap v^\perp)+\langle v\rangle,
+\]
+as independently checked by row reduction.
+
+The scripts \texttt{search.py} and \texttt{verify.py} use only the
+Python standard library and original project code from the adjacent
+\texttt{codes/check.py}. The latter also writes
+\texttt{verification.json} and \texttt{exchange.json}. No external
+implementation is imported. This example disproves the strategy of
+always retaining all previously selected rows; it does not assert
+that two-row neighbor escapes suffice in general or yield unknown
+Hadamard orders.
+
+\begin{theorem}[Elementary tensor persistence]
+If a sign frame $P$ admits no orthogonal sign row and $H$ is a square
+Hadamard matrix of order $t$, then $P\otimes H$ also admits no
+orthogonal sign row. In particular this certificate gives terminal
+$12t\times20t$ frames whenever such an $H$ is supplied.
+\end{theorem}
+\begin{proof}
+Reshape a hypothetical new sign vector into a $20\times t$ sign
+matrix $X$. Orthogonality to $P\otimes H$ says $PXH^T=0$, under
+the corresponding vectorization convention. Since $H$ is invertible,
+$PX=0$. Each column of $X$ would therefore be a sign vector
+orthogonal to $P$, a contradiction.
+\end{proof}
+\section{An exact local count identity and a two-code decomposition}
+\label{sec:neighbor-counts}
+
+The preceding pivot suggests counting over code neighbors, rather
+than asking for an extension preserving every row. The following
+identity makes that approach quantitative. Here $p$ is an odd prime,
+$N=4p$, $m=N/2$, $C=C^\perp$, and $G\subsetneq C$ has dimension
+$s=m-h$, $h\ge1$. Put
+\[
+ r_C=|S(C)|,\quad b_G=|S(G)|,\quad
+ M_G=|\{v\in\{\pm1\}^N:v_1=1,\ v\bmod p\in G^\perp\}|.
+\]
+Let $\mathcal N_G(C)$ be the self-dual codes $C'\ne C$ with
+$\dim(C\cap C')=m-1$ and $G\subseteq C'$.
+
+\begin{theorem}[Exact restricted-neighbor incidence count]
+\label{code:neighbor-average}
+There are $(p^h-1)/(p-1)$ codes in $\mathcal N_G(C)$, and
+\[
+ \boxed{\quad
+ \sum_{C'\in\mathcal N_G(C)}\bigl(|S(C')|-r_C\bigr)
+ =M_G-r_C-(r_C-b_G)p^{h-1}.\quad}
+\]
+In particular, if the right-hand side is positive, some neighbor
+strictly increases the sign count while preserving $G$.
+\end{theorem}
+\begin{proof}
+A hyperplane $D$ of $C$ containing $G$ has $D^\perp/D$ a nondegenerate
+two-dimensional hyperbolic space. It has exactly two isotropic lines,
+one giving $C$ and the other a unique neighbor $C'$.
+To see the last assertion directly, choose isotropic $e$ on the first
+line and $f$ with $e\cdot f=1$, then replace $f$ by
+$f-(f\cdot f)e/2$. In the resulting basis the norm is $2xy$,
+so the isotropic lines are precisely the two coordinate axes.
+Counting hyperplanes of $C/G$ gives the stated neighbor count.
+
+Each normalized sign vector outside $C$ but in $G^\perp$ is isotropic,
+since its norm is $N=0$ modulo $p$. It belongs to exactly one of
+these neighbors, namely
+$(C\cap v^\perp)+\langle v\rangle$. Thus the total number of
+new sign classes, counted over the neighbors, is $M_G-r_C$.
+An old sign class in $G$ is never lost. An old class outside $G$
+is excluded by precisely $p^{h-1}$ hyperplanes containing $G$,
+the difference between the hyperplane counts in dimensions
+$h$ and $h-1$. Summing gains minus losses proves the identity.
+\end{proof}
+
+This is a finite incidence identity in the classical geometry of
+self-dual code neighbors. It is not a general positivity theorem.
+In particular, at $G=0$ its right-hand side is
+$2^{N-1}-r_C(1+p^{m-1})$, which can be negative even when the
+code has far fewer than $N$ sign classes. Unrestricted averaging
+therefore does not guarantee a useful move.
+
+\begin{corollary}[A modular pool splits into two codes]
+\label{code:two-codes}
+If $G$ has dimension $m-1$, there is exactly one other self-dual
+code $C'$ containing $G$, and
+\[
+ \{ \text{sign classes in }G^\perp\}=S(C)\cup S(C'),\qquad
+ S(C)\cap S(C')=S(G),\qquad
+ |S(C')|=M_G-r_C+b_G.
+\]
+If $G$ contains five orthogonal sign rows, the sign words of each
+code separately form a real orthogonal frame.
+\end{corollary}
+\begin{proof}
+An isotropic residue in $G^\perp$ projects to one of the two
+isotropic lines of $G^\perp/G$, hence belongs to $C$ or $C'$.
+Their intersection is $G$. Count the union, and apply
+Corollary~\ref{code:five} for real orthogonality.
+\end{proof}
+
+This removes a compatibility search in the codimension-one case.
+For the terminal twelve-row order-twenty certificate, the ten rows
+retained after deleting indices $3,8$ span such a $G$, and exact
+enumeration gives
+\[
+ r_C=12,\qquad b_G=10,\qquad M_G=22,\qquad |S(C')|=20.
+\]
+The twelve exact extensions of the retained frame consist of the two
+deleted old classes and the ten new classes. The two-code theorem,
+rather than an independent guess that all candidates are compatible,
+explains the resulting completion.
+
+The checker also verifies the incidence identity for all four
+neighbors containing a specified four-dimensional subspace of a
+self-dual ternary code at order twelve. These are finite examples.
+An all-order lower bound on the modular pool, or a guarantee that
+some choice of retained space makes the displayed surplus positive,
+has not been established.
+\section{Modular lifting in the orders congruent to four modulo eight}
+\label{sec:four-mod-eight-lifting}
+
+The preceding lifting theorem used $N=4(q+1)$ with odd $q$, so its
+orders were divisible by eight. The complementary choice $N=4q$
+gives an especially simple result throughout the other admissible
+congruence class. Its only spurious modular extensions, once five
+orthogonal rows are present, are the rows already installed.
+This is a counting and lifting statement; it does not guarantee the
+surplus modular solutions needed for a new row. No novelty claim is
+made pending a targeted prior-art check.
+
+Let $P$ have $r$ orthogonal sign rows $p_i$ of length $N$. Count sign
+vectors up to negation, and write $M_q(P)$ for the number satisfying
+$Pv\equiv0\pmod q$ and $E(P)$ for the number satisfying $Pv=0$.
+
+\begin{theorem}[The row correction at orders $4\bmod8$]
+Let $q\ge3$ be any odd integer, $N=4q$, and $r\ge5$. Then
+\[
+ \boxed{E(P)=M_q(P)-r.}
+\]
+Every modular sign extension which is not exact is the sign or
+negative of exactly one existing row. Primality of $q$ is not required.
+\end{theorem}
+\begin{proof}
+For a modular sign vector $v$ put $d_i=p_i\cdot v$.
+Orthogonal rows differ in $N/2=2q$ positions, an even number, so
+all $d_i$ have the same residue modulo four. Every $d_i$ is even
+and divisible by odd $q$.
+
+If that common residue is two, each $d_i$ must be $2q$ or $-2q$,
+since the next possible magnitude $6q$ exceeds $N$. But Bessel gives
+\[
+ 4q^2r=\sum_i d_i^2\le N\|v\|^2=N^2=16q^2,
+\]
+contradicting $r\ge5$. Hence all $d_i$ are zero modulo four and
+therefore belong to $\{0,N,-N\}$. A nonzero value means
+$v=\pm p_i$, by equality in the sign-vector inner product bound.
+All other inner products then vanish by row orthogonality.
+Conversely every existing row is a modular sign vector because its
+nonzero self-inner-product is $N=4q$. The $r$ row classes are distinct,
+proving the count formula.
+\end{proof}
+
+\subsection{The sharp four-row boundary and closed quadruples}
+The five-row threshold has an exact geometric explanation. Call four
+orthogonal sign rows a \emph{closed quadruple} if their entrywise
+product is constant. This is standard terminology in Hadamard
+switching; see Orrick, \emph{Switching Operations for Hadamard
+Matrices}, Section 3.1 and Proposition 3.1,
+\url{https://arxiv.org/abs/math/0507515}.
+In particular the prohibition of such a quadruple inside a full
+Hadamard matrix of order $4\bmod8$ is classical.
+
+\begin{proposition}[Exact boundary correction]
+For four orthogonal sign rows of length $N=4q$, $q\ge3$ odd,
+\[
+ E(P)=M_q(P)-4-4\,\mathbf1_{\{P\text{ is closed}\}}.
+\]
+When the quadruple is closed, the four extra modular classes are
+represented by half-sums
+\[
+ v=\frac12\sum_{i=1}^4\sigma_i p_i,
+ \qquad\sigma_i\in\{\pm1\},\qquad
+ \prod_i\sigma_i=-c,
+\]
+where $c$ is the constant entrywise row product. Negating all four
+$\sigma_i$ gives the same antipodal class.
+\end{proposition}
+\begin{proof}
+The common-zero residue case in the preceding proof still produces
+only exact extensions and existing rows. In the common-two case,
+all four inner products are $\sigma_iN/2$, and Bessel is saturated.
+Thus $v$ has exactly the stated half-sum representation, with no
+orthogonal-complement component. Four signs sum to $+2$ or $-2$
+exactly when their product is $-1$. Consequently every coordinate
+of this half-sum is a sign if and only if
+$\prod_i p_{ij}=-\prod_i\sigma_i$ for every coordinate $j$.
+This is exactly the closed condition with the displayed restriction.
+Eight choices of $\sigma$ modulo simultaneous negation give four
+classes; independence of the four rows makes their half-sums distinct.
+\end{proof}
+
+For example $H_4\otimes\mathbf1_q$ is a closed quadruple with no
+exact extension, yet has eight modular classes: four installed rows
+and four half-sums. Thus subtracting only the original rows would
+give a false positive at this sharp boundary. The no-extension claim
+follows directly from its four length-$q$ block sums: orthogonality
+forces all sums zero, impossible for odd block size.
+
+\subsection{Finite algebra and the remaining positivity problem}
+For any integer modulus $q$, use the integral group algebra of
+$(\mathbb Z/q\mathbb Z)^r$ and let $c_j$ be column $j$ of $P$.
+Then
+\[
+ C_q(P)=[X^0]\prod_{j=1}^N(X^{c_j}+X^{-c_j})=2M_q(P).
+\]
+Under the five-row hypothesis,
+\[
+ \boxed{E(P)=\tfrac12C_q(P)-r.}
+\]
+Hence $C_q(P)>2r$ is an exact sufficient condition for a new sign row,
+and $C_q(P)=2r$ certifies terminality. The group-algebra formula
+works for composite odd $q$ as well as primes. For prime $q$ it can
+also be computed by finite-field Gaussian elimination or a Fourier
+character sum. When composite moduli are used, ordinary field row
+reduction must be replaced by valid arithmetic over the residue ring
+or a suitable Chinese-remainder procedure.
+
+For prime $q$, the row code $C\subseteq\mathbb F_q^N$ generated by
+$P$ is self-orthogonal, because $PP^{\mathsf T}=NI_r\equiv0\pmod q$.
+If its rank is $s$, then $s\le N/2$. An information-coordinate search
+therefore uses $2^{N-s-1}$ sign assignments; large real row count
+does not imply equally large modular rank. The existing rows already
+give $M_q(P)\ge r$. Proving the strict surplus needed for extension
+requires additional code structure, rather than rank alone.
+
+Exact examples from explicit Hadamard matrices illustrate the formula:
+\[
+\begin{array}{c|r|r|r|r}
+N&r&\operatorname{rank}_{q}P&M_q(P)&E(P)\\\hline
+12&5&5&18&13\\
+12&6&6&12&6\\
+12&10&6&12&2\\
+20&10&10&20&10\\
+20&18&10&20&2\\
+28&14&14&28&14\\
+28&26&14&28&2
+\end{array}
+\]
+Here $q=N/4$ and the matrices are constructed explicitly in the
+standard-library checker. An independent integer group-algebra
+calculation gives $C_3(P)=36$ for the five-row order-twelve example,
+so $36/2-5=13$ exactly. Its thirteen candidate classes need not all
+be mutually orthogonal: counting single-row extensions alone does
+not automatically supply a complete frame.
+
+Together, the $N=4(q+1)$ theorem for odd $q$ and the present
+$N=4q$ theorem treat both admissible residue classes modulo eight,
+with different explicit corrections. Neither asserts the requisite
+modular positivity uniformly, so neither proves the full Hadamard
+conjecture. Their concrete value is that they replace an approximate
+modular extension problem by an exact real one after accounting for
+fully classified exceptional configurations.
+
+\section{Concentration moves and target-dependent bridges}
+
+Let $\mathcal P_d$ be the probability laws on the sign cube with
+zero first and second moments. Write $A$ for the matrix evaluating
+the constant, degree-one and degree-two characters, and $b=(1,0,\ldots,0)$.
+Thus $\mathcal P_d=\{p\ge0:Ap=b\}$ and $C(p)=\|p\|_2^2$.
+
+\begin{theorem}[An exact monotone support-reduction algorithm]
+Given any rational feasible law $p$ with support $S$, repeat the
+following operation while the columns $A_S$ are dependent.
+Choose nonzero $z\in\ker A_S$, reverse its sign if necessary so
+$p\cdot z\ge0$, and set
+\[
+ t=\min_{j:z_j<0}\frac{p_j}{-z_j},\qquad p\leftarrow p+tz.
+\]
+Every intermediate law remains nonnegative and exactly feasible,
+collision increases strictly at each nontrivial step, and the entire
+interpolating path has nondecreasing collision. After at most
+$|S|-\operatorname{rank}A_S$ steps it reaches a vertex supported on
+at most $1+d+\binom d2$ atoms. All calculations can be rational.
+\end{theorem}
+\begin{proof}
+The constant row of $Az=0$ gives $\sum z_j=0$, so $z$ has both
+signs and $t>0$ is finite. The definition of $t$ preserves positivity
+and kills at least one atom; moment feasibility follows from $Az=0$.
+For $0\le u\le t$,
+$C(p+uz)=C(p)+2u(p\cdot z)+u^2\|z\|^2$ is nondecreasing and
+strictly increases at the endpoint. The feasible face containing
+$p$ in its relative interior has dimension
+$|S|-\operatorname{rank}A_S$. Each boundary step passes to a proper
+face, decreasing that dimension at least one. At a zero-dimensional
+face the active columns are independent. This proves termination
+and the support bound. One can choose a minimally supported kernel
+vector, making every step a circuit move. This is the elementary
+convex-objective endpoint principle familiar from pipage-type
+rounding~\cite{AS}, not a claimed new general optimization method.
+\end{proof}
+The algorithm can terminate at a suboptimal vertex, including the
+weighted four-bit examples. It does not guarantee minimal entropy
+or a Hadamard construction. The result identifies exactly what local
+support deletion can do without a collision barrier.
+
+\begin{theorem}[Sharp barrier for a specified straight bridge]
+Let $p,q\in\mathcal P_d$ be distinct and set
+$a=C(p)$, $b=C(q)\ge a$, $c=p\cdot q$, $e=a+b-2c>0$.
+The feasible bridge $p_t=(1-t)p+tq$ has minimum collision
+\[
+ \min_{0\le t\le1}C(p_t)
+ =a-\frac{(a-c)_+^2}{a+b-2c}.
+\]
+The minimizer is $t=(a-c)_+/e\le1/2$. Its collision loss is at most
+$a^2/(a+b)\le a/2$, with the first bound attained for disjoint
+supports. If $c\ge a$ the bridge is monotone and has no loss.
+\end{theorem}
+\begin{proof}
+Expand $C(p_t)=a+2(c-a)t+et^2$. If $c<a$, the minimizer is
+$(a-c)/e$, at most one half since $b\ge a$. Since $c\ge0$ and
+$c<a\le b$, the function $(a-c)^2/(a+b-2c)$ decreases with $c$:
+its derivative is $-2(a-c)(b-c)/(a+b-2c)^2\le0$.
+Its value at zero is $a^2/(a+b)$. If $c\ge a$ the quadratic is
+nondecreasing on the entire interval.
+\end{proof}
+If an explicit optimal law $q$ is available, this gives an actual
+nonlocal feasible route and a quantitative loss budget. It does not
+provide the missing optimal target. Translating $q$ by cube signs
+preserves feasibility and collision, and averaging those translates
+gives the uniform cube. Consequently some translate has overlap
+$p\cdot q\ge2^{-d}$, which may improve the displayed bridge bound.
+
+\section*{A sharp bridge need not be a global barrier}
+For $d=5$, use the eight-word linear Walsh code
+\[
+ C=\{((-1)^{u\cdot m})_{m=1}^5:u\in\mathbb F_2^3\}.
+\]
+The masks $1,\ldots,5$ include a basis and are distinct and nonzero,
+so the code is injective and every coset's uniform law is unbiased
+and pairwise independent. There are four disjoint cosets in the
+32-word cube. Let $q_1,q_2,q_3$ be three of these uniform laws and
+$p=(q_1+q_2)/2$. Then
+\[
+ C(p)=1/16,\quad C(q_3)=1/8,\quad p\cdot q_3=0.
+\]
+The straight bridge to $q_3$ has minimum $1/24$ at $t=1/3$ and
+collision barrier $1/48$, attaining the sharp general bound.
+Nevertheless the bridge from $p$ to $q_1$ has overlap $p\cdot q_1=1/16$
+and collision $1/16+t^2/16$, which is monotone. Both targets have
+optimal collision $1/8$ by the residue-sensitive bound.
+Thus even an exactly sharp barrier to a selected optimum cannot be
+promoted to a barrier for reaching \emph{any} optimum. The globally
+optimal four-bit barrier required its additional section argument;
+there is no automatic extension to larger moment polytopes.
+
+\begin{thebibliography}{9}
+\bibitem{AS} A. A. Ageev and M. I. Sviridenko, Pipage rounding:
+a new method of constructing algorithms with proven performance
+guarantee, Journal of Combinatorial Optimization 8 (2004), 307--328.
+\url{https://doi.org/10.1023/B:JOCO.0000038913.96607.c2}.
+\end{thebibliography}
+\section{Quantitative low-degree barriers and support repair}
+\label{sec:nonlinear-quantitative}
+The statements concern uniform laws on $N$ binary seed labels, with
+$N\equiv4\pmod8$, $r\ge4$, and Boolean output degree at most $r-2$.
+They do not automatically constrain nonuniform measures or larger seed
+models. Put $S\subset\mathbb F_2^r$, $|S|=N$, $T=S^c\ne\varnothing$,
+and $a=r-\operatorname{affdim}(T)$. The preceding pass proved that the
+even restriction code of $\mathrm{RM}(r-2,r)$ has binary bilinear rank
+$N-2a-2$. We recall the reason: its dual consists of affine functions
+supported on $S$, of dimension $a$; the even code radical is that dual
+plus the constant function. Reed--Muller duality and the Boolean-code
+background can be found in Carlet's primary monograph,
+\url{https://www.math.univ-paris13.fr/~carlet/book-fcts-Bool-vect-crypt-codes.pdf}.
+All new estimates below have explicit proofs; priority is unestablished.
+
+\begin{theorem}[A quantitative moment-error floor]
+\label{thm:nonlinear-moment-floor}
+Suppose $m=N-4$ Boolean sign observables $X_1,\ldots,X_m$ have exact
+zero means on $S$, with degree at most $r-2$. They need not be pairwise
+independent. At least $\max\{0,2a-3\}$ unordered pairs have nonzero
+correlation. In particular their augmented moment error satisfies
+\[
+ E:=\left\|\mathbb E[(1,X)(1,X)^T]-I_{m+1}\right\|_F^2
+ \ge\frac{32}{N^2}\max\{0,2a-3\}.
+\]
+For four omitted labels and $r\ge5$, this gives
+$E\ge32(2r-9)/N^2$, since $a\ge r-3$.
+\end{theorem}
+\begin{proof}
+Write $B_{zi}=(1-X_i(z))/2$ and $G=B^TB$ over $\mathbb F_2$.
+Balanced columns have weight $N/2$, even, and belong to the even
+restriction code, so $\operatorname{rank}G\le N-2a-2$.
+The exact pairwise-independent target would be $G_*=I+J_m$,
+nonsingular because $m$ is even. Let $q_{ij}=\sum_{z\in S}X_i(z)X_j(z)$.
+Balancedness gives $q_{ij}\in4\mathbb Z$ and
+\[
+ G_{ij}=1+q_{ij}/4\pmod2\quad(i\ne j),\qquad G_{ii}=0.
+\]
+Thus $G=I+J+A_H$, where $H$ is the graph of pairs with $q_{ij}/4$ odd.
+Let $e$ be its number of edges. Each nontrivial connected component of
+$H$ with $v$ vertices has at least $v-1$ edges, while its $I+A_H$ block
+has rank at least one. Isolated vertices contribute no nullity. Hence
+$\operatorname{nullity}(I+A_H)\le e$. Adding the rank-one matrix $J$
+gives $\operatorname{nullity}G\le e+1$.
+But the rank bound gives $\operatorname{nullity}G\ge2a-2$, so
+$e\ge2a-3$. Each such pair has $|q_{ij}|\ge4$; the Frobenius error
+counts every unordered correlation twice. This proves the bound.
+\end{proof}
+
+The edge-count estimate is sharp at the binary-Gram level: if
+$q=2a-3$ is positive and $m\ge2q$, take $H$ to be a matching of $q$
+edges. Since $q$ is odd, $I+J+A_H$ has nullity $q+1=2a-2$.
+Indeed its kernel vectors have common unmatched-coordinate value $u$,
+and the sum on each matched pair equals $u$; the $q$ pair choices and
+$u$ are free. This does not assert that the matching Gram is realized
+by balanced low-degree truth columns with the smallest possible real
+correlations. Thus no sharpness claim is made for the moment-error
+constant as a distribution theorem.
+
+\begin{theorem}[Minimum support edits to unlock degree repair]
+\label{thm:nonlinear-minimum-edits}
+For this support operation no congruence condition on $N$ is needed.
+Assume $|T|\ge r+1$. The smallest number of one-for-one seed support
+exchanges needed to make the omitted labels affinely span the entire
+$r$-space is exactly $a=r-\operatorname{affdim}(T)$.
+For any already-known exact law carried on $S$, its output truth rows
+can be transferred through these exchanges while preserving its entire
+observable distribution, hence every moment and its collision probability.
+All intermediate truth functions can have degree at most $r-1$; at the
+final support they can have degree at most $r-2$.
+\end{theorem}
+\begin{proof}
+One replacement raises affine dimension by at most one, giving the
+lower bound $a$. For the upper bound, retain an affine basis of $T$,
+of size $r-a+1$. There are at least $a$ redundant points because
+$|T|\ge r+1$. Remove redundant points one at a time and replace them
+with points outside the current affine span. Each replacement raises
+the span dimension by one; after $a$ exchanges it is full.
+
+A replacement of omitted point $t$ by included point $s$ replaces
+included seed label $s$ by $t$. Transfer the output row at $s$ to $t$,
+leaving every other output row fixed. This changes no observable atom
+or weight. Extend each Boolean truth function by zero on omitted labels
+and change its value at one omitted point to make total parity zero;
+this gives degree at most $r-1$. At the final support, choose an affine
+basis in the complement and change only those outside values to cancel
+the $r+1$ affine parity syndromes. The corresponding $(r+1)$-square
+matrix of affine evaluations is invertible, so the repair exists and
+lies in $\mathrm{RM}(r-2,r)$. No truth value at a positive-mass seed is
+altered by these outside repairs.
+\end{proof}
+This operation escapes a low-rank \emph{seed encoding}. It preserves the
+observable law rather than producing a new or more concentrated law,
+so it is not a missing-distribution construction.
+
+\subsection{Four omitted labels: Fourier sparsity versus capacity}
+Let $N=2^r-4$ and let $\mu$ be uniform on $S$. For a nonzero character
+$c$, the full-cube sum vanishes and
+\[
+ \widehat\mu(c)=\mathbb E_\mu(-1)^{c\cdot z}
+ =-\frac1N\sum_{z\in T}(-1)^{c\cdot z}.
+\]
+Four distinct omitted points have two affine types. Exact character
+counting gives:
+\[
+ \begin{array}{c|c|c|c}
+ T\text{ type}&\operatorname{affdim}T&
+ \#\{c\ne0:\widehat\mu(c)\ne0\}&
+ \text{even restriction bilinear rank}\\\hline
+ \text{affine plane}&2&2^{r-2}-1&N-2r+2\\
+ \text{affine-independent tetrahedron}&3&5\cdot2^{r-3}-1&N-2r+4
+ \end{array}
+\]
+For the plane translate to $\{0,e_1,e_2,e_1+e_2\}$; its character sum
+is four precisely when the first two frequency coordinates vanish.
+For the tetrahedron use $\{0,e_1,e_2,e_3\}$; its sum is four, two,
+zero, or minus two according as the first three frequency coordinates
+have weights zero, one, two, or three. Translation only changes signs.
+Thus the Fourier-sparser seed is also the lower-capacity low-degree
+encoding. At twelve labels the two cases have three versus nine nonzero
+seed Fourier modes and, by the preceding exact classification, five
+versus seven possible quadratic unbiased pairwise-independent bits.
+Neither reaches the eight-bit extraction target.
+
+The table is an exact narrow-model tradeoff, not a general uncertainty
+bound or an argument that many Fourier modes guarantee attainment.
+For $|T|=4<r+1$, the support-edit theorem cannot unlock a degree-$r-2$
+full basis at all: no four omitted labels can span the seed space when
+$r\ge4$. Higher output degree, a different seed size, or a different
+weight model is necessary.
+
+\section{The unresolved step}
+The modular correction is now explicit for both order classes modulo
+eight, but its positivity is not established in general.
+A self-orthogonal code makes its sign words compatible once five
+orthogonal rows are installed, but does not force many such words.
+Self-dual neighbor moves solve a concrete artificial restriction at
+order twenty; the general rule still requires a real extension and
+cannot preserve all rows of a terminal frame while augmenting it.
+The concentration endpoint algorithm can terminate at a suboptimal
+vertex, and support relabeling preserves rather than constructs a law.
+
+The central missing ingredient is therefore an actual construction
+or lower-count theorem, or an exchange theorem that can replace
+incompatible rows globally. No universal extension assertion is
+assumed here. Finite checks validate explicit benchmarks; they do
+not prove unknown-order existence or establish priority.
+\end{document}

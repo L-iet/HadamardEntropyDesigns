@@ -1,0 +1,124 @@
+\section{Every non-Hadamard real sign matrix is a phase saddle}
+For an $n$-square matrix $F$ with unit-modulus complex entries put
+\[
+ \Psi(F)=\|FF^*-nI\|_F^2.
+\]
+At a real sign matrix $H$, use phase coordinates
+$F(\Theta)_{ia}=h_{ia}e^{i\theta_{ia}}$ and let $L_H$ be the real
+Hessian at $\Theta=0$. The first derivatives vanish: every rectangle
+term in the energy is a real sign times a cosine.
+This phase landscape and its flows are classical background;
+see Motta--Shipman, \emph{Informing the structure of complex Hadamard
+matrix spaces using a flow},
+\url{https://doi.org/10.3934/dcdss.2019147}.
+The argument below is independently derived; priority is unestablished.
+
+\begin{theorem}[Strict phase saddle at every nonorthogonal sign matrix]
+For $n\ge2$, a real sign matrix $H$ has positive-semidefinite
+phase Hessian $L_H$ if and only if $HH^T=nI$.
+Otherwise an explicit real phase direction has strictly negative
+second derivative. In particular every nonglobal discrete trap
+from the previous pass admits infinitesimal complex-phase escape.
+\end{theorem}
+\begin{proof}
+Put $G=HH^T$ and $C=GH$. If $H$ is Hadamard, $\Psi=0$ is a global
+minimum, so its Hessian is positive semidefinite.
+
+For any two columns $a,b$, multiply $H$ on the right by the unitary
+two-square block
+\[
+ \begin{pmatrix}\cos t&i\sin t\\i\sin t&\cos t\end{pmatrix}.
+\]
+Every resulting entry still has modulus one, because its real and
+imaginary parts are signed $\cos t,\sin t$. Right multiplication
+preserves the row Gram matrix, hence $\Psi$ is exactly constant.
+Its phase tangent $v$ has entries
+$v_{ia}=v_{ib}=h_{ia}h_{ib}$ and all other entries zero.
+Therefore $v^TL_Hv=0$.
+
+The phase gradient is
+$4\operatorname{Im}(\overline{F_{ia}}(FF^*F)_{ia})$.
+Along this path $FF^*F=CH_{\rm block}(t)$, so its derivative in
+column $a$ is $4(h_{ia}C_{ib}-h_{ib}C_{ia})$.
+If $L_H$ were positive semidefinite, every zero-quadratic direction
+would be in its kernel. Thus, for every $i,a,b$,
+$h_{ia}C_{ib}=h_{ib}C_{ia}$, or $C=\Lambda H$ for a real diagonal
+matrix $\Lambda$.
+
+Left multiplication by the same two-square block on any pair of
+rows likewise preserves unit modulus and $\Psi$. Differentiating
+its gradient gives $h_{ia}C_{ja}=h_{ja}C_{ia}$ for all $i,j,a$.
+Consequently $C=H M$ for a real diagonal $M$. Since every entry of
+$H$ is nonzero, $\Lambda H=HM$ forces both diagonals to be a
+common scalar: $GH=\lambda H$.
+It follows that every nonzero eigenvalue of $G$ equals $\lambda$.
+Writing $r=\operatorname{rank}H$, its trace gives $\lambda=n^2/r>0$.
+If $r=n$ this is exactly $G=nI$.
+
+If $r<n$, choose nonzero real $u\in\ker H^T$, $v\in\ker H$,
+put $X=uv^T$, and take phase direction $\Theta=H\circ X$.
+Its first matrix derivative is $iX$, and its second is
+$-H\circ X^{\circ2}$. Both $HX^T$ and $XH^T$ vanish.
+The first Gram derivative is therefore zero, while the second is
+\[
+ 2XX^T-(H\circ X^{\circ2})H^T
+       -H(H\circ X^{\circ2})^T.
+\]
+Taking twice its inner product with $G-nI$ yields
+\[
+ \Theta^TL_H\Theta
+ =-4n\|X\|_F^2-4(\lambda-n)\|X\|_F^2
+ =-4\lambda\|X\|_F^2<0,
+\]
+contradicting positive semidefiniteness.
+\end{proof}
+
+\subsection{An exact algorithm for the escape direction}
+The proof can be made constructive without numerical eigenvalues.
+For every row- and column-pair tangent $v$, compute $w=L_Hv$.
+The exact constant-energy paths ensure $v^TL_Hv=0$.
+If some $w\ne0$, let
+$B=\max_i\sum_j|(L_H)_{ij}|$ and use
+\[
+ y=(B+1)v-w.
+\]
+Then
+$y^TL_Hy=-2(B+1)\|w\|^2+w^TL_Hw
+\le-(B+2)\|w\|^2<0$.
+If all these products vanish, the proof gives $GH=\lambda H$.
+Either $H$ is already Hadamard or rational null vectors supply
+the negative direction above. Scaling clears all denominators.
+Thus real sign inputs admit integer phase directions with exact
+negative-curvature certificates.
+
+The Hessian itself has an integer rectangle formula. For
+$i<j,a<b$, let $v_{ijab}$ have $+1$ at $(i,a),(j,b)$ and
+$-1$ at $(i,b),(j,a)$. Then
+\[
+ L_H=-4\sum_{i<j,\ a<b}
+ h_{ia}h_{ib}h_{ja}h_{jb}\,v_{ijab}v_{ijab}^T.
+\]
+The checker compares the construction with all normalized order-four
+sign matrices and explicit order-eight and order-sixteen traps.
+
+An actual decreasing step can also be certified with rational
+arithmetic. Given the nonzero integer direction $y$, set
+$s_{ia}=y_{ia}/\max|y|$ and replace each sign by
+\[
+ F(t)_{ia}=h_{ia}\frac{1+it s_{ia}/2}{1-it s_{ia}/2}.
+\]
+For rational $t$, all entries are Gaussian rational and have modulus
+one. At zero this path has first and second derivatives $iH\circ s$
+and $-H\circ s^{\circ2}$, hence the same strictly negative phase
+second derivative. Exact backtracking through $t=1,1/2,1/4,\ldots$,
+accepting only $\Psi(F(t))<\Psi(H)$, must terminate. This is a
+finite exact escape algorithm, not merely an eigenvalue assertion.
+
+\subsection{What escape does and does not provide}
+Every sufficiently short nonzero step in the certified direction
+reduces $\Psi$. This defeats the discrete trap by enlarging the
+allowed alphabet continuously. It does not prove that the trajectory
+converges, that other complex critical points are saddles, or that its
+limit has four phases. Complex Hadamard matrices already exist at
+every order, including orders where real Hadamard matrices cannot exist.
+The missing phase-quantization step is therefore essential.

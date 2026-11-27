@@ -1,0 +1,519 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,mathtools,hyperref}
+\setlength{\emergencystretch}{3em}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\newcommand{\E}{\mathbb E}
+\newcommand{\tr}{\operatorname{tr}}
+\title{Continuous phase escape, bounded completion,\\and larger discrete exchanges}
+\author{Joshua Mark\thanks{ORCID: \href{https://orcid.org/0009-0003-5905-2382}{0009-0003-5905-2382}. AI tools assisted with derivation, independent review, computation and exposition.}}
+\date{20 November 2026 --- research draft; priority not established}
+\setcounter{MaxMatrixCols}{20}
+\begin{document}\maketitle
+
+\begin{abstract}
+Every real sign matrix that is not Hadamard is a strict saddle of
+the complex-phase squared-Gram energy. An exact construction supplies
+integer phase directions, escaping even the previously certified
+discrete one- and two-entry traps. Separately, classical real completion
+theory yields quaternary completion with at most three columns missing,
+with a bounded candidate enumeration algorithm. We also examine
+larger discrete exchanges and support-preserving weighing moves.
+These results provide escape and completion tools; they do not produce
+the required inputs at every admissible order or prove the conjecture.
+Bibliographic priority is unestablished.
+\end{abstract}
+The real Hadamard conjecture asks for a sign matrix $H$ satisfying
+$HH^T=nI$ at every positive order divisible by four.
+Moving into complex phases changes the feasible set; returning to a
+finite phase alphabet is an additional requirement throughout this report.
+\section{Every non-Hadamard real sign matrix is a phase saddle}
+For an $n$-square matrix $F$ with unit-modulus complex entries put
+\[
+ \Psi(F)=\|FF^*-nI\|_F^2.
+\]
+At a real sign matrix $H$, use phase coordinates
+$F(\Theta)_{ia}=h_{ia}e^{i\theta_{ia}}$ and let $L_H$ be the real
+Hessian at $\Theta=0$. The first derivatives vanish: every rectangle
+term in the energy is a real sign times a cosine.
+This phase landscape and its flows are classical background;
+see Motta--Shipman, \emph{Informing the structure of complex Hadamard
+matrix spaces using a flow},
+\url{https://doi.org/10.3934/dcdss.2019147}.
+The argument below is independently derived; priority is unestablished.
+
+\begin{theorem}[Strict phase saddle at every nonorthogonal sign matrix]
+For $n\ge2$, a real sign matrix $H$ has positive-semidefinite
+phase Hessian $L_H$ if and only if $HH^T=nI$.
+Otherwise an explicit real phase direction has strictly negative
+second derivative. In particular every nonglobal discrete trap
+from the previous pass admits infinitesimal complex-phase escape.
+\end{theorem}
+\begin{proof}
+Put $G=HH^T$ and $C=GH$. If $H$ is Hadamard, $\Psi=0$ is a global
+minimum, so its Hessian is positive semidefinite.
+
+For any two columns $a,b$, multiply $H$ on the right by the unitary
+two-square block
+\[
+ \begin{pmatrix}\cos t&i\sin t\\i\sin t&\cos t\end{pmatrix}.
+\]
+Every resulting entry still has modulus one, because its real and
+imaginary parts are signed $\cos t,\sin t$. Right multiplication
+preserves the row Gram matrix, hence $\Psi$ is exactly constant.
+Its phase tangent $v$ has entries
+$v_{ia}=v_{ib}=h_{ia}h_{ib}$ and all other entries zero.
+Therefore $v^TL_Hv=0$.
+
+The phase gradient is
+$4\operatorname{Im}(\overline{F_{ia}}(FF^*F)_{ia})$.
+Along this path $FF^*F=CH_{\rm block}(t)$, so its derivative in
+column $a$ is $4(h_{ia}C_{ib}-h_{ib}C_{ia})$.
+If $L_H$ were positive semidefinite, every zero-quadratic direction
+would be in its kernel. Thus, for every $i,a,b$,
+$h_{ia}C_{ib}=h_{ib}C_{ia}$, or $C=\Lambda H$ for a real diagonal
+matrix $\Lambda$.
+
+Left multiplication by the same two-square block on any pair of
+rows likewise preserves unit modulus and $\Psi$. Differentiating
+its gradient gives $h_{ia}C_{ja}=h_{ja}C_{ia}$ for all $i,j,a$.
+Consequently $C=H M$ for a real diagonal $M$. Since every entry of
+$H$ is nonzero, $\Lambda H=HM$ forces both diagonals to be a
+common scalar: $GH=\lambda H$.
+It follows that every nonzero eigenvalue of $G$ equals $\lambda$.
+Writing $r=\operatorname{rank}H$, its trace gives $\lambda=n^2/r>0$.
+If $r=n$ this is exactly $G=nI$.
+
+If $r<n$, choose nonzero real $u\in\ker H^T$, $v\in\ker H$,
+put $X=uv^T$, and take phase direction $\Theta=H\circ X$.
+Its first matrix derivative is $iX$, and its second is
+$-H\circ X^{\circ2}$. Both $HX^T$ and $XH^T$ vanish.
+The first Gram derivative is therefore zero, while the second is
+\[
+ 2XX^T-(H\circ X^{\circ2})H^T
+       -H(H\circ X^{\circ2})^T.
+\]
+Taking twice its inner product with $G-nI$ yields
+\[
+ \Theta^TL_H\Theta
+ =-4n\|X\|_F^2-4(\lambda-n)\|X\|_F^2
+ =-4\lambda\|X\|_F^2<0,
+\]
+contradicting positive semidefiniteness.
+\end{proof}
+
+\subsection{An exact algorithm for the escape direction}
+The proof can be made constructive without numerical eigenvalues.
+For every row- and column-pair tangent $v$, compute $w=L_Hv$.
+The exact constant-energy paths ensure $v^TL_Hv=0$.
+If some $w\ne0$, let
+$B=\max_i\sum_j|(L_H)_{ij}|$ and use
+\[
+ y=(B+1)v-w.
+\]
+Then
+$y^TL_Hy=-2(B+1)\|w\|^2+w^TL_Hw
+\le-(B+2)\|w\|^2<0$.
+If all these products vanish, the proof gives $GH=\lambda H$.
+Either $H$ is already Hadamard or rational null vectors supply
+the negative direction above. Scaling clears all denominators.
+Thus real sign inputs admit integer phase directions with exact
+negative-curvature certificates.
+
+The Hessian itself has an integer rectangle formula. For
+$i<j,a<b$, let $v_{ijab}$ have $+1$ at $(i,a),(j,b)$ and
+$-1$ at $(i,b),(j,a)$. Then
+\[
+ L_H=-4\sum_{i<j,\ a<b}
+ h_{ia}h_{ib}h_{ja}h_{jb}\,v_{ijab}v_{ijab}^T.
+\]
+The checker compares the construction with all normalized order-four
+sign matrices and explicit order-eight and order-sixteen traps.
+
+An actual decreasing step can also be certified with rational
+arithmetic. Given the nonzero integer direction $y$, set
+$s_{ia}=y_{ia}/\max|y|$ and replace each sign by
+\[
+ F(t)_{ia}=h_{ia}\frac{1+it s_{ia}/2}{1-it s_{ia}/2}.
+\]
+For rational $t$, all entries are Gaussian rational and have modulus
+one. At zero this path has first and second derivatives $iH\circ s$
+and $-H\circ s^{\circ2}$, hence the same strictly negative phase
+second derivative. Exact backtracking through $t=1,1/2,1/4,\ldots$,
+accepting only $\Psi(F(t))<\Psi(H)$, must terminate. This is a
+finite exact escape algorithm, not merely an eigenvalue assertion.
+
+\subsection{What escape does and does not provide}
+Every sufficiently short nonzero step in the certified direction
+reduces $\Psi$. This defeats the discrete trap by enlarging the
+allowed alphabet continuously. It does not prove that the trajectory
+converges, that other complex critical points are saddles, or that its
+limit has four phases. Complex Hadamard matrices already exist at
+every order, including orders where real Hadamard matrices cannot exist.
+The missing phase-quantization step is therefore essential.
+\section{Three missing quaternary columns: a classical-input completion algorithm}
+Let $n$ be even and let $V\in\mu_4^{n\times(n-r)}$ satisfy
+$V^*V=nI$, with $1\le r\le3$. The following completion statement
+uses the \emph{classical real codimension-at-most-seven Hadamard
+completion theorem}. That input is explicitly assumed here, not
+reproved or claimed new. References include Hall's four-row result
+and Verheiden's extension, recorded in
+\url{https://thesis.caltech.edu/2899/}, and the primary discussion in
+\emph{Counting results for thin Butson matrices},
+\url{https://www.combinatorics.org/ojs/index.php/eljc/article/download/v21i3p12/pdf/}.
+
+\begin{lemma}[A one-column extension gate through realification]
+For arbitrary $r\ge1$, a quaternary column orthogonal to all columns
+of $V$ exists if and only if the real sign frame
+$A=\mathcal R((1+i)V)$ has an orthogonal real sign column.
+\end{lemma}
+\begin{proof}
+Write a real sign column in paired coordinates as
+$w=(a_1,b_1,\ldots,a_n,b_n)^T$ and let $u_i=a_i+ib_i$.
+The paired realified columns give
+$A^Tw=0$ if and only if $((1+i)V)^*u=0$, equivalently $V^*u=0$.
+Thus $z=u/(1+i)\in\mu_4^n$ is the desired new column.
+Conversely $(1+i)z$ has real and imaginary parts in $\{\pm1\}$,
+and realifies to such a $w$.
+\end{proof}
+
+\begin{theorem}[Automatic completion in complex codimension at most three]
+Every such $V$ with $1\le r\le3$ can be completed to a
+$\mathrm{BH}(n,4)$ matrix, retaining all its original columns.
+\end{theorem}
+\begin{proof}
+For even $n\ge4$, $A$ has $2n$ rows, $2n-2r$ sign columns and
+$A^TA=2nI$. Its real codimension is $2r\le6$, so classical real
+completion supplies a full real Hadamard extension and in particular
+one new real sign column orthogonal to $A$. The lemma converts that
+column to one quaternary column orthogonal to $V$. Append it and
+repeat at complex codimension $r-1$. The order is unchanged.
+For $n=2$ the assertion follows directly from the order-two matrix:
+one prescribed fourth-root column is completed by changing one sign,
+and an empty input uses that matrix itself.
+\end{proof}
+This avoids an unwarranted assumption that an arbitrary supplied real
+completion respects the canonical complex structure. Only one real
+column is used at each step; its canonical complex-structure partner
+is automatically another sign column. The unused real completing
+columns may be discarded, and the classical theorem is applied again.
+
+\begin{theorem}[An explicit finite exact algorithm]
+For $r\le3$, Gaussian-rational row reduction and at most
+$4^{r-1}+\cdots+4+1\le21$ candidate-column tests construct the
+completion. The theorem does not require a real Hadamard completion
+as algorithmic input.
+\end{theorem}
+\begin{proof}
+Compute a systematic basis of $\ker V^*$: Gaussian elimination
+selects $r$ free coordinate positions, and every kernel vector is
+determined by its values there. A fourth-root vector can be globally
+multiplied by a fourth root so that its first free coordinate equals
+one. Its other free coordinates have $4^{r-1}$ possible assignments.
+For each assignment compute the unique kernel vector and check all
+its entries are in $\mu_4$. The preceding theorem guarantees a
+successful assignment. Append that vector and repeat. Its squared
+norm is $n$, and its orthogonality to all existing columns is exact,
+so the invariants hold at every stage. All coefficients are Gaussian
+rational and every test can be done exactly.
+\end{proof}
+For fixed $r\le3$ the matrix elimination costs $O(n^3)$ scalar
+operations; after a kernel basis is available each candidate costs
+$O(nr)$ operations. This is an exact-arithmetic operation count,
+not an unrestricted bit-complexity or approximate-input claim.
+
+\begin{corollary}[A precise codimension-four gate]
+For a quaternary input with $r=4$, full quaternary completion is
+equivalent to the existence of even one new fourth-root column.
+The latter is decided by at most $4^3=64$ normalized candidate tests.
+If a new column exists, the remaining defect three is automatically
+completed by the theorem. No automatic existence of that first
+column at defect four is asserted.
+\end{corollary}
+In particular a maximal proper quaternary frame at even order must
+miss at least four columns. The result closes a fixed-size residual
+gap once a large partial frame is supplied; it does not construct
+that input at unknown orders. The completion theory and its small-
+alphabet consequence are not advertised as bibliographically new.
+\section{Constructive strip and row escapes from the discrete tensor traps}
+\label{sec:exchanges-layer-escape}
+The preceding discrete traps obstruct improving one- and two-entry moves.
+They do not obstruct larger structured updates. This section gives an
+exact decomposition of the energy under Hadamard row layers, a sharp
+barrier in the corresponding strip-move graph, and a four-step block-row
+repair of the explicit tensor family. It does not provide a repair rule
+for arbitrary sign matrices or at unknown Hadamard orders.
+
+Write $F_n(H)=\|HH^T-nI\|_F^2$. Let $B$ be a sign Hadamard matrix of
+order $m$ and let $A_1,\ldots,A_m$ be arbitrary order-$N$ sign matrices.
+Define the $Nm\times Nm$ sign matrix
+\[
+ H_{(i,p),(j,q)}=(A_p)_{ij}B_{pq},\qquad
+ 1\le i,j\le N,\quad1\le p,q\le m.
+\]
+\begin{theorem}[An exact sum of independent row-layer energies]
+\label{thm:exchanges-layer-energy}
+After grouping rows by $p$, the row Gram of $H$ is block diagonal with
+blocks $mA_pA_p^T$. Consequently
+\[
+ F_{Nm}(H)=m^2\sum_{p=1}^m F_N(A_p).
+\]
+In particular $H$ is Hadamard if and only if every $A_p$ is Hadamard.
+Flipping one entry of one $A_p$ is realized by flipping an $m$-entry
+strip in one actual row of $H$, and its energy change is exactly
+$m^2$ times the base entry change. An arbitrary replacement of one base
+row is similarly one actual row replacement in $H$.
+\end{theorem}
+\begin{proof}
+The dot product of rows $(i,p)$ and $(i',p')$ is
+\[
+ \sum_j(A_p)_{ij}(A_{p'})_{i'j}\sum_qB_{pq}B_{p'q}.
+\]
+It is zero when $p\ne p'$, and equals $m(A_pA_p^T)_{ii'}$ otherwise.
+Subtract $NmI$ and square the Frobenius norm blockwise.
+The update statements follow directly from the definition.
+\end{proof}
+
+Let $A$ be the order-eight matrix with negative-entry row bitmasks
+\[
+ (84,44,30,230,133,73,111,51),
+\]
+using zero-based column bits. Its energy is $152$; the preceding pass
+certified positive cost for every single-entry move, nonnegative cost
+for every two-entry move, and a three-entry escape.
+\begin{proposition}[Exact escape barrier for strip moves]
+\label{prop:exchanges-strip-barrier}
+Starting from $A\otimes B$, the minimum number of strip flips needed
+to reach strictly lower energy is three. The least energy barrier along
+strip-flip paths to a lower-energy matrix is exactly $8m^2$.
+An explicit escape changes only one actual row and $3m$ entries.
+These minimum claims concern strip moves, not unrestricted entry moves.
+\end{proposition}
+\begin{proof}
+Every initial strip costs at least $8m^2$. Two strips in different layers
+each have positive cost; two in the same layer have nonnegative total
+cost by the exact base certificate. For an attaining path choose one
+layer and flip base cells $(2,4),(2,2),(2,3)$ in that order. All lie in
+one base row. The base energy path is
+$152\to160\to152\to128$, so the lifted path is
+\[
+ 152m^3\ \longrightarrow\ 152m^3+8m^2\
+ \longrightarrow\ 152m^3\
+ \longrightarrow\ 152m^3-24m^2.
+\]
+It attains both lower bounds.
+\end{proof}
+
+\begin{theorem}[Four improving block-row updates repair the whole family]
+\label{thm:exchanges-four-row-repair}
+For every Hadamard factor $B$, the tensor trap $A\otimes B$ admits an
+explicit repair to a Hadamard matrix through four strictly improving
+block-row replacements. Their energies are
+\[
+ 152m^3\to120m^3\to96m^3\to56m^3\to0.
+\]
+Equivalently the repair can be performed by $4m$ strictly improving
+ordinary-row replacements. Exactly $7m^2$ entries are changed in this
+construction. This count is not asserted to be globally minimal.
+\end{theorem}
+\begin{proof}
+Perform the following base row replacements in order:
+\[
+ \begin{array}{c|c|c|c}
+ \text{row}&\text{old negative mask}&\text{new mask}&\text{energy after update}\\\hline
+ 3&230&2&120\\
+ 2&30&31&96\\
+ 6&111&103&56\\
+ 7&51&49&0
+ \end{array}
+\]
+The final row masks are
+$(84,44,31,2,133,73,103,49)$ and have exact Gram $8I$.
+The checker verifies each displayed energy and Gram with integers.
+The mask xors have respective Hamming weights four, one, one, one,
+so seven base entries change, all at distinct positions.
+
+Apply each update simultaneously to all $m$ layers. The matrix remains
+$A^{(t)}\otimes B$, giving the stated $m^3$ energy scaling and final
+Hadamard matrix. Each changed base entry affects $m^2$ tensor entries,
+so the construction changes $7m^2$ entries. Alternatively update a single
+layer at a time: the exact sum formula says each ordinary-row replacement
+lowers energy by respectively $32m^2,24m^2,40m^2$, or $56m^2$.
+There are $m$ replacements of each of the four kinds and no step
+increases energy.
+\end{proof}
+
+The independent-layer identity gives a useful search rule when a tensor
+or Hadamard-layer structure is known: optimize the small base layers
+rather than relying on single-entry descent in the expanded matrix.
+It also makes the limit explicit: a Hadamard matrix in this class
+requires Hadamard base layers, so the construction cannot prove an
+unknown base order by hiding it inside a larger tensor dimension.
+Classical block-Hadamard operations are the background; priority for
+these particular trap-repair certificates has not been established.
+No new Hadamard orders or all-order existence claim is made.
+\section{A support-moving four-row repair of a weighing obstruction}
+\label{sec:weighing-switch-repair}
+
+The two-zero completion test detects an obstruction but does not
+produce a good weighing input. Here a local orthogonal operation
+changes such an input while preserving its weighing identity.
+The operation moves zero positions as well as signs. On the explicit
+unfillable $W(12,10)$ it produces a matrix admitting two Hadamard
+fillings. This is a repair at a known order, not an all-order theorem
+or a minimum-entry-distance claim.
+
+We use the preceding normalization for $W(n,n-2)$, $4\mid n$:
+the zero positions are diagonal two-square blocks and every
+off-diagonal block is Hadamard. Orthogonal row mixing and switching
+belong to the classical orthogonal-design setting; see, for context,
+Geramita--Verner, \emph{Orthogonal Designs with Zero Diagonal},
+\url{https://doi.org/10.4153/CJM-1976-028-3}.
+The criterion and finite repair below are independently checked;
+no novelty claim is made.
+
+\begin{theorem}[A four-row support-moving switch]
+Select two complete zero-row pairs, ordered as four rows, and let
+\[
+ Q=\frac12\begin{pmatrix}
+1&1&1&1\\1&-1&1&-1\\1&1&-1&-1\\1&-1&-1&1
+\end{pmatrix}.
+\]
+Replace those four rows by their product with $Q$, leaving all
+other rows unchanged. The output is another $W(n,n-2)$ if and
+only if the product of the four selected entries is $-1$ in every
+column outside the two selected zero-column pairs.
+When it succeeds, zero positions can move only inside the four-square
+submatrix formed by the selected row and zero-column pairs.
+\end{theorem}
+\begin{proof}
+The row operation is orthogonal, so the weighing Gram identity is
+preserved without further conditions. In a selected zero-column pair,
+the four-entry column has two zeros and two signs. Multiplication
+by $Q$ gives entries in $\{0,\pm1\}$ and squared norm two, hence
+exactly two nonzero signs. In any other column all four selected
+entries are signs. If their product is $-1$, each Walsh row has
+inner product $+2$ or $-2$ with that sign vector, so the output
+consists of four signs. If their product is $+1$, each inner product
+is zero or $\pm4$; norm preservation forces one output entry of
+magnitude two, which is forbidden. This proves necessity and
+sufficiency, including the support statement. Since the square output
+has Gram $(n-2)I$, its rows and columns still contain exactly two zeros.
+\end{proof}
+
+Unlike row permutations and sign changes, this operation need not
+preserve zero-fill feasibility. Its support motion is essential to
+the following small-support rigidity statement.
+
+\begin{proposition}[Two fixed-support row blocks cannot change feasibility]
+Suppose $W'$ is another normalized $W(n,n-2)$ with exactly the same
+zero positions as $W$, and only one or two zero-row pairs are allowed
+to differ. Then $W'$ is obtained from $W$ by signed row permutations
+inside those pairs. In particular their zero-preserving Hadamard
+completion problems are equivalent.
+\end{proposition}
+\begin{proof}
+The matrix $U=W'W^{\mathsf T}/(n-2)$ is orthogonal and satisfies
+$W'=UW$. Every unchanged row forces the corresponding row and
+column of $U$ to be a coordinate vector, so $U$ acts only on the
+selected pairs. For two pairs its four-square part has two-square
+blocks $\left(\begin{smallmatrix}P&Q_1\\R&P_1\end{smallmatrix}\right)$.
+Preserving the zero block in the first pair gives
+$Q_1W_{ji}=0$; preserving the second gives $RW_{ij}=0$.
+Both off-diagonal blocks are invertible Hadamard matrices, so
+$Q_1=R=0$. The remaining blocks $P,P_1$ are orthogonal. Each maps
+an off-diagonal two-square Hadamard block to another such block,
+and hence is a signed permutation: its entries are row inner products
+of two-square Hadamard matrices divided by two, thus $0,\pm1$.
+The one-pair case is the same argument without the cross blocks.
+Signed row permutations give bijections between sign completions.
+\end{proof}
+
+\subsection{An explicit escape from the order-twelve obstruction}
+For a self-contained input, put
+\[
+ F=\begin{pmatrix}1&1\\1&-1\end{pmatrix},\quad
+ I=I_2,\quad D=\begin{pmatrix}1&0\\0&-1\end{pmatrix},\quad
+ S=\begin{pmatrix}0&1\\1&0\end{pmatrix},
+\]
+and define the six-square block matrix
+\[
+ A=\begin{pmatrix}
+0&I&D&D&D&D\\S&0&-I&-I&I&I\\S&-D&0&I&-D&D\\
+S&-D&I&0&D&-D\\S&D&-D&D&0&-I\\S&D&D&-D&-I&0
+\end{pmatrix},\qquad W=A(I_6\otimes F).
+\]
+As certified previously, $WW^{\mathsf T}=10I_{12}$, but this input
+admits no zero-preserving Hadamard filling. The checker re-verifies
+that obstruction by exhausting all eight root states.
+
+Apply the theorem's $Q$ to rows $0,1,2,3$, with all indices zero-based.
+Every outside-column product is $-1$. The first four rows of the
+switched weighing matrix $\widetilde W$ become
+\[
+\begin{pmatrix}
+1&0&1&0&-1&1&-1&1&1&1&1&1\\
+0&-1&0&1&1&-1&1&-1&1&1&1&1\\
+-1&0&1&0&1&1&1&1&-1&1&-1&1\\
+0&1&0&1&1&1&1&1&1&-1&1&-1
+\end{pmatrix};
+\]
+the other eight rows are unchanged. In particular the two original
+zero-row pairs are reorganized into pairs $(0,2)$ and $(1,3)$.
+
+Here is a complete filling certificate. In each table row insert
+the indicated signs in the two listed zero columns, leaving all
+nonzeros of $\widetilde W$ unchanged:
+\[
+\begin{array}{c|c|c}
+\text{row}&\text{zero columns}&\text{inserted signs}\\\hline
+0&(1,3)&(-1,-1)\\1&(0,2)&(-1,1)\\
+2&(1,3)&(1,-1)\\3&(0,2)&(1,1)\\
+4&(4,5)&(1,-1)\\5&(4,5)&(-1,-1)\\
+6&(6,7)&(1,-1)\\7&(6,7)&(-1,-1)\\
+8&(8,9)&(-1,1)\\9&(8,9)&(1,1)\\
+10&(10,11)&(-1,1)\\11&(10,11)&(1,1)
+\end{array}
+\]
+The resulting sign matrix has exact Gram $12I_{12}$. Negating
+all inserted signs gives the second filling; the eight-state test
+certifies that these are the only two fillings of $\widetilde W$.
+
+The switch changes twenty-six matrix entries. Twenty-two originally
+nonzero entries change or become zero, and eight positions change
+zero/nonzero status (four holes are erased and four are introduced).
+Each completed Hadamard matrix disagrees with only twenty of the
+original $W$'s 120 prescribed nonzero signs; all disagreements lie
+in the four switched rows. These are exact measured costs, not
+proved global minima. For this fixed orientation of $Q$, precisely
+one of the fifteen original row-pair choices is admissible.
+
+The checker also records a bounded failed alternative: among 3,200
+specified equal-magnitude Householder selectors, none produced a
+nontrivial zero-preserving weighing switch on this input. This does
+not assert isolation under arbitrary operations. The successful
+four-row move preserves the weighing equation while changing the
+zero pairing, which the fixed-support rigidity proposition forbids
+for a feasibility-changing move of the same row-block size.
+
+This supplies an input-producing operation and an actual repair
+witness. It neither guarantees that a suitable quadruple exists
+for every weighing matrix nor shows that iterating these switches
+will always reach a completable input.
+
+\section{The remaining construction problem}
+Continuous phase escape is available at every non-Hadamard real sign
+matrix, but a phase trajectory can approach a complex Hadamard matrix
+outside the four-phase alphabet. No theorem makes phase dispersion
+decrease along the new direction. The completion algorithm needs all
+but a bounded number of columns in advance, and weighing exchanges
+must preserve both their algebraic equations and their zero support.
+None of these hypotheses is supplied uniformly at unknown orders.
+The next target is an operation coupling orthogonality improvement to
+phase quantization, or an input-producing theorem for the bounded
+completion algorithm. No Lean edits, git commits or submissions were made.
+\end{document}

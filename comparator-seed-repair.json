@@ -1,0 +1,16 @@
+{
+  "challenge_module": "SeedRepairChallenge",
+  "solution_module": "SeedRepairSolution",
+  "theorem_names": [
+    "EntropyDesigns.SupportRepair.minimum_support_exchanges",
+    "EntropyDesigns.SupportRepair.boolean_support_exchange_lower",
+    "EntropyDesigns.SupportRepair.one_exchange_truth_law_preserved"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "enable_nanoda": true
+}

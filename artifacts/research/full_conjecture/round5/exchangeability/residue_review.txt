@@ -1,0 +1,53 @@
+Independent residue-one review, 20 November 2026
+
+The root n=1 mod4 derivation checks out. For v=(1,x), epsilon=prod x,
+q(x,y)=epsilon(x)epsilon(y)<v(x),v(y)> is 1 mod4 because, with h the
+Hamming distance, q=(-1)^h(n-2h). Thus f(q)=q^2+2q-3 is nonnegative
+on all pairs. Isotropy E vv^T=I gives E q^2=n and E q=||z||^2 where
+z=E epsilon v; Bessel gives ||z||^2<=1. The diagonal f(n) is
+(n-1)(n+3), yielding collision <=1/(n+3).
+
+Equality forces simultaneously ||z||=1 and off-diagonal f=0 on support.
+Bessel equality means epsilon=v.z almost surely. Taking expectation
+over the second row while holding one support row fixed gives n-1;
+only its diagonal contributes, so its weight is exactly 1/(n+3).
+This step requires rows of the probability space to be aggregated by
+their sign vector; identical sign vectors are one atom, not distinct
+labels. The sign-cube representation already supplies this.
+
+For uniform N=n+3 support rows switched by epsilon, V'^T V'=N I.
+K=N I-V'V'^T is PSD of rank3, diagonal3, off-diagonal in {3,-1}.
+Gram vectors with dot3 coincide by equality in Cauchy-Schwarz. Distinct
+types have Gram 4I-J, so there are at most4. Assign any subset of the
+four tetrahedral sign triples (1,1,1),(1,-1,-1),(-1,1,-1),(-1,-1,1).
+Their Gram reproduces K, so appending them completes the Hadamard.
+No unproved claim about generic codimension-three completion is needed.
+
+check_residue.py passes exact H8-minus-three-columns checks: n5,N8,
+z=(0,0,0,0,1), collision1/8, four residual types, reconstructed H8
+orthogonality. It also checks parity congruence on every pair of the
+entire 4-cube. Standard library Fraction only; no external code.
+
+Bounded prior-art pass (novelty NOT established):
+* Gavinsky and Pudlak, On the Joint Entropy of d-Wise-Independent
+  Variables, arXiv:1503.08154, primary PDF inspected especially sections
+  3.1 and4. Their basic balanced min-entropy bound is log(d+1), and
+  Theorem4.1 characterizes entropy log(d+1) by Hadamard order d+1.
+  Their proof uses weighted orthonormal columns and their section4
+  credits Lancaster (1965). This is important direct prior art for
+  the frame/entropy mechanism, though the inspected theorem is not
+  the refined collision residue bound asserted here.
+  https://arxiv.org/pdf/1503.08154
+* Carlet et al., Simplicity conditions for binary orthogonal arrays,
+  arXiv:2204.00835, DOI10.1007/s10623-022-01105-4, search surfaced
+  established orthogonal-array minimum-size and simplicity theory.
+  Need further review of weighted extensions before asserting novelty.
+* Bierbrauer, Gopalakrishnan, Stinson (1996), Orthogonal Arrays,
+  Resilient Functions, Error-Correcting Codes, and Linear Programming
+  Bounds, DOI10.1137/S0895480194270950, is a primary LP-bound reference.
+  The present polynomial proof should be compared with its framework.
+
+Searches combining pairwise independence, collision/Renyi entropy,
+Hadamard, modulo/residue, and three-column completion did not locate
+this exact refined equality theorem. This limited negative search is
+not a priority conclusion and does not justify calling it new.

@@ -1,0 +1,140 @@
+{
+  "passed": true,
+  "allNormalizedOrderFourCases": 512,
+  "orderFourRankTwoCases": 168,
+  "orderFourUniqueOneEntryRepairs": 96,
+  "orderFourRankEnergyCounts": [
+    {
+      "rank": 0,
+      "energy": 0,
+      "count": 6
+    },
+    {
+      "rank": 2,
+      "energy": 24,
+      "count": 96
+    },
+    {
+      "rank": 2,
+      "energy": 32,
+      "count": 72
+    },
+    {
+      "rank": 3,
+      "energy": 64,
+      "count": 72
+    },
+    {
+      "rank": 3,
+      "energy": 96,
+      "count": 24
+    },
+    {
+      "rank": 4,
+      "energy": 32,
+      "count": 72
+    },
+    {
+      "rank": 4,
+      "energy": 56,
+      "count": 144
+    },
+    {
+      "rank": 4,
+      "energy": 64,
+      "count": 9
+    },
+    {
+      "rank": 4,
+      "energy": 120,
+      "count": 16
+    },
+    {
+      "rank": 4,
+      "energy": 192,
+      "count": 1
+    }
+  ],
+  "allEnergyParametersAttained": [
+    {
+      "n": 8,
+      "A": 1,
+      "energy": 56,
+      "determinantMagnitude": 3072
+    },
+    {
+      "n": 8,
+      "A": 2,
+      "energy": 96,
+      "determinantMagnitude": 2048
+    },
+    {
+      "n": 8,
+      "A": 3,
+      "energy": 120,
+      "determinantMagnitude": 1024
+    },
+    {
+      "n": 8,
+      "A": 4,
+      "energy": 128,
+      "determinantMagnitude": 0
+    },
+    {
+      "n": 12,
+      "A": 1,
+      "energy": 88,
+      "determinantMagnitude": 2488320
+    },
+    {
+      "n": 12,
+      "A": 2,
+      "energy": 160,
+      "determinantMagnitude": 1990656
+    },
+    {
+      "n": 12,
+      "A": 3,
+      "energy": 216,
+      "determinantMagnitude": 1492992
+    },
+    {
+      "n": 12,
+      "A": 4,
+      "energy": 256,
+      "determinantMagnitude": 995328
+    },
+    {
+      "n": 12,
+      "A": 5,
+      "energy": 280,
+      "determinantMagnitude": 497664
+    },
+    {
+      "n": 12,
+      "A": 6,
+      "energy": 288,
+      "determinantMagnitude": 0
+    }
+  ],
+  "rectangularCounterexamples": [
+    {
+      "n": 8,
+      "rank": 2,
+      "energy": 128,
+      "minimumEntryRepairs": 4,
+      "noOneRowOrColumnRepair": true,
+      "determinant": 0,
+      "nonsingular": false
+    },
+    {
+      "n": 12,
+      "rank": 2,
+      "energy": 256,
+      "minimumEntryRepairs": 4,
+      "noOneRowOrColumnRepair": true,
+      "determinant": -995328,
+      "nonsingular": true
+    }
+  ]
+}

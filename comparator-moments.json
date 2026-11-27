@@ -1,0 +1,15 @@
+{
+  "challenge_module": "MomentChallenge",
+  "solution_module": "MomentSolution",
+  "theorem_names": [
+    "EntropyDesigns.punctured_moment_error_floor",
+    "EntropyDesigns.four_omitted_moment_error_floor"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "enable_nanoda": true
+}

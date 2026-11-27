@@ -1,0 +1,16 @@
+{
+  "challenge_module": "QuantumChallenge",
+  "solution_module": "QuantumSolution",
+  "theorem_names": [
+    "EntropyDesigns.Quantum.exact_projective_commuting_criteria",
+    "EntropyDesigns.Quantum.exact_projectivity_defect",
+    "EntropyDesigns.Quantum.exact_ordered_commutator_energy"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "enable_nanoda": true
+}

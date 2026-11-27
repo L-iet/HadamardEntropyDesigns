@@ -1,0 +1,41 @@
+{
+  "passed": true,
+  "normalizedSignsEnumerated": 524288,
+  "newSignCompatibilityCounts": {
+    "0": 262840,
+    "6": 34920,
+    "8": 3992,
+    "7": 12600,
+    "4": 67344,
+    "3": 48948,
+    "5": 58976,
+    "2": 27092,
+    "9": 616,
+    "1": 6840,
+    "10": 108
+  },
+  "maximumCompatibleRows": 10,
+  "minimumOldRowsDeletedToAdmitNewSign": 2,
+  "bestNewSign": [
+    1,
+    1,
+    -1,
+    -1,
+    -1,
+    -1,
+    -1,
+    -1,
+    -1,
+    1,
+    -1,
+    -1,
+    -1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+  ]
+}

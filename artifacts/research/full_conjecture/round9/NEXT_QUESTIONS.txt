@@ -1,0 +1,28 @@
+NEXT RESEARCH TARGETS
+
+1. Construct rather than correct the concentrated distribution.
+The extraction theorem needs N-4 pairwise-independent unbiased bits
+with collision within 1/(1024 N^4) of 1/N. The rank obstruction shows
+that small moment errors and closeness to some feasible law do not
+provide a support-preserving route to this threshold. Seek a global
+support replacement principle with quantitative concentration control.
+
+2. Move beyond low-degree minimal-seed models.
+The support criterion concerns encodings of existing Hadamard matrices;
+it is not an existence theorem. Study nonlinear or larger-seed models
+that generate orthogonality without assuming the desired matrix.
+Separate representational expressiveness from constructive existence.
+
+3. Generalize the exact exchange landscape.
+The four-bit barrier is globally optimal, including curved paths.
+Find a larger-dimensional escape theorem or a counterexample to a
+proposed uniform escape bound. The small polytope alone supplies neither.
+
+4. Turn modular counts into positive extension counts.
+The lifting identity handles N=4(q+1), q odd, under a row-count
+condition, hence only an eight-divisible class. Seek lower bounds on
+M_q exceeding the exceptional-pair correction, and an independent
+argument for orders congruent to four modulo eight. Partial frames
+can be terminal; unrestricted extension of every frame is false.
+
+These are open tasks, not deductions established in this pass.

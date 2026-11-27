@@ -1,0 +1,416 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,mathtools,booktabs,array}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=blue!50!black,urlcolor=blue!50!black,
+  citecolor=blue!50!black,pdfauthor={Joshua Mark},
+  pdftitle={Quantitative refinements and effective experiments for Hadamard existence}}
+\setlength{\emergencystretch}{2em}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\NN}{\mathbb N_0}
+\newcommand{\HH}{\mathcal H}
+\newcommand{\ph}{\Phi}
+\newcommand{\ee}{\mathrm e}
+\title{Quantitative refinements and effective experiments\\for Hadamard existence}
+\author{Joshua Mark\thanks{ORCID: \href{https://orcid.org/0009-0003-5905-2382}{0009-0003-5905-2382}. AI tools assisted with mathematical exploration, formalization, computation and exposition.}}
+\date{4 November 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+We refine several consequences of the Hadamard exponent bound
+$\tau(p)=O(\log p/\log\log p)$ and examine effective constructions. We derive a uniform flatness
+bound with a subpolynomial correction and the condition-number estimate
+\[\kappa(n)-1\le n^{-1/4}\exp(O(\log n/\log\log n)).\]
+For an independent $r$-generator power-product monoid, a simplex count and
+multiset entropy give the second-order upper bound
+\[\log\ell_m\le(r-1)m\log m+rm\log\log m+(\beta+o(1))m,\]
+with an explicit
+constant $\beta$. We also record a quantitative maximal-determinant
+consequence and exact finite covering computations. These are deductions
+and extensions of the existing result, not a claim of a better order of
+growth for $\tau$ or of bibliographic priority.
+\end{abstract}
+
+\section{Baseline, domains and status}
+For odd positive $p$, let $\tau(p)$ be the least nonnegative integer $t$
+for which a Hadamard matrix of order $2^tp$ exists. Write
+\[
+\ph(x)=\frac{\log x}{\log\log x}\qquad(x>\ee).
+\]
+All asymptotic statements concern sufficiently large positive integer
+inputs. Our existing paper establishes
+\begin{equation}\label{eq:baseline}
+\tau(p)=O(\ph(p)),\qquad
+\exists D>0:\ \forall n\text{ sufficiently large},\quad
+\exists d\in\NN:\ d\le g_D(n):=\exp(D\ph(n)),
+\end{equation}
+where, for every natural $y\le n$, there is $h\in\HH$ with
+$y<h\le y+d$. Here $\HH$ is the set of Hadamard orders. The constants
+and thresholds are uniform. The proof uses sparse power-product
+representations~\cite{KSW} and complementary-sequence transfers
+\cite{Craigen,Livinskyi}.
+
+The source conversation's main theorem, covering growth order, gap
+theorem and fixed-$\delta$ conditioning corollary are already included
+in the current manuscript and Lean project. Repeating them would not be
+an improvement. We investigate refinements of the consequences and
+effective statements that can be certified by finite computation.
+Every assertion below is either proved here, explicitly attributed to a
+published theorem, or labelled as a research direction. Mathematical
+novelty has not been established by a comprehensive citation review.
+
+\section{Keeping the quantitative scale in flatness and conditioning}
+Let $u(n)=\min_{Q\in O(n)}\max_{i,j}|Q_{ij}|$ and let $\kappa(n)$ be the
+smallest spectral condition number among sign matrices of order $n$,
+with infinity assigned to singular matrices.
+
+\begin{lemma}\label{lem:small}
+For fixed $D>0$ and $\varepsilon>0$, $g_D(n)<n^\varepsilon$ eventually.
+\end{lemma}
+\begin{proof}
+The logarithm of $g_D(n)/n^\varepsilon$ is
+$\log n\,(D/\log\log n-\varepsilon)$, which tends to $-\infty$.
+\end{proof}
+
+\begin{theorem}[Quantitative flatness]\label{thm:flat}
+There exist $D>0$ and $N$ such that every $n\ge N$ admits an orthogonal
+matrix $Q$ with
+\begin{equation}\label{eq:flat}
+0<\sqrt n-g_D(n),\qquad
+|Q_{ij}|\le\frac1{\sqrt n-g_D(n)}\quad\text{for all }i,j.
+\end{equation}
+In particular,
+\[
+u(n)\le\frac1{\sqrt n}\left(1+
+O\!\left(n^{-1/2}\exp(D\ph(n))\right)\right).
+\]
+\end{theorem}
+\begin{proof}
+Choose $d$ from \eqref{eq:baseline} and apply its gap assertion at $y=n$.
+There is a Hadamard order $m>n$ with $k=m-n\le d\le g_D(n)$.
+By Lemma~\ref{lem:small}, eventually $g_D(n)<\sqrt n\le\sqrt m$.
+The submatrix-repair bound of Alexeev--Jasper--Mixon
+\cite[Lemmas 3 and 4]{AJM} constructs an orthogonal matrix of order $n$
+whose entries are at most $1/(\sqrt m-k)$ in absolute value.
+Since $\sqrt m-k\ge\sqrt n-g_D(n)>0$, \eqref{eq:flat} follows.
+The final expansion uses $(1-z)^{-1}=1+O(z)$ with
+$z=g_D(n)/\sqrt n\to0$.
+\end{proof}
+
+\begin{theorem}[A quantitative endpoint correction]\label{thm:kappa}
+There exist $E>0$ and $N$ such that, for all $n\ge N$,
+\begin{equation}\label{eq:kappa}
+\kappa(n)\le1+n^{-1/4}\exp(E\ph(n)).
+\end{equation}
+Equivalently the excess has upper bound
+$n^{-1/4+O(1/\log\log n)}$. This retains more information than the
+family of bounds $1+n^{-1/4+\delta}$ with fixed $\delta>0$.
+\end{theorem}
+\begin{proof}
+Put $g=g_D(n)$ and $v=(\sqrt n-g)^{-1}$. For large $n$, $g\ge1$ and
+$g\le\sqrt n/2$, hence $v\le2/\sqrt n$.
+Using the flat matrix from Theorem~\ref{thm:flat}, independent sign
+rounding has mean $v^{-1}Q$. The quantitative concentration and
+singular-value perturbation argument of~\cite[proof of Theorem 1]{AJM}
+gives a sample with error at most
+\[
+e(n,v)=\sqrt{2(n-v^{-2})\log(2n)}+\tfrac23\log(2n).
+\]
+The variance parameter is nonnegative since $v\ge1/\sqrt n$, and
+\[
+n-v^{-2}=2\sqrt n\,g-g^2\le2\sqrt n\,g.
+\]
+Consequently
+\[
+v e(n,v)=O\!\left(n^{-1/4}\sqrt{g\log n}
+                 +n^{-1/2}\log n\right).
+\]
+It tends to zero by Lemma~\ref{lem:small}. For a rounded matrix $A$,
+Weyl's inequalities therefore yield
+\[
+\operatorname{cond}(A)\le\frac{1+v e(n,v)}{1-v e(n,v)}
+\le1+4v e(n,v)
+\]
+once $v e(n,v)\le1/2$. Since
+$\sqrt g=\exp((D/2)\ph(n))$ and
+$\log\log n=o(\ph(n))$, logarithmic factors and fixed constants can be
+absorbed into $\exp(E\ph(n))$ for any sufficiently large fixed $E$.
+This proves \eqref{eq:kappa}.
+\end{proof}
+
+\paragraph{A finite bound available in the Lean development.}
+The project's moment-concentration proof also supplies a fully explicit
+finite substitute for the Bernstein error above:
+\[
+e_{\rm mom}(n,v)=4(2k_n+1)\sqrt{\max\{1,n-v^{-2}\}},\qquad
+k_n=\max\{1,\lceil\log_4(2n)\rceil\}.
+\]
+Given a gap certificate of size $d\le g<\sqrt n$, the condition
+$4v e_{\rm mom}(n,v)\le1$ implies the existence of a sign matrix with
+condition number at most $1+4v e_{\rm mom}(n,v)$. This finite statement
+and Theorem~\ref{thm:flat} are formalized in the new extension. The
+moment bound loses an extra logarithmic factor relative to the displayed
+Bernstein bound, which is still absorbed by the same asymptotic scale.
+
+\section{A second-order upper bound for the covering function}
+Fix multiplicatively independent integers $b_1,\ldots,b_r>1$, $r\ge2$,
+and let $S=\{\prod b_i^{a_i}:a_i\in\NN\}$. Let $\ell_m(S)$ be the first
+positive integer not representable using at most $m$ members of $S$,
+with repetitions permitted. This section's upper bound does not require
+that one base is two; that requirement is used by our covering lower bound.
+Put
+\[
+c_i=\log b_i,\quad C=\sum_i c_i,\quad
+A=\frac1{r!\prod_i c_i},\quad
+\beta=1+r\log(r-1)-\log\!\left(r!\prod_i\log b_i\right).
+\]
+
+\begin{lemma}[Simplex count]\label{lem:simplex}
+For $L\ge0$ and $T(e^L)=|S\cap[1,e^L]|$,
+\[
+\frac{L^r}{r!\prod_i c_i}\le T(e^L)
+\le\frac{(L+C)^r}{r!\prod_i c_i}.
+\]
+Thus $T(N)=A(\log N)^r(1+O(1/\log N))$.
+\end{lemma}
+\begin{proof}
+Independence makes exponent tuples correspond to distinct products.
+For each tuple with $\sum c_i a_i\le L$, take the half-open box
+$\prod_i[c_i a_i,c_i(a_i+1))$, of volume $\prod_i c_i$.
+These boxes have disjoint interiors. Their union contains the positive
+simplex $\sum x_i\le L$ (up to boundaries), by taking coordinate floors,
+and is contained in $\sum x_i\le L+C$. Compare volumes.
+\end{proof}
+
+\begin{theorem}[Second-order entropy bound]\label{thm:entropy}
+For every fixed $\eta>0$, all sufficiently large $m$ satisfy
+\begin{equation}\label{eq:entropy}
+\log\ell_m(S)\le(r-1)m\log m+rm\log\log m+(\beta+\eta)m.
+\end{equation}
+In particular the normalized second-order remainder has limsup at most
+$\beta$.
+\end{theorem}
+\begin{proof}
+Set
+\[
+L_m=(r-1)m\log m+rm\log\log m+(\beta+\eta/2)m,
+\qquad N=\lceil e^{L_m}\rceil.
+\]
+Then $\log N=L_m+o(1)$ and
+\[
+\log\log N=\log m+\log\log m+\log(r-1)+o(1).
+\]
+Every sum at most $N$ uses only members of $S\cap[1,N]$. The number
+of multisets of at most $m$ such members is exactly $\binom{T(N)+m}{m}$.
+This bounds the number of represented positive integers at most $N$,
+even though different multisets can have the same sum.
+The estimate $m!\ge(m/e)^m$ gives
+\begin{align*}
+\log\binom{T(N)+m}{m}
+&\le m\bigl(1+\log(T(N)+m)-\log m\bigr)\\
+&=(r-1)m\log m+rm\log\log m+(\beta+o(1))m.
+\end{align*}
+Here $T(N)/m\to\infty$ and Lemma~\ref{lem:simplex} were used in the
+last line. This is strictly less than $\log N$ for large $m$, so a
+positive integer at most $N$ is missing. Hence $\ell_m(S)\le N$.
+The ceiling error $o(1)$ is absorbed by the remaining $\eta m/2$ margin.
+\end{proof}
+
+For $S(2,10)$ the result reads
+\[
+\log\ell_m\le m\log m+2m\log\log m+
+\bigl(1-\log(2\log2\log10)+\eta\bigr)m.
+\]
+For $S(2,10,26)$ it reads
+\[
+\log\ell_m\le2m\log m+3m\log\log m+
+\bigl(1+3\log2-\log(6\log2\log10\log26)+\eta\bigr)m.
+\]
+The linear constants are approximately $-0.161$ and $-0.361$,
+respectively; exact logarithmic expressions, rather than rounded decimals,
+are used in the theorem. This refines the existing $(r-1+o(1))m\log m$
+upper bound, but does not improve the leading coefficient $r-1$.
+
+\section{A maximal-determinant consequence}
+Let $D(n)$ be the largest absolute determinant of a sign matrix of order
+$n$, and $R(n)=D(n)/n^{n/2}$.
+
+\begin{theorem}\label{thm:det}
+There exists $E>0$ such that eventually
+\[
+\exp\bigl(-\exp(E\ph(n))\bigr)\le R(n)\le1.
+\]
+Thus the logarithmic deficit from Hadamard's determinant bound is at most
+$\exp(O(\ph(n)))=n^{o(1)}$.
+\end{theorem}
+\begin{proof}
+Take a natural gap certificate $d\le g_D(n)$ as in
+\eqref{eq:baseline}; eventually $d<n$. Apply it at $y=n-d$ to find a
+Hadamard order in $(n-d,n]$. The largest Hadamard order $h\le n$ therefore
+has $a=n-h<d$. If $a=0$, then $R(n)=1$. Otherwise Lemma~\ref{lem:small}
+shows that $6a^3/h\to0$, so the hypothesis $h\ge6a^3$ of
+Brent--Osborn--Smith~\cite[Theorem 3]{BOS} holds eventually. Their bound
+$R(n)\ge0.07(0.352)^a>3^{-(a+3)}$ then applies. Thus we do not need
+the finite exceptional-case computations behind their universal Theorem 4.
+In either case,
+\[
+-\log R(n)\le(\log3)(d+3)\le(\log3)(g_D(n)+3)
+\le\exp(E\ph(n))
+\]
+for some fixed $E>D$ and large $n$. Hadamard's determinant inequality
+gives the upper bound.
+\end{proof}
+
+There is also a short route that avoids the probabilistic determinant
+theorem. If $m=n+k$ is a nearby larger Hadamard order, select any $n$
+rows. Cauchy--Binet implies that the squared determinants of their
+$n\times n$ minors sum to $m^n$. Some minor therefore has determinant
+at least $m^{n/2}/\sqrt{\binom{m}{n}}$. In particular
+\[
+R(n)\ge\frac{(m/n)^{n/2}}{\sqrt{\binom{m}{k}}}
+\ge m^{-k/2}.
+\]
+With $k\le g_D(n)$, the extra factor $\log m$ in the logarithmic
+deficit is absorbed by $\exp(E\ph(n))$. This gives the same stated
+scale. Neither this elementary minor estimate nor the published
+determinant theorem is claimed to be a new ingredient.
+
+\section{Finite covering certificates and their limits}
+The exact experiments use bitset subset dynamic programming for all
+allowed values at most $2^{22}=4194304$. Descending updates enforce
+distinct summands. For a monoid containing two, the resulting at-most-$m$
+coverage agrees with the version permitting repetitions: merge two equal
+summands into their double until all are distinct, never increasing
+the term count. The bitset results were checked against an independent
+unbounded-coin dynamic program on smaller intervals.
+
+\begin{center}
+\begin{tabular}{r r r r}
+\toprule
+$m$ & $\ell_m(S(2,3))$ & $\ell_m(S(2,10))$ & $\ell_m(S(2,10,26))$\\
+\midrule
+1 & 5 & 3 & 3\\
+2 & 23 & 7 & 7\\
+3 & 431 & 39 & 39\\
+4 & 18431 & 199 & 199\\
+5 & 3448733 & 1479 & 11999\\
+6 & $>4194304$ & 7879 & 637399\\
+7 & $>4194304$ & 375495 & $>4194304$\\
+\bottomrule
+\end{tabular}
+\end{center}
+An inequality in this table is only a cutoff bound, not a computed first
+missing value. The $(2,3)$ column is a numerical benchmark from the
+double-base literature; three is not asserted to be a binary Golay length.
+
+\begin{proposition}[Finite radix certificate]\label{prop:radix}
+Suppose every integer $0\le a<2^k$ is a sum of at most $w$ binary Golay
+lengths, and doubling a permitted length remains permitted. For odd
+$p>1$, put $q=(p-1)/2$ and
+$d=\lceil\log_{2^k}(q+1)\rceil$. Then a Hadamard matrix exists at some
+exponent
+\[
+t\le2wd+2.
+\]
+In particular the resulting explicit logarithmic coefficient is $2w/k$.
+\end{proposition}
+\begin{proof}
+Write $q$ in radix $2^k$ with at most $d$ digits. Expand each digit using
+its certified Golay-length sum, and multiply its summands by the relevant
+power of $2^k$. These are again Golay lengths. There are at most $wd$
+summands in total. Craigen's transfer gives $t=2r+2\le2wd+2$.
+Repeated lengths are allowed in that transfer, so cross-digit collisions
+do not invalidate the construction.
+\end{proof}
+
+For example, $\ell_6(S(2,10,26))=637399>2^{19}$ gives $w=6$, $k=19$
+and coefficient $12/19\approx0.632$. This is a rigorous explicit
+certificate, but it is worse than Du--Jiang's coefficient $3/20$~\cite{DJ}.
+Our finite experiment therefore does not establish a competitive uniform
+numerical improvement. Larger finite searches alone need not overcome
+the asymptotic preprocessing issue.
+
+The separate entropy certificates use integer arithmetic only. For
+$N=2^k$, count $T(N)$ exactly by summing
+\[
+T(N)=\sum_{b,c:\,10^b26^c\le N}
+\left(1+\left\lfloor\log_2\left\lfloor
+\frac{N}{10^b26^c}\right\rfloor\right\rfloor\right).
+\]
+If $\binom{T(N)+m}{m}<N$, then $\ell_m\le N$ without enumerating all
+integers through $N$. The supplied script records the actual integers
+and the strict inequality. These are upper bounds on the first missing
+integer, not lower coverage certificates.
+
+\section{What remains a genuine improvement target}
+Within a fixed finite independent-base representation system, sparse
+weights are bounded below by a positive multiple of $\ph(q)$ for
+infinitely many $q$~\cite{KSW}. Thus simply optimizing a representation
+inside $S(2,10)$ or $S(2,10,26)$ cannot establish a uniformly smaller
+order than $O(\ph(p))$ for the exponent produced by $t=2r+2$.
+This is a limitation of that mechanism, not a lower bound on $\tau(p)$.
+
+Three worthwhile open tasks are: obtain usable constants and thresholds
+for the logarithm-ratio separation needed by the Golay-specific greedy
+proof; exploit complementary sequence families beyond a fixed finite
+power-product alphabet; or reduce the matrix-transfer overhead through
+additional structure. Du--Jiang also discuss a possible general transfer
+from four-phase complementary sets whose resolution could substantially
+change their exponent rate~\cite[conclusion]{DJ}. No such new transfer
+is proved here.
+
+The source conversation quoted a coefficient $1/5$ from the thesis.
+Du--Jiang explicitly flag a stronger thesis claim as depending on an
+incorrect earlier theorem. Their safe comparison uses the coefficient
+$3/13$ from a different thesis bound~\cite[introduction]{DJ}. None of
+our deductions uses the disputed result. Likewise, qualitative
+subpolynomial gaps were already attributed to Smith by~\cite{BOS};
+the refinements here are not a priority claim for that qualitative fact.
+
+\section{Files and formal verification scope}
+All new artifacts are under \path{improvement/}. No proof file, source
+manifest or manuscript in the original repository has been changed.
+The Lean extension imports the existing project and mathlib; no new
+third-party proof code is imported. It proves the quantitative flatness
+theorem and a finite error-preserving conditioning theorem. The proofs
+use the original unconditional quantitative gap endpoint.
+The asymptotic conditioning deduction, the second-order entropy theorem,
+and the determinant corollary have complete mathematical proofs above;
+this note does not claim Lean formalizations of those three complete
+asymptotic statements.
+
+The exact scripts and JSON reports record the finite checks. The
+build instructions distinguish kernel-checked extensions, exact finite
+computations and paper-only deductions. All project-authored code is
+Apache-2.0; mathematical sources are cited rather than copied as code.
+
+\begin{thebibliography}{9}
+\raggedright
+\bibitem{KSW} D. Krenn, V. Suppakitpaisarn, and S. Wagner,
+\emph{On the minimal Hamming weight of a multi-base representation},
+Journal of Number Theory 208 (2020), 168--179.
+\url{https://arxiv.org/abs/1808.06330}.
+\bibitem{Craigen} R. Craigen, \emph{Signed groups, sequences, and the
+asymptotic existence of Hadamard matrices}, J. Combin. Theory Ser. A
+71 (1995), 241--254. \url{https://doi.org/10.1016/0097-3165(95)90002-0}.
+\bibitem{Livinskyi} I. Livinskyi, \emph{Asymptotic Existence of Hadamard
+Matrices}, M.Sc. thesis, University of Manitoba, 2012, Theorem 3.10.
+\bibitem{DJ} C. Du and Y. Jiang, \emph{Golay Complementary Sequences of
+Arbitrary Length and Asymptotic Existence of Hadamard Matrices}, 2024.
+\url{https://arxiv.org/abs/2401.15381}.
+\bibitem{AJM} B. Alexeev, J. Jasper, and D. G. Mixon,
+\emph{Asymptotically optimal approximate Hadamard matrices},
+arXiv:2511.14653v2, 2026. \url{https://arxiv.org/abs/2511.14653v2}.
+\bibitem{BOS} R. P. Brent, J.-A. H. Osborn, and W. D. Smith,
+\emph{Lower bounds on maximal determinants of $\{\pm1\}$ matrices via
+the probabilistic method}, arXiv:1211.3248v3, 2013.
+\url{https://arxiv.org/abs/1211.3248v3}.
+\end{thebibliography}
+\end{document}

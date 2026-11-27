@@ -1,0 +1,191 @@
+% Research fragment: theorem/proposition/corollary/proof, amsmath/amssymb/hyperref.
+\section{Arithmetic rigidity of saturated Hadamard trades}
+This section proves an obstruction to bounded-degree positive moves on the
+\emph{balanced saturated fiber}, rather than on arbitrary binary marginal
+fibers. General unbounded Markov width for binary complete-graph models is
+already known, with much stronger global bounds; see Develin--Sullivant,
+\url{https://arxiv.org/abs/math/0308280}, and
+Kr\'al'--Norine--Pangr\'ac,
+\url{https://arxiv.org/abs/0810.1979}. No bibliographic novelty is claimed
+for the specialized deductions below.
+
+Normalize a Hadamard matrix $H$ of order $n$ so its first column is all
+ones. Deleting that column and replacing signs by bits gives a binary
+strength-two array with $n$ observations and $d=n-1$ coordinates.
+A \emph{reduced observation trade of volume $r$} deletes $r$ old
+observations and inserts $r$ new ones, preserves all moments of degree at
+most two, and has disjoint deleted and inserted pattern multisets.
+Every array in this fiber is again a normalized Hadamard matrix: its
+$n$ columns are orthogonal, so its $n$ rows are orthogonal too.
+Consequently a trade preserves $n-r$ common orthogonal rows.
+
+\begin{theorem}[Denominator obstruction to a new sign row]\label{trd:denom}
+Let $n=4m$ with $m>1$ odd, and let $p$ be the least prime factor of $m$.
+Suppose a sign vector $x$ lies in the real span of $r<n$ rows
+$h_1,\ldots,h_r$ of an order-$n$ Hadamard matrix, but is not any
+$\pm h_i$. Then
+\begin{equation}\label{trd:bound}
+ p\le\frac{r^{r/2}}{2^{r-1}}.
+\end{equation}
+More precisely, the least common denominator of the expansion
+coefficients of $x$ divides $m$ and divides the normalized determinant
+$\det S/2^{r-1}$ of every invertible $r\times r$ sign-column anchor $S$.
+\end{theorem}
+\begin{proof}
+Write $x=\sum_i a_i h_i$. Orthogonality gives
+$a_i=\langle x,h_i\rangle/n$ and $\sum_i a_i^2=1$.
+Choose a Hadamard row outside this span and multiply columns so that row
+becomes all ones. Then $x$ and all $h_i$ are balanced. Inner products of
+balanced sign vectors of length divisible by four are multiples of four:
+if their positive supports meet in $b$ positions, the inner product is
+$4b-n$. Hence $a_i\in m^{-1}\mathbb Z$.
+
+Let $q$ be the least positive common denominator of the $a_i$.
+If $q=1$, the unit-norm integer vector $(a_i)$ is a signed coordinate
+vector, contrary to the hypothesis. Thus $q>1$ and $q\mid m$.
+The $r$ rows are independent, so choose $r$ column positions forming an
+invertible sign matrix $S$. The equations at those positions and Cramer's
+rule give $q\mid\det S$. Every sign determinant of order $r$ is divisible
+by $2^{r-1}$, by subtracting one row from all the others. Since $q$ is
+odd, $q\mid\det S/2^{r-1}$. Hadamard's determinant inequality now gives
+\[
+ p\le q\le\frac{|\det S|}{2^{r-1}}
+ \le\frac{r^{r/2}}{2^{r-1}}.
+\]
+The same reasoning applies to every invertible anchor.
+\end{proof}
+
+\begin{corollary}[A prime-factor lower bound for positive trade volume]
+Every nonempty reduced observation trade of volume $r<n$ from such an
+array satisfies \eqref{trd:bound}. In particular, if
+\[
+ p>\max_{1\le k\le R}\frac{k^{k/2}}{2^{k-1}},
+\]
+then every array in this saturated fiber is isolated under all positive
+moment-preserving moves of degree at most $R$.
+\end{corollary}
+\begin{proof}
+Every inserted row is perpendicular to the $n-r$ retained rows, so lies
+in the span of the $r$ deleted rows. A reduced nonempty trade contains
+a genuinely new row. Its first coordinate is one, so it cannot be the
+negative of an old normalized row. Apply Theorem~\ref{trd:denom}.
+\end{proof}
+For example, Paley order $212$ has $m=53$. Since
+$8^8<53^2\,4^7$, no reduced trade of volume at most eight can leave
+\emph{any} array in its saturated fiber. The theorem does not require
+that the chosen array have Paley symmetry; Paley only supplies existence.
+
+\subsection{Infinitely many existing fibers require unbounded move degree}
+\begin{theorem}[Uniform bounded-degree moves cannot suffice]\label{trd:unbounded}
+For every fixed $R$, there are infinitely many known Hadamard orders
+$n\equiv4\pmod8$ for which every saturated array is isolated under all
+nonzero moment-preserving moves of degree at most $R$.
+\end{theorem}
+\begin{proof}
+Choose an integer $B$ larger than the determinant bound in the preceding
+corollary, and put
+\[
+ P_B=\prod_{3\le\ell\le B\atop\ell\text{ prime}}\ell,
+ \qquad M_B=8P_B.
+\]
+The Chinese remainder theorem gives a reduced residue class satisfying
+$q\equiv3\pmod8$ and $q\equiv1\pmod\ell$ for every odd prime
+$\ell\le B$. Dirichlet's theorem gives infinitely many primes $q$ in
+this class. Paley's construction gives a Hadamard matrix of order
+$n=q+1$. Here $m=(q+1)/4$ is odd and has no prime factor at most $B$,
+because $q+1\equiv2\pmod\ell$. For sufficiently large $q$, $m>1$.
+The determinant obstruction applies at every degree at most $R$.
+\end{proof}
+
+The theorem concerns these particular minimum-run, balanced fibers. It
+is not presented as a new proof of the much stronger known global
+Markov-width lower bounds. It also does not refute bounded row-exchange
+\emph{augmentation} for arbitrary partial matrices: a trade between two
+complete arrays and an augmentation of an incomplete array are different
+operations. Global symmetry operations can bypass this degree restriction
+by changing many observations at once.
+
+\begin{corollary}[A quantitative infinite subsequence]\label{trd:linnik}
+There is an infinite sequence of known Hadamard orders $n\to\infty$
+such that every nonempty reduced observation trade has volume at least
+\[
+ (2-o(1))\frac{\log\log n}{\log\log\log n}.
+\]
+Equivalently, for every $\varepsilon>0$, this lower bound holds with
+$2-\varepsilon$ along all sufficiently large orders in that sequence.
+\end{corollary}
+\begin{proof}
+For each $B$, choose the least prime $q_B$ in the CRT class above.
+Linnik's theorem gives $q_B\le C M_B^L$ for absolute constants $C,L$.
+Only the existence of such constants is used; no numerical value of
+Linnik's exponent is needed. The elementary Chebyshev bound gives
+$\log M_B=O(B)$, hence $\log(q_B+1)=O(B)$.
+Also $q_B>B$, so the selected primes tend to infinity as $B$ does.
+Set $n_B=q_B+1$. The least prime factor of $(q_B+1)/4$ exceeds
+$B\ge c\log n_B$ for an absolute $c>0$.
+
+For $r\le(2-\varepsilon)\log\log n_B/\log\log\log n_B$,
+\[
+ \log\!\left(\frac{r^{r/2}}{2^{r-1}}\right)
+ =\frac r2\log r-(r-1)\log2
+ \le(1-\varepsilon/2+o(1))\log\log n_B
+ <\log B.
+\]
+The denominator obstruction excludes every such trade. Passing to
+distinct orders if necessary gives the asserted sequence.
+\end{proof}
+Linnik's least-prime bound is stated in the introduction of Xylouris,
+\emph{On the least prime in an arithmetic progression and estimates for
+the zeros of Dirichlet $L$-functions}, Acta Arith. 150 (2011), 65--91,
+\url{https://doi.org/10.4064/aa150-1-4}. For the elementary bound
+$\log M_B=O(B)$, one may bound products of primes in $(u,2u]$ by
+$\binom{2u}{u}<4^u$ and sum over dyadic intervals.
+
+\subsection{These fibers have many states, and a universal large trade}
+\begin{proposition}[A universal half-row trade]
+Every normalized Hadamard matrix of order $n>4$ has a reduced
+observation trade of volume $n/2$.
+\end{proposition}
+\begin{proof}
+Choose a nonconstant column and let $I$ be its $k=n/2$ positive rows.
+On these rows the distinguished all-one column and the chosen column
+are constant. Each other column has sum zero on $I$, by its
+orthogonality to both columns. Apply $Q=2J_k/k-I_k$ to the selected
+rows. This preserves the two constant columns and negates every other
+selected column, so the entries stay signs and the first column stays
+one. The transformation is orthogonal and leaves all other rows fixed,
+so the resulting matrix is Hadamard. Since $k>2$, each row of $Q$
+has more than one nonzero coordinate. Thus no new row is an old row
+up to sign; after cancellation the trade really has volume $k$.
+\end{proof}
+
+\begin{proposition}[Exponential multiplicity of isolated states]
+If $n>4$ and $n\equiv4\pmod8$, coordinatewise bit translations of
+any saturated array produce $2^{n-1}$ distinct arrays in the same fiber.
+For the orders in Theorem~\ref{trd:unbounded}, all are isolated under
+the indicated bounded-degree move family.
+\end{proposition}
+\begin{proof}
+First, a closed quadruple of Hadamard rows is impossible at these
+orders. If four rows have pointwise product constant, column-sign
+normalization and orthogonality partition columns into four fields
+of size $n/4$. Orthogonality of any additional row to all four forces
+its sum in each field to be zero. Thus $n/4$ must be even, contrary
+to $n\equiv4\pmod8$.
+
+Coordinatewise bit translation preserves the balanced degree-two
+moments. If a nonzero translation $a$ stabilized the array, choose
+two distinct translation pairs $\{x,x+a\}$ and $\{y,y+a\}$. Their four
+sign rows have pointwise product one, making a closed quadruple.
+Since there are $n>4$ rows, such pairs exist. Hence the translation
+stabilizer is trivial, and all $2^{n-1}$ translations are distinct.
+The isolation statement follows from the previous theorem.
+\end{proof}
+
+These deductions concern local moves on existing objects. They do not
+prove existence at an unknown order. They show that a successful
+positive-conversion or sampling argument cannot rely on a degree bound
+independent of the dimension, even on the highly symmetric balanced
+saturated targets. The exact scripts check the low-dimensional anchor
+classification, explicit Paley examples, and small positive trades; the
+infinite conclusions rest on the proofs above.

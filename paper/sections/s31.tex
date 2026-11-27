@@ -1,0 +1,293 @@
+% Self-contained mathematical fragment. Uses proposition/proof environments,
+% standard amsmath/amssymb, hyperref, and the parent note's \Z and \R macros.
+\section{Moment-semigroup progress: which moves can preserve positivity?}
+All results in this section have elementary proofs. They do not establish
+new Hadamard orders or a general positivity-conversion theorem. Their
+purpose is to discriminate between possible algebraic-statistics tools.
+In particular, generating the integer kernel is much weaker than connecting
+its nonnegative fibers.
+
+\subsection{Cube moves are frozen at every saturated Hadamard design}
+An observation is a bit vector in $\{0,1\}^d$, with integer multiplicity.
+A coordinate-subcube parity move fixes coordinates outside a set $T$ and
+adds one to the vertices of one parity inside that subcube while subtracting
+one from the other parity. When $|T|\ge3$, the move preserves every
+quadratic moment. Both signs of every translated move are allowed.
+
+\begin{proposition}[Isolation under all coordinate-cube moves]
+Let a binary strength-two orthogonal array have $N$ rows and $d=N-1$
+columns, with $N\ge8$. No nonzero integer multiple of any individual
+coordinate-subcube parity move of dimension at least three is feasible
+from its multiplicity vector while preserving nonnegativity.
+\end{proposition}
+\begin{proof}
+Replace bits by signs and adjoin the all-one column. The resulting square
+matrix $H$ has $H^{\mathsf T}H=NI$, hence $HH^{\mathsf T}=NI$. Its
+observations are distinct, and every two have Hamming distance $N/2$:
+their sign inner product after deleting the common first coordinate is
+$-1$, so $d-2\operatorname{dist}(x,y)=-1$. In particular no two
+supported observations are at Hamming distance two.
+
+Each parity class of a coordinate subcube of dimension at least three
+contains a pair of vertices at Hamming distance two: flip any two of its
+free coordinates. Either orientation of the move subtracts from all
+vertices of one such class. That class cannot lie in the support of the
+array. Some subtracted coordinate therefore has multiplicity zero, and
+every positive integer multiple makes it negative.
+\end{proof}
+
+\paragraph{Formalization.}
+The original module \texttt{EntropyDesigns/\allowbreak CubeIsolation.lean}
+proves \texttt{saturated\_\allowbreak coordinate\_\allowbreak cube\_\allowbreak isolation}.
+Its input uses the actual four pair-pattern counts of a binary orthogonal
+array. For every translated coordinate subcube and every nonzero integer
+coefficient, the theorem produces a cube vertex whose updated integer
+multiplicity is strictly negative. The proof derives the required
+Hadamard Gram matrix and support separation from those counts.
+
+Flipping a single coordinate produces a different array in the same
+quadratic-moment fiber: unbiasedness and pairwise independence are
+preserved, and none of the new distance-one neighbors was supported
+before. Thus even the collection of all translated coordinate-cube moves,
+in all dimensions, cannot connect these nonnegative fibers and cannot
+be a Markov basis for them. This is not just a failure of a low-dimensional truncation of the
+origin-anchored kernel basis. General non-coordinate trades are necessary.
+
+\paragraph{An exact degree-four trade outside this move family.}
+Take the Walsh matrix $H_{ab}=(-1)^{\langle a,b\rangle}$ of order eight,
+with $a,b\in\{0,1\}^3$ ordered by their integer values. Replace its
+first four rows by
+\[
+ r_i'=\frac12(r_0+r_1+r_2+r_3)-r_i\qquad(0\le i<4).
+\]
+The row transformation $J_4/2-I_4$ is orthogonal. Each column in these
+four rows has product $+1$, so its sum is $0$ or $\pm4$; the transformed
+entries are again signs. The first column remains all ones. Consequently
+both old and new matrices are Hadamard, and their seven-column arrays
+have the same quadratic moments.
+
+Represent a bit pattern by the mask whose bit $j$ is its $j$th coordinate.
+The old array has masks
+\[
+ \{0,85,102,51,120,45,30,75\}.
+\]
+The trade removes $\{0,85,102,51\}$ and inserts
+$\{119,34,17,68\}$. It preserves nonnegativity and has degree four
+(four observations on either side). Both endpoints are isolated under
+every coordinate-cube move by the proposition. The supplied checker
+enumerates all $939$ coordinate subcubes of dimensions three through
+seven and checks both orientations at both endpoints. This is the
+classical kind of closed-quadruple switching, independently checked here,
+not a claim of a new switching construction.
+
+\subsection{A second obstruction: move order in the anchored basis}
+\begin{proposition}[Sharp maximum-weight constraint]
+For $d\ge1$, every unbiased pairwise-independent distribution on $\{0,1\}^d$ whose
+support has Hamming weight at most $K$ satisfies
+\[
+ K\ge\left\lceil\frac{d+1}{2}\right\rceil.
+\]
+The bound is attained by a positive integer orthogonal array for every
+$d\ge2$.
+\end{proposition}
+\begin{proof}
+For the Hamming weight $W=\sum_i Z_i$, pairwise independence gives
+$\mathbb EW=d/2$ and $\mathbb EW^2=d(d+1)/4$. Since $W^2\le KW$,
+the asserted lower bound follows.
+
+For attainment put $s=\lfloor d/2\rfloor$ and
+$C_s=\binom{2s}{s}/(s+1)$. If $d=2s+1$, take every weight-$(s+1)$
+vector once and $C_s$ copies of the zero vector. If $d=2s$, take every
+weight-$s$ and every weight-$(s+1)$ vector once, together with $C_s$
+zero vectors. In either case the run count is
+\[
+ N=2\binom{2s}{s},
+\]
+and a fixed coordinate appears in $N/2$ rows while any fixed pair
+appears in $N/4$ rows. For odd $d$, these identities are
+\[
+ \binom{2s+1}{s+1}+C_s=2\binom{2s}{s},\quad
+ \binom{2s}{s}=N/2,\quad
+ \binom{2s-1}{s-1}=N/4.
+\]
+The even case is obtained by deleting a coordinate from the odd one,
+or directly by Pascal's identity. The maximum weight is exactly
+$s+1=\lceil(d+1)/2\rceil$.
+\end{proof}
+
+Start from the canonical signed solution supported at weights zero,
+one and two. If only origin-anchored basis moves $M_T$ with $|T|\le K$
+are used, with arbitrary integer coefficients, the result is still
+supported at weights at most $\max\{2,K\}$. Hence conversion to a positive
+design requires a move order at least $\lceil(d+1)/2\rceil$ when this
+exceeds two. This claim concerns that anchored basis. It does not rule
+out translated three-dimensional moves based at large-weight patterns;
+the preceding isolation proposition is a separate statement about their
+behavior at the saturated endpoints.
+
+\begin{proposition}[Exact limitation of monotone triple conversion]
+Write $L=N/4>0$. Starting from the canonical signed solution, allow only
+nonnegative multiples of the origin-anchored three-cube moves which add
+to singletons and triples and subtract from the empty set and pairs.
+For $d=4$ conversion is possible exactly when $L\ge2$; for $d=5$ it is
+possible exactly when $3\mid L$; for $d\ge6$ it is impossible.
+\end{proposition}
+\begin{proof}
+Let $t_T\ge0$ be the multiplicity of each triple move, and let
+$T_0=\sum_{|T|=3}t_T$. The final singleton counts require
+$3T_0\ge dL(d-3)$, while pair nonnegativity requires
+$3T_0\le\binom d2L$. For $d\ge6$ these inequalities are inconsistent.
+
+For $d=5$ they force equality and $T_0=10L/3$, hence $3\mid L$.
+Conversely, setting every triple multiplicity to $L/3$ works: the only
+remaining positive counts are $2L/3$ at the empty pattern and $L/3$
+at each of the ten triples. For $d=4$, the case $L=1$ would give five
+orthogonal nonzero columns in $\R^4$, which is impossible. For every
+$L\ge2$, set all four triple multiplicities to $\lfloor L/2\rfloor$.
+The resulting empty, singleton, pair and triple counts are respectively
+$2L-4\lfloor L/2\rfloor$, $-L+3\lfloor L/2\rfloor$,
+$L-2\lfloor L/2\rfloor$, and $\lfloor L/2\rfloor$, all nonnegative.
+\end{proof}
+\paragraph{Formalization.}
+The original module
+\texttt{EntropyDesigns/\allowbreak MonotoneTriples.lean}
+proves the complete classification as
+\texttt{monotone\_\allowbreak triple\_\allowbreak conversion\_\allowbreak classification}.
+Patterns are finite sets of coordinate indices. The formal statement
+uses the actual canonical signed counts and integer multiples of the
+specified triple moves, with no assumed aggregate inequalities.
+The companion target
+\texttt{monotoneTripleCount\_\allowbreak moments}
+proves that every update has total count $4L$, each singleton
+occurs $2L$ times and each pair occurs $L$ times. Thus the
+nonnegative endpoints are actual strength-two designs. The proofs
+include the explicit uniform triple multiplicities for the successful
+cases and the dimension-four $L=1$ impossibility.
+
+For instance the unrestricted eight-run design on five coordinates
+exists by truncating Walsh order eight, but the triple-only conversion
+above cannot reach any positive design at $(N,d)=(8,5)$. The obstruction
+belongs to the move strategy, not to the moment target.
+
+\subsection{Why averaging over all coordinate permutations loses the target}
+\begin{proposition}[Exponential cost of full permutation symmetry]
+Let $N_{\mathrm{sym}}(d)$ be the least positive run count for a binary
+strength-two array whose pattern multiplicities are invariant under all
+coordinate permutations. Put
+\[
+ k_d=\min\{k\in\{0,\ldots,d\}:(2k-d)^2\le d\}.
+\]
+For $d\ge2$,
+\[
+ \binom d{k_d}\ \le N_{\mathrm{sym}}(d)
+ \le 2\binom{2\lfloor d/2\rfloor}{\lfloor d/2\rfloor}.
+\]
+In particular $N_{\mathrm{sym}}(d)=\Theta(2^d/\sqrt d)$.
+\end{proposition}
+\begin{proof}
+The Hamming weight has mean $d/2$ and variance $d/4$. At least one
+occupied weight $k$ has $(2k-d)^2\le d$. Full permutation symmetry
+then forces each of the $\binom dk$ patterns at that weight to have
+positive integer multiplicity. Throughout this central interval,
+$\binom dk\ge\binom d{k_d}$, proving the lower bound. The Catalan-shell
+construction above proves the upper bound. Finally
+$k_d=d/2-\sqrt d/2+O(1)$, so Stirling's formula gives the matching
+orders. More precisely the lower binomial is asymptotic to
+$e^{-1/2}2^d\sqrt{2/(\pi d)}$.
+\end{proof}
+
+\paragraph{Formalization of the symmetry cost.}
+The independent \texttt{PermutationCostChallenge} checks the exact bounds
+and the full $\Theta(2^d/\sqrt d)$ conclusion. The minimum run count is
+specified over actual positive-run Boolean strength-two arrays, with
+integer pattern multiplicities invariant under every coordinate
+permutation. The proof constructs the Catalan-shell arrays, verifies all
+four pair-pattern counts and full multiplicity symmetry, and derives the
+central Hamming-layer lower bound. An explicit constant comparison with
+the central binomial coefficient, followed by mathlib's formal Stirling
+theorem, proves the asymptotic conclusion. All fourteen definitions are
+concrete. The implementation is original Apache~2.0 proof code using
+mathlib; the prior-work attribution for the Catalan construction below
+is retained.
+
+Thus, for sufficiently large $d$, exact global symmetrization cannot
+preserve the saturated run count $N=d+1$. Selective symmetry or symmetry
+breaking is essential in that regime. The
+Catalan-shell constructions are related to the recent paper
+\emph{Catalan Bounds for Symmetric Strength-Two Orthogonal Arrays}
+by R. C. Karunanayaka,
+\url{https://doi.org/10.1002/jcd.70039}.
+The bound above concerns growth order and maximum weight, not the exact
+minimum run-count conjecture in that paper.
+
+\subsection{A positive result: a quadratic bound for the fixed-dimension conductor}
+\begin{proposition}[An explicit cofinite central ray]
+For each fixed $d\ge2$, every sufficiently large $N\equiv0\pmod4$
+admits a binary strength-two array on $d$ coordinates. An explicit
+threshold is
+\[
+ N\ge C_d=4(A-1)(B-1)<3(d+1)^2,
+\]
+where $a=4A$ is the least power of two at least $d+1$, and $b=4B$ is
+the first order at least $d+1$ in the sequence
+\[
+ b_e=\begin{cases}3^e+1&e\text{ odd},\\2(3^e+1)&e\text{ even}.
+ \end{cases}
+\]
+Here $N$ is positive, also when $C_d=0$.
+\end{proposition}
+\begin{proof}
+Sylvester gives order $a$. Paley's two constructions give order $b$:
+odd $e$ uses type I and even $e$ uses type II. Every $b_e$ has exact
+two-adic valuation two, while $A$ is a power of two, so $\gcd(A,B)=1$.
+Truncating the normalized matrices gives arrays with $d$ coordinates
+and run counts $a,b$. Concatenating observations adds moment vectors.
+The elementary two-generator numerical-semigroup theorem therefore
+gives every run count $4M$ with $M\ge(A-1)(B-1)$. For completeness,
+choose $u\in\{0,\ldots,B-1\}$ with $uA\equiv M\pmod B$. Then
+$M-uA\ge-B+1$, so its integer quotient by $B$ is nonnegative.
+
+We have $a<2(d+1)$. Consecutive displayed $b_e$ grow by a factor less
+than six, giving $b<6(d+1)$, including the initial case $b=4$.
+Consequently $C_d<ab/4<3(d+1)^2$.
+\end{proof}
+\paragraph{Formalization of the cofinite ray.}
+The complete proposition is formalized, including the least eligible seed
+indices, the strict bound $C_d<3(d+1)^2$, and actual Boolean arrays at
+every positive multiple of four above $C_d$. The proof derives all four
+pair-pattern counts from exact sign moments, constructs arrays from
+normalized Hadamard matrices, and proves that replication and concatenation
+preserve those counts. Binary-power and both ternary Paley seed families
+are constructed in Lean. The numerical-semigroup step uses mathlib's
+proved two-generator Frobenius theorem. The independent
+\texttt{CofiniteChallenge} specifies the full assertion without definition
+holes; it is checked separately to keep each specification within the
+same fixed size limit.
+
+This result uses only classical Sylvester and Paley constructions, not
+the current project's asymptotic theorem. It proves finiteness and an
+explicit bound for central-ray holes when $d$ is fixed. It remains far
+from the diagonal $N=d+1$ needed for Hadamard existence. It is an
+elementary application of known constructions, not a claim of a new
+Hadamard bound.
+
+\paragraph{Reproduction.}
+The standard-library script \path{moments/check.py} checks the isolated
+endpoints and non-cube trade, all $939$ coordinate subcubes, the shell
+moment identities through $d=40$, low-dimensional explicit arrays,
+triple-conversion witnesses, and sample decompositions above the
+conductor thresholds. Results are in \path{moments/certificates.json}.
+None of these checks is a Lean formalization or a proof of unrestricted
+Hadamard existence.
+
+\paragraph{Formalization.}
+The original module \texttt{EntropyDesigns/\allowbreak HammingWeight.lean}
+proves the exact weight-moment identities and the universal lower bound.
+The independent targets are
+\texttt{pairwise\_\allowbreak independent\_\allowbreak weight\_\allowbreak lower}
+and \texttt{sharp\_\allowbreak weight\_\allowbreak integer\_\allowbreak array\_\allowbreak attained}.
+The latter constructs positive integer arrays using permutation orbits
+and coordinate restriction. It verifies all four pair-pattern counts,
+the upper bound on every row weight, and a row attaining that bound.
+The lower bound explicitly excludes $d=0$, where the empty bit vector
+would be a counterexample; its proof divides by the positive dimension.

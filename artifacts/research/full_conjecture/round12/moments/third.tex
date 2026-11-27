@@ -1,0 +1,97 @@
+\section{Third completion moments with dependent triples included}
+Fix an odd prime $p$, length $N=4p$, and a totally isotropic retained
+space $G$ of codimension $h\ge2$ in a self-dual code. In the split
+$2h$-dimensional quotient $G^\perp/G$, give each isotropic projective
+point $\ell$ weight $w_\ell$ equal to the number of normalized sign
+classes with nonzero quotient on that point. Let $b$ count the sign
+classes in $G$. For a uniformly chosen completion code write
+$Y=|S(C)|-b$. Put $D_j=p^{h-j}+1$.
+
+For $t=1,2,3$ let $R_t$ be the sum of
+$w_{\ell_1}w_{\ell_2}w_{\ell_3}$ over ordered triples whose span is
+totally isotropic of dimension exactly $t$. Repetitions are allowed.
+In particular $R_1=\sum_\ell w_\ell^3$. For $h=2$ necessarily
+$R_3=0$; the definition of $D_3$ is then unnecessary.
+
+\begin{theorem}[Exact third-moment certificate]
+For $h\ge3$,
+\[
+ \mathbb E Y^3=\frac{R_1}{D_1}+
+ \frac{R_2}{D_1D_2}+\frac{R_3}{D_1D_2D_3}.
+\]
+For $h=2$ omit the final term. If $\mathbb EY^2>0$, some completion
+satisfies $|S(C)|\ge b+\lceil\mathbb EY^3/\mathbb EY^2\rceil$.
+\end{theorem}
+\begin{proof}
+The number of generators in a split $2j$-space is
+$L_j=2\prod_{i=1}^{j-1}(p^i+1)$ for $j\ge1$, and $L_0=1$.
+A specified totally isotropic $t$-space lies in proportion
+$L_{h-t}/L_h=\prod_{j=1}^tD_j^{-1}$ of the generators.
+This includes $t=h$, where the final factor is $D_h=2$.
+A triple not spanning an isotropic space cannot occur in a generator.
+Expanding the cube of $Y$ and grouping by span rank proves the formula.
+Finally $Y^3\le(\max Y)Y^2$ pointwise gives the certificate.
+\end{proof}
+Distinct points need not be linearly independent: three different
+points on one isotropic projective line contribute to $R_2$, not
+$R_3$. Omitting these triples would give an incorrect moment.
+
+\subsection{An exact computation without cubic enumeration}
+Let $\mathcal L$ be the totally isotropic projective lines. Then
+\[
+ R_2=\sum_{L\in\mathcal L}
+ \left[\left(\sum_{\ell\in L}w_\ell\right)^3
+              -\sum_{\ell\in L}w_\ell^3\right].
+\]
+Each rank-two triple spans a unique such line, so it is counted once.
+Alternatively form the simple orthogonality graph on the weighted
+points. Let $T_\triangle$ be the weighted sum over unordered triangles,
+and $T_{\rm line}$ the weighted sum over unordered collinear triples.
+For unordered orthogonal pairs $\{\ell,m\}$,
+\[
+ R_2=3\sum_{\{\ell,m\}}w_\ell w_m(w_\ell+w_m)+6T_{\rm line},
+ \qquad R_3=6(T_\triangle-T_{\rm line}).
+\]
+Bitset intersections count graph triangles efficiently when all point
+weights are one. For each pair, the other $p-1$ points on its line
+are obtained by normalizing $x+ty$, $t\in\mathbb F_p^*$; dictionary
+lookup counts collinear triples. Requiring the third index to exceed
+both pair indices counts each once. The method uses quadratic pair
+enumeration and avoids testing all ordered point triples.
+
+\subsection{Known-order exact benchmarks}
+For the first eight stored rows of the order-twenty terminal frame,
+$b=9$, $h=2$, and
+\[
+ R_1=258,\quad R_2=7632,\quad R_3=0,\quad
+ \mathbb EY^2=65,\quad\mathbb EY^3=679.
+\]
+Thus $|S(C)|\ge9+\lceil679/65\rceil=20$.
+The second-moment bound gave only nineteen. Independent enumeration
+of all twelve generators gives additional counts $3$ six times and
+$11$ six times, directly checking the cubic moment.
+
+For the first five stored rows, $b=5$, $h=5$, and the 1092 weighted
+points all have weight one. The graph has 6497280 unordered triangles,
+of which 1200 are collinear. Exact arithmetic gives
+\[
+ R_1=1092,\quad R_2=1118736,\quad R_3=38976480,
+ \qquad\mathbb EY^3=\frac{995014}{28483}.
+\]
+As $\mathbb EY^2=14114/2191$, the ratio is
+$497507/91741$, giving only $5+\lceil497507/91741\rceil=11$
+total classes. This improves the second-moment lower bound of nine,
+but does not reach the sufficient threshold seventeen.
+
+\subsection{Scope of the moment hierarchy}
+For any integer $r\ge2$ with positive denominator,
+\[
+ \max Y\ge\frac{\mathbb EY^r}{\mathbb EY^{r-1}}.
+\]
+These ratios are nondecreasing by Cauchy--Schwarz and tend to
+$\max Y$ on the finite completion space. Since $Y$ is integer valued,
+their ceilings eventually equal its exact maximum. This is a
+classical moment principle, not a uniform bound on the number of
+moments required or their computational cost. Supplying sufficiently
+large finite-geometry counts remains the missing existence input in
+unknown orders. No all-order positivity assertion follows.

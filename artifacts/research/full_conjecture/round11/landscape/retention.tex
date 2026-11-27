@@ -1,0 +1,55 @@
+\subsection{The exact row-retention budget from generalized Hamming weights}
+For the same twelve sign representatives $c_1,\ldots,c_{12}$ spanning
+$C$, let
+\[
+ E=\{(\alpha(c_1),\ldots,\alpha(c_{12})): \alpha\in C^*\}
+ \subseteq\mathbb F_5^{12}.
+\]
+This is the ten-dimensional evaluation code used in the neighbor
+census. A codimension-$h$ retained subspace $G\subset C$ has
+annihilator $U\subset C^*$ of dimension $h$. Its lost old rows are
+exactly the union of the supports of the evaluation words of $U$:
+\[
+ c_i\notin G\quad\Longleftrightarrow\quad
+ \exists\alpha\in U:\alpha(c_i)\ne0.
+\]
+Consequently the minimum possible number of lost old sign classes
+among all such $G$ is precisely the classical generalized Hamming
+weight $d_h(E)$, defined as the least support size of an
+$h$-dimensional subcode. This is a standard coding-theoretic resource
+interpretation, not a claim to a new generalized-weight theory.
+The classical reference is V. K. Wei, \emph{Generalized Hamming weights
+for linear codes}, IEEE Transactions on Information Theory 37 (1991),
+1412--1418, \url{https://ieeexplore.ieee.org/document/133259/}.
+
+The two-dimensional dual has weight enumerator
+$1+8z^8+8z^{10}+8z^{12}$. Its parity-check matrix $H$ has no zero
+columns and projective column multiplicities $4,4,2,2,0,0$ among
+the six projective points of $\mathbb F_5^2$. The final two zeros
+denote absent projective directions, not zero columns. For a set
+$I$ of column positions,
+\[
+ \dim\{e\in E:\operatorname{supp}(e)\subseteq I\}
+ =|I|-\operatorname{rank}H_I,
+\]
+so $d_h(E)=\min\{|I|:|I|-\operatorname{rank}H_I\ge h\}$.
+Any nonempty $I$ has rank at least one; rank-one sets have at most
+four columns. They yield $d_1,d_2,d_3=2,3,4$. For $h\ge4$ the
+rank must be two and $d_h=h+2$, attainable by choosing that many
+columns. Thus
+\[
+ (d_1,\ldots,d_{10})=(2,3,4,6,7,8,9,10,11,12).
+\]
+The exact maximum retained-row counts for codimensions one through
+ten are therefore $10,9,8,6,5,4,3,2,1,0$.
+In particular the rank-eight, nine-sign-class benchmark used in the
+completion-moment calculation has the largest possible old-row
+retention for a two-dimensional annihilator. A retained space
+containing five old rows can have codimension at most five.
+
+The standard-library script \texttt{check\_retention.py} independently
+checks all 4096 column subsets, writes the full witnesses to
+\texttt{retention.json}, and verifies both the weight enumerator and
+projective multiplicities. These are optimal retention budgets for
+this specific code. They do not ensure that any corresponding
+completion improves sign count or prove unknown-order existence.

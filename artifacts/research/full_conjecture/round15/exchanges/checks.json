@@ -1,0 +1,155 @@
+{
+  "passed": true,
+  "baseRows": [
+    84,
+    44,
+    30,
+    230,
+    133,
+    73,
+    111,
+    51
+  ],
+  "baseMinimumSingleCost": 8,
+  "baseMinimumPairCost": 0,
+  "baseStripPath": [
+    152,
+    160,
+    152,
+    128
+  ],
+  "baseRowRepairStates": [
+    [
+      84,
+      44,
+      30,
+      230,
+      133,
+      73,
+      111,
+      51
+    ],
+    [
+      84,
+      44,
+      30,
+      2,
+      133,
+      73,
+      111,
+      51
+    ],
+    [
+      84,
+      44,
+      31,
+      2,
+      133,
+      73,
+      111,
+      51
+    ],
+    [
+      84,
+      44,
+      31,
+      2,
+      133,
+      73,
+      103,
+      51
+    ],
+    [
+      84,
+      44,
+      31,
+      2,
+      133,
+      73,
+      103,
+      49
+    ]
+  ],
+  "baseRowRepairEnergies": [
+    152,
+    120,
+    96,
+    56,
+    0
+  ],
+  "cases": [
+    {
+      "hadamardFactor": 2,
+      "order": 16,
+      "exactHeterogeneousLayerIdentity": true,
+      "stripEscapeEnergies": [
+        1216,
+        1248,
+        1216,
+        1120
+      ],
+      "stripEscapeEntryChanges": 6,
+      "stripEscapeRowsChanged": 1,
+      "optimalStripBarrier": 32,
+      "blockRowRepairEnergies": [
+        1216,
+        960,
+        768,
+        448,
+        0
+      ],
+      "ordinaryRowRepairSteps": 8,
+      "entryRepairCount": 28,
+      "finalGramDefect": 0
+    },
+    {
+      "hadamardFactor": 4,
+      "order": 32,
+      "exactHeterogeneousLayerIdentity": true,
+      "stripEscapeEnergies": [
+        9728,
+        9856,
+        9728,
+        9344
+      ],
+      "stripEscapeEntryChanges": 12,
+      "stripEscapeRowsChanged": 1,
+      "optimalStripBarrier": 128,
+      "blockRowRepairEnergies": [
+        9728,
+        7680,
+        6144,
+        3584,
+        0
+      ],
+      "ordinaryRowRepairSteps": 16,
+      "entryRepairCount": 112,
+      "finalGramDefect": 0
+    },
+    {
+      "hadamardFactor": 8,
+      "order": 64,
+      "exactHeterogeneousLayerIdentity": true,
+      "stripEscapeEnergies": [
+        77824,
+        78336,
+        77824,
+        76288
+      ],
+      "stripEscapeEntryChanges": 24,
+      "stripEscapeRowsChanged": 1,
+      "optimalStripBarrier": 512,
+      "blockRowRepairEnergies": [
+        77824,
+        61440,
+        49152,
+        28672,
+        0
+      ],
+      "ordinaryRowRepairSteps": 32,
+      "entryRepairCount": 448,
+      "finalGramDefect": 0
+    }
+  ],
+  "noGlobalMinimumEntryRepairClaim": true
+}

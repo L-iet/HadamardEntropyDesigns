@@ -1,0 +1,99 @@
+% Source: round10/exchanges/bridges.tex
+
+Let $\mathcal P_d$ be the probability laws on the sign cube with
+zero first and second moments. Write $A$ for the matrix evaluating
+the constant, degree-one and degree-two characters, and $b=(1,0,\ldots,0)$.
+Thus $\mathcal P_d=\{p\ge0:Ap=b\}$ and $C(p)=\|p\|_2^2$.
+
+\begin{theorem}[An exact monotone support-reduction algorithm]
+Given any rational feasible law $p$ with support $S$, repeat the
+following operation while the columns $A_S$ are dependent.
+Choose nonzero $z\in\ker A_S$, reverse its sign if necessary so
+$p\cdot z\ge0$, and set
+\[
+ t=\min_{j:z_j<0}\frac{p_j}{-z_j},\qquad p\leftarrow p+tz.
+\]
+Every intermediate law remains nonnegative and exactly feasible,
+collision increases strictly at each nontrivial step, and the entire
+interpolating path has nondecreasing collision. After at most
+$|S|-\operatorname{rank}A_S$ steps it reaches a vertex supported on
+at most $1+d+\binom d2$ atoms. All calculations can be rational.
+\end{theorem}
+\begin{proof}
+The constant row of $Az=0$ gives $\sum z_j=0$, so $z$ has both
+signs and $t>0$ is finite. The definition of $t$ preserves positivity
+and kills at least one atom; moment feasibility follows from $Az=0$.
+For $0\le u\le t$,
+$C(p+uz)=C(p)+2u(p\cdot z)+u^2\|z\|^2$ is nondecreasing and
+strictly increases at the endpoint. The feasible face containing
+$p$ in its relative interior has dimension
+$|S|-\operatorname{rank}A_S$. Each boundary step passes to a proper
+face, decreasing that dimension at least one. At a zero-dimensional
+face the active columns are independent. This proves termination
+and the support bound. One can choose a minimally supported kernel
+vector, making every step a circuit move. This is the elementary
+convex-objective endpoint principle familiar from pipage-type
+rounding~\cite{s24:AS}, not a claimed new general optimization method.
+\end{proof}
+The algorithm can terminate at a suboptimal vertex, including the
+weighted four-bit examples. It does not guarantee minimal entropy
+or a Hadamard construction. The result identifies exactly what local
+support deletion can do without a collision barrier.
+
+\begin{theorem}[Sharp barrier for a specified straight bridge]
+Let $p,q\in\mathcal P_d$ be distinct and set
+$a=C(p)$, $b=C(q)\ge a$, $c=p\cdot q$, $e=a+b-2c>0$.
+The feasible bridge $p_t=(1-t)p+tq$ has minimum collision
+\[
+ \min_{0\le t\le1}C(p_t)
+ =a-\frac{(a-c)_+^2}{a+b-2c}.
+\]
+The minimizer is $t=(a-c)_+/e\le1/2$. Its collision loss is at most
+$a^2/(a+b)\le a/2$, with the first bound attained for disjoint
+supports. If $c\ge a$ the bridge is monotone and has no loss.
+\end{theorem}
+\begin{proof}
+Expand $C(p_t)=a+2(c-a)t+et^2$. If $c<a$, the minimizer is
+$(a-c)/e$, at most one half since $b\ge a$. Since $c\ge0$ and
+$c<a\le b$, the function $(a-c)^2/(a+b-2c)$ decreases with $c$:
+its derivative is $-2(a-c)(b-c)/(a+b-2c)^2\le0$.
+Its value at zero is $a^2/(a+b)$. If $c\ge a$ the quadratic is
+nondecreasing on the entire interval.
+\end{proof}
+If an explicit optimal law $q$ is available, this gives an actual
+nonlocal feasible route and a quantitative loss budget. It does not
+provide the missing optimal target. Translating $q$ by cube signs
+preserves feasibility and collision, and averaging those translates
+gives the uniform cube. Consequently some translate has overlap
+$p\cdot q\ge2^{-d}$, which may improve the displayed bridge bound.
+
+\section*{A sharp bridge need not be a global barrier}
+For $d=5$, use the eight-word linear Walsh code
+\[
+ C=\{((-1)^{u\cdot m})_{m=1}^5:u\in\mathbb F_2^3\}.
+\]
+The masks $1,\ldots,5$ include a basis and are distinct and nonzero,
+so the code is injective and every coset's uniform law is unbiased
+and pairwise independent. There are four disjoint cosets in the
+32-word cube. Let $q_1,q_2,q_3$ be three of these uniform laws and
+$p=(q_1+q_2)/2$. Then
+\[
+ C(p)=1/16,\quad C(q_3)=1/8,\quad p\cdot q_3=0.
+\]
+The straight bridge to $q_3$ has minimum $1/24$ at $t=1/3$ and
+collision barrier $1/48$, attaining the sharp general bound.
+Nevertheless the bridge from $p$ to $q_1$ has overlap $p\cdot q_1=1/16$
+and collision $1/16+t^2/16$, which is monotone. Both targets have
+optimal collision $1/8$ by the residue-sensitive bound.
+Thus even an exactly sharp barrier to a selected optimum cannot be
+promoted to a barrier for reaching \emph{any} optimum. The globally
+optimal four-bit barrier required its additional section argument;
+there is no automatic extension to larger moment polytopes.
+
+\begin{thebibliography}{9}
+\bibitem{s24:AS} A. A. Ageev and M. I. Sviridenko, Pipage rounding:
+a new method of constructing algorithms with proven performance
+guarantee, Journal of Combinatorial Optimization 8 (2004), 307--328.
+\url{https://doi.org/10.1023/B:JOCO.0000038913.96607.c2}.
+\end{thebibliography}
+

@@ -1,0 +1,199 @@
+\section{A sharp exchange budget and constructive repair of repeated seeds}
+\label{sec:completion-budget}
+
+The classical unextendible $4\times12$ seed does admit a constructive
+repair: deleting one of its four rows permits a full completion.
+Tensor copies of this repair give a useful distinction between two
+costs. A single augmenting exchange can remain cheap even when the
+minimum number of original rows that must be discarded for a full
+completion grows without bound. The construction underlying the repair
+is classical Scarpis machinery, not a new Hadamard existence theorem;
+see Djokovi\'c, \emph{Generalization of Scarpis's theorem on Hadamard
+matrices}, \url{https://arxiv.org/abs/1601.00635}, especially its
+construction retaining all but one repeated input row. We give a
+self-contained exchange-budget argument and the order-twelve repair.
+No bibliographic priority is asserted for the budget interpretation.
+
+\begin{theorem}[Odd-block exchange budget]
+Let $K$ be a Hadamard matrix of order $m$, let $s>1$ be odd, and set
+$P=K\otimes(1,\ldots,1)$, with $s$ repeated entries in each block.
+Suppose $m-k$ original rows are retained, and $L$ additional sign rows
+are inserted so that all retained and inserted rows are mutually
+orthogonal. Then
+\[
+ L\le k s^2.
+\]
+In particular, completing a retained subset to an order-$ms$ Hadamard
+matrix requires deleting at least
+\[
+ k\ge\left\lceil\frac{m}{s+1}\right\rceil
+\]
+original rows. The conclusion allows arbitrary replacement rows and
+does not assume product structure in the inserted rows.
+\end{theorem}
+\begin{proof}
+For a sign row $v$ let $b_j(v)$ be its sum on block $j$ and put
+$E(v)=\sum_{j=1}^m b_j(v)^2$. Every block has odd size, so $E(v)\ge m$.
+An original repeated row has $E(v)=ms^2$.
+Let $e_j$ be the indicator of block $j$. Orthogonal sign rows have
+squared norm $ms$, so Bessel's inequality gives
+\[
+ \sum_v\langle v,e_j\rangle^2\le ms\|e_j\|^2=ms^2.
+\]
+Summing over the $m$ blocks and separating original and inserted rows,
+\[
+ (m-k)ms^2+Lm\le\sum_v E(v)\le m^2s^2.
+\]
+Thus $L\le ks^2$. A full completion has
+$L=ms-(m-k)=m(s-1)+k$, so
+$m(s-1)\le k(s^2-1)$, proving the deletion bound.
+\end{proof}
+
+The case $k=0$ recovers unextendibility. Equality $L=ks^2$ also forces
+every inserted row to have block sums in $\{+1,-1\}$ and equality in
+each blockwise Bessel inequality. Thus the bound identifies a concrete
+structure that a maximal-efficiency repair must exploit.
+
+\subsection{The order-twelve repair and its exact candidate code}
+Take $K=H_4$, with first row $h=(1,1,1,1)$ and three remaining
+orthogonal sign rows. Delete the repeated first row from
+$P=H_4\otimes(1,1,1)$. Orthogonality to the other three rows means
+the four block sums of a candidate row form $\lambda h$.
+Each block sum belongs to $\{-3,-1,1,3\}$, so up to negating the
+candidate, $\lambda$ is $1$ or $3$.
+
+The case $\lambda=3$ is exactly the deleted row. For $\lambda=1$,
+each block contains one negative entry and two positive entries.
+Encode the negative positions by a word in $\mathbb F_3^4$.
+This yields exactly $3^4=81$ candidate classes, besides the deleted
+row, hence $82$ antipodal candidate classes in total.
+Two encoded rows have inner product $4a-4$, where $a$ is the number
+of coordinates in which their words agree. Therefore they are
+orthogonal exactly when their words agree once. The deleted row
+has inner product $4$ with every encoded row, so cannot be retained
+alongside any of them.
+
+The nine words
+\[
+ c(x,y)=(x,y,x+y,x-y),\qquad x,y\in\mathbb F_3,
+\]
+agree pairwise in exactly one coordinate. To see this, subtract two
+words. If one of the two differences is zero, exactly its coordinate
+vanishes; otherwise their quotient is $1$ or $-1$, so exactly one
+of their sum and difference vanishes. The corresponding nine sign
+rows, together with the three retained seed rows, form a Hadamard
+matrix $B$ of order $12$.
+
+Conversely, every full completion of the three retained rows must
+use nine encoded rows. Indeed the exchange budget is saturated with
+$k=1,L=9$, forcing absolute block sums $1$. Its nine words agree
+pairwise once. Projection of these words onto any two coordinates is
+injective and hence bijective onto $\mathbb F_3^2$; they form an
+orthogonal array $\operatorname{OA}(9,4,3,2)$.
+Thus the finite affine-plane code is both a sufficient repair and a
+necessary combinatorial description of every completion in this
+normalization. Deleting any of the four original rows gives the same
+description after block sign changes.
+
+\begin{theorem}[Cheap augmentation versus exact linear completion cost]
+Let $T$ be a Hadamard matrix of order $t$ and set
+\[
+ P_t=(H_4\otimes(1,1,1))\otimes T.
+\]
+This is a $4t\times12t$ partial Hadamard matrix. It has the following
+properties, allowing a common column permutation throughout.
+\begin{enumerate}
+\item It has no additional orthogonal sign row.
+\item Its minimum deletion count for an augmenting exchange is exactly
+one: one old row can be replaced by two orthogonal new rows.
+\item Its minimum deletion count permitting full completion is exactly
+$t$.
+\item For every $0\le k\le t$, the exchange budget $L\le9k$ is
+attained: one can delete $k$ old rows and insert $9k$ new rows.
+Every such intermediate matrix is unextendible by an additional row.
+\end{enumerate}
+Consequently these two notions of repair cost separate arbitrarily
+far along, for example, the Sylvester orders $t=2^a$.
+\end{theorem}
+\begin{proof}
+Permuting tensor factors identifies the seed with
+$(H_4\otimes T)\otimes(1,1,1)$, so the exchange-budget theorem gives
+unextendibility and a full-completion lower bound
+$\lceil4t/4\rceil=t$.
+For each row $\tau$ of $T$, the four seed rows with second factor
+$\tau$ form a fiber. In that fiber replace $h\otimes(1,1,1)\otimes\tau$
+by the nine encoded rows of the order-twelve repair, tensored with
+$\tau$. Different fibers remain orthogonal because their $T$ rows
+are orthogonal. Repairing any $k$ fibers deletes $k$ old rows and
+inserts $9k$ rows, proving the fourth assertion. Repairing all fibers
+produces $B\otimes T$, a full completion after exactly $t$ deletions.
+An additional row at any intermediate stage would exceed the bound
+$L\le9k$, so every intermediate matrix is unextendible.
+For a single augmenting exchange use just two of the nine available
+rows in one fiber; zero deletions are impossible by unextendibility.
+\end{proof}
+
+In particular, taking $k=t-1$ gives an explicit unextendible
+$(12t-8)\times12t$ partial Hadamard matrix for every Hadamard order
+$t$. Thus the obstruction at exactly eight missing rows persists at
+unbounded orders, while one further fiber repair still completes it.
+
+This family does not obstruct an iterative constructive strategy:
+the displayed sequence of fiber repairs succeeds explicitly. It does
+show that a uniform bound on the cost of one augmenting step does not
+imply a uniform bound on the total number of original rows replaced.
+The stronger research target is a structural rule that finds such
+repairable fibers, or an analogue of their finite-array cancellation,
+inside general partial Hadamard matrices.
+
+\subsection{A rank-eight integral completion that cannot be made a sign completion}
+The residual Gram matrix for the base seed is explicitly
+\[
+ G=12I_{12}-P^{\mathsf T}P
+   =4I_4\otimes(3I_3-J_3).
+\]
+It is the orthogonal sum of four scaled $A_2$ triangle Gram blocks,
+with diagonal $8$ and off-diagonal $-4$ inside each triangle.
+In particular, it already admits an integer factor of the correct
+rank, even though it admits no sign factor.
+
+For an explicit factor, take
+\[
+ C=\begin{pmatrix}
+ 0&1&1&1\\-1&0&1&-1\\-1&-1&0&1\\-1&1&-1&0
+ \end{pmatrix},\qquad C^{\mathsf T}C=3I_4.
+\]
+For $j=1,\ldots,4$, let $e_j$ be a standard basis vector and $c_j$
+column $j$ of $C$. Define integer vectors in $\mathbb R^8$ by
+\[
+ \alpha_j=\binom{2e_j}{2e_j},\qquad
+ \beta_j=\binom{-e_j+c_j}{-e_j-c_j},\qquad
+ \gamma_j=-\alpha_j-\beta_j.
+\]
+Let $Y$ have these twelve columns, grouped into four triples.
+Their inner products are
+\[
+ \alpha_i\cdot\alpha_j=8\delta_{ij},\quad
+ \beta_i\cdot\beta_j=8\delta_{ij},\quad
+ \alpha_i\cdot\beta_j=-4\delta_{ij},
+\]
+which prove $Y^{\mathsf T}Y=G$. The nonzero eigenvalues of $G$ are
+all $12$, so $YY^{\mathsf T}=12I_8$. Also $PY^{\mathsf T}=0$,
+since the three columns in each block sum to zero. Thus stacking
+$P$ and $Y$ gives an integer matrix $Z$ with
+$ZZ^{\mathsf T}=12I_{12}$. Its completion rows have entries among
+$0,\pm1,2$, not exclusively signs.
+
+The same distinction persists at unbounded orders with exactly eight
+missing rows. In the preceding tensor construction repair all but one
+fiber, and call its remaining $12t-8$ sign rows $X$. If $\tau$ is the
+unrepaired row of $T$, then
+\[
+ 12tI-X^{\mathsf T}X=G\otimes(\tau^{\mathsf T}\tau).
+\]
+The eight integer rows $Y\otimes\tau$ give an exact orthogonal
+completion, with squared norm $12t$ per row. Yet no single additional
+sign row exists. Therefore integer rank-eight Gram factorization,
+even with an explicit integral orthogonal completion, does not supply
+the missing sign constraint. This is an explicit obstruction to a
+pure integrality shortcut in residual-lattice arguments.

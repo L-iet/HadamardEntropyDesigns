@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "smallPOVMExactCommutatorEnergy": "3/4",
+  "h": 16,
+  "k": 12,
+  "n": 192,
+  "m": 256,
+  "relativeCollision": "3/4",
+  "effectProjectivityDefect": "3/16",
+  "normalizedCommutatorEnergy": "73497/262144",
+  "maximumPairOperatorCommutatorSquared": "449183/268435456",
+  "flatWalshNaimarkDimension": 256,
+  "relativeDilationOverhead": "1/3",
+  "exactHadamardMixtureTVDistance": "11/12",
+  "orthogonalityGraph": "h disjoint K_h"
+}

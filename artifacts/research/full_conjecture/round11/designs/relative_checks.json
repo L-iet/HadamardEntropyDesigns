@@ -1,0 +1,114 @@
+{
+  "passed": true,
+  "plotkinGroupBounds": [
+    {
+      "h": 4,
+      "k": 2,
+      "groupBound": 1,
+      "normalizedMixedCandidates": 0,
+      "excludedGroupSize": 2,
+      "states": 1
+    },
+    {
+      "h": 4,
+      "k": 3,
+      "groupBound": 2,
+      "normalizedMixedCandidates": 1,
+      "excludedGroupSize": 3,
+      "states": 1
+    },
+    {
+      "h": 4,
+      "k": 4,
+      "groupBound": 4,
+      "normalizedMixedCandidates": 3,
+      "excludedGroupSize": 5,
+      "states": 1
+    },
+    {
+      "h": 8,
+      "k": 5,
+      "groupBound": 2,
+      "normalizedMixedCandidates": 1,
+      "excludedGroupSize": 3,
+      "states": 1
+    },
+    {
+      "h": 8,
+      "k": 6,
+      "groupBound": 2,
+      "normalizedMixedCandidates": 5,
+      "excludedGroupSize": 3,
+      "states": 6
+    },
+    {
+      "h": 8,
+      "k": 7,
+      "groupBound": 4,
+      "normalizedMixedCandidates": 15,
+      "excludedGroupSize": 5,
+      "states": 58
+    },
+    {
+      "h": 8,
+      "k": 8,
+      "groupBound": 8,
+      "normalizedMixedCandidates": 35,
+      "excludedGroupSize": 9,
+      "states": 813
+    },
+    {
+      "h": 16,
+      "k": 12,
+      "groupBound": 3,
+      "normalizedMixedCandidates": 165,
+      "excludedGroupSize": 4,
+      "states": 166
+    }
+  ],
+  "spanningSlopeCases": [
+    {
+      "h": 8,
+      "k": 5,
+      "order": 40,
+      "omittedSlopes": [
+        1,
+        2,
+        4
+      ],
+      "omittedSlopeRank": 3,
+      "atoms": 64,
+      "exactOrthogonalityGraph": "8 disjoint K_8",
+      "collision": "1/64",
+      "relativeCollisionIfHadamardOrder": "5/8",
+      "TVLowerBound": "4/5",
+      "exactMoments": true,
+      "strictLocalVertexCharacterCertificate": true
+    },
+    {
+      "h": 16,
+      "k": 12,
+      "order": 192,
+      "omittedSlopes": [
+        1,
+        2,
+        4,
+        8
+      ],
+      "omittedSlopeRank": 4,
+      "atoms": 256,
+      "exactOrthogonalityGraph": "16 disjoint K_16",
+      "collision": "1/256",
+      "relativeCollisionIfHadamardOrder": "3/4",
+      "TVLowerBound": "11/12",
+      "exactMoments": true,
+      "strictLocalVertexCharacterCertificate": true,
+      "HadamardKConstruction": "Paley11 gives H12",
+      "completedAtoms": 3072,
+      "exactDistance": "11/12",
+      "globalCollision": "1/192",
+      "absoluteCollisionDeficit": "1/768"
+    }
+  ],
+  "noIntegerBlockRepairClaimWhenKDoesNotDivideH": true
+}

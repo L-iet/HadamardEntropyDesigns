@@ -1,0 +1,45 @@
+name: Build and audit formalization
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 120
+    env:
+      LEAN_NUM_THREADS: '2'
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - name: Check structure and scanner controls
+        run: |
+          python3 scripts/test_submission_checks.py
+          python3 scripts/test_construction_provenance.py
+          python3 scripts/test_comparison_groups.py
+          python3 scripts/test_comparison_coverage.py
+          python3 scripts/check_submission.py
+      - uses: leanprover/lean-action@38fbc41a8c28c4cbaec22d7f7de508ec2e7c0dd9
+        with:
+          build: false
+      - name: Build proof modules
+        run: lake build
+      - name: Audit pinned licenses and target axioms
+        run: |
+          python3 scripts/audit_mathlib_licenses.py
+          python3 scripts/audit_axioms.py
+      - name: Validate pinned metadata schema
+        run: |
+          python3 -m pip install -r scripts/requirements-submission.txt
+          python3 scripts/validate_metadata.py
+      - name: Install sandbox runtime
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y bubblewrap
+      - name: Compare independent targets with sandboxed Comparator
+        run: python3 scripts/run_comparator.py
+      - name: Require complete principal coverage before submission
+        run: python3 scripts/check_submission_preparation.py --require-sandbox

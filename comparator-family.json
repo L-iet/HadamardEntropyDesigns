@@ -1,0 +1,19 @@
+{
+  "challenge_module": "FamilyChallenge",
+  "solution_module": "FamilySolution",
+  "theorem_names": [
+    "EntropyDesigns.binarySeed_bijective",
+    "EntropyDesigns.ConcentratedFamily.concentrated_witness_exists",
+    "EntropyDesigns.ConcentratedFamily.concentrated_sharp_distance",
+    "EntropyDesigns.ConcentratedFamily.concentrated_exact_repair",
+    "EntropyDesigns.ConcentratedFamily.concentrated_all_repairs_lower",
+    "EntropyDesigns.ConcentratedFamily.concentrated_canonical_limits"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "enable_nanoda": true
+}

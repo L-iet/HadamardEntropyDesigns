@@ -1,0 +1,56 @@
+{
+  "checkedAtUTC": "2026-11-21T05:55:45.180357+00:00",
+  "pages": {
+    "phase_rounding.tex": 3,
+    "research.tex": 10
+  },
+  "checkersPassed": [
+    "rounding/check.py",
+    "weighing/check.py",
+    "spectral/check.py",
+    "phase_quantum/check.py"
+  ],
+  "typesettingChecksPassed": true,
+  "files": {
+    "build.py": "316242e6ac2a5058c23669ac52776b0816f3efcaccac8792db2fd8c0cff3ea68",
+    "phase_quantum\\check.py": "5ef6c8457f600389553c8ddd4efafddde3159753c5738f70818d943b5a24912f",
+    "phase_quantum\\checks.json": "12d9bf3d6522a0f226b7ef5e6352fcccf700999e7fae1ae4f86ff39c1877695f",
+    "phase_quantum\\completion.tex": "1efafb32ccce2e8b0cf0a8a6d98bc9266227955bde9b4b62ae7be142d50bb7d5",
+    "phase_quantum\\paper.pdf": "443ea3c5b74ddb7d411ea06eb0eaa147988ff7e79c69983115502d9d3b5d2716",
+    "phase_quantum\\paper.tex": "95e6b195cd3702a0d00ae7a828ae37e2cf30b87d260418a29f931120e8f2513a",
+    "phase_quantum\\README.txt": "cda2b5856a2d21c39df4ebee183518171e2c80600c165e91d9c1d0b748b474df",
+    "phase_quantum\\search.json": "33e48629563f55b32c187118a90c92002675d693bd2f904081c71c2432f37352",
+    "phase_quantum\\search.py": "588cd060a1168d64060b1887b0987d3aa56b6feb36114aa609ff42f911884f20",
+    "phase_rounding.pdf": "51be9d4575e0c290c3b7ac9d3053041f76abe5b682b078c40ca3a292f4cc2f8c",
+    "phase_rounding.tex": "91d3edd5ef58c20195a377384fc191b1f7df9d2468698db9935e34d2217dbefc",
+    "PRIOR_ART.txt": "5f0f05f0ea666862491a481fc498517bb51076ba2e0c2aefc77a461635b06d3c",
+    "qa.py": "d505c891f835d653190277e848c04e31625995bc9a150865b8e3e21d88e704d7",
+    "README.txt": "02ad1f15366e039e90783b01053dac0f511506d4a3bfac3b53b37f5abbcd38f5",
+    "research.pdf": "573077cbc74c867d62dfa46f8645c779f102c50b4019daf10b31d40c8f0ad7ea",
+    "research.tex": "55586e75b764a430fcefa80252c648751e7ded8532b3d936edbbd74988929753",
+    "rounding\\check.py": "65ad37b46350879dd099a05bd37323623011c7488e3e04e204d01960bc0efd93",
+    "rounding\\checks.json": "6fdfc09f771ce7cb19e40a22b6dfd00358d71355bd4b0cc078502f757f2b8866",
+    "rounding\\README.txt": "3da2973c606ac1fd69cc973f9084b1d746953ac60b6f1225deb5b6e4a62fb48b",
+    "rounding\\rounding.tex": "961430b50b8aa45e05e390991af0f9254d3759b403041dbcd365b701c26eb8d1",
+    "spectral\\check.py": "f65c8f71e5e496de583774bf556a9ae1c693a1e3a221d9f6d15ab6cdc6947947",
+    "spectral\\checks.json": "0f5527276f16459edc9729dc6c5454c1146d9bd5c72db4c66d42a5e49e1a59cb",
+    "spectral\\explore.py": "149e149f23ba51a6e95f38771f8b1d26b74f43eede06553395d3c2eb55089855",
+    "spectral\\flips.tex": "d08174ab1fa3f1410204ffc66e69da7e4a8bc79505238025d3e32a5424218674",
+    "spectral\\README.txt": "5957373306a712ce61cd9ad63a541b9396183b468bc8f9ab312c434a6811bb9f",
+    "spectral\\spectral.tex": "d08174ab1fa3f1410204ffc66e69da7e4a8bc79505238025d3e32a5424218674",
+    "spectral\\trap12.json": "0009ccf1caefc57b612826e51e7e62de98d8e803b7276a88875ab644e67847b1",
+    "spectral\\trap16.json": "fe3deb6b18617db26434c0616335a9219d0d62bdb64e2096ec159d93800cf329",
+    "spectral\\trap8.json": "f9eee460ed3fe5c7a99ee4cc8d16dddb735774ed4b27cb82dcf6ec7a64b1d89d",
+    "weighing\\check.py": "e64160461e8d5816bfee3bf5309a4aad59c615c2963ef3bf74a6f696610096c5",
+    "weighing\\checks.json": "8898f93a88a3fe3426cace823a559d39a8156912c040193da5c3b02559c9f6e1",
+    "weighing\\README.txt": "1f9475f1fcc72309bfd35018c3edbdb64a77a98f978b9d792b23805d3a23adff",
+    "weighing\\weighing.tex": "ae43be1fc640731deb113fdd8668090cd903c4874406564acdfc0567ca74dafa"
+  },
+  "scope": {
+    "hadamardConjectureProved": false,
+    "unknownOrderConstructed": false,
+    "noveltyEstablished": false,
+    "leanFormalization": false,
+    "gitCommits": false
+  }
+}

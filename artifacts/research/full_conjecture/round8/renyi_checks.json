@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "analyticVertices": 26,
+  "exhaustiveActiveSets": 4368,
+  "uniformVertices": 10,
+  "weightedVertices": 16,
+  "integerExponentLocalChecks": 130,
+  "transitionBracket": [
+    6,
+    7
+  ],
+  "rationalHullMixtures": 100,
+  "scope": "The real-parameter theorem uses the analytic proof, not numerical interpolation."
+}

@@ -1,0 +1,165 @@
+\section{A four-phase route and a quantitative Fourier obstruction}
+\label{sec:four-phase-route}
+
+A quaternary Hadamard matrix $B$ of order $m$, also denoted
+$\mathrm{BH}(m,4)$, has entries in $\mu_4=\{1,-1,i,-i\}$ and
+$BB^*=mI_m$. Such matrices give real Hadamard matrices of order
+$2m$. This is a classical construction, not a new existence theorem;
+see Butson, \emph{Generalized Hadamard matrices} (1962),
+\url{https://doi.org/10.1090/S0002-9939-1962-0142557-0},
+and Egan et al., the morphism discussion in
+\url{https://ajc.maths.uq.edu.au/pdf/73/ajc_v73_p501.pdf}.
+
+This route permits arbitrary complex phases as an initial search
+space, which is nonempty in every dimension, but the final four-phase
+constraint must actually be met. The results below give an exact
+phase criterion and a quantitative obstruction to some obvious
+Fourier deformations. Priority for the combined observations remains
+unestablished; neither gives an all-order existence theorem.
+
+\subsection{Exact realification and the missing monomial structure}
+For a complex matrix $Z$ write $\mathcal R(Z)$ for its realification,
+replacing $x+iy$ by $\left(\begin{smallmatrix}x&-y\\y&x\end{smallmatrix}\right)$.
+It respects products and sends conjugate transpose to real transpose.
+For $B\in\mathrm{BH}(m,4)$, put
+\[
+                   H=\mathcal R((1+i)B).
+\]
+Its entries are signs and $HH^T=2mI_{2m}$. Thus proving
+$\mathrm{BH}(2t,4)$ existence for every positive $t$ would suffice
+for the full real Hadamard conjecture. No converse or proof of this
+stronger target is being assumed.
+
+\begin{proposition}[A signed complex-structure criterion]
+\label{quat:structure}
+A real Hadamard matrix $H$ of order $2m$ is equivalent, by row/column
+permutations and sign changes, to such a realification if and only if there are signed
+permutation matrices $J_{\rm row},J_{\rm col}$ with
+\[
+ J_{\rm row}^2=J_{\rm col}^2=-I,\qquad
+                         HJ_{\rm col}=J_{\rm row}H.
+\]
+\end{proposition}
+\begin{proof}
+Each signed permutation squaring to $-I$ pairs coordinates, with
+opposite signs on each two-cycle. Signed permutations of coordinates
+put each into the canonical block form
+$J=\operatorname{diag}(\left(\begin{smallmatrix}0&-1\\1&0\end{smallmatrix}\right))$.
+Transform rows and columns independently. The intertwining equation
+becomes $H'J=JH'$, so every two-square block is
+$\left(\begin{smallmatrix}a&-b\\b&a\end{smallmatrix}\right)$ with
+$a,b\in\{\pm1\}$. Hence $H'=\mathcal R(Z)$ and
+$ZZ^*=2mI_m$. Dividing $Z$ by $1+i$ gives a quaternary matrix
+of Gram $mI_m$. The converse follows by taking the canonical $J$
+on both sides of the displayed realification.
+\end{proof}
+
+The signed-permutation condition is essential. For any even-order
+scaled orthogonal $H$ and any orthogonal complex structure $J_{\rm col}$,
+one can set $J_{\rm row}=HJ_{\rm col}H^T/(2m)$. This always gives
+an intertwiner and a real orthogonal complex structure, but usually
+not a signed permutation. It need not pair individual coordinates,
+so it does not give a four-phase matrix. The checker verifies this
+failure for the default adjacent pairing on a normalized Paley $H_{12}$;
+it does not claim that no other pairing works.
+
+\subsection{An invariant that detects four-phase accessibility}
+Let $F$ be any complex Hadamard matrix of order $n$ with unit-modulus
+entries. Write $F^{\circ4}$ for its entrywise fourth power and define
+\[
+                 \rho_4(F)=\frac{\|F^{\circ4}\|_{\rm op}}n.
+\]
+Multiplying rows or columns by unit phases, or permuting them, does
+not change $\rho_4$, since these operations induce unitary monomial
+operations on $F^{\circ4}$.
+
+\begin{theorem}[Exact criterion and quantitative separation]
+\label{quat:phase-defect}
+One has $\rho_4(F)\le1$, with equality if and only if $F$ can be
+converted into a quaternary Hadamard matrix by row and column phases.
+For every matrix $F'$ equivalent to $F$ under row/column phases and
+permutations, and every matrix $Q$ with entries in $\mu_4$,
+\[
+              \frac{\|F'-Q\|_F^2}{n^2}
+                    \ge\frac{1-\rho_4(F)}8.
+\]
+The comparison matrix $Q$ need not be Hadamard.
+\end{theorem}
+\begin{proof}
+The Frobenius norm of $M=F^{\circ4}$ is $n$, so its operator norm
+is at most $n$. Equality is equivalent to $M$ having rank one.
+A rank-one matrix with unit-modulus entries factors as $M_{ij}=u_i v_j$
+with unit $u_i,v_j$; choose fourth-root row and column phases to
+remove them. The transformed entries then have fourth power one,
+and the Hadamard Gram is preserved. The reverse implication is immediate.
+
+For the quantitative bound, set $M'=(F')^{\circ4}$ and let $J_n$
+be the all-one matrix. Since $|z^4-w^4|\le4|z-w|$ on the unit circle,
+\[
+ 16\|F'-Q\|_F^2\ge\|M'-J_n\|_F^2
+ =2n^2-2\operatorname{Re}(\mathbf1^TM'\mathbf1)
+ \ge2n^2-2n\|M'\|_{\rm op}.
+\]
+Use invariance of the operator norm under the phase and permutation
+changes to obtain the result.
+\end{proof}
+
+This criterion is a spectral version of the classical four-cycle
+phase invariants of complex Hadamard equivalence. The relevant
+background and the block deformation construction below are discussed
+in Tadej--\.Zyczkowski, \emph{A concise guide to complex Hadamard matrices},
+\url{https://arxiv.org/abs/quant-ph/0512154}.
+It does not show that an optimizer of $\rho_4$ reaches one.
+
+\subsection{Fourier blocks retain a definite obstruction}
+Let $\mathcal F_m=(\zeta_m^{ij})_{0\le i,j<m}$ and $d=\gcd(m,4)$.
+Direct character orthogonality gives
+\[
+ (\mathcal F_m^{\circ4}(\mathcal F_m^{\circ4})^*)_{ij}
+ =\begin{cases}m&m\mid4(i-j),\\0&\text{otherwise}.\end{cases}
+\]
+There are $m/d$ all-one blocks of size $d$ after row reordering, so
+\[
+ \operatorname{rank}(\mathcal F_m^{\circ4})=m/d,\qquad
+ \rho_4(\mathcal F_m)=\sqrt{d/m}.
+\]
+In particular Fourier row/column phases can produce a quaternary
+matrix exactly when $m$ divides four. Arbitrary phases do not remove
+this obstruction.
+
+More generally take an order-$r$ complex Hadamard matrix $A$,
+unit phases $u_{bi}$, and the classical block family
+\[
+ F_{(a,i),(b,j)}=A_{ab}u_{bi}\zeta_m^{ij}.
+\]
+It is Hadamard: inner products vanish in the Fourier factor for
+distinct $i$, and otherwise reduce to those of $A$.
+Every fourth-power block has operator norm $\sqrt{md}$.
+For a vector partitioned into $r$ blocks, the triangle and
+Cauchy--Schwarz inequalities therefore bound the full operator norm
+by $r\sqrt{md}$. Consequently
+\[
+ \rho_4(F)\le\sqrt{d/m},\qquad
+ \inf_{F'\sim F,\ Q\in\mu_4^{rm\times rm}}
+ \frac{\|F'-Q\|_F^2}{(rm)^2}
+ \ge\frac{1-\sqrt{d/m}}8.
+\]
+Thus these Fourier-block deformations cannot reach the four-phase
+target when $m\nmid4$, even with arbitrarily chosen deformation phases.
+This excludes one search family, not every continuous path through
+complex Hadamard matrices.
+
+At order six the distinction is concrete: Fourier $\mathcal F_6$
+has $\rho_4=1/\sqrt3<1$, whereas a symmetric conference matrix $C$
+of order six gives $B=I+iC\in\mathrm{BH}(6,4)$, with $\rho_4(B)=1$.
+Its realification gives the classical $H_{12}$. The checker verifies
+this and the corresponding orders fourteen and eighteen in exact
+Gaussian-integer arithmetic, producing real orders twenty-eight
+and thirty-six. The conference construction comes from Paley's
+known prime-field matrices, not an unknown-order existence argument.
+
+The sufficient research target is now precise: find a four-phase
+complex Hadamard matrix at every even order, or force $\rho_4=1$
+somewhere in each corresponding complex-Hadamard space.
+Those spaces are nonempty, but their Fourier phase or block
+families alone cannot supply the general conclusion.

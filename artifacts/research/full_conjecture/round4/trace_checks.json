@@ -1,0 +1,545 @@
+{
+  "passed": true,
+  "baseCases": 67,
+  "directTensorCases": 6,
+  "quarticA5TraceActivation": 8,
+  "cases": [
+    {
+      "rows": 1,
+      "columns": 2,
+      "p": 3,
+      "q": "1",
+      "r": "1",
+      "rotationTrace": "-3"
+    },
+    {
+      "rows": 1,
+      "columns": 2,
+      "p": 4,
+      "q": "1",
+      "r": "1",
+      "rotationTrace": "-4"
+    },
+    {
+      "rows": 1,
+      "columns": 2,
+      "p": 5,
+      "q": "1",
+      "r": "1",
+      "rotationTrace": "-5"
+    },
+    {
+      "rows": 1,
+      "columns": 2,
+      "p": 6,
+      "q": "1",
+      "r": "1",
+      "rotationTrace": "-6"
+    },
+    {
+      "rows": 2,
+      "columns": 2,
+      "p": 3,
+      "q": "2",
+      "r": "2",
+      "rotationTrace": "-6"
+    },
+    {
+      "rows": 2,
+      "columns": 2,
+      "p": 4,
+      "q": "2",
+      "r": "2",
+      "rotationTrace": "-8"
+    },
+    {
+      "rows": 2,
+      "columns": 2,
+      "p": 5,
+      "q": "2",
+      "r": "2",
+      "rotationTrace": "-10"
+    },
+    {
+      "rows": 2,
+      "columns": 2,
+      "p": 6,
+      "q": "2",
+      "r": "2",
+      "rotationTrace": "-12"
+    },
+    {
+      "rows": 1,
+      "columns": 3,
+      "p": 3,
+      "q": "17/27",
+      "r": "5/3",
+      "rotationTrace": "22/9"
+    },
+    {
+      "rows": 1,
+      "columns": 3,
+      "p": 4,
+      "q": "11/27",
+      "r": "1",
+      "rotationTrace": "104/27"
+    },
+    {
+      "rows": 1,
+      "columns": 3,
+      "p": 5,
+      "q": "65/243",
+      "r": "17/27",
+      "rotationTrace": "370/81"
+    },
+    {
+      "rows": 1,
+      "columns": 3,
+      "p": 6,
+      "q": "43/243",
+      "r": "11/27",
+      "rotationTrace": "388/81"
+    },
+    {
+      "rows": 3,
+      "columns": 3,
+      "p": 3,
+      "q": "17/9",
+      "r": "5",
+      "rotationTrace": "22/3"
+    },
+    {
+      "rows": 3,
+      "columns": 3,
+      "p": 4,
+      "q": "11/9",
+      "r": "3",
+      "rotationTrace": "104/9"
+    },
+    {
+      "rows": 3,
+      "columns": 3,
+      "p": 5,
+      "q": "65/81",
+      "r": "17/9",
+      "rotationTrace": "370/27"
+    },
+    {
+      "rows": 3,
+      "columns": 3,
+      "p": 6,
+      "q": "43/81",
+      "r": "11/9",
+      "rotationTrace": "388/27"
+    },
+    {
+      "rows": 1,
+      "columns": 4,
+      "p": 3,
+      "q": "1/2",
+      "r": "2",
+      "rotationTrace": "9/2"
+    },
+    {
+      "rows": 1,
+      "columns": 4,
+      "p": 4,
+      "q": "1/4",
+      "r": "1",
+      "rotationTrace": "6"
+    },
+    {
+      "rows": 1,
+      "columns": 4,
+      "p": 5,
+      "q": "1/8",
+      "r": "1/2",
+      "rotationTrace": "45/8"
+    },
+    {
+      "rows": 1,
+      "columns": 4,
+      "p": 6,
+      "q": "1/16",
+      "r": "1/4",
+      "rotationTrace": "9/2"
+    },
+    {
+      "rows": 2,
+      "columns": 4,
+      "p": 3,
+      "q": "1",
+      "r": "4",
+      "rotationTrace": "9"
+    },
+    {
+      "rows": 2,
+      "columns": 4,
+      "p": 4,
+      "q": "1/2",
+      "r": "2",
+      "rotationTrace": "12"
+    },
+    {
+      "rows": 2,
+      "columns": 4,
+      "p": 5,
+      "q": "1/4",
+      "r": "1",
+      "rotationTrace": "45/4"
+    },
+    {
+      "rows": 2,
+      "columns": 4,
+      "p": 6,
+      "q": "1/8",
+      "r": "1/2",
+      "rotationTrace": "9"
+    },
+    {
+      "rows": 4,
+      "columns": 4,
+      "p": 3,
+      "q": "2",
+      "r": "8",
+      "rotationTrace": "18"
+    },
+    {
+      "rows": 4,
+      "columns": 4,
+      "p": 4,
+      "q": "1",
+      "r": "4",
+      "rotationTrace": "24"
+    },
+    {
+      "rows": 4,
+      "columns": 4,
+      "p": 5,
+      "q": "1/2",
+      "r": "2",
+      "rotationTrace": "45/2"
+    },
+    {
+      "rows": 4,
+      "columns": 4,
+      "p": 6,
+      "q": "1/4",
+      "r": "1",
+      "rotationTrace": "18"
+    },
+    {
+      "rows": 1,
+      "columns": 5,
+      "p": 3,
+      "q": "59/125",
+      "r": "11/5",
+      "rotationTrace": "588/125"
+    },
+    {
+      "rows": 1,
+      "columns": 5,
+      "p": 4,
+      "q": "29/125",
+      "r": "1",
+      "rotationTrace": "688/125"
+    },
+    {
+      "rows": 1,
+      "columns": 5,
+      "p": 5,
+      "q": "371/3125",
+      "r": "59/125",
+      "rotationTrace": "2932/625"
+    },
+    {
+      "rows": 1,
+      "columns": 5,
+      "p": 6,
+      "q": "197/3125",
+      "r": "29/125",
+      "rotationTrace": "11112/3125"
+    },
+    {
+      "rows": 2,
+      "columns": 5,
+      "p": 3,
+      "q": "118/125",
+      "r": "22/5",
+      "rotationTrace": "1176/125"
+    },
+    {
+      "rows": 2,
+      "columns": 5,
+      "p": 4,
+      "q": "58/125",
+      "r": "2",
+      "rotationTrace": "1376/125"
+    },
+    {
+      "rows": 2,
+      "columns": 5,
+      "p": 5,
+      "q": "742/3125",
+      "r": "118/125",
+      "rotationTrace": "5864/625"
+    },
+    {
+      "rows": 2,
+      "columns": 5,
+      "p": 6,
+      "q": "394/3125",
+      "r": "58/125",
+      "rotationTrace": "22224/3125"
+    },
+    {
+      "rows": 5,
+      "columns": 5,
+      "p": 3,
+      "q": "59/25",
+      "r": "11",
+      "rotationTrace": "588/25"
+    },
+    {
+      "rows": 5,
+      "columns": 5,
+      "p": 4,
+      "q": "29/25",
+      "r": "5",
+      "rotationTrace": "688/25"
+    },
+    {
+      "rows": 5,
+      "columns": 5,
+      "p": 5,
+      "q": "371/625",
+      "r": "59/25",
+      "rotationTrace": "2932/125"
+    },
+    {
+      "rows": 5,
+      "columns": 5,
+      "p": 6,
+      "q": "197/625",
+      "r": "29/25",
+      "rotationTrace": "11112/625"
+    },
+    {
+      "rows": 1,
+      "columns": 6,
+      "p": 3,
+      "q": "13/27",
+      "r": "7/3",
+      "rotationTrace": "35/9"
+    },
+    {
+      "rows": 1,
+      "columns": 6,
+      "p": 4,
+      "q": "7/27",
+      "r": "1",
+      "rotationTrace": "100/27"
+    },
+    {
+      "rows": 1,
+      "columns": 6,
+      "p": 5,
+      "q": "37/243",
+      "r": "13/27",
+      "rotationTrace": "25/9"
+    },
+    {
+      "rows": 1,
+      "columns": 6,
+      "p": 6,
+      "q": "23/243",
+      "r": "7/27",
+      "rotationTrace": "170/81"
+    },
+    {
+      "rows": 3,
+      "columns": 6,
+      "p": 3,
+      "q": "13/9",
+      "r": "7",
+      "rotationTrace": "35/3"
+    },
+    {
+      "rows": 3,
+      "columns": 6,
+      "p": 4,
+      "q": "7/9",
+      "r": "3",
+      "rotationTrace": "100/9"
+    },
+    {
+      "rows": 3,
+      "columns": 6,
+      "p": 5,
+      "q": "37/81",
+      "r": "13/9",
+      "rotationTrace": "25/3"
+    },
+    {
+      "rows": 3,
+      "columns": 6,
+      "p": 6,
+      "q": "23/81",
+      "r": "7/9",
+      "rotationTrace": "170/27"
+    },
+    {
+      "rows": 6,
+      "columns": 6,
+      "p": 3,
+      "q": "26/9",
+      "r": "14",
+      "rotationTrace": "70/3"
+    },
+    {
+      "rows": 6,
+      "columns": 6,
+      "p": 4,
+      "q": "14/9",
+      "r": "6",
+      "rotationTrace": "200/9"
+    },
+    {
+      "rows": 6,
+      "columns": 6,
+      "p": 5,
+      "q": "74/81",
+      "r": "26/9",
+      "rotationTrace": "50/3"
+    },
+    {
+      "rows": 6,
+      "columns": 6,
+      "p": 6,
+      "q": "46/81",
+      "r": "14/9",
+      "rotationTrace": "340/27"
+    },
+    {
+      "rows": 1,
+      "columns": 7,
+      "p": 3,
+      "q": "173/343",
+      "r": "17/7",
+      "rotationTrace": "846/343"
+    },
+    {
+      "rows": 1,
+      "columns": 7,
+      "p": 4,
+      "q": "103/343",
+      "r": "1",
+      "rotationTrace": "408/343"
+    },
+    {
+      "rows": 1,
+      "columns": 7,
+      "p": 5,
+      "q": "3317/16807",
+      "r": "173/343",
+      "rotationTrace": "3690/16807"
+    },
+    {
+      "rows": 1,
+      "columns": 7,
+      "p": 6,
+      "q": "2287/16807",
+      "r": "103/343",
+      "rotationTrace": "468/16807"
+    },
+    {
+      "rows": 3,
+      "columns": 7,
+      "p": 3,
+      "q": "519/343",
+      "r": "51/7",
+      "rotationTrace": "2538/343"
+    },
+    {
+      "rows": 3,
+      "columns": 7,
+      "p": 4,
+      "q": "309/343",
+      "r": "3",
+      "rotationTrace": "1224/343"
+    },
+    {
+      "rows": 3,
+      "columns": 7,
+      "p": 5,
+      "q": "9951/16807",
+      "r": "519/343",
+      "rotationTrace": "11070/16807"
+    },
+    {
+      "rows": 3,
+      "columns": 7,
+      "p": 6,
+      "q": "6861/16807",
+      "r": "309/343",
+      "rotationTrace": "1404/16807"
+    },
+    {
+      "rows": 7,
+      "columns": 7,
+      "p": 3,
+      "q": "173/49",
+      "r": "17",
+      "rotationTrace": "846/49"
+    },
+    {
+      "rows": 7,
+      "columns": 7,
+      "p": 4,
+      "q": "103/49",
+      "r": "7",
+      "rotationTrace": "408/49"
+    },
+    {
+      "rows": 7,
+      "columns": 7,
+      "p": 5,
+      "q": "3317/2401",
+      "r": "173/49",
+      "rotationTrace": "3690/2401"
+    },
+    {
+      "rows": 7,
+      "columns": 7,
+      "p": 6,
+      "q": "2287/2401",
+      "r": "103/49",
+      "rotationTrace": "468/2401"
+    },
+    {
+      "rows": 4,
+      "columns": 4,
+      "p": 3,
+      "q": "4",
+      "r": "4",
+      "rotationTrace": "-36"
+    },
+    {
+      "rows": 4,
+      "columns": 4,
+      "p": 4,
+      "q": "4",
+      "r": "4",
+      "rotationTrace": "-48"
+    },
+    {
+      "rows": 4,
+      "columns": 4,
+      "p": 6,
+      "q": "4",
+      "r": "4",
+      "rotationTrace": "-72"
+    }
+  ],
+  "scope": "Exact checks support the written proof; no general theorem is inferred from finite cases."
+}

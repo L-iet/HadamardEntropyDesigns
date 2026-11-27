@@ -1,0 +1,127 @@
+\section{Small moment errors can require almost complete support replacement}
+\label{sec:rank-rounding}
+This section connects the distribution target with elementary binary
+matrix rigidity. We distinguish binary conversion $(1-H)/2$ from
+reducing the sign matrix itself modulo two, which would lose all
+sign information.
+
+Let $N\ge12$, $N\equiv4\pmod8$, and put $d=N-4$. The preceding
+collision theorem says that an exactly unbiased pairwise-independent
+law on at most $N$ sign vectors is uniform on exactly $N$ vectors.
+Thus every minimal-support target has the following binary rank.
+
+\begin{lemma}[Binary rank of a minimal-support target]
+\label{lem:rank-target}
+For such a target, let $Y$ be the $N\times d$ binary matrix with
+$Y_{ij}=(1-x_{ij})/2$. Then
+\[
+ Y^TY=I_d+J_d\quad\text{over }\mathbb F_2,
+ \qquad \operatorname{rank}_{\mathbb F_2}Y=d.
+\]
+\end{lemma}
+\begin{proof}
+Every column has $N/2$ negative signs, an even integer. Every distinct
+pair of columns has $N/4$ simultaneous negative signs, an odd integer.
+These give diagonal zero and off-diagonal one. Since $d$ is even,
+$(I+J)^2=I$ over $\mathbb F_2$, so the Gram matrix is invertible.
+\end{proof}
+
+\begin{theorem}[Support-overlap rigidity]\label{thm:rank-overlap}
+If a binary linear code $\mathcal C\subseteq\mathbb F_2^d$ has
+dimension at most $r$, every minimal-support target intersects it in
+at most $r+4$ atoms. Consequently a uniform $N$-point candidate
+supported in $\mathcal C$ has total-variation distance at least
+\[
+ 1-\frac{r+4}{N}
+\]
+from every exactly pairwise-independent law on at most $N$ points.
+At least $N-r-4$ atoms must be replaced; changing their weights alone
+cannot avoid this conclusion.
+\end{theorem}
+\begin{proof}
+Let $k$ target rows belong to $\mathcal C$. Their binary span has
+dimension at most $r$, and the remaining $N-k$ rows add at most
+$N-k$ dimensions. Lemma~\ref{lem:rank-target} gives
+$N-4\le r+N-k$, hence $k\le r+4$.
+Both laws in the distance assertion are uniform on $N$ points;
+their total-variation distance is one minus their support overlap
+divided by $N$. The earlier support theorem also rules out a smaller
+positive support or nonuniform exact reweighting.
+\end{proof}
+
+\begin{proposition}[An explicit near-moment candidate]
+\label{prop:rank-walsh-candidate}
+Let $L=2^r$, $d=N-4\ge L/2$, and $N\le L$. Observe the distinct
+characters with binary masks $1,\ldots,d$ on $\mathbb F_2^r$.
+Choose any $N$ seed points and give them equal weights. The resulting
+law $P$ has $N$ distinct atoms,
+\[
+ C(P)=1/N,\qquad
+ \max_{1\le|S|\le2}|\mathbb E_P\chi_S|\le\frac{L-N}{N}.
+\]
+Nevertheless its distance from every minimal-support target is at
+least $1-(r+4)/N$.
+It is simultaneously close to an exactly feasible law: if $U$ is
+the full uniform Walsh law, then
+\[
+ d_{\rm TV}(P,U)=1-N/L,\qquad C(U)=1/L.
+\]
+\end{proposition}
+\begin{proof}
+The observed masks include a binary basis because $d\ge L/2$, so
+the seed-to-atom map is injective. Under the full seed law every
+mean and distinct pair correlation is zero. Removing $L-N$ seed
+points changes each unnormalized character sum by at most $L-N$,
+giving the stated bound. The atoms lie in a binary linear code of
+dimension $r$, so apply Theorem~\ref{thm:rank-overlap}. Direct counting
+gives the distance to $U$.
+\end{proof}
+In particular, $N=2^r-4$ gives moment error at most $4/N$, while the
+fraction of atoms that must be replaced tends to one. This statement
+does not require assuming existence at every order $2^r-4$.
+
+\begin{theorem}[A nonvacuous asymptotic obstruction to dimension-free rounding]
+\label{thm:rank-asymptotic}
+There is an infinite sequence of classical known Hadamard orders $N$
+and laws $P_N$ on $N-4$ bits such that
+\begin{enumerate}
+\item $C(P_N)=1/N$ and every first and second moment error tends to zero;
+\item $P_N$ is at total-variation distance tending to zero from an
+exactly unbiased pairwise-independent law;
+\item its distance from every exact law on at most $N$ atoms tends to one.
+\end{enumerate}
+The exactly feasible laws in item two also have
+$N C(U_N)\longrightarrow1$. Thus even vanishing moment error and
+asymptotically optimal \emph{relative} collision do not give a
+dimension-free total-variation rounding theorem to extremizers.
+\end{theorem}
+\begin{proof}
+Paley's classical theorem supplies a Hadamard matrix of order
+$N=q+1$ for every prime power $q\equiv3\pmod4$
+(\emph{On Orthogonal Matrices}, 1933,
+\url{https://doi.org/10.1002/sapm1933121311}).
+Take $q=3^{2t+1}$, so $N\equiv4\pmod8$.
+Irrationality of $\log_2 9$ makes the fractional parts of
+$(2t+1)\log_2 3$ dense in the unit interval. Select an increasing
+subsequence approaching one from below and let
+$L=2^{\lceil\log_2 q\rceil}$. Then $q/L\to1$. Since $q\equiv3\pmod8$,
+we have $q\le L-5$ for large $L$, so $L\ge N+4$ and $N/L\to1$.
+Eventually $d=N-4\ge L/2$. Apply the preceding proposition.
+Here $r=\log_2 L=O(\log N)$, so $(r+4)/N\to0$.
+The target class is nonempty because these are Paley orders.
+
+The elementary density fact used here follows from pigeonholing the
+multiples of an irrational angle to obtain arbitrarily small nonzero
+rotation steps. Their positive multiples form arbitrarily fine nets
+of the circle, and the same holds after translating or discarding any
+finite prefix of the orbit. No claim about primes near powers of two
+or unproved prime-pattern conjecture is used.
+\end{proof}
+
+This is a restriction on concentration-preserving rounding and on
+repairs changing few atoms. It is not a failure of moment correction:
+the full Walsh law is explicitly nearby and feasible. Nor does it
+contradict the earlier dimension-dependent extraction theorem, whose
+collision window is much smaller. The elementary rank methods here
+give a quantitative diagnostic; their bibliographic novelty is not
+asserted.

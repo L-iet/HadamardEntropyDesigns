@@ -1,0 +1,219 @@
+{
+  "passed": true,
+  "restrictionAndRadicalChecks": [
+    {
+      "seedBits": 4,
+      "support": 12,
+      "complementAffineDimension": 2,
+      "restrictionRank": 10,
+      "evenRestrictionDimension": 9,
+      "bilinearRank": 6,
+      "puncturedBits": 8
+    },
+    {
+      "seedBits": 4,
+      "support": 12,
+      "complementAffineDimension": 3,
+      "restrictionRank": 11,
+      "evenRestrictionDimension": 10,
+      "bilinearRank": 8,
+      "puncturedBits": 8
+    },
+    {
+      "seedBits": 5,
+      "support": 28,
+      "complementAffineDimension": 3,
+      "restrictionRank": 26,
+      "evenRestrictionDimension": 25,
+      "bilinearRank": 22,
+      "puncturedBits": 24
+    },
+    {
+      "seedBits": 6,
+      "support": 60,
+      "complementAffineDimension": 3,
+      "restrictionRank": 57,
+      "evenRestrictionDimension": 56,
+      "bilinearRank": 52,
+      "puncturedBits": 56
+    },
+    {
+      "seedBits": 5,
+      "support": 20,
+      "complementAffineDimension": 4,
+      "restrictionRank": 19,
+      "evenRestrictionDimension": 18,
+      "bilinearRank": 16,
+      "puncturedBits": 16
+    },
+    {
+      "seedBits": 5,
+      "support": 20,
+      "complementAffineDimension": 5,
+      "restrictionRank": 20,
+      "evenRestrictionDimension": 19,
+      "bilinearRank": 18,
+      "puncturedBits": 16
+    }
+  ],
+  "exactQuadraticClassifications": [
+    {
+      "omittedLabels": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "codeSize": 1024,
+      "balancedVertices": 126,
+      "excludedCliqueSize": 6,
+      "maximumBits": 5,
+      "recursiveStates": 89083,
+      "witnessWords": [
+        246,
+        826,
+        1372,
+        1708,
+        3178
+      ],
+      "witnessMonomialMasks": [
+        [
+          0,
+          1,
+          2,
+          4,
+          9,
+          10
+        ],
+        [
+          1,
+          8,
+          9,
+          10
+        ],
+        [
+          2,
+          8,
+          9,
+          10
+        ],
+        [
+          6,
+          9
+        ],
+        [
+          5,
+          9,
+          10
+        ]
+      ],
+      "graphSHA256": "18bcbbdd463dbebf3c19d520d1122f2d644731c40c3e55e9ce08c16368b5c167"
+    },
+    {
+      "omittedLabels": [
+        0,
+        1,
+        2,
+        4
+      ],
+      "codeSize": 2048,
+      "balancedVertices": 238,
+      "excludedCliqueSize": 8,
+      "maximumBits": 7,
+      "recursiveStates": 956003,
+      "witnessWords": [
+        246,
+        826,
+        1372,
+        1708,
+        3178,
+        3504,
+        3606
+      ],
+      "witnessMonomialMasks": [
+        [
+          1,
+          2,
+          8,
+          9,
+          10,
+          12
+        ],
+        [
+          0,
+          1,
+          4,
+          9,
+          10,
+          12
+        ],
+        [
+          0,
+          2,
+          4,
+          9,
+          10,
+          12
+        ],
+        [
+          6,
+          9
+        ],
+        [
+          5,
+          9,
+          10
+        ],
+        [
+          0,
+          3,
+          5,
+          6,
+          10
+        ],
+        [
+          0,
+          3,
+          9,
+          10,
+          12
+        ]
+      ],
+      "graphSHA256": "a52c6876aaa4058035ed068b91e217be90b3d376aedc2b5c80a5546bae0881b5"
+    }
+  ],
+  "explicitSupportSyndromeRepairs": [
+    {
+      "order": 12,
+      "seedBits": 4,
+      "repairLocations": [
+        0
+      ],
+      "maximumDegree": 3,
+      "allOriginalMomentsPreserved": true
+    },
+    {
+      "order": 20,
+      "seedBits": 5,
+      "repairLocations": [
+        2,
+        4,
+        5,
+        9,
+        11,
+        17
+      ],
+      "maximumDegree": 3,
+      "allOriginalMomentsPreserved": true
+    },
+    {
+      "order": 60,
+      "seedBits": 6,
+      "repairLocations": [
+        0
+      ],
+      "maximumDegree": 5,
+      "allOriginalMomentsPreserved": true
+    }
+  ]
+}

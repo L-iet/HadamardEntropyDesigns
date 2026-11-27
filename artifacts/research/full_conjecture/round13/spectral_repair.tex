@@ -1,0 +1,159 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,mathtools,hyperref}
+\setlength{\emergencystretch}{3em}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\newcommand{\E}{\mathbb E}
+\newcommand{\tr}{\operatorname{tr}}
+\title{Quantized Gram defects\\and exact one-entry Hadamard repair}
+\author{Joshua Mark\thanks{ORCID: \href{https://orcid.org/0009-0003-5905-2382}{0009-0003-5905-2382}. AI tools assisted with derivation, independent review, computation and exposition.}}
+\date{20 November 2026 --- research draft; priority not established}
+\begin{document}\maketitle
+\section{Rank-two Gram defects: quantization and exact one-entry rounding}
+\label{sec:spectral-rank-two}
+Let $H\in\{-1,1\}^{n\times n}$, $4\mid n$, and
+$E=HH^T-nI$. We study real rank, not binary rank. Small-rank Gram
+perturbations are not assumed to preserve the sign constraint under
+polar decomposition. The results below instead exploit the integer
+square determinant and parity. Switching is classical background; see
+Orrick, \emph{Switching operations for Hadamard matrices},
+\url{https://arxiv.org/abs/math/0507515}. The elementary rectangular
+flip calculation is included explicitly. Priority is unestablished.
+
+\begin{theorem}[Complete energy quantization at rank two]
+\label{thm:spectral-quantization}
+If $E\ne0$ and $\operatorname{rank}_{\mathbb R}E=2$, there is an integer
+$A\in\{1,\ldots,n/2\}$ with
+\[
+ \|E\|_F^2=8A(n-A),\qquad
+ |\det H|=n^{(n-2)/2}(n-2A).
+\]
+The two nonzero eigenvalues of $E$ are
+$\pm2\sqrt{A(n-A)}$. In particular the smallest possible nonzero
+rank-two defect is $8(n-1)$. If $H_n$ exists, every listed value is
+attained by flipping $A$ entries in one of its rows.
+\end{theorem}
+\begin{proof}
+The zero diagonal gives trace zero, so the two nonzero eigenvalues are
+$\lambda,-\lambda$, with $0<\lambda\le n$ by positivity of $HH^T$.
+Also $\lambda^2=\sum_{i<j}E_{ij}^2\in4\mathbb Z$, because every
+row inner product is even. Taking determinants gives
+\[
+ (\det H)^2=n^{n-2}(n^2-\lambda^2).
+\]
+Thus the nonnegative integer $n^2-\lambda^2$ is a rational square:
+its square root is $|\det H|/n^{(n-2)/2}$. A rational number whose
+square is an integer is itself an integer; call it $d$. Since
+$d^2\equiv0\pmod4$, $d$ is even. Set $A=(n-d)/2$.
+Then $1\le A\le n/2$ and $\lambda^2=n^2-d^2=4A(n-A)$.
+For the attainment statement, keep $n-1$ Hadamard rows fixed and replace
+the last by a version with $A$ signs flipped. The defect is a nonzero
+star of rank two. Orthogonal expansion in the Hadamard row basis gives
+$\lambda^2=n^2-(n-2A)^2=4A(n-A)$.
+\end{proof}
+
+\begin{theorem}[Energy-only one-entry repair certificate]
+\label{thm:spectral-one-entry}
+If any sign matrix of order $4\mid n$ satisfies
+$\|HH^T-nI\|_F^2=8(n-1)$, it has a unique Hadamard neighbor obtained
+by changing one entry. This statement needs no rank hypothesis.
+Consequently a matrix with $\operatorname{rank}E\le2$ and
+$\|E\|_F^2\le8(n-1)$ is either already Hadamard or admits this exact
+one-entry repair.
+\end{theorem}
+\begin{proof}
+Partition rows by parity of their numbers of negative entries, with
+class sizes $a,b$. Same-parity inner products are divisible by four;
+opposite-parity inner products are congruent to two modulo four.
+If all rows have the same parity, $\|E\|_F^2$ is divisible by $32$,
+whereas $8(n-1)$ is not. Hence $a,b>0$. The cross-parity pairs alone
+contribute at least $8ab\ge8(n-1)$. Equality forces
+$\{a,b\}=\{1,n-1\}$, every cross correlation to be $\pm2$, and all
+other correlations zero. Thus $E$ is a star.
+
+Delete its center row $v$ to obtain $(n-1)$ orthogonal sign rows $R$.
+The matrix $P=nI-R^TR$ is positive semidefinite of rank one with diagonal
+one. It is therefore $uu^T$ for a sign vector $u$, and $Ru=0$.
+Orthogonal expansion gives
+\[
+ (v\cdot u)^2=n^2-\|Rv\|^2=n^2-4(n-1)=(n-2)^2.
+\]
+Choose the sign of $u$ to make $v\cdot u=n-2$; then $v,u$ differ in
+exactly one entry. Replacing $v$ by $u$ repairs the matrix. This is
+an integer algorithm: take $u_i=P_{i0}$, then choose its overall sign.
+No other row can support a one-entry repair, because a nonzero star
+edge avoiding that row would remain unchanged. Within the center row,
+its orthogonal complement is the line $\mathbb Ru$, whose only sign
+vectors are $\pm u$, and only one is at distance one. This proves
+uniqueness. The last assertion follows from rank-two quantization;
+a nonzero rank-one symmetric zero-diagonal matrix does not exist.
+\end{proof}
+
+\begin{lemma}[Rectangular flips explain, but do not classify, rank two]
+\label{lem:spectral-rectangle}
+Suppose a Hadamard matrix $H_0$ contains an $r\times c$ rank-one sign
+rectangle, with sign vectors $u,v$ supported on its row and column sets.
+Flip that rectangle to obtain $H=H_0-2uv^T$, and put $A=rc$.
+Then $A\le n$. If $0<A<n$, the Gram defect has rank two and energy
+$8A(n-A)$; if $A=n$ the flip preserves Hadamard orthogonality.
+\end{lemma}
+\begin{proof}
+On the selected rows, $H_0v=cu$. The defect is
+$uw^T+wu^T$, where $w=-2H_0v+2cu$ vanishes on those rows.
+Thus $u,w$ have disjoint supports. Since $\|H_0v\|^2=nc$,
+$\|w\|^2=4c(n-rc)$ and $\|u\|^2=r$. Positivity yields $rc\le n$,
+and the two nonzero eigenvalues are
+$\pm\|u\|\|w\|=\pm2\sqrt{A(n-A)}$ when $A<n$.
+\end{proof}
+
+\begin{proposition}[Rank two does not ensure a one-row or one-column repair]
+\label{prop:spectral-nontrivial-repair}
+There are explicit order-eight and order-twelve matrices with rank-two
+Gram defect that require at least two rows and two columns to be altered
+in any repair. Their minimum total number of entry changes is exactly
+four. The order-twelve example is nonsingular.
+\end{proposition}
+\begin{proof}
+In Walsh order eight, or the normalized Paley order twelve matrix, the
+rectangle on rows $0,1$ and columns $0,2$ is all positive. Flip it.
+The row defect graph is respectively $K_{2,2}$ or $K_{2,4}$, with all
+nonzero correlations of magnitude four; the column defect graph has
+the same respective form. Any unchanged nonorthogonal row or column
+pair prevents repair, and both graphs have minimum vertex cover two.
+To lower-bound total entry changes, let $f_i$ count changes in row $i$.
+Every initially nonorthogonal pair needs
+$2(f_i+f_j)\ge|E_{ij}|$. Summing over $K_{2,b}$ gives
+$2b\sum_i f_i\ge 8b$, hence at least four changes. Reversing the
+rectangle attains four. The order-twelve example has $A=4$, so its
+nonzero determinant is $12^5(12-8)=4\cdot12^5$.
+The checker verifies every stated graph and repair directly.
+\end{proof}
+
+More generally the same argument gives a global repair lower bound:
+for arbitrary nonnegative edge weights $w_{ij}$ with positive maximum
+weighted degree $\Delta$, every Hadamard repair changes at least
+\[
+ \frac{\sum_{i<j}w_{ij}|E_{ij}|}{2\Delta}
+\]
+entries. This is a concrete defect-graph budget certificate, not a
+sufficiency theorem. Rank-two quantization and the one-entry threshold
+provide a certified local rounding case; beyond it neither rank two nor
+real polar orthogonalization alone establishes a flat repair.
+
+\paragraph{The underlying defect graph.}
+Every real symmetric rank-two matrix with zero diagonal has form
+$uv^T+vu^T$ with disjoint nonempty supports for $u,v$. Indeed write
+$E=\lambda(xx^T-yy^T)$ using orthonormal eigenvectors. The zero diagonal
+gives $x_i^2=y_i^2$; the vectors
+$u=\sqrt{\lambda/2}(x+y)$ and
+$v=\sqrt{\lambda/2}(x-y)$ have disjoint supports and give the factorization.
+Thus the nonzero-defect graph is complete bipartite, possibly with isolated
+vertices. This structural fact does not say that every such sign matrix
+is a single rectangular flip of a Hadamard matrix; no such classification
+or general repair theorem is claimed.
+
+\end{document}

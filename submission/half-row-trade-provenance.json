@@ -1,0 +1,46 @@
+{
+  "license": "Apache-2.0",
+  "author": "Joshua Mark",
+  "ORCID": "https://orcid.org/0009-0003-5905-2382",
+  "privatePilot": {
+    "status": "passed",
+    "scope": "Private staged half-row trade pilot only; not owned snapshot or registry verification",
+    "leanKernelAccepted": true,
+    "nanodaAccepted": true,
+    "theoremNames": [
+      "EntropyDesigns.universal_half_row_observation_trade"
+    ],
+    "definitionNames": [],
+    "sourceHashes": {
+      "TradePilotChallenge.lean": "961a83005152e0eb504eba2d810d41a435cb1c5d17f31cdcea39c7c591325a65",
+      "TradePilotSolution.lean": "f4d1e2feca706c9990275572117ccbedcfa87862177dd4313ac3b0435243ad6e",
+      "comparator.json": "ab7f8446a42ee86b5183df2abd8d0f45a83c815934954e3768054854260c848a"
+    },
+    "exports": {
+      "challenge": "3944f4fb15f847f49adfd315a30eafc2dcc2340d69ef60127147191f7ee2704b",
+      "solution": "b86ec3a1db264e066de7211228bee5f9d65dcc0ad193123a83be6008e892f4c1"
+    }
+  },
+  "compileReceipts": [
+    {
+      "module": "HalfRowTradeDraft",
+      "actualExit": 0,
+      "sourceSHA256": "b9bf9930365cbf873b18ac628848218d18081a40d707e6f6e8ece3bcab77d980",
+      "oleanSHA256": "c45e9b315bc19f79facfd8d645492b36b8d0a3df47e53d808e3a67c90a1b23cd"
+    },
+    {
+      "module": "TradePilotChallenge",
+      "actualExit": 0,
+      "sourceSHA256": "2179d009403fe0f0e52d4addeb66ebf7a030aad6298045c4bd4b1b38c3d800d0",
+      "oleanSHA256": "410efd481e63288cf9c645dad34dd58b30e1529afb249827ce703c705bdd68bc"
+    },
+    {
+      "module": "TradePilotSolution",
+      "actualExit": 0,
+      "sourceSHA256": "c8e15e88cf79a6b003811edc984db7f67a46bfedd56f1ef4e987c012aded7d69",
+      "oleanSHA256": "9aeeee122c01ae163aa4ef3a092c2c00802b712cb39509b4f692f9bc6be820ab"
+    }
+  ],
+  "axiomAudit": "'EntropyDesigns.universal_half_row_observation_trade' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+  "scope": "Full universal half-row trade. Integrated five-group verification required."
+}

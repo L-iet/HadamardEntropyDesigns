@@ -1,0 +1,69 @@
+OPTIONAL ANALYTIC FIVE-ROW CLASSIFICATION
+
+This reduction was derived alongside classify.py, but is not needed for
+the main rough-order theorem. It explains the finite classification.
+No bibliographic novelty has been established.
+
+Take five orthogonal sign rows. Normalize the first to all ones by
+column sign changes. The column distribution on four remaining signs x
+is unbiased and pairwise independent, so its Fourier formula is
+  w(x) = [1 + mu.v(x)]/16,
+where v(x)=(products of the three signs omitting each coordinate,
+product of all four signs). The sixteen v(x) are exactly the sign
+vectors of length five with product +1.
+
+The allowed mu-polytope is conv({+/-e_i} union {v/3:prod(v)=+1}).
+An elementary explicit decomposition proves this without computer use:
+set a_i=abs(mu_i). If product(sign(mu_i))=-1, the inequalities give
+sum(a_i)<=1, so mu is in the unit cross-polytope. If the sign product
+is +1, put b=min(a_i), r_i=a_i-b. The minimum of v.mu over even-parity
+v is -sum(a_i)+2b; positivity says sum(r_i)+3b<=1. Hence
+  mu = (3b)*(sign(mu)/3) + sum_i r_i sign(mu_i)e_i
+        + [1-3b-sum(r_i)]*0.
+Zero coordinates are handled by b=0; 0 is in the cross-polytope.
+
+For a parity vertex +/-e_i, w is uniform on eight column types and
+four of the five original rows form a closed quadruple. The fifth
+row is independent. A sign linear form involving the independent fifth
+row must be that row alone: for each fixed quadruple pattern, g+c and
+g-c both have magnitude one, forcing gc=0. Otherwise the form lies
+in the quadruple. Its fourth-moment identity gives
+  sum_{i<j} c_i^2 c_j^2 = -6 delta*c_1*c_2*c_3*c_4.
+AM-GM gives the reverse inequality in absolute value. Thus the form
+is either a signed coordinate or has four coefficients of magnitude1/2,
+with the coefficient sign product opposite the quadruple product delta.
+
+For a vertex v/3, coordinate sign changes reduce its positive support
+to bit weights 0,2,3 on four bits (eleven patterns). These patterns are
+unisolvent for quadratic polynomials: a polynomial vanishing at zero
+has zero constant; values at pairs give b_ij=-a_i-a_j; values at triples
+give a_i+a_j+a_k=0, hence all a_i and b_ij vanish. Therefore if an affine
+linear form f is a sign on this support, f^2-1 is identically zero on
+the whole cube. Comparing its coefficients forces f to be a signed
+coordinate, including the constant coordinate.
+
+Any distribution decomposes into those vertex distributions, and each
+positive vertex component has support inside the original support.
+Consequently any genuinely new sign vector in the span of five
+orthogonal sign rows has exactly four half-coefficients, on a closed
+quadruple. It is also necessary that this same quadruple be closed on
+the full column support, since a four-half-coefficient sum is a sign
+precisely when that quadruple has the required constant product.
+
+Among five orthogonal rows there is at most one closed quadruple:
+two distinct quadruples share three rows and would force the remaining
+two to be equal up to sign. If normalized first-column-one Hadamard
+matrices differ in at most five row observations, every nontrivial new
+row is one of the four rows supplied by J4/2-I4 on this quadruple.
+The original and new quadruple bases have nonzero mutual inner products,
+so they cannot be mixed in an orthogonal basis. Any fifth row is unchanged.
+Thus a reduced trade of volume at most five is exactly a volume-four
+closed-quadruple switch; volumes1,2,3,5 cannot occur.
+
+At orders n>4, n=4 mod8 closed quadruples do not exist (field-sum
+argument in rigidity.tex). Hence every reduced trade has volume at
+least six. The explicit Paley12 six-row trade makes this sharp.
+
+The code's 26-vertex enumeration and sign-form tests independently
+check this fixed-dimensional analysis, but the reasoning above is
+uniform in the number of columns.

@@ -1,0 +1,29 @@
+BOUNDED PRIMARY-SOURCE CHECK; PRIORITY NOT ESTABLISHED
+
+Marrero and Butson, Modular Hadamard matrices and related designs (1973):
+https://doi.org/10.1016/0097-3165(73)90073-3
+Modular Hadamard matrices are classical. The modulus in the present
+lifting results grows proportionally to the target order, so existing
+fixed-modulus existence results do not directly prove the needed count.
+
+Munemasa and Tamura, The codes and the lattices of Hadamard matrices:
+https://arxiv.org/abs/1006.2414
+https://doi.org/10.1016/j.ejc.2011.11.007
+Hadamard row codes and self-duality are established background.
+The present elementary self-duality proof for N=4q is not a priority
+claim. Self-dual neighbors also belong to established coding geometry;
+the written incidence proof is included to make assumptions explicit.
+
+Craigen, Faucher, Low and Wares, Circulant partial Hadamard matrices:
+https://doi.org/10.1016/j.laa.2013.09.004
+The paper discusses maximal partial frames and classical completion
+theorems. Terminal partial Hadamard frames are not new as a phenomenon.
+Our explicit order20 two-row escape is a reproducible benchmark;
+no claim that its equivalence class or repair statistic is new.
+
+Orrick's switching paper and Ageev-Sviridenko's pipage-rounding paper
+are credited in their respective branch texts.
+
+No exhaustive citation search or equivalence classification of the
+newly generated finite witnesses was performed. No messages to authors,
+external publication, or copying of external code occurred.

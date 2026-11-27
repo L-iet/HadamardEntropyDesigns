@@ -1,0 +1,226 @@
+% Source: round9/nonlinear/support.tex
+\section{Fixed-support degree criteria and punctured-observable obstructions}
+\label{s21:sec:nonlinear-fixed-support}
+We use Boolean algebraic degree over $\mathbb F_2$, not real Walsh degree.
+Let $S\subset\mathbb F_2^r$ have size $N$, let $T$ be its nonempty
+complement, and suppose $N\equiv4\pmod8$, $r\ge4$. The seed law is
+uniform on $S$. Put $t=\operatorname{affdim}(T)$ and $a=r-t$.
+The low-degree model considered first is degree at most $r-2$.
+The code background is standard Reed--Muller duality; see Carlet's
+\emph{Boolean Functions for Cryptography and Coding Theory},
+\url{https://www.math.univ-paris13.fr/~carlet/book-fcts-Bool-vect-crypt-codes.pdf}.
+The duality and all required rank facts are proved below. This does not establish a new Hadamard order.
+
+\begin{lemma}[Even restriction code and its radical]
+\label{s21:lem:nonlinear-radical}
+Let $C=\mathrm{RM}(r-2,r)|_S$ be the binary restriction code, with
+$C_0$ its even-weight subcode. Then
+\[
+ \dim C=N-a,\quad \dim C_0=N-a-1,\quad
+ \dim\operatorname{rad}(C_0)=a+1,
+\]
+where the radical uses the binary dot product. Consequently its bilinear
+rank is $N-2a-2$.
+\end{lemma}
+\begin{proof}
+Monomials of combined degree less than $r$ have even full-cube sum;
+dimension counting gives $\mathrm{RM}(r-2,r)^\perp=\mathrm{RM}(1,r)$.
+Thus $C^\perp$ consists of the restrictions of affine polynomials
+vanishing on $T$, a space of dimension $r-t=a$. Every such restriction
+lies in $C$ and has even weight: its nonzero full-cube weight is $2^{r-1}$.
+Also $\mathbf1\in C$ has even weight $N$.
+The vector $\mathbf1$ is not in $C^\perp$, because that would make
+$\mathbf1_S$ affine on the full cube, impossible at weight
+$N\equiv4\pmod8$ with $r\ge4$. Hence the parity functional on $C$ is
+nonzero, giving $\dim C_0=N-a-1$. Finally
+$C_0^\perp=C^\perp+\langle\mathbf1\rangle\subseteq C_0$;
+therefore the radical is this entire $(a+1)$-dimensional space.
+\end{proof}
+
+\paragraph{Formalization of the radical identities.}
+All four identities are formalized for arbitrary proper binary cube
+supports in the stated regime. Affine functions vanishing on the omitted
+labels are identified with the annihilator of their vector span.
+Restriction duality gives the code dimension, and nonzero parity gives
+the even-code dimension. The radical is the sum of the restriction dual
+and the constant line. Bilinear rank is the actual dimension of the span
+of the binary dot-product rows, with a proved rank--nullity calculation.
+
+\begin{theorem}[Exact fixed-support criterion for a full basis]
+\label{s21:thm:nonlinear-fixed-support}
+Suppose an order-$N$ Hadamard matrix exists. The support $S$ admits
+$N-1$ unbiased pairwise-independent sign observables of degree at most
+$r-2$ if and only if $T$ affinely spans $\mathbb F_2^r$.
+If $T$ does span, every prescribed row labeling of any such Hadamard
+matrix admits observables with this degree bound.
+\end{theorem}
+\begin{proof}
+Let $B$ be the binary truth columns of the observables on $S$.
+Balancedness gives weight $N/2$, even; pairwise orthogonality gives
+intersection size $N/4$, odd. Hence $B^TB=I+J$ over $\mathbb F_2$.
+For $N-1$ columns its rank is $N-2$. All columns lie in $C_0$, so
+Lemma~\ref{s21:lem:nonlinear-radical} forces
+$N-2\le N-2a-2$, or $a=0$.
+Conversely, $a=0$ means $C^\perp=0$, so restriction of
+$\mathrm{RM}(r-2,r)$ to $S$ is surjective. Extend each labeled binary
+Hadamard column separately.
+\end{proof}
+
+\paragraph{Formalization of the fixed-support criterion.}
+The complete equivalence is formalized for arbitrary injective binary
+seed labels, together with the extension of every prescribed labeling
+of an actual normalized integer Hadamard matrix. The formal necessity
+proof also covers $N-2$ pairwise-independent outputs: their augmented
+binary columns span an $(N-1)$ dimensional even subspace. Thus a
+restriction code containing them is either full or entirely even.
+The latter would make the seed support indicator affine, contradicting
+its weight modulo eight. Finite-dimensional affine separation proves
+the converse extension criterion. The independent
+\texttt{SupportChallenge} has no definition holes.
+
+\paragraph{An explicit support-switching operation.}
+This surjectivity can be implemented as a small syndrome repair, rather
+than a new interpolation search. Relabel the existing rows arbitrarily
+onto $S$, set provisional outside values to zero, and choose an affine
+basis $z_0,\ldots,z_r$ inside $T$. Compute the $r+1$ binary parity defects
+of the provisional truth table against $1,z_1,\ldots,z_r$ (coordinate
+functions, with the basis points distinguished by their indices).
+Flip values only at the chosen basis points to cancel those defects.
+The matrix with columns $(1,z_i)$ is invertible, so there is a unique
+repair on those points. The repaired function is orthogonal to all
+affine functions and therefore has degree at most $r-2$.
+No value on $S$ changes, so all real moments are preserved exactly.
+For degree $r-1$, a single omitted point suffices: repair only total
+truth-table parity. This operation works for any proper support and
+permits arbitrary row relabeling.
+
+\begin{corollary}[Degree saturation near a power of two]
+\label{s21:cor:nonlinear-degree-saturation}
+Assume $2^{r-1}<N<2^r$, $N\equiv4\pmod8$, and $H_N$ exists.
+There is some minimal-seed encoding of degree at most $r-2$ if and
+only if $2^r-N\ge r+1$. If $2^r-N\le r$, the smallest possible maximum
+degree is exactly $r-1$. In particular every existing
+$H_{2^r-4}$, $r\ge4$, requires degree exactly $r-1$ on a minimal seed.
+\end{corollary}
+\begin{proof}
+A set of at most $r$ omitted labels cannot affinely span an $r$-space;
+a set of at least $r+1$ can be chosen to contain an affine basis.
+Use the theorem, and the one-point parity repair for the upper bound.
+\end{proof}
+
+\subsection{The punctured extraction input still requires growing degree}
+\paragraph{Formalization of degree saturation.}
+The exact omitted-label threshold, the degree-$r-1$ upper bound and
+the four-omitted-label specialization are formalized for actual integer
+Hadamard matrices. The proof constructs a binary affine basis explicitly,
+extends it to any permitted omitted-set size, and uses the fixed-support
+criterion. One-point parity extension supplies the upper bound, while
+code monotonicity excludes every smaller degree. All three statements
+have independent mathematical targets without definition holes.
+
+\begin{theorem}[Punctured-observable bounds, without completion]
+\label{s21:thm:nonlinear-punctured}
+Let $N\equiv4\pmod8$ and let $N$ equal-weight seed labels carry $m=N-4$
+unbiased pairwise-independent sign bits, all of Boolean degree at most
+$d$. Then
+\[
+ \sum_{j=0}^d\binom rj\ge N-3.
+\]
+At minimal $r=\lceil\log_2N\rceil$, this forces
+$d\ge\lceil r/2\rceil$. For degree at most $r-2$, the sharper necessary
+condition on the omitted labels is $\operatorname{affdim}(T)\ge r-1$.
+For $N=2^r-4$ and $r\ge5$, degree $r-2$ is impossible for this punctured
+input, not only for a full Hadamard basis.
+\end{theorem}
+\begin{proof}
+The same binary Gram is $I+J_m$, now nonsingular because $m$ is even.
+Thus the $m$ truth columns are independent. The constant vector is
+orthogonal to them, is nonzero, and cannot belong to their nondegenerate
+span. The Boolean restriction space must have dimension at least
+$m+1=N-3$. Since $N-3>2^{r-1}$ at minimal seed length, binomial symmetry
+proves the growing-degree bound.
+For $d=r-2$, the nonsingular Gram embeds an $m$-dimensional nondegenerate
+space into $C_0$. Its bilinear rank must therefore be at least $m$,
+so $N-4\le N-2a-2$ implies $a\le1$. Four omitted points have affine
+dimension at most three; when $r\ge5$, this violates $t\ge r-1$.
+No completion theorem or existing full Hadamard matrix was used.
+\end{proof}
+
+\subsection{A sharp four-bit quadratic classification}
+\paragraph{Formalization of the punctured bounds.}
+The full binomial, minimal-degree and affine-codimension bounds are
+formalized directly from uniform balanced pairwise-independent Boolean
+arrays. The proof bounds their even-sized binary Gram family by the
+bilinear rank of the even restriction code; it assumes no completion.
+The impossibility with four omitted labels for $r\ge5$ is a separate
+independent target. Both targets use concrete definitions and no
+definition holes.
+
+\begin{proposition}[Exact finite obstruction]\label{s21:prop:nonlinear-twelve-classification}
+For a uniform law on any twelve labels in $\mathbb F_2^4$, the largest
+number of unbiased pairwise-independent quadratic sign observables is:
+\[
+ \begin{cases}
+ 5,&\text{if the four omitted labels form an affine plane},\\
+ 7,&\text{if they are affinely independent}.
+ \end{cases}
+\]
+In particular the order-twelve $N-4=8$-bit extraction input requires
+at least one cubic observable, for every labeling.
+\end{proposition}
+\begin{proof}[Parity-code reduction and exact certificates]
+For a twelve-element support, the restricted degree-at-most-two Boolean
+code is characterized exactly by its orthogonal parity checks. The omitted
+four-point set has affine dimension two or three. In the first case the
+check space has two independent weight-eight generators; in the second
+it has one weight-eight generator. These assertions follow from the
+explicit dual-code description, not from an assumption about arbitrary
+coordinate permutations preserving polynomial degree.
+
+Two independent weight-eight checks partition the twelve coordinates
+into three blocks of size four. A single weight-eight check gives blocks
+of sizes eight and four. In each case the code is exactly the kernel of
+the corresponding parity constraints. A balanced sign column has a
+negative support of size six, and two such columns are orthogonal
+precisely when their negative supports intersect in three positions.
+
+For the upper bounds, enlarge the candidate family to supports whose
+sizes are congruent to two modulo four and which meet each parity block
+in an even number of positions. Retain the necessary condition that
+pairwise intersections have odd size. Complementing a full parity block
+preserves these conditions. Clearing a fixed anchor coordinate in each
+block gives complete canonical candidate graphs with respectively
+$36$ and $136$ vertices. Every original observable family maps
+injectively to a clique in the appropriate graph.
+
+Exact coloring and branching certificates bound the clique sizes by
+five and seven. The two certificates have $219$ and $10655$ branch nodes,
+respectively. Their soundness, every literal finite check, and the
+coverage and normalization maps are proved in Lean with its ordinary
+kernel; no native evaluation or assumed clique-search oracle is used.
+
+For the lower bounds, explicit families of five and seven weight-six
+supports have pairwise intersections of size three and satisfy the
+required parity checks. Exact kernel membership supplies degree-at-most-two
+Boolean polynomial preimages. Coordinate equivalences transport the
+parity kernels and the sign moments, giving the claimed observable
+families for every support of the corresponding omitted affine type.
+Thus the two maxima are exactly five and seven, and eight quadratic
+observables are impossible in either case.
+
+The formal statement is in the
+\texttt{QuadraticCompleteClassification} module of the
+\texttt{EntropyQuadraticClassification} library.
+The independent specification defines the actual polynomial-restriction
+and uniform pairwise-independence predicates using only mathlib; its
+seven theorem targets include both sharp cases and the no-eight
+obstruction.
+\end{proof}
+Combining the proposition with Theorem~\ref{s21:thm:nonlinear-punctured}
+shows that the punctured input at every order $2^r-4$, $r\ge4$, requires
+maximum degree at least $r-1$ in this equal-weight minimal-seed model.
+Whenever a full Hadamard matrix at that order exists, one-point parity
+repair gives matching degree $r-1$ examples. This obstruction does not
+apply automatically to nonuniform measures, larger seeds, or approximate
+moments; those are distinct possible search directions.
+

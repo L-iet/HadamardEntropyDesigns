@@ -1,0 +1,31 @@
+{
+  "key": "04068dfa3858e9b95e591be6c7172d7e75c4f5357abcea368345245dafcb2c6e",
+  "metadata": {
+    "group": "cofinite",
+    "configPath": "comparator-cofinite.json",
+    "configSHA256": "2af16a942e4f5f5dea141af309a7fa1230612ada0f695ef1cab728bbee70f0a5",
+    "theoremNames": [
+      "EntropyDesigns.explicit_cofinite_central_ray"
+    ],
+    "definitionNames": [],
+    "exports": {
+      "challenge": "a51a845eae2a28d309ba64e3ea3fb25a2ddf31a8c8c389d0c365e61502be0c0f",
+      "solution": "06f36fd316490154bda6b769a83e4fcfdf7f7db00efac652e52a80fe1c92833d"
+    },
+    "environment": {
+      "toolchain": "leanprover/lean4:v4.35.0",
+      "toolchainSHA256": "ca5f1f601d34c49079e38d7e7041eb0f2a9c227fbc1df0f404820069a052330c",
+      "binaries": {
+        "lean": "ec7a472d1c12a09b0c0c718f7427c2be527b3f5f07810fdbe076c2507c7a91ea",
+        "lake": "023feb24d3e7244fe671dba79f1cd1affc6c7a7cacfe497bf3675febb506578c",
+        "leanexport": "bda24bb3fafaf299ba472f944942d6293294b76559fafc9f166badd7c0f981b3",
+        "leanchecker": "9ef6baeb28d5e28897d5ed6dddd60ff81e511d97374013ece435dff38e9e0137",
+        "nanoda_bin": "de57d9dd7f647eb57398bc3dab4dcaa1d64f961f3f49964d5455fbddc73b35a8"
+      }
+    }
+  },
+  "capturedAtUTC": "2026-11-24T19:19:52.292655+00:00",
+  "reportSHA256": "cf2d921f463f08c8b88363fda2401caf526f651c6da26ab59aed3560adcb0979",
+  "logSHA256": "125a3b9b2884fddc9a2bb2354fe3ca1adcf8209d4f8115fb28898ec7d5b972e4",
+  "scope": "Immutable original Comparator exit0 with explicit Lean/NanoDa acceptance of the exact exports/config/checker environment. Local diagnostic, not registry verification."
+}

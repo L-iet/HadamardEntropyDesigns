@@ -1,0 +1,83 @@
+\section{A terminal code trap with an optimal two-row escape}
+
+This certificate concerns order twenty, where Hadamard matrices are
+already known. It gives an exact trap for monotone row addition and
+an exact minimal-loss escape in the self-dual-code construction.
+
+\begin{theorem}[Finite certified example]
+There is a self-dual ten-dimensional code $C\subseteq\mathbb F_5^{20}$
+with exactly twelve antipodal classes of sign words. Representatives
+with first coordinate $+1$ form a real orthogonal $12\times20$ sign
+frame $P$, and span $C$ over $\mathbb F_5$.
+No further sign row is orthogonal to every row of $P$.
+Every new sign class is orthogonal to at most ten old rows, so no
+one-row deletion admits even one genuinely new row.
+Deleting the two old rows indexed $3,8$ (zero based) permits a full
+Hadamard completion of the remaining ten rows. Its mod-five code
+$C'$ is a self-dual neighbor: $\dim(C\cap C')=9$.
+One explicit neighbor pivot takes the sign count from twelve to twenty.
+Thus two is the exact minimum number of old rows lost in such an escape.
+\end{theorem}
+
+The complete basis and twelve sign representatives are stored in
+\texttt{search.json}. The construction starts with the first five rows
+of the Paley order-twenty matrix and extends their span over
+$\mathbb F_5$ using deterministic seed $2026112000$.
+The construction is only a way to find the certificate; correctness
+is checked from its stored entries. The code basis is self-orthogonal
+of rank ten. Enumerating its $2^9=512$ systematic sign assignments
+finds exactly twelve normalized sign words, of mod-five rank ten;
+their real Gram matrix is $20I_{12}$.
+If a new sign row were exactly orthogonal to $P$, its residue would
+belong to $C^\perp=C$, hence to the already exhausted twelve classes.
+Every such class fails orthogonality to itself, proving terminality.
+
+An independent binary enumeration checks all $2^{19}=524288$
+normalized sign words using only integer Hamming distances. Excluding
+the twelve existing words, its compatibility counts are
+\[
+\begin{array}{c|rrrrrrrrrrr}
+\text{compatible}&0&1&2&3&4&5&6&7&8&9&10\\\hline
+\text{new classes}&262840&6840&27092&48948&67344&58976&34920&12600&3992&616&108
+\end{array}
+\]
+No new word is orthogonal to eleven or twelve old rows. The 108
+best words group by their two nonorthogonal old rows. For the pair
+$(3,8)$, all ten available words are mutually orthogonal; together
+with the ten retained old words they give Gram matrix $20I_{20}$.
+Their normalized negative-coordinate bit masks are
+\[
+7676,126672,307898,444300,581982,645928,683178,816740,855582,886242.
+\]
+Bit $j$ represents coordinate $j$, with bit one denoting a minus sign.
+The retained old rows have modular rank nine, the completed code
+rank ten, and the union of the old and new code bases rank eleven.
+These prove the claimed intersection dimension. If $v$ is the first
+new row, then
+\[
+ C'=(C\cap v^\perp)+\langle v\rangle,
+\]
+as independently checked by row reduction.
+
+The scripts \texttt{search.py} and \texttt{verify.py} use only the
+Python standard library and original project code from the adjacent
+\texttt{codes/check.py}. The latter also writes
+\texttt{verification.json} and \texttt{exchange.json}. No external
+implementation is imported. This example disproves the strategy of
+always retaining all previously selected rows; it does not assert
+that two-row neighbor escapes suffice in general or yield unknown
+Hadamard orders.
+
+\begin{theorem}[Elementary tensor persistence]
+If a sign frame $P$ admits no orthogonal sign row and $H$ is a square
+Hadamard matrix of order $t$, then $P\otimes H$ also admits no
+orthogonal sign row. In particular this certificate gives terminal
+$12t\times20t$ frames whenever such an $H$ is supplied.
+\end{theorem}
+\begin{proof}
+Reshape a hypothetical new sign vector into a $20\times t$ sign
+matrix $X$. Orthogonality to $P\otimes H$ says $PXH^T=0$, under
+the corresponding vectorization convention. Since $H$ is invertible,
+$PX=0$. Each column of $X$ would therefore be a sign vector
+orthogonal to $P$, a contradiction.
+\end{proof}

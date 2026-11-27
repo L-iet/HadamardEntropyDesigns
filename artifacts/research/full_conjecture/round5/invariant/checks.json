@@ -1,0 +1,11 @@
+{
+  "status": "passed",
+  "arithmetic": "exact rational/integer",
+  "capacity_inequality_cases": 144,
+  "positive_diagonal_scalings_examined": 7371,
+  "orthogonal_scalings_all_identical_to_base": 15,
+  "sign_matrix_parity_cases": 90,
+  "rational_orthogonal_energy_gap_cases": 18,
+  "order6_rational_gap": "2/81",
+  "scope": "Finite checks support the general proofs; they do not prove the conjecture."
+}

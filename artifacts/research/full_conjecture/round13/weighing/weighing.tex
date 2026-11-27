@@ -1,0 +1,191 @@
+\section{Two-zero weighing matrices: an eight-choice algorithm and a real obstruction}
+\label{sec:weighing-fill}
+
+A weighing matrix $W(n,k)$ has entries $0,\pm1$ and satisfies
+$WW^{\mathsf T}=kI_n$. We ask whether its zero entries can be
+filled by signs, preserving every nonzero entry, to give a Hadamard
+matrix of the \emph{same} order. This constraint is stronger than
+merely knowing that the order admits some Hadamard matrix.
+The orthogonal-design viewpoint is classical; see Geramita--Verner,
+\emph{Orthogonal Designs with Zero Diagonal}, Theorems 1--2,
+\url{https://doi.org/10.4153/CJM-1976-028-3}.
+The structural proofs and explicit finite certificate below are
+independently derived. No bibliographic priority is claimed.
+
+\subsection{One zero: a signed-cycle criterion and the classical positive case}
+In $W(n,n-1)$ each row and column has exactly one zero, so a column
+permutation puts all zeros on the diagonal. A filling has the form
+$W+\operatorname{diag}(d_i)$, with $d_i\in\{\pm1\}$. Its Gram
+matrix is $nI$ exactly when
+\[
+ d_id_j=-w_{ij}w_{ji}\quad(i\ne j).
+\]
+Thus completion is equivalent to the complete signed graph with edge
+labels $s_{ij}=-w_{ij}w_{ji}$ being balanced: the product around every
+triangle is $1$. Taking $d_0=1$ determines all other signs
+$d_i=s_{0i}$; check the remaining edges. There are either zero or
+two fillings, the latter differing by global negation of the fill.
+This gives an $O(n^2)$ test and a triangle certificate on failure.
+
+For conference matrices this reproduces a classical theorem:
+at $n\equiv0\pmod4$, row and column sign changes make the matrix
+skew-symmetric, so diagonal filling always succeeds. At
+$n\equiv2\pmod4$, $n>2$, the matrix is similarly equivalent to a
+symmetric conference matrix and same-order Hadamard filling is
+impossible. These normalization statements are the
+Delsarte--Goethals--Seidel result restated as Theorem 2 in the cited
+primary article, not a new existence assertion.
+
+\subsection{Two zeros force much more structure than arbitrary cycles}
+Put
+\[
+ F=\begin{pmatrix}1&1\\1&-1\end{pmatrix},\qquad
+ \mathcal D=\{2\times2\text{ signed permutation matrices}\},
+ \qquad|\mathcal D|=8.
+\]
+
+\begin{theorem}[Forced block structure]
+Let $4\mid n$ and $W$ be $W(n,n-2)$. After independently permuting
+rows and columns, its zeros are precisely the diagonal $2\times2$
+blocks. Every off-diagonal $2\times2$ block is itself Hadamard.
+Equivalently, with $m=n/2$,
+\[
+ A=\tfrac12W(I_m\otimes F)
+\]
+has zero diagonal blocks and off-diagonal blocks $A_{ij}\in\mathcal D$,
+and $AA^{\mathsf T}=(m-1)I_n$.
+\end{theorem}
+\begin{proof}
+Two row zero-neighborhoods each have size two. If their intersection
+has size $t$, their nonzero overlap has size $n-4+t$, which must be
+even for their sign products to sum to zero. Hence $t$ is zero or
+two. Each column has exactly two zeros, so rows with the same
+two-element neighborhood occur in pairs, and distinct neighborhoods
+are disjoint. The zero support is a union of $K_{2,2}$ components,
+not longer bipartite cycles. This proves the block normalization.
+
+Every row of an off-diagonal block $W_{ij}$ consists of two signs.
+Multiplication by $F/2$ turns it into a row with one nonzero sign,
+so $A$ is integral, with one nonzero entry per row of each
+off-diagonal block. Also $AA^{\mathsf T}=(m-1)I_n$.
+As $m$ is even, reduction modulo two makes $A$ orthogonal and
+invertible. Let $L$ be the subspace of vectors constant on each
+coordinate pair. The action of $A$ on $L$ is $J_m-I_m$, whose
+square is $I_m$ over $\mathbb F_2$ because $m$ is even.
+Consequently $A^{\mathsf T}|_L=A^{-1}|_L=J_m-I_m$ as well.
+Applied to a pair indicator, this says that the two column sums
+of every off-diagonal block are both odd. Since that block already
+has exactly one nonzero entry in each row, it must have exactly
+one in each column too. It is therefore a signed permutation.
+Finally $W_{ij}=A_{ij}F$ is Hadamard.
+\end{proof}
+
+\begin{theorem}[All sign fillings in quadratic time]
+For a normalized $W(n,n-2)$, all zero-preserving Hadamard fillings
+can be listed by testing eight initial states. There are at most
+eight fillings, and the test uses $O(n^2)$ integer operations.
+Specifically, a filling has diagonal blocks $S_i=R_iF$,
+$R_i\in\mathcal D$. Choose $R_0\in\mathcal D$, force
+\[
+ R_j=-A_{j0}R_0^{\mathsf T}A_{0j}\quad(j>0),
+\]
+and accept exactly when
+\[
+ A_{ij}R_j^{\mathsf T}+R_iA_{ji}^{\mathsf T}=0
+ \quad\text{for every }i<j.
+\]
+Each accepted state gives one complete Hadamard matrix.
+\end{theorem}
+\begin{proof}
+Let $X$ be supported on the zero blocks. Inside each row pair,
+the cross terms $WX^{\mathsf T}+XW^{\mathsf T}$ vanish, so the
+Hadamard equations force $S_iS_i^{\mathsf T}=2I_2$. Thus $S_i$
+is a two-square Hadamard matrix and $R_i=S_iF/2$ is a signed
+permutation. Different pairs have $XX^{\mathsf T}=0$, leaving
+exactly the displayed cross equations. The equations with pair
+$0,j$ solve uniquely for $R_j$ as shown, since $A_{0j}$ and
+$A_{j0}$ are orthogonal. All forced states remain in $\mathcal D$.
+Testing the other pairs is necessary and sufficient, and all
+fillings arise this way. There are eight roots and $O(n^2)$
+constant-size block operations per root. The order-four example
+below has eight fillings, so the cardinality bound is sharp.
+\end{proof}
+
+Thus the general two-zero problem is not an unconstrained
+exponential search over the $2n$ missing signs. Its obstruction
+is a small matrix consistency condition around block triangles.
+Nevertheless consistency can fail, even over the reals.
+
+\subsection{An explicit $W(12,10)$ that cannot be filled even by real entries}
+Let $I$ be the two-square identity and put
+\[
+ D=\begin{pmatrix}1&0\\0&-1\end{pmatrix},\quad
+ S=\begin{pmatrix}0&1\\1&0\end{pmatrix},\quad
+ J=DS=\begin{pmatrix}0&1\\-1&0\end{pmatrix}.
+\]
+Define the following six-square \emph{block} matrix, whose entries
+are two-square matrices:
+\[
+ A=\begin{pmatrix}
+0&I&D&D&D&D\\
+S&0&-I&-I&I&I\\
+S&-D&0&I&-D&D\\
+S&-D&I&0&D&-D\\
+S&D&-D&D&0&-I\\
+S&D&D&-D&-I&0
+\end{pmatrix},\qquad W=A(I_6\otimes F).
+\]
+Direct integer block multiplication gives $AA^{\mathsf T}=5I_{12}$,
+so $WW^{\mathsf T}=10I_{12}$. Its nonzero entries are signs and
+its zeros are exactly the diagonal two-square blocks.
+
+Suppose first that even \emph{real} zero replacements could give
+a matrix $H$ with $HH^{\mathsf T}=12I_{12}$. As in the preceding
+proof the fill blocks have $S_iS_i^{\mathsf T}=2I$, so
+$R_i=S_iF/2\in O(2)$, and the same propagation formula applies.
+Writing $R=R_0$, the specified blocks give
+\[
+ R_1=-SR^{\mathsf T},\qquad
+ R_2=R_4=-SR^{\mathsf T}D.
+\]
+The pair $1,2$ cross equation becomes
+$DRS+SR^{\mathsf T}D=0$, equivalently
+\[
+ R+JR^{\mathsf T}J=0.
+\]
+For every real two-square matrix,
+$JR^{\mathsf T}J=R-\operatorname{tr}(R)I$, so $R$ must be
+scalar. Its orthogonality then forces $R=\lambda I$ with
+$\lambda=\pm1$. But pair $2,4$ requires
+$RS+SR^{\mathsf T}=0$, or $2\lambda S=0$, a contradiction.
+This proves that no real orthogonal completion can change only
+the zero entries, and in particular no sign filling exists.
+Hadamard matrices of order twelve do exist; the obstruction
+concerns this prescribed set of nonzero entries.
+
+The checker embeds the full integer $W$, verifies its Gram matrix,
+and records a failing block pair for each of the eight root states.
+Six states already fail on triangle $0,1,2$; the remaining scalar
+states fail on triangle $0,2,4$. The symbolic argument above
+certifies the stronger real obstruction without numerical optimization.
+
+\subsection{Positive cases and the limit of the route}
+For an order-$m$ conference matrix $C$ in symmetric or skew form,
+$C\otimes F$ is a weighing matrix of order $2m$ and weight $2m-2$.
+If $C$ is skew, use a constant symmetric $R_i\in\mathcal D$;
+if $C$ is symmetric, use a constant skew $R_i\in\mathcal D$.
+The cross equations then vanish and produce a same-order Hadamard
+matrix. These are familiar conference constructions, not new orders.
+Exact checks find respectively eight fillings at order four,
+six for the skew-conference tensor at order eight, and two for
+the symmetric-conference tensor at order twelve.
+
+The results separate two tasks: constructing a near-full weighing
+matrix, and ensuring its small missing support has compatible
+orthogonal-design structure. One zero per row has the classical
+positive conference answer at admissible orders. Two zeros per
+row permit a complete polynomial test, but the explicit counterexample
+shows that existence of such a weighing matrix does not itself
+force zero-preserving completion. Nothing here proves an all-order
+Hadamard existence theorem or excludes repairs that also modify
+some nonzero entries.

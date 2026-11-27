@@ -1,0 +1,197 @@
+\section{Collision ascent has nonglobal strict local maxima}
+\label{sec:attainment-traps}
+Let $\mathcal P_d$ be the polytope of probability measures on
+$\{-1,1\}^d$ with all coordinate means and distinct pair correlations
+zero, and put $C(w)=\sum_xw_x^2$. Finite-field character constructions
+of pairwise independent distributions are classical; see Luby--Wigderson,
+\emph{Pairwise Independence and Derandomization}, Sections 1.1--1.2,
+\url{https://www.math.ias.edu/~avi/PUBLICATIONS/LubyWig2005.pdf}.
+The standard atom bound $w_x\le1/(d+1)$ and Hadamard equality case
+are discussed by Gavinsky--Pudl\'ak,
+\url{https://users.math.cas.cz/~pudlak/pairwise.pdf}.
+The results below are self-contained landscape certificates; priority
+has not been established.
+
+\begin{lemma}[Local maximum criterion]\label{lem:attainment-criterion}
+A point $w$ of a finite polytope $P$ is a local maximum of the squared
+Euclidean norm if and only if $w$ uniquely maximizes the linear
+functional $v\mapsto w\cdot v$ over $P$. In this case it is a strict
+local maximum and a vertex. In particular, every uniform distribution
+that is a vertex of $\mathcal P_d$ is a strict local maximum of $C$.
+\end{lemma}
+\begin{proof}
+If $v\ne w$ has $w\cdot(v-w)\ge0$, then
+$\|w+t(v-w)\|^2-\|w\|^2=2t w\cdot(v-w)+t^2\|v-w\|^2>0$
+for every $t>0$. Conversely, assume strict linear exposure. Over the
+finitely many other vertices $u$, the ratio
+$-w\cdot(u-w)/\|u-w\|$ has positive minimum $a$. For any convex
+combination $v$ of vertices, linearity and the triangle inequality give
+$w\cdot(v-w)\le-a\|v-w\|$. The quadratic increment is therefore
+negative when $0<\|v-w\|<2a$.
+For a uniform distribution on support $S$ of size $m$,
+$w\cdot(v-w)=-\sum_{x\notin S}v_x/m$. A vertex has no other feasible
+measure supported on $S$: a second such measure would permit a small
+continuation from $w$ in the opposite direction inside its positive
+support, contradicting extremality. This proves strict exposure.
+\end{proof}
+
+\begin{theorem}[Explicit four- and five-bit traps]
+\label{thm:attainment-small-traps}
+The following measures are nonglobal strict local maxima of $C$:
+\begin{enumerate}
+\item On four bits, writing $k$ for the number of negative coordinates,
+assign mass $1/6$ at $k=0$, mass $1/12$ to every point with $k=2$ or
+$k=3$, and mass zero otherwise.
+\item On five bits, assign mass $1/6$ at $k=0$, mass $1/12$ to each
+of the ten points with $k=3$, and zero otherwise.
+\end{enumerate}
+Both have $C=7/72$, whereas feasible measures with $C=1/8$ exist.
+\end{theorem}
+\begin{proof}
+Exchangeability reduces balanced pairwise independence to
+$\mathbb E k=d/2$ and $\mathbb E k(k-1)=d(d-1)/4$, verified directly
+for both measures. Their collision is $1/36+10/144=7/72$.
+For four bits the quadratic function
+\[
+ q_4(k)=\frac{k^2-5k+12}{72}
+\]
+equals $w_x$ on its support and exceeds it by $1/9$ elsewhere.
+For five bits use
+\[
+ q_5(k)=\frac1{12}+\frac{(k-3)^2}{108};
+\]
+it equals $w_x$ on the support and is positive off the support.
+The expectation of either quadratic is fixed by the moment constraints,
+so $w\cdot v\le w\cdot w$, with equality only if $v$ uses no new atoms.
+For four bits the eleven support moment columns are linearly independent;
+the accompanying exact checker verifies this using rational elimination.
+For five bits this independence is explicit: $1-k/3$ restricts to the
+indicator of the all-positive atom. For each two-element set $\{i,j\}$,
+the polynomial $\frac14(1+x_i)(1+x_j)-(1-k/3)$ restricts to the
+indicator of the weight-three atom with positive coordinates $i,j$.
+Thus every supported weight is fixed by the degree-two moments.
+The criterion lemma proves strict local maximality. Uniform laws formed
+from four or five distinct nonzero linear characters on three independent
+fair bits have eight distinct atoms and collision $1/8$; for example
+use masks $(1,2,3,4)$ and $(1,2,3,4,5)$ in $\mathbb F_2^3$.
+\end{proof}
+
+\begin{theorem}[A trap at admissible Hadamard order eight]
+\label{thm:attainment-admissible-trap}
+Let $z$ be uniform on $\mathbb F_2^4$, and take seven sign bits
+$x_b(z)=(-1)^{b\cdot z}$ with
+\[
+ B=\{1,2,3,4,5,8,10\},
+\]
+where masks are written in binary. Their law $w\in\mathcal P_7$ is
+a strict local maximum with $C(w)=1/16$, although the global maximum
+is $1/8$. In particular, every feasible $v\ne w$ with
+$\|v-w\|_\infty<1/136$ satisfies $C(v)<C(w)$.
+\end{theorem}
+\begin{proof}
+Distinct nonzero characters are unbiased and pairwise orthogonal.
+The masks include $1,2,4,8$, so the sixteen atoms are distinct.
+Moreover
+\[
+ \{0\}\cup B\cup\{b+b':b,b'\in B,\ b\ne b'\}
+ =\mathbb F_2^4.
+\]
+Therefore the degree-at-most-two monomials restricted to these atoms
+span all sixteen Walsh characters. They determine every supported
+weight uniquely, proving the uniform measure is a vertex.
+
+For the stated radius, choose for each character one degree-at-most-two
+monomial representing it on the support $S$. Walsh inversion gives
+polynomials $L_s$ with $L_s(t)=\mathbf1_{s=t}$ on $S$ and
+$|L_s(x)|\le1$ on the entire seven-bit cube: each is a sum of sixteen
+signed monomials with coefficients $1/16$.
+Put $\delta=v-w$ and $\epsilon=\sum_{x\notin S}v_x$.
+The fixed moments give
+$|\delta_s|=|\sum_{x\notin S}v_xL_s(x)|\le\epsilon$.
+Hence $\|\delta\|_1\le17\epsilon$. Since
+$w\cdot\delta=-\epsilon/16$, we obtain
+\[
+ C(v)-C(w)\le-\epsilon/8+
+             17\epsilon\|\delta\|_\infty<0.
+\]
+If $\epsilon=0$, uniqueness forces $v=w$.
+Finally, the seven nonzero characters of $\mathbb F_2^3$ give a
+uniform eight-atom law with collision $1/8$. No law can exceed that:
+for each support atom $s$, the orthonormal functions $1,x_1,\ldots,x_7$
+form an isometry into weighted atom space, whose projection diagonal
+is $8w_s\le1$. Thus $C\le\max_s w_s\le1/8$.
+\end{proof}
+These traps concern the full feasible polytope, with arbitrary feasible
+perturbations, not only a selected set of coordinate moves. A continuous
+nondecreasing collision-ascent path cannot leave a strict local trap.
+A finite nonlocal jump can escape. Therefore local collision ascent is
+not an all-order attainment proof, even in a dimension where a Hadamard
+matrix is already known to exist. No new existence result is asserted.
+
+\paragraph{Exact small enumeration.}
+For three bits the feasible Walsh form is
+$w_x=(1+a x_1x_2x_3)/8$, $|a|\le1$; its only local maxima are the two
+global parity laws. For four bits the checker enumerates all vertices
+in the five free Walsh coefficients (four triples and one quadruple).
+It finds exactly 26: ten with collision $1/8$ and sixteen with $7/72$.
+Every vertex strictly exposes itself: the largest $w\cdot(v-w)$ among
+other vertices is negative. The explicit proofs above do not depend
+on treating numerical optimization as a certificate.
+
+\begin{theorem}[Arbitrarily poor traps at admissible orders]
+\label{thm:attainment-infinite-traps}
+For every integer $s\ge2$, put $h=2^s$. There is a uniform vertex
+of $\mathcal P_{2h-1}$ supported on $h^2$ atoms. It is a strict
+local maximum with collision $1/h^2$, whereas the global maximum
+is $1/(2h)$. Their ratio $2/h$ tends to zero. A sufficient strict
+local radius in the infinity norm is $2/[h^2(h^2+1)]$.
+\end{theorem}
+\begin{proof}
+Write $G=\mathbb F_2^s\oplus\mathbb F_2^s$. Take all $h-1$
+nonzero characters supported on the first summand, all $h-1$
+nonzero characters supported on the second summand, and one character
+nonzero on both summands. These $2h-1$ characters define sign bits
+on a uniform seed $z\in G$. They include a basis of the dual group,
+so the $h^2$ atom vectors are distinct. Every group character is
+constant, one selected character, or a product of two selected
+characters: a mixed character $(a,b)$ is the product of $(a,0)$ and
+$(0,b)$. Thus the restricted degree-two moments span all functions
+on the support, making the uniform measure a vertex.
+The preceding criterion proves strict local maximality. The same
+Walsh interpolation proof with $m=h^2$ yields
+$\|\delta\|_1\le(m+1)\epsilon$ and
+\[
+ C(w+\delta)-C(w)
+ \le\epsilon\big[-2/m+(m+1)\|\delta\|_\infty\big],
+\]
+which gives the radius. At this number of bits, all nonzero characters
+on $\mathbb F_2^{s+1}$ give $2h$ equal-weight atoms and collision
+$1/(2h)$. The atom bound proves global optimality.
+\end{proof}
+The construction uses two independent seed blocks but includes their
+complete sets of characters and a mixed character as observed bits;
+it is not an independent product on two disjoint observed bit blocks.
+The latter distinction is essential: a product whose support exceeds
+the number of moment equations cannot be a local maximum, since it
+has a nonzero two-sided supported feasible direction.
+
+\begin{corollary}[A certified collision barrier]
+\label{cor:attainment-barrier}
+For each uniform character trap above with support size $m$, every
+continuous feasible path from the trap to a global maximizer passes
+through a measure of collision at most
+\[
+ \frac1m-\frac1{m^2(m+1)}.
+\]
+\end{corollary}
+\begin{proof}
+The interpolation bound implies $\|\delta\|_\infty\le\epsilon$:
+it holds on the support, and each off-support mass is at most their
+total $\epsilon$. At infinity distance $r=1/[m(m+1)]$, the preceding
+inequality gives $C(w+\delta)-1/m\le-\epsilon/m\le-r/m$.
+Every global maximizer is uniform on $n=d+1<m$ atoms: the atom bound
+$w_x\le1/n$ and $C=1/n$ force each positive weight to equal $1/n$.
+It therefore omits at least one trap atom, putting it at infinity
+distance at least $1/m>r$. A continuous path must cross the radius-$r$
+boundary.
+\end{proof}

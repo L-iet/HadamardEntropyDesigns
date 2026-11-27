@@ -1,0 +1,23 @@
+{
+  "challenge_module": "PlotkinChallenge",
+  "solution_module": "PlotkinSolution",
+  "theorem_names": [
+    "EntropyDesigns.binarySeed_bijective",
+    "EntropyDesigns.ConcentratedFamily.concentrated_witness_exists",
+    "EntropyDesigns.ConcentratedFamily.concentrated_sharp_distance",
+    "EntropyDesigns.ConcentratedFamily.concentrated_exact_repair",
+    "EntropyDesigns.ConcentratedFamily.concentrated_all_repairs_lower",
+    "EntropyDesigns.ConcentratedFamily.concentrated_canonical_limits",
+    "EntropyDesigns.PlotkinSupport.seed_clique_plotkin_bound",
+    "EntropyDesigns.PlotkinSupport.observed_clique_plotkin_bound",
+    "EntropyDesigns.PlotkinSupport.observed_orthogonality_plotkin_bound",
+    "EntropyDesigns.PlotkinSupport.source_plotkin_distance_bound"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "enable_nanoda": true
+}

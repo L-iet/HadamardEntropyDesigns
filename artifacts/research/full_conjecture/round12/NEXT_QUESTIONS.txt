@@ -1,0 +1,29 @@
+NEXT RESEARCH QUESTIONS
+
+1. What extra structure permits progress beyond a half-frame?
+The conditional arithmetic theorem gives n/2-n^(1/2+o(1)) rows,
+but the structured order20 example cannot complete without changing
+prescribed rows. A useful theorem must allow row replacement or avoid
+such frames; monotone completion alone is false.
+
+2. Can residual dilation variables be used constructively?
+The parameter V V^T=nI_(b-a) gives all completions with three prescribed
+blocks. Rational V always exists, but an exact energy gap can prevent
+sign rounding. Seek an operation changing prescribed rows while
+controlling the residual sign equations, not an unsupported flatness claim.
+
+3. Find a genuinely uniform completion-count certificate.
+Cubic moments improve finite lower bounds but still fail on the weaker
+retained space. Higher ratios converge to the finite maximum without a
+uniform bound on the useful moment order or computation cost.
+
+4. Sharpen dimension-dependent stability in the correct model.
+The existing multiplier theorem now yields exact full-bit laws with
+absolute deficit n^(-3/2+o(1)) yet distance tending to one from every
+Hadamard mixture. This constrains full-bit stability guarantees, not
+the earlier N-4-bit extraction theorem. Keep the hypotheses separate.
+
+5. Audit conditional assumptions and priority.
+No announced GRH proof was validated here. The partial-matrix result
+remains conditional on the precise Dirichlet hypotheses. Compare the
+new quantitative corollaries with current literature before novelty claims.

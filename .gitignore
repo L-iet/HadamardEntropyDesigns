@@ -1,0 +1,7 @@
+.lake/
+.proof-tools/
+__pycache__/
+paper/.build/
+*.aux
+*.log
+*.out

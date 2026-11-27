@@ -1,0 +1,50 @@
+{
+  "passed": true,
+  "cases": [
+    {
+      "k": 2,
+      "h": 4,
+      "hadamardOrder": 8,
+      "sourceAtoms": 16,
+      "maximumOrthogonalSubset": 4,
+      "hadamardMixtureDistance": "1/2",
+      "allCompletionAtoms": 32,
+      "completedOffsetCliques": 4,
+      "repairHadamardBlocks": 2,
+      "minimumObservationReplacements": 8,
+      "unchangedCollision": "1/16",
+      "allSourceMomentsAndRepairMomentsExact": true
+    },
+    {
+      "k": 2,
+      "h": 8,
+      "hadamardOrder": 16,
+      "sourceAtoms": 64,
+      "maximumOrthogonalSubset": 8,
+      "hadamardMixtureDistance": "1/2",
+      "allCompletionAtoms": 128,
+      "completedOffsetCliques": 8,
+      "repairHadamardBlocks": 4,
+      "minimumObservationReplacements": 32,
+      "unchangedCollision": "1/64",
+      "allSourceMomentsAndRepairMomentsExact": true
+    },
+    {
+      "k": 4,
+      "h": 8,
+      "hadamardOrder": 32,
+      "sourceAtoms": 4096,
+      "maximumOrthogonalSubset": 8,
+      "hadamardMixtureDistance": "3/4",
+      "allCompletionAtoms": 16384,
+      "completedOffsetCliques": 512,
+      "repairHadamardBlocks": 128,
+      "minimumObservationReplacements": 3072,
+      "unchangedCollision": "1/4096",
+      "allSourceMomentsAndRepairMomentsExact": true
+    }
+  ],
+  "allCompletionBlocksExactlyOrthogonal": true,
+  "completionsHaveDisjointSupports": true,
+  "noNewHadamardOrderClaim": true
+}

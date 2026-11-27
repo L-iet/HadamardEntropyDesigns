@@ -1,0 +1,40 @@
+NEXT MATHEMATICAL QUESTIONS
+
+1. Uniform activation versus arbitrarily delayed activation.
+The five-dimensional reflection proves that five copies can be
+necessary as p approaches 2 from above. It does not show that five
+always suffice, or that activation indices are unbounded. A useful
+target is a uniform bound at fixed p or a rigorously certified family
+violating every such bound. Small moment deficit alone does not
+prove delayed activation: the full trace is sufficient, not necessary.
+
+2. Tensor-compatible replacement for ordinary compactness.
+An original-dimensional global minimum is not necessarily stable
+under self-tensoring. One must prove existence of a stable point or
+find an entirely different implication. Merely optimizing a tensor
+power and invoking compactness in the base group does not provide it.
+The order-6/order-36 obstruction forbids an unrestricted extraction
+principle, so any such theorem needs essential admissibility or
+additional structural hypotheses.
+
+3. Non-product extraction that preserves a quantified gain.
+Independent-factor projection removes the quadratic gain of our
+trace-free interaction witness. Partial-trace/polar extraction can
+erase the improvement identically. A new extraction mechanism must
+retain information about interactions rather than just one-factor
+tangents or relative partial traces. No such mechanism is proved here.
+
+4. Complex one-copy local maximality at p=1.
+The trace theorem excludes nonflat maxima that persist at EVERY
+self-tensor power. It does not exclude a nonflat one-copy maximum.
+Proving tensor closure for these local maxima would bridge that gap,
+but closure of balanced critical points is not closure of maxima.
+Neither closure assertion nor the full one-copy conjecture is proved.
+
+5. Bibliographic review before any priority claim.
+Check citation descendants of Banica--Nechita 2013 and 2017, their
+general norm-optimization formulas, tensor stability in matrix
+optimization, and compact-group Laplacian methods. The present
+targeted search is insufficient to establish novelty. Reading papers
+does not authorize copying unlicensed source code; no such code was
+used in this pass.

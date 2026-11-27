@@ -1,0 +1,206 @@
+\section{A second-order upper bound for the covering function}
+Fix multiplicatively independent integers $b_1,\ldots,b_r>1$, $r\ge2$,
+and let $S=\{\prod b_i^{a_i}:a_i\in\NN\}$. Let $\ell_m(S)$ be the first
+positive integer not representable using at most $m$ members of $S$,
+with repetitions permitted. This section's upper bound does not require
+that one base is two; that requirement is used by our covering lower bound.
+Put
+\[
+c_i=\log b_i,\quad C=\sum_i c_i,\quad
+A=\frac1{r!\prod_i c_i},\quad
+\beta=1+r\log(r-1)-\log\!\left(r!\prod_i\log b_i\right).
+\]
+
+\begin{lemma}[Simplex count]\label{ext:lem:simplex}
+For $L\ge0$ and $T(e^L)=|S\cap[1,e^L]|$,
+\[
+\frac{L^r}{r!\prod_i c_i}\le T(e^L)
+\le\frac{(L+C)^r}{r!\prod_i c_i}.
+\]
+Thus $T(N)=A(\log N)^r(1+O(1/\log N))$.
+\end{lemma}
+\begin{proof}
+Independence makes exponent tuples correspond to distinct products.
+For each tuple with $\sum c_i a_i\le L$, take the half-open box
+$\prod_i[c_i a_i,c_i(a_i+1))$, of volume $\prod_i c_i$.
+These boxes have disjoint interiors. Their union contains the positive
+simplex $\sum x_i\le L$ (up to boundaries), by taking coordinate floors,
+and is contained in $\sum x_i\le L+C$. Compare volumes.
+\end{proof}
+
+\paragraph{Formalization of the simplex count.}
+The formal proof establishes a finite recursive enumeration of the
+actual natural exponent tuples, then proves its equivalence with
+distinct semigroup products under multiplicative independence.
+Induction using exact monotone sum--integral comparisons gives both
+constants above; no lattice-count formula is assumed. The formal
+\texttt{power\_\allowbreak count\_\allowbreak asymptotic} theorem
+includes the stated $O(1/\log N)$ relative error.
+
+
+\begin{theorem}[Second-order entropy bound]\label{ext:thm:entropy}
+For every fixed $\eta>0$, all sufficiently large $m$ satisfy
+\begin{equation}\label{ext:eq:entropy}
+\log\ell_m(S)\le(r-1)m\log m+rm\log\log m+(\beta+\eta)m.
+\end{equation}
+In particular the normalized second-order remainder has limsup at most
+$\beta$.
+\end{theorem}
+\begin{proof}
+Set
+\[
+L_m=(r-1)m\log m+rm\log\log m+(\beta+\eta/2)m,
+\qquad N=\lceil e^{L_m}\rceil.
+\]
+Then $\log N=L_m+o(1)$ and
+\[
+\log\log N=\log m+\log\log m+\log(r-1)+o(1).
+\]
+Every sum at most $N$ uses only members of $S\cap[1,N]$. The number
+of multisets of at most $m$ such members is exactly $\binom{T(N)+m}{m}$.
+This bounds the number of represented positive integers at most $N$,
+even though different multisets can have the same sum.
+The estimate $m!\ge(m/e)^m$ gives
+\begin{align*}
+\log\binom{T(N)+m}{m}
+&\le m\bigl(1+\log(T(N)+m)-\log m\bigr)\\
+&=(r-1)m\log m+rm\log\log m+(\beta+o(1))m.
+\end{align*}
+Here $T(N)/m\to\infty$ and Lemma~\ref{ext:lem:simplex} were used in the
+last line. This is strictly less than $\log N$ for large $m$, so a
+positive integer at most $N$ is missing. Hence $\ell_m(S)\le N$.
+The ceiling error $o(1)$ is absorbed by the remaining $\eta m/2$ margin.
+\end{proof}
+
+\paragraph{Formalization of the second-order bound.}
+The independent \texttt{SimplexEntropyChallenge} checks the full simplex
+and covering assertions, with fifty theorem targets and twenty-three
+concrete definitions. The least positive missing integer is specified
+directly from lists of at most $m$ summands, with repetitions permitted.
+The proof derives the count, the strict multiset pigeonhole inequality,
+the exact linear constant $\beta$, and the eventual bound for every
+$\eta>0$. The normalized limsup corollary is stated in the extended
+reals, including the possibility of limit $-\infty$. All proof code is
+original or included from the author's Apache~2.0 multibase development;
+mathlib is the external proof library.
+
+
+For $S(2,10)$ the result reads
+\[
+\log\ell_m\le m\log m+2m\log\log m+
+\bigl(1-\log(2\log2\log10)+\eta\bigr)m.
+\]
+For $S(2,10,26)$ it reads
+\[
+\log\ell_m\le2m\log m+3m\log\log m+
+\bigl(1+3\log2-\log(6\log2\log10\log26)+\eta\bigr)m.
+\]
+The linear constants are approximately $-0.161$ and $-0.361$,
+respectively; exact logarithmic expressions, rather than rounded decimals,
+are used in the theorem. This refines the existing $(r-1+o(1))m\log m$
+upper bound, but does not improve the leading coefficient $r-1$.
+
+\section{Finite covering certificates and their limits}
+The exact experiments use bitset subset dynamic programming for all
+allowed values at most $2^{22}=4194304$. Descending updates enforce
+distinct summands. For a monoid containing two, the resulting at-most-$m$
+coverage agrees with the version permitting repetitions: merge two equal
+summands into their double until all are distinct, never increasing
+the term count. The bitset results were checked against an independent
+unbounded-coin dynamic program on smaller intervals.
+
+\begin{center}
+\begin{tabular}{r r r r}
+\toprule
+$m$ & $\ell_m(S(2,3))$ & $\ell_m(S(2,10))$ & $\ell_m(S(2,10,26))$\\
+\midrule
+1 & 5 & 3 & 3\\
+2 & 23 & 7 & 7\\
+3 & 431 & 39 & 39\\
+4 & 18431 & 199 & 199\\
+5 & 3448733 & 1479 & 11999\\
+6 & $>4194304$ & 7879 & 637399\\
+7 & $>4194304$ & 375495 & $>4194304$\\
+\bottomrule
+\end{tabular}
+\end{center}
+An inequality in this table is only a cutoff bound, not a computed first
+missing value. The $(2,3)$ column is a numerical benchmark from the
+double-base literature; three is not asserted to be a binary Golay length.
+
+\begin{proposition}[Finite radix certificate]\label{ext:prop:radix}
+Suppose $k\ge1$ and every integer $0\le a<2^k$ is a sum of at most $w$ binary Golay
+lengths, and doubling a permitted length remains permitted. For odd
+$p>1$, put $q=(p-1)/2$ and
+$d=\lceil\log_{2^k}(q+1)\rceil$. Then a Hadamard matrix exists at some
+exponent
+\[
+t\le2wd+2.
+\]
+In particular the resulting explicit logarithmic coefficient is $2w/k$.
+\end{proposition}
+\begin{proof}
+Write $q$ in radix $2^k$ with at most $d$ digits. Expand each digit using
+its certified Golay-length sum, and multiply its summands by the relevant
+power of $2^k$. These are again Golay lengths. There are at most $wd$
+summands in total. Craigen's transfer gives $t=2r+2\le2wd+2$.
+Repeated lengths are allowed in that transfer, so cross-digit collisions
+do not invalidate the construction.
+\end{proof}
+
+\paragraph{Formalization of the transfer.}
+The full proposition is formalized with concrete binary Golay pairs and
+mathlib's Hadamard predicate, including the explicit inequality
+\[
+ t\le\frac{2w}{k}\log_2p+2w+2.
+\]
+Positivity of $k$ makes the radix at least two. Quotient--remainder
+induction constructs a list with at most $wd$ Golay lengths, with
+$d=\operatorname{clog}_{2^k}(q+1)$, and the fully proved finite
+construction supplies the Hadamard matrix. Licensed finite construction
+sources are reused from the author's original development, with exact
+source and attribution records. The independent \texttt{RadixChallenge}
+has no definition holes. The numerical covering examples below have
+separate kernel-certificate obligations.
+
+For example, $\ell_6(S(2,10,26))=637399>2^{19}$ gives $w=6$, $k=19$
+and coefficient $12/19\approx0.632$. This is a rigorous explicit
+certificate, but it is worse than Du--Jiang's coefficient $3/20$~\cite{ext:DJ}.
+Our finite experiment therefore does not establish a competitive uniform
+numerical improvement. Larger finite searches alone need not overcome
+the asymptotic preprocessing issue.
+
+The separate entropy certificates use integer arithmetic only. For
+$N=2^k$, count $T(N)$ exactly by summing
+\[
+T(N)=\sum_{b,c:\,10^b26^c\le N}
+\left(1+\left\lfloor\log_2\left\lfloor
+\frac{N}{10^b26^c}\right\rfloor\right\rfloor\right).
+\]
+If $\binom{T(N)+m}{m}<N$, then $\ell_m\le N$ without enumerating all
+integers through $N$. The supplied script records the actual integers
+and the strict inequality. These are upper bounds on the first missing
+integer, not lower coverage certificates.
+
+\begin{thebibliography}{9}
+\raggedright
+\bibitem{ext:KSW} D. Krenn, V. Suppakitpaisarn, and S. Wagner,
+\emph{On the minimal Hamming weight of a multi-base representation},
+Journal of Number Theory 208 (2020), 168--179.
+\url{https://arxiv.org/abs/1808.06330}.
+\bibitem{ext:Craigen} R. Craigen, \emph{Signed groups, sequences, and the
+asymptotic existence of Hadamard matrices}, J. Combin. Theory Ser. A
+71 (1995), 241--254. \url{https://doi.org/10.1016/0097-3165(95)90002-0}.
+\bibitem{ext:Livinskyi} I. Livinskyi, \emph{Asymptotic Existence of Hadamard
+Matrices}, M.Sc. thesis, University of Manitoba, 2012, Theorem 3.10.
+\bibitem{ext:DJ} C. Du and Y. Jiang, \emph{Golay Complementary Sequences of
+Arbitrary Length and Asymptotic Existence of Hadamard Matrices}, 2024.
+\url{https://arxiv.org/abs/2401.15381}.
+\bibitem{ext:AJM} B. Alexeev, J. Jasper, and D. G. Mixon,
+\emph{Asymptotically optimal approximate Hadamard matrices},
+arXiv:2511.14653v2, 2026. \url{https://arxiv.org/abs/2511.14653v2}.
+\bibitem{ext:BOS} R. P. Brent, J.-A. H. Osborn, and W. D. Smith,
+\emph{Lower bounds on maximal determinants of $\{\pm1\}$ matrices via
+the probabilistic method}, arXiv:1211.3248v3, 2013.
+\url{https://arxiv.org/abs/1211.3248v3}.
+\end{thebibliography}

@@ -1,0 +1,23 @@
+PRIMARY MATHEMATICAL INPUTS AND LIMITS
+
+Motta and Shipman, Informing the structure of complex Hadamard matrix
+spaces using a flow, DCDS-S12(2019),2349--2364:
+https://doi.org/10.3934/dcdss.2019147
+Background for complex phase flows and local Hessian analysis.
+The real-sign strict-saddle argument and its integer certificates are
+derived independently here; priority has not been established.
+
+Verheiden, Arithmetical Properties of Combinatorial Matrices (1978):
+https://thesis.caltech.edu/2899/
+Classical real completion with at most seven missing rows is an input
+to the quaternary defect-three theorem. This theorem is not claimed
+as a proof from scratch or a new replacement for classical completion.
+
+Earlier branch proofs record conference normalization, orthogonal designs,
+tensor products and energy-search background. All new computational
+certificates are original; earlier local certificates may be read as data.
+No external code or proof-source implementation is imported.
+
+Finite checks support the written general proofs. They do not prove
+all-order attainment, convergence of continuous phase optimization,
+novelty, or the full Hadamard conjecture.

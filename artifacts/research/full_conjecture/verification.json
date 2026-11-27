@@ -1,0 +1,35 @@
+{
+  "checkedAtUTC": "2026-11-21T02:02:19.834452+00:00",
+  "pages": 10,
+  "paperMatrixMatchesCertificate": true,
+  "latexChecksPassed": true,
+  "files": {
+    ".gitignore": "03824949a66ab6db1429bd078d10d1bc2d75706aa1b756c547f9a7ff541c77cb",
+    "build.py": "0bf5af709f4a350cd55b31107723632a1686f4ea0600c716f3664606557d4dcb",
+    "data\\exchange.json": "8ab020404917f42cbdc3997d58421ac98df4ac19b69a0bd6ae79f7416220c3e3",
+    "data\\experiments.json": "24afd3a69900b7e00a950c78f9e9fd11028d082c5fa33c507c567316e67e94dc",
+    "data\\moments.json": "04f979d080758d79139f0696e78c733ba9cbe74ac2734466cfe4e6e4592f2ca1",
+    "data\\norm-lifting.json": "b14e63af814d74303b563774c62ce5b89b3a562f26415ba9a08ddfd523e81601",
+    "data\\partial20.json": "e8ba6363ab8e81c3f661af9cd4bf88101aaa792e41edddd6e03f2d8ba927931c",
+    "data\\verification.json": "05c2677bda59ebd494e7132ffcbfe4871bce42d5b28a9ba7ab960a8f5cfe20d2",
+    "experiments\\exchange.py": "36fce42d1ac6cf72643fcbe23e53e9866c64f4d3800fd9a83c755cd71d305743",
+    "experiments\\investigate.py": "db7d3f1458ee1632191378235a2bb007a2c00158628f0d44141dcf4b1f670c09",
+    "experiments\\moments.py": "5ddbddee55de75bd97cdbec01808dff66040f9296ace642c5b1fc31e5f8b25d7",
+    "experiments\\norm_lifting.py": "83647c16a22c0fda58283b4bc80a14bf76ac5b893554c2166035b083a54d24c4",
+    "experiments\\verify.py": "ade89a17d58505d88bfac469c5ab7b9c1e326ea0421e079768dc4f22af004d4f",
+    "LICENSE": "b40930bbcf80744c86c46a12bc9da056641d722716c378f5659b9e555ef833e1",
+    "paper\\research.pdf": "cf73731b3c576756eb481c324abfdd3235410415001c5d9a32da391fc04494bf",
+    "paper\\research.tex": "e56f0c00cd3496d634e2ff54592614a61618151295e528be1791b74fee643375",
+    "README.txt": "36bcf3b92f688fd890ac6edc38ec00e7921328299bd722f19d77536e201b4a35"
+  },
+  "scope": {
+    "fullConjectureProved": false,
+    "newUniversalConstruction": false,
+    "strongerNormLiftingProved": false,
+    "priorityEstablished": false,
+    "exactFiniteCertificatesVerified": true,
+    "leanWork": false,
+    "existingProjectEdited": false
+  },
+  "documentationHashRefreshedAtUTC": "2026-11-21T02:19:00.574669+00:00"
+}

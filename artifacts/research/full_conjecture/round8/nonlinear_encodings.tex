@@ -1,0 +1,170 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,mathtools,hyperref}
+\setlength{\emergencystretch}{3em}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\newcommand{\E}{\mathbb E}
+\newcommand{\tr}{\operatorname{tr}}
+\title{Sharp cubic encodings of known Hadamard matrices\\on minimal binary seeds}
+\author{Joshua Mark\thanks{ORCID: \href{https://orcid.org/0009-0003-5905-2382}{0009-0003-5905-2382}. AI tools assisted with derivation, independent review, computation and exposition.}}
+\date{20 November 2026 --- research draft; priority not established}
+\begin{document}\maketitle
+\section{Minimal binary seeds require substantial nonlinear observables}
+\label{sec:nonlinear-seeds}
+We distinguish Boolean algebraic degree over $\mathbb F_2$ from real
+Walsh degree. A sign observable is written $(-1)^{f(z)}$, and its degree
+means the degree of the unique squarefree Boolean polynomial $f$.
+The constructions below encode the classical Paley matrices; they do
+not give new Hadamard orders. Paley's primary paper is
+\emph{On Orthogonal Matrices} (1933),
+\url{https://doi.org/10.1002/sapm1933121311}. The standard binary-code
+viewpoint also appears in Orrick, \emph{Switching operations for Hadamard
+matrices}, \url{https://arxiv.org/abs/math/0507515}.
+All encoding bounds below are proved explicitly; novelty is unestablished.
+
+\begin{proposition}[Affine observable budget]
+\label{prop:nonlinear-affine-budget}
+Suppose an order-$N$ normalized Hadamard matrix is encoded by distinct
+labels $S\subset\mathbb F_2^r$, with uniform weight $1/N$ on each label.
+If $N\equiv4\pmod8$ and $r<N-2$, the number $k$ of nonconstant columns
+that extend to affine Boolean functions satisfies
+\[
+ k\le\min\{r,\,2^r-N-1\}\qquad(N<2^r).
+\]
+Thus a minimal four-bit encoding of $H_{12}$ needs at least eight
+nonaffine observables, and a minimal five-bit encoding of $H_{20}$
+needs at least fourteen.
+\end{proposition}
+\begin{proof}
+Write $B=(J-H_{\rm core})/2$. Over $\mathbb F_2$, the core rows have
+even weight $N/2$ and distinct rows intersect in odd weight $N/4$.
+Therefore $BB^T=J+I$, of rank $N-2$. Also $B\mathbf1=0$, so
+$\operatorname{rank}B=N-2$ and its only column relation is the sum
+of all $N-1$ columns. Any proper subset is independent. Affine functions
+vanishing at the label of the normalized first row form a space of
+dimension $r$. Hence at most $r$ columns can be affine.
+
+For the other bound, affine sign functions giving distinct nonconstant
+orthogonal columns have distinct nonzero linear parts. Together with
+one, they are orthogonal on the whole binary cube. Their inner products
+vanish on $S$, so also on its complement $T$. Thus $k+1$ nonzero
+orthogonal real functions live on $|T|=2^r-N$ points, giving the bound.
+\end{proof}
+
+Let $\mathrm{RM}(d,r)$ denote the space of Boolean polynomials of degree
+at most $d$ on $r$ bits; its dimension is $\sum_{j=0}^d\binom rj$.
+\begin{lemma}[Complement criterion for low-degree extensions]
+\label{lem:nonlinear-extension}
+Every Boolean function on $S\subset\mathbb F_2^r$ has a degree-at-most-$d$
+extension if and only if there is no nonzero polynomial of degree at
+most $r-d-1$ supported entirely on $S$. In particular, cubic extensions
+exist on any proper subset of the four-bit cube. On five bits they
+exist whenever the complement of $S$ affinely spans the cube.
+\end{lemma}
+\begin{proof}
+The binary inner product of monomials of total combined degree less
+than $r$ is zero: summing over any missing variable gives zero modulo
+two. Dimension counting then gives
+$\mathrm{RM}(d,r)^\perp=\mathrm{RM}(r-d-1,r)$.
+A nonzero left-kernel vector of restriction to $S$, extended by zero
+off $S$, is exactly such a dual polynomial. The particular cases use
+that a nonzero constant cannot vanish on a nonempty complement, and
+that an affine function vanishing on an affine spanning set is zero.
+\end{proof}
+
+\begin{theorem}[Sharp cubic benchmarks at orders twelve and twenty]
+\label{thm:nonlinear-cubic}
+For $N=12$ and $N=20$, the least possible maximum Boolean degree of
+all $N-1$ observables, among encodings on the minimal number
+$r=\lceil\log_2N\rceil$ of binary seed bits, is exactly three.
+The affine budgets above are simultaneously sharp: the examples have
+exactly three affine observables at order twelve and five at order twenty.
+\end{theorem}
+\begin{proof}
+For $N\equiv4\pmod8$, the normalized binary columns together with the
+constant function span a space of dimension $N-1$: the binary columns
+have rank $N-2$ and vanish at the first row. Thus any common degree
+bound $d$ requires
+$\sum_{j=0}^d\binom rj\ge N-1$.
+At $N=20,r=5$, quadratics have dimension $16<19$, proving the lower
+bound three.
+
+At $N=12,r=4$, the quadratic dimension is eleven, exactly the required
+rank. Suppose all observables were quadratic. Restriction of
+$\mathrm{RM}(2,4)$ to the twelve labels would have rank eleven and equal
+the span of the binary Hadamard columns and the constant function.
+Every vector in the latter span has even weight: the column weights
+are six and the constant has weight twelve. Hence all coordinate
+functions have even weight on $S$. Their full-cube weights are even,
+so the four omitted labels have xor zero. Four distinct labels with xor
+zero form an affine plane. Its indicator is a nonzero quadratic
+polynomial vanishing on $S$, contradicting the restriction rank eleven.
+This rules out quadratics for every labeling, without exhaustive search.
+
+For explicit upper bounds, use Paley's normalized order-$p+1$ matrix
+for $p=11,19$:
+\[
+ H_{\infty,j}=H_{i,\infty}=1,\qquad
+ H_{i,j}=\chi(j-i)-\mathbf1_{i=j},
+\]
+where $\chi$ is the Legendre symbol with $\chi(0)=0$.
+The first three nonconstant columns of $H_{12}$ give eight binary
+patterns, four occurring twice and four once. Label rows by these
+three bits and a fourth discriminator, choosing zero for the first
+occurrence and one for the second. In row order $(\infty,0,\ldots,10)$
+the resulting four-bit integer labels are
+\[
+ 0,5,3,6,13,11,7,14,4,8,1,2.
+\]
+The first three observables are affine. Every other observable has a
+cubic extension by the lemma. The affine budget proves three is maximal.
+
+The first five nonconstant columns of $H_{20}$ separate all twenty
+rows, with five-bit labels
+\[
+ 0,13,27,22,12,25,19,7,15,30,29,26,21,10,20,8,16,1,3,6.
+\]
+The complement contains the affine basis
+$2,4,5,9,11,17$: their differences from $2$ have binary rank five.
+The lemma gives cubic extensions of every observable, retaining the
+first five as coordinate functions. The affine budget proves optimality.
+All displayed finite certificates and extension polynomials are checked
+by original exact binary elimination in the accompanying script.
+\end{proof}
+
+\paragraph{A reusable nonlinear seed rule and its limit.}
+For any odd prime power $q\equiv3\pmod4$, Paley's quadratic-character
+formula over $\mathbb F_q$ supplies an extremal $(q+1)$-atom distribution.
+Inject its row labels into a binary cube, use the uniform measure on
+those labels, and solve the Boolean restriction equations for the
+observables. Lemma~\ref{lem:nonlinear-extension} precisely certifies when
+a chosen degree budget can express all outputs. The order-twelve and
+order-twenty examples show that cubic outputs genuinely cross the affine
+seed obstruction at minimal seed length; they are exact extremal laws,
+not approximate moment fits. They still inherit Paley's restriction on
+$q$, so this rule supplies no distribution at a currently unknown order.
+
+\begin{corollary}[Fixed algebraic degree cannot suffice asymptotically]
+\label{cor:nonlinear-growing-degree}
+For any Hadamard order $N\ge12$ with $N\equiv4\pmod8$, and minimal
+binary seed length $r=\lceil\log_2N\rceil$, every encoding has maximum
+Boolean degree at least $\lceil r/2\rceil$. Conversely, every injection
+of its rows into the $r$-bit cube admits extensions of degree at most
+$r-1$. Thus a fixed-degree minimal-seed model cannot represent extremal
+laws in arbitrarily large such orders, even where Hadamard matrices
+are already known.
+\end{corollary}
+\begin{proof}
+The rank bound requires $\sum_{j=0}^d\binom rj\ge N-1$.
+Here $N-1>2^{r-1}$, while binomial symmetry gives
+$\sum_{j=0}^{\lfloor(r-1)/2\rfloor}\binom rj\le2^{r-1}$.
+This proves the lower bound. The proper subset $S$ has nonempty
+complement, and Lemma~\ref{lem:nonlinear-extension} with $d=r-1$
+gives the upper bound.
+\end{proof}
+
+\end{document}

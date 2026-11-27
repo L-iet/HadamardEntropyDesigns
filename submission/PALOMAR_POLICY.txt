@@ -1,0 +1,16 @@
+Palomar requirements checked26November2026.
+https://github.com/PalomarRegistry/PalomarPolicy/blob/main/CONTRIBUTING.md
+https://github.com/PalomarRegistry/PalomarSubmission
+
+Exactly one recognized Lakefile; committed pinned manifest; metadata v0.4;
+one compatible SPDX root license; ordinary module headers; Lean source
+files at most10000lines; each selected Challenge at most1000lines/100KiB.
+Only the three standard axioms; every selected theorem and definition must
+match its independent canonical-import Challenge. Every configuration is a
+separate Palomar entry. Paper gaps are explicitly excluded in SCOPE.json,
+metadata, README and the PDF; no full-paper coverage is silently inferred.
+Local preparation is not sandboxed registry verification or registration.
+The default --ready check retains its whole-paper requirement. The separate
+check_submission_preparation.py validates the declared submission scope;
+--require-sandbox additionally requires actual sandboxed dual-kernel reports.
+No automatic submission, publication or security-control relaxation is made.

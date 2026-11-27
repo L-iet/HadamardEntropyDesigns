@@ -1,0 +1,35 @@
+NEXT EXISTENCE TARGETS
+
+1. Construct, rather than assume, the near-extremal input.
+For N divisible4, the round6 rounding theorem only needs N-4 bits,
+exactly unbiased and pairwise independent, with collision deficit
+from1/N at most1/(1024N^4). This is a sufficient target. No general
+construction in unknown orders is proved. Arbitrary deletion or
+renormalization can destroy exact moments.
+
+2. Escape certified collision traps globally.
+The full moment polytope has explicit nonglobal strict local maxima,
+even when the target Hadamard matrix exists. Ordinary continuous
+monotone collision ascent cannot leave them. A successful global
+principle must justify nonlocal jumps or controlled temporary loss.
+No such convergence theorem follows from convexity of the objective.
+
+3. Use limited symmetry, not full coordinate symmetrization.
+The full permutation-invariant class has maximal collisionTheta(d^-2)
+and Shannon entropy nearly d*log2, far from the desired log(d) scale.
+This does not exclude smaller group actions, algebraic designs or
+carefully chosen orbit unions with provable entropy concentration.
+
+4. Generalize constructive repair using its exact budget.
+The repeated-seed family has L<=k*s^2 and explicit efficient repairs.
+The rule finds structured fibers in that family, but no theorem finds
+such structure in general partial Hadamard matrices. The residual
+integral factorization alone is insufficient to provide signs.
+
+5. Preserve proof and provenance discipline.
+The entropy characterization and all subsequent conditional theorems
+are not existence proofs. Compare priority against weighted orthogonal
+arrays, convex quadratic maximization and classical Scarpis machinery.
+All external mathematical inputs are cited; no unlicensed proof code
+is included. The full Hadamard conjecture is still the goal and remains
+unresolved by this work.

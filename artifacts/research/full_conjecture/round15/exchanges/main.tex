@@ -1,0 +1,117 @@
+\section{Constructive strip and row escapes from the discrete tensor traps}
+\label{sec:exchanges-layer-escape}
+The preceding discrete traps obstruct improving one- and two-entry moves.
+They do not obstruct larger structured updates. This section gives an
+exact decomposition of the energy under Hadamard row layers, a sharp
+barrier in the corresponding strip-move graph, and a four-step block-row
+repair of the explicit tensor family. It does not provide a repair rule
+for arbitrary sign matrices or at unknown Hadamard orders.
+
+Write $F_n(H)=\|HH^T-nI\|_F^2$. Let $B$ be a sign Hadamard matrix of
+order $m$ and let $A_1,\ldots,A_m$ be arbitrary order-$N$ sign matrices.
+Define the $Nm\times Nm$ sign matrix
+\[
+ H_{(i,p),(j,q)}=(A_p)_{ij}B_{pq},\qquad
+ 1\le i,j\le N,\quad1\le p,q\le m.
+\]
+\begin{theorem}[An exact sum of independent row-layer energies]
+\label{thm:exchanges-layer-energy}
+After grouping rows by $p$, the row Gram of $H$ is block diagonal with
+blocks $mA_pA_p^T$. Consequently
+\[
+ F_{Nm}(H)=m^2\sum_{p=1}^m F_N(A_p).
+\]
+In particular $H$ is Hadamard if and only if every $A_p$ is Hadamard.
+Flipping one entry of one $A_p$ is realized by flipping an $m$-entry
+strip in one actual row of $H$, and its energy change is exactly
+$m^2$ times the base entry change. An arbitrary replacement of one base
+row is similarly one actual row replacement in $H$.
+\end{theorem}
+\begin{proof}
+The dot product of rows $(i,p)$ and $(i',p')$ is
+\[
+ \sum_j(A_p)_{ij}(A_{p'})_{i'j}\sum_qB_{pq}B_{p'q}.
+\]
+It is zero when $p\ne p'$, and equals $m(A_pA_p^T)_{ii'}$ otherwise.
+Subtract $NmI$ and square the Frobenius norm blockwise.
+The update statements follow directly from the definition.
+\end{proof}
+
+Let $A$ be the order-eight matrix with negative-entry row bitmasks
+\[
+ (84,44,30,230,133,73,111,51),
+\]
+using zero-based column bits. Its energy is $152$; the preceding pass
+certified positive cost for every single-entry move, nonnegative cost
+for every two-entry move, and a three-entry escape.
+\begin{proposition}[Exact escape barrier for strip moves]
+\label{prop:exchanges-strip-barrier}
+Starting from $A\otimes B$, the minimum number of strip flips needed
+to reach strictly lower energy is three. The least energy barrier along
+strip-flip paths to a lower-energy matrix is exactly $8m^2$.
+An explicit escape changes only one actual row and $3m$ entries.
+These minimum claims concern strip moves, not unrestricted entry moves.
+\end{proposition}
+\begin{proof}
+Every initial strip costs at least $8m^2$. Two strips in different layers
+each have positive cost; two in the same layer have nonnegative total
+cost by the exact base certificate. For an attaining path choose one
+layer and flip base cells $(2,4),(2,2),(2,3)$ in that order. All lie in
+one base row. The base energy path is
+$152\to160\to152\to128$, so the lifted path is
+\[
+ 152m^3\ \longrightarrow\ 152m^3+8m^2\
+ \longrightarrow\ 152m^3\
+ \longrightarrow\ 152m^3-24m^2.
+\]
+It attains both lower bounds.
+\end{proof}
+
+\begin{theorem}[Four improving block-row updates repair the whole family]
+\label{thm:exchanges-four-row-repair}
+For every Hadamard factor $B$, the tensor trap $A\otimes B$ admits an
+explicit repair to a Hadamard matrix through four strictly improving
+block-row replacements. Their energies are
+\[
+ 152m^3\to120m^3\to96m^3\to56m^3\to0.
+\]
+Equivalently the repair can be performed by $4m$ strictly improving
+ordinary-row replacements. Exactly $7m^2$ entries are changed in this
+construction. This count is not asserted to be globally minimal.
+\end{theorem}
+\begin{proof}
+Perform the following base row replacements in order:
+\[
+ \begin{array}{c|c|c|c}
+ \text{row}&\text{old negative mask}&\text{new mask}&\text{energy after update}\\\hline
+ 3&230&2&120\\
+ 2&30&31&96\\
+ 6&111&103&56\\
+ 7&51&49&0
+ \end{array}
+\]
+The final row masks are
+$(84,44,31,2,133,73,103,49)$ and have exact Gram $8I$.
+The checker verifies each displayed energy and Gram with integers.
+The mask xors have respective Hamming weights four, one, one, one,
+so seven base entries change, all at distinct positions.
+
+Apply each update simultaneously to all $m$ layers. The matrix remains
+$A^{(t)}\otimes B$, giving the stated $m^3$ energy scaling and final
+Hadamard matrix. Each changed base entry affects $m^2$ tensor entries,
+so the construction changes $7m^2$ entries. Alternatively update a single
+layer at a time: the exact sum formula says each ordinary-row replacement
+lowers energy by respectively $32m^2,24m^2,40m^2$, or $56m^2$.
+There are $m$ replacements of each of the four kinds and no step
+increases energy.
+\end{proof}
+
+The independent-layer identity gives a useful search rule when a tensor
+or Hadamard-layer structure is known: optimize the small base layers
+rather than relying on single-entry descent in the expanded matrix.
+It also makes the limit explicit: a Hadamard matrix in this class
+requires Hadamard base layers, so the construction cannot prove an
+unknown base order by hiding it inside a larger tensor dimension.
+Classical block-Hadamard operations are the background; priority for
+these particular trap-repair certificates has not been established.
+No new Hadamard orders or all-order existence claim is made.

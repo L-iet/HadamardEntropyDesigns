@@ -1,0 +1,41 @@
+{
+  "challenge_module": "HierarchyChallenge",
+  "solution_module": "HierarchySolution",
+  "theorem_names": [
+    "EntropyDesigns.ExchangeableHierarchy.pureTensor_posSemidef",
+    "EntropyDesigns.ExchangeableHierarchy.pureTensor_trace",
+    "EntropyDesigns.ExchangeableHierarchy.pureTensor_consistent",
+    "EntropyDesigns.ExchangeableHierarchy.uniformHierarchy_posSemidef",
+    "EntropyDesigns.ExchangeableHierarchy.uniformHierarchy_reindex",
+    "EntropyDesigns.ExchangeableHierarchy.uniformHierarchy_trace",
+    "EntropyDesigns.ExchangeableHierarchy.uniformHierarchy_consistent",
+    "EntropyDesigns.ExchangeableHierarchy.randomSign_sum",
+    "EntropyDesigns.ExchangeableHierarchy.randomSign_pair_sum",
+    "EntropyDesigns.ExchangeableHierarchy.signedShift_orthogonal",
+    "EntropyDesigns.ExchangeableHierarchy.signedShift_has_zero",
+    "EntropyDesigns.ExchangeableHierarchy.signedShift_not_flat",
+    "EntropyDesigns.ExchangeableHierarchy.shiftVector_normalized",
+    "EntropyDesigns.ExchangeableHierarchy.shiftVector_reduced_state",
+    "EntropyDesigns.ExchangeableHierarchy.shiftEnsemble_one_copy",
+    "EntropyDesigns.ExchangeableHierarchy.full_shift_hierarchy",
+    "EntropyDesigns.ExchangeableHierarchy.every_dimension_false_positive"
+  ],
+  "definition_names": [
+    "EntropyDesigns.ExchangeableHierarchy.tensorVector",
+    "EntropyDesigns.ExchangeableHierarchy.pureTensor",
+    "EntropyDesigns.ExchangeableHierarchy.traceFirst",
+    "EntropyDesigns.ExchangeableHierarchy.uniformHierarchy",
+    "EntropyDesigns.ExchangeableHierarchy.randomSign",
+    "EntropyDesigns.ExchangeableHierarchy.signedShift",
+    "EntropyDesigns.ExchangeableHierarchy.shiftVector",
+    "EntropyDesigns.ExchangeableHierarchy.shiftEnsemble",
+    "EntropyDesigns.ExchangeableHierarchy.shiftHierarchy",
+    "EntropyDesigns.ExchangeableHierarchy.FullShiftHierarchy"
+  ],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "enable_nanoda": true
+}

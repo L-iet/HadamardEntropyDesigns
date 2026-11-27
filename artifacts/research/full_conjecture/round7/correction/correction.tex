@@ -1,0 +1,108 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\newtheorem{theorem}{Theorem}
+\title{Exact Fourier correction and its concentration cost}
+\author{Joshua Mark}
+\date{20 November 2026; research draft, priority unestablished}
+\begin{document}\maketitle
+Let $P$ be any probability law on the $d$-dimensional sign cube,
+$M=2^d$, and $\chi_S(x)=\prod_{i\in S}x_i$. Write
+\[
+ m_S=\sum_xP(x)\chi_S(x),\qquad
+ f(x)=\sum_{1\le|S|\le2}m_S\chi_S(x),\quad
+ B=\max_x f(x),\quad L=\sum_{1\le|S|\le2}|m_S|.
+\]
+All quantities are computable from a finite law. In particular
+$0\le B\le L$. Let $C(P)=\sum_xP(x)^2$.
+
+\begin{theorem}[Nonnegative exact correction]
+The law
+\[
+ Q(x)=\frac{P(x)+(B-f(x))/M}{1+B}
+\]
+is nonnegative, normalized, unbiased and pairwise independent. Its
+total variation distance from $P$ is at most $B/(1+B)$, and
+\begin{equation}\label{collision}
+ C(Q)=\frac1M+
+ \frac{C(P)-(1+\sum_{1\le|S|\le2}m_S^2)/M}{(1+B)^2}
+ \ \ge\ \frac{C(P)}{(1+B)^2}.
+\end{equation}
+\end{theorem}
+\begin{proof}
+Nonnegativity is immediate from $B\ge f$. Uniform cube orthogonality
+gives $\sum f=0$ and $M^{-1}\sum f\chi_S=m_S$ for the specified
+sets $S$, so the low-order moments cancel exactly. If $B>0$, define
+$R(x)=(B-f(x))/(MB)$, a probability law. Then
+$Q=(P+BR)/(1+B)$, proving the variation bound and pointwise
+$Q\ge P/(1+B)$, hence the collision lower bound. If $B=0$, then
+$f=0$ and $Q=P$. For the exact identity expand the square, using
+$\sum P f=\sum m_S^2$ and $M^{-1}\sum f^2=\sum m_S^2$.
+\end{proof}
+
+The smallest nonnegative buffer in this same affine ansatz is exactly
+\[
+ \beta_* =\max\{0,\max_x(f(x)-MP(x))\}.
+\]
+Replacing $B$ by any $\beta\ge\beta_*$ preserves normalization,
+exact low-order moment cancellation, and the equality in
+\eqref{collision}. The mixture interpretation and its simple
+variation/collision lower bounds require $\beta\ge B$; they must not
+be asserted for the potentially smaller $\beta_*$. Thus the explicit
+universal construction is conservative, not an optimal repair theorem.
+
+\begin{theorem}[A sufficient input window for exact extraction]
+Let $d=n-1$, $n\equiv1\pmod4$, $n\ge5$, and $N=n+3$.
+If $C(P)\ge1/N$ and $B\le1/(2048N^3)$, the corrected law satisfies
+\[
+ 0\le1/N-C(Q)\le1/(1024N^4).
+\]
+Consequently the quantitative residue-one extraction theorem of round6
+constructs a Hadamard matrix of order $N$ from $Q$.
+It suffices to replace the assumption on $B$ by the stronger,
+easier-to-check condition $L\le1/(2048N^3)$.
+\end{theorem}
+\begin{proof}
+Exact isotropy of the augmented rows $(1,x)$ follows from the
+corrected moments, and the residue collision bound gives $C(Q)\le1/N$.
+The first theorem gives
+\[
+ 1/N-C(Q)\le\frac1N\left(1-\frac1{(1+B)^2}\right)
+ \le 2B/N\le1/(1024N^4).
+\]
+Apply the round6 stability theorem. This implication assumes the two
+stated input properties and does not produce such an input in unknown
+Hadamard orders.
+\end{proof}
+
+\begin{theorem}[Quantization obstruction for a uniform row candidate]
+In the same parameters, suppose $P$ is uniform on $N$ distinct sign
+rows, and at least one first or second moment is nonzero. The universal
+$B$-buffer correction above satisfies
+\[
+ 1/N-C(Q)\ge1/(2N^2),
+\]
+so it cannot enter the round6 extraction window.
+\end{theorem}
+\begin{proof}
+Since $N$ is even, each moment is an even integer divided by $N$;
+a nonzero one has magnitude at least $2/N$. Uniform expectation
+gives $|m_S|=|\mathbb E_{\rm unif} f\chi_S|
+\le\mathbb E_{\rm unif}|f|\le2B$, since $f$ has mean zero
+and positive part at most $B$. Thus $B\ge1/N$.
+Here $C(P)=1/N$ and $M=2^{N-4}\ge2N$ for $N\ge8$.
+The exact collision identity yields
+\[
+ 1/N-C(Q)\ge(1/N-1/M)\left(1-(1+B)^{-2}\right)
+ \ge\frac1{2N}\left(1-(1+1/N)^{-2}\right)
+ \ge\frac1{2N^2}.
+\]
+The last inequality is equivalent to $N^2-N-1\ge0$.
+\end{proof}
+This obstruction concerns the specified guaranteed buffer, not every
+correction scheme or the smaller $\beta_*$. It explains why repairing
+an arbitrary nearly orthogonal nearest-order sign matrix by adding a
+uniform Fourier buffer is inadequate. For uniform $N$-row candidates,
+the sufficient error condition of the preceding theorem forces all
+low-order moments to vanish already by integer quantization.
+\end{document}

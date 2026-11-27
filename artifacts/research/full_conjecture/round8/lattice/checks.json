@@ -1,0 +1,164 @@
+{
+  "status": "passed",
+  "arithmetic": "exact rational/integer",
+  "original_masks": [
+    0,
+    16773120,
+    16519104,
+    9656012,
+    13838682,
+    14783914,
+    1944718,
+    11409518,
+    15230494,
+    5921970,
+    3487346,
+    13018356
+  ],
+  "odd_kernel_vector": [
+    -1,
+    -1,
+    3,
+    -1,
+    1,
+    1,
+    -3,
+    -1,
+    1,
+    1,
+    -1,
+    1,
+    1,
+    -1,
+    -1,
+    -1,
+    1,
+    -1,
+    1,
+    -1,
+    1,
+    -1,
+    1,
+    1
+  ],
+  "odd_vector_norm_squared": 40,
+  "rounded_sign_bad_row_indices": [
+    2,
+    4,
+    6,
+    8,
+    10
+  ],
+  "trials": [
+    {
+      "deleted": [
+        0
+      ],
+      "candidates": 2,
+      "augmenting": false
+    },
+    {
+      "deleted": [
+        1
+      ],
+      "candidates": 16,
+      "augmenting": true
+    }
+  ],
+  "minimal_augmenting_deletions": 1,
+  "repair": {
+    "deleted": [
+      1
+    ],
+    "inserted": [
+      3198332,
+      6782212
+    ],
+    "retained": [
+      0,
+      16519104,
+      9656012,
+      13838682,
+      14783914,
+      1944718,
+      11409518,
+      15230494,
+      5921970,
+      3487346,
+      13018356
+    ]
+  },
+  "maximum_insertions_after_deleting_row1": 5,
+  "five_inserted_masks": [
+    3198332,
+    6782212,
+    8735670,
+    11139280,
+    13957672
+  ],
+  "candidate_classes": [
+    3198332,
+    3313468,
+    3859816,
+    6777512,
+    6782212,
+    8735670,
+    8847106,
+    8993716,
+    9397154,
+    10996370,
+    11139280,
+    11254416,
+    13957672,
+    14512420,
+    16111636,
+    16773120
+  ],
+  "candidate_graph_has_no_six_clique": true,
+  "terminal_augmented_masks": [
+    0,
+    16519104,
+    9656012,
+    13838682,
+    14783914,
+    1944718,
+    11409518,
+    15230494,
+    5921970,
+    3487346,
+    13018356,
+    3198332,
+    6782212,
+    8735670,
+    11139280,
+    13957672
+  ],
+  "augmented_odd_sum_row_span_witness": [
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    -1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "augmented_witness_budget": 0,
+  "scope": "Explicit repair and finite graph certificates; no universal exchange bound is claimed."
+}

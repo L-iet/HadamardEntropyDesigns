@@ -1,0 +1,77 @@
+{
+  "version": "v0.4",
+  "project": {
+    "name": "Pairwise-independent designs, entropy, and stability",
+    "description": "Verified submission scope: 84 of 89 principal manuscript claim records, restricted to the declarations selected by each Comparator configuration. Pairwise-independent designs, entropy, and stability. The manuscript also contains explicitly unsubmitted results listed in paper/ALIGNMENT.json and submission/SCOPE.json. Proof development is paused; full-manuscript formalization is not claimed.",
+    "authors": [
+      "Joshua Mark"
+    ],
+    "responsible_maintainers": [
+      "Joshua Mark"
+    ],
+    "license": "Apache-2.0"
+  },
+  "classification": {
+    "arxiv": [
+      "math.CO",
+      "math.FA"
+    ],
+    "msc2020": [
+      "05B20",
+      "68V20"
+    ]
+  },
+  "sources": [
+    {
+      "title": "Pairwise-independent designs, entropy, and stability research drafts",
+      "authors": [
+        "Joshua Mark"
+      ],
+      "type": "other",
+      "location": "paper/main.tex",
+      "relationship": "formalizes",
+      "note": "Consolidates prior local research notes; novelty unestablished. See provenance inventory."
+    },
+    {
+      "title": "On the joint entropy of d-wise-independent variables",
+      "type": "paper",
+      "location": "https://arxiv.org/abs/1503.08154",
+      "relationship": "background",
+      "note": "Mathematical reference only; no source code imported. Exact substantive dependencies and classical inputs are described in the paper."
+    },
+    {
+      "title": "Pairwise Independence and Derandomization",
+      "type": "paper",
+      "location": "https://www.math.ias.edu/~avi/PUBLICATIONS/LubyWig2005.pdf",
+      "relationship": "background",
+      "note": "Mathematical reference only; no source code imported. Exact substantive dependencies and classical inputs are described in the paper."
+    },
+    {
+      "title": "Binary codes with specified minimum distance",
+      "type": "paper",
+      "location": "https://doi.org/10.1109/TIT.1960.1057584",
+      "relationship": "background",
+      "note": "Mathematical reference only; no source code imported. Exact substantive dependencies and classical inputs are described in the paper."
+    }
+  ],
+  "automation": {
+    "methods": [
+      {
+        "method": "agent",
+        "tool_setup": "Codex: proof development, consolidation and checks; no expert review claimed."
+      }
+    ]
+  },
+  "review": {
+    "status": "unchecked",
+    "notes": "Selected declarations have local build, axiom-audit and comparison evidence. This does not claim independent human review, whole-manuscript formalization beyond the declared scope, or Palomar registry acceptance."
+  },
+  "limitations": [
+    "Full Hadamard conjecture not proved.",
+    "Excluded principal claims: E07.03, E08.02, E26.03, E26.04, E26.05. See submission/SCOPE.json and the paper formalization-status section. Private unfinished or unsubmitted developments are not included."
+  ],
+  "acknowledgements": "Joshua Mark ORCID: https://orcid.org/0009-0003-5905-2382. Lean/mathlib contributors and cited authors retain their credits. AI work is disclosed in automation.methods.",
+  "notes": [
+    "Complete twelve-label quadratic5/7 classification and no-eight obstruction have an independent concrete Challenge. Original Apache-2.0 proof code and exact parity graph certificates; public verification tracked separately."
+  ]
+}

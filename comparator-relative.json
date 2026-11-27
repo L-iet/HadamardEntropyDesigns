@@ -1,0 +1,35 @@
+{
+  "challenge_module": "RelativeChallenge",
+  "solution_module": "RelativeSolution",
+  "theorem_names": [
+    "EntropyDesigns.binarySeed_bijective",
+    "EntropyDesigns.ConcentratedFamily.concentrated_witness_exists",
+    "EntropyDesigns.ConcentratedFamily.concentrated_sharp_distance",
+    "EntropyDesigns.ConcentratedFamily.concentrated_exact_repair",
+    "EntropyDesigns.ConcentratedFamily.concentrated_all_repairs_lower",
+    "EntropyDesigns.ConcentratedFamily.concentrated_canonical_limits",
+    "EntropyDesigns.SpanningSlopes.spanning_slope_data_exists",
+    "EntropyDesigns.SpanningSlopes.spanning_slopes_orthogonal_iff",
+    "EntropyDesigns.SpanningSlopes.spanning_plane_code_injective",
+    "EntropyDesigns.SpanningSlopes.spanning_plane_orthogonality_number",
+    "EntropyDesigns.SpanningSlopes.source_optimizer_of_known_hadamard",
+    "EntropyDesigns.SpanningSlopes.spanning_plane_full_properties",
+    "EntropyDesigns.SpanningSlopes.spanning_witness_exists",
+    "EntropyDesigns.RelativeSequence.inverse_order_tends_zero",
+    "EntropyDesigns.RelativeSequence.sharp_distance_tends_one",
+    "EntropyDesigns.RelativeSequence.entropy_scale_tends_zero",
+    "EntropyDesigns.RelativeSequence.collision_deficit_identity",
+    "EntropyDesigns.RelativeSequence.selected_hadamard_orders",
+    "EntropyDesigns.RelativeSequence.selected_order_limits",
+    "EntropyDesigns.RelativeSequence.relative_spanning_laws"
+  ],
+  "definition_names": [
+    "EntropyDesigns.RelativeSequence.FullSpanningWitness"
+  ],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "enable_nanoda": true
+}

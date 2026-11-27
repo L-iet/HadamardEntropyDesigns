@@ -1,0 +1,350 @@
+{
+  "passed": true,
+  "spanningMaskSets": 96,
+  "exactHyperplaneLaws": 84,
+  "nonPowerOfTwoTargets": [
+    {
+      "target": 12,
+      "bits": 8,
+      "seedAtoms": 16,
+      "collisionDeficit": "1/48"
+    },
+    {
+      "target": 20,
+      "bits": 16,
+      "seedAtoms": 32,
+      "collisionDeficit": "3/160"
+    },
+    {
+      "target": 24,
+      "bits": 20,
+      "seedAtoms": 32,
+      "collisionDeficit": "1/96"
+    },
+    {
+      "target": 28,
+      "bits": 24,
+      "seedAtoms": 32,
+      "collisionDeficit": "1/224"
+    },
+    {
+      "target": 36,
+      "bits": 32,
+      "seedAtoms": 64,
+      "collisionDeficit": "7/576"
+    },
+    {
+      "target": 40,
+      "bits": 36,
+      "seedAtoms": 64,
+      "collisionDeficit": "3/320"
+    },
+    {
+      "target": 44,
+      "bits": 40,
+      "seedAtoms": 64,
+      "collisionDeficit": "5/704"
+    },
+    {
+      "target": 48,
+      "bits": 44,
+      "seedAtoms": 64,
+      "collisionDeficit": "1/192"
+    },
+    {
+      "target": 52,
+      "bits": 48,
+      "seedAtoms": 64,
+      "collisionDeficit": "3/832"
+    },
+    {
+      "target": 56,
+      "bits": 52,
+      "seedAtoms": 64,
+      "collisionDeficit": "1/448"
+    },
+    {
+      "target": 60,
+      "bits": 56,
+      "seedAtoms": 64,
+      "collisionDeficit": "1/960"
+    },
+    {
+      "target": 68,
+      "bits": 64,
+      "seedAtoms": 128,
+      "collisionDeficit": "15/2176"
+    },
+    {
+      "target": 72,
+      "bits": 68,
+      "seedAtoms": 128,
+      "collisionDeficit": "7/1152"
+    },
+    {
+      "target": 76,
+      "bits": 72,
+      "seedAtoms": 128,
+      "collisionDeficit": "13/2432"
+    },
+    {
+      "target": 80,
+      "bits": 76,
+      "seedAtoms": 128,
+      "collisionDeficit": "3/640"
+    },
+    {
+      "target": 84,
+      "bits": 80,
+      "seedAtoms": 128,
+      "collisionDeficit": "11/2688"
+    },
+    {
+      "target": 88,
+      "bits": 84,
+      "seedAtoms": 128,
+      "collisionDeficit": "5/1408"
+    },
+    {
+      "target": 92,
+      "bits": 88,
+      "seedAtoms": 128,
+      "collisionDeficit": "9/2944"
+    },
+    {
+      "target": 96,
+      "bits": 92,
+      "seedAtoms": 128,
+      "collisionDeficit": "1/384"
+    },
+    {
+      "target": 100,
+      "bits": 96,
+      "seedAtoms": 128,
+      "collisionDeficit": "7/3200"
+    },
+    {
+      "target": 104,
+      "bits": 100,
+      "seedAtoms": 128,
+      "collisionDeficit": "3/1664"
+    },
+    {
+      "target": 108,
+      "bits": 104,
+      "seedAtoms": 128,
+      "collisionDeficit": "5/3456"
+    },
+    {
+      "target": 112,
+      "bits": 108,
+      "seedAtoms": 128,
+      "collisionDeficit": "1/896"
+    },
+    {
+      "target": 116,
+      "bits": 112,
+      "seedAtoms": 128,
+      "collisionDeficit": "3/3712"
+    },
+    {
+      "target": 120,
+      "bits": 116,
+      "seedAtoms": 128,
+      "collisionDeficit": "1/1920"
+    },
+    {
+      "target": 124,
+      "bits": 120,
+      "seedAtoms": 128,
+      "collisionDeficit": "1/3968"
+    },
+    {
+      "target": 132,
+      "bits": 128,
+      "seedAtoms": 256,
+      "collisionDeficit": "31/8448"
+    },
+    {
+      "target": 136,
+      "bits": 132,
+      "seedAtoms": 256,
+      "collisionDeficit": "15/4352"
+    },
+    {
+      "target": 140,
+      "bits": 136,
+      "seedAtoms": 256,
+      "collisionDeficit": "29/8960"
+    },
+    {
+      "target": 144,
+      "bits": 140,
+      "seedAtoms": 256,
+      "collisionDeficit": "7/2304"
+    },
+    {
+      "target": 148,
+      "bits": 144,
+      "seedAtoms": 256,
+      "collisionDeficit": "27/9472"
+    },
+    {
+      "target": 152,
+      "bits": 148,
+      "seedAtoms": 256,
+      "collisionDeficit": "13/4864"
+    },
+    {
+      "target": 156,
+      "bits": 152,
+      "seedAtoms": 256,
+      "collisionDeficit": "25/9984"
+    },
+    {
+      "target": 160,
+      "bits": 156,
+      "seedAtoms": 256,
+      "collisionDeficit": "3/1280"
+    },
+    {
+      "target": 164,
+      "bits": 160,
+      "seedAtoms": 256,
+      "collisionDeficit": "23/10496"
+    },
+    {
+      "target": 168,
+      "bits": 164,
+      "seedAtoms": 256,
+      "collisionDeficit": "11/5376"
+    },
+    {
+      "target": 172,
+      "bits": 168,
+      "seedAtoms": 256,
+      "collisionDeficit": "21/11008"
+    },
+    {
+      "target": 176,
+      "bits": 172,
+      "seedAtoms": 256,
+      "collisionDeficit": "5/2816"
+    },
+    {
+      "target": 180,
+      "bits": 176,
+      "seedAtoms": 256,
+      "collisionDeficit": "19/11520"
+    },
+    {
+      "target": 184,
+      "bits": 180,
+      "seedAtoms": 256,
+      "collisionDeficit": "9/5888"
+    },
+    {
+      "target": 188,
+      "bits": 184,
+      "seedAtoms": 256,
+      "collisionDeficit": "17/12032"
+    },
+    {
+      "target": 192,
+      "bits": 188,
+      "seedAtoms": 256,
+      "collisionDeficit": "1/768"
+    },
+    {
+      "target": 196,
+      "bits": 192,
+      "seedAtoms": 256,
+      "collisionDeficit": "15/12544"
+    },
+    {
+      "target": 200,
+      "bits": 196,
+      "seedAtoms": 256,
+      "collisionDeficit": "7/6400"
+    },
+    {
+      "target": 204,
+      "bits": 200,
+      "seedAtoms": 256,
+      "collisionDeficit": "13/13056"
+    },
+    {
+      "target": 208,
+      "bits": 204,
+      "seedAtoms": 256,
+      "collisionDeficit": "3/3328"
+    },
+    {
+      "target": 212,
+      "bits": 208,
+      "seedAtoms": 256,
+      "collisionDeficit": "11/13568"
+    },
+    {
+      "target": 216,
+      "bits": 212,
+      "seedAtoms": 256,
+      "collisionDeficit": "5/6912"
+    },
+    {
+      "target": 220,
+      "bits": 216,
+      "seedAtoms": 256,
+      "collisionDeficit": "9/14080"
+    },
+    {
+      "target": 224,
+      "bits": 220,
+      "seedAtoms": 256,
+      "collisionDeficit": "1/1792"
+    },
+    {
+      "target": 228,
+      "bits": 224,
+      "seedAtoms": 256,
+      "collisionDeficit": "7/14592"
+    },
+    {
+      "target": 232,
+      "bits": 228,
+      "seedAtoms": 256,
+      "collisionDeficit": "3/7424"
+    },
+    {
+      "target": 236,
+      "bits": 232,
+      "seedAtoms": 256,
+      "collisionDeficit": "5/15104"
+    },
+    {
+      "target": 240,
+      "bits": 236,
+      "seedAtoms": 256,
+      "collisionDeficit": "1/3840"
+    },
+    {
+      "target": 244,
+      "bits": 240,
+      "seedAtoms": 256,
+      "collisionDeficit": "3/15616"
+    },
+    {
+      "target": 248,
+      "bits": 244,
+      "seedAtoms": 256,
+      "collisionDeficit": "1/7936"
+    },
+    {
+      "target": 252,
+      "bits": 248,
+      "seedAtoms": 256,
+      "collisionDeficit": "1/16128"
+    }
+  ],
+  "approximateParsevalCasePassed": true
+}

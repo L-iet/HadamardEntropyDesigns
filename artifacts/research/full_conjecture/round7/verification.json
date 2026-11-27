@@ -1,0 +1,49 @@
+{
+  "checkedAtUTC": "2026-11-21T03:39:32.480169+00:00",
+  "pages": {
+    "code_escape.tex": 3,
+    "research.tex": 10
+  },
+  "checkersPassed": [
+    "correction/check_exact.py",
+    "check_buffer.py",
+    "check_characters.py",
+    "compression/check.py",
+    "repair/check.py"
+  ],
+  "typesettingChecksPassed": true,
+  "files": {
+    "buffer_checks.json": "745f9ce3d87d26cb7b4d9cffe96344ba0a8773563af3090d9ff0b3c9dd1afebf",
+    "buffer_obstruction.tex": "067c554af9d5c6f8abe855a9eb3784729ef318eb55d830c39aefb22beaab01ba",
+    "build.py": "795f6ae49a4d6d5e79f6ffa91b96945a7fba35a87e5207222defa1aded8a0b26",
+    "character_checks.json": "e39b0f8feef75abd1649293e34ed1757c518ff8caf42b75fed95f8b57d970280",
+    "character_rigidity.tex": "fff7ec106f874e7ab6ddeba6fc1e78fc3ad4d97fa47ce31e665a15d18b6cd06d",
+    "check_buffer.py": "2a8cfe415ddc52bd4a2aecabc0188cbaa2b30a2b1789590e450cd7d39fda030c",
+    "check_characters.py": "68339c90a4cf3ce6651f1afa6ccc97cc34fb5dc8aa98f8f75a04f0b7635b0453",
+    "code_escape.pdf": "d69b0a20fef629f1844d8a3f5f4bbc0e8615797ce703eb3f432fda9bdf86bab7",
+    "code_escape.tex": "83cb341260ff562d962ff73aaf25a824e78437569b62fa376c85a4394654dbf9",
+    "compression\\check.py": "fb607df184f673250c83edd07801b4f2d0c560c7ca22101839ecebb453024725",
+    "compression\\checks.json": "7cff92346a22499340c63efc1c22c9eca5105df132b00f21d6ee60369da409ca",
+    "compression\\escape.tex": "99fcec0c1eb463bed904d9d996d2458b77bd5477ff39983dbc0a678b5850c543",
+    "compression\\README.txt": "cc04fad6fdc931ef3a2954a1e3d1ce24beda2e70d42db3baca7bcdf9f0edd47d",
+    "correction\\check_exact.py": "2489f449b4ba4d35d41b218c85c61519a7cd43d1d6b7f53feee6bf5a171ed40a",
+    "correction\\correction.pdf": "e8b7f341e12d53c0965689fc3335083934a18a1c43f47d55d45660676003c7e2",
+    "correction\\correction.tex": "ec639b4f96b77e0683be4dc26c5100d519c54d1ee774a03120cb2180e0c30360",
+    "correction\\README.txt": "563bba27fdb643b34aabd3fbf577fef532474d7d8e2c4286eb60ec1f8645af86",
+    "README.txt": "a7117f7366e88b22bbb1386c6ff05f7b115686a32c1da7c8fb63c63c63e19bae",
+    "repair\\check.py": "daaadbf42a9c2c294c12e4249e265b9ee84f9e6f63f2f3dda93f18a6ba949855",
+    "repair\\checks.json": "05f6ebf14ec4b0670b0bc65185c5f1f22dc35d2548c5f69455e0b4cc8d5921b2",
+    "repair\\README.txt": "5d7135b042a9ff14b7a984cbeb90569a7cb5fecd04e40a9728675c09e369e343",
+    "repair\\repair.tex": "2557b95b369ecab708fc188866d8997297b3738c22affcd78436f84cb18b2c20",
+    "research.pdf": "8942eec1af4be03d36fd3f97143bb956c79bec050c3a9e71f8fb87c48c5307d1",
+    "research.tex": "61129864433c281adc03d4bee6c6c8a5d7c6ed043812f25a689982139bb4df79",
+    "NEXT_QUESTIONS.txt": "f4b9ebc22a999cd0e1b9df099778b1048c61dfff5d6aa4ca852c0527f6234c5c"
+  },
+  "scope": {
+    "hadamardConjectureProved": false,
+    "unknownOrderDistributionConstructed": false,
+    "noveltyEstablished": false,
+    "leanFormalization": false,
+    "gitCommits": false
+  }
+}

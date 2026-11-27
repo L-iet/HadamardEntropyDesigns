@@ -1,0 +1,286 @@
+{
+  "status": "passed",
+  "arithmetic": "exact integer",
+  "base_sign_rows_enumerated": 4096,
+  "base_deletions": [
+    {
+      "deleted_row": 0,
+      "candidates_including_both_signs": 164,
+      "antipodal_classes": 82,
+      "completion_rows": 12
+    },
+    {
+      "deleted_row": 1,
+      "candidates_including_both_signs": 164,
+      "antipodal_classes": 82,
+      "completion_rows": 12
+    },
+    {
+      "deleted_row": 2,
+      "candidates_including_both_signs": 164,
+      "antipodal_classes": 82,
+      "completion_rows": 12
+    },
+    {
+      "deleted_row": 3,
+      "candidates_including_both_signs": 164,
+      "antipodal_classes": 82,
+      "completion_rows": 12
+    }
+  ],
+  "affine_plane_code_words": [
+    [
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      1,
+      1,
+      2
+    ],
+    [
+      0,
+      2,
+      2,
+      1
+    ],
+    [
+      1,
+      0,
+      1,
+      1
+    ],
+    [
+      1,
+      1,
+      2,
+      0
+    ],
+    [
+      1,
+      2,
+      0,
+      2
+    ],
+    [
+      2,
+      0,
+      2,
+      2
+    ],
+    [
+      2,
+      1,
+      0,
+      1
+    ],
+    [
+      2,
+      2,
+      1,
+      0
+    ]
+  ],
+  "tensor_exchange_cases": [
+    {
+      "t": 1,
+      "deleted": 0,
+      "inserted": 0,
+      "row_count": 4,
+      "missing": 8,
+      "block_bessel_budget": 144,
+      "saturated": true
+    },
+    {
+      "t": 1,
+      "deleted": 1,
+      "inserted": 9,
+      "row_count": 12,
+      "missing": 0,
+      "block_bessel_budget": 144,
+      "saturated": true
+    },
+    {
+      "t": 2,
+      "deleted": 0,
+      "inserted": 0,
+      "row_count": 8,
+      "missing": 16,
+      "block_bessel_budget": 576,
+      "saturated": true
+    },
+    {
+      "t": 2,
+      "deleted": 1,
+      "inserted": 9,
+      "row_count": 16,
+      "missing": 8,
+      "block_bessel_budget": 576,
+      "saturated": true
+    },
+    {
+      "t": 2,
+      "deleted": 2,
+      "inserted": 18,
+      "row_count": 24,
+      "missing": 0,
+      "block_bessel_budget": 576,
+      "saturated": true
+    },
+    {
+      "t": 4,
+      "deleted": 0,
+      "inserted": 0,
+      "row_count": 16,
+      "missing": 32,
+      "block_bessel_budget": 2304,
+      "saturated": true
+    },
+    {
+      "t": 4,
+      "deleted": 1,
+      "inserted": 9,
+      "row_count": 24,
+      "missing": 24,
+      "block_bessel_budget": 2304,
+      "saturated": true
+    },
+    {
+      "t": 4,
+      "deleted": 2,
+      "inserted": 18,
+      "row_count": 32,
+      "missing": 16,
+      "block_bessel_budget": 2304,
+      "saturated": true
+    },
+    {
+      "t": 4,
+      "deleted": 3,
+      "inserted": 27,
+      "row_count": 40,
+      "missing": 8,
+      "block_bessel_budget": 2304,
+      "saturated": true
+    },
+    {
+      "t": 4,
+      "deleted": 4,
+      "inserted": 36,
+      "row_count": 48,
+      "missing": 0,
+      "block_bessel_budget": 2304,
+      "saturated": true
+    },
+    {
+      "t": 8,
+      "deleted": 0,
+      "inserted": 0,
+      "row_count": 32,
+      "missing": 64,
+      "block_bessel_budget": 9216,
+      "saturated": true
+    },
+    {
+      "t": 8,
+      "deleted": 1,
+      "inserted": 9,
+      "row_count": 40,
+      "missing": 56,
+      "block_bessel_budget": 9216,
+      "saturated": true
+    },
+    {
+      "t": 8,
+      "deleted": 2,
+      "inserted": 18,
+      "row_count": 48,
+      "missing": 48,
+      "block_bessel_budget": 9216,
+      "saturated": true
+    },
+    {
+      "t": 8,
+      "deleted": 3,
+      "inserted": 27,
+      "row_count": 56,
+      "missing": 40,
+      "block_bessel_budget": 9216,
+      "saturated": true
+    },
+    {
+      "t": 8,
+      "deleted": 4,
+      "inserted": 36,
+      "row_count": 64,
+      "missing": 32,
+      "block_bessel_budget": 9216,
+      "saturated": true
+    },
+    {
+      "t": 8,
+      "deleted": 5,
+      "inserted": 45,
+      "row_count": 72,
+      "missing": 24,
+      "block_bessel_budget": 9216,
+      "saturated": true
+    },
+    {
+      "t": 8,
+      "deleted": 6,
+      "inserted": 54,
+      "row_count": 80,
+      "missing": 16,
+      "block_bessel_budget": 9216,
+      "saturated": true
+    },
+    {
+      "t": 8,
+      "deleted": 7,
+      "inserted": 63,
+      "row_count": 88,
+      "missing": 8,
+      "block_bessel_budget": 9216,
+      "saturated": true
+    },
+    {
+      "t": 8,
+      "deleted": 8,
+      "inserted": 72,
+      "row_count": 96,
+      "missing": 0,
+      "block_bessel_budget": 9216,
+      "saturated": true
+    }
+  ],
+  "full_completion_deletion_costs": [
+    {
+      "t": 1,
+      "cost": 1
+    },
+    {
+      "t": 2,
+      "cost": 2
+    },
+    {
+      "t": 4,
+      "cost": 4
+    },
+    {
+      "t": 8,
+      "cost": 8
+    }
+  ],
+  "integer_rank8_completion_orders": [
+    12,
+    24,
+    48,
+    96
+  ],
+  "residual_gram_model": "Four scaled A2 triangle blocks; exact integer factor verified.",
+  "scope": "Exact finite checks supplement the general Bessel-budget proofs."
+}

@@ -1,0 +1,747 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,mathtools,hyperref}
+\setlength{\emergencystretch}{3em}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\newcommand{\E}{\mathbb E}
+\newcommand{\tr}{\operatorname{tr}}
+\title{Quantitative partial Hadamard matrices,\\near-square instability, and rational dilations}
+\author{Joshua Mark\thanks{ORCID: \href{https://orcid.org/0009-0003-5905-2382}{0009-0003-5905-2382}. AI tools assisted with derivation, independent review, computation and exposition.}}
+\date{20 November 2026 --- research draft; priority not established}
+\begin{document}\maketitle
+
+\begin{abstract}
+The multiplier theorem combines with a precise conditional
+prime-distribution estimate to give partial Hadamard matrices with
+at least $n/2-\sqrt n\exp(O(\log n/\log\log n))$ rows.
+Only Dirichlet GRH for power-of-two conductors is needed for that
+result, and it remains explicitly conditional.
+Separately, the same unconditional multiplier theorem gives exact
+near-optimal isotropic laws with only $n+n^{1/2+o(1)}$ atoms but
+distance $1-(1+o(1))n^{-1/2}$ from every Hadamard mixture.
+Third completion moments improve two finite certificates.
+An exact rational-dilation parameterization and a structured
+order-twenty example show why arithmetic concatenations cannot
+automatically be completed while preserving their rows.
+These results neither construct unknown Hadamard orders nor prove
+the full conjecture; bibliographic novelty is unestablished.
+\end{abstract}
+The unconditional existence inputs are read from the existing project.
+No attempt to validate the recent GRH announcement is part of this
+pass. Conditional and unconditional statements below are kept separate.
+\section{A conditional square-root-scale deficit for partial Hadamard matrices}
+\label{sec:conditional-half-frame}
+
+Let $r(n)$ denote the largest number of orthogonal sign rows of length
+$n$, and let $\tau(u)$ be the least exponent $t$ for which a Hadamard
+matrix of order $2^tu$ exists, for odd $u$. The established multibase
+input is unconditional:
+\[
+ \tau(u)=O\!\left(\frac{\log u}{\log\log u}\right).
+\]
+We combine it with a \emph{conditional} prime-distribution estimate.
+Throughout, logarithms are natural. No assertion that GRH has been
+proved or verified is made.
+
+The concatenation strategy is historical: de Launey--Gordon,
+\emph{A Comment on the Hadamard Conjecture}, JCTA 95 (2001),
+180--184, Lemma 2.1 and its proof,
+\url{https://doi.org/10.1006/jcta.2000.3155}, use a Paley block and
+an asymptotic-existence block in a short progression. The conclusion
+below tracks the new sublogarithmic multiplier bound rather than
+replacing it by an arbitrary fixed power. No novelty claim is made
+pending a dedicated literature comparison.
+
+\begin{theorem}[Conditional quantitative half-frame]
+Assume GRH for primitive Dirichlet $L$-functions whose conductors are
+powers of two, including conductor one. There are positive constants
+$B,K$ such that every sufficiently large $n\equiv0\pmod4$ satisfies
+\[
+ \boxed{r(n)\ge\frac n2-
+ B\sqrt n\exp\!\left(K\frac{\log n}{\log\log n}\right).}
+\]
+In particular the conditional deficit is $n^{1/2+o(1)}$ with a
+specified subpower envelope, not merely $O_\epsilon(n^{1/2+\epsilon})$.
+The theorem remains conditional even though its $\tau$ input is
+unconditional.
+\end{theorem}
+
+\subsection{A uniform multiplier buffer removes circularity}
+\begin{lemma}[Uniform power-of-two buffer]
+There is an integer-valued function $T(n)\ge2$ such that
+\[
+ T(n)=O\!\left(\frac{\log n}{\log\log n}\right),
+ \qquad \tau(u)\le T(n)\quad
+ \text{for every positive odd }u\le n.
+\]
+For $Q(n)=2^{T(n)}$, every integer $1\le k\le n$ has a Hadamard
+matrix of order $Q(n)k$.
+\end{lemma}
+\begin{proof}
+Choose $A,u_0$ so $\tau(u)\le A\log u/\log\log u$ for odd
+$u\ge u_0$, increasing $u_0$ beyond $e^e$. The function
+$\log x/\log\log x$ is increasing there. The standard all-odd
+multiplier construction ensures $\tau(u)<\infty$ also for the finitely
+many smaller odd parts (for example, the binary-length complementary
+pair construction supplies them). A fixed additive integer buffer
+covers these smaller odd $u$, so
+$T(n)=\lceil A\log n/\log\log n\rceil+B_0$ works for sufficiently
+large $n$, with $B_0\ge2$. Write $k=2^vu$ with $u$ odd. Then
+$\tau(u)\le T(n)$, and Sylvester doubling raises order
+$2^{\tau(u)}u$ to $2^{T(n)+v}u=Q(n)k$.
+\end{proof}
+
+In particular $Q(n)=n^{o(1)}$. The buffer is chosen from $n$ before
+the progression element or $k$ is selected. No bound on $\tau(k)$
+depending on an as-yet-unknown construction is being assumed.
+
+\subsection{The precise conditional number-theory input}
+Put
+\[
+ \psi(x;Q,a)=\sum_{\substack{m\le x\\m\equiv a\pmod Q}}\Lambda(m).
+\]
+Under Dirichlet GRH, uniformly for reduced residues and, in particular,
+for $Q\le\sqrt x$,
+\[
+ \psi(x;Q,a)=\frac{x}{\varphi(Q)}+
+ O\bigl(\sqrt x(\log x)^2\bigr),
+\]
+with an absolute implied constant. A primary author source is
+Montgomery--Vaughan, \emph{Multiplicative Number Theory I},
+Theorem 13.7 and Corollary 13.8,
+\url{https://personal.science.psu.edu/rcv4/personal/Publications/MNTI/17.0_pp_419_451_Conditional_estimates.pdf}.
+Only characters induced by conductors dividing the power-of-two
+modulus are used, so the stated restricted GRH hypothesis suffices.
+
+For some absolute $D>0$, this implies the following elementary
+short-interval consequence: whenever $x$ is sufficiently large,
+$Q\ge4$ is a power of two, and
+\[
+ H=DQ\sqrt x(\log x)^2\le x/2,
+\]
+every reduced class modulo $Q$ contains a prime power in $(x-H,x]$.
+Indeed subtract the two $\psi$ estimates. The main term is
+$H/\varphi(Q)=2D\sqrt x(\log x)^2$, whereas both error terms
+together are bounded by a fixed multiple of
+$\sqrt x(\log x)^2$. Choose $D$ larger than that fixed multiple.
+Positive $\psi$ difference supplies a prime power. An actual prime
+is unnecessary for the Paley construction, so no prime-power
+subtraction estimate is needed.
+
+\subsection{Construction and deficit estimate}
+\begin{proof}[Proof of the theorem]
+Fix a large multiple of four $n$. Set $Q=2^{T(n)}$ and
+\[
+ x=n/2-1,\qquad a\equiv n-1\pmod Q,\qquad
+ H=DQ\sqrt x(\log x)^2.
+\]
+The residue $a$ is odd, hence coprime to $Q$. Since $Q=n^{o(1)}$,
+we eventually have $Q\le\sqrt{x-H}$ and $H\le x/2$.
+The conditional interval estimate gives a prime power
+\[
+ x-H<\ell\le x,\qquad \ell\equiv n-1\pmod Q.
+\]
+Because $4\mid Q$ and $4\mid n$, necessarily $\ell\equiv3\pmod4$.
+Paley's type-I construction therefore gives a Hadamard matrix of
+order $b=\ell+1$. Also
+\[
+ k=\frac{n-\ell-1}{Q}\in\mathbb Z_{>0},\qquad k\le n.
+\]
+The uniform-buffer lemma gives a Hadamard matrix of order
+$a_1=Qk=n-b$. Here $b\le n/2$ and $a_1\ge n/2$.
+Take the first $b$ rows of each matrix and concatenate horizontally.
+Their row Gram matrices add to
+$a_1I_b+bI_b=nI_b$, producing a partial Hadamard matrix with
+\[
+ r(n)\ge b>n/2-H.
+\]
+Finally
+\[
+ H\ll Q\sqrt n(\log n)^2
+   =\sqrt n\exp\!\left(O\!\left(\frac{\log n}{\log\log n}\right)\right),
+\]
+since $\log\log n=o(\log n/\log\log n)$. This proves the claim.
+\end{proof}
+
+The progression residue is $n-1\pmod Q$, which need not equal
+$-1\pmod Q$: the target order need not be divisible by the buffer.
+This distinction is essential when $Q$ exceeds the power of two
+dividing $n$.
+
+More quantitatively, if
+$\tau(u)\le A\log u/\log\log u+O(1)$, the same proof gives,
+for every $\eta>0$ and all sufficiently large target orders,
+\[
+ r(n)\ge\frac n2-
+ \sqrt n\exp\!\left((A\log2+\eta)
+                 \frac{\log n}{\log\log n}\right).
+\]
+All fixed constants and logarithmic factors are absorbed by the
+$\eta$ margin. No numerical threshold or explicit value of $A$
+is claimed here.
+
+The verifier supplies unconditional finite examples of the exact
+concatenation step: it searches for actual primes in the required
+residue, constructs both Hadamard blocks at known orders, and checks
+the full rectangular Gram matrix as integers. These calculations
+neither establish GRH nor verify the eventual prime-distribution
+estimate or the asymptotic constants.
+
+\section*{Inputs from the preceding work}
+The unconditional multiplier input is
+$\tau(u)=O(\log u/\log\log u)$ for positive odd $u$.
+Its proof and formalization are preserved in the main project.
+Define $T(x)=\max(2,\max_{u\le x,\ u\text{ odd}}\tau(u))$.
+Eventual monotonicity and a finite initial buffer give
+$T(x)=O(\log x/\log\log x)$, and Sylvester doubling gives
+a Hadamard matrix of order $2^{T(x)}v$ for every integer $1\le v\le x$.
+
+\begin{theorem}[Spanning-slope input, proved in the eleventh pass]
+\label{thm:design-spanning-slopes}
+Let $h=2^s$, let $k$ be a known Hadamard order, and assume
+$s\le h-k<h/2$. There is an exactly unbiased pairwise-independent
+uniform law on $h^2$ atoms and $kh-1$ bits. It is a strict local
+collision maximum in the full moment polytope, and has collision
+$1/h^2$ and total variation distance exactly $1-1/k$ from the convex
+hull of all order-$kh$ Hadamard laws. Its additive R\'enyi entropy
+excess is $\log(h/k)$ for every entropy order.
+\end{theorem}
+The proof is in \path{../round11/global_repair.tex}, Sections 2--4:
+finite-field affine slopes provide exact moments, and an omitted
+additive-spanning slope set forces the support orthogonality graph
+to consist of $h$ disjoint $h$-cliques. No small-repair assertion
+or unproved Hadamard existence assumption is inserted here.
+\section{Quantitative stability counterexamples from ordinary prime gaps}
+\label{sec:stability-prime-gaps}
+This section replaces the irrational-rotation subsequence with a construction
+at every sufficiently large dyadic seed order. No prime progression is
+needed. We use the established Baker--Harman--Pintz theorem that
+$[x-x^{21/40},x]$ contains a prime for all sufficiently large $x$:
+\emph{The difference between consecutive primes, II} (2001), Theorem 1,
+\url{https://www.cs.umd.edu/~gasarch/BLOGPAPERS/BakerHarmanPintz.pdf}.
+We do not claim $21/40$ is the best current prime-gap exponent.
+The separate conditional improvement uses ordinary RH, not GRH for
+arithmetic progressions. No new Hadamard orders are asserted.
+
+\begin{lemma}[No residue-class restriction is needed]
+\label{lem:stability-any-prime}
+For every odd prime $p$, a Hadamard matrix of order $k=2(p+1)$ exists.
+\end{lemma}
+\begin{proof}
+For $p\equiv1\pmod4$, this is classical Paley type II. For
+$p\equiv3\pmod4$, Paley type I gives order $p+1$, which doubles to
+$2(p+1)$. Both constructions originate in Paley,
+\emph{On Orthogonal Matrices} (1933),
+\url{https://doi.org/10.1002/sapm1933121311}.
+\end{proof}
+
+\begin{theorem}[An ordinary-prime-gap transfer]
+\label{thm:stability-prime-transfer}
+Suppose $0<\theta<1$ and every sufficiently large interval
+$[x-x^\theta,x]$ contains a prime. For every sufficiently large power
+of two $h$, there is an explicitly searchable known Hadamard order
+$k<h$ with
+\[
+ h-k=\Theta(h^\theta),\qquad k/h\to1.
+\]
+At the known Hadamard order $n=kh$, there is an exact unbiased
+pairwise-independent uniform $h^2$-atom law $\mu_h$ on $n-1$ bits,
+a strict local collision maximum, for which
+\begin{align*}
+ C(\mu_h)&=1/h^2, & C_{\rm global}&=1/n,\\
+ C(\mu_h)/C_{\rm global}&=1-\Theta(n^{-(1-\theta)/2}),&
+ \operatorname{dist}_{\rm TV}(\mu_h,\mathcal H_n)
+ &=1-1/k=1-\Theta(n^{-1/2}),\\
+ 1/n-C(\mu_h)&=\Theta(n^{-(3-\theta)/2}).
+\end{align*}
+All moments are exact; there is no approximate-isotropy assumption.
+\end{theorem}
+\begin{proof}
+Let $X=h/2$, $A=\lceil X^\theta\rceil$, and $y=X-A$.
+Choose the largest prime $p\le y$. The input theorem, applied at $y$,
+gives $p\ge y-y^\theta$. Set $k=2(p+1)$, so
+\[
+ 2A-2\le g:=h-k\le2A+2y^\theta-2\le4A-2.
+\]
+Thus $g=\Theta(h^\theta)$, and eventually
+$\log_2h\le g<h/2$. The lemma supplies $H_k$, hence $H_n$ by tensoring
+with Walsh order $h$.
+
+Choose an omitted-slope set $R\subset\mathbb F_h\setminus\{0\}$ of
+size $g$ containing an additive basis, and put
+$P=\mathbb F_h\setminus R$. For uniform $A_0,B_0\in\mathbb F_h$, observe
+all nonzero additive characters of each seed block
+$x_t=A_0+tB_0$, $t\in P$, and the mixed bits $\chi_e(x_0+x_t)$,
+$t\in P\setminus\{0\}$. This is the spanning-omitted-slopes construction
+of Theorem~\ref{thm:design-spanning-slopes}: it has $h^2$ distinct atoms,
+exact moments, and is a strict local maximum because two block character
+spaces generate every seed character through products. Its orthogonality
+graph is $h$ disjoint $h$-cliques; their order-$k$ block completions give
+exact distance $1-1/k$ from all Hadamard mixtures. Collision is $1/h^2$,
+whereas the known full optimum is $1/(kh)$.
+Finally $n\asymp h^2$, and
+\[
+ 1-\frac{C(\mu_h)}{1/n}=\frac gh,\qquad
+ \frac1n-C(\mu_h)=\frac{g}{kh^2}.
+\]
+These identities give all rates.
+\end{proof}
+
+\begin{corollary}[Unconditional polynomial rates]
+\label{cor:stability-bhp-rate}
+Unconditionally the theorem holds with $\theta=21/40$. In particular
+\[
+ 1-C(\mu_h)/(1/n)=\Theta(n^{-19/80}),\qquad
+ 1/n-C(\mu_h)=\Theta(n^{-99/80}),\qquad
+ \operatorname{dist}_{\rm TV}(\mu_h,\mathcal H_n)=1-\Theta(n^{-1/2}).
+\]
+The order selection is a finite descending prime search below
+$h/2-\lceil(h/2)^{21/40}\rceil$; the asymptotic theorem does not claim
+a numerical value for the Baker--Harman--Pintz threshold.
+\end{corollary}
+
+\subsection{A separate improvement under ordinary RH}
+Dudek proves on RH that for every $x\ge2$ there is a prime in
+$(x-\frac4\pi\sqrt{x}\log x,x]$:
+\emph{On the Riemann hypothesis and the difference between primes},
+\url{https://arxiv.org/abs/1402.6417}. This is a primary, explicit
+ordinary-prime result; no arithmetic-progression hypothesis is used.
+\begin{corollary}[Conditional RH rates]\label{cor:stability-rh-rate}
+Assuming RH, the same construction can be chosen at every sufficiently
+large dyadic $h$ with
+\[
+ h-k=\Theta(\sqrt h\log h),\quad
+ 1-C(\mu_h)/(1/n)=\Theta(n^{-1/4}\log n),\quad
+ 1/n-C(\mu_h)=\Theta(n^{-5/4}\log n),
+\]
+while the exact distance remains $1-\Theta(n^{-1/2})$.
+\end{corollary}
+\begin{proof}
+Use $A=\lceil\frac4\pi\sqrt X\log X\rceil$ and $y=X-A$ in the
+preceding argument. The function $\frac4\pi\sqrt x\log x$ is increasing
+for $x\ge2$, so the prime supplied at $y$ gives
+$2A-2\le h-k\le4A-2$. The remaining proof is unchanged.
+\end{proof}
+
+\paragraph{Entropy and the scale of a possible stability theorem.}
+Every Renyi entropy, including Shannon and min-entropy, of the uniform
+source equals $\log h^2$. The minimum among feasible laws at known order
+$n$ is $\log n$, by the atom bound and the Hadamard law. Thus all these
+entropy excesses are simultaneously
+$\log(h/k)=\Theta(n^{-19/80})$ in the unconditional construction,
+and $\Theta(n^{-1/4}\log n)$ under RH, although distance tends to one.
+These examples refute a dimension-free stability modulus based on relative
+collision deficit or entropy excess. They also quantify absolute-deficit
+counterexamples, at the exponents above. They do not exclude much smaller
+dimension-dependent absolute collision windows, such as the earlier
+order-$n^{-4}$ extraction condition. All positive existence inputs here
+are classical known Hadamard constructions.
+
+\begin{corollary}[Only sublinearly many extra atoms]
+\label{cor:stability-support-excess}
+The unconditional source support size satisfies
+\[
+ |\operatorname{supp}\mu_h|=n+\Theta(n^{61/80}).
+\]
+Under RH it can instead be $n+\Theta(n^{3/4}\log n)$, while its exact
+distance from all Hadamard mixtures still tends to one.
+\end{corollary}
+\begin{proof}
+The atom count is $h^2$ and $h^2-n=h(h-k)$. Substitute the corresponding
+prime-gap scale and $n\asymp h^2$.
+\end{proof}
+\section{A transfer from existing Hadamard-order gap bounds}
+\label{sec:stability-hadamard-gap-transfer}
+The prime construction is an independent published-input route. More
+generally, any uniform gap theorem for \emph{known Hadamard orders}
+can be used directly, potentially giving substantially stronger rates.
+The following statement deliberately isolates its hypothesis; applying a
+particular gap bound requires proving or citing that bound separately.
+
+\begin{theorem}[Uniform Hadamard-gap transfer]
+\label{thm:stability-hadamard-gap-transfer}
+Suppose $G$ is nonnegative and nondecreasing, $G(x)=o(x)$, and every
+sufficiently large interval $[x-G(x),x]$ contains a known Hadamard order.
+For dyadic $h=2^s$ put $A(h)=G(h)+s+1$. Then for every sufficiently large
+$h$ there is a known Hadamard order $k$ with
+\[
+ 2A(h)\le h-k\le3A(h).
+\]
+Consequently there is a uniform $h^2$-atom exactly isotropic strict local
+collision maximum on $n-1$ bits, $n=kh$, with exact distance $1-1/k$
+from all Hadamard mixtures and
+\[
+ \text{relative collision deficit}=\Theta(A(h)/h),\quad
+ \text{absolute deficit}=\Theta(A(h)/h^3),\quad
+ |\operatorname{supp}\mu|-n=\Theta(hA(h)).
+\]
+\end{theorem}
+\begin{proof}
+Apply the gap hypothesis at $x=h-2A(h)$. It gives
+$k\in[x-G(x),x]$, with $G(x)\le G(h)\le A(h)$.
+Thus $2A(h)\le h-k\le3A(h)$, and eventually
+$s\le h-k<h/2$. Choose the omitted slopes to contain an additive basis
+and apply Theorem~\ref{thm:design-spanning-slopes}. Its exact identities
+are $1-C/(1/n)=(h-k)/h$, $1/n-C=(h-k)/(kh^2)$, and
+$h^2-n=h(h-k)$. Since $k\sim h$, the stated estimates follow.
+\end{proof}
+
+For a polynomial gap input $G(x)=Cx^\theta$, $0<\theta<1$, the same
+exponents as the prime-gap transfer result. For a subpolynomial input
+\[
+ G(x)=\exp\!\left(O\!\left(\frac{\log x}{\log\log x}\right)\right)
+\]
+with a nondecreasing majorant, the conclusion strengthens to
+\begin{align*}
+ \text{relative deficit}&=n^{-1/2+o(1)},&
+ \text{absolute deficit}&=n^{-3/2+o(1)},\\
+ |\operatorname{supp}\mu|&=n+n^{1/2+o(1)},&
+ \operatorname{dist}_{\rm TV}(\mu,\mathcal H_n)&=1-\Theta(n^{-1/2}).
+\end{align*}
+These are conditional on the stated gap input, not on RH or any
+arithmetic-progression conjecture. In particular, a gap theorem already
+proved elsewhere in the project can be inserted here with its exact
+scope and provenance. This transfer does not independently prove that
+gap theorem or the Hadamard conjecture.
+\section{Instantiating the stability transfer with the project's multiplier theorem}
+\label{sec:stability-project-input}
+
+The uniform Hadamard-gap input is already available in the current
+project, not an additional prime-distribution assumption. Precisely,
+\path{../../../papers/hadamard_multibase_final.tex}, the uniform-gap
+theorem, proves that for each large integer $x$ there is
+$d\le\exp(D\log x/\log\log x)$ such that every integer $y\le x$ has a
+Hadamard order in $(y,y+d]$. Its formal counterpart is
+\path{../../../lean/HadamardMultibase/CompleteResults.lean},
+\path{Complete.quantitative_gap_bound}. We use the theorem as stated;
+no files in that proof or its verification manifests are changed.
+
+Here is an even more direct dyadic construction using just the
+unconditional multiplier input and the uniform buffer lemma of the
+arithmetic branch. For $h=2^s$ large choose
+\[
+ S(h)=\max\{T(h),\lceil\log_2s\rceil\},\qquad
+ g=2^{S(h)},\qquad k=h-g.
+\]
+Since $T(h)=O(\log h/\log\log h)$, eventually
+$S(h)\le s-2$, while $g\ge s$ and
+\[
+                 g=\exp(O(\log h/\log\log h))=h^{o(1)}.
+\]
+The integer $q=2^{s-S(h)}-1$ is positive odd and at most $h$.
+Its admissible exponent is at most $T(h)\le S(h)$, so
+\[
+                    k=2^{S(h)}q
+\]
+is a known Hadamard order. This choice is uniform in all sufficiently
+large dyadic $h$ and does not use GRH, prime gaps, or an
+irrational-rotation subsequence.
+
+\begin{corollary}[Unconditional near-square instability from the multiplier bound]
+\label{cor:stability-project-rate}
+At orders $n=kh$ obtained above, there are exactly isotropic uniform
+laws on $m=h^2$ atoms, on $n-1$ bits, with
+\[
+ \begin{split}
+ C(\mu)/(1/n)&=1-n^{-1/2+o(1)},\\
+ 1/n-C(\mu)&=n^{-3/2+o(1)},\\
+ m&=n+n^{1/2+o(1)},\\
+ \operatorname{dist}_{\rm TV}(\mu,\mathcal H_n)
+       &=1-(1+o(1))n^{-1/2}.
+ \end{split}
+\]
+They are strict local collision maxima. Their common additive
+R\'enyi entropy excess is $n^{-1/2+o(1)}$.
+Both $H_k$ and $H_n$ exist unconditionally from the project's
+proved inputs.
+\end{corollary}
+\begin{proof}
+The construction gives $s\le g<h/2$. Choose $g$ nonzero omitted
+slopes containing an additive basis and apply the spanning-slope
+theorem of the preceding pass. It yields exact isotropy, strict
+local maximality, collision $1/h^2$, and exact distance $1-1/k$.
+Tensoring $H_k$ and Walsh $H_h$ gives $H_n$.
+Since $n\sim h^2$ and $g=h^{o(1)}$, the identities
+\[
+ 1-\frac{C}{1/n}=\frac gh,\quad
+ \frac1n-C=\frac{g}{kh^2},\quad
+ m-n=hg,\quad
+ H_\alpha(\mu)-\log n=\log(h/k)\sim g/h
+\]
+give all the assertions.
+\end{proof}
+
+Thus the project's own unconditional existence theorem gives a
+stronger asymptotic stability counterexample than the independent
+ordinary-prime-gap route, even assuming RH in that prime route.
+The RH rate remains useful as an independently sourced comparison.
+The positive all-order existence question is unchanged: these
+counterexamples occur at orders where matrices are already known.
+They concern full $n-1$-bit isotropy, not the punctured extraction input.
+\section{Third completion moments with dependent triples included}
+Fix an odd prime $p$, length $N=4p$, and a totally isotropic retained
+space $G$ of codimension $h\ge2$ in a self-dual code. In the split
+$2h$-dimensional quotient $G^\perp/G$, give each isotropic projective
+point $\ell$ weight $w_\ell$ equal to the number of normalized sign
+classes with nonzero quotient on that point. Let $b$ count the sign
+classes in $G$. For a uniformly chosen completion code write
+$Y=|S(C)|-b$. Put $D_j=p^{h-j}+1$.
+
+For $t=1,2,3$ let $R_t$ be the sum of
+$w_{\ell_1}w_{\ell_2}w_{\ell_3}$ over ordered triples whose span is
+totally isotropic of dimension exactly $t$. Repetitions are allowed.
+In particular $R_1=\sum_\ell w_\ell^3$. For $h=2$ necessarily
+$R_3=0$; the definition of $D_3$ is then unnecessary.
+
+\begin{theorem}[Exact third-moment certificate]
+For $h\ge3$,
+\[
+ \mathbb E Y^3=\frac{R_1}{D_1}+
+ \frac{R_2}{D_1D_2}+\frac{R_3}{D_1D_2D_3}.
+\]
+For $h=2$ omit the final term. If $\mathbb EY^2>0$, some completion
+satisfies $|S(C)|\ge b+\lceil\mathbb EY^3/\mathbb EY^2\rceil$.
+\end{theorem}
+\begin{proof}
+The number of generators in a split $2j$-space is
+$L_j=2\prod_{i=1}^{j-1}(p^i+1)$ for $j\ge1$, and $L_0=1$.
+A specified totally isotropic $t$-space lies in proportion
+$L_{h-t}/L_h=\prod_{j=1}^tD_j^{-1}$ of the generators.
+This includes $t=h$, where the final factor is $D_h=2$.
+A triple not spanning an isotropic space cannot occur in a generator.
+Expanding the cube of $Y$ and grouping by span rank proves the formula.
+Finally $Y^3\le(\max Y)Y^2$ pointwise gives the certificate.
+\end{proof}
+Distinct points need not be linearly independent: three different
+points on one isotropic projective line contribute to $R_2$, not
+$R_3$. Omitting these triples would give an incorrect moment.
+
+\subsection{An exact computation without cubic enumeration}
+Let $\mathcal L$ be the totally isotropic projective lines. Then
+\[
+ R_2=\sum_{L\in\mathcal L}
+ \left[\left(\sum_{\ell\in L}w_\ell\right)^3
+              -\sum_{\ell\in L}w_\ell^3\right].
+\]
+Each rank-two triple spans a unique such line, so it is counted once.
+Alternatively form the simple orthogonality graph on the weighted
+points. Let $T_\triangle$ be the weighted sum over unordered triangles,
+and $T_{\rm line}$ the weighted sum over unordered collinear triples.
+For unordered orthogonal pairs $\{\ell,m\}$,
+\[
+ R_2=3\sum_{\{\ell,m\}}w_\ell w_m(w_\ell+w_m)+6T_{\rm line},
+ \qquad R_3=6(T_\triangle-T_{\rm line}).
+\]
+Bitset intersections count graph triangles efficiently when all point
+weights are one. For each pair, the other $p-1$ points on its line
+are obtained by normalizing $x+ty$, $t\in\mathbb F_p^*$; dictionary
+lookup counts collinear triples. Requiring the third index to exceed
+both pair indices counts each once. The method uses quadratic pair
+enumeration and avoids testing all ordered point triples.
+
+\subsection{Known-order exact benchmarks}
+For the first eight stored rows of the order-twenty terminal frame,
+$b=9$, $h=2$, and
+\[
+ R_1=258,\quad R_2=7632,\quad R_3=0,\quad
+ \mathbb EY^2=65,\quad\mathbb EY^3=679.
+\]
+Thus $|S(C)|\ge9+\lceil679/65\rceil=20$.
+The second-moment bound gave only nineteen. Independent enumeration
+of all twelve generators gives additional counts $3$ six times and
+$11$ six times, directly checking the cubic moment.
+
+For the first five stored rows, $b=5$, $h=5$, and the 1092 weighted
+points all have weight one. The graph has 6497280 unordered triangles,
+of which 1200 are collinear. Exact arithmetic gives
+\[
+ R_1=1092,\quad R_2=1118736,\quad R_3=38976480,
+ \qquad\mathbb EY^3=\frac{995014}{28483}.
+\]
+As $\mathbb EY^2=14114/2191$, the ratio is
+$497507/91741$, giving only $5+\lceil497507/91741\rceil=11$
+total classes. This improves the second-moment lower bound of nine,
+but does not reach the sufficient threshold seventeen.
+
+\subsection{Scope of the moment hierarchy}
+For any integer $r\ge2$ with positive denominator,
+\[
+ \max Y\ge\frac{\mathbb EY^r}{\mathbb EY^{r-1}}.
+\]
+These ratios are nondecreasing by Cauchy--Schwarz and tend to
+$\max Y$ on the finite completion space. Since $Y$ is integer valued,
+their ceilings eventually equal its exact maximum. This is a
+classical moment principle, not a uniform bound on the number of
+moments required or their computational cost. Supplying sufficiently
+large finite-geometry counts remains the missing existence input in
+unknown orders. No all-order positivity assertion follows.
+\section{Rational dilations of arithmetic frames and an exact completion obstruction}
+\label{sec:rational-dilations}
+
+Concatenation produces the partial matrices used in the arithmetic
+branch. It is useful to understand the remaining completion problem
+as an explicit orthogonal dilation. The elementary calculation below
+separates real or rational completion from the sign constraints.
+No novelty is claimed for the linear algebra or the quaternion
+sum-of-four-squares construction.
+
+Let $a<b$ be positive multiples of four, let $A$ be an order-$a$
+Hadamard matrix, and partition an order-$b$ Hadamard matrix as
+$H_b=\binom{B}{E}$, with $B$ having $a$ rows. Put $d=b-a$ and $n=a+b$.
+Then $P=[A\ B]$ is an $a$-row sign frame of width $n$.
+
+\begin{theorem}[An exact residual parameterization]
+\label{dil:parameterization}
+The real matrices
+\[
+ Z=\begin{pmatrix}A&B\\B^T&D\end{pmatrix},\qquad ZZ^T=nI_n,
+\]
+are exactly those with
+\[
+ \boxed{D=\frac1b\left(-B^TA^TB+E^TVE\right),\qquad
+                         VV^T=nI_d.}
+\]
+In particular a rational such $Z$ always exists. Its only possibly
+nonsign entries are in the lower-right $b$-square block.
+A sign-valued completion with this prescribed transpose corner
+exists if and only if some such $V$ makes every entry of $D$ equal
+to $+1$ or $-1$.
+\end{theorem}
+\begin{proof}
+The top block already has Gram $nI_a$. The remaining equations are
+\[
+ AB+BD^T=0,\qquad B^TB+DD^T=nI_b.
+\]
+Conjugate $D$ by the orthogonal matrix
+$W=\binom{B}{E}/\sqrt b$. The first equation forces
+\[
+ WDW^T=\begin{pmatrix}-A^T&F\\0&V\end{pmatrix}.
+\]
+The second requires its product with its transpose to be
+$\operatorname{diag}(aI_a,nI_d)$.
+Since $A^TA=aI_a$, this forces $FF^T=0$, hence $F=0$,
+and leaves exactly $VV^T=nI_d$. Transforming back gives the formula.
+
+For rational existence write $n=u_0^2+u_1^2+u_2^2+u_3^2$ by
+Lagrange's four-square theorem. The quaternion multiplication matrix
+\[
+ Q=\begin{pmatrix}
+ u_0&u_1&u_2&u_3\\
+ -u_1&u_0&-u_3&u_2\\
+ -u_2&u_3&u_0&-u_1\\
+ -u_3&-u_2&u_1&u_0
+ \end{pmatrix}
+\]
+satisfies $QQ^T=nI_4$. Since $d$ is a multiple of four, take $V$
+block diagonal with $d/4$ copies of $Q$. It is integral, and the
+displayed formula gives a rational $D$. The sign-valued criterion
+is then simply the definition of a Hadamard matrix with these
+prescribed three blocks.
+\end{proof}
+
+The free real parameter lies in a scaled $O(d)$, rather than $O(n)$.
+This is a reduction of the completion variables, not a proof of
+flatness. In particular rational scaled orthogonality supplies no
+general sign-rounding theorem.
+
+\subsection{A structured order-twenty obstruction and its smallest repair}
+Take $A=H_8$ in the standard Sylvester order, and let $B$ be the
+first eight rows of the normalized Paley type-II $H_{12}$ constructed
+from the prime five. The exact frame $[A\ B]$ has eight orthogonal
+rows of length twenty. It cannot be completed to a Hadamard matrix
+while preserving all eight rows.
+
+Here is a finite exhaustive certificate of that assertion.
+Its row span modulo five has dimension eight. The four-dimensional
+hyperbolic quotient therefore has exactly twelve self-dual
+extensions, the two rulings of the preceding pass's $6$-square grid.
+The checker reconstructs all twelve codes and exhausts each
+systematic sign assignment. Each code has exactly twelve sign
+classes, and those classes are real orthogonal because the
+prescribed eight rows fix their parity. Thus the exact maximum
+orthogonal frame preserving these eight rows is twelve, not twenty.
+The row residues of any full Hadamard completion would lie in one
+of these self-dual extensions, contradicting its sign count.
+
+Deleting one prescribed row does permit a full completion.
+The checker enumerates modular candidates orthogonal to the retained
+seven rows, makes an explicit self-dual neighbor pivot, and obtains
+twenty pairwise orthogonal sign classes preserving exactly seven of
+the eight originals. The certificate and row index are in
+\path{dilations/checks.json}. The minimum original-row loss for a
+full completion is consequently exactly one.
+This is a known-order example; it proves neither a uniform bounded
+repair theorem nor failure of the arithmetic construction at other orders.
+
+The continuous family is nonempty despite the sign obstruction.
+Using the quaternion parameters $(4,2,0,0)$ gives $VV^T=20I_4$.
+The checker verifies the full rational $20$-square Gram identity,
+with lower-right entries ranging from $-2$ to $8/3$ and
+\[
+                    \sum_{ij}D_{ij}^4-144=\frac{6976}{27}.
+\]
+Rounding its entries to signs does not produce a Hadamard matrix.
+
+\subsection{A quantitative flatness gap when the prescribed rows cannot complete}
+\begin{proposition}[A rounding threshold for real completions]
+\label{dil:flatness-gap}
+Let $n$ be a positive multiple of four and let $Z$ be any real matrix
+with $ZZ^T=nI_n$. Define
+\[
+ \Delta=\sum_{ij}(Z_{ij}^2-1)^2=\sum_{ij}Z_{ij}^4-n^2.
+\]
+If
+\[
+ \Delta<(\sqrt{n+2}-\sqrt n)^2,
+\]
+rounding each entry to a sign gives a Hadamard matrix.
+Consequently if some prescribed sign rows cannot be completed,
+every real completion preserving them has
+$\Delta\ge(\sqrt{n+2}-\sqrt n)^2>1/(n+2)$.
+\end{proposition}
+\begin{proof}
+Let $H$ be the entrywise sign rounding (choose $+1$ at zero)
+and write $F=H-Z$. The scalar inequality
+$(|z|-1)^2\le(z^2-1)^2$ gives $\|F\|_F\le\sqrt\Delta$.
+Since $\|Z\|_{\rm op}=\sqrt n$,
+\[
+ \|HH^T-nI_n\|_{\rm op}
+ \le2\sqrt n\,\sqrt\Delta+\Delta<2.
+\]
+The diagonal is zero, and every off-diagonal entry of this error
+is an even integer, since $n$ is even and $H$ is a sign matrix.
+The operator norm bounds every entry in magnitude, so all entries
+vanish. Prescribed sign rows remain unchanged by rounding.
+Finally
+$(\sqrt{n+2}-\sqrt n)^2
+=4/(\sqrt{n+2}+\sqrt n)^2>1/(n+2)$.
+\end{proof}
+
+For the order-twenty frame this gives an explicit positive quartic
+gap for every continuous completion preserving the eight rows.
+A continuous optimizer cannot remove that gap without changing
+prescribed rows. This pinpoints a real limitation of feeding an
+arithmetic partial frame into a monotone completion method.
+
+\section{What remains unresolved}
+The arithmetic construction reaches roughly half the required rows,
+and the rational dilation solves scaled orthogonality without solving
+its sign constraints. The structured finite example requires changing
+a prescribed row before reaching a full matrix.
+The third-moment method improves one weak count certificate only to
+eleven, still below its completion threshold. No uniform high-moment
+or count-surplus theorem is proved.
+
+The stronger instability family shows that a fixed relative
+collision or entropy tolerance cannot guarantee a small repair across
+dimensions. It does not exclude the dimension-dependent punctured
+extraction route. A full-conjecture proof still needs an actual
+all-order construction or a global exchange theorem that reaches its
+target without assuming the desired matrix exists.
+The checks validate finite arithmetic certificates, not GRH or the
+asymptotic constants. No Lean code, commits or submissions were made.
+\end{document}

@@ -1,0 +1,130 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,hyperref}
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newcommand{\tr}{\operatorname{tr}}
+\title{Exchangeability, two-copy moments, and the missing flat factor}
+\author{Joshua Mark}
+\date{20 November 2026; research draft, priority not established}
+\begin{document}\maketitle
+\section{A complete hierarchy can still average away the obstruction}
+Let $\mathcal H=\mathbb C^n\otimes\mathbb C^n$, $D=n^2$.
+For $U\in O(n)$ set $v_U=\operatorname{vec}(U)/\sqrt n$ and
+$\sigma_U=v_Uv_U^*$. For any probability measure $\mu$ on $O(n)$,
+\[
+ \rho_k=\int\sigma_U^{\otimes k}\,d\mu(U)
+\]
+is permutation invariant and satisfies $\tr_{k+1}\rho_{k+1}=\rho_k$.
+Each conditional factor is a pure maximally entangled state, not an
+arbitrary relaxed state.
+\begin{proposition}[Exact false positive for one-copy uniformity]
+For every $n>1$ there is such a hierarchy with $\rho_1=I_D/D$,
+yet no factor in its specified representing measure is flat.
+\end{proposition}
+\begin{proof}
+Choose a uniform permutation matrix $P$ and independent uniform row
+signs $\epsilon_i\in\{\pm1\}$, and put $U=\operatorname{diag}(\epsilon)P$.
+The $(ij),(ab)$ entry of $\mathbb E\sigma_U$ is
+$\mathbb E(u_{ij}u_{ab})/n$. Row signs make it zero if $i\ne a$;
+if $i=a$ it vanishes unless $j=b$, since a permutation row has only
+one nonzero entry. The remaining value is $1/n^2$. Every sampled
+$U$ has zeros and so is nonflat. This gives the entire consistent
+hierarchy, not merely finitely many symmetric marginals.
+\end{proof}
+Consequently uniform averaged measurement probabilities, complete
+exchangeability, and maximally entangled conditional factors together
+do not imply flatness. Indeed $\rho_1$ has maximum entropy $\log D$,
+although its displayed ensemble consists solely of sparse matrices.
+
+\section{The precise two-copy obstruction}
+Index the standard basis of $\mathcal H$ by $a=(i,j)$ and define
+$C=\sum_{a=1}^D |a,a\rangle\langle a,a|$ on $\mathcal H^{\otimes2}$.
+For the above hierarchy,
+\begin{equation}\label{coincidence}
+ \tr(\rho_2 C)=\frac1{n^2}\int F_4(U)\,d\mu(U)
+ =\frac1{n^2}\left(1+\int\sum_{ij}(u_{ij}^2-1/n)^2d\mu\right).
+\end{equation}
+The last identity uses $\sum u_{ij}^2=n$. Thus $\tr(\rho_2C)\ge1/n^2$,
+with equality exactly when $\mu$ is supported on flat orthogonals.
+For the signed-permutation hierarchy it is instead $1/n$.
+This is a nonnegative variance that survives convex averaging.
+If the left side is at most $(1+\varepsilon)/n^2$, some factor has
+$\sum(u_{ij}^2-1/n)^2\le\varepsilon$; moreover the measure of factors
+with defect at least $\delta>0$ is at most $\varepsilon/\delta$.
+These statements follow from the integral identity and Markov's
+inequality. They provide approximate factors, not exact Hadamards.
+
+\section{An exact quantum moment characterization}
+Here an infinitely exchangeable hierarchy means a consistent sequence
+of permutation-invariant complex density matrices on
+$\mathcal H^{\otimes k}$ for all positive $k$. By the quantum de Finetti
+theorem~\cite{CFS}, it has a representation
+$\rho_k=\int\sigma^{\otimes k}d\nu(\sigma)$ over density matrices on
+$\mathcal H$. Only existence of this representation is used.
+We deliberately work over a complex Hilbert space and impose reality
+afterwards: the cited paper notes that the corresponding de Finetti
+statement fails for real quantum theory, so it cannot be imported
+unchanged on a real Hilbert space.
+Let $S$ swap the two whole $\mathcal H$ copies, and let $S_A$ swap
+only their first $\mathbb C^n$ subsystems. For $a<b$ put
+$L_{ab}=i(|a\rangle\langle b|-|b\rangle\langle a|)$, a Hermitian
+matrix. All the following constraints concern the same $\rho_2$.
+\begin{theorem}[Where the hierarchy becomes equivalent to existence]
+A real Hadamard matrix of order $n$ exists if and only if there is
+an infinitely exchangeable hierarchy satisfying
+\begin{align*}
+ \tr(\rho_2S)&=1,& \tr(\rho_2S_A)&=1/n,\\
+ \tr(\rho_2(L_{ab}\otimes L_{ab}))&=0\quad(a<b),&
+ \tr(\rho_2 C)&=1/n^2.
+\end{align*}
+Every de Finetti representing measure of such a hierarchy is supported
+on vectorized real scaled Hadamard matrices, up to irrelevant phases.
+\end{theorem}
+\begin{proof}
+The swap identity gives $\tr(\rho_2S)=\int\tr(\sigma^2)d\nu$.
+Since density-matrix purity is at most one, equality forces $\sigma$
+pure almost surely. Similarly
+$\tr(\rho_2S_A)=\int\tr(\sigma_A^2)d\nu$. The purity of a density
+matrix on $\mathbb C^n$ is at least $1/n$, with equality only at
+$I_n/n$, so $\sigma_A=I_n/n$ almost surely.
+For each $a<b$ the reality constraint reads
+$\int(\tr(\sigma L_{ab}))^2d\nu=0$. The integrand is a square of a
+real number, hence vanishes almost surely. The finitely many such
+constraints force $\sigma$ real. A real rank-one positive matrix has
+a real unit vector representative $v$. Reshape $v$ as an $n\times n$
+real matrix $B$. Then $BB^T=I_n/n$, so $U=\sqrt nB\in O(n)$.
+Finally $\tr(\rho_2 C)=\int\sum_a\sigma_{aa}^2d\nu$.
+Since $\sum_a\sigma_{aa}=1$, this is at least $1/D$ pointwise,
+and equality forces all $\sigma_{aa}=1/D$. Thus $u_{ij}^2=1/n$.
+The intersection of the finitely many full-measure sets still has
+full measure and is nonempty. Conversely a real flat orthogonal
+matrix gives the pure tensor hierarchy $\rho_k=\sigma_U^{\otimes k}$,
+which satisfies every displayed constraint.
+\end{proof}
+The theorem is a reformulation and an exact diagnostic, not a proof
+of feasibility. In particular the low-order equalities are only used
+together with infinite extendibility. We make no claim that an
+arbitrary symmetric two-copy positive matrix satisfying the equalities
+has a de Finetti representation. Replacing infinite extendibility by
+finite symmetry without proof would introduce an additional gap.
+
+\section{Implications for an entropy or tensor-stability bridge}
+An optimization over $\rho_1$ alone can reach its ideal entropy in
+every dimension using the signed-permutation example; it cannot
+force a single flat factor. A bridge must retain a nonlinear
+factor-level witness such as the coincidence defect in
+\eqref{coincidence}, or another constraint that forces the same
+nonnegative variance to vanish. Merely allowing correlations or
+symmetric extensions supplies no such vanishing. Even with the exact
+two-copy characterization, feasibility at all orders is the original
+existence issue in another language.
+
+\begin{thebibliography}{9}
+\bibitem{CFS} C. M. Caves, C. A. Fuchs and R. Schack,
+Unknown quantum states: the quantum de Finetti representation,
+Journal of Mathematical Physics 43 (2002), 4537--4559,
+\url{https://arxiv.org/abs/quant-ph/0104088}; see also their 2007
+erratum concerning consistent definitions of exchangeability.
+\end{thebibliography}
+\end{document}

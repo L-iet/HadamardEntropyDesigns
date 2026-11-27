@@ -1,0 +1,130 @@
+\section{A concrete repair and a failure of odd-coset monotonicity}
+\label{sec:odd-coset-repair}
+
+We continue the $12\times24$ terminal example whose all-odd integer
+kernel minimum was certified to be $40$, rather than the sign-vector
+value $24$. Exact search finds a one-row exchange, substantially more
+efficient than rounding the displayed short odd vector. It also shows
+that the odd-coset minimum is not a monotone potential for augmentation:
+an explicitly larger frame has no all-odd integer kernel vector at all.
+The broader distinction between arithmetic and sign completion is
+classical; see Verheiden, \emph{Integral and rational completions of
+Hadamard matrices},
+\url{https://doi.org/10.1016/0097-3165(80)90028-X}.
+The finite certificates and deductions below are independently checked.
+
+Use zero-based coordinates and encode a sign row by the integer having
+bit $j$ equal to one exactly when coordinate $j$ is $-1$. Let $P$
+have rows with masks
+\[
+\begin{gathered}
+0,16773120,16519104,9656012,13838682,14783914,\\
+1944718,11409518,15230494,5921970,3487346,13018356.
+\end{gathered}
+\]
+The rows are orthogonal. The previously studied odd kernel vector is
+\[
+\begin{split}
+v={}&(-1,-1,3,-1,1,1,-3,-1,1,1,-1,1,\\
+&1,-1,-1,-1,1,-1,1,-1,1,-1,1,1),
+\end{split}
+\]
+with $Pv=0$ and $\|v\|^2=40$. The two exceptional coordinates are
+$2,6$. Its coordinatewise sign rounding is orthogonal to only seven
+of the twelve original rows; it violates precisely rows
+$\{2,4,6,8,10\}$. Keeping this particular rounded candidate would
+therefore require discarding five original rows.
+
+\begin{proposition}[Exact one-row augmentation]
+The minimum number of original rows that must be deleted from $P$
+to permit an augmenting exchange is exactly one. Specifically delete
+row index $1$, with mask $16773120$, and insert rows with masks
+\[
+3198332,\qquad6782212.
+\]
+The resulting thirteen rows are orthogonal. More strongly, after this
+same deletion the maximum number of mutually orthogonal inserted
+rows is exactly five, attained by
+\[
+3198332,6782212,8735670,11139280,13957672.
+\]
+The resulting sixteen-row matrix $Q$ is terminal.
+\end{proposition}
+\begin{proof}
+There is no sign row orthogonal to all twelve original rows, so zero
+deletions cannot augment. This is certified by exact rational kernel
+elimination and enumeration of its $2^{11}=2048$ information-coordinate
+sign assignments, up to negation.
+Deleting row $1$ gives exactly sixteen antipodal sign-candidate classes.
+The checker lists all their masks. Two masks are adjacent exactly when
+their Hamming distance is $12$. The five displayed masks form a clique,
+and exhaustive recursion on this sixteen-vertex graph finds no
+six-clique. Thus five is the exact maximum. All row norms and pairwise
+inner products are checked as integers.
+If another sign row extended $Q$, it would belong to the same candidate
+pool and enlarge the five-clique, which is impossible.
+\end{proof}
+
+Deleting row $0$, in contrast, gives only two candidate classes and
+no orthogonal pair. Both deletion choices close the odd-coset norm gap
+to $24$, since the deleted original sign row itself enters the kernel.
+Therefore closing that gap cannot distinguish successful augmentation
+from a deletion permitting only replacement.
+
+\begin{proposition}[Augmentation can destroy odd integer feasibility]
+The larger frame $Q$ has no all-odd integer kernel vector. In particular
+the minimum squared norm in the odd integer coset increases from
+$40$ for $P$ to $+\infty$ for $Q$, under an explicit row-augmenting
+exchange.
+\end{proposition}
+\begin{proof}
+Let $f=e_0+e_9-e_{11}$. Exact calculation gives
+\[
+ 24\|f\|^2-\sum_{q\text{ row of }Q}(q\cdot f)^2=0.
+\]
+For orthogonal rows of norm $\sqrt{24}$ this means that $f$ lies in
+their rational row span. Its coordinate sum is odd. Any all-odd integer
+vector $z$ has $f\cdot z$ odd, whereas $Qz=0$ would force
+$f\cdot z=0$. This contradiction proves the assertion and also gives
+a small direct certificate of terminality for $Q$.
+\end{proof}
+
+\subsection{What coordinatewise rounding does guarantee}
+\begin{proposition}[Rounding defect]
+Let $P$ have $r$ orthogonal sign rows of length $N$, and suppose
+$v\in\ker P$ has entries in $\{\pm1,\pm3\}$. Let $w$ be its
+coordinatewise sign, and let $t$ count the coordinates of magnitude
+$3$. Define $e_j=w_j$ on those coordinates and $e_j=0$ otherwise.
+Then $v=w+2e$ and $Pw=-2Pe$.
+If $t$ is odd, $w$ is orthogonal to \emph{none} of the original rows.
+If $t$ is even, the number $b$ of rows not orthogonal to $w$ satisfies
+\[
+ b\le\min\{r,Nt/4\}.
+\]
+Deleting exactly those $b$ rows permits inserting $w$ as a single
+sign row. This need not be an augmenting exchange.
+\end{proposition}
+\begin{proof}
+For every sign row $p$, $p\cdot e\equiv t\pmod2$. If $t$ is odd,
+that inner product cannot vanish. If $t$ is even, each nonzero value
+has magnitude at least $2$, while Bessel gives
+$\sum_p(p\cdot e)^2\le N\|e\|^2=Nt$. Hence $4b\le Nt$.
+The identity $Pw=-2Pe$ supplies all remaining claims.
+\end{proof}
+
+Thus a short odd vector supplies a deterministic candidate and a
+computable deletion set, but its number of exceptional coordinates
+alone has not here yielded a bounded augmenting-exchange theorem.
+The explicit example has rounding deletion count five and actual
+augmentation deletion count one. The earlier sixteen-row order-$24$
+example has a certified three-row augmentation barrier and already
+fails odd integer feasibility. These examples separate three issues:
+parity feasibility, shortness of an odd kernel vector, and mutual
+compatibility of enough new sign rows.
+
+Finally, a global column sign change cannot repair any of these
+obstructions. Multiplication by a diagonal sign matrix gives a
+norm-preserving bijection on sign extensions and on odd integer kernel
+vectors, and preserves every row inner product. Column permutations
+have the same property. Such operations can simplify a search's
+normalization, but cannot change its extension or exchange costs.

@@ -1,0 +1,14 @@
+{
+  "challenge_module": "TradeChallenge",
+  "solution_module": "TradeSolution",
+  "theorem_names": [
+    "EntropyDesigns.universal_half_row_observation_trade"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "enable_nanoda": true
+}

@@ -1,0 +1,32 @@
+{
+  "key": "701bf811cf03898b9ecc1d0f484ba62fec02edbfd6e3db37cc58c51df910fe82",
+  "metadata": {
+    "group": "moments",
+    "configPath": "comparator-moments.json",
+    "configSHA256": "5539e87558ea7b8e63044f961601acc5cf1e09bae4ebcb7d0e97803c53f60cdd",
+    "theoremNames": [
+      "EntropyDesigns.punctured_moment_error_floor",
+      "EntropyDesigns.four_omitted_moment_error_floor"
+    ],
+    "definitionNames": [],
+    "exports": {
+      "challenge": "0441fa53fb782c290ef9a7635b41fac5b0155aa4c4882a321bf63ab3c67dae8e",
+      "solution": "2a3641c922a58cc8b8901d35e681dac4e7383ee417ee3b8ec05eb8a56a4226ac"
+    },
+    "environment": {
+      "toolchain": "leanprover/lean4:v4.35.0",
+      "toolchainSHA256": "ca5f1f601d34c49079e38d7e7041eb0f2a9c227fbc1df0f404820069a052330c",
+      "binaries": {
+        "lean": "ec7a472d1c12a09b0c0c718f7427c2be527b3f5f07810fdbe076c2507c7a91ea",
+        "lake": "023feb24d3e7244fe671dba79f1cd1affc6c7a7cacfe497bf3675febb506578c",
+        "leanexport": "bda24bb3fafaf299ba472f944942d6293294b76559fafc9f166badd7c0f981b3",
+        "leanchecker": "9ef6baeb28d5e28897d5ed6dddd60ff81e511d97374013ece435dff38e9e0137",
+        "nanoda_bin": "de57d9dd7f647eb57398bc3dab4dcaa1d64f961f3f49964d5455fbddc73b35a8"
+      }
+    }
+  },
+  "capturedAtUTC": "2026-11-24T19:19:57.050848+00:00",
+  "reportSHA256": "d788b1707a638e53e67cb5fed2bb285138d87913c25999c2c5c7d337c6c8a342",
+  "logSHA256": "125a3b9b2884fddc9a2bb2354fe3ca1adcf8209d4f8115fb28898ec7d5b972e4",
+  "scope": "Immutable original Comparator exit0 with explicit Lean/NanoDa acceptance of the exact exports/config/checker environment. Local diagnostic, not registry verification."
+}

@@ -1,0 +1,881 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,mathtools,hyperref}
+\setlength{\emergencystretch}{3em}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\R}{\mathbb R}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\Sym}{\operatorname{Sym}}
+\newcommand{\Skew}{\operatorname{Skew}}
+\title{Tensor stability and arithmetic rigidity\\in Hadamard-related problems}
+\author{Joshua Mark\thanks{ORCID: \href{https://orcid.org/0009-0003-5905-2382}{0009-0003-5905-2382}. AI tools assisted with research, derivation, adversarial review, computation and exposition.}}
+\date{20 November 2026 --- research draft; priority not established}
+\begin{document}
+\maketitle
+\begin{abstract}
+For every finite real $p>2$, we prove that a nonflat critical point of
+the entrywise $p$-energy on the real orthogonal group acquires a negative
+tangent-Hessian direction at some finite self-tensor power. The proof
+uses symmetric and skew-symmetric trace averages and strict Chebyshev
+inequality. It gives an explicit bound on the number of tensor factors
+and a factored descent direction. Consequently the orthogonal matrices
+whose every tensor power is a local minimum are exactly the scaled
+Hadamard matrices. This does not prove that such matrices exist in
+every admissible dimension: tensor lifting changes the dimension, and
+no descent back to the original dimension is established. Novelty is
+not asserted pending a comprehensive literature review.
+\end{abstract}
+
+\section*{The third research pass}
+The leading result of this pass is the uniform tensor-destabilization
+theorem below. It extends the earlier examples to every nonflat
+critical point and every finite real exponent $p>2$. The subsequent
+sections prove sharp energy floors for the entire quadratic-character
+template, arithmetic lower bounds on observation-trade volume, and
+uniform persistence of an exact three-row augmentation barrier.
+These results advance auxiliary problems. None proves all-order
+Hadamard existence, and bibliographic novelty remains unestablished.
+
+
+\section{Main statement}
+For $n\ge2$ and $2<p<\infty$, define
+\[
+ F_p(U)=\sum_{i,j=1}^n |u_{ij}|^p\qquad(U\in O(n)).
+\]
+Call $U$ flat if all its entries have magnitude $1/\sqrt n$.
+Flatness is equivalent to $\sqrt nU$ being a Hadamard matrix.
+Jensen's inequality and $\sum u_{ij}^2=n$ give
+\[
+ F_p(U)\ge n^{2-p/2},
+\]
+with equality exactly when $U$ is flat. Entrywise norm optimization
+and its differential framework have been studied in the almost-Hadamard
+literature~\cite{BN}. Our assertion concerns stability under arbitrary
+\emph{self-tensor powers}, not just the landscape at one fixed order.
+
+\begin{theorem}[Finite tensor destabilization]\label{thm:main}
+Let $U\in O(n)$ be a nonflat critical point of $F_p$. Put
+\[
+ q=\sum_{ij}|u_{ij}|^p,\qquad
+ r=\sum_{ij}|u_{ij}|^{p-2},\qquad
+ b=\frac{r+q}{(n+1)q}.
+\]
+Then $0<b<1$. For some positive integer $k$, the critical point
+$U^{\otimes k}\in O(n^k)$ has a nonzero skew-symmetric tangent
+generator $X$ such that
+\[
+ \left.\frac{d^2}{dt^2}F_p(U^{\otimes k}e^{tX})\right|_{t=0}<0.
+\]
+One may take
+\begin{equation}\label{eq:kbound}
+ k=2+\left\lceil\frac{\log(p-1)}{\log(1/b)}\right\rceil.
+\end{equation}
+The direction can be chosen in the factored form
+$X=Y\otimes Z^{\otimes(k-1)}$, with $Y$ skew-symmetric and $Z$
+symmetric. Both may be chosen from elementary matrix bases.
+\end{theorem}
+
+The result allows zero entries. The function $|x|^p$ is $C^2$ on the
+whole real line for every $p>2$, with second derivative zero at zero.
+No spectral positivity assumption on the critical-point matrix below
+is needed.
+
+\section{Derivative and trace identities}
+Write
+\[
+ W=\bigl(|u_{ij}|^{p-2}u_{ij}\bigr)_{ij},\qquad M=U^{\mathsf T}W.
+\]
+Differentiation in skew directions shows that criticality is equivalent
+to $M$ being symmetric. Its trace is $q$.
+For any real $n\times n$ matrix $V$, set
+\[
+ T(V)=\sum_{ij}|u_{ij}|^{p-2}(UV)_{ij}^2,\qquad
+ S(V)=\tr(M V^{\mathsf T}V).
+\]
+We always have $T(V)\ge0$, but individual values of $S$ may be negative.
+For a skew-symmetric $V$,
+\begin{equation}\label{eq:hessian}
+ \left.\frac{d^2}{dt^2}F_p(Ue^{tV})\right|_0
+ =p\bigl((p-1)T(V)-S(V)\bigr).
+\end{equation}
+Indeed the unreduced second derivative is
+$p(p-1)\sum |u_{ij}|^{p-2}(UV)_{ij}^2+
+p\tr(W^{\mathsf T}UV^2)$; symmetry of $M$ and
+$V^2=-V^{\mathsf T}V$ give the formula.
+
+\begin{lemma}[Symmetric and skew trace sums]\label{lem:traces}
+Let $\mathcal B_+$ and $\mathcal B_-$ be Frobenius-orthonormal bases
+of the symmetric and skew-symmetric matrices respectively. Then
+\begin{align*}
+ \sum_{Z\in\mathcal B_+}T(Z)&=(r+q)/2,&
+ \sum_{Z\in\mathcal B_+}S(Z)&=(n+1)q/2,\\
+ \sum_{Y\in\mathcal B_-}T(Y)&=(r-q)/2,&
+ \sum_{Y\in\mathcal B_-}S(Y)&=(n-1)q/2.
+\end{align*}
+\end{lemma}
+\begin{proof}
+For the unit row vector $u_i$ of $U$, the squared norms of the
+symmetric and skew projections of $u_i^{\mathsf T}e_j^{\mathsf T}$
+are $(1+u_{ij}^2)/2$ and $(1-u_{ij}^2)/2$. Equivalently, direct
+summation over $E_{ii}$ and $(E_{ij}\pm E_{ji})/\sqrt2$ gives
+\[
+ \sum_{Z\in\mathcal B_\pm}(UZ)_{ij}^2
+ =\frac{1\pm u_{ij}^2}{2}.
+\]
+Multiply by $|u_{ij}|^{p-2}$ and sum to obtain the $T$ identities.
+The same elementary bases satisfy
+\[
+ \sum_{Z\in\mathcal B_\pm}Z^{\mathsf T}Z
+ =\frac{n\pm1}{2}I_n.
+\]
+Taking their trace product with $M$ proves the $S$ identities.
+\end{proof}
+
+\begin{lemma}[Strict moment inequality]\label{lem:cheb}
+For a nonflat $U$, $q\le r<nq$.
+\end{lemma}
+\begin{proof}
+The first inequality follows from $|u_{ij}|\le1$. For the second,
+list the $n^2$ squared entries as $x_1,\ldots,x_{n^2}$ and put
+$a=(p-2)/2>0$. Then $\sum x_i=n$, $\sum x_i^a=r$, and
+$\sum x_i^{a+1}=q$. Strict Chebyshev inequality follows directly from
+\[
+ n^2q-nr
+ =\sum_{i<j}(x_i-x_j)(x_i^a-x_j^a)>0.
+\]
+Every summand is nonnegative; at least one is positive because the
+$x_i$ are not all equal. This argument includes zero entries.
+\end{proof}
+
+\begin{lemma}[Ratio selection without positivity of every denominator]
+Suppose finitely many pairs $(T_i,S_i)$ have $T_i\ge0$ and
+$\sum S_i>0$. Some $i$ has $S_i>0$ and
+\[
+ T_i/S_i\le\frac{\sum T_j}{\sum S_j}.
+\]
+\end{lemma}
+\begin{proof}
+Set the displayed aggregate ratio to $c\ge0$. If all positive-$S_i$
+terms had $T_i>cS_i$, while nonpositive-$S_i$ terms satisfy
+$T_i\ge0\ge cS_i$, summing would contradict the definition of $c$.
+\end{proof}
+
+\section{Proof of tensor destabilization}
+Apply the trace sums and ratio-selection lemma to choose $Y\in
+\mathcal B_-$ and $Z\in\mathcal B_+$ with positive $S$-values and
+\[
+ \alpha:=\frac{T(Y)}{S(Y)}
+ \le\frac{r-q}{(n-1)q}<1,\qquad
+ \beta:=\frac{T(Z)}{S(Z)}\le b<1.
+\]
+The upper bound on $\alpha$ is nonnegative, and the choices exist
+because $n\ge2$ and $q>0$.
+
+At the tensor power, $W_k=W^{\otimes k}$ and $M_k=M^{\otimes k}$.
+Hence $U^{\otimes k}$ is still critical. For
+$X=Y\otimes Z^{\otimes(k-1)}$, which is nonzero and skew-symmetric,
+tensor factorization of the sums and traces gives
+\[
+ T_k(X)=T(Y)T(Z)^{k-1},\qquad
+ S_k(X)=S(Y)S(Z)^{k-1}.
+\]
+Its Hessian is therefore
+\begin{equation}\label{eq:tensorhessian}
+ pS(Y)S(Z)^{k-1}
+ \bigl((p-1)\alpha\beta^{k-1}-1\bigr).
+\end{equation}
+If $\alpha=0$, $k=1$ already works. Otherwise, choose $k$ as in
+\eqref{eq:kbound}. Since $\alpha<1$, $\beta\le b<1$, and
+$k-1>\log(p-1)/\log(1/b)$, the bracket is negative. This proves
+Theorem~\ref{thm:main}.
+
+\begin{corollary}[Characterization by tensor stability]
+For $p>2$, the following are equivalent for $U\in O(n)$:
+\begin{enumerate}
+\item Every positive self-tensor power of $U$ is a local minimum of
+the entrywise $p$-energy in its ambient orthogonal group.
+\item Every positive self-tensor power is critical with positive
+semidefinite tangent Hessian.
+\item $U$ is flat, so $\sqrt nU$ is a Hadamard matrix.
+\end{enumerate}
+\end{corollary}
+\begin{proof}
+The first implication is the second-order necessary condition. The
+theorem proves the second implication to flatness. If $U$ is flat,
+every tensor power is flat and attains the Jensen lower bound globally.
+\end{proof}
+
+\begin{corollary}[Strict eventual submultiplicativity]
+Let $m_p(n)=\min_{U\in O(n)}F_p(U)$. If there is no Hadamard matrix
+of order $n$, then for some positive $k$,
+\[
+ m_p(n^k)<m_p(n)^k.
+\]
+Equivalently, equality for every $k$ occurs precisely when order $n$
+admits a Hadamard matrix.
+\end{corollary}
+\begin{proof}
+Compactness gives a minimizer $U$, which is critical and nonflat under
+the hypothesis. The negative Hessian direction strictly decreases
+$F_p$ near $U^{\otimes k}$, whose value is $m_p(n)^k$. Conversely a
+flat matrix and all its tensor powers attain the Jensen lower bounds.
+\end{proof}
+
+\begin{corollary}[Rectangular row-orthonormal frames]
+The tensor-destabilization theorem and tensor-stability characterization
+also hold on
+\[
+ \operatorname{St}(d,n)=\{U\in\R^{d\times n}:UU^{\mathsf T}=I_d\},
+ \qquad 1\le d\le n,\quad n\ge2.
+\]
+Here flat means every entry has magnitude $1/\sqrt n$, so the scaled
+matrix is a rectangular partial Hadamard matrix. The tensor powers have
+shape $d^k\times n^k$, and the same bound~\eqref{eq:kbound} uses the
+number $n$ of columns.
+\end{corollary}
+\begin{proof}
+Right multiplication by $O(n)$ acts transitively on this Stiefel
+manifold, so criticality is again equivalent to symmetry of the
+$n\times n$ matrix $M=U^{\mathsf T}W$. All rows still have norm one,
+so both trace-sum identities are unchanged. For strict Chebyshev, there
+are now $dn$ squared entries summing to $d$; the same pair sum is
+$dnq-dr>0$ unless every entry is flat. Thus $r<nq$ still holds and
+the ratio and tensor arguments apply without change. Positive
+$S(Y),S(Z)$ ensure that $UY$ and $UZ$ are nonzero. Indeed, if
+$UV=0$ for a symmetric or skew $V$, then $VU^{\mathsf T}=0$ and
+$V$ annihilates the range of $M$, implying $S(V)=0$.
+The factored actual tangent is therefore nonzero. Finally flat row frames minimize the energy
+globally, by Jensen separately on each unit row, with value
+$d n^{1-p/2}$.
+\end{proof}
+
+\section{A local minimum that becomes unstable after two copies}
+For $p=4$, let $A=2J_5/5-I_5$. The earlier note proves that
+$A\otimes(H_k/\sqrt k)$ is a strict local minimum with value $29/25$
+for any Hadamard factor. At $A$,
+\[
+ M=\frac7{25}I_5-\frac6{125}J_5.
+\]
+Let $Y=E_{01}+E_{12}-E_{02}$ be a skew triangle circulation. Let $Z$
+be symmetric, with $Z_{01}=1$, $Z_{12}=-1$, $Z_{23}=1$,
+$Z_{30}=-1$, the transposed entries equal, and all other entries zero.
+Both have row sums zero and zero diagonal, and
+$\|Y\|_F^2=6$, $\|Z\|_F^2=8$. Thus
+\[
+ T(Y)=\tfrac4{25}\|Y\|_F^2,\quad
+ S(Y)=\tfrac7{25}\|Y\|_F^2,
+\]
+with the same identities for $Z$. Consequently at $A\otimes A$ the
+direction $Y\otimes Z$ has quartic curvature
+\[
+ 4\cdot\frac{49}{625}\cdot48
+ \left(3\frac{16}{49}-1\right)=-\frac{192}{625}.
+\]
+Tensoring with a flat factor preserves this displayed curvature when
+the tangent generator is tensored with an identity. In particular a
+strict local minimum at order $20$ becomes unstable after taking its
+tensor square at order $400$. This is consistent with stability under
+flat tensor factors: self-tensoring inserts a second nonflat factor.
+
+\section{Scope, checks and priority}
+The proof is uniform in all real finite $p>2$, not a claim inferred
+from numerical Hessian spectra. The accompanying standard-library
+Python checker verifies the trace formulas, stationarity, ratio choices,
+and factored negative curvatures with exact rational arithmetic for
+integer exponents $p=3,4,5,6,8$ and several critical matrices. It also
+checks the two-copy curvature directly at order $25$.
+
+A separate mathematical review checked the trace formulas, strictness
+with zeros, possibly indefinite $M$, and the tensor factorization.
+This is not a Lean proof or a substitute for external peer review.
+Targeted primary-literature searches on almost-Hadamard matrices,
+tensor stability, local norm extrema and tensor-power descent did not
+locate this precise statement. That does not establish priority.
+
+Most importantly, this result does not show that a tensor-stable local
+minimum exists in any prescribed dimension. Tensor descent occurs in
+$O(n^k)$, and no mechanism here transfers it back to $O(n)$. Therefore
+the characterization is an optimization result and a research lead,
+not a proof of the Hadamard conjecture.
+
+
+% Reviewed branch fragment; requires theorem/proposition/proof environments.
+\section{The exact energy floor of the full quadratic-character template}
+The earlier constructions used one particular arrangement of a quadratic
+character, constants, and the all-one polynomial. The following result
+shows that their minimum energies cannot be improved by taking arbitrary
+integer linear combinations of those same three ingredients, even with
+independent shifts in the four channels. This is a restriction on a
+construction template, not on unrestricted Hadamard existence. No claim
+of bibliographic novelty is made.
+
+Let $m>1$ be odd, $R_m=\Z[z]/(z^m-1)$, $z^*=z^{-1}$ and
+$J=1+z+\cdots+z^{m-1}$. Suppose $L$ has coefficient zero at the
+identity, all other coefficients in $\{\pm1\}$, and
+\[
+ LL^*=m\cdot1-J,\qquad L^*=\eta L,\qquad \eta\in\{+1,-1\}.
+\]
+For prime $m=p$, the quadratic character polynomial has these
+properties with $\eta=(-1)^{(p-1)/2}$. Its coefficients take both signs:
+augmentation of the norm identity forces $L(1)=0$.
+Consider the four-channel family
+\begin{equation}\label{eq:fullspan}
+ A_i=z^{r_i}(u_iL+v_i\cdot1+w_iJ),\qquad
+ u_i,v_i,w_i,r_i\in\Z.
+\end{equation}
+Require every coefficient of every $A_i$ to be odd and
+$\sum_iA_iA_i^*=4t\cdot1$.
+
+\begin{theorem}[Sharp floor in the full character span]\label{thm:spanfloor}
+If $m\equiv3\pmod4$ and $L^*=-L$, the least possible energy in
+\eqref{eq:fullspan} is
+\[
+ T_-(m)=\frac{m^2+6m+21}{16}.
+\]
+If $m\equiv1\pmod4$, $m\ge5$, and $L^*=L$, the least possible energy is
+\[
+ T_+(m)=\frac{m^2+2m+5}{8}.
+\]
+Both minima are attained by explicit odd-coefficient choices. The
+integers $T_\pm(m)$ are odd. These are global minima within the whole
+family, not only within the earlier special constructions.
+\end{theorem}
+\begin{proof}
+Shifts do not change the individual Hermitian norms and preserve
+coefficient parity, so omit them. Since the nonidentity coefficients
+of $L$ include both signs, coefficientwise oddness is equivalent to
+\begin{equation}\label{eq:spanparity}
+ u_i\equiv v_i\equiv1-w_i\pmod2.
+\end{equation}
+Put $S=\sum_i u_i^2$, $V=\sum_i v_i^2$, and $W=\sum_i w_i^2$.
+Since $LJ=0$, the norm sum is
+\[
+ (mS+V)\cdot1+
+ \left(-S+2\sum_iw_iv_i+mW\right)J
+ +(1+\eta)\left(\sum_i u_iv_i\right)L.
+\]
+The three polynomials $1,J,L$ are linearly independent over $\mathbb Q$.
+Consequently scalarity requires
+\begin{equation}\label{eq:spanconditions}
+ 2w\mathbin{\cdot}v=S-mW,\qquad 4t=mS+V,
+\end{equation}
+and in the symmetric case also $u\mathbin{\cdot}v=0$.
+The energy $t$ is odd, since $4m$ odd coefficients have squared sum
+$4$ modulo eight. Also $W>0$: otherwise scalarity forces $S=0$,
+contradicting~\eqref{eq:spanparity}. Cauchy--Schwarz gives the useful
+universal inequality
+\begin{equation}\label{eq:spanCS}
+ t\ge\frac{mS+(S-mW)^2/(4W)}4
+   =\frac{(S+mW)^2}{16W}.
+\end{equation}
+
+In the skew case, first suppose $W\ge2$. Then $t\ge m^2/8$, while
+\[
+ \frac{m^2}{8}-(T_-(m)-2)
+ =\frac{(m-3)^2+2}{16}>0.
+\]
+Since $t$ and $T_-(m)$ are odd integers, this implies $t\ge T_-(m)$.
+If $W=1$, exactly one $w_i$ is $+1$ or $-1$ and the other three
+vanish. Thus three $u_i$ and three corresponding $v_i$ are odd,
+giving $S\ge3$ and
+\[
+ V\ge\frac{(S-m)^2}{4}+3.
+\]
+It follows that
+\[
+ t\ge\frac{mS+(S-m)^2/4+3}{4}
+ =\frac{(m+S)^2}{16}+\frac34
+ \ge T_-(m).
+\]
+For attainment write $m=4k+3$, and take
+\[
+ (A_1,A_2,A_3,A_4)=(L+1,L+1,L+1,J-2k).
+\]
+The first three norm sums contribute $(3m+3)1-3J$, while the last
+contributes $4k^2\cdot1+3J$, giving energy $T_-(m)=k^2+3k+3$.
+
+In the symmetric case, $u\cdot v=0$ and
+\eqref{eq:spanparity} imply that the number of odd $w_i$ is even.
+Hence $W$ is a positive even integer. If $W\ge4$,
+\eqref{eq:spanCS} gives $t\ge m^2/4$. Since
+\[
+ \frac{m^2}{4}-(T_+(m)-2)
+ =\frac{(m-1)^2+10}{8}>0,
+\]
+odd integrality again gives $t\ge T_+(m)$. If $W=2$, exactly two
+$w_i$ are $\pm1$; the other two vanish. Their corresponding $u_i,v_i$
+are odd, so $S\ge2$. Applying Cauchy--Schwarz only on the two
+nonzero-$w_i$ coordinates yields
+\[
+ V\ge\frac{(S-2m)^2}{8}+2.
+\]
+Thus
+\[
+ t\ge\frac{mS+(S-2m)^2/8+2}{4}
+ =\frac{(S+2m)^2}{32}+\frac12\ge T_+(m).
+\]
+For attainment, write $m=4k+1$ and set
+\[
+ (A_1,A_2,A_3,A_4)=(L+1,L-1,J-2k,J-2k).
+\]
+The two $L$ norms have cancelling $L$ terms; their $J$ coefficient
+is $-2$, while the last two norms have $J$ coefficient $+2$.
+The scalar energy is $2k^2+2k+1=T_+(m)$.
+\end{proof}
+
+\begin{corollary}[Only three prime lengths can reach the binary boundary]
+For the quadratic character polynomial at an odd prime $p$, the full
+family~\eqref{eq:fullspan} reaches energy $t=p$ if and only if
+$p\in\{3,5,7\}$. In particular no prime $p\ge11$ can be settled
+by rescaling, independently shifting, or taking arbitrary integer
+linear combinations of a quadratic character, its zero-position
+monomial, and $J$ in the four channels.
+\end{corollary}
+\begin{proof}
+For skew lengths,
+$T_-(p)-p=(p-3)(p-7)/16$; for symmetric lengths,
+$T_+(p)-p=(p-1)(p-5)/8$. The displayed attaining constructions
+reach the boundary at $3,5,7$ and have larger minimum energy at all
+other odd primes. At the boundary every coefficient is a sign.
+\end{proof}
+
+This also covers affine relabelings of the quadratic character:
+$\chi(aj+b)$ is, up to sign, a shift of $\chi(j)$, with its unique
+zero shifted at the same time. It does not cover arbitrary changes
+at additional positions, nonquadratic characters, or general sequence
+quadruples. In particular it is not an obstruction to Hadamard matrices
+of the corresponding orders.
+
+\subsection{Fixing only two character channels already excludes infinitely many primes}
+Let $p\equiv3\pmod4$, and let two channels be the binary sequences
+$z^r(L+\varepsilon)$ and $z^s(L+\delta)$, where
+$\varepsilon,\delta\in\{\pm1\}$. Their row sums have squares one.
+If two otherwise unrestricted binary channels complete these to a
+four-sequence complementary set, augmentation forces their row sums
+$a,b$ to satisfy
+\[
+ a^2+b^2=4p-2.
+\]
+Both are odd; equivalently
+$((a+b)/2)^2+((a-b)/2)^2=2p-1$.
+For $p\equiv11\pmod{36}$, the integer $2p-1$ is three modulo nine,
+so its $3$-adic valuation is exactly one. A sum of two squares cannot
+have that valuation: divisibility by three forces both summands to
+be divisible by three, making the valuation at least two. Thus no
+such completion exists at these primes, regardless of how the other
+two channels are chosen. Dirichlet's theorem supplies infinitely many
+primes in the class $11\pmod{36}$; an English translation of the
+original memoir is available at \url{https://arxiv.org/abs/0808.1408}.
+
+Fixing three binary character channels imposes the stronger necessary
+condition that $4p-3$ be a square. With only one fixed channel, the
+remaining augmentation equation is a sum of three odd squares equal
+to $4p-1\equiv3\pmod8$ and has no obstruction from the three-square
+theorem. This does not assert that the full sequence constraints are
+then solvable.
+
+\paragraph{Scope and reproduction.}
+The exact checker constructs the attaining matrices for primes through
+$101$, checks their periodic autocorrelations, samples scalar templates
+with arbitrary integer coefficients, and verifies the two-channel
+congruence obstruction at small primes. The infinite assertions rest
+on the proofs, not on these tests. These restrictions identify the
+precise need to leave the quadratic-character affine span; they do not
+improve the main Hadamard exponent bound or prove new all-order existence.
+
+% Research fragment: theorem/proposition/corollary/proof, amsmath/amssymb/hyperref.
+\section{Arithmetic rigidity of saturated Hadamard trades}
+This section proves an obstruction to bounded-degree positive moves on the
+\emph{balanced saturated fiber}, rather than on arbitrary binary marginal
+fibers. General unbounded Markov width for binary complete-graph models is
+already known, with much stronger global bounds; see Develin--Sullivant,
+\url{https://arxiv.org/abs/math/0308280}, and
+Kr\'al'--Norine--Pangr\'ac,
+\url{https://arxiv.org/abs/0810.1979}. No bibliographic novelty is claimed
+for the specialized deductions below.
+
+Normalize a Hadamard matrix $H$ of order $n$ so its first column is all
+ones. Deleting that column and replacing signs by bits gives a binary
+strength-two array with $n$ observations and $d=n-1$ coordinates.
+A \emph{reduced observation trade of volume $r$} deletes $r$ old
+observations and inserts $r$ new ones, preserves all moments of degree at
+most two, and has disjoint deleted and inserted pattern multisets.
+Every array in this fiber is again a normalized Hadamard matrix: its
+$n$ columns are orthogonal, so its $n$ rows are orthogonal too.
+Consequently a trade preserves $n-r$ common orthogonal rows.
+
+\begin{theorem}[Denominator obstruction to a new sign row]\label{trd:denom}
+Let $n=4m$ with $m>1$ odd, and let $p$ be the least prime factor of $m$.
+Suppose a sign vector $x$ lies in the real span of $r<n$ rows
+$h_1,\ldots,h_r$ of an order-$n$ Hadamard matrix, but is not any
+$\pm h_i$. Then
+\begin{equation}\label{trd:bound}
+ p\le\frac{r^{r/2}}{2^{r-1}}.
+\end{equation}
+More precisely, the least common denominator of the expansion
+coefficients of $x$ divides $m$ and divides the normalized determinant
+$\det S/2^{r-1}$ of every invertible $r\times r$ sign-column anchor $S$.
+\end{theorem}
+\begin{proof}
+Write $x=\sum_i a_i h_i$. Orthogonality gives
+$a_i=\langle x,h_i\rangle/n$ and $\sum_i a_i^2=1$.
+Choose a Hadamard row outside this span and multiply columns so that row
+becomes all ones. Then $x$ and all $h_i$ are balanced. Inner products of
+balanced sign vectors of length divisible by four are multiples of four:
+if their positive supports meet in $b$ positions, the inner product is
+$4b-n$. Hence $a_i\in m^{-1}\mathbb Z$.
+
+Let $q$ be the least positive common denominator of the $a_i$.
+If $q=1$, the unit-norm integer vector $(a_i)$ is a signed coordinate
+vector, contrary to the hypothesis. Thus $q>1$ and $q\mid m$.
+The $r$ rows are independent, so choose $r$ column positions forming an
+invertible sign matrix $S$. The equations at those positions and Cramer's
+rule give $q\mid\det S$. Every sign determinant of order $r$ is divisible
+by $2^{r-1}$, by subtracting one row from all the others. Since $q$ is
+odd, $q\mid\det S/2^{r-1}$. Hadamard's determinant inequality now gives
+\[
+ p\le q\le\frac{|\det S|}{2^{r-1}}
+ \le\frac{r^{r/2}}{2^{r-1}}.
+\]
+The same reasoning applies to every invertible anchor.
+\end{proof}
+
+\begin{corollary}[A prime-factor lower bound for positive trade volume]
+Every nonempty reduced observation trade of volume $r<n$ from such an
+array satisfies \eqref{trd:bound}. In particular, if
+\[
+ p>\max_{1\le k\le R}\frac{k^{k/2}}{2^{k-1}},
+\]
+then every array in this saturated fiber is isolated under all positive
+moment-preserving moves of degree at most $R$.
+\end{corollary}
+\begin{proof}
+Every inserted row is perpendicular to the $n-r$ retained rows, so lies
+in the span of the $r$ deleted rows. A reduced nonempty trade contains
+a genuinely new row. Its first coordinate is one, so it cannot be the
+negative of an old normalized row. Apply Theorem~\ref{trd:denom}.
+\end{proof}
+For example, Paley order $212$ has $m=53$. Since
+$8^8<53^2\,4^7$, no reduced trade of volume at most eight can leave
+\emph{any} array in its saturated fiber. The theorem does not require
+that the chosen array have Paley symmetry; Paley only supplies existence.
+
+\subsection{Infinitely many existing fibers require unbounded move degree}
+\begin{theorem}[Uniform bounded-degree moves cannot suffice]\label{trd:unbounded}
+For every fixed $R$, there are infinitely many known Hadamard orders
+$n\equiv4\pmod8$ for which every saturated array is isolated under all
+nonzero moment-preserving moves of degree at most $R$.
+\end{theorem}
+\begin{proof}
+Choose an integer $B$ larger than the determinant bound in the preceding
+corollary, and put
+\[
+ P_B=\prod_{3\le\ell\le B\atop\ell\text{ prime}}\ell,
+ \qquad M_B=8P_B.
+\]
+The Chinese remainder theorem gives a reduced residue class satisfying
+$q\equiv3\pmod8$ and $q\equiv1\pmod\ell$ for every odd prime
+$\ell\le B$. Dirichlet's theorem gives infinitely many primes $q$ in
+this class. Paley's construction gives a Hadamard matrix of order
+$n=q+1$. Here $m=(q+1)/4$ is odd and has no prime factor at most $B$,
+because $q+1\equiv2\pmod\ell$. For sufficiently large $q$, $m>1$.
+The determinant obstruction applies at every degree at most $R$.
+\end{proof}
+
+The theorem concerns these particular minimum-run, balanced fibers. It
+is not presented as a new proof of the much stronger known global
+Markov-width lower bounds. It also does not refute bounded row-exchange
+\emph{augmentation} for arbitrary partial matrices: a trade between two
+complete arrays and an augmentation of an incomplete array are different
+operations. Global symmetry operations can bypass this degree restriction
+by changing many observations at once.
+
+\begin{corollary}[A quantitative infinite subsequence]\label{trd:linnik}
+There is an infinite sequence of known Hadamard orders $n\to\infty$
+such that every nonempty reduced observation trade has volume at least
+\[
+ (2-o(1))\frac{\log\log n}{\log\log\log n}.
+\]
+Equivalently, for every $\varepsilon>0$, this lower bound holds with
+$2-\varepsilon$ along all sufficiently large orders in that sequence.
+\end{corollary}
+\begin{proof}
+For each $B$, choose the least prime $q_B$ in the CRT class above.
+Linnik's theorem gives $q_B\le C M_B^L$ for absolute constants $C,L$.
+Only the existence of such constants is used; no numerical value of
+Linnik's exponent is needed. The elementary Chebyshev bound gives
+$\log M_B=O(B)$, hence $\log(q_B+1)=O(B)$.
+Also $q_B>B$, so the selected primes tend to infinity as $B$ does.
+Set $n_B=q_B+1$. The least prime factor of $(q_B+1)/4$ exceeds
+$B\ge c\log n_B$ for an absolute $c>0$.
+
+For $r\le(2-\varepsilon)\log\log n_B/\log\log\log n_B$,
+\[
+ \log\!\left(\frac{r^{r/2}}{2^{r-1}}\right)
+ =\frac r2\log r-(r-1)\log2
+ \le(1-\varepsilon/2+o(1))\log\log n_B
+ <\log B.
+\]
+The denominator obstruction excludes every such trade. Passing to
+distinct orders if necessary gives the asserted sequence.
+\end{proof}
+Linnik's least-prime bound is stated in the introduction of Xylouris,
+\emph{On the least prime in an arithmetic progression and estimates for
+the zeros of Dirichlet $L$-functions}, Acta Arith. 150 (2011), 65--91,
+\url{https://doi.org/10.4064/aa150-1-4}. For the elementary bound
+$\log M_B=O(B)$, one may bound products of primes in $(u,2u]$ by
+$\binom{2u}{u}<4^u$ and sum over dyadic intervals.
+
+\subsection{These fibers have many states, and a universal large trade}
+\begin{proposition}[A universal half-row trade]
+Every normalized Hadamard matrix of order $n>4$ has a reduced
+observation trade of volume $n/2$.
+\end{proposition}
+\begin{proof}
+Choose a nonconstant column and let $I$ be its $k=n/2$ positive rows.
+On these rows the distinguished all-one column and the chosen column
+are constant. Each other column has sum zero on $I$, by its
+orthogonality to both columns. Apply $Q=2J_k/k-I_k$ to the selected
+rows. This preserves the two constant columns and negates every other
+selected column, so the entries stay signs and the first column stays
+one. The transformation is orthogonal and leaves all other rows fixed,
+so the resulting matrix is Hadamard. Since $k>2$, each row of $Q$
+has more than one nonzero coordinate. Thus no new row is an old row
+up to sign; after cancellation the trade really has volume $k$.
+\end{proof}
+
+\begin{proposition}[Exponential multiplicity of isolated states]
+If $n>4$ and $n\equiv4\pmod8$, coordinatewise bit translations of
+any saturated array produce $2^{n-1}$ distinct arrays in the same fiber.
+For the orders in Theorem~\ref{trd:unbounded}, all are isolated under
+the indicated bounded-degree move family.
+\end{proposition}
+\begin{proof}
+First, a closed quadruple of Hadamard rows is impossible at these
+orders. If four rows have pointwise product constant, column-sign
+normalization and orthogonality partition columns into four fields
+of size $n/4$. Orthogonality of any additional row to all four forces
+its sum in each field to be zero. Thus $n/4$ must be even, contrary
+to $n\equiv4\pmod8$.
+
+Coordinatewise bit translation preserves the balanced degree-two
+moments. If a nonzero translation $a$ stabilized the array, choose
+two distinct translation pairs $\{x,x+a\}$ and $\{y,y+a\}$. Their four
+sign rows have pointwise product one, making a closed quadruple.
+Since there are $n>4$ rows, such pairs exist. Hence the translation
+stabilizer is trivial, and all $2^{n-1}$ translations are distinct.
+The isolation statement follows from the previous theorem.
+\end{proof}
+
+These deductions concern local moves on existing objects. They do not
+prove existence at an unknown order. They show that a successful
+positive-conversion or sampling argument cannot rely on a degree bound
+independent of the dimension, even on the highly symmetric balanced
+saturated targets. The exact scripts check the low-dimensional anchor
+classification, explicit Paley examples, and small positive trades; the
+infinite conclusions rest on the proofs above.
+
+\section{Tensor products preserve a three-row exchange barrier}
+For a partial Hadamard matrix $P$, let $\rho(P)$ be the minimum number
+of old rows deleted in an exchange which inserts one more row than it
+deletes, all retained and inserted rows remaining mutually orthogonal.
+Set $\rho(P)=\infty$ if there is no such exchange. The previous pass
+certified $\rho(P)=3$ for one $16\times24$ matrix. Here we prove a
+uniform preservation theorem, rather than search larger isolated orders.
+No claim of bibliographic novelty is made.
+
+\begin{proposition}[Tensoring cannot amplify the exchange cost upward]
+If $H$ is a full Hadamard matrix, then
+\[
+ \rho(P\otimes H)\le\rho(P).
+\]
+\end{proposition}
+\begin{proof}
+Choose any row $h$ of $H$. A $k$-for-$(k+1)$ exchange of rows $p_i$
+for rows $v_j$ lifts to an exchange of $p_i\otimes h$ for $v_j\otimes h$.
+Rows in other Hadamard fibers are orthogonal to every inserted row,
+while the same-fiber checks reduce to the original exchange.
+\end{proof}
+Thus repeated full-Hadamard tensoring alone cannot turn a finite
+exchange lower bound into an unbounded one. The interesting issue is
+whether the tensor permits a cheaper exchange by using non-product rows.
+
+\subsection{A condition excluding cheaper non-product exchanges}
+For a row-index set $I$, let $\mathcal C_I$ consist of the sign vectors
+orthogonal to all rows of $P$ outside $I$. Sign vectors differing only
+by a global minus sign are treated as one line. Write the order as $n$.
+
+\begin{proposition}[A general span-rigidity criterion]
+Suppose $P$ is maximal and, for every index set $I$ of size at most $c$,
+\[
+ \mathcal C_I\subseteq\operatorname{span}\{p_i:i\in I\}.
+\]
+Then no tensor $P\otimes H$ with a full Hadamard factor admits an
+augmenting exchange deleting at most $c$ rows.
+\end{proposition}
+\begin{proof}
+For a deletion set $D$ of size $k\le c$, let $I$ be its projection
+onto the original row indices. Reshape a candidate as $X$. As in the
+proof below, every column belongs to $\mathcal C_I$, so $X$ lies in
+$\operatorname{span}(p_i:i\in I)\otimes\R^s$. Orthogonality to the
+retained tensor rows then forces $X$ into the span of the $k$ deleted
+tensor rows. That space has dimension $k$ and cannot contain $k+1$
+mutually orthogonal nonzero rows.
+\end{proof}
+The order-twenty-four example fails this criterion at some pairs: its
+two extra sign lines span a third direction. Their particular geometry,
+rather than span rigidity, supplies the stronger preservation below.
+
+\begin{theorem}[Preservation under half-overlap pair structure]
+Suppose $P$ is maximal and has the following properties:
+\begin{enumerate}
+\item $\mathcal C_{\{i\}}$ has just the line of $p_i$.
+\item For every pair $i,j$, either $\mathcal C_{\{i,j\}}$ has only the
+lines of $p_i,p_j$, or it has exactly four lines. In the latter case
+the two extra lines can be oriented as $x,y$ so that
+\[
+ x\cdot y=0,\qquad
+ (p_i\cdot x,p_j\cdot x)=(p_i\cdot y,p_j\cdot y)
+ =\tfrac n2(1,\sigma),\quad\sigma\in\{\pm1\}.
+\]
+\end{enumerate}
+Then for every full Hadamard matrix $H$, $P\otimes H$ has no augmenting
+exchange deleting at most two rows. In particular, if $\rho(P)=3$, then
+$\rho(P\otimes H)=3$.
+\end{theorem}
+\begin{proof}
+Let $H$ have order $s$, with rows $h_b$, and reshape a proposed sign
+row of length $ns$ as an $n\times s$ sign matrix $X$. Its correlations
+with the old tensor rows are the entries of $PXH^{\mathsf T}$.
+If the deleted tensor rows project to original row-index set $I$,
+every column of $X$ belongs to $\mathcal C_I$: for $k\notin I$,
+$p_kXH^{\mathsf T}=0$ implies $p_kX=0$.
+
+With no deletions, this contradicts maximality. With one deletion
+$(i,b)$, every column is $\pm p_i$, so $X=p_i\otimes\varepsilon$;
+the remaining fiber constraints force $\varepsilon$ to be proportional
+to $h_b$. The only candidate line is the removed tensor row.
+
+If both deleted rows have the same original index $i$ and different
+fibers $b,c$, the same argument gives $X=p_i\otimes\varepsilon$, now
+with $\varepsilon\in\operatorname{span}(h_b,h_c)\cap\{\pm1\}^s$.
+That intersection has only $\pm h_b,\pm h_c$. Indeed write
+$\varepsilon=\alpha h_b+\beta h_c$; the two orthogonal sign rows
+agree and disagree on nonempty sets, so both $\alpha+\beta$ and
+$\alpha-\beta$ are signs. Consequently one coefficient is zero and
+the other is a sign. There are at most two candidate lines.
+
+It remains to delete $(i,b),(j,c)$ with $i\ne j$. Fourier inversion
+along the Hadamard factor gives
+\[
+ p_iX=\alpha h_b,\qquad p_jX=\beta h_c.
+\]
+For each column of $X$, the possible correlation pairs with $p_i,p_j$
+are $\pm(n,0)$, $\pm(0,n)$ and, when present,
+$\pm(n/2)(1,\sigma)$. Their absolute magnitudes are constant across
+columns, because $h_b,h_c$ have sign entries. If one of $\alpha,\beta$
+vanishes, the candidate is one of the removed old tensor rows. If both
+are nonzero, the extra pair type is necessary, and its fixed correlation
+ratio forces $h_b$ and $h_c$ to be proportional. Thus $b=c$; otherwise
+there are again only the two removed candidate lines.
+
+In the remaining case put $h=h_b=h_c$ and orient globally so that the
+extra correlation pair is $(n/2)(1,\sigma)h$.
+Let
+\[
+ w=(p_i+\sigma p_j)/2,\qquad z=(x-y)/2.
+\]
+Projection onto $\operatorname{span}(p_i,p_j)$ shows that
+$x=w+z$, $y=w-z$, $w\perp z$, and
+$\|w\|^2=\|z\|^2=n/2$. To justify the residual cancellation, the
+residuals of $x,y$ each have squared norm $n/2$ and inner product
+$-n/2$, so they are negatives of each other. Every extra tensor
+candidate therefore has the form
+\[
+ W_{\varepsilon}=w\otimes h+z\otimes\varepsilon,
+ \qquad\varepsilon\in\{\pm1\}^s.
+\]
+Neither removed old tensor row is orthogonal to any $W_\varepsilon$.
+For two extra candidates,
+\[
+ W_\varepsilon\cdot W_\delta
+ =\tfrac n2(s+\varepsilon\cdot\delta),
+\]
+which is zero exactly when $\delta=-\varepsilon$. Thus the candidate
+orthogonality graph consists of the old orthogonal pair and a matching
+on the extra candidates. It has no triangle, so no three mutually
+orthogonal replacement rows exist. All cases are exhausted.
+The upper bound from the preceding proposition proves equality when
+$\rho(P)=3$.
+\end{proof}
+
+\subsection{An infinite family with exact exchange cost three}
+The independently certified $16\times24$ matrix from the previous pass
+satisfies the hypotheses. Among its $120$ two-row deletions, one hundred
+have only the two old candidate lines. The other twenty have exactly
+two extra lines. Those extras are mutually orthogonal, their
+correlations with the two old rows are all $\pm12$, and the two
+correlation vectors are parallel. All these identities are checked
+exactly from the exhaustive sign-cube certificate.
+
+\begin{corollary}
+For every Hadamard order $s$, there is a maximal partial matrix of
+shape $16s\times24s$ whose minimum augmenting exchange deletes exactly
+three rows. In particular such examples exist at every order
+$24\cdot2^a$.
+\end{corollary}
+
+This is a statement about partial matrices and the cost of escaping
+their terminal configurations. It does not produce new Hadamard orders.
+The base three-for-four exchange has an explicit full completion. Apply
+that exchange separately in each of the $s$ Hadamard fibers. After
+$s$ exchanges the result is $Q\otimes H$, where the base $17$-row
+matrix $Q$ completes; hence this whole tensor family can be completed
+after those $s$ exchanges. A single lifted exchange is only claimed
+to augment the tensor partial matrix, not necessarily complete it.
+
+\paragraph{Exact checks.}
+The script \path{round3/exchanges/check.py} re-enumerates all $2^{23}$
+normalized sign vectors for the base matrix, verifies the pair-structure
+hypotheses for all $120$ pairs, and checks lifted exchanges and
+completions at tensor-factor orders $1,2,4,8$. Additional exact
+low-dimensional nullspace enumeration at factor order two confirms
+the predicted candidate sets in each of the three deletion cases.
+The uniform statement rests on the proof above. No Lean verification
+or novelty claim is made.
+
+\section{What these results change}
+The tensor theorem provides an exact structural characterization:
+only scaled Hadamard matrices remain local minima at every self-tensor
+power. It does not establish a tensor-stable point in any given
+dimension or a way to bring a lifted improvement back to that dimension.
+That is the missing step in any proposed Hadamard-existence application.
+
+The character-span theorem closes a whole tuning direction: integer
+rescaling and independent shifts cannot lower its energy floor.
+Additional sequence structure, rather than a different choice of the
+same constants, is necessary beyond the small exceptional lengths.
+
+The trade bounds concern reduced observation trades on complete
+balanced arrays. They do not exclude global symmetry operations,
+unbounded-degree moves, or bounded augmentations of incomplete arrays.
+Conversely, tensor persistence of exchange cost three is an exact
+infinite family, not a proof that exchange costs are unbounded.
+
+All source and code for this pass is under
+\path{research/full_conjecture/round3/}. The four branch checkers use
+only Python's standard library. The mathematical proofs, rather than
+finite computations, establish the uniform assertions. No Lean code,
+Git commits, submissions or publications were made in this pass.
+\begin{thebibliography}{1}
+\bibitem{BN} T. Banica and I. Nechita,
+\emph{Almost Hadamard matrices: the case of arbitrary exponents},
+Discrete Appl. Math. 161 (2013), 2367--2379.
+\url{https://arxiv.org/abs/1211.2669}.
+\end{thebibliography}
+\end{document}

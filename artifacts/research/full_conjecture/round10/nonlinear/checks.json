@@ -1,0 +1,244 @@
+{
+  "passed": true,
+  "allSmallGraphsChecked": 32834,
+  "sharpBinaryMatchingExamples": [
+    {
+      "a": 2,
+      "m": 6,
+      "edges": 1,
+      "nullity": 2
+    },
+    {
+      "a": 3,
+      "m": 10,
+      "edges": 3,
+      "nullity": 4
+    },
+    {
+      "a": 4,
+      "m": 14,
+      "edges": 5,
+      "nullity": 6
+    },
+    {
+      "a": 5,
+      "m": 18,
+      "edges": 7,
+      "nullity": 8
+    },
+    {
+      "a": 6,
+      "m": 22,
+      "edges": 9,
+      "nullity": 10
+    }
+  ],
+  "fourOmissionSpectra": [
+    {
+      "seedBits": 4,
+      "complement": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "nonconstantFourierModes": 3,
+      "bilinearRank": 6
+    },
+    {
+      "seedBits": 4,
+      "complement": [
+        0,
+        1,
+        2,
+        4
+      ],
+      "nonconstantFourierModes": 9,
+      "bilinearRank": 8
+    },
+    {
+      "seedBits": 5,
+      "complement": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "nonconstantFourierModes": 7,
+      "bilinearRank": 20
+    },
+    {
+      "seedBits": 5,
+      "complement": [
+        0,
+        1,
+        2,
+        4
+      ],
+      "nonconstantFourierModes": 19,
+      "bilinearRank": 22
+    },
+    {
+      "seedBits": 6,
+      "complement": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "nonconstantFourierModes": 15,
+      "bilinearRank": 50
+    },
+    {
+      "seedBits": 6,
+      "complement": [
+        0,
+        1,
+        2,
+        4
+      ],
+      "nonconstantFourierModes": 39,
+      "bilinearRank": 52
+    }
+  ],
+  "balancedApproximateCandidates": [
+    {
+      "seedBits": 5,
+      "seedAtoms": 28,
+      "bits": 24,
+      "complementAffineCodimension": 2,
+      "parityBadPairs": 146,
+      "nonzeroCorrelationPairs": 200,
+      "momentError": "1132/49",
+      "certifiedLowerBound": "2/49",
+      "observableCollision": "1/28",
+      "balancedTruthWords": [
+        9345495,
+        21918332,
+        26857969,
+        30120680,
+        31901648,
+        32893218,
+        36928456,
+        55993189,
+        61255046,
+        63941024,
+        66135379,
+        91456203,
+        120918590,
+        134954667,
+        141550756,
+        181062348,
+        185505102,
+        189109078,
+        201735414,
+        203011725,
+        225715539,
+        245991124,
+        246490639,
+        247767451
+      ]
+    },
+    {
+      "seedBits": 6,
+      "seedAtoms": 60,
+      "bits": 56,
+      "complementAffineCodimension": 3,
+      "parityBadPairs": 785,
+      "nonzeroCorrelationPairs": 1247,
+      "momentError": "11746/225",
+      "certifiedLowerBound": "2/75",
+      "observableCollision": "1/60",
+      "balancedTruthWords": [
+        17827113867201862,
+        24704414114037597,
+        32790125609410101,
+        49913712530816479,
+        80436952780807704,
+        107955927975991286,
+        125802030904286874,
+        159453345691763434,
+        165480767954499792,
+        168016132823053063,
+        173364992522289769,
+        173829810679434835,
+        236905019505579498,
+        248711133727331059,
+        263638359943341566,
+        312389199553724259,
+        347986111871769974,
+        355530683865660112,
+        375771771367413332,
+        378841612946924506,
+        398646062401665946,
+        412900754761077600,
+        488858133659603257,
+        515210488238419709,
+        525692481892639322,
+        530008753530711084,
+        531837796475446795,
+        596424449158954466,
+        599899614228559387,
+        610518738852156686,
+        617949791674491362,
+        662604807118821566,
+        672996521975644362,
+        678766054682018998,
+        682438082343177398,
+        683581747194604752,
+        732483210183265272,
+        759376775412873704,
+        792287466041190523,
+        799070541859686773,
+        871394556798346611,
+        890333586010964460,
+        945322475631032370,
+        1009359448722319515,
+        1010226857083396299,
+        1029319213137958542,
+        1030068642358744173,
+        1032231123715376203,
+        1038868782473478266,
+        1048979233337668802,
+        1091237092973941899,
+        1109346043746304046,
+        1119674370826903881,
+        1122607148558866361,
+        1141068542776979546,
+        1141688971056301195
+      ]
+    }
+  ],
+  "minimumSupportExchanges": [
+    {
+      "order": 20,
+      "seedBits": 5,
+      "minimumExchanges": 1,
+      "moves": [
+        [
+          3,
+          16
+        ]
+      ],
+      "finalDegree": 3,
+      "observableLawAndCollisionUnchanged": true
+    },
+    {
+      "order": 48,
+      "seedBits": 6,
+      "minimumExchanges": 2,
+      "moves": [
+        [
+          3,
+          16
+        ],
+        [
+          5,
+          32
+        ]
+      ],
+      "finalDegree": 4,
+      "observableLawAndCollisionUnchanged": true
+    }
+  ]
+}

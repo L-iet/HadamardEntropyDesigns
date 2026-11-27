@@ -1,0 +1,14 @@
+{
+  "challenge_module": "SymmetricChallenge",
+  "solution_module": "SymmetricSolution",
+  "theorem_names": [
+    "EntropyDesigns.SymmetricEntropy.symmetric_pairwise_shannon_lower"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "enable_nanoda": true
+}

@@ -1,0 +1,94 @@
+\section{Near-optimal collision and entropy can coexist with maximal distance}
+\label{sec:relative-sequence}
+
+The omitted-slope theorem gives a particularly strong stability
+counterexample at infinitely many \emph{known} Hadamard orders.
+The existence ingredients are classical: Paley's construction
+(\emph{On Orthogonal Matrices}, 1933,
+\url{https://doi.org/10.1002/sapm1933121311}) and Sylvester tensoring.
+No bibliographic novelty is asserted for the resulting application.
+
+\begin{theorem}[No dimension-independent stability, even for exact moments]
+\label{thm:relative-no-stability}
+There are orders $n_j$ at which Hadamard matrices exist and exactly
+unbiased pairwise-independent laws $\mu_j$ on $n_j-1$ sign bits such that
+\[
+ n_j C(\mu_j)\longrightarrow1,\qquad
+ \inf_{\nu\in\mathcal H_{n_j}}\|\mu_j-\nu\|_{\rm TV}
+ \longrightarrow1.
+\]
+The laws can be chosen to be uniform vertices and strict local
+collision maxima of the full moment polytope. Moreover, for every
+R\'enyi order $\alpha>0$, including Shannon and min-entropy by their
+limiting conventions,
+\[
+ H_\alpha(\mu_j)-\min_{\lambda\ {\rm isotropic}}H_\alpha(\lambda)
+ \longrightarrow0.
+\]
+The same sequence works for all these entropy orders.
+\end{theorem}
+\begin{proof}
+We choose powers of two $h=2^s$ and known Hadamard orders $k$ with
+\[
+ k/h\to1,\quad k\to\infty,\quad
+ s\le g:=h-k<h/2.
+\]
+In $\mathbb F_h$, choose $g$ nonzero omitted slopes containing an
+additive basis, so their complement has $k$ slopes and contains zero.
+The preceding theorem constructs the uniform law on $h^2$ atoms,
+with exact moments, strict local maximality, and
+\[
+ n=kh,\qquad C(\mu)=h^{-2},\qquad
+ \inf_{\nu\in\mathcal H_n}\|\mu-\nu\|_{\rm TV}=1-\frac1k.
+\]
+An $H_k$ tensor a Sylvester $H_h$ gives an $H_n$, so the comparison
+class is nonempty. The relative collision ratio is $n/h^2=k/h$.
+
+For any isotropic law on $n-1$ bits, let $v_x=(1,x)$.
+Since $\sum_xw_xv_xv_x^T=I_n$, each positive rank-one summand
+is bounded by $I_n$, giving $nw_x\le1$.
+Every R\'enyi entropy is therefore at least $\log n$.
+A Hadamard law attains this value. The uniform $h^2$-atom law has
+all its R\'enyi entropies equal to $2\log h$, and its common excess is
+\[
+                  2\log h-\log(kh)=\log(h/k)\to0.
+\]
+
+It remains to justify the simultaneous choices without an unproved
+prime-pattern assumption. Put $q=3^{2u+1}$ and $k=q+1$; Paley gives
+an $H_k$ since $q\equiv3\pmod4$. Let
+$h=2^{\lceil\log_2 q\rceil}$. The fractional parts of
+$(2u+1)\log_2 3$ are dense modulo one, because the increment
+$\log_2 9$ is irrational. Thus for each integer $t\ge4$ we may choose
+an arbitrarily large, increasing $u$ for which
+\[
+       1-\frac2t<\frac qh<1-\frac1t.
+\]
+In particular choose $h\ge t^3$ and
+$g=h-q-1\ge\log_2h$. The latter follows for all sufficiently large
+hits since $h-q>h/t$ and $h/\log h\to\infty$.
+Then $0<g<h/2$, $g\ge s$, $k/h\to1$, and $k\to\infty$.
+Density of irrational rotations is elementary: pigeonhole finitely
+many orbit points to obtain an arbitrarily small nonzero rotation
+step; its multiples form a fine net. The same argument applies
+after discarding any finite prefix, ensuring arbitrarily large hits.
+No assumption on infinitely many Mersenne primes, or other special
+prime patterns, enters the proof.
+\end{proof}
+
+Equivalently, for any $\epsilon,\eta>0$ there is a known Hadamard
+order $n$ and an exact isotropic law with
+$C\ge(1-\epsilon)/n$ but distance at least $1-\eta$ from
+\emph{every convex mixture} of order-$n$ Hadamard laws.
+Consequently no dimension-independent modulus tending to zero can
+bound this distance from relative collision error, nor from additive
+Shannon-entropy excess. This is an instability theorem across
+dimensions, not a failure of compactness or stability at fixed $n$.
+
+The laws here have $n-1$ bits. They must not be identified with the
+$N-4$-bit input of the earlier extraction theorem. Their absolute
+deficit is $(h-k)/(kh^2)$; no sufficiently small fixed-order deficit
+is asserted. Nor do we claim that the $h^2$ observations can be
+partitioned into order-$kh$ blocks with unchanged collision:
+the Paley multiplier $k$ generally does not divide $h$. The distance
+upper bound uses a convex average, which needs no such divisibility.

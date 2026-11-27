@@ -1,0 +1,421 @@
+name = "entropy_designs"
+version = "0.1.0"
+defaultTargets = ["EntropyDesigns", "Solution", "CofiniteSolution", "BufferSolution", "RadixSolution", "TradeSolution", "BooleanSolution", "CubicSolution", "AffineSolution", "SupportSolution", "WitnessSolution", "MomentSolution", "SeedRepairSolution", "SymmetricSolution", "CollisionSolution", "QuantumSolution", "QuantumBoundsSolution", "FaceSolution", "DistanceSolution", "BarrierSolution", "FamilySolution", "ModerateSolution", "PlotkinSolution", "SpanningSolution", "RelativeSolution", "SequenceSolution", "HierarchySolution", "GapSolution", "PrimeSolution", "ProjectSolution", "DenominatorSolution", "PrimeExponentSolution", "TranslationOrbitSolution", "PermutationCostSolution", "SimplexEntropySolution", "QuadraticClassificationSolution"]
+
+[[require]]
+name = "mathlib"
+git = "https://github.com/leanprover-community/mathlib4.git"
+rev = "v4.35.0"
+
+[[lean_lib]]
+name = "EntropyDesigns"
+moreLeanArgs = ["-M1024"]
+
+[[lean_lib]]
+name = "Challenge"
+
+[[lean_lib]]
+name = "Solution"
+moreLeanArgs = ["-M1024"]
+
+[[lean_lib]]
+name = "CofiniteChallenge"
+
+[[lean_lib]]
+name = "CofiniteSolution"
+
+[[lean_lib]]
+name = "EntropySparseBuffer"
+moreLeanArgs = ["-M1024"]
+
+[[lean_lib]]
+name = "BufferChallenge"
+
+[[lean_lib]]
+name = "BufferSolution"
+
+[[lean_lib]]
+name = "HadamardMultibase"
+moreLeanArgs = ["-M1024"]
+
+[[lean_lib]]
+name = "EntropyRadix"
+moreLeanArgs = ["-M1024"]
+
+[[lean_lib]]
+name = "RadixChallenge"
+
+[[lean_lib]]
+name = "RadixSolution"
+
+[[lean_lib]]
+name = "EntropyTrades"
+moreLeanArgs = ["-M1024"]
+
+[[lean_lib]]
+name = "TradeChallenge"
+
+[[lean_lib]]
+name = "TradeSolution"
+
+[[lean_lib]]
+name = "EntropyBoolean"
+moreLeanArgs = ["-M1024"]
+
+[[lean_lib]]
+name = "BooleanChallenge"
+
+[[lean_lib]]
+name = "BooleanSolution"
+
+[[lean_lib]]
+name = "EntropyCubic"
+moreLeanArgs = ["-M1024"]
+
+[[lean_lib]]
+name = "CubicChallenge"
+moreLeanArgs = ["-M1024"]
+
+[[lean_lib]]
+name = "CubicSolution"
+moreLeanArgs = ["-M1024"]
+
+[[lean_lib]]
+name = "EntropyAffine"
+moreLeanArgs = ["-M1024"]
+
+[[lean_lib]]
+name = "AffineChallenge"
+moreLeanArgs = ["-M1024"]
+
+[[lean_lib]]
+name = "AffineSolution"
+moreLeanArgs = ["-M1024"]
+
+[[lean_lib]]
+name = "EntropySupport"
+moreLeanArgs = ["-M1024"]
+
+[[lean_lib]]
+name = "SupportChallenge"
+moreLeanArgs = ["-M1024"]
+
+[[lean_lib]]
+name = "SupportSolution"
+moreLeanArgs = ["-M1024"]
+
+[[lean_lib]]
+name = "EntropyWitness"
+moreLeanArgs = ["-M1024"]
+
+[[lean_lib]]
+name = "WitnessChallenge"
+moreLeanArgs = ["-M1024"]
+
+[[lean_lib]]
+name = "WitnessSolution"
+moreLeanArgs = ["-M1024"]
+
+[[lean_lib]]
+name = "EntropyQuantitative"
+moreLeanArgs = ["-M1024"]
+
+[[lean_lib]]
+name = "MomentChallenge"
+moreLeanArgs = ["-M1024"]
+
+[[lean_lib]]
+name = "MomentSolution"
+moreLeanArgs = ["-M1024"]
+
+[[lean_lib]]
+name = "EntropySeedRepair"
+moreLeanArgs = ["-M1024"]
+
+[[lean_lib]]
+name = "SeedRepairChallenge"
+moreLeanArgs = ["-M1024"]
+
+[[lean_lib]]
+name = "SeedRepairSolution"
+moreLeanArgs = ["-M1024"]
+
+[[lean_lib]]
+name = "EntropySymmetric"
+moreLeanArgs = ["-M1024"]
+
+[[lean_lib]]
+name = "SymmetricChallenge"
+moreLeanArgs = ["-M1024"]
+
+[[lean_lib]]
+name = "SymmetricSolution"
+moreLeanArgs = ["-M1024"]
+
+[[lean_lib]]
+name = "EntropySymmetricCollision"
+moreLeanArgs = ["-M1024"]
+
+[[lean_lib]]
+name = "CollisionChallenge"
+moreLeanArgs = ["-M1024"]
+
+[[lean_lib]]
+name = "CollisionSolution"
+moreLeanArgs = ["-M1024"]
+
+[[lean_lib]]
+name = "EntropyQuantum"
+moreLeanArgs = ["-M1024"]
+
+[[lean_lib]]
+name = "QuantumChallenge"
+moreLeanArgs = ["-M1024"]
+
+[[lean_lib]]
+name = "QuantumSolution"
+moreLeanArgs = ["-M1024"]
+
+[[lean_lib]]
+name = "EntropyQuantumBounds"
+moreLeanArgs = ["-M1024"]
+
+[[lean_lib]]
+name = "QuantumBoundsChallenge"
+moreLeanArgs = ["-M1024"]
+
+[[lean_lib]]
+name = "QuantumBoundsSolution"
+moreLeanArgs = ["-M1024"]
+
+[[lean_lib]]
+name = "EntropySupportFace"
+moreLeanArgs = ["-M1024"]
+
+[[lean_lib]]
+name = "FaceChallenge"
+moreLeanArgs = ["-M1024"]
+
+[[lean_lib]]
+name = "FaceSolution"
+moreLeanArgs = ["-M1024"]
+
+[[lean_lib]]
+name = "EntropySupportDistance"
+moreLeanArgs = ["-M1024"]
+
+[[lean_lib]]
+name = "DistanceChallenge"
+moreLeanArgs = ["-M1024"]
+
+[[lean_lib]]
+name = "DistanceSolution"
+moreLeanArgs = ["-M1024"]
+
+[[lean_lib]]
+name = "EntropyConcentration"
+moreLeanArgs = ["-M1024"]
+
+[[lean_lib]]
+name = "BarrierChallenge"
+moreLeanArgs = ["-M1024"]
+
+[[lean_lib]]
+name = "BarrierSolution"
+moreLeanArgs = ["-M1024"]
+
+[[lean_lib]]
+name = "EntropyConcentratedFamily"
+moreLeanArgs = ["-M1024"]
+
+[[lean_lib]]
+name = "FamilyChallenge"
+moreLeanArgs = ["-M1024"]
+
+[[lean_lib]]
+name = "FamilySolution"
+moreLeanArgs = ["-M1024"]
+
+[[lean_lib]]
+name = "EntropyModerateSupport"
+moreLeanArgs = ["-M1024"]
+
+[[lean_lib]]
+name = "ModerateChallenge"
+moreLeanArgs = ["-M1024"]
+
+[[lean_lib]]
+name = "ModerateSolution"
+moreLeanArgs = ["-M1024"]
+
+[[lean_lib]]
+name = "EntropyPlotkinSupport"
+moreLeanArgs = ["-M1024"]
+
+[[lean_lib]]
+name = "PlotkinChallenge"
+moreLeanArgs = ["-M1024"]
+
+[[lean_lib]]
+name = "PlotkinSolution"
+moreLeanArgs = ["-M1024"]
+
+[[lean_lib]]
+name = "EntropySpanningSlopes"
+moreLeanArgs = ["-M1024"]
+
+[[lean_lib]]
+name = "SpanningChallenge"
+moreLeanArgs = ["-M1024"]
+
+[[lean_lib]]
+name = "SpanningSolution"
+moreLeanArgs = ["-M1024"]
+
+[[lean_lib]]
+name = "EntropyRelativeSequence"
+moreLeanArgs = ["-M1024"]
+
+[[lean_lib]]
+name = "RelativeChallenge"
+moreLeanArgs = ["-M1024"]
+
+[[lean_lib]]
+name = "RelativeSolution"
+moreLeanArgs = ["-M1024"]
+
+[[lean_lib]]
+name = "EntropyCompleteSequence"
+moreLeanArgs = ["-M1024"]
+
+[[lean_lib]]
+name = "SequenceChallenge"
+moreLeanArgs = ["-M1024"]
+
+[[lean_lib]]
+name = "SequenceSolution"
+moreLeanArgs = ["-M1024"]
+
+[[lean_lib]]
+name = "EntropyExchangeableHierarchy"
+moreLeanArgs = ["-M1024"]
+
+[[lean_lib]]
+name = "HierarchyChallenge"
+moreLeanArgs = ["-M1024"]
+
+[[lean_lib]]
+name = "HierarchySolution"
+moreLeanArgs = ["-M1024"]
+
+[[lean_lib]]
+name = "EntropyGapTransfer"
+moreLeanArgs = ["-M1024"]
+
+[[lean_lib]]
+name = "GapChallenge"
+moreLeanArgs = ["-M1024"]
+
+[[lean_lib]]
+name = "GapSolution"
+moreLeanArgs = ["-M1024"]
+
+[[lean_lib]]
+name = "EntropyPrimeTransfer"
+moreLeanArgs = ["-M1024"]
+
+[[lean_lib]]
+name = "PrimeChallenge"
+moreLeanArgs = ["-M1024"]
+
+[[lean_lib]]
+name = "PrimeSolution"
+moreLeanArgs = ["-M1024"]
+
+[[lean_lib]]
+name = "EntropyProjectArithmetic"
+moreLeanArgs = ["-M1024"]
+
+[[lean_lib]]
+name = "EntropyProjectInstability"
+moreLeanArgs = ["-M1024"]
+
+[[lean_lib]]
+name = "ProjectChallenge"
+moreLeanArgs = ["-M1024"]
+
+[[lean_lib]]
+name = "ProjectSolution"
+moreLeanArgs = ["-M1024"]
+
+[[lean_lib]]
+name = "EntropyDenominatorTrades"
+moreLeanArgs = ["-M1024"]
+
+[[lean_lib]]
+name = "DenominatorChallenge"
+moreLeanArgs = ["-M1024"]
+
+[[lean_lib]]
+name = "DenominatorSolution"
+moreLeanArgs = ["-M1024"]
+
+[[lean_lib]]
+name = "EntropyPrimeExponentRigidity"
+moreLeanArgs = ["-M1024"]
+
+[[lean_lib]]
+name = "PrimeExponentChallenge"
+moreLeanArgs = ["-M1024"]
+
+[[lean_lib]]
+name = "PrimeExponentSolution"
+moreLeanArgs = ["-M1024"]
+
+[[lean_lib]]
+name = "EntropyTranslationOrbits"
+moreLeanArgs = ["-M1024"]
+
+[[lean_lib]]
+name = "TranslationOrbitChallenge"
+moreLeanArgs = ["-M1024"]
+
+[[lean_lib]]
+name = "TranslationOrbitSolution"
+moreLeanArgs = ["-M1024"]
+
+[[lean_lib]]
+name = "EntropyPermutationCost"
+moreLeanArgs = ["-M1024"]
+
+[[lean_lib]]
+name = "PermutationCostChallenge"
+moreLeanArgs = ["-M1024"]
+
+[[lean_lib]]
+name = "PermutationCostSolution"
+moreLeanArgs = ["-M1024"]
+
+[[lean_lib]]
+name = "EntropyWeightedSimplex"
+moreLeanArgs = ["-M1024"]
+
+[[lean_lib]]
+name = "SimplexEntropyChallenge"
+moreLeanArgs = ["-M1024"]
+
+[[lean_lib]]
+name = "SimplexEntropySolution"
+moreLeanArgs = ["-M1024"]
+
+[[lean_lib]]
+name = "EntropyQuadraticClassification"
+moreLeanArgs = ["-M1024"]
+
+[[lean_lib]]
+name = "QuadraticClassificationChallenge"
+moreLeanArgs = ["-M1024"]
+
+[[lean_lib]]
+name = "QuadraticClassificationSolution"
+moreLeanArgs = ["-M1024"]

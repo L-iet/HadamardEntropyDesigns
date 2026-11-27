@@ -1,0 +1,174 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,mathtools,hyperref}
+\setlength{\emergencystretch}{3em}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\newcommand{\E}{\mathbb E}
+\newcommand{\tr}{\operatorname{tr}}
+\title{A conditional square-root-scale deficit\\for partial Hadamard matrices}
+\author{Joshua Mark\thanks{ORCID: \href{https://orcid.org/0009-0003-5905-2382}{0009-0003-5905-2382}. AI tools assisted with derivation, independent review, computation and exposition.}}
+\date{20 November 2026 --- research draft; priority not established}
+\begin{document}\maketitle
+\section{A conditional square-root-scale deficit for partial Hadamard matrices}
+\label{sec:conditional-half-frame}
+
+Let $r(n)$ denote the largest number of orthogonal sign rows of length
+$n$, and let $\tau(u)$ be the least exponent $t$ for which a Hadamard
+matrix of order $2^tu$ exists, for odd $u$. The established multibase
+input is unconditional:
+\[
+ \tau(u)=O\!\left(\frac{\log u}{\log\log u}\right).
+\]
+We combine it with a \emph{conditional} prime-distribution estimate.
+Throughout, logarithms are natural. No assertion that GRH has been
+proved or verified is made.
+
+The concatenation strategy is historical: de Launey--Gordon,
+\emph{A Comment on the Hadamard Conjecture}, JCTA 95 (2001),
+180--184, Lemma 2.1 and its proof,
+\url{https://doi.org/10.1006/jcta.2000.3155}, use a Paley block and
+an asymptotic-existence block in a short progression. The conclusion
+below tracks the new sublogarithmic multiplier bound rather than
+replacing it by an arbitrary fixed power. No novelty claim is made
+pending a dedicated literature comparison.
+
+\begin{theorem}[Conditional quantitative half-frame]
+Assume GRH for primitive Dirichlet $L$-functions whose conductors are
+powers of two, including conductor one. There are positive constants
+$B,K$ such that every sufficiently large $n\equiv0\pmod4$ satisfies
+\[
+ \boxed{r(n)\ge\frac n2-
+ B\sqrt n\exp\!\left(K\frac{\log n}{\log\log n}\right).}
+\]
+In particular the conditional deficit is $n^{1/2+o(1)}$ with a
+specified subpower envelope, not merely $O_\epsilon(n^{1/2+\epsilon})$.
+The theorem remains conditional even though its $\tau$ input is
+unconditional.
+\end{theorem}
+
+\subsection{A uniform multiplier buffer removes circularity}
+\begin{lemma}[Uniform power-of-two buffer]
+There is an integer-valued function $T(n)\ge2$ such that
+\[
+ T(n)=O\!\left(\frac{\log n}{\log\log n}\right),
+ \qquad \tau(u)\le T(n)\quad
+ \text{for every positive odd }u\le n.
+\]
+For $Q(n)=2^{T(n)}$, every integer $1\le k\le n$ has a Hadamard
+matrix of order $Q(n)k$.
+\end{lemma}
+\begin{proof}
+Choose $A,u_0$ so $\tau(u)\le A\log u/\log\log u$ for odd
+$u\ge u_0$, increasing $u_0$ beyond $e^e$. The function
+$\log x/\log\log x$ is increasing there. The standard all-odd
+multiplier construction ensures $\tau(u)<\infty$ also for the finitely
+many smaller odd parts (for example, the binary-length complementary
+pair construction supplies them). A fixed additive integer buffer
+covers these smaller odd $u$, so
+$T(n)=\lceil A\log n/\log\log n\rceil+B_0$ works for sufficiently
+large $n$, with $B_0\ge2$. Write $k=2^vu$ with $u$ odd. Then
+$\tau(u)\le T(n)$, and Sylvester doubling raises order
+$2^{\tau(u)}u$ to $2^{T(n)+v}u=Q(n)k$.
+\end{proof}
+
+In particular $Q(n)=n^{o(1)}$. The buffer is chosen from $n$ before
+the progression element or $k$ is selected. No bound on $\tau(k)$
+depending on an as-yet-unknown construction is being assumed.
+
+\subsection{The precise conditional number-theory input}
+Put
+\[
+ \psi(x;Q,a)=\sum_{\substack{m\le x\\m\equiv a\pmod Q}}\Lambda(m).
+\]
+Under Dirichlet GRH, uniformly for reduced residues and, in particular,
+for $Q\le\sqrt x$,
+\[
+ \psi(x;Q,a)=\frac{x}{\varphi(Q)}+
+ O\bigl(\sqrt x(\log x)^2\bigr),
+\]
+with an absolute implied constant. A primary author source is
+Montgomery--Vaughan, \emph{Multiplicative Number Theory I},
+Theorem 13.7 and Corollary 13.8,
+\url{https://personal.science.psu.edu/rcv4/personal/Publications/MNTI/17.0_pp_419_451_Conditional_estimates.pdf}.
+Only characters induced by conductors dividing the power-of-two
+modulus are used, so the stated restricted GRH hypothesis suffices.
+
+For some absolute $D>0$, this implies the following elementary
+short-interval consequence: whenever $x$ is sufficiently large,
+$Q\ge4$ is a power of two, and
+\[
+ H=DQ\sqrt x(\log x)^2\le x/2,
+\]
+every reduced class modulo $Q$ contains a prime power in $(x-H,x]$.
+Indeed subtract the two $\psi$ estimates. The main term is
+$H/\varphi(Q)=2D\sqrt x(\log x)^2$, whereas both error terms
+together are bounded by a fixed multiple of
+$\sqrt x(\log x)^2$. Choose $D$ larger than that fixed multiple.
+Positive $\psi$ difference supplies a prime power. An actual prime
+is unnecessary for the Paley construction, so no prime-power
+subtraction estimate is needed.
+
+\subsection{Construction and deficit estimate}
+\begin{proof}[Proof of the theorem]
+Fix a large multiple of four $n$. Set $Q=2^{T(n)}$ and
+\[
+ x=n/2-1,\qquad a\equiv n-1\pmod Q,\qquad
+ H=DQ\sqrt x(\log x)^2.
+\]
+The residue $a$ is odd, hence coprime to $Q$. Since $Q=n^{o(1)}$,
+we eventually have $Q\le\sqrt{x-H}$ and $H\le x/2$.
+The conditional interval estimate gives a prime power
+\[
+ x-H<\ell\le x,\qquad \ell\equiv n-1\pmod Q.
+\]
+Because $4\mid Q$ and $4\mid n$, necessarily $\ell\equiv3\pmod4$.
+Paley's type-I construction therefore gives a Hadamard matrix of
+order $b=\ell+1$. Also
+\[
+ k=\frac{n-\ell-1}{Q}\in\mathbb Z_{>0},\qquad k\le n.
+\]
+The uniform-buffer lemma gives a Hadamard matrix of order
+$a_1=Qk=n-b$. Here $b\le n/2$ and $a_1\ge n/2$.
+Take the first $b$ rows of each matrix and concatenate horizontally.
+Their row Gram matrices add to
+$a_1I_b+bI_b=nI_b$, producing a partial Hadamard matrix with
+\[
+ r(n)\ge b>n/2-H.
+\]
+Finally
+\[
+ H\ll Q\sqrt n(\log n)^2
+   =\sqrt n\exp\!\left(O\!\left(\frac{\log n}{\log\log n}\right)\right),
+\]
+since $\log\log n=o(\log n/\log\log n)$. This proves the claim.
+\end{proof}
+
+The progression residue is $n-1\pmod Q$, which need not equal
+$-1\pmod Q$: the target order need not be divisible by the buffer.
+This distinction is essential when $Q$ exceeds the power of two
+dividing $n$.
+
+More quantitatively, if
+$\tau(u)\le A\log u/\log\log u+O(1)$, the same proof gives,
+for every $\eta>0$ and all sufficiently large target orders,
+\[
+ r(n)\ge\frac n2-
+ \sqrt n\exp\!\left((A\log2+\eta)
+                 \frac{\log n}{\log\log n}\right).
+\]
+All fixed constants and logarithmic factors are absorbed by the
+$\eta$ margin. No numerical threshold or explicit value of $A$
+is claimed here.
+
+The verifier supplies unconditional finite examples of the exact
+concatenation step: it searches for actual primes in the required
+residue, constructs both Hadamard blocks at known orders, and checks
+the full rectangular Gram matrix as integers. These calculations
+neither establish GRH nor verify the eventual prime-distribution
+estimate or the asymptotic constants.
+
+\end{document}

@@ -1,0 +1,43 @@
+{
+  "key": "7eea1b4ecef510e38ce27c194a384199982bc4c81ca1e1e04752e19c5768afad",
+  "metadata": {
+    "group": "spanning",
+    "configPath": "comparator-spanning.json",
+    "configSHA256": "f341294f0b9e08aeab06e03a329f7ce1d928d13619fda93c3f69239efa6b20b8",
+    "theoremNames": [
+      "EntropyDesigns.binarySeed_bijective",
+      "EntropyDesigns.ConcentratedFamily.concentrated_witness_exists",
+      "EntropyDesigns.ConcentratedFamily.concentrated_sharp_distance",
+      "EntropyDesigns.ConcentratedFamily.concentrated_exact_repair",
+      "EntropyDesigns.ConcentratedFamily.concentrated_all_repairs_lower",
+      "EntropyDesigns.ConcentratedFamily.concentrated_canonical_limits",
+      "EntropyDesigns.SpanningSlopes.spanning_slope_data_exists",
+      "EntropyDesigns.SpanningSlopes.spanning_slopes_orthogonal_iff",
+      "EntropyDesigns.SpanningSlopes.spanning_plane_code_injective",
+      "EntropyDesigns.SpanningSlopes.spanning_plane_orthogonality_number",
+      "EntropyDesigns.SpanningSlopes.source_optimizer_of_known_hadamard",
+      "EntropyDesigns.SpanningSlopes.spanning_plane_full_properties",
+      "EntropyDesigns.SpanningSlopes.spanning_witness_exists"
+    ],
+    "definitionNames": [],
+    "exports": {
+      "challenge": "7df4c58d48f00b6dcaf7c0b1525345ece1f47a9968d0bc04a4590369484b0415",
+      "solution": "01799af3695b7b5ac937e4f5d9e3b577c365a1bb03a25d1e1499d009d541f67a"
+    },
+    "environment": {
+      "toolchain": "leanprover/lean4:v4.35.0",
+      "toolchainSHA256": "ca5f1f601d34c49079e38d7e7041eb0f2a9c227fbc1df0f404820069a052330c",
+      "binaries": {
+        "lean": "ec7a472d1c12a09b0c0c718f7427c2be527b3f5f07810fdbe076c2507c7a91ea",
+        "lake": "023feb24d3e7244fe671dba79f1cd1affc6c7a7cacfe497bf3675febb506578c",
+        "leanexport": "bda24bb3fafaf299ba472f944942d6293294b76559fafc9f166badd7c0f981b3",
+        "leanchecker": "9ef6baeb28d5e28897d5ed6dddd60ff81e511d97374013ece435dff38e9e0137",
+        "nanoda_bin": "de57d9dd7f647eb57398bc3dab4dcaa1d64f961f3f49964d5455fbddc73b35a8"
+      }
+    }
+  },
+  "capturedAtUTC": "2026-11-25T02:06:36.666556+00:00",
+  "reportSHA256": "4016e74e7b882addb87408d7da6fdb7ec924edc9937ae0f7c67078866f398c65",
+  "logSHA256": "125a3b9b2884fddc9a2bb2354fe3ca1adcf8209d4f8115fb28898ec7d5b972e4",
+  "scope": "Immutable original Comparator exit0 with explicit Lean/NanoDa acceptance of the exact exports/config/checker environment. Local diagnostic, not registry verification."
+}

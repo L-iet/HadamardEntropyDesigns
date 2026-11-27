@@ -1,0 +1,139 @@
+\section{Quantitative stability counterexamples from ordinary prime gaps}
+\label{sec:stability-prime-gaps}
+This section replaces the irrational-rotation subsequence with a construction
+at every sufficiently large dyadic seed order. No prime progression is
+needed. We use the established Baker--Harman--Pintz theorem that
+$[x-x^{21/40},x]$ contains a prime for all sufficiently large $x$:
+\emph{The difference between consecutive primes, II} (2001), Theorem 1,
+\url{https://www.cs.umd.edu/~gasarch/BLOGPAPERS/BakerHarmanPintz.pdf}.
+We do not claim $21/40$ is the best current prime-gap exponent.
+The separate conditional improvement uses ordinary RH, not GRH for
+arithmetic progressions. No new Hadamard orders are asserted.
+
+\begin{lemma}[No residue-class restriction is needed]
+\label{lem:stability-any-prime}
+For every odd prime $p$, a Hadamard matrix of order $k=2(p+1)$ exists.
+\end{lemma}
+\begin{proof}
+For $p\equiv1\pmod4$, this is classical Paley type II. For
+$p\equiv3\pmod4$, Paley type I gives order $p+1$, which doubles to
+$2(p+1)$. Both constructions originate in Paley,
+\emph{On Orthogonal Matrices} (1933),
+\url{https://doi.org/10.1002/sapm1933121311}.
+\end{proof}
+
+\begin{theorem}[An ordinary-prime-gap transfer]
+\label{thm:stability-prime-transfer}
+Suppose $0<\theta<1$ and every sufficiently large interval
+$[x-x^\theta,x]$ contains a prime. For every sufficiently large power
+of two $h$, there is an explicitly searchable known Hadamard order
+$k<h$ with
+\[
+ h-k=\Theta(h^\theta),\qquad k/h\to1.
+\]
+At the known Hadamard order $n=kh$, there is an exact unbiased
+pairwise-independent uniform $h^2$-atom law $\mu_h$ on $n-1$ bits,
+a strict local collision maximum, for which
+\begin{align*}
+ C(\mu_h)&=1/h^2, & C_{\rm global}&=1/n,\\
+ C(\mu_h)/C_{\rm global}&=1-\Theta(n^{-(1-\theta)/2}),&
+ \operatorname{dist}_{\rm TV}(\mu_h,\mathcal H_n)
+ &=1-1/k=1-\Theta(n^{-1/2}),\\
+ 1/n-C(\mu_h)&=\Theta(n^{-(3-\theta)/2}).
+\end{align*}
+All moments are exact; there is no approximate-isotropy assumption.
+\end{theorem}
+\begin{proof}
+Let $X=h/2$, $A=\lceil X^\theta\rceil$, and $y=X-A$.
+Choose the largest prime $p\le y$. The input theorem, applied at $y$,
+gives $p\ge y-y^\theta$. Set $k=2(p+1)$, so
+\[
+ 2A-2\le g:=h-k\le2A+2y^\theta-2\le4A-2.
+\]
+Thus $g=\Theta(h^\theta)$, and eventually
+$\log_2h\le g<h/2$. The lemma supplies $H_k$, hence $H_n$ by tensoring
+with Walsh order $h$.
+
+Choose an omitted-slope set $R\subset\mathbb F_h\setminus\{0\}$ of
+size $g$ containing an additive basis, and put
+$P=\mathbb F_h\setminus R$. For uniform $A_0,B_0\in\mathbb F_h$, observe
+all nonzero additive characters of each seed block
+$x_t=A_0+tB_0$, $t\in P$, and the mixed bits $\chi_e(x_0+x_t)$,
+$t\in P\setminus\{0\}$. This is the spanning-omitted-slopes construction
+of Theorem~\ref{thm:design-spanning-slopes}: it has $h^2$ distinct atoms,
+exact moments, and is a strict local maximum because two block character
+spaces generate every seed character through products. Its orthogonality
+graph is $h$ disjoint $h$-cliques; their order-$k$ block completions give
+exact distance $1-1/k$ from all Hadamard mixtures. Collision is $1/h^2$,
+whereas the known full optimum is $1/(kh)$.
+Finally $n\asymp h^2$, and
+\[
+ 1-\frac{C(\mu_h)}{1/n}=\frac gh,\qquad
+ \frac1n-C(\mu_h)=\frac{g}{kh^2}.
+\]
+These identities give all rates.
+\end{proof}
+
+\begin{corollary}[Unconditional polynomial rates]
+\label{cor:stability-bhp-rate}
+Unconditionally the theorem holds with $\theta=21/40$. In particular
+\[
+ 1-C(\mu_h)/(1/n)=\Theta(n^{-19/80}),\qquad
+ 1/n-C(\mu_h)=\Theta(n^{-99/80}),\qquad
+ \operatorname{dist}_{\rm TV}(\mu_h,\mathcal H_n)=1-\Theta(n^{-1/2}).
+\]
+The order selection is a finite descending prime search below
+$h/2-\lceil(h/2)^{21/40}\rceil$; the asymptotic theorem does not claim
+a numerical value for the Baker--Harman--Pintz threshold.
+\end{corollary}
+
+\subsection{A separate improvement under ordinary RH}
+Dudek proves on RH that for every $x\ge2$ there is a prime in
+$(x-\frac4\pi\sqrt{x}\log x,x]$:
+\emph{On the Riemann hypothesis and the difference between primes},
+\url{https://arxiv.org/abs/1402.6417}. This is a primary, explicit
+ordinary-prime result; no arithmetic-progression hypothesis is used.
+\begin{corollary}[Conditional RH rates]\label{cor:stability-rh-rate}
+Assuming RH, the same construction can be chosen at every sufficiently
+large dyadic $h$ with
+\[
+ h-k=\Theta(\sqrt h\log h),\quad
+ 1-C(\mu_h)/(1/n)=\Theta(n^{-1/4}\log n),\quad
+ 1/n-C(\mu_h)=\Theta(n^{-5/4}\log n),
+\]
+while the exact distance remains $1-\Theta(n^{-1/2})$.
+\end{corollary}
+\begin{proof}
+Use $A=\lceil\frac4\pi\sqrt X\log X\rceil$ and $y=X-A$ in the
+preceding argument. The function $\frac4\pi\sqrt x\log x$ is increasing
+for $x\ge2$, so the prime supplied at $y$ gives
+$2A-2\le h-k\le4A-2$. The remaining proof is unchanged.
+\end{proof}
+
+\paragraph{Entropy and the scale of a possible stability theorem.}
+Every Renyi entropy, including Shannon and min-entropy, of the uniform
+source equals $\log h^2$. The minimum among feasible laws at known order
+$n$ is $\log n$, by the atom bound and the Hadamard law. Thus all these
+entropy excesses are simultaneously
+$\log(h/k)=\Theta(n^{-19/80})$ in the unconditional construction,
+and $\Theta(n^{-1/4}\log n)$ under RH, although distance tends to one.
+These examples refute a dimension-free stability modulus based on relative
+collision deficit or entropy excess. They also quantify absolute-deficit
+counterexamples, at the exponents above. They do not exclude much smaller
+dimension-dependent absolute collision windows, such as the earlier
+order-$n^{-4}$ extraction condition. All positive existence inputs here
+are classical known Hadamard constructions.
+
+\begin{corollary}[Only sublinearly many extra atoms]
+\label{cor:stability-support-excess}
+The unconditional source support size satisfies
+\[
+ |\operatorname{supp}\mu_h|=n+\Theta(n^{61/80}).
+\]
+Under RH it can instead be $n+\Theta(n^{3/4}\log n)$, while its exact
+distance from all Hadamard mixtures still tends to one.
+\end{corollary}
+\begin{proof}
+The atom count is $h^2$ and $h^2-n=h(h-k)$. Substitute the corresponding
+prime-gap scale and $n\asymp h^2$.
+\end{proof}

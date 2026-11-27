@@ -1,0 +1,21 @@
+{
+  "passed": true,
+  "minimalBufferExamples": [
+    {
+      "target": 20,
+      "minimalBuffer": "293/5",
+      "correctedCollision": "84457/2909929472",
+      "deficit": "727060083/14549647360",
+      "exactMomentCorrectionPassed": true
+    },
+    {
+      "target": 20,
+      "minimalBuffer": "62/5",
+      "correctedCollision": "172407/588382208",
+      "deficit": "146233517/2941911040",
+      "exactMomentCorrectionPassed": true
+    }
+  ],
+  "parameterInequalities": 46,
+  "scope": "Exact examples support the analytic theorem for all multiples N>=20."
+}

@@ -1,0 +1,275 @@
+{
+  "passed": true,
+  "normalizedSigns": 524288,
+  "oldCodeSignClasses": 12,
+  "signBearingNeighbors": 417826,
+  "allHyperplaneNeighbors": 2441406,
+  "improvingSignBearingNeighbors": 42,
+  "maximumNeighborSignCount": 20,
+  "minimumOldRowLossAmongImproving": 2,
+  "totalSignCountHistogram": {
+    "1": 48664,
+    "2": 140680,
+    "3": 28904,
+    "4": 62392,
+    "5": 50528,
+    "6": 55872,
+    "8": 28066,
+    "12": 2678,
+    "20": 42
+  },
+  "profiles": [
+    {
+      "retained": 0,
+      "new": 1,
+      "total": 1,
+      "neighbors": 48664
+    },
+    {
+      "retained": 0,
+      "new": 2,
+      "total": 2,
+      "neighbors": 16672
+    },
+    {
+      "retained": 0,
+      "new": 3,
+      "total": 3,
+      "neighbors": 5928
+    },
+    {
+      "retained": 0,
+      "new": 4,
+      "total": 4,
+      "neighbors": 1212
+    },
+    {
+      "retained": 0,
+      "new": 5,
+      "total": 5,
+      "neighbors": 544
+    },
+    {
+      "retained": 0,
+      "new": 6,
+      "total": 6,
+      "neighbors": 216
+    },
+    {
+      "retained": 0,
+      "new": 8,
+      "total": 8,
+      "neighbors": 32
+    },
+    {
+      "retained": 0,
+      "new": 12,
+      "total": 12,
+      "neighbors": 22
+    },
+    {
+      "retained": 1,
+      "new": 1,
+      "total": 2,
+      "neighbors": 124008
+    },
+    {
+      "retained": 1,
+      "new": 3,
+      "total": 4,
+      "neighbors": 1664
+    },
+    {
+      "retained": 2,
+      "new": 1,
+      "total": 3,
+      "neighbors": 22976
+    },
+    {
+      "retained": 2,
+      "new": 2,
+      "total": 4,
+      "neighbors": 17364
+    },
+    {
+      "retained": 2,
+      "new": 6,
+      "total": 8,
+      "neighbors": 2
+    },
+    {
+      "retained": 3,
+      "new": 1,
+      "total": 4,
+      "neighbors": 42152
+    },
+    {
+      "retained": 3,
+      "new": 2,
+      "total": 5,
+      "neighbors": 2160
+    },
+    {
+      "retained": 3,
+      "new": 3,
+      "total": 6,
+      "neighbors": 752
+    },
+    {
+      "retained": 3,
+      "new": 5,
+      "total": 8,
+      "neighbors": 220
+    },
+    {
+      "retained": 4,
+      "new": 1,
+      "total": 5,
+      "neighbors": 47824
+    },
+    {
+      "retained": 4,
+      "new": 2,
+      "total": 6,
+      "neighbors": 9512
+    },
+    {
+      "retained": 4,
+      "new": 8,
+      "total": 12,
+      "neighbors": 62
+    },
+    {
+      "retained": 5,
+      "new": 1,
+      "total": 6,
+      "neighbors": 45392
+    },
+    {
+      "retained": 5,
+      "new": 3,
+      "total": 8,
+      "neighbors": 4528
+    },
+    {
+      "retained": 6,
+      "new": 2,
+      "total": 8,
+      "neighbors": 16344
+    },
+    {
+      "retained": 6,
+      "new": 6,
+      "total": 12,
+      "neighbors": 372
+    },
+    {
+      "retained": 7,
+      "new": 1,
+      "total": 8,
+      "neighbors": 6940
+    },
+    {
+      "retained": 7,
+      "new": 5,
+      "total": 12,
+      "neighbors": 1132
+    },
+    {
+      "retained": 8,
+      "new": 4,
+      "total": 12,
+      "neighbors": 998
+    },
+    {
+      "retained": 9,
+      "new": 3,
+      "total": 12,
+      "neighbors": 88
+    },
+    {
+      "retained": 9,
+      "new": 11,
+      "total": 20,
+      "neighbors": 32
+    },
+    {
+      "retained": 10,
+      "new": 2,
+      "total": 12,
+      "neighbors": 4
+    },
+    {
+      "retained": 10,
+      "new": 10,
+      "total": 20,
+      "neighbors": 10
+    }
+  ],
+  "maximumWitness": {
+    "syndrome": [
+      0,
+      1,
+      0,
+      1,
+      0,
+      1,
+      0,
+      1,
+      0,
+      0
+    ],
+    "mask": 170,
+    "retained": 9,
+    "new": 11,
+    "total": 20
+  },
+  "seconds": 9.00266560000091,
+  "evaluationDualWeightEnumerator": {
+    "0": 1,
+    "8": 8,
+    "10": 8,
+    "12": 8
+  },
+  "allNeighborOldRetentionHistogram": {
+    "0": 167794,
+    "1": 503160,
+    "2": 692534,
+    "3": 575940,
+    "4": 325130,
+    "5": 129392,
+    "6": 37940,
+    "7": 8072,
+    "8": 1310,
+    "9": 120,
+    "10": 14
+  },
+  "neighborsWithNoOutsideSignByRetention": {
+    "0": 94504,
+    "1": 377488,
+    "2": 652192,
+    "3": 530656,
+    "4": 267732,
+    "5": 79472,
+    "6": 21224,
+    "7": 0,
+    "8": 312,
+    "9": 0,
+    "10": 0
+  },
+  "fullNeighborSignCountHistogram": {
+    "0": 94504,
+    "1": 426152,
+    "2": 792872,
+    "3": 559560,
+    "4": 330124,
+    "5": 130000,
+    "6": 77096,
+    "7": 0,
+    "8": 28378,
+    "9": 0,
+    "10": 0,
+    "12": 2678,
+    "20": 42
+  }
+}

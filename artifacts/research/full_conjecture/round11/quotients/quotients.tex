@@ -1,0 +1,169 @@
+\section{Codimension-two repair is a weighted grid problem}
+\label{sec:quotient-grid}
+
+Let $p$ be an odd prime, $N=4p$, and $m=N/2$. Fix a self-dual code
+$C\subseteq\mathbb F_p^N$ and a subspace $G\subseteq C$ of dimension
+$m-2$. Assume $G$ contains at least five orthogonal sign classes.
+Write $b=|S(G)|$ and let $\mathcal P$ be the set of normalized sign
+classes whose residues lie in $G^\perp$, with $M=|\mathcal P|$.
+The four-dimensional quotient $G^\perp/G$ converts compatibility
+search into an explicit weighted grid.
+
+The underlying two-ruling geometry is classical: the split hyperbolic
+quadric $Q^+(3,p)$ has $(p+1)^2$ points on two systems of $p+1$
+generator lines. For a primary research source stating this structure,
+see Edoukou, \emph{The weight distribution of the functional codes
+defined by forms of degree 2 on Hermitian surfaces}, Theorem 4.2,
+\url{https://www.numdam.org/article/JTNB_2009__21_1_131_0.pdf}.
+We give the matrix proof needed here rather than relying on a
+classification implementation. No novelty claim is made for the
+finite geometry or the resulting reformulation.
+
+\begin{theorem}[Weighted-grid classification]
+The self-dual codes containing $G$ correspond to the $2(p+1)$ rows
+and columns of a $(p+1)\times(p+1)$ grid. There are nonnegative
+integer point weights $w_{ij}$ such that
+\[
+ M=b+\sum_{ij}w_{ij},\qquad
+ |S(C_{\mathrm{row}\ i})|=b+\sum_jw_{ij},\qquad
+ |S(C_{\mathrm{col}\ j})|=b+\sum_iw_{ij}.
+\]
+Every sign class outside $G$ is counted at exactly one grid point,
+and belongs to exactly two of these codes. The classes in $G$ belong
+to every code.
+\end{theorem}
+\begin{proof}
+The quotient $G^\perp/G$ is nondegenerate of dimension four and has
+the two-dimensional totally isotropic subspace $C/G$. Choose a
+hyperbolic basis $e_1,e_2,f_1,f_2$, with $e_i\cdot f_j=\delta_{ij}$
+and all other basis pairings zero. For explicit construction, choose
+dual vectors $g_i$ to the $e_i$ and replace
+$g_i$ by $f_i=g_i-\frac12\sum_j(g_i\cdot g_j)e_j$.
+The quotient norm of $x_1e_1+x_2e_2+y_1f_1+y_2f_2$ is
+$2(x_1y_1+x_2y_2)$. Identify this vector with
+\[
+ A=\begin{pmatrix}x_1&x_2\\-y_2&y_1\end{pmatrix},
+ \qquad \tfrac12\|\bar v\|^2=\det A.
+\]
+A nonzero isotropic vector is a rank-one matrix $uv^{\mathsf T}$.
+Its projective class is determined by a pair
+$([u],[v])\in\mathbb P^1(\mathbb F_p)^2$, giving the grid.
+The totally isotropic planes are precisely the matrices with fixed
+column line $[u]$ or fixed row line $[v]$. Indeed two independent
+rank-one matrices span a rank-one plane only when their column lines
+or their row lines agree. These are the two rulings, each of size $p+1$.
+Their inverse images in $G^\perp$ are exactly the self-dual codes
+containing $G$.
+
+Every sign vector has norm $N=0$ in $\mathbb F_p$, so its quotient
+is zero or isotropic. The zero quotient contributes $b$ common
+classes. At each nonzero projective quotient point count its sign
+classes as $w_{ij}$. Membership in the two ruling planes proves
+all the displayed formulas.
+\end{proof}
+
+\begin{theorem}[Exact compatibility and optimal retained-space repair]
+Every pairwise orthogonal subfamily of $\mathcal P$ lies in the
+sign set of one of the $2(p+1)$ codes above. Consequently the maximum
+size of a real orthogonal sign frame preserving the prescribed
+retained rows spanning $G$ is exactly
+\[
+ \boxed{b+\max\left\{\max_i\sum_jw_{ij},\ \max_j\sum_iw_{ij}\right\}.}
+\]
+Thus full completion with this retained space is equivalent to a
+grid line of weight $N-b$, and finding the optimum requires only
+row and column sums after the sign pool has been computed.
+\end{theorem}
+\begin{proof}
+All pool classes have the same sign parity as the five retained
+orthogonal rows: an opposite-parity class would have inner-product
+magnitude $N/2$ against all five, contradicting Bessel. Thus for
+distinct pool classes real orthogonality is equivalent to orthogonality
+modulo $p$. In the quotient, two rank-one matrices $uv^{\mathsf T}$
+and $st^{\mathsf T}$ are orthogonal precisely when their column
+lines or their row lines agree. This follows by polarizing the
+determinant: its cross term is, up to the fixed convention,
+$\det(u,s)\det(v,t)$.
+
+Classes projecting to the same point are mutually compatible;
+common $G$ classes are compatible with everything. A family of grid
+points pairwise sharing a row or a column lies in one row or one
+column: once two distinct points share a row, a point outside that
+row cannot share both of their different columns. The one-point
+case is immediate. Thus every compatible family lies in a ruling
+plane. Conversely all sign classes in a ruling-plane code form
+a real orthogonal frame, because that self-orthogonal code contains
+the same five retained rows. Including all common classes proves
+the exact maximum and constructively attains it.
+\end{proof}
+
+Put $W=M-b$. Double counting the grid gives
+\[
+ \sum_{D\supseteq G,\ D=D^\perp}|S(D)|=2M+2pb,
+ \qquad
+ \max_D|S(D)|\ge b+\left\lceil\frac{W}{p+1}\right\rceil.
+\]
+Also every ruling-line weight is at most $N-b$, hence
+$W\le(p+1)(N-b)$. These are exact incidence constraints, not a
+guarantee that some line reaches the maximum $N-b$.
+
+There is a similarly explicit row-deletion objective. Let an initial
+frame be the full sign set of one line $L_0$, with size $r_0$.
+For any other line $L$, put $r_L=b+\sum_{x\in L}w_x$ and
+$a_L=|S(C_{L_0})\cap S(C_L)|$. Then $a_L=b$ for a different line
+of the same ruling, while $a_L=b+w_x$ for the crossing point $x$
+of opposite-ruling lines. The minimum deletion count for an
+augmenting exchange preserving $G$ is
+\[
+ \min_{L:r_L>r_0}(r_0-a_L),
+\]
+with value infinity if no qualifying line exists. Requiring
+$r_L=N$ instead gives the minimum full-completion deletion count.
+The compatibility theorem proves the lower bound, and replacing
+the old classes outside the intersection by the new line's classes
+attains it. Common classes never need to be sacrificed.
+
+\subsection{Two exact quotient grids at order twenty}
+The checker embeds the earlier twelve-sign self-dual code over
+$\mathbb F_5$ and sorts its normalized sign representatives
+lexicographically. The first retained choice uses sorted indices
+$0,1,\ldots,7$. It gives $b=8$, $M=48$, and grid weights
+\[
+\begin{pmatrix}
+0&2&1&0&0&1\\1&2&1&2&2&4\\2&4&2&1&1&2\\
+1&2&0&0&0&1\\0&1&0&1&0&2\\0&1&0&0&1&2
+\end{pmatrix}.
+\]
+The row sums are $(4,12,12,4,4,4)$ and column sums
+$(4,12,4,4,4,12)$. Four of the twelve code extensions therefore
+give twenty sign classes, while the other eight give twelve.
+The average lower bound gives only fifteen, whereas the exact
+weighted-grid optimum is twenty.
+
+The original code is the first row line. The full second column
+line shares $8+2=10$ original classes, so its complete twenty-row
+frame replaces exactly two old rows. Every one-row deletion of
+the original twelve-row frame still spans its ten-dimensional
+self-dual code. Consequently such a deletion can acquire no modular
+sign class outside the old code, and cannot augment. Thus the
+global augmenting and full-completion deletion costs for this
+frame are both exactly two, with a finite-field rank proof of
+the lower bound and an explicit reconstructed full code for the
+upper bound. This conclusion does not depend on a clique search.
+
+For a second choice, retain sorted indices
+$(11,10,9,8,7,6,5,4)$, corresponding exactly to the original trap
+file's first eight rows. Here $b=9$, $M=51$ and the row-line counts
+are $(12,20,12,20,20,12)$; the column-line counts are
+$(12,20,12,20,12,20)$. Six of the twelve extensions are full.
+The grid has twenty-four occupied points, sum of squared point
+weights $96$, and ordered orthogonal distinct-point weight $588$,
+agreeing with the separate incidence-moment calculation.
+
+In both cases the twelve reconstructed self-dual bases, their exact
+sign masks, the grid labels, and all overlap costs are recorded in
+\path{quotients/checks.json}. Every pairwise compatibility relation
+in the pool and every output Gram matrix is checked as an integer.
+The examples demonstrate exact repair through quotient geometry at
+a known order; an all-order theorem forcing enough concentration
+on a quotient generator has not been proved.

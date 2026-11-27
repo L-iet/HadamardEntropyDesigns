@@ -1,0 +1,83 @@
+{
+  "passed": true,
+  "hyperbolicPointCounts": [
+    {
+      "p": 3,
+      "h": 1,
+      "points": 2
+    },
+    {
+      "p": 3,
+      "h": 2,
+      "points": 16
+    },
+    {
+      "p": 3,
+      "h": 3,
+      "points": 130
+    },
+    {
+      "p": 5,
+      "h": 2,
+      "points": 36
+    }
+  ],
+  "knownOrderMomentData": [
+    {
+      "p": 3,
+      "order": 12,
+      "retainedRank": 4,
+      "quotientHalfDimension": 2,
+      "poolClasses": 36,
+      "baseSignClasses": 4,
+      "weightedPoints": 16,
+      "outsideClasses": 32,
+      "sumSquaredPointWeights": 64,
+      "orderedOrthogonalWeight": 384,
+      "expectedAdditionalSignCount": "8",
+      "secondMomentAdditionalCount": "64",
+      "maximumTotalCountLowerBound": 12
+    },
+    {
+      "p": 5,
+      "order": 20,
+      "retainedRank": 5,
+      "quotientHalfDimension": 5,
+      "poolClasses": 1097,
+      "baseSignClasses": 5,
+      "weightedPoints": 1092,
+      "outsideClasses": 1092,
+      "sumSquaredPointWeights": 1092,
+      "orderedOrthogonalWeight": 370512,
+      "expectedAdditionalSignCount": "546/313",
+      "secondMomentAdditionalCount": "14114/2191",
+      "maximumTotalCountLowerBound": 9
+    },
+    {
+      "p": 5,
+      "order": 20,
+      "retainedRank": 8,
+      "quotientHalfDimension": 2,
+      "poolClasses": 51,
+      "baseSignClasses": 9,
+      "weightedPoints": 24,
+      "outsideClasses": 42,
+      "sumSquaredPointWeights": 96,
+      "orderedOrthogonalWeight": 588,
+      "expectedAdditionalSignCount": "7",
+      "secondMomentAdditionalCount": "65",
+      "maximumTotalCountLowerBound": 19
+    }
+  ],
+  "order12AllGeneratorAdditionalSignCounts": [
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8
+  ],
+  "scope": "Moment formulas are proved in the paper; finite data do not prove all-order positivity."
+}

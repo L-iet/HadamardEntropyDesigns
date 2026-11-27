@@ -1,0 +1,639 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,mathtools,hyperref}
+\setlength{\emergencystretch}{3em}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\newcommand{\E}{\mathbb E}
+\newcommand{\tr}{\operatorname{tr}}
+\title{Constructive phase rounding, completion geometry,\\and obstructions to greedy repair}
+\author{Joshua Mark\thanks{ORCID: \href{https://orcid.org/0009-0003-5905-2382}{0009-0003-5905-2382}. AI tools assisted with derivation, independent review, computation and exposition.}}
+\date{20 November 2026 --- research draft; priority not established}
+\begin{document}\maketitle
+
+\begin{abstract}
+We examine constructive steps and obstructions in four Hadamard
+formulations. An explicit dephasing algorithm rounds sufficiently
+small fourth-power dispersion into an exact quaternary Hadamard
+matrix, including a two-objective certificate for approximately
+orthogonal inputs. Real zero-supported completion of a two-zero
+weighing matrix is equivalent to sign completion, with at most six
+sign solutions beyond order four. The spectral branch derives exact
+entry-move formulas and finite traps, then lifts these obstructions
+to arbitrarily large known Hadamard orders. A rank-two residual
+projection links two-column complex completion to qubit geometry;
+classical real completion then implies automatic quaternary completion
+when only two columns are missing.
+All-order existence and bibliographic priority remain unresolved.
+\end{abstract}
+The conjecture asks for a real sign matrix $H$ with $HH^T=nI_n$
+at every positive order divisible by four. Local certificates below
+are not assumed to be attainable at every such order.
+\section{A constructive phase-rounding certificate}
+Let $F$ be a complex Hadamard matrix of order $n$, with entries of
+modulus one and $FF^*=nI$. Set $M=F^{\circ4}$ and
+\[
+ D_4(F)=n^4-\|MM^*\|_F^2.
+\]
+The nonnegative deficit $D_4$ is invariant under row/column phases
+and permutations. The previous pass proved an obstruction when
+$\rho_4=\|M\|_{\rm op}/n$ is bounded away from one. Here we prove a
+positive, dimension-dependent rounding statement.
+
+\begin{theorem}[Finite dephasing and exact quaternary rounding]
+\label{thm:phase-rounding}
+If $D_4(F)<n$, or $D_4(F)<2n$ when $n$ is even,
+row and column phases convert $F$ into
+a matrix whose entrywise nearest-fourth-root rounding is a
+quaternary Hadamard matrix of order $n$.
+Only $n^2$ explicit dephasings need be tested.
+In particular it suffices that
+\[
+ 1-\rho_4(F)^4<
+ \begin{cases}2/n^3,& n\text{ even},\\1/n^3,&n\text{ odd}.\end{cases}
+\]
+This sufficient deficit is of order $n^{-3}$ in the last inequality;
+no such estimate is established at every even order.
+\end{theorem}
+\begin{proof}
+For each pivot $(k,\ell)$ define the dephased matrix
+\[
+ F^{k\ell}_{ij}
+ =F_{ij}\overline{F_{kj}}\,
+       \overline{F_{i\ell}}F_{k\ell}.
+\]
+These are row and column phase operations, so each matrix is still
+Hadamard. Its entrywise fourth power is the corresponding four-cycle
+cross ratio of $M$. Direct expansion and summation give the exact identity
+\[
+ \sum_{k,\ell}\|(F^{k\ell})^{\circ4}-J_n\|_F^2=2D_4(F).
+\]
+Indeed the sum of the real parts of those cross ratios is
+$\sum_{i,k}|\sum_j M_{ij}\overline{M_{kj}}|^2=\|MM^*\|_F^2$.
+Some pivot therefore has fourth-power squared error at most
+$2D_4/n^2$.
+
+For a unit complex number $z$, let $q\in\{1,-1,i,-i\}$ be nearest.
+Write $z/q=e^{it}$ with $|t|\le\pi/4$. Then
+\[
+ |z-q|^2=4\sin^2(t/2)\le
+ \tfrac14\,4\sin^2(2t)=\tfrac14|z^4-1|^2.
+\]
+For example $\sin(2t)=4\sin(t/2)\cos(t/2)\cos t$, whose absolute
+ratio to $\sin(t/2)$ is at least two on this interval.
+Thus the rounded matrix $Q$ at that pivot has
+$\eta=\|F^{k\ell}-Q\|_F^2\le D_4/(2n^2)$.
+Write $e_i$ for the difference between row $i$ of $Q$ and the
+corresponding row of $F^{k\ell}$. For distinct rows, orthogonality
+and the fact that both matrices have row norm $\sqrt n$ give
+\[
+ |(QQ^*)_{ij}|
+ \le\sqrt n(\|e_i\|+\|e_j\|)
+ \le\sqrt{2n\eta}.
+\]
+Every off-diagonal Gram entry is a Gaussian integer. A nonzero one
+has modulus at least one, so $\eta<1/(2n)$ suffices to force zero.
+For even $n$, its real and imaginary integer parts have even sum:
+it is a sum of an even number of fourth roots. A nonzero such entry
+has modulus at least $\sqrt2$, so $\eta<1/n$ suffices.
+The diagonal Gram entries are already $n$. This proves exact
+quaternary orthogonality under the stated deficit bounds. Finally
+$\|MM^*\|_F^2\ge\|M\|_{\rm op}^4=n^4\rho_4^4$ proves the last claim.
+\end{proof}
+
+The proof is an algorithm: dephase at all pivots, choose one minimizing
+the fourth-power error, round, and check the Gaussian-integer Gram.
+Alternatively try every pivot and stop at an exact Gram certificate.
+No target Hadamard matrix is needed as an input. Computing all pivot
+errors naively uses $O(n^4)$ operations. Computing row inner products
+of $M$ first permits the error scores to be obtained in $O(n^3)$
+operations: the score at $(k,\ell)$ is
+\[
+ 2n^2-2\operatorname{Re}\sum_i
+   \overline{M_{i\ell}}M_{k\ell}
+   \sum_j M_{ij}\overline{M_{kj}}.
+\]
+Rounding and checking one selected pivot use $O(n^3)$ additional
+operations. Arithmetic complexity here counts exact scalar operations;
+it is not a bit-complexity bound for arbitrary real inputs.
+
+\begin{corollary}[Separation in the absence of a quaternary matrix]
+If $\mathrm{BH}(n,4)$ does not exist, every complex Hadamard matrix
+of that order satisfies
+\[
+ D_4(F)\ge
+ \begin{cases}2n,&n\text{ even},\\n,&n\text{ odd},\end{cases}
+ \qquad
+ 1-\rho_4(F)^4\ge
+ \begin{cases}2/n^3,&n\text{ even},\\1/n^3,&n\text{ odd}.\end{cases}
+\]
+\end{corollary}
+This is a contrapositive separation theorem, not a construction of a
+point below the threshold. At odd $n>1$ quaternary existence is
+impossible: a vanishing sum of an odd number of fourth roots has
+unequal parity in its real and imaginary counts. At even $n$,
+an actual threshold-crossing construction remains the central task.
+The classical fourth-cycle invariants and Butson realification are
+background; see Tadej--\.Zyczkowski,
+\url{https://arxiv.org/abs/quant-ph/0512154}.
+No bibliographic novelty claim is made for the rounding estimate.
+
+\subsection{A certificate that does not assume exact orthogonality}
+The same algorithm also accepts approximate inputs.
+Let $F$ now be any $n$-square unit-modulus matrix, define $D_4$ as
+before, and put $\beta=\max_{i\ne j}|(FF^*)_{ij}|$.
+Define $\gamma_n=\sqrt2$ for even $n$ and $\gamma_n=1$ otherwise.
+\begin{proposition}[Two-objective certificate]
+If
+\[
+ \beta+\sqrt{D_4(F)/n}<\gamma_n,
+\]
+one of the pivot dephasings rounds to an exact $\mathrm{BH}(n,4)$.
+\end{proposition}
+\begin{proof}
+The averaging identity and nearest-root estimate only use unit modulus.
+Dephasing preserves the magnitudes of the original Gram entries.
+For the selected pivot and its rounded $Q$, the same two-row
+estimate, now retaining the original correlation, gives
+\[
+ |(QQ^*)_{ij}|\le\beta+\sqrt{2n\eta}
+ \le\beta+\sqrt{D_4/n}<\gamma_n.
+\]
+Gaussian-integrality and parity again force zero.
+\end{proof}
+Thus a continuous search could minimize correlation and phase dispersion
+jointly, then obtain a discrete exact certificate on crossing this
+explicit boundary. This is not a convergence theorem. In particular a
+real sign matrix already has $D_4=0$, but its even integer correlations
+must already vanish to satisfy this sufficient condition. The certificate
+does not turn arbitrary sign-matrix local minima into Hadamard matrices.
+\section{Exactness of the real relaxation for two-zero weighing completion}
+\label{sec:real-weighing-exactness}
+
+The eight-state completion test admits a stronger interpretation.
+For a weighing matrix with two zeros per row at an admissible order,
+allowing arbitrary real entries in the holes does not enlarge the
+class of matrices that can be completed. A real completion either
+already supplies a sign state or produces a conference matrix from
+which a sign completion can be recovered. We also classify the
+continuous solution families and sharpen the eight-fill bound.
+
+Throughout $4\mid n$, $n\ge4$, and $W$ is $W(n,n-2)$. Use the
+previous pass's row and column normalization: all zero positions
+are diagonal two-square blocks, and
+\[
+ F=\begin{pmatrix}1&1\\1&-1\end{pmatrix},\qquad
+ A_{ij}=\tfrac12W_{ij}F\in\mathcal D\quad(i\ne j),
+\]
+where $\mathcal D$ is the eight-element signed-permutation group.
+Put
+\[
+ I=\begin{pmatrix}1&0\\0&1\end{pmatrix},\quad
+ J=\begin{pmatrix}0&1\\-1&0\end{pmatrix},\quad
+ D=\begin{pmatrix}1&0\\0&-1\end{pmatrix},\quad
+ S=\begin{pmatrix}0&1\\1&0\end{pmatrix}.
+\]
+Let $\mathcal R=\operatorname{span}_{\mathbb R}\{I,J\}$ and
+$\mathcal F=\operatorname{span}_{\mathbb R}\{D,S\}$.
+The orthogonal group $O(2)$ consists exactly of the unit coefficient
+circles in these two planes.
+
+\subsection{A linear kernel controls every real completion}
+A real zero-supported completion has diagonal fill blocks
+$X_i=R_iF$, $R_i\in O(2)$, and satisfies
+\[
+ A_{ij}R_j^{\mathsf T}+R_iA_{ji}^{\mathsf T}=0.
+\]
+For a root $R=R_0$, define
+\[
+ R_j=-A_{j0}R^{\mathsf T}A_{0j}\quad(j>0).
+\]
+Let $K\subseteq M_2(\mathbb R)$ be the homogeneous linear space
+where all remaining cross equations hold. A root gives a real
+completion exactly when $R\in K\cap O(2)$; it gives a Hadamard
+filling exactly when $R\in K\cap\mathcal D$.
+
+\begin{lemma}[The only possible component sections]
+Before imposing any additional consequences of the weighing
+property, each of $K\cap\mathcal R$ and $K\cap\mathcal F$ is zero,
+the whole plane, a coordinate-axis line, or one of the two diagonal
+lines in the displayed coefficient bases.
+\end{lemma}
+\begin{proof}
+After multiplying the cross equation for $i,j>0$ on the left and
+right by signed permutations, it becomes
+\[
+ R+L_{ij}R^{\mathsf T}Q_{ij}=0,
+\]
+where
+\[
+ L_{ij}=A_{0j}A_{ij}^{\mathsf T}A_{i0},\qquad
+ Q_{ij}=A_{0i}A_{ji}^{\mathsf T}A_{j0}
+\]
+are signed permutations. The operator
+$R\mapsto-L_{ij}R^{\mathsf T}Q_{ij}$ is Frobenius-orthogonal.
+It either interchanges the two planes, forcing their pure-component
+solutions to zero, or preserves them and acts on each coefficient
+pair by a signed permutation. The fixed space of a two-dimensional
+signed permutation is zero, a full plane, an axis line, or a
+diagonal line. Intersecting these fixed spaces introduces no other
+line directions. This proves the assertion.
+\end{proof}
+
+\subsection{A diagonal real state produces a conference completion}
+The next argument invokes the classical conference normalization
+theorem, not an unproved rounding principle. Geramita--Verner,
+\emph{Orthogonal Designs with Zero Diagonal}, Theorem 2,
+\url{https://doi.org/10.4153/CJM-1976-028-3}, restates the
+Delsarte--Goethals--Seidel result: a conference matrix at order
+$0\bmod4$ can be made skew by sign changes. Equivalently its
+unique zero per row and column can be filled by a signed permutation
+$Y$ so that $U+Y$ is Hadamard. Both fills $Y$ and $-Y$ work.
+
+\begin{lemma}[Conference conversion]
+If $K$ contains a diagonal line in either coefficient plane, then
+that entire plane is contained in $K$.
+\end{lemma}
+\begin{proof}
+Normalize a diagonal root to an orthogonal matrix $R$. Its entries
+are all $\pm1/\sqrt2$. Every propagated $R_i$ has the same entry
+form, so $R_iF$ has exactly one nonzero $\pm\sqrt2$ in each row
+and column. Thus the real fill is $X=\sqrt2T$, where $T$ is a
+block diagonal signed permutation supported on half the zero
+positions of $W$.
+
+The completion equations give
+$WT^{\mathsf T}+TW^{\mathsf T}=0$. Hence
+$C=WT^{\mathsf T}$ is skew, has diagonal two-square blocks zero,
+and satisfies $CC^{\mathsf T}=(n-2)I$. The integer matrix
+\[
+ U=C+I_n
+\]
+has entries $0,\pm1$ and $UU^{\mathsf T}=(n-1)I$: it is a
+conference matrix, with its single remaining zero in each row at
+the off-diagonal position of the corresponding coordinate pair.
+Apply the classical conference theorem, first permuting its zero
+matching onto the diagonal if needed. It supplies a signed
+permutation $Y$ on these remaining zeros such that both $U\pm Y$
+are Hadamard. The paired diagonal blocks of $U$ are $I_2$, so
+orthogonality forces $Y_i^{\mathsf T}=-Y_i$, that is $Y_i=\pm J$.
+
+Undoing $T$ gives the two sign completions
+\[
+ H_\pm=(U\pm Y)T=W+(I_n\pm Y)T.
+\]
+The matrices $T$ and $YT$ have complementary supports inside each
+original zero block. Thus each hole receives one sign and every
+nonzero entry of $W$ remains unchanged. At the root the two fill
+states are
+\[
+ R_\pm=\frac{(I_2\pm Y_0)T_0F}{2}.
+\]
+They lie in the same orientation plane as the original diagonal
+root $T_0F/\sqrt2$, and are linearly independent because $Y_0=\pm J$
+has no real eigenvector. Both belong to $K$. Their span is therefore
+the entire component plane, as asserted.
+\end{proof}
+
+\begin{theorem}[Exact real feasibility and solution topology]
+A real matrix $H$ with $HH^{\mathsf T}=nI_n$, obtained by changing
+only zeros of $W$, exists if and only if a zero-preserving Hadamard
+filling exists. More precisely each component section
+$K\cap\mathcal R$, $K\cap\mathcal F$ is only zero, a coordinate
+axis, or the full plane. Each axis contributes two isolated
+completions, both sign-valued. Each full plane contributes a full
+circle of real completions containing exactly four sign fillings.
+There are no isolated nonsign real completions.
+\end{theorem}
+\begin{proof}
+The preceding lemmas exclude an isolated diagonal-line section.
+Every nonzero permitted section intersects $O(2)$ and contains
+signed-permutation roots. Conversely a real orthogonal root lies
+in one of these sections. The counts follow by intersecting an
+axis or a plane with its unit coefficient circle, and the root
+propagation is injective. A nonsign real root can therefore occur
+only on one of the full circles, not as an isolated solution.
+\end{proof}
+
+This is an exactness theorem for this specific real feasibility
+relaxation. It does not claim that arbitrary approximate real
+fillings can be stably rounded, or that real feasibility always
+holds. The unfillable order-twelve example has both sections zero.
+
+\subsection{At most six fillings beyond order four}
+\begin{proposition}[A sharper cardinality bound]
+For $n\ge8$ the number of zero-preserving Hadamard fillings belongs
+to $\{0,2,4,6\}$ and is at most six. The bound six is attained.
+At order four there are exactly eight fillings.
+\end{proposition}
+\begin{proof}
+Each component contributes zero, two or four sign roots. If both
+planes were full, $K$ would be all of $M_2(\mathbb R)$. At $n\ge8$
+there is a block triangle and hence at least one equation
+$R+LR^{\mathsf T}Q=0$. It cannot hold identically. Substituting
+$R=I$ would give $Q=-L^{\mathsf T}$ and thus
+$R=LR^{\mathsf T}L^{\mathsf T}$ for every matrix. This map reverses
+products; if it were the identity, all two-square matrices would
+commute, a contradiction. Thus $K$ is proper and eight is impossible.
+The skew order-four conference tensor with $F$ has one full plane
+and one axis, attaining six at order eight. For $n=4$ there are
+only two blocks and no triangle constraints; every one of the
+eight roots works. The displayed set gives necessary possibilities;
+no assertion that every listed value occurs at every order is made.
+\end{proof}
+
+\subsection{Exact checks and a nonsign circle point}
+The verifier checks the real kernel sections for the four basic
+cases: order four has two full planes and eight fillings; the
+skew-conference tensor at order eight has an axis and a full plane,
+giving six; the symmetric-conference tensor at order twelve has
+one axis and two fillings; the inconsistent order-twelve example
+has no real or sign completion. It also exhausts all 256 normalized
+$W(8,6)$ matrices with standard zero support and first-row/sign
+normalizations. Every case has one axis and one full plane and
+exactly six sign fillings.
+
+For a concrete nonsign real completion, the order-eight full
+reflection plane contains the rational root $(3D+4S)/5$.
+Its resulting completion has exact Gram $8I$ and nonsign hole
+entries. The converter is separately tested at diagonal states:
+it constructs the two conference fills and checks both resulting
+Hadamard matrices and the independence of their root states using
+only integer and rational arithmetic. No isolated diagonal-line
+example was found; the conversion theorem explains why none can
+occur. No novelty or all-order Hadamard existence claim is made.
+\section{Exact entry-flip calculus and persistent discrete traps}
+\label{sec:spectral-flip-traps}
+Put $F(H)=\|HH^T-nI\|_F^2$ for an order-$n$ sign matrix.
+This discrete energy landscape differs from optimization over the real
+orthogonal group. Squared-Gram spin formulations and nonglobal local
+minima are established background; see the primary article
+\emph{Quantum computing formulation of some classical Hadamard matrix
+searching methods and its implementation on a quantum computer},
+\url{https://doi.org/10.1038/s41598-021-03586-0}.
+The earlier primary article \emph{Finding a Hadamard Matrix by Simulated
+Quantum Annealing} (2018), \url{https://www.mdpi.com/1099-4300/20/2/141},
+also studies an energy-search formulation.
+The explicit certificates and tensor bounds below are derived directly;
+novelty is not asserted.
+
+\begin{lemma}[Exact one- and two-entry changes]\label{lem:spectral-flip-calculus}
+Let $G=HH^T$, $K=H^TH$. Flipping entry $(i,a)$ changes energy by
+\[
+ d_{ia}=8\big[(2n-1)-h_{ia}(GH)_{ia}\big].
+\]
+For two distinct flipped cells the change is the sum of their individual
+changes plus the interaction
+\[
+ \begin{cases}
+ 16(h_{ia}h_{ib}K_{ab}-1),&\text{same row }i,\ a\ne b,\\
+ 16(h_{ia}h_{ja}G_{ij}-1),&\text{same column }a,\ i\ne j,\\
+ 16h_{ia}h_{ib}h_{ja}h_{jb},&i\ne j,\ a\ne b
+ \quad\text{for cells }(i,a),(j,b).
+ \end{cases}
+\]
+For even $n$, every single-entry energy change is eight times an odd
+integer, so there are no neutral single-entry moves.
+\end{lemma}
+\begin{proof}
+Only row-$i$ correlations change in a single flip:
+$G_{ij}\mapsto G_{ij}-2h_{ia}h_{ja}$ for $j\ne i$.
+Summing the changes of their squared values, twice for symmetry, gives
+$8[(n-1)-h_{ia}\sum_{j\ne i}h_{ja}G_{ij}]$, the displayed formula.
+Alternatively expand
+\[
+ F(H)=n^2(n-1)+4\sum_{i<j,\ a<b}h_{ia}h_{ib}h_{ja}h_{jb}.
+\]
+The two-flip interaction is sixteen times the sum of rectangle products
+containing both cells. This gives the three cases. For even $n$ all
+entries of $G$ are even, so $(GH)_{ia}$ is even while $2n-1$ is odd.
+\end{proof}
+
+\begin{theorem}[An exact small trap and its optimal escape barrier]
+\label{thm:spectral-eight-trap}
+Let $A$ be the $8\times8$ sign matrix whose negative-entry bitmasks in
+successive rows are
+\[
+ (84,44,30,230,133,73,111,51),
+\]
+where bit $j$ denotes column $j$, starting at zero. Then $F(A)=152$,
+every single-entry flip increases energy by at least eight, and every
+two-entry flip has nonnegative energy change. A three-entry flip lowers
+energy to $128$. The minimum Hamming distance from $A$ to any
+strictly lower-energy matrix is exactly three. The least energy barrier
+along single-entry paths to a lower-energy matrix is exactly eight.
+\end{theorem}
+\begin{proof}[Exact finite certificate]
+The matrix of single-flip changes divided by eight is
+\[
+ \begin{pmatrix}
+ 1&5&5&9&5&1&9&9\\
+ 5&9&1&1&5&9&9&5\\
+ 1&9&5&5&1&9&5&1\\
+ 5&5&1&5&5&1&5&1\\
+ 9&1&9&5&5&5&9&1\\
+ 1&1&5&1&5&5&5&5\\
+ 9&5&9&1&1&1&5&5\\
+ 5&1&1&9&1&5&5&9
+ \end{pmatrix}.
+\]
+The checker evaluates every one of the $\binom{64}{2}=2016$ two-cell
+changes using both direct Gram energy and the interaction formula;
+their minimum is zero. It also evaluates all $\binom{64}{3}=41664$
+three-cell changes, whose minimum is $-24$. Explicitly, flipping cells
+with flattened indices $0,5,60$ gives energies
+$152\to160\to152\to128$. The first step of any single-entry path
+costs at least eight, so this path attains the minimum possible barrier.
+The one- and two-flip checks prove the claimed distance-three minimum.
+All calculations are exact integer operations, not a heuristic search
+certificate. The original randomized hill search merely found the
+matrix; none of the assertions depends on its search history.
+\end{proof}
+
+\begin{theorem}[Infinite strict two-flip traps]
+\label{thm:spectral-tensor-discrete-traps}
+For any sign Hadamard matrix $B$ of order $m\ge2$, the matrix
+$A\otimes B$ has positive energy $152m^3$ and strictly increases energy
+under every change of one or two entries. The exact minimum increases are
+\[
+ \min\Delta_1=16m-8,\qquad \min\Delta_2=32(m-1).
+\]
+In particular this gives infinitely many explicit nonglobal strict
+one- and two-entry local minima at known orders $8\cdot2^r$, $r\ge1$.
+\end{theorem}
+\begin{proof}
+Let $Q=AA^T$. The lift has row Gram $Q\otimes mI_m$, and
+$HH^TH=(Q A)\otimes mB$. If a base cell has single-flip change $d$,
+its lifted cells have change $md+8(m-1)$. Since the minimum base change
+is eight, the exact lifted minimum is $16m-8$.
+Energy scales as
+$\|(Q-8I_8)\otimes mI_m\|_F^2=m^3F(A)$.
+
+For two cells sharing neither row nor column, the interaction is at
+least $-16$, so their total increase is at least $32m-32$.
+For two cells in the same lifted row, if their Hadamard column indices
+differ, column-Gram orthogonality again makes the interaction $-16$.
+If those indices agree, their base columns differ and the exact lifted
+pair change is $m\Delta_{2,\mathrm{base}}+32(m-1)$, nonnegative in its
+first term. The same argument applies to a shared lifted column.
+Thus every pair costs at least $32(m-1)$. Equality is attained by lifting
+the neutral base pair $(0,0),(0,5)$ with the same Hadamard row and column
+indices. Positive energy proves nonglobality, since tensoring Walsh order eight with $B$ gives an order-$8m$
+Hadamard matrix.
+\end{proof}
+
+For completeness, the checker exhausts all $512$ normalized order-four
+sign matrices. Only the six Hadamard matrices are single-entry local
+minima. Row and column sign normalization preserves energy and the
+entry-flip graph, so order eight is the first admissible order at which
+this greedy-descent obstruction occurs. The example does not rule out
+nonlocal methods: its base has a certified three-flip escape. It does
+rule out a proof that arbitrary one- or two-entry improving moves must
+always reach a Hadamard matrix. No all-order construction is supplied.
+\section{A positive codimension-two bridge through qubit geometry}
+Let $V\in\mathbb C^{n\times(n-2)}$ have unit-modulus entries and
+$V^*V=nI_{n-2}$. Its residual Gram matrix
+\[
+ K=nI_n-VV^*
+\]
+is positive semidefinite of rank two, with diagonal entries two.
+It has a factorization $K=RR^*$ with $R\in\mathbb C^{n\times2}$,
+$R^*R=nI_2$, and every row of $R$ has squared norm two.
+Define the real matrix
+\[
+ B_{ij}=\frac{|K_{ij}|^2}{2}-1.
+\]
+
+\begin{theorem}[An exact rank test for a two-column flat completion]
+The matrix $B$ is a Gram matrix of unit vectors in $\mathbb R^3$.
+The partial complex Hadamard matrix $V$ can be completed by two
+unit-modulus columns if and only if $\operatorname{rank}B\le2$.
+\end{theorem}
+\begin{proof}
+For each row $r_i$ of $R$, let $u_i=r_i^T/\sqrt2$ and form its unit
+Bloch vector $b_i\in\mathbb R^3$. The elementary two-dimensional
+identity $b_i\cdot b_j=2|u_i^*u_j|^2-1$ gives $B_{ij}$.
+All other residual factors are obtained by a common two-dimensional
+unitary change of basis. Such a factor has both entry moduli one
+in every row exactly when every corresponding qubit has equal
+coordinate probabilities, that is, every $b_i$ is perpendicular to
+a fixed unit measurement axis. Such an axis exists exactly when
+the Bloch vectors span dimension at most two. Explicitly, for a
+unit normal $s$, diagonalize the traceless Hermitian matrix
+$s\cdot\sigma$, whose eigenvalues are $\pm1$. Zero expectation in
+each $u_i$ forces its two eigenbasis probabilities to be $1/2$.
+This constructs the required residual factor.
+\end{proof}
+
+\begin{theorem}[Quaternary input needs no extra phase freedom]
+Suppose $n$ is even and $V$ has entries in $\mu_4$.
+Then $B_{ij}\in\{-1,0,1\}$, and $\operatorname{rank}B\le3$.
+Whenever $\operatorname{rank}B\le2$, the two completing columns
+can also be chosen in $\mu_4$. Thus complex and quaternary
+completability are equivalent for this codimension-two input.
+\end{theorem}
+\begin{proof}
+The off-diagonal $K_{ij}$ are Gaussian integers with real and
+imaginary parts of even sum, since they are sums of the even number
+$n-2$ of fourth roots. Positive semidefiniteness gives $|K_{ij}|\le2$.
+Thus their squared magnitudes are $0,2,4$, proving the assertion on
+$B$. Distinct Bloch vectors are consequently parallel, antiparallel,
+or orthogonal, and lie on at most three mutually orthogonal axes.
+
+If the rank is at most two, rotate their plane to the equator.
+After a common phase choice the residual rows have the form
+$a_i(1,\delta_i)$ with $|a_i|=1$ and
+$\delta_i\in\{1,-1,i,-i\}$. For two nonorthogonal rows,
+\[
+ K_{ij}=a_i\overline{a_j}(1+\delta_i\overline{\delta_j}).
+\]
+If the two $\delta$ values agree, the Gaussian integer $K_{ij}$
+has modulus two, so division by two is a fourth root. If the axes
+differ, its modulus is $\sqrt2$, so division by $1+i$ or $1-i$
+is again a fourth root. Therefore $a_i\overline{a_j}\in\mu_4$
+on every nonorthogonality edge. For rank two this graph is connected:
+states on one axis are nonorthogonal to every state on the other.
+A global phase makes all $a_i$ fourth roots. In rank one the two
+antipodal groups are disconnected but mutually orthogonal; choose
+their common phases independently without changing $K$.
+This also makes every $a_i$ a fourth root. The resulting residual
+matrix has entries in $\mu_4$ and the same Gram $K$, and appending
+it to $V$ gives the required quaternary matrix.
+\end{proof}
+The proof is an exact algorithm using only $K$: take a reference
+Bloch axis from a row of $B$, choose an orthogonal second axis if
+needed, and label their antipodes by $1,-1,i,-i$. Along nonzero
+$K_{ij}$ edges solve the displayed phase ratio, starting one phase
+at one in each connected component. All recovered phases are in
+$\mu_4$. This avoids numerical extraction of a Bloch rotation.
+
+\begin{theorem}[Automatic quaternary completion using a classical real input]
+Every even-order quaternary partial Hadamard matrix missing two
+columns has a quaternary completion.
+This assertion uses the classical real codimension-four Hadamard
+completion theorem as an input; it is not proved here from scratch.
+\end{theorem}
+\begin{proof}
+The case $n=2$ is immediate. For $n\ge4$, realify $(1+i)V$ to a
+real sign matrix of size $2n\times(2n-4)$ with column Gram $2nI$.
+Classical real completion supplies four sign columns $Q$ with
+\[
+ QQ^T=2\mathcal R(K).
+\]
+On the other hand $\sqrt2\mathcal R(R)$ is a full-column-rank real
+factor with that same Gram. The two factors differ by a right
+orthogonal matrix, preserving the number of antipodal row directions.
+
+If $B$ had rank three, the previous discrete inner-product argument
+would give three orthogonal Bloch axes. Moreover $R^*R=nI_2$
+implies $\sum_i b_i=0$, so both antipodes of each axis occur.
+There would be at least six distinct complex lines represented by
+the rows $r_i$. Realification contributes two different orthogonal
+real row directions from each complex line; different complex lines
+cannot share a nonzero real direction. Thus
+$\sqrt2\mathcal R(R)$, and hence $Q$, would have at least twelve
+antipodal real row classes. Four real sign coordinates have only
+eight such classes. This is impossible. Therefore the Bloch rank is
+at most two, and the preceding constructive theorem completes $V$
+within $\mu_4$.
+\end{proof}
+
+The real codimension-four input is classical Hall--Verheiden
+completion theory. Primary sources include E. Verheiden,
+\emph{Integral and rational completions of combinatorial matrices},
+J. Combinatorial Theory A 25 (1978), 267--276, and his dissertation
+\url{https://thesis.caltech.edu/2899/}. The latter explicitly records
+Hall's four-row theorem and its extension to seven. The criterion
+and its two-dimensional quantum interpretation are presented as a
+structural and algorithmic bridge; bibliographic novelty is not asserted.
+The codimension-one statement is simpler: its residual has rank one
+and diagonal one, and one of its columns directly supplies the
+missing fourth-root column up to phase. Neither result supplies
+the missing large partial frame at an unknown order.
+
+The checker verifies the Bloch rank, phase-graph algorithm, and exact
+Gaussian Gram identities at orders four, six and eight. A bounded
+search of small quaternary partial frames found no rank-three input,
+consistent with the classical-completion consequence. A three-axis
+abstract Gaussian residual is also tested to distinguish the
+residual geometry from a realizable quaternary partial frame.
+
+\section{What the constructive results still need}
+The phase-rounding criterion requires a starting matrix inside a
+dimension-dependent basin. We have no all-order construction reaching
+that basin. The low-codimension completion criteria require almost all
+columns to have been constructed already. The weighing results preserve
+specified entries and therefore solve a constrained completion task.
+The spectral traps rule out a universal strict-descent algorithm based
+only on one or two entry changes, but do not rule out larger moves,
+temporary energy increases, or different objective functions.
+
+The next constructive targets are an input-producing theorem for
+phase rounding, a compatible all-order weighing construction, and
+a global exchange operation with a proved escape mechanism.
+No full-conjecture proof or previously unknown order is claimed.
+No Lean edits, git commits, publication or submission were made.
+\end{document}

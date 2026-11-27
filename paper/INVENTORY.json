@@ -1,0 +1,147 @@
+{
+  "sources": [
+    {
+      "source": "research/full_conjecture/round3/trades/rigidity.tex",
+      "sourceSHA256": "d31d06993e577a97350eb6bee8b80bf12407250b858a488cd578874cad45683a",
+      "sectionFile": "sections/s04.tex"
+    },
+    {
+      "source": "research/full_conjecture/round5/collision_entropy.tex",
+      "sourceSHA256": "3fd8622df4e742292e3ddf3a2ee4a498e5173e6e4aeabecbfb61d3ca68ced481",
+      "sectionFile": "sections/s06.tex"
+    },
+    {
+      "source": "research/full_conjecture/round5/entropy.tex",
+      "sourceSHA256": "72aeaa22cfa90876a1c56d43e6151af6e8a0654cbaf7255b5c10d385d7285592",
+      "sectionFile": "sections/s07.tex"
+    },
+    {
+      "source": "research/full_conjecture/round5/exchangeability/exchangeability.tex",
+      "sourceSHA256": "dc524254d3db5007cfe5546e4e36e444c0ac953fe4087e83d377b58be3f247f6",
+      "sectionFile": "sections/s08.tex"
+    },
+    {
+      "source": "research/full_conjecture/round5/invariant/invariant.tex",
+      "sourceSHA256": "a6926f0e839b16d6835b38d927c59d4e5adfe100ed9748162c015a8005442ee3",
+      "sectionFile": "sections/s09.tex"
+    },
+    {
+      "source": "research/full_conjecture/round5/discrete/rounding.tex",
+      "sourceSHA256": "46899a46329ba55af22911c6a5d4068ea9d872d07267b969c253c811db128452",
+      "sectionFile": "sections/s10.tex"
+    },
+    {
+      "source": "research/full_conjecture/round6/collision_stability.tex",
+      "sourceSHA256": "fd0afbad699d105d4e2586cf906838d75f0ed1b4a32105488a93788bc9872747",
+      "sectionFile": "sections/s11.tex"
+    },
+    {
+      "source": "research/full_conjecture/round6/symmetry.tex",
+      "sourceSHA256": "865b0fa85c6555df0d3c48ffff2ccb45c98e253082f1921ff8dbb7d2cb953389",
+      "sectionFile": "sections/s12.tex"
+    },
+    {
+      "source": "research/full_conjecture/round6/attainment/traps.tex",
+      "sourceSHA256": "b9fb4a67871e055dcb26c8fd687037a525352d8ffce81be9a6a9955e5ffd783e",
+      "sectionFile": "sections/s13.tex"
+    },
+    {
+      "source": "research/full_conjecture/round7/character_rigidity.tex",
+      "sourceSHA256": "fff7ec106f874e7ab6ddeba6fc1e78fc3ad4d97fa47ce31e665a15d18b6cd06d",
+      "sectionFile": "sections/s14.tex"
+    },
+    {
+      "source": "research/full_conjecture/round7/compression/escape.tex",
+      "sourceSHA256": "99fcec0c1eb463bed904d9d996d2458b77bd5477ff39983dbc0a678b5850c543",
+      "sectionFile": "sections/s15.tex"
+    },
+    {
+      "source": "research/full_conjecture/round7/correction/correction.tex",
+      "sourceSHA256": "ec639b4f96b77e0683be4dc26c5100d519c54d1ee774a03120cb2180e0c30360",
+      "sectionFile": "sections/s16.tex"
+    },
+    {
+      "source": "research/full_conjecture/round8/nonlinear/encoding.tex",
+      "sourceSHA256": "d68989d0c51e985614fec6732700b9bed9cbe0556ec4531f94c06cc09581f05f",
+      "sectionFile": "sections/s18.tex"
+    },
+    {
+      "source": "research/full_conjecture/round8/weights/weights.tex",
+      "sourceSHA256": "25d353955c0d595a66ae1a3b7d7c3402f5c07836797c4570fc1650be0fe4814d",
+      "sectionFile": "sections/s19.tex"
+    },
+    {
+      "source": "research/full_conjecture/round9/rank_rigidity.tex",
+      "sourceSHA256": "b556941c95deb0f688544fd4d07cb0e4e1f6c3df06827e62f3048f8dfb396046",
+      "sectionFile": "sections/s20.tex"
+    },
+    {
+      "source": "research/full_conjecture/round9/nonlinear/support.tex",
+      "sourceSHA256": "cb0f15fa6d135f9562b90befd2979553781af0ce0ccdf60e7ce12f38077714b8",
+      "sectionFile": "sections/s21.tex"
+    },
+    {
+      "source": "research/full_conjecture/round9/exchanges/exchanges.tex",
+      "sourceSHA256": "c971039fcb5482ae88a6c804f8e22124e2670ae4eb6535eadda93fdecc3c90b2",
+      "sectionFile": "sections/s22.tex"
+    },
+    {
+      "source": "research/full_conjecture/round10/nonlinear/quantitative.tex",
+      "sourceSHA256": "cd95452951d7ac7646f028b14bfd42fbe2b703dfbb6f580991d22e7b0e9627e2",
+      "sectionFile": "sections/s23.tex"
+    },
+    {
+      "source": "research/full_conjecture/round10/exchanges/bridges.tex",
+      "sourceSHA256": "ad833554831b66a990f2728c4d22417ba4d6edc6f09f2d1936fe0eb4b5faa412",
+      "sectionFile": "sections/s24.tex"
+    },
+    {
+      "source": "research/full_conjecture/round11/global_repair.tex",
+      "sourceSHA256": "9274d3236863dca1953470576b821fee8a318eab46ee9a6b5b037cced0ce3c75",
+      "sectionFile": "sections/s25.tex"
+    },
+    {
+      "source": "research/full_conjecture/round12/stability/prime_rates.tex",
+      "sourceSHA256": "f3ecb3d5cfcf8e3f59c7ff36558b56fcbf0d4e564528403e762fa9879d101a3c",
+      "sectionFile": "sections/s26.tex"
+    },
+    {
+      "source": "research/full_conjecture/round12/stability/gap_transfer.tex",
+      "sourceSHA256": "f94c0b08781e6a75c6a9dd543a028883b7f5727eb9189faf30df5167bf3165d2",
+      "sectionFile": "sections/s27.tex"
+    },
+    {
+      "source": "research/full_conjecture/round12/stability/project_input.tex",
+      "sourceSHA256": "59b1f536c7be1af43e946e8a5f99e9226a34e05b30549d19de9d39844b9560a3",
+      "sectionFile": "sections/s28.tex"
+    },
+    {
+      "source": "research/full_conjecture/round13/quantum/quantum.tex",
+      "sourceSHA256": "0d813d95be3b9b74c175bc42117a78576b02c798b78a3a5aa18769f500bb0ab4",
+      "sectionFile": "sections/s29.tex"
+    },
+    {
+      "source": "improvement/paper/extensions.tex",
+      "sourceSHA256": "853e68859aa892284f342ecf15b81815cd2882ae057097916e8b2838acfd5804",
+      "sectionFile": "sections/s30.tex",
+      "scope": "Second-order covering and finite radix construction sections only; analytic refinements assigned tensor project."
+    },
+    {
+      "source": "research/full_conjecture/moments/progress.tex",
+      "sourceSHA256": "5a1b2bd9eb17391528fc4c18f44d7f862112d40b2094a5c4706390bf7eaeea07",
+      "sectionFile": "sections/s31.tex"
+    },
+    {
+      "source": "research/full_conjecture/round7/buffer_obstruction.tex",
+      "sourceSHA256": "067c554af9d5c6f8abe855a9eb3784729ef318eb55d830c39aefb22beaab01ba",
+      "sectionFile": "sections/s32.tex"
+    },
+    {
+      "source": "research/full_conjecture/round8/renyi_phase.tex",
+      "sourceSHA256": "d712faac8cf25d1a6fe6a9f9e6df130e75c6532640530fc6fca916007c9df722",
+      "sectionFile": "sections/s33.tex"
+    }
+  ],
+  "overlapPolicy": "Later complete source proofs supersede repeated preliminary summaries; shared completion facts are restated where needed.",
+  "externalReferenceMarkers": []
+}

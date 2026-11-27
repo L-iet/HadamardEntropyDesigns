@@ -1,0 +1,878 @@
+{
+  "passed": true,
+  "exactCases": 39,
+  "cases": [
+    {
+      "name": "Householder",
+      "n": 2,
+      "p": 3,
+      "flat": false,
+      "q": "2",
+      "r": "2",
+      "alpha": "0",
+      "beta": "0",
+      "alphaBound": "0",
+      "betaBound": "2/3",
+      "tensorFactors": 1,
+      "liftedOrder": 2,
+      "curvature": "-6",
+      "Y": [
+        "pair",
+        0,
+        1
+      ],
+      "Z": [
+        "pair",
+        0,
+        1
+      ],
+      "directLiftChecked": true
+    },
+    {
+      "name": "Householder",
+      "n": 2,
+      "p": 4,
+      "flat": false,
+      "q": "2",
+      "r": "2",
+      "alpha": "0",
+      "beta": "0",
+      "alphaBound": "0",
+      "betaBound": "2/3",
+      "tensorFactors": 1,
+      "liftedOrder": 2,
+      "curvature": "-8",
+      "Y": [
+        "pair",
+        0,
+        1
+      ],
+      "Z": [
+        "pair",
+        0,
+        1
+      ],
+      "directLiftChecked": true
+    },
+    {
+      "name": "Householder",
+      "n": 2,
+      "p": 5,
+      "flat": false,
+      "q": "2",
+      "r": "2",
+      "alpha": "0",
+      "beta": "0",
+      "alphaBound": "0",
+      "betaBound": "2/3",
+      "tensorFactors": 1,
+      "liftedOrder": 2,
+      "curvature": "-10",
+      "Y": [
+        "pair",
+        0,
+        1
+      ],
+      "Z": [
+        "pair",
+        0,
+        1
+      ],
+      "directLiftChecked": true
+    },
+    {
+      "name": "Householder",
+      "n": 2,
+      "p": 6,
+      "flat": false,
+      "q": "2",
+      "r": "2",
+      "alpha": "0",
+      "beta": "0",
+      "alphaBound": "0",
+      "betaBound": "2/3",
+      "tensorFactors": 1,
+      "liftedOrder": 2,
+      "curvature": "-12",
+      "Y": [
+        "pair",
+        0,
+        1
+      ],
+      "Z": [
+        "pair",
+        0,
+        1
+      ],
+      "directLiftChecked": true
+    },
+    {
+      "name": "Householder",
+      "n": 2,
+      "p": 8,
+      "flat": false,
+      "q": "2",
+      "r": "2",
+      "alpha": "0",
+      "beta": "0",
+      "alphaBound": "0",
+      "betaBound": "2/3",
+      "tensorFactors": 1,
+      "liftedOrder": 2,
+      "curvature": "-16",
+      "Y": [
+        "pair",
+        0,
+        1
+      ],
+      "Z": [
+        "pair",
+        0,
+        1
+      ],
+      "directLiftChecked": true
+    },
+    {
+      "name": "Householder",
+      "n": 3,
+      "p": 3,
+      "flat": false,
+      "q": "17/9",
+      "r": "5",
+      "alpha": "14/17",
+      "beta": "14/17",
+      "alphaBound": "14/17",
+      "betaBound": "31/34",
+      "tensorFactors": 4,
+      "liftedOrder": 81,
+      "curvature": "-107024/177147",
+      "Y": [
+        "pair",
+        0,
+        1
+      ],
+      "Z": [
+        "pair",
+        0,
+        1
+      ],
+      "directLiftChecked": false
+    },
+    {
+      "name": "Householder",
+      "n": 3,
+      "p": 4,
+      "flat": false,
+      "q": "11/9",
+      "r": "3",
+      "alpha": "8/11",
+      "beta": "8/11",
+      "alphaBound": "8/11",
+      "betaBound": "19/22",
+      "tensorFactors": 4,
+      "liftedOrder": 81,
+      "curvature": "-150592/531441",
+      "Y": [
+        "pair",
+        0,
+        1
+      ],
+      "Z": [
+        "pair",
+        0,
+        1
+      ],
+      "directLiftChecked": false
+    },
+    {
+      "name": "Householder",
+      "n": 3,
+      "p": 5,
+      "flat": false,
+      "q": "65/81",
+      "r": "17/9",
+      "alpha": "44/65",
+      "beta": "44/65",
+      "alphaBound": "44/65",
+      "betaBound": "109/130",
+      "tensorFactors": 4,
+      "liftedOrder": 81,
+      "curvature": "-76219760/1162261467",
+      "Y": [
+        "pair",
+        0,
+        1
+      ],
+      "Z": [
+        "pair",
+        0,
+        1
+      ],
+      "directLiftChecked": false
+    },
+    {
+      "name": "Householder",
+      "n": 3,
+      "p": 6,
+      "flat": false,
+      "q": "43/81",
+      "r": "11/9",
+      "alpha": "28/43",
+      "beta": "28/43",
+      "alphaBound": "28/43",
+      "betaBound": "71/86",
+      "tensorFactors": 4,
+      "liftedOrder": 81,
+      "curvature": "-11056672/1162261467",
+      "Y": [
+        "pair",
+        0,
+        1
+      ],
+      "Z": [
+        "pair",
+        0,
+        1
+      ],
+      "directLiftChecked": false
+    },
+    {
+      "name": "Householder",
+      "n": 3,
+      "p": 8,
+      "flat": false,
+      "q": "19/81",
+      "r": "43/81",
+      "alpha": "12/19",
+      "beta": "12/19",
+      "alphaBound": "12/19",
+      "betaBound": "31/38",
+      "tensorFactors": 5,
+      "liftedOrder": 243,
+      "curvature": "-187974400/847288609443",
+      "Y": [
+        "pair",
+        0,
+        1
+      ],
+      "Z": [
+        "pair",
+        0,
+        1
+      ],
+      "directLiftChecked": false
+    },
+    {
+      "name": "Householder",
+      "n": 4,
+      "p": 3,
+      "flat": true,
+      "q": "2"
+    },
+    {
+      "name": "Householder",
+      "n": 4,
+      "p": 4,
+      "flat": true,
+      "q": "1"
+    },
+    {
+      "name": "Householder",
+      "n": 4,
+      "p": 5,
+      "flat": true,
+      "q": "1/2"
+    },
+    {
+      "name": "Householder",
+      "n": 4,
+      "p": 6,
+      "flat": true,
+      "q": "1/4"
+    },
+    {
+      "name": "Householder",
+      "n": 4,
+      "p": 8,
+      "flat": true,
+      "q": "1/16"
+    },
+    {
+      "name": "Householder",
+      "n": 5,
+      "p": 3,
+      "flat": false,
+      "q": "59/25",
+      "r": "11",
+      "alpha": "54/59",
+      "beta": "54/59",
+      "alphaBound": "54/59",
+      "betaBound": "167/177",
+      "tensorFactors": 8,
+      "liftedOrder": 390625,
+      "curvature": "-1709963463205632/59604644775390625",
+      "Y": [
+        "pair",
+        0,
+        1
+      ],
+      "Z": [
+        "pair",
+        0,
+        1
+      ],
+      "directLiftChecked": false
+    },
+    {
+      "name": "Householder",
+      "n": 5,
+      "p": 4,
+      "flat": false,
+      "q": "29/25",
+      "r": "5",
+      "alpha": "24/29",
+      "beta": "24/29",
+      "alphaBound": "24/29",
+      "betaBound": "77/87",
+      "tensorFactors": 6,
+      "liftedOrder": 15625,
+      "curvature": "-5507684608/3814697265625",
+      "Y": [
+        "pair",
+        0,
+        1
+      ],
+      "Z": [
+        "pair",
+        0,
+        1
+      ],
+      "directLiftChecked": false
+    },
+    {
+      "name": "Householder",
+      "n": 5,
+      "p": 5,
+      "flat": false,
+      "q": "371/625",
+      "r": "59/25",
+      "alpha": "276/371",
+      "beta": "276/371",
+      "alphaBound": "276/371",
+      "betaBound": "923/1113",
+      "tensorFactors": 5,
+      "liftedOrder": 3125,
+      "curvature": "-19914855851104/59604644775390625",
+      "Y": [
+        "pair",
+        0,
+        1
+      ],
+      "Z": [
+        "pair",
+        0,
+        1
+      ],
+      "directLiftChecked": false
+    },
+    {
+      "name": "Householder",
+      "n": 5,
+      "p": 6,
+      "flat": false,
+      "q": "197/625",
+      "r": "29/25",
+      "alpha": "132/197",
+      "beta": "132/197",
+      "alphaBound": "132/197",
+      "betaBound": "461/591",
+      "tensorFactors": 5,
+      "liftedOrder": 3125,
+      "curvature": "-18496525170624/298023223876953125",
+      "Y": [
+        "pair",
+        0,
+        1
+      ],
+      "Z": [
+        "pair",
+        0,
+        1
+      ],
+      "directLiftChecked": false
+    },
+    {
+      "name": "Householder",
+      "n": 5,
+      "p": 8,
+      "flat": false,
+      "q": "1517/15625",
+      "r": "197/625",
+      "alpha": "852/1517",
+      "beta": "852/1517",
+      "alphaBound": "852/1517",
+      "betaBound": "3221/4551",
+      "tensorFactors": 4,
+      "liftedOrder": 625,
+      "curvature": "-205743966849152/37252902984619140625",
+      "Y": [
+        "pair",
+        0,
+        1
+      ],
+      "Z": [
+        "pair",
+        0,
+        1
+      ],
+      "directLiftChecked": false
+    },
+    {
+      "name": "Householder",
+      "n": 6,
+      "p": 3,
+      "flat": false,
+      "q": "26/9",
+      "r": "14",
+      "alpha": "10/13",
+      "beta": "10/13",
+      "alphaBound": "10/13",
+      "betaBound": "76/91",
+      "tensorFactors": 3,
+      "liftedOrder": 216,
+      "curvature": "-1576/6561",
+      "Y": [
+        "pair",
+        0,
+        1
+      ],
+      "Z": [
+        "pair",
+        0,
+        1
+      ],
+      "directLiftChecked": false
+    },
+    {
+      "name": "Householder",
+      "n": 6,
+      "p": 4,
+      "flat": false,
+      "q": "14/9",
+      "r": "6",
+      "alpha": "4/7",
+      "beta": "4/7",
+      "alphaBound": "4/7",
+      "betaBound": "34/49",
+      "tensorFactors": 2,
+      "liftedOrder": 36,
+      "curvature": "-16/729",
+      "Y": [
+        "pair",
+        0,
+        1
+      ],
+      "Z": [
+        "pair",
+        0,
+        1
+      ],
+      "directLiftChecked": true
+    },
+    {
+      "name": "Householder",
+      "n": 6,
+      "p": 5,
+      "flat": false,
+      "q": "74/81",
+      "r": "26/9",
+      "alpha": "16/37",
+      "beta": "16/37",
+      "alphaBound": "16/37",
+      "betaBound": "22/37",
+      "tensorFactors": 2,
+      "liftedOrder": 36,
+      "curvature": "-2300/19683",
+      "Y": [
+        "pair",
+        0,
+        1
+      ],
+      "Z": [
+        "pair",
+        0,
+        1
+      ],
+      "directLiftChecked": true
+    },
+    {
+      "name": "Householder",
+      "n": 6,
+      "p": 6,
+      "flat": false,
+      "q": "46/81",
+      "r": "14/9",
+      "alpha": "8/23",
+      "beta": "8/23",
+      "alphaBound": "8/23",
+      "betaBound": "86/161",
+      "tensorFactors": 2,
+      "liftedOrder": 36,
+      "curvature": "-1672/19683",
+      "Y": [
+        "pair",
+        0,
+        1
+      ],
+      "Z": [
+        "pair",
+        0,
+        1
+      ],
+      "directLiftChecked": true
+    },
+    {
+      "name": "Householder",
+      "n": 6,
+      "p": 8,
+      "flat": false,
+      "q": "58/243",
+      "r": "46/81",
+      "alpha": "8/29",
+      "beta": "8/29",
+      "alphaBound": "8/29",
+      "betaBound": "14/29",
+      "tensorFactors": 2,
+      "liftedOrder": 36,
+      "curvature": "-4192/177147",
+      "Y": [
+        "pair",
+        0,
+        1
+      ],
+      "Z": [
+        "pair",
+        0,
+        1
+      ],
+      "directLiftChecked": true
+    },
+    {
+      "name": "Householder",
+      "n": 7,
+      "p": 3,
+      "flat": false,
+      "q": "173/49",
+      "r": "17",
+      "alpha": "110/173",
+      "beta": "110/173",
+      "alphaBound": "110/173",
+      "betaBound": "503/692",
+      "tensorFactors": 2,
+      "liftedOrder": 49,
+      "curvature": "-68748/117649",
+      "Y": [
+        "pair",
+        0,
+        1
+      ],
+      "Z": [
+        "pair",
+        0,
+        1
+      ],
+      "directLiftChecked": false
+    },
+    {
+      "name": "Householder",
+      "n": 7,
+      "p": 4,
+      "flat": false,
+      "q": "103/49",
+      "r": "7",
+      "alpha": "40/103",
+      "beta": "40/103",
+      "alphaBound": "40/103",
+      "betaBound": "223/412",
+      "tensorFactors": 2,
+      "liftedOrder": 49,
+      "curvature": "-92944/117649",
+      "Y": [
+        "pair",
+        0,
+        1
+      ],
+      "Z": [
+        "pair",
+        0,
+        1
+      ],
+      "directLiftChecked": false
+    },
+    {
+      "name": "Householder",
+      "n": 7,
+      "p": 5,
+      "flat": false,
+      "q": "3317/2401",
+      "r": "173/49",
+      "alpha": "860/3317",
+      "beta": "860/3317",
+      "alphaBound": "860/3317",
+      "betaBound": "5897/13268",
+      "tensorFactors": 2,
+      "liftedOrder": 49,
+      "curvature": "-160881780/282475249",
+      "Y": [
+        "pair",
+        0,
+        1
+      ],
+      "Z": [
+        "pair",
+        0,
+        1
+      ],
+      "directLiftChecked": false
+    },
+    {
+      "name": "Householder",
+      "n": 7,
+      "p": 6,
+      "flat": false,
+      "q": "2287/2401",
+      "r": "103/49",
+      "alpha": "460/2287",
+      "beta": "460/2287",
+      "alphaBound": "460/2287",
+      "betaBound": "3667/9148",
+      "tensorFactors": 2,
+      "liftedOrder": 49,
+      "curvature": "-100136856/282475249",
+      "Y": [
+        "pair",
+        0,
+        1
+      ],
+      "Z": [
+        "pair",
+        0,
+        1
+      ],
+      "directLiftChecked": false
+    },
+    {
+      "name": "Householder",
+      "n": 7,
+      "p": 8,
+      "flat": false,
+      "q": "56023/117649",
+      "r": "2287/2401",
+      "alpha": "9340/56023",
+      "beta": "9340/56023",
+      "alphaBound": "9340/56023",
+      "betaBound": "84043/224092",
+      "tensorFactors": 2,
+      "liftedOrder": 49,
+      "curvature": "-80893674528/678223072849",
+      "Y": [
+        "pair",
+        0,
+        1
+      ],
+      "Z": [
+        "pair",
+        0,
+        1
+      ],
+      "directLiftChecked": false
+    },
+    {
+      "name": "Hadamard4 direct-sum I2",
+      "n": 6,
+      "p": 3,
+      "flat": false,
+      "q": "4",
+      "r": "10",
+      "alpha": "0",
+      "beta": "0",
+      "alphaBound": "3/10",
+      "betaBound": "1/2",
+      "tensorFactors": 1,
+      "liftedOrder": 6,
+      "curvature": "-9/2",
+      "Y": [
+        "pair",
+        0,
+        4
+      ],
+      "Z": [
+        "pair",
+        0,
+        4
+      ],
+      "directLiftChecked": true
+    },
+    {
+      "name": "Hadamard4 direct-sum I2",
+      "n": 6,
+      "p": 4,
+      "flat": false,
+      "q": "3",
+      "r": "6",
+      "alpha": "0",
+      "beta": "0",
+      "alphaBound": "1/5",
+      "betaBound": "3/7",
+      "tensorFactors": 1,
+      "liftedOrder": 6,
+      "curvature": "-5",
+      "Y": [
+        "pair",
+        0,
+        4
+      ],
+      "Z": [
+        "pair",
+        0,
+        4
+      ],
+      "directLiftChecked": true
+    },
+    {
+      "name": "Hadamard4 direct-sum I2",
+      "n": 6,
+      "p": 6,
+      "flat": false,
+      "q": "9/4",
+      "r": "3",
+      "alpha": "0",
+      "beta": "0",
+      "alphaBound": "1/15",
+      "betaBound": "1/3",
+      "tensorFactors": 1,
+      "liftedOrder": 6,
+      "curvature": "-51/8",
+      "Y": [
+        "pair",
+        0,
+        4
+      ],
+      "Z": [
+        "pair",
+        0,
+        4
+      ],
+      "directLiftChecked": true
+    },
+    {
+      "name": "flat row frame2x4",
+      "n": 4,
+      "p": 3,
+      "flat": true,
+      "q": "1"
+    },
+    {
+      "name": "stationary row frame2x6",
+      "n": 6,
+      "p": 3,
+      "flat": false,
+      "q": "1",
+      "r": "4",
+      "alpha": "0",
+      "beta": "0",
+      "alphaBound": "3/5",
+      "betaBound": "5/7",
+      "tensorFactors": 1,
+      "liftedOrder": 6,
+      "curvature": "-3/4",
+      "Y": [
+        "pair",
+        0,
+        4
+      ],
+      "Z": [
+        "pair",
+        0,
+        4
+      ],
+      "directLiftChecked": true
+    },
+    {
+      "name": "flat row frame2x4",
+      "n": 4,
+      "p": 4,
+      "flat": true,
+      "q": "1/2"
+    },
+    {
+      "name": "stationary row frame2x6",
+      "n": 6,
+      "p": 4,
+      "flat": false,
+      "q": "1/2",
+      "r": "2",
+      "alpha": "0",
+      "beta": "0",
+      "alphaBound": "3/5",
+      "betaBound": "5/7",
+      "tensorFactors": 1,
+      "liftedOrder": 6,
+      "curvature": "-1/2",
+      "Y": [
+        "pair",
+        0,
+        4
+      ],
+      "Z": [
+        "pair",
+        0,
+        4
+      ],
+      "directLiftChecked": true
+    },
+    {
+      "name": "flat row frame2x4",
+      "n": 4,
+      "p": 6,
+      "flat": true,
+      "q": "1/8"
+    },
+    {
+      "name": "stationary row frame2x6",
+      "n": 6,
+      "p": 6,
+      "flat": false,
+      "q": "1/8",
+      "r": "1/2",
+      "alpha": "0",
+      "beta": "0",
+      "alphaBound": "3/5",
+      "betaBound": "5/7",
+      "tensorFactors": 1,
+      "liftedOrder": 6,
+      "curvature": "-3/16",
+      "Y": [
+        "pair",
+        0,
+        4
+      ],
+      "Z": [
+        "pair",
+        0,
+        4
+      ],
+      "directLiftChecked": true
+    }
+  ],
+  "twoCopyExample": {
+    "baseOrder": 5,
+    "liftedOrder": 25,
+    "curvature": "-192/625",
+    "directChecked": true
+  },
+  "generalRealExponentsProvedIn": "tensor_stability.tex",
+  "numericScope": "integer exponents checked exactly; all real p>2 covered by paper proof",
+  "hadamardConjectureProved": false,
+  "noveltyEstablished": false
+}

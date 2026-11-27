@@ -1,0 +1,133 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{booktabs,array,xcolor}
+\usepackage{lmodern,amsmath,amssymb,amsthm,hyperref}
+\setlength{\emergencystretch}{3em}
+\setcounter{MaxMatrixCols}{20}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newcommand{\E}{\mathbb E}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\NN}{\mathbb N_0}
+\newcommand{\HH}{\mathcal H}
+\newcommand{\ph}{\Phi}
+\newcommand{\ee}{\mathrm e}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\R}{\mathbb R}
+\title{Pairwise-independent designs: sharp entropy, concentration,\\and obstructions to global repair}
+\author{Joshua Mark\thanks{ORCID: \href{https://orcid.org/0009-0003-5905-2382}{0009-0003-5905-2382}. AI tools assisted with derivation, consolidation, formalization and checks.}}
+\date{26 November 2026 --- declared formalization scope}
+\begin{document}\maketitle
+\begin{abstract}
+We consolidate finite sign-design entropy bounds, exact near-equality
+rounding, support rigidity, exchange barriers, and quantitative instability
+families. Pairwise-independent laws can have nearly optimal collision and
+entropy while remaining almost maximally far from every Hadamard mixture.
+The source proofs, examples and limitations are retained. The companion Lean project has the declared coverage below, which identifies the results still awaiting full formalization.
+\end{abstract}
+\input{formalization-status}
+\tableofcontents
+\section*{Previously established inputs and formal scope}
+The original asymptotic-existence project proves the unconditional multiplier
+bound $\tau(u)=O(\log u/\log\log u)$ for positive odd $u$ and its uniform
+Hadamard-gap consequence. These are cited inputs, not new claims here.
+The spanning-slope theorem referred to later is proved in the design sections
+below: with $h=2^s$, known Hadamard order $k$, and $s\le h-k<h/2$, the
+finite-field construction gives an isotropic uniform $h^2$-atom law on $kh-1$
+bits, a strict local collision maximum, with TV distance $1-1/k$ from every
+Hadamard mixture.
+The Lean development proves the sharp residue-sensitive collision bound
+and both entropy inequalities for actual pairwise-independent Boolean-cube
+laws, uniformity and exact support size at equality in every residue class,
+and actual Hadamard completion retaining the original atom coordinates.
+The converse constructs an attaining Boolean-cube law from a Hadamard
+matrix, proving the exact attainment equivalence. The nonnegative defect
+decomposition, quantitative weight stability, exceptional-pair bound and
+explicit small-deficit extraction theorem are also formalized. The positive
+degree-two Fourier correction, exact collision and variation bounds, and
+its sufficient input window for Hadamard extraction are formalized as well.
+The quantized obstruction for non-isotropic uniform candidate supports,
+minimal-support reweighting rigidity, and the exact minimum and sharp loss
+bounds along a specified straight probability bridge are also formalized.
+The full-row-rank correction theorem is formalized with its actual Gram
+inverse, positivity margin, and all three quantitative error bounds.
+Its stated small-error criterion is connected to exact Hadamard extraction.
+The finite support-reduction algorithm is formalized with its exact
+face-dimension step bound, minimum-ratio endpoint rule, collision-monotone
+interpolation, and terminal vertex. Its ordered-field proof includes an
+explicit rational specialization.
+The rational path terminates at a vertex of the real moment polytope;
+the real-rank step bound is proved without identifying rational and real
+extremality by assumption.
+The additive-cover rigidity theorem and its missing-direction probability
+laws are formalized, including the affine-hyperplane endpoint supports.
+The smallest-seed obstruction and its explicit collision gap, and the
+approximate-moment Parseval bound, are formalized as well.
+Every maximum orthogonal subset of the augmented character trap has a
+formalized Hadamard completion retaining all selected rows, with exactly
+the maximum possible number of trap rows. The actual observed trap law
+is also formalized: its $h^2$ seed pairs yield distinct atoms, uniform
+weights, total mass one, zero means and pairwise correlations, and
+collision $1/h^2$. The compressed endpoint is also proved feasible,
+uniform on $2h$ atoms, and globally collision-maximizing. It has exactly
+$h$ trap atoms in common. Every global maximizer has at most this
+overlap and a pointwise no-better straight bridge. The constructed
+bridge's exact polynomial, minimum at $1/h$, and collision loss
+$1/(2h^3)$ are formalized. For finite binary linear observations, the
+actual uniform pushforward law is proved uniform on $2^r$ image atoms
+with collision $2^{-r}$. The consequences of preserving rank or
+dropping it by one are also checked. The actual rewiring masks, initial
+swap, one-column replacement rule, and nonrepeating schedule of $h-1$
+jumps are formalized. Every endpoint law is feasible, and the final law
+equals the compressed endpoint above. The actual Boolean laws are
+identified with their binary linear encoders. Every replacement is a
+rank-one linear repair, endpoint collision is nondecreasing, and the
+formal counts give $s-1$ support-halving, collision-doubling jumps and
+$h-s$ support-preserving jumps. The formal joined affine segments start at
+the trap law, end at the compressed law, remain feasible, and have exact
+attained minimum collision $3/(4h^2)$.
+The remaining
+coding, instability and rounding claims are separately tracked in
+paper/ALIGNMENT.json.
+This paper does not claim complete machine verification or the full conjecture.
+
+
+
+\input{sections/s04}
+
+\input{sections/s06}
+\input{sections/s07}
+\input{sections/s08}
+\input{sections/s09}
+\input{sections/s10}
+\input{sections/s11}
+\input{sections/s12}
+\input{sections/s13}
+\input{sections/s14}
+\input{sections/s15}
+\input{sections/s16}
+
+\input{sections/s18}
+\input{sections/s19}
+\input{sections/s20}
+\input{sections/s21}
+\input{sections/s22}
+\input{sections/s23}
+\input{sections/s24}
+\input{sections/s25}
+\input{sections/s26}
+\input{sections/s27}
+\input{sections/s28}
+\input{sections/s29}
+\input{sections/s30}
+\begin{thebibliography}{9}
+\bibitem{Verheiden} E. P. Verheiden, \emph{Arithmetical Properties of Combinatorial Matrices}, Ph.D. dissertation, Caltech, 1978. \url{https://thesis.caltech.edu/2899/}.
+\end{thebibliography}
+\input{sections/s31}
+\input{sections/s32}
+\input{sections/s33}
+\input{sections/s34}
+\end{document}

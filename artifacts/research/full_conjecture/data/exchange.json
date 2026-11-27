@@ -1,0 +1,146 @@
+{
+  "n": 20,
+  "originalRows": 12,
+  "firstThreeRowsHeldFixed": true,
+  "allSingleRowReplacementsExhausted": true,
+  "allSingleRowReplacementCounts": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+  ],
+  "minimalDeletedRowsGlobally": 2,
+  "checkedRemovalCounts": [
+    1,
+    2
+  ],
+  "minimalDeletedRowsWithFirstThreeFixed": 2,
+  "attempts": [
+    {
+      "removedIndices": [
+        3
+      ],
+      "candidateCount": 1,
+      "augmentingCliqueExists": false
+    },
+    {
+      "removedIndices": [
+        4
+      ],
+      "candidateCount": 1,
+      "augmentingCliqueExists": false
+    },
+    {
+      "removedIndices": [
+        5
+      ],
+      "candidateCount": 1,
+      "augmentingCliqueExists": false
+    },
+    {
+      "removedIndices": [
+        6
+      ],
+      "candidateCount": 1,
+      "augmentingCliqueExists": false
+    },
+    {
+      "removedIndices": [
+        7
+      ],
+      "candidateCount": 1,
+      "augmentingCliqueExists": false
+    },
+    {
+      "removedIndices": [
+        8
+      ],
+      "candidateCount": 1,
+      "augmentingCliqueExists": false
+    },
+    {
+      "removedIndices": [
+        9
+      ],
+      "candidateCount": 1,
+      "augmentingCliqueExists": false
+    },
+    {
+      "removedIndices": [
+        10
+      ],
+      "candidateCount": 1,
+      "augmentingCliqueExists": false
+    },
+    {
+      "removedIndices": [
+        11
+      ],
+      "candidateCount": 1,
+      "augmentingCliqueExists": false
+    },
+    {
+      "removedIndices": [
+        3,
+        4
+      ],
+      "candidateCount": 12,
+      "augmentingCliqueExists": true
+    }
+  ],
+  "removedIndices": [
+    3,
+    4
+  ],
+  "newMasks": [
+    429230,
+    635086,
+    713014
+  ],
+  "augmentedMasks": [
+    0,
+    1047552,
+    1016800,
+    64424,
+    219378,
+    610182,
+    316884,
+    408390,
+    800434,
+    677484,
+    429230,
+    635086,
+    713014
+  ],
+  "completedMasks": [
+    0,
+    1047552,
+    1016800,
+    64424,
+    219378,
+    610182,
+    316884,
+    408390,
+    800434,
+    677484,
+    429230,
+    635086,
+    713014,
+    838234,
+    235290,
+    353642,
+    858428,
+    483996,
+    110196,
+    667096
+  ],
+  "claim": "one witness repaired; no universal augmentation theorem"
+}

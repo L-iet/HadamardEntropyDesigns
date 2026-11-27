@@ -1,0 +1,40 @@
+{
+  "passed": true,
+  "strictQuarticTrapCertificates": [
+    {
+      "hadamardFactorOrder": 4,
+      "order": 20,
+      "quarticValue": "29/25",
+      "minimumSquaredEntry": "1/25",
+      "maximumPolarEigenvalue": "7/100",
+      "hessianLowerBoundPerFrobeniusNormSquared": "1/5"
+    },
+    {
+      "hadamardFactorOrder": 8,
+      "order": 40,
+      "quarticValue": "29/25",
+      "minimumSquaredEntry": "1/50",
+      "maximumPolarEigenvalue": "7/200",
+      "hessianLowerBoundPerFrobeniusNormSquared": "1/10"
+    },
+    {
+      "hadamardFactorOrder": 16,
+      "order": 80,
+      "quarticValue": "29/25",
+      "minimumSquaredEntry": "1/100",
+      "maximumPolarEigenvalue": "7/400",
+      "hessianLowerBoundPerFrobeniusNormSquared": "1/20"
+    }
+  ],
+  "uniformProof": "quartic_traps.tex; valid for every Hadamard factor",
+  "coordinateCurvatureTrap": {
+    "order": 28,
+    "allGivensCurvatures": [
+      "34/343",
+      "412/343"
+    ],
+    "jointDirectionCurvature": "-24/7"
+  },
+  "fullHadamardConjectureProved": false,
+  "noveltyClaim": false
+}

@@ -1,0 +1,270 @@
+[
+  {
+    "bases": [
+      2,
+      3
+    ],
+    "cutoff": 4194304,
+    "allowedValues": 171,
+    "algorithm": "exact distinct-subset bitset dynamic programming",
+    "rows": [
+      {
+        "maxTerms": 1,
+        "firstMissing": 5,
+        "firstMissingStatus": "exact",
+        "coveredThrough": 4,
+        "binaryRadixBits": 2,
+        "radix": 4,
+        "exponentSlopeNumerator": 2,
+        "exponentSlopeDenominator": 2,
+        "exponentSlope": 1.0
+      },
+      {
+        "maxTerms": 2,
+        "firstMissing": 23,
+        "firstMissingStatus": "exact",
+        "coveredThrough": 22,
+        "binaryRadixBits": 4,
+        "radix": 16,
+        "exponentSlopeNumerator": 4,
+        "exponentSlopeDenominator": 4,
+        "exponentSlope": 1.0
+      },
+      {
+        "maxTerms": 3,
+        "firstMissing": 431,
+        "firstMissingStatus": "exact",
+        "coveredThrough": 430,
+        "binaryRadixBits": 8,
+        "radix": 256,
+        "exponentSlopeNumerator": 6,
+        "exponentSlopeDenominator": 8,
+        "exponentSlope": 0.75
+      },
+      {
+        "maxTerms": 4,
+        "firstMissing": 18431,
+        "firstMissingStatus": "exact",
+        "coveredThrough": 18430,
+        "binaryRadixBits": 14,
+        "radix": 16384,
+        "exponentSlopeNumerator": 8,
+        "exponentSlopeDenominator": 14,
+        "exponentSlope": 0.5714285714285714
+      },
+      {
+        "maxTerms": 5,
+        "firstMissing": 3448733,
+        "firstMissingStatus": "exact",
+        "coveredThrough": 3448732,
+        "binaryRadixBits": 21,
+        "radix": 2097152,
+        "exponentSlopeNumerator": 10,
+        "exponentSlopeDenominator": 21,
+        "exponentSlope": 0.47619047619047616
+      },
+      {
+        "maxTerms": 6,
+        "firstMissing": null,
+        "firstMissingStatus": "larger-than-cutoff",
+        "coveredThrough": 4194304,
+        "binaryRadixBits": 22,
+        "radix": 4194304,
+        "exponentSlopeNumerator": 12,
+        "exponentSlopeDenominator": 22,
+        "exponentSlope": 0.5454545454545454
+      },
+      {
+        "maxTerms": 7,
+        "firstMissing": null,
+        "firstMissingStatus": "larger-than-cutoff",
+        "coveredThrough": 4194304,
+        "binaryRadixBits": 22,
+        "radix": 4194304,
+        "exponentSlopeNumerator": 14,
+        "exponentSlopeDenominator": 22,
+        "exponentSlope": 0.6363636363636364
+      }
+    ],
+    "seconds": 0.201
+  },
+  {
+    "bases": [
+      2,
+      10
+    ],
+    "cutoff": 4194304,
+    "allowedValues": 89,
+    "algorithm": "exact distinct-subset bitset dynamic programming",
+    "rows": [
+      {
+        "maxTerms": 1,
+        "firstMissing": 3,
+        "firstMissingStatus": "exact",
+        "coveredThrough": 2,
+        "binaryRadixBits": 1,
+        "radix": 2,
+        "exponentSlopeNumerator": 2,
+        "exponentSlopeDenominator": 1,
+        "exponentSlope": 2.0
+      },
+      {
+        "maxTerms": 2,
+        "firstMissing": 7,
+        "firstMissingStatus": "exact",
+        "coveredThrough": 6,
+        "binaryRadixBits": 2,
+        "radix": 4,
+        "exponentSlopeNumerator": 4,
+        "exponentSlopeDenominator": 2,
+        "exponentSlope": 2.0
+      },
+      {
+        "maxTerms": 3,
+        "firstMissing": 39,
+        "firstMissingStatus": "exact",
+        "coveredThrough": 38,
+        "binaryRadixBits": 5,
+        "radix": 32,
+        "exponentSlopeNumerator": 6,
+        "exponentSlopeDenominator": 5,
+        "exponentSlope": 1.2
+      },
+      {
+        "maxTerms": 4,
+        "firstMissing": 199,
+        "firstMissingStatus": "exact",
+        "coveredThrough": 198,
+        "binaryRadixBits": 7,
+        "radix": 128,
+        "exponentSlopeNumerator": 8,
+        "exponentSlopeDenominator": 7,
+        "exponentSlope": 1.1428571428571428
+      },
+      {
+        "maxTerms": 5,
+        "firstMissing": 1479,
+        "firstMissingStatus": "exact",
+        "coveredThrough": 1478,
+        "binaryRadixBits": 10,
+        "radix": 1024,
+        "exponentSlopeNumerator": 10,
+        "exponentSlopeDenominator": 10,
+        "exponentSlope": 1.0
+      },
+      {
+        "maxTerms": 6,
+        "firstMissing": 7879,
+        "firstMissingStatus": "exact",
+        "coveredThrough": 7878,
+        "binaryRadixBits": 12,
+        "radix": 4096,
+        "exponentSlopeNumerator": 12,
+        "exponentSlopeDenominator": 12,
+        "exponentSlope": 1.0
+      },
+      {
+        "maxTerms": 7,
+        "firstMissing": 375495,
+        "firstMissingStatus": "exact",
+        "coveredThrough": 375494,
+        "binaryRadixBits": 18,
+        "radix": 262144,
+        "exponentSlopeNumerator": 14,
+        "exponentSlopeDenominator": 18,
+        "exponentSlope": 0.7777777777777778
+      }
+    ],
+    "seconds": 0.113
+  },
+  {
+    "bases": [
+      2,
+      10,
+      26
+    ],
+    "cutoff": 4194304,
+    "allowedValues": 197,
+    "algorithm": "exact distinct-subset bitset dynamic programming",
+    "rows": [
+      {
+        "maxTerms": 1,
+        "firstMissing": 3,
+        "firstMissingStatus": "exact",
+        "coveredThrough": 2,
+        "binaryRadixBits": 1,
+        "radix": 2,
+        "exponentSlopeNumerator": 2,
+        "exponentSlopeDenominator": 1,
+        "exponentSlope": 2.0
+      },
+      {
+        "maxTerms": 2,
+        "firstMissing": 7,
+        "firstMissingStatus": "exact",
+        "coveredThrough": 6,
+        "binaryRadixBits": 2,
+        "radix": 4,
+        "exponentSlopeNumerator": 4,
+        "exponentSlopeDenominator": 2,
+        "exponentSlope": 2.0
+      },
+      {
+        "maxTerms": 3,
+        "firstMissing": 39,
+        "firstMissingStatus": "exact",
+        "coveredThrough": 38,
+        "binaryRadixBits": 5,
+        "radix": 32,
+        "exponentSlopeNumerator": 6,
+        "exponentSlopeDenominator": 5,
+        "exponentSlope": 1.2
+      },
+      {
+        "maxTerms": 4,
+        "firstMissing": 199,
+        "firstMissingStatus": "exact",
+        "coveredThrough": 198,
+        "binaryRadixBits": 7,
+        "radix": 128,
+        "exponentSlopeNumerator": 8,
+        "exponentSlopeDenominator": 7,
+        "exponentSlope": 1.1428571428571428
+      },
+      {
+        "maxTerms": 5,
+        "firstMissing": 11999,
+        "firstMissingStatus": "exact",
+        "coveredThrough": 11998,
+        "binaryRadixBits": 13,
+        "radix": 8192,
+        "exponentSlopeNumerator": 10,
+        "exponentSlopeDenominator": 13,
+        "exponentSlope": 0.7692307692307693
+      },
+      {
+        "maxTerms": 6,
+        "firstMissing": 637399,
+        "firstMissingStatus": "exact",
+        "coveredThrough": 637398,
+        "binaryRadixBits": 19,
+        "radix": 524288,
+        "exponentSlopeNumerator": 12,
+        "exponentSlopeDenominator": 19,
+        "exponentSlope": 0.631578947368421
+      },
+      {
+        "maxTerms": 7,
+        "firstMissing": null,
+        "firstMissingStatus": "larger-than-cutoff",
+        "coveredThrough": 4194304,
+        "binaryRadixBits": 22,
+        "radix": 4194304,
+        "exponentSlopeNumerator": 14,
+        "exponentSlopeDenominator": 22,
+        "exponentSlope": 0.6363636363636364
+      }
+    ],
+    "seconds": 0.282
+  }
+]

@@ -1,0 +1,28 @@
+PRIMARY INPUTS AND SCOPE
+
+de Launey and Gordon, A Comment on the Hadamard Conjecture (2001):
+https://doi.org/10.1006/jcta.2000.3155
+The Paley/asymptotic-block concatenation strategy is published background.
+The new arithmetic fragment quantifies its transfer using the project's
+sublogarithmic exponent bound, without claiming bibliographic priority.
+
+Montgomery and Vaughan, Multiplicative Number Theory I:
+the precise conditional arithmetic-progression estimate is identified
+in the arithmetic branch. Only power-of-two Dirichlet conductors are used.
+No recent GRH proof is assumed verified, copied, or added as a dependency.
+
+Baker, Harman and Pintz, The difference between consecutive primes, II:
+https://www.cs.umd.edu/~gasarch/BLOGPAPERS/BakerHarmanPintz.pdf
+Dudek's ordinary-RH prime-interval result is cited in prime_rates.tex.
+These provide an independent published-input stability route.
+The stronger unconditional rate instead uses the existing project
+multiplier theorem, with its exact source/formal theorem recorded.
+
+Finite polar geometry, generator incidence, quaternion four-square
+identities, and orthogonal block completion are established ingredients.
+The new fragments contain their needed calculations and no imported
+implementation. Earlier provenance files continue to apply.
+
+No exhaustive priority search, equivalence classification of the new
+structured witness, or assessment of a complete GRH proof was performed.
+No publications, external messages, unlicensed proof code or commits.

@@ -1,0 +1,12 @@
+{
+  "license": "Apache-2.0",
+  "author": "Joshua Mark",
+  "sourceFile": "lean/HadamardMultibase/GeneralIndependence.lean",
+  "sourceRawSHA256": "4168ed8e69bfcebc8c0134d62c7276cbb8415bec5919766d07fdd48d11d60ff6",
+  "sourceDeclaration": "HadamardMultibase.irrational_log_ratio_of_independent_pair",
+  "licenseRawSHA256": "b40930bbcf80744c86c46a12bc9da056641d722716c378f5659b9e555ef833e1",
+  "noticeRawSHA256": "b0f97ec41fd2f722e785ffea1c11f0b90337b4333b531feed9030e1c6cfc4c6d",
+  "generatedRawSHA256": "91c421559ca408f99d0f14c1ef47643975fb3be751a75b5a2f256fee5e9129e4",
+  "adaptation": "Same-author licensed generic proof copied with source attribution and original NOTICE/license preserved. New2,12 p-adic specialization is original. Original repository read only; no git commits.",
+  "scope": "Irrationality support only; infinite near-order sequence and principal results remain pending."
+}

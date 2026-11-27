@@ -1,0 +1,155 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,mathtools,hyperref}
+\setlength{\emergencystretch}{3em}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\newcommand{\E}{\mathbb E}
+\newcommand{\tr}{\operatorname{tr}}
+\title{Constructive fourth-phase rounding\\from explicit correlation certificates}
+\author{Joshua Mark\thanks{ORCID: \href{https://orcid.org/0009-0003-5905-2382}{0009-0003-5905-2382}. AI tools assisted with derivation, independent review, computation and exposition.}}
+\date{20 November 2026 --- research draft; priority not established}
+\begin{document}\maketitle
+\section{A constructive phase-rounding certificate}
+Let $F$ be a complex Hadamard matrix of order $n$, with entries of
+modulus one and $FF^*=nI$. Set $M=F^{\circ4}$ and
+\[
+ D_4(F)=n^4-\|MM^*\|_F^2.
+\]
+The nonnegative deficit $D_4$ is invariant under row/column phases
+and permutations. The previous pass proved an obstruction when
+$\rho_4=\|M\|_{\rm op}/n$ is bounded away from one. Here we prove a
+positive, dimension-dependent rounding statement.
+
+\begin{theorem}[Finite dephasing and exact quaternary rounding]
+\label{thm:phase-rounding}
+If $D_4(F)<n$, or $D_4(F)<2n$ when $n$ is even,
+row and column phases convert $F$ into
+a matrix whose entrywise nearest-fourth-root rounding is a
+quaternary Hadamard matrix of order $n$.
+Only $n^2$ explicit dephasings need be tested.
+In particular it suffices that
+\[
+ 1-\rho_4(F)^4<
+ \begin{cases}2/n^3,& n\text{ even},\\1/n^3,&n\text{ odd}.\end{cases}
+\]
+This sufficient deficit is of order $n^{-3}$ in the last inequality;
+no such estimate is established at every even order.
+\end{theorem}
+\begin{proof}
+For each pivot $(k,\ell)$ define the dephased matrix
+\[
+ F^{k\ell}_{ij}
+ =F_{ij}\overline{F_{kj}}\,
+       \overline{F_{i\ell}}F_{k\ell}.
+\]
+These are row and column phase operations, so each matrix is still
+Hadamard. Its entrywise fourth power is the corresponding four-cycle
+cross ratio of $M$. Direct expansion and summation give the exact identity
+\[
+ \sum_{k,\ell}\|(F^{k\ell})^{\circ4}-J_n\|_F^2=2D_4(F).
+\]
+Indeed the sum of the real parts of those cross ratios is
+$\sum_{i,k}|\sum_j M_{ij}\overline{M_{kj}}|^2=\|MM^*\|_F^2$.
+Some pivot therefore has fourth-power squared error at most
+$2D_4/n^2$.
+
+For a unit complex number $z$, let $q\in\{1,-1,i,-i\}$ be nearest.
+Write $z/q=e^{it}$ with $|t|\le\pi/4$. Then
+\[
+ |z-q|^2=4\sin^2(t/2)\le
+ \tfrac14\,4\sin^2(2t)=\tfrac14|z^4-1|^2.
+\]
+For example $\sin(2t)=4\sin(t/2)\cos(t/2)\cos t$, whose absolute
+ratio to $\sin(t/2)$ is at least two on this interval.
+Thus the rounded matrix $Q$ at that pivot has
+$\eta=\|F^{k\ell}-Q\|_F^2\le D_4/(2n^2)$.
+Write $e_i$ for the difference between row $i$ of $Q$ and the
+corresponding row of $F^{k\ell}$. For distinct rows, orthogonality
+and the fact that both matrices have row norm $\sqrt n$ give
+\[
+ |(QQ^*)_{ij}|
+ \le\sqrt n(\|e_i\|+\|e_j\|)
+ \le\sqrt{2n\eta}.
+\]
+Every off-diagonal Gram entry is a Gaussian integer. A nonzero one
+has modulus at least one, so $\eta<1/(2n)$ suffices to force zero.
+For even $n$, its real and imaginary integer parts have even sum:
+it is a sum of an even number of fourth roots. A nonzero such entry
+has modulus at least $\sqrt2$, so $\eta<1/n$ suffices.
+The diagonal Gram entries are already $n$. This proves exact
+quaternary orthogonality under the stated deficit bounds. Finally
+$\|MM^*\|_F^2\ge\|M\|_{\rm op}^4=n^4\rho_4^4$ proves the last claim.
+\end{proof}
+
+The proof is an algorithm: dephase at all pivots, choose one minimizing
+the fourth-power error, round, and check the Gaussian-integer Gram.
+Alternatively try every pivot and stop at an exact Gram certificate.
+No target Hadamard matrix is needed as an input. Computing all pivot
+errors naively uses $O(n^4)$ operations. Computing row inner products
+of $M$ first permits the error scores to be obtained in $O(n^3)$
+operations: the score at $(k,\ell)$ is
+\[
+ 2n^2-2\operatorname{Re}\sum_i
+   \overline{M_{i\ell}}M_{k\ell}
+   \sum_j M_{ij}\overline{M_{kj}}.
+\]
+Rounding and checking one selected pivot use $O(n^3)$ additional
+operations. Arithmetic complexity here counts exact scalar operations;
+it is not a bit-complexity bound for arbitrary real inputs.
+
+\begin{corollary}[Separation in the absence of a quaternary matrix]
+If $\mathrm{BH}(n,4)$ does not exist, every complex Hadamard matrix
+of that order satisfies
+\[
+ D_4(F)\ge
+ \begin{cases}2n,&n\text{ even},\\n,&n\text{ odd},\end{cases}
+ \qquad
+ 1-\rho_4(F)^4\ge
+ \begin{cases}2/n^3,&n\text{ even},\\1/n^3,&n\text{ odd}.\end{cases}
+\]
+\end{corollary}
+This is a contrapositive separation theorem, not a construction of a
+point below the threshold. At odd $n>1$ quaternary existence is
+impossible: a vanishing sum of an odd number of fourth roots has
+unequal parity in its real and imaginary counts. At even $n$,
+an actual threshold-crossing construction remains the central task.
+The classical fourth-cycle invariants and Butson realification are
+background; see Tadej--\.Zyczkowski,
+\url{https://arxiv.org/abs/quant-ph/0512154}.
+No bibliographic novelty claim is made for the rounding estimate.
+
+\subsection{A certificate that does not assume exact orthogonality}
+The same algorithm also accepts approximate inputs.
+Let $F$ now be any $n$-square unit-modulus matrix, define $D_4$ as
+before, and put $\beta=\max_{i\ne j}|(FF^*)_{ij}|$.
+Define $\gamma_n=\sqrt2$ for even $n$ and $\gamma_n=1$ otherwise.
+\begin{proposition}[Two-objective certificate]
+If
+\[
+ \beta+\sqrt{D_4(F)/n}<\gamma_n,
+\]
+one of the pivot dephasings rounds to an exact $\mathrm{BH}(n,4)$.
+\end{proposition}
+\begin{proof}
+The averaging identity and nearest-root estimate only use unit modulus.
+Dephasing preserves the magnitudes of the original Gram entries.
+For the selected pivot and its rounded $Q$, the same two-row
+estimate, now retaining the original correlation, gives
+\[
+ |(QQ^*)_{ij}|\le\beta+\sqrt{2n\eta}
+ \le\beta+\sqrt{D_4/n}<\gamma_n.
+\]
+Gaussian-integrality and parity again force zero.
+\end{proof}
+Thus a continuous search could minimize correlation and phase dispersion
+jointly, then obtain a discrete exact certificate on crossing this
+explicit boundary. This is not a convergence theorem. In particular a
+real sign matrix already has $D_4=0$, but its even integer correlations
+must already vanish to satisfy this sufficient condition. The certificate
+does not turn arbitrary sign-matrix local minima into Hadamard matrices.
+
+\end{document}

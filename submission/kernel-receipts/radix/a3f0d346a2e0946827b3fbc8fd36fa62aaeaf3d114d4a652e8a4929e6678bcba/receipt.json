@@ -1,0 +1,32 @@
+{
+  "key": "a3f0d346a2e0946827b3fbc8fd36fa62aaeaf3d114d4a652e8a4929e6678bcba",
+  "metadata": {
+    "group": "radix",
+    "configPath": "comparator-radix.json",
+    "configSHA256": "fb4e86cc4dc05534a67d6d631c8536248535fc338cf71f3eb27045e91d4ab28b",
+    "theoremNames": [
+      "EntropyDesigns.finite_radix_hadamard_bound",
+      "HadamardMultibase.autocorrelation._proof_2"
+    ],
+    "definitionNames": [],
+    "exports": {
+      "challenge": "0c2c918692939c04d5382e1f82b2779d6b58903a00712941d212fe4d516af666",
+      "solution": "d096982828b51daa41f8a75b2c707665e2aee93b96e3cafef1a7148e2d4fc859"
+    },
+    "environment": {
+      "toolchain": "leanprover/lean4:v4.35.0",
+      "toolchainSHA256": "ca5f1f601d34c49079e38d7e7041eb0f2a9c227fbc1df0f404820069a052330c",
+      "binaries": {
+        "lean": "ec7a472d1c12a09b0c0c718f7427c2be527b3f5f07810fdbe076c2507c7a91ea",
+        "lake": "023feb24d3e7244fe671dba79f1cd1affc6c7a7cacfe497bf3675febb506578c",
+        "leanexport": "bda24bb3fafaf299ba472f944942d6293294b76559fafc9f166badd7c0f981b3",
+        "leanchecker": "9ef6baeb28d5e28897d5ed6dddd60ff81e511d97374013ece435dff38e9e0137",
+        "nanoda_bin": "de57d9dd7f647eb57398bc3dab4dcaa1d64f961f3f49964d5455fbddc73b35a8"
+      }
+    }
+  },
+  "capturedAtUTC": "2026-11-24T19:19:53.415152+00:00",
+  "reportSHA256": "e4e262cfc3ef5343af03204b77d97e2458d37578952f990e9f2effb39b989620",
+  "logSHA256": "125a3b9b2884fddc9a2bb2354fe3ca1adcf8209d4f8115fb28898ec7d5b972e4",
+  "scope": "Immutable original Comparator exit0 with explicit Lean/NanoDa acceptance of the exact exports/config/checker environment. Local diagnostic, not registry verification."
+}

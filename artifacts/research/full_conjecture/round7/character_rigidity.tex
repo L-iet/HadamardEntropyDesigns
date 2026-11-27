@@ -1,0 +1,108 @@
+\section{An additive-cover obstruction to small binary-seed constructions}
+\label{sec:character-rigidity}
+This section concerns a specific construction class, not arbitrary
+pairwise-independent laws. The observed bits are fixed linear
+characters of a binary seed; the seed distribution itself is allowed
+to be completely nonuniform. This distinction matters because
+rewiring the observed characters can escape a code trap, whereas
+changing only the seed weights may be impossible.
+
+Let $G=\mathbb F_2^r$, $L=2^r$, and let
+$B\subset G\setminus\{0\}$ be $d$ distinct masks spanning $G$.
+For a seed law $p$ write
+\[
+ \chi_b(z)=(-1)^{b\cdot z},\qquad
+ \widehat p(c)=\sum_{z\in G}p_z\chi_c(z),\qquad
+ A=\{0\}\cup B.
+\]
+The observed sign vector is $X(z)=(\chi_b(z))_{b\in B}$.
+Spanning makes this map injective, so its collision probability equals
+$\sum_zp_z^2$.
+
+\begin{theorem}[Complete rigidity from additive coverage]
+\label{thm:character-cover}
+The observed bits are unbiased and pairwise independent if and only if
+\[
+ \widehat p(c)=0\quad\text{for every }c\in(A+A)\setminus\{0\}.
+\]
+Consequently, if $A+A=G$, the only feasible seed law is uniform.
+In particular this holds whenever $|A|>L/2$.
+If $c\notin A+A$, the family
+\[
+ p_t(z)=\frac{1+t\chi_c(z)}L,\qquad -1\le t\le1,
+\]
+is feasible and has collision $(1+t^2)/L$. At $t=\pm1$ it is uniform
+on an affine hyperplane of size $L/2$ and doubles the collision.
+Thus missing additive directions give explicit compression steps,
+whereas full coverage forbids every seed-reweighting step.
+\end{theorem}
+\begin{proof}
+The coordinate means are $\widehat p(b)$, and distinct pair
+correlations are $\widehat p(b+b')$. These masks, together with zero,
+are exactly $A+A$. If they cover $G$, Fourier inversion forces
+$p_z=1/L$. If $|A|>L/2$, then for each $c\in G$ the sets
+$A$ and $A+c$ intersect, implying $c\in A+A$.
+For a missing $c$, character orthogonality gives the displayed law
+normalization, nonnegativity, vanishing required Fourier coefficients,
+and collision. Moreover $c\ne0$, so its two level sets are affine
+hyperplanes of size $L/2$. No selected mask is zero or identified
+with another after restriction: either failure would put $c$ in
+$A+A$. Thus the compression retains all observed moments.
+\end{proof}
+
+The character construction and finite-group Fourier identities are
+classical; see Luby--Wigderson, \emph{Pairwise Independence and
+Derandomization}, Sections 1.1--1.2,
+\url{https://www.math.ias.edu/~avi/PUBLICATIONS/LubyWig2005.pdf}.
+The proof above is included to make the precise construction-class
+restriction explicit; no priority claim is made.
+
+\begin{corollary}[The smallest binary seed forces a power-of-two law]
+\label{cor:minimum-seed}
+If $r=\lceil\log_2(d+1)\rceil$, any feasible law with these linear
+observables is uniform on $L=2^r$ distinct atoms, even when arbitrary
+seed weights are allowed.
+For a non-power-of-two multiple of four $N\ge12$, take $d=N-4$.
+Then this construction class has collision deficit
+\[
+ \frac1N-C=\frac1N-\frac1L>\frac2{N^2},
+\]
+far larger than the sufficient extraction window $1/(1024N^4)$.
+\end{corollary}
+\begin{proof}
+Minimality of $r$ implies $d+1>L/2$, so apply the theorem.
+For the stated $N$, $L\ge N+4$ and $L<2N$, since both $L,N$ are
+multiples of four and $N-3$ lies strictly between the preceding and
+current powers of two. Hence
+$(L-N)/(NL)\ge4/(NL)>2/N^2$.
+\end{proof}
+For example $N=12,d=8$ forces sixteen equally weighted atoms in the
+smallest binary seed, with collision $1/16$ instead of $1/12$.
+This happens even though an order-twelve Hadamard matrix exists.
+The obstruction belongs to the linear-observable model; it is not
+an obstruction to Hadamard existence.
+
+\begin{proposition}[Approximate moment version]\label{prop:approx-character}
+Suppose $A+A=G$ and every observed mean and pair correlation has
+absolute value at most $\varepsilon$. Then
+\[
+ C(p)=\frac1L\left(1+\sum_{c\ne0}\widehat p(c)^2\right)
+ \le\frac1L+\frac{L-1}{L}\varepsilon^2.
+\]
+In particular, if $C(p)\ge1/N-\eta$ with $N<L$, necessarily
+\[
+ \varepsilon^2\ge
+ \frac{L/N-1-L\eta}{L-1}
+\]
+whenever the right side is positive.
+\end{proposition}
+\begin{proof}
+Coverage makes each nonzero Fourier coefficient an observed mean or
+pair correlation. Parseval identity gives the formula and the bound.
+Rearranging gives the last assertion.
+\end{proof}
+Thus allowing very small moment errors does not silently bypass the
+power-of-two barrier in this model. A broader distribution strategy
+must change the observables, use a larger seed with nontrivial Fourier
+freedom, or employ genuinely nonlinear constructions. The theorem
+does not rule out any of those alternatives.

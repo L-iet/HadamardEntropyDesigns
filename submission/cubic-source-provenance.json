@@ -1,0 +1,1204 @@
+{
+  "license": "Apache-2.0",
+  "author": "Joshua Mark",
+  "ORCID": "https://orcid.org/0009-0003-5905-2382",
+  "mathematicalSource": "Paley, On Orthogonal Matrices (1933), https://doi.org/10.1002/sapm1933121311; explicit formula evaluated independently. No external implementation reused.",
+  "privatePilot": {
+    "status": "passed",
+    "scope": "Private staged sharp cubic benchmark pilot only; not owned snapshot or registry verification",
+    "leanKernelAccepted": true,
+    "nanodaAccepted": true,
+    "theoremNames": [
+      "EntropyDesigns.sharp_cubic_seed_benchmarks"
+    ],
+    "definitionNames": [],
+    "sourceHashes": {
+      "CubicPilotChallenge.lean": "3f2c7cb45edc5443e8e67bdba8c1e6e088ebd06b6ceb0f4e231f6ad5c04c5dfc",
+      "CubicPilotSolution.lean": "73306d7669bc9238f093662bef09d21b72dcfebda5f4f2e626c6637ce5750809",
+      "comparator.json": "68e0cd57fa2b06178376cbbd80d8c84013d93d6f050495135770e7ccf6d31343"
+    },
+    "exports": {
+      "challenge": "0fdbf97a5d324c01ab6c157569592071727a17054c7325249a78603dba461614",
+      "solution": "ef6a36eb98431d4b9de8d0a172572047cb8ddd0efaaa76ff6199667efbc6f2ae"
+    }
+  },
+  "privateCompileReceipts": {
+    "BenchmarkData": {
+      "module": "BenchmarkData",
+      "actualExit": 0,
+      "seconds": 10.08,
+      "sourceSHA256": "d27be382264b9b3d2ca81c64604c7794ae0fcf71d3cb12f295003758d7e80626",
+      "oleanSHA256": "ebac211430ad1d81717e038fcd388b630d1be763d916c05fa315cbfe290f9336"
+    },
+    "Row12_0": {
+      "module": "Row12_0",
+      "actualExit": 0,
+      "seconds": 13.83,
+      "sourceSHA256": "ef760d64e4452d7905e6890cf3d051b14b6cdd5c95c7ee9d917608df79a46196",
+      "oleanSHA256": "0bd42310f04da575fe04483583cbaf8c0e8c94de3c272a555d7f444df8852852"
+    },
+    "Row12_1": {
+      "module": "Row12_1",
+      "actualExit": 0,
+      "seconds": 15.38,
+      "sourceSHA256": "6edf76d7b550d1423520df625db91928588199745901ce63e5b1b34fb0cc82da",
+      "oleanSHA256": "3c93dd2c8c76839fceeb23e24f3a8b1900fa462b43e602b9f2011ec0b3201a4f"
+    },
+    "Row12_2": {
+      "module": "Row12_2",
+      "actualExit": 0,
+      "seconds": 15.64,
+      "sourceSHA256": "1c29d4fa50a59095b1934448f85f4737d4ab751f1b2933bb05061d9df15255de",
+      "oleanSHA256": "60d91bfbeaf790dfd4241309f3ce5633b25989cfcee5126c558add642d262cae"
+    },
+    "Row12_3": {
+      "module": "Row12_3",
+      "actualExit": 0,
+      "seconds": 16.55,
+      "sourceSHA256": "c5cc5aade4ef313709561ecbe303249683c25875386329e6cf276a2a5641c16c",
+      "oleanSHA256": "bee9ae5c7e44443c57de315c493c2a228e4fa71efdaece63293e5c81871f4d83"
+    },
+    "Row12_4": {
+      "module": "Row12_4",
+      "actualExit": 0,
+      "seconds": 15.6,
+      "sourceSHA256": "c81befc1c6f67f3c6cc87d82ddc1801eda11b413a1a1b5ff5880f9d56a051770",
+      "oleanSHA256": "517168a66f79e6cbf4370f4f3f588be094e4752b97a301f6f349a9ff372ddffe"
+    },
+    "Row12_5": {
+      "module": "Row12_5",
+      "actualExit": 0,
+      "seconds": 15.63,
+      "sourceSHA256": "50c7ca046cd7576693f2bb62bf23ca345640a7f6d4926394bbff362cd908f140",
+      "oleanSHA256": "87571a63803b50691afb1c8fe3338043005fee59fc3af9656369f60087532e8c"
+    },
+    "Row12_6": {
+      "module": "Row12_6",
+      "actualExit": 0,
+      "seconds": 15.92,
+      "sourceSHA256": "1e4b14ae9e9cd028871d6a18d6c324854fd8f27c5f30fb5a67e6a909884ffe75",
+      "oleanSHA256": "31578de7e74cb18af622049a78632e7aec9ea2b028ba61be762705b94f30e872"
+    },
+    "Row12_7": {
+      "module": "Row12_7",
+      "actualExit": 0,
+      "seconds": 16.08,
+      "sourceSHA256": "fbd47bd57d440ed1381efecb378deb9588b0f7d554fed5c85dbbb1c800c25dd5",
+      "oleanSHA256": "6312cbd2dd9fd1013d954f850276dda71e6de3328d0db3caeede99d482ceee36"
+    },
+    "Row12_8": {
+      "module": "Row12_8",
+      "actualExit": 0,
+      "seconds": 15.62,
+      "sourceSHA256": "4e2cb1891edae7aa314089fa75cc607d27d9a84e1b222089548a1c3d11833fee",
+      "oleanSHA256": "ebeec970ff88451554579fd605b5b15e1a6e5107d64c2d81327333b72b30c3ad"
+    },
+    "Row12_9": {
+      "module": "Row12_9",
+      "actualExit": 0,
+      "seconds": 15.94,
+      "sourceSHA256": "72dd9d6a26c9659e7649556fe66c59589f9ae664ba58643f12251c97568837a1",
+      "oleanSHA256": "4c51b810d851cb9b175f9f2a31a9071b309ac5d101355bf93732b97ab3b979d1"
+    },
+    "Row12_10": {
+      "module": "Row12_10",
+      "actualExit": 0,
+      "seconds": 15.88,
+      "sourceSHA256": "b133306f50dfdab2c999abb314350f300f31a7944ed9d421fe72704063692a2c",
+      "oleanSHA256": "7596d4bf565e8c9345c535803dc848a0b690945e7d9273213a274847bc4e35d5"
+    },
+    "Row12_11": {
+      "module": "Row12_11",
+      "actualExit": 0,
+      "seconds": 16.16,
+      "sourceSHA256": "fb9395c81191dfc556c6662bea62a4c4e0d5ec662334c1a04534047933e93ee3",
+      "oleanSHA256": "36749359ad01fb9f76e174c35794127a88d5cf57f77aeb3960c2145ff09057d7"
+    },
+    "Row20_0": {
+      "module": "Row20_0",
+      "actualExit": 0,
+      "seconds": 23.84,
+      "sourceSHA256": "3f87d813b731ea4866ba4e7097919dcb5193d69550c0bba91a4f40ce2c38a643",
+      "oleanSHA256": "1a25a11964bd215c4d3c9551a3f2f5963b6ec63de5cd7a32d11aa63fa2c216fa"
+    },
+    "Row20_1": {
+      "module": "Row20_1",
+      "actualExit": 0,
+      "seconds": 29.38,
+      "sourceSHA256": "aef28b1d65fef6c512797198e3071cd3608dc3433cb1bfb7963ab68081d7d2f7",
+      "oleanSHA256": "e32d3b93a04dc0c2bd4b69ababb597b8cd50972c4ea41241cf6b8c9f4be529dc"
+    },
+    "Row20_2": {
+      "module": "Row20_2",
+      "actualExit": 0,
+      "seconds": 29.9,
+      "sourceSHA256": "6deddff3a5b2591e598f3fdac22371206b61bd3444bd0fa4d87be8f99fcdae60",
+      "oleanSHA256": "33780912a7591561190bae5e3ed1847e88ac440b6789330999b44154c3373afd"
+    },
+    "Row20_3": {
+      "module": "Row20_3",
+      "actualExit": 0,
+      "seconds": 30.18,
+      "sourceSHA256": "c7290513ba23820ab71d28bab06239053ba34d492a9452d404a7f3875ee436c8",
+      "oleanSHA256": "8bad3cab4033d36aaf09fcba3070ed694985022a70f0cd6768e3482ec0e0f65d"
+    },
+    "Row20_4": {
+      "module": "Row20_4",
+      "actualExit": 0,
+      "seconds": 28.97,
+      "sourceSHA256": "c4fd84faad6e143434c5015c74145cced2c483f215a4fab82ff0ed95eea94edc",
+      "oleanSHA256": "8ab1d6ddb52eb010134fec1993426e6dad1807118c990fba9abf9c3660df2b7d"
+    },
+    "Row20_5": {
+      "module": "Row20_5",
+      "actualExit": 0,
+      "seconds": 28.73,
+      "sourceSHA256": "efe81872308fd473afc54c362fb4d456d61c35cb627b4211d1a9f2fc1f4295df",
+      "oleanSHA256": "89b85d1935bd114fdf0b14a8222d70057a38da225ad051d760875bcfa2a7d236"
+    },
+    "Row20_6": {
+      "module": "Row20_6",
+      "actualExit": 0,
+      "seconds": 30.58,
+      "sourceSHA256": "b48c012ae376f433e2cfa76cf9f052c703e426bbc2ffdebe292c26e15c218bd1",
+      "oleanSHA256": "c94a5dbd759bb3706a794feb36e382c3e751c7787c1526332fb203a4d533ed71"
+    },
+    "Row20_7": {
+      "module": "Row20_7",
+      "actualExit": 0,
+      "seconds": 28.81,
+      "sourceSHA256": "0dc76ff1c0c193b0b6011d57659e1157ead4bcf2dd512861c0042a0ac084b642",
+      "oleanSHA256": "53d8531dc479dbe7aec8b5a66b657be8efb7410087d7761065fb1431005ff0f4"
+    },
+    "Row20_8": {
+      "module": "Row20_8",
+      "actualExit": 0,
+      "seconds": 28.87,
+      "sourceSHA256": "40b6669c3419ef33bfb9c69c3184d0cb216f41ea90b3e89db19fed1d63df6e1f",
+      "oleanSHA256": "c35249855434168c4a712be11eddafe68d7b194581d32736ac0b214010331779"
+    },
+    "Row20_9": {
+      "module": "Row20_9",
+      "actualExit": 0,
+      "seconds": 29.24,
+      "sourceSHA256": "92ec5fa877545ac254a917094999f153156265b50fae47b69cb0916a9eaf8765",
+      "oleanSHA256": "2c0a006fee717d84d44133824ebc7974f6b7f367d780434110ef6fbb2a9c13a7"
+    },
+    "Row20_10": {
+      "module": "Row20_10",
+      "actualExit": 0,
+      "seconds": 29.2,
+      "sourceSHA256": "7360fa391a173df93bb5b4133578da8989f53e95960545b41cc5e4285a94fe4d",
+      "oleanSHA256": "a76e0c1d6a33e024722500de900fe39298c8ed0cf620252447c4f4e6a5420751"
+    },
+    "Row20_11": {
+      "module": "Row20_11",
+      "actualExit": 0,
+      "seconds": 29.5,
+      "sourceSHA256": "f6424c48a4ae8cb1eb012aaa4fc3e66105e5e193e277cbf6c02df809c22f5361",
+      "oleanSHA256": "96c931e4e3816626ea22ec67d53215c307151e4fb88049604d98924f02596164"
+    },
+    "Row20_12": {
+      "module": "Row20_12",
+      "actualExit": 0,
+      "seconds": 29.64,
+      "sourceSHA256": "8fefe4bca6290d6708e823d1534df076f6532d5dbf5f5e7111bc7930de3306e5",
+      "oleanSHA256": "b230a3fa8010a130fd0b24ceee2eb0164e14357c04fe8ce9060ccae6a37223e4"
+    },
+    "Row20_13": {
+      "module": "Row20_13",
+      "actualExit": 0,
+      "seconds": 29.28,
+      "sourceSHA256": "90f5647e1ace9d5b5d6174decf1c97bbe37d2ff80397aa594414146391108861",
+      "oleanSHA256": "b03c64989d76844aa1839c3d880ee36a955ca86431c05e577217c3c61e4f4ae0"
+    },
+    "Row20_14": {
+      "module": "Row20_14",
+      "actualExit": 0,
+      "seconds": 28.75,
+      "sourceSHA256": "56a749c8ff76cd1416676d82ab708a151bd31a3ce98564aaf065f5a12daa7e97",
+      "oleanSHA256": "83877d641dfe6a73837cd8f9186175440be6226304a05fcf4caac6547d024da6"
+    },
+    "Row20_15": {
+      "module": "Row20_15",
+      "actualExit": 0,
+      "seconds": 29.31,
+      "sourceSHA256": "3d1246716b8118eb550ac71571fb868207490cdee52f24197496680a49c087be",
+      "oleanSHA256": "d7076234086723ee200d6ebf393d9f4b0224935642c07fec9e632fba20c533f2"
+    },
+    "Row20_16": {
+      "module": "Row20_16",
+      "actualExit": 0,
+      "seconds": 31.46,
+      "sourceSHA256": "3145235239b17bc7dfbb5babc8a7684bac8fd2d061fb30db54103a78d87a999b",
+      "oleanSHA256": "67d25a5cb88b8002f774548eb6fb5ee8d9d0da52efb9113b37bc9a2e08d0ad07"
+    },
+    "Row20_17": {
+      "module": "Row20_17",
+      "actualExit": 0,
+      "seconds": 30.29,
+      "sourceSHA256": "7a3f40655c7894703c61845cd76467121010fa9de3ed7492a96f2e5f64eaaade",
+      "oleanSHA256": "91fa766aae2eaa0325fd8b7cd790ac3737c52c30fdf2f5728cf9b3acb99e4c64"
+    },
+    "Row20_18": {
+      "module": "Row20_18",
+      "actualExit": 0,
+      "seconds": 28.76,
+      "sourceSHA256": "f8783d82f57b4503809333313fbf9d411602387b1113fdf8008402862c5b9d7f",
+      "oleanSHA256": "6af461d7b929a8b86b9d00e7b69ff27454e12081509608808c4ca863ec132138"
+    },
+    "Row20_19": {
+      "module": "Row20_19",
+      "actualExit": 0,
+      "seconds": 29.66,
+      "sourceSHA256": "1b38754c785013bf528d4017fbe8eca5df8fd5e418ec252f5d999e0b8e473455",
+      "oleanSHA256": "f5105e11fe67e477efbdf66ee26ba90a8b01ede9bfe36ddcc51566fa2dcd8696"
+    },
+    "BenchmarkMatrices": {
+      "module": "BenchmarkMatrices",
+      "actualExit": 0,
+      "seconds": 10.4,
+      "sourceSHA256": "ec5f0f761200ea2e1323d550b1e0307f23676424b362816024834ccbf54012fb",
+      "oleanSHA256": "5cb4a521a7cc62eaf71cfcd7a48af7434389ee874ef6f5bdedfe237a724dfa3b"
+    },
+    "BooleanAffineCharacterDraft": {
+      "module": "BooleanAffineCharacterDraft",
+      "actualExit": 0,
+      "sourceSHA256": "bf762a65e45db95cb80bd97e464f2d39ebb62464161a1bc91a3f44c3b2a1c6b3",
+      "oleanSHA256": "2add327536df4a0ea6e981a0203e0c13a5cca1c7c8e71d7e7a8ed2ed6a66951e",
+      "evidence": "Guarded sequential compiler run42156 completed with actual exit0."
+    },
+    "BooleanPolynomialCertificateDraft": {
+      "module": "BooleanPolynomialCertificateDraft",
+      "actualExit": 0,
+      "sourceSHA256": "05cf06f5dd1ad7ef9dc6dcaa9df5431adb9b777adf6aed172eaee2aed6376bd8",
+      "oleanSHA256": "be17f2cc39271bf415273571aac954f24b3db27fa2d845f710d95c9345960281",
+      "evidence": "Guarded sequential compiler run42156 completed with actual exit0."
+    },
+    "BenchmarkPolynomials": {
+      "module": "BenchmarkPolynomials",
+      "actualExit": 0,
+      "sourceSHA256": "6429a240c85a28aa13856f279c4d937a51b6f01a9c543166bc67014d79bdb864",
+      "oleanSHA256": "26855be9d457a47cd763367a8dbc74e7a87a452574e284602f7a2ed941f5ea32",
+      "evidence": "Guarded sequential compiler run42156 completed with actual exit0."
+    },
+    "Poly12_0": {
+      "module": "Poly12_0",
+      "actualExit": 0,
+      "seconds": 10.6,
+      "sourceSHA256": "1cd01d1c294d7b70b7ac0a3d26f5c3b49cfe559caa00af603dad2e129e463d08",
+      "oleanSHA256": "de2e3325728674a59518640929c804f2d6a916ee2b0d0dfc86d85e2fd237ecf0"
+    },
+    "Poly12_1": {
+      "module": "Poly12_1",
+      "actualExit": 0,
+      "seconds": 10.66,
+      "sourceSHA256": "6bf34c01da37e17cba9a1562d158bd0611cc9000e610b63ae00d00f6b614bec8",
+      "oleanSHA256": "229de02c0749118709c22d2185873e71f1562443484dcd414f17f072968ade80"
+    },
+    "Poly12_2": {
+      "module": "Poly12_2",
+      "actualExit": 0,
+      "seconds": 10.72,
+      "sourceSHA256": "9792a8bbcce7e40334021c92adf52be7000d1719a360bdc349017903787a4909",
+      "oleanSHA256": "5c0f5f40142e9861e8e052ebd375177ad05434dcc0b35c4b579ffb822c450ace"
+    },
+    "Poly12_3": {
+      "module": "Poly12_3",
+      "actualExit": 0,
+      "seconds": 10.69,
+      "sourceSHA256": "a0fcaa2e4238c299b58c6b7ecc09e0cc6f12aaafdfd233f509f6e18501e7e6f5",
+      "oleanSHA256": "836607c4034ae5d1873f3ea8545d4c972711c5941588bed08c2a34c19b06846a"
+    },
+    "Poly12_4": {
+      "module": "Poly12_4",
+      "actualExit": 0,
+      "seconds": 10.39,
+      "sourceSHA256": "aab592994e87d3ca5a1f0499f3ed65b0436a09c2d769d8637e5c34b5bb5b6f16",
+      "oleanSHA256": "004019556cf1115c7ab243da47b94e74ba790eed74b114d7b21ebfacfd8e8ef4"
+    },
+    "Poly12_5": {
+      "module": "Poly12_5",
+      "actualExit": 0,
+      "seconds": 10.41,
+      "sourceSHA256": "2324f9e392012f7b4b7f87d802aa597f0798dd1409045c789ca0d9818df5c69f",
+      "oleanSHA256": "dca355a50a2a7342d438d436fc7f244574a0532914404246cef44286cfd3c68d"
+    },
+    "Poly12_6": {
+      "module": "Poly12_6",
+      "actualExit": 0,
+      "seconds": 10.74,
+      "sourceSHA256": "34888308fee0d63f6edd7b9a3ab3dabe8eae5e2b2b1461d616d10b4dc635bd61",
+      "oleanSHA256": "2ad2041d5e801bc85532327f9f76799e07c86e53003c1cc904c1e7c27413ad39"
+    },
+    "Poly12_7": {
+      "module": "Poly12_7",
+      "actualExit": 0,
+      "seconds": 10.32,
+      "sourceSHA256": "1dd678c5f09d8ad387a37f4e57d0a49b4c342b2627d3c045d0f27af8ce8737dd",
+      "oleanSHA256": "f39c2a3c702af965c7adf6fa072b767bd61ec2eb4e838d335887ea3ae1b33c98"
+    },
+    "Poly12_8": {
+      "module": "Poly12_8",
+      "actualExit": 0,
+      "seconds": 10.18,
+      "sourceSHA256": "22309e862f81e534d632166611788e96bea84712e13a90cc3b1d6dafbba8713a",
+      "oleanSHA256": "8d79779fa43d923bcff21b06d4d9704e967c0af92bfa8747bc25f68b224115f7"
+    },
+    "Poly12_9": {
+      "module": "Poly12_9",
+      "actualExit": 0,
+      "seconds": 10.5,
+      "sourceSHA256": "8c7977761c459355cf8776014e0461d596391dbb9d3ba1dccebe5a3aabde87d2",
+      "oleanSHA256": "47cb878a7cf8aaf44b4baa2004444d47e908c65336a62437f484d1d1f6672f1b"
+    },
+    "Poly12_10": {
+      "module": "Poly12_10",
+      "actualExit": 0,
+      "seconds": 10.41,
+      "sourceSHA256": "dd39a093ae30700060592043d025a507b87016fda20d7a90a5774cc5ad8756aa",
+      "oleanSHA256": "3dee7697223e5d41faa8cada6b357679a9a940961dbca5594c04a5850a4100e6"
+    },
+    "Poly20_0": {
+      "module": "Poly20_0",
+      "actualExit": 0,
+      "seconds": 10.31,
+      "sourceSHA256": "16f70979197b2a7d491297fddd7d346d1c005c7e49049e701798ee74692dd16a",
+      "oleanSHA256": "67ceeee98b241a8040985d6625c9311ea8e4cb93d3eef41c86f4c92f3283ae96"
+    },
+    "Poly20_1": {
+      "module": "Poly20_1",
+      "actualExit": 0,
+      "seconds": 10.87,
+      "sourceSHA256": "86e960fe17a01edc3a5f53540af3bb9a6b11ba568ea6f04c9d10dc9a73a7a2dc",
+      "oleanSHA256": "51035eff185267ee43a5b25a338244e5096f3c86931108dc1f794a489f674637"
+    },
+    "Poly20_2": {
+      "module": "Poly20_2",
+      "actualExit": 0,
+      "seconds": 10.51,
+      "sourceSHA256": "3e5200a766172d456930f347419439940763193fccfa8c9e7b264c6cf465b58d",
+      "oleanSHA256": "59b41c807eaf7a3edfa078f777add0ec83338930ef8612084b27a614b489961b"
+    },
+    "Poly20_3": {
+      "module": "Poly20_3",
+      "actualExit": 0,
+      "seconds": 10.05,
+      "sourceSHA256": "17184346d01f709531eef90568b0dd2c6fda9f26ded2cc210939f6a45144c184",
+      "oleanSHA256": "4f4c6246337c0ae6af3922bc005f4fc19a0acec52c22d8f65a30e8bfd8955e6a"
+    },
+    "Poly20_4": {
+      "module": "Poly20_4",
+      "actualExit": 0,
+      "seconds": 10.65,
+      "sourceSHA256": "58468daa60991682db8669c3cc4ee23e2ca09ffbeb3cb8bf8b376f3a49da1e71",
+      "oleanSHA256": "385f2627e6d1f7fc6b39ec5c3b16b56768fff3eaf9cbb5c58af91f2730158a74"
+    },
+    "Poly20_5": {
+      "module": "Poly20_5",
+      "actualExit": 0,
+      "seconds": 11.33,
+      "sourceSHA256": "3d327a8efd4be6537f154c6a724e0263c2822076075a71990ac4c2e28cca25a3",
+      "oleanSHA256": "f0676fe44aa1c6d1ed7ba9c6c50076c857237cb215ad67111c8552bed14d27f9"
+    },
+    "Poly20_6": {
+      "module": "Poly20_6",
+      "actualExit": 0,
+      "seconds": 10.73,
+      "sourceSHA256": "17f8a9c600a44ae9d3f0ac73019890299c928d5a3b84056dc2a95015f05e7824",
+      "oleanSHA256": "e38539dcb5e1f39140a5f6204b50558e67f788528b74bdf727b4496107992cd6"
+    },
+    "Poly20_7": {
+      "module": "Poly20_7",
+      "actualExit": 0,
+      "seconds": 10.83,
+      "sourceSHA256": "09352309331c135a11940f57e91ef017fef7aa01661b98bc2e74c0d6e4cd35af",
+      "oleanSHA256": "115caaddd3ae207ae7d6b117053ba7e632da7e0f119cb75760e56f6e74e0499c"
+    },
+    "Poly20_8": {
+      "module": "Poly20_8",
+      "actualExit": 0,
+      "seconds": 10.57,
+      "sourceSHA256": "38da9c62d70d868ae195f03d3865f0080cb59ecf92fd38791f780a391433c76b",
+      "oleanSHA256": "23a2bdbceecb10684a946ed18b0217d58f72038a8b62d20827a78904d1590d6a"
+    },
+    "Poly20_9": {
+      "module": "Poly20_9",
+      "actualExit": 0,
+      "seconds": 10.45,
+      "sourceSHA256": "423807fbe589364467c919b7035a0f696d183132e7151bd37a5ca3286c78edf5",
+      "oleanSHA256": "9545aa2cf7c3947fbada4108ef9206015e8ba824ea279e00f5aceeae048ac874"
+    },
+    "Poly20_10": {
+      "module": "Poly20_10",
+      "actualExit": 0,
+      "seconds": 10.56,
+      "sourceSHA256": "7c693f209da5e1ceb0c8f9d9f32faea5b15318f11e1931634fe719a647c3815e",
+      "oleanSHA256": "6d98195efcdf784a877925310c24983a8d13e75af11670e8876e911c1c1c47e1"
+    },
+    "Poly20_11": {
+      "module": "Poly20_11",
+      "actualExit": 0,
+      "seconds": 10.53,
+      "sourceSHA256": "4d6ec47dbe19921d1cd7748e550bfb666224e79d0eded03cc370a1de86fa23dd",
+      "oleanSHA256": "dba316af82fc18a90877658db994f5ed0a415bf98198f532efc7ac1d3dd8c02c"
+    },
+    "Poly20_12": {
+      "module": "Poly20_12",
+      "actualExit": 0,
+      "seconds": 10.55,
+      "sourceSHA256": "66c9593b052a17e8d6ce1aae0585e60a018489317294d851c0a3562f83dce3e2",
+      "oleanSHA256": "e3454d93957f0ddca256e4416e004c2c128dc9451103752616d2a4555b714fd9"
+    },
+    "Poly20_13": {
+      "module": "Poly20_13",
+      "actualExit": 0,
+      "seconds": 10.67,
+      "sourceSHA256": "9e86c760538a0810a3bc943aee99f5ee8a73614220d879efd79f7386f625abbc",
+      "oleanSHA256": "b81be0a4f6070664ff95d11e21b4edf7c333dc4a560c88e64007c9a911136085"
+    },
+    "Poly20_14": {
+      "module": "Poly20_14",
+      "actualExit": 0,
+      "seconds": 10.99,
+      "sourceSHA256": "af7cf61db8e80078efd360964dc3c3459c5c6067a10fdb7d79a7b4da16410117",
+      "oleanSHA256": "be8a9d619ca46c7a360ef65d4c8890242c5f10782592963b4254901a226fc37d"
+    },
+    "Poly20_15": {
+      "module": "Poly20_15",
+      "actualExit": 0,
+      "seconds": 10.41,
+      "sourceSHA256": "e1df6869b15dca7d2bfd426336e28d99c9ac754de53f5c3e999ec73f7abe25e2",
+      "oleanSHA256": "db2a588e7a320f7ae943127a1959f2f86c116108ef3d117d74edfb6411e6b84e"
+    },
+    "Poly20_16": {
+      "module": "Poly20_16",
+      "actualExit": 0,
+      "seconds": 10.73,
+      "sourceSHA256": "4f2c1123fee60c25c40767d10c4e1f46bcbe11e709325e94247ff03547a503a9",
+      "oleanSHA256": "775bc5846128d4e52f6fc9fc7c3700b02b74d5806be5852b5d899972248a07f8"
+    },
+    "Poly20_17": {
+      "module": "Poly20_17",
+      "actualExit": 0,
+      "seconds": 10.86,
+      "sourceSHA256": "8bc6ac1a08b015237259077641708ea6e06fffa1300449a0db7bce6ee0cf9d84",
+      "oleanSHA256": "eeacde48bba409f5a619246936e45136d597e7514359f420b9ee16a938667c78"
+    },
+    "Poly20_18": {
+      "module": "Poly20_18",
+      "actualExit": 0,
+      "sourceSHA256": "04fe24130d8986ed01a2408de773c30438c2985be5429c2437b7b98fba1e95fd",
+      "oleanSHA256": "7df6a92aa671e09822df563622e308e2b040f7fb237226e19a2a8ffa2424951d",
+      "evidence": "Guarded sequential compiler run42156 completed with actual exit0."
+    },
+    "BenchmarkEncodings": {
+      "module": "BenchmarkEncodings",
+      "actualExit": 0,
+      "seconds": 9.91,
+      "sourceSHA256": "6866ca24c21683810fc023d377230bd11c675ebc711a22b7c805e44fb82ef469",
+      "oleanSHA256": "692b14ad621b3a8479be04916c2c856019f13ae2653767f150df713927249c14"
+    },
+    "BooleanAffineWeightDraft": {
+      "module": "BooleanAffineWeightDraft",
+      "actualExit": 0,
+      "seconds": 10.6,
+      "sourceSHA256": "84e0573853c6c3753babde69b48bdbd5d76fa4f8fc27f79a34704c7fa80d120e",
+      "oleanSHA256": "cb2387fd2fa21d33364e0b718f6847e901f883007a57a721f53ed41e941faf87"
+    },
+    "BooleanEvenRestrictionDraft": {
+      "module": "BooleanEvenRestrictionDraft",
+      "actualExit": 0,
+      "seconds": 10.46,
+      "sourceSHA256": "baf1ee43f27083de4a6beb18af087b4e26fd1758f508b32397ea453c0e35851a",
+      "oleanSHA256": "e2e3c9132c6f8038403f00db609a351de5b29ee6d7921050518e1dbd4f9dd69b"
+    },
+    "IntegerSeedEncodingDraft": {
+      "module": "IntegerSeedEncodingDraft",
+      "actualExit": 0,
+      "seconds": 10.02,
+      "sourceSHA256": "88f2e59b80b4d13be24e5cd561980ce69bc0c4633f0bf9dca4e10b91782fb3dc",
+      "oleanSHA256": "218d6f28a4799ce76e19ad5020e327e4f0ef6e6154508611fa28be8b341d4759"
+    },
+    "RestrictedAffineCertificate": {
+      "module": "RestrictedAffineCertificate",
+      "actualExit": 0,
+      "sourceSHA256": "a674c912249520a3a1534a1d33aa1e6995b5b57469a8387e6a9197111f086c01",
+      "oleanSHA256": "c2e816460d2bfaa2ebda06a921781c6a8113f750a135ffd99cd05bfae89783ec",
+      "evidence": "Guarded compiler27993actual0 (threeproofmodules) or62534actual0 (independentchallenge)."
+    },
+    "Intrinsic12": {
+      "module": "Intrinsic12",
+      "actualExit": 0,
+      "sourceSHA256": "f93e7c3d3969561ff8041971c10b8302b95786f2fe4e4b3c9eaeef10cfe160df",
+      "oleanSHA256": "b5a66719ea4ea0197217e6c77c386dd1a6d009458d42c5e9f8bf24e7356a591a",
+      "evidence": "Guarded compiler27993actual0 (threeproofmodules) or62534actual0 (independentchallenge)."
+    },
+    "Intrinsic20": {
+      "module": "Intrinsic20",
+      "actualExit": 0,
+      "sourceSHA256": "9f197f8066a4a1cc0b2d02474712ca05ca2873d4154d4d2bd5bcb5303ff889fd",
+      "oleanSHA256": "383d7db2bec8633ed5e6f7abae1c8bc5f249e3bf23f18e42b84a456b563e0f41",
+      "evidence": "Guarded compiler27993actual0 (threeproofmodules) or62534actual0 (independentchallenge)."
+    },
+    "CubicPilotChallenge": {
+      "module": "CubicPilotChallenge",
+      "actualExit": 0,
+      "seconds": 9.1,
+      "sourceSHA256": "4e96eb14be5258298f90011b8e464961dcdfd8be1d7329146e5be3dba6a404e7",
+      "oleanSHA256": "69c4d2bd5920758e018902a71b57c4d65d9755c145a7177338bb54b5f530e5f1"
+    },
+    "BenchmarkResults": {
+      "module": "BenchmarkResults",
+      "actualExit": 0,
+      "seconds": 9.9,
+      "sourceSHA256": "e5a6fe06f0a36cb72459ab58b3c3e03ffa5fb6bba4a2493bcacde87d6a84142d",
+      "oleanSHA256": "c7ef3dc79ceb98ccf98f725dbc08cb16f3bed28a36fc6460f086eaa6a5e61ddd"
+    },
+    "CubicPilotSolution": {
+      "module": "CubicPilotSolution",
+      "actualExit": 0,
+      "seconds": 10.02,
+      "sourceSHA256": "c464742ebcea150d33912f57939058c5a2a5d9481918aa94ded52dc8b802851c",
+      "oleanSHA256": "042016522b37568521ca023456fd6f75c6604c3bf34bb6cb7c639057494d0f49"
+    }
+  },
+  "privateAxiomAudit": "'EntropyDesigns.sharp_cubic_seed_benchmarks' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+  "moduleMapping": {
+    "BooleanAffineCharacterDraft": "EntropyCubic.Character",
+    "BooleanAffineWeightDraft": "EntropyCubic.Weight",
+    "BooleanEvenRestrictionDraft": "EntropyCubic.EvenRestriction",
+    "BooleanPolynomialCertificateDraft": "EntropyCubic.Certificates",
+    "IntegerSeedEncodingDraft": "EntropyCubic.LowerBounds",
+    "RestrictedAffineCertificate": "EntropyCubic.AffineRestriction",
+    "BenchmarkData": "EntropyCubic.Data",
+    "BenchmarkMatrices": "EntropyCubic.Matrices",
+    "BenchmarkPolynomials": "EntropyCubic.Polynomials",
+    "Intrinsic12": "EntropyCubic.Intrinsic12",
+    "Intrinsic20": "EntropyCubic.Intrinsic20",
+    "BenchmarkEncodings": "EntropyCubic.Encodings",
+    "BenchmarkResults": "EntropyCubic.Results",
+    "Row12_0": "EntropyCubic.Rows12.R0",
+    "Row12_1": "EntropyCubic.Rows12.R1",
+    "Row12_2": "EntropyCubic.Rows12.R2",
+    "Row12_3": "EntropyCubic.Rows12.R3",
+    "Row12_4": "EntropyCubic.Rows12.R4",
+    "Row12_5": "EntropyCubic.Rows12.R5",
+    "Row12_6": "EntropyCubic.Rows12.R6",
+    "Row12_7": "EntropyCubic.Rows12.R7",
+    "Row12_8": "EntropyCubic.Rows12.R8",
+    "Row12_9": "EntropyCubic.Rows12.R9",
+    "Row12_10": "EntropyCubic.Rows12.R10",
+    "Row12_11": "EntropyCubic.Rows12.R11",
+    "Poly12_0": "EntropyCubic.Polys12.C0",
+    "Poly12_1": "EntropyCubic.Polys12.C1",
+    "Poly12_2": "EntropyCubic.Polys12.C2",
+    "Poly12_3": "EntropyCubic.Polys12.C3",
+    "Poly12_4": "EntropyCubic.Polys12.C4",
+    "Poly12_5": "EntropyCubic.Polys12.C5",
+    "Poly12_6": "EntropyCubic.Polys12.C6",
+    "Poly12_7": "EntropyCubic.Polys12.C7",
+    "Poly12_8": "EntropyCubic.Polys12.C8",
+    "Poly12_9": "EntropyCubic.Polys12.C9",
+    "Poly12_10": "EntropyCubic.Polys12.C10",
+    "Row20_0": "EntropyCubic.Rows20.R0",
+    "Row20_1": "EntropyCubic.Rows20.R1",
+    "Row20_2": "EntropyCubic.Rows20.R2",
+    "Row20_3": "EntropyCubic.Rows20.R3",
+    "Row20_4": "EntropyCubic.Rows20.R4",
+    "Row20_5": "EntropyCubic.Rows20.R5",
+    "Row20_6": "EntropyCubic.Rows20.R6",
+    "Row20_7": "EntropyCubic.Rows20.R7",
+    "Row20_8": "EntropyCubic.Rows20.R8",
+    "Row20_9": "EntropyCubic.Rows20.R9",
+    "Row20_10": "EntropyCubic.Rows20.R10",
+    "Row20_11": "EntropyCubic.Rows20.R11",
+    "Row20_12": "EntropyCubic.Rows20.R12",
+    "Row20_13": "EntropyCubic.Rows20.R13",
+    "Row20_14": "EntropyCubic.Rows20.R14",
+    "Row20_15": "EntropyCubic.Rows20.R15",
+    "Row20_16": "EntropyCubic.Rows20.R16",
+    "Row20_17": "EntropyCubic.Rows20.R17",
+    "Row20_18": "EntropyCubic.Rows20.R18",
+    "Row20_19": "EntropyCubic.Rows20.R19",
+    "Poly20_0": "EntropyCubic.Polys20.C0",
+    "Poly20_1": "EntropyCubic.Polys20.C1",
+    "Poly20_2": "EntropyCubic.Polys20.C2",
+    "Poly20_3": "EntropyCubic.Polys20.C3",
+    "Poly20_4": "EntropyCubic.Polys20.C4",
+    "Poly20_5": "EntropyCubic.Polys20.C5",
+    "Poly20_6": "EntropyCubic.Polys20.C6",
+    "Poly20_7": "EntropyCubic.Polys20.C7",
+    "Poly20_8": "EntropyCubic.Polys20.C8",
+    "Poly20_9": "EntropyCubic.Polys20.C9",
+    "Poly20_10": "EntropyCubic.Polys20.C10",
+    "Poly20_11": "EntropyCubic.Polys20.C11",
+    "Poly20_12": "EntropyCubic.Polys20.C12",
+    "Poly20_13": "EntropyCubic.Polys20.C13",
+    "Poly20_14": "EntropyCubic.Polys20.C14",
+    "Poly20_15": "EntropyCubic.Polys20.C15",
+    "Poly20_16": "EntropyCubic.Polys20.C16",
+    "Poly20_17": "EntropyCubic.Polys20.C17",
+    "Poly20_18": "EntropyCubic.Polys20.C18"
+  },
+  "originalFiniteData": {
+    "license": "Apache-2.0",
+    "generation": "Original binary elimination of Paley sign truth tables; mathematical data, no external code reused.",
+    "benchmarks": [
+      {
+        "order": 12,
+        "seedBits": 4,
+        "affineColumns": 3,
+        "labels": [
+          0,
+          5,
+          3,
+          6,
+          13,
+          11,
+          7,
+          14,
+          4,
+          8,
+          1,
+          2
+        ],
+        "polynomialMasks": [
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            4
+          ],
+          [
+            3,
+            4,
+            5,
+            6,
+            8,
+            11
+          ],
+          [
+            1,
+            3,
+            4,
+            8,
+            9,
+            11
+          ],
+          [
+            1,
+            2,
+            5,
+            6,
+            7,
+            8,
+            11
+          ],
+          [
+            1,
+            2,
+            4,
+            5,
+            9,
+            10,
+            11
+          ],
+          [
+            2,
+            4,
+            7,
+            8,
+            10,
+            11
+          ],
+          [
+            1,
+            6,
+            8,
+            10,
+            11
+          ],
+          [
+            1,
+            2,
+            3,
+            4,
+            6,
+            7,
+            9,
+            10,
+            11
+          ],
+          [
+            2,
+            3,
+            5,
+            7,
+            8,
+            9,
+            11
+          ]
+        ],
+        "nonaffinePairCertificates": [
+          null,
+          null,
+          null,
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            4
+          ],
+          [
+            1,
+            4
+          ],
+          [
+            1,
+            6
+          ],
+          [
+            1,
+            10
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            2
+          ]
+        ]
+      },
+      {
+        "order": 20,
+        "seedBits": 5,
+        "affineColumns": 5,
+        "labels": [
+          0,
+          13,
+          27,
+          22,
+          12,
+          25,
+          19,
+          7,
+          15,
+          30,
+          29,
+          26,
+          21,
+          10,
+          20,
+          8,
+          16,
+          1,
+          3,
+          6
+        ],
+        "polynomialMasks": [
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            4
+          ],
+          [
+            8
+          ],
+          [
+            16
+          ],
+          [
+            1,
+            3,
+            4,
+            6,
+            7,
+            8,
+            12,
+            14,
+            19,
+            20
+          ],
+          [
+            3,
+            5,
+            7,
+            9,
+            10,
+            12,
+            13,
+            16,
+            17,
+            18
+          ],
+          [
+            1,
+            2,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            13,
+            14,
+            18
+          ],
+          [
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            16,
+            19,
+            20
+          ],
+          [
+            1,
+            2,
+            7,
+            8,
+            9,
+            11,
+            12,
+            16,
+            19
+          ],
+          [
+            1,
+            4,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            13,
+            16
+          ],
+          [
+            1,
+            2,
+            3,
+            4,
+            6,
+            7,
+            11,
+            14,
+            16
+          ],
+          [
+            1,
+            4,
+            10,
+            11,
+            12,
+            14,
+            19
+          ],
+          [
+            2,
+            4,
+            5,
+            6,
+            8,
+            11,
+            12,
+            13,
+            17,
+            18
+          ],
+          [
+            2,
+            3,
+            7,
+            8,
+            10,
+            11,
+            12,
+            13,
+            16,
+            17,
+            20
+          ],
+          [
+            1,
+            3,
+            10,
+            11,
+            12,
+            13,
+            14,
+            16
+          ],
+          [
+            1,
+            2,
+            3,
+            5,
+            6,
+            8,
+            13,
+            14,
+            17,
+            20
+          ],
+          [
+            2,
+            4,
+            6,
+            7,
+            8,
+            9,
+            11,
+            12,
+            14,
+            16,
+            18
+          ],
+          [
+            1,
+            3,
+            4,
+            5,
+            7,
+            9,
+            13,
+            14,
+            16
+          ]
+        ],
+        "nonaffinePairCertificates": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            4
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            6
+          ],
+          [
+            1,
+            6
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            10
+          ],
+          [
+            1,
+            4
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            6
+          ],
+          [
+            1,
+            2
+          ]
+        ]
+      }
+    ]
+  },
+  "intrinsicAffineCertificates": [
+    {
+      "order": 12,
+      "nonaffineRowQuadruples": {
+        "3": [
+          10,
+          11,
+          2,
+          0
+        ],
+        "4": [
+          10,
+          11,
+          2,
+          0
+        ],
+        "5": [
+          10,
+          8,
+          1,
+          0
+        ],
+        "6": [
+          10,
+          8,
+          1,
+          0
+        ],
+        "7": [
+          10,
+          3,
+          6,
+          0
+        ],
+        "8": [
+          11,
+          8,
+          3,
+          0
+        ],
+        "9": [
+          10,
+          11,
+          2,
+          0
+        ],
+        "10": [
+          10,
+          11,
+          2,
+          0
+        ]
+      },
+      "meaning": "Rows a,b,c,z are positive-mass labels with label_c=label_a xor label_b, label_z=0; truth values violate the affine parallelogram relation."
+    },
+    {
+      "order": 20,
+      "nonaffineRowQuadruples": {
+        "5": [
+          18,
+          4,
+          8,
+          0
+        ],
+        "6": [
+          17,
+          19,
+          7,
+          0
+        ],
+        "7": [
+          17,
+          4,
+          1,
+          0
+        ],
+        "8": [
+          17,
+          19,
+          7,
+          0
+        ],
+        "9": [
+          17,
+          19,
+          7,
+          0
+        ],
+        "10": [
+          17,
+          19,
+          7,
+          0
+        ],
+        "11": [
+          18,
+          5,
+          11,
+          0
+        ],
+        "12": [
+          18,
+          4,
+          8,
+          0
+        ],
+        "13": [
+          17,
+          19,
+          7,
+          0
+        ],
+        "14": [
+          17,
+          4,
+          1,
+          0
+        ],
+        "15": [
+          17,
+          19,
+          7,
+          0
+        ],
+        "16": [
+          18,
+          16,
+          6,
+          0
+        ],
+        "17": [
+          17,
+          19,
+          7,
+          0
+        ],
+        "18": [
+          17,
+          19,
+          7,
+          0
+        ]
+      },
+      "meaning": "Rows a,b,c,z are positive-mass labels with label_c=label_a xor label_b, label_z=0; truth values violate the affine parallelogram relation."
+    }
+  ],
+  "definitionAlignment": "Explicit standard zero-column Fin constructors avoid module-local generated proof aliases; all computational definitions strictly compared, zero definition holes.",
+  "scope": "Full E18.03 sharp cubic theorem, including universal matrix-level lower bounds and exact intrinsic affine-extension counts. Integrated verification required."
+}

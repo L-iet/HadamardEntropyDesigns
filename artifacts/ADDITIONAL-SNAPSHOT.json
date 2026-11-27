@@ -1,0 +1,16 @@
+{
+  "baseline/hadamard_multibase_final.pdf": "ddcfbcec2017f7d991b343db6494e0bff2a2d6b4d1222d7164ac09fbeec05df5",
+  "baseline/hadamard_multibase_final.tex": "db5a259b3bfc1b7fc3a7481665c4889e9a1e0d797538f120fd787297ad999f54",
+  "improvement/.gitignore": "775622b6997dbc896100a86c21e311e1d75c5b00bddb01d45c0c8c0ac7c739be",
+  "improvement/build.py": "f0c298c34395e83bfc3aadd4b26282c23a8384ef556f9e190e4bf7e8d55f78ad",
+  "improvement/README.txt": "263723b1e7cb8b7570e9f0f27c47a5fc0a56cac5f34726d69794bce0c4e57489",
+  "improvement/verification.json": "9151083d70770dedf9cb1d5027945a4ee92437df2febd7fb44b3295bc418d871",
+  "improvement/data/covering.json": "2dfeb3a324b126d3ac6421fbd85c815af7968e78592bd361e9633623c5ac9cae",
+  "improvement/data/entropy.json": "4f3c293f481f617cc3b91979a7a8866060c9558af47fc81a6845f02fbd14a3e0",
+  "improvement/data/lean-check.json": "4b1b66721957b091fffe70e8ccd2df9b2d054d43b8e12c2f81d0c191dffa6435",
+  "improvement/experiments/covering.py": "a24cdaa2581e762654b56805d774fe6fe2f7d916c8dfe7b4a162ad5eb0dab8d0",
+  "improvement/experiments/entropy.py": "4a0bdc973d37fad40a7dae42d58d7e30693d6ef74be9aabdb667af76be9bb165",
+  "improvement/experiments/test_covering.py": "a0c98860195a4735c1306c9d52248fc6fad1f42d1418037ca45615f3bbf65cbe",
+  "improvement/paper/extensions.pdf": "4fd3759f674351bfa435676dcb224b77fba29e0f8096dd4f3bfb0107b237daf4",
+  "improvement/paper/extensions.tex": "853e68859aa892284f342ecf15b81815cd2882ae057097916e8b2838acfd5804"
+}

@@ -1,0 +1,20 @@
+BOUNDED PRIOR-ART CHECK -- 20 November 2026
+
+The 2018 Mathematics Stack Exchange question by Sasha Kozachinskiy,
+"Minimal possible entropy of 4 pairwise independent unbiased Bernoulli
+random variables", explicitly asks for the same four-bit Shannon
+minimum and cites the Gavinsky--Pudlak log(d+1) bound:
+https://math.stackexchange.com/questions/2958203/
+
+The displayed answer proposes vertex enumeration of the five-dimensional
+moment polytope; it does not list the26vertices or give the minimum.
+Our analytic hull, entropy-order diagram and exact circuit/barrier
+proofs were derived in this project. That independent derivation and
+the unfinished public discussion do not establish priority: published
+entropy optimization, weighted orthogonal-array and polytope literature
+still need a deeper comparison.
+
+No text or code from the discussion was copied into the proofs or
+checkers. No answer, comment, email or other external message was sent.
+The source is recorded as a research lead and historical question,
+not as evidence that the present results are new.

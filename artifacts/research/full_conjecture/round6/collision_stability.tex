@@ -1,0 +1,120 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,mathtools,hyperref}
+\setlength{\emergencystretch}{3em}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\newcommand{\E}{\mathbb E}
+\newcommand{\tr}{\operatorname{tr}}
+\title{Explicit rounding from near-extremal\\collision probability}
+\author{Joshua Mark\thanks{ORCID: \href{https://orcid.org/0009-0003-5905-2382}{0009-0003-5905-2382}. AI tools assisted with derivation, independent review, computation and exposition.}}
+\date{20 November 2026 --- research draft; priority not established}
+\begin{document}\maketitle
+
+\section{An explicit stability and extraction theorem}
+
+Let $n\ge5$, $n\equiv1\pmod4$, $N=n+3$, and
+$A=(n-1)(n+3)=N(N-4)$. Let $w$ be a probability distribution on
+$\{\pm1\}^{n-1}$, with distinct sign vectors regarded as distinct atoms.
+Write $v_x=(1,x)$ and assume exact isotropy
+$\sum_x w_xv_xv_x^T=I_n$. Define
+\[
+ C=\sum_xw_x^2,\quad \delta=1/N-C,\quad
+ \epsilon_x=\prod_jx_j,\quad z=\sum_xw_x\epsilon_xv_x,
+ \quad h_x=\epsilon_x-v_x\cdot z.
+\]
+Only positive-weight atoms are used below.
+
+\begin{theorem}[Nonnegative defect decomposition]
+Put $q_{xy}=\epsilon_x\epsilon_y(v_x\cdot v_y)$ and
+$f(q)=q^2+2q-3$. Then
+\begin{equation}\label{stability:defect}
+ A\delta=2\sum_xw_xh_x^2+
+ \sum_{x\ne y}w_xw_y f(q_{xy}).
+\end{equation}
+Both terms are nonnegative. In particular $\delta\ge0$, and the
+ordered mass of off-diagonal pairs with $q_{xy}\notin\{-3,1\}$ is
+at most $A\delta/32$. Furthermore
+\begin{equation}\label{stability:disp}
+ \sum_xw_x|w_x-1/N|\le \sqrt{2\delta/A}+\delta.
+\end{equation}
+\end{theorem}
+\begin{proof}
+If $x,y$ differ at $r$ coordinates, then
+$q_{xy}=(-1)^r(n-2r)\equiv1\pmod4$. On these integers $f\ge0$;
+it vanishes precisely at $-3,1$, and otherwise is at least $32$.
+Isotropy gives $\E q^2=n$ and $\E q=\|z\|^2$.
+Bessel's inequality for the orthonormal functions comprising $v$ gives
+$\|z\|^2\le1$, and direct expansion gives
+$\E h^2=1-\|z\|^2$. As $f(q_{xx})=A$, separating the diagonal in
+$\E f(q)=n-3+2\|z\|^2$ proves \eqref{stability:defect}.
+For a fixed support atom $x$, set
+$B_x=\sum_{y\ne x}w_yf(q_{xy})\ge0$. Its conditional expectation is
+\[
+ Aw_x+B_x=n-3+2\epsilon_x v_x\cdot z
+ =n-1-2\epsilon_xh_x.
+\]
+Since $A/N=n-1$, this gives
+$A(w_x-1/N)=-2\epsilon_xh_x-B_x$. Average absolute values,
+apply Cauchy--Schwarz, and use \eqref{stability:defect} to obtain
+\[
+ \sum w|w-1/N|\le (2\sqrt{\E h^2}+\E B)/A
+ \le\sqrt{2\delta/A}+\delta.
+\]
+\end{proof}
+
+\begin{theorem}[Explicit extraction from a sufficiently small deficit]
+If $\delta\le1/(1024N^4)$, the set
+\[
+ G=\{x:|Nw_x-1|\le1/(4N)\}
+\]
+has exactly $N$ members. Giving those members equal weight $1/N$
+preserves exact isotropy. Their augmented sign rows can consequently
+be completed by three sign columns to a Hadamard matrix of order $N$.
+Thus, if no Hadamard matrix of order $N$ exists, every such isotropic
+distribution has $C<1/N-1/(1024N^4)$.
+\end{theorem}
+\begin{proof}
+Set $e=\sum_xw_x|Nw_x-1|$. Since $A\ge N^2/2$ and $N\ge8$,
+\eqref{stability:disp} implies
+\[
+ e\le N\delta+N\sqrt{2\delta/A}
+ \le\frac1{1024N^3}+\frac1{16N^2}<\frac1{8N^2}.
+\]
+With $\eta=1/(4N)$, Markov's inequality bounds the mass $b$ outside
+$G$ by $e/\eta<1/(2N)$. Each member of $G$ has weight between
+$(1-\eta)/N$ and $(1+\eta)/N$. There cannot be $N+1$ such members,
+since $(N+1)(1-\eta)/N>1$. There cannot be at most $N-1$, since
+their mass would be at most $(N-1)(1+\eta)/N<1-1/(2N)$.
+Hence $|G|=N$.
+The $\ell^1$ distance from $w$ to the uniform distribution on $G$ is
+at most $b+\eta<3/(4N)$. Every matrix entry in the resulting isotropy
+error is bounded by this distance, since $|(v_x)_i(v_x)_j|=1$.
+But $N$ times that error is an integer, because the uniform Gram
+entries are integers divided by $N$ and the target is $I_n$.
+Its absolute value is below one, so it is zero.
+
+For completeness, apply the zero-defect case of \eqref{stability:defect} to
+this uniform isotropic distribution. Its switched rows
+$V'_x=\epsilon_xv_x$ have off-diagonal inner products $-3$ or $1$.
+The residual $K=NI_N-V'V'^T$ is positive semidefinite of rank three,
+with diagonal $3$ and off-diagonal $3$ or $-1$. Real Gram vectors for
+$K$ with inner product $3$ coincide; different types have Gram
+$4I-J$, hence there are at most four types. Assign the four sign
+triples $(1,1,1),(1,-1,-1),(-1,1,-1),(-1,-1,1)$ to these types.
+Their Gram is $K$, so appending their coordinates to $V'$ produces
+the claimed Hadamard matrix. This is an explicit extraction, not an
+assumption that deleting and renormalizing preserves isotropy.
+\end{proof}
+
+The theorem requires an exactly isotropic input distribution with the
+stated near-extremal collision value. No such input is constructed in
+unknown Hadamard orders. The numerical constant is deliberately
+conservative. The argument is elementary and its priority is not
+established; it should be compared with weighted orthogonal-array and
+linear-programming stability literature before any novelty claim.
+
+\end{document}

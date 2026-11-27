@@ -1,0 +1,3 @@
+module
+public import EntropyQuantumBounds.UniformPOVM
+public import EntropyQuantumBounds.TensorNoActivation

@@ -1,0 +1,128 @@
+\section{Exact entry-flip calculus and persistent discrete traps}
+\label{sec:spectral-flip-traps}
+Put $F(H)=\|HH^T-nI\|_F^2$ for an order-$n$ sign matrix.
+This discrete energy landscape differs from optimization over the real
+orthogonal group. Squared-Gram spin formulations and nonglobal local
+minima are established background; see the primary article
+\emph{Quantum computing formulation of some classical Hadamard matrix
+searching methods and its implementation on a quantum computer},
+\url{https://doi.org/10.1038/s41598-021-03586-0}.
+The earlier primary article \emph{Finding a Hadamard Matrix by Simulated
+Quantum Annealing} (2018), \url{https://www.mdpi.com/1099-4300/20/2/141},
+also studies an energy-search formulation.
+The explicit certificates and tensor bounds below are derived directly;
+novelty is not asserted.
+
+\begin{lemma}[Exact one- and two-entry changes]\label{lem:spectral-flip-calculus}
+Let $G=HH^T$, $K=H^TH$. Flipping entry $(i,a)$ changes energy by
+\[
+ d_{ia}=8\big[(2n-1)-h_{ia}(GH)_{ia}\big].
+\]
+For two distinct flipped cells the change is the sum of their individual
+changes plus the interaction
+\[
+ \begin{cases}
+ 16(h_{ia}h_{ib}K_{ab}-1),&\text{same row }i,\ a\ne b,\\
+ 16(h_{ia}h_{ja}G_{ij}-1),&\text{same column }a,\ i\ne j,\\
+ 16h_{ia}h_{ib}h_{ja}h_{jb},&i\ne j,\ a\ne b
+ \quad\text{for cells }(i,a),(j,b).
+ \end{cases}
+\]
+For even $n$, every single-entry energy change is eight times an odd
+integer, so there are no neutral single-entry moves.
+\end{lemma}
+\begin{proof}
+Only row-$i$ correlations change in a single flip:
+$G_{ij}\mapsto G_{ij}-2h_{ia}h_{ja}$ for $j\ne i$.
+Summing the changes of their squared values, twice for symmetry, gives
+$8[(n-1)-h_{ia}\sum_{j\ne i}h_{ja}G_{ij}]$, the displayed formula.
+Alternatively expand
+\[
+ F(H)=n^2(n-1)+4\sum_{i<j,\ a<b}h_{ia}h_{ib}h_{ja}h_{jb}.
+\]
+The two-flip interaction is sixteen times the sum of rectangle products
+containing both cells. This gives the three cases. For even $n$ all
+entries of $G$ are even, so $(GH)_{ia}$ is even while $2n-1$ is odd.
+\end{proof}
+
+\begin{theorem}[An exact small trap and its optimal escape barrier]
+\label{thm:spectral-eight-trap}
+Let $A$ be the $8\times8$ sign matrix whose negative-entry bitmasks in
+successive rows are
+\[
+ (84,44,30,230,133,73,111,51),
+\]
+where bit $j$ denotes column $j$, starting at zero. Then $F(A)=152$,
+every single-entry flip increases energy by at least eight, and every
+two-entry flip has nonnegative energy change. A three-entry flip lowers
+energy to $128$. The minimum Hamming distance from $A$ to any
+strictly lower-energy matrix is exactly three. The least energy barrier
+along single-entry paths to a lower-energy matrix is exactly eight.
+\end{theorem}
+\begin{proof}[Exact finite certificate]
+The matrix of single-flip changes divided by eight is
+\[
+ \begin{pmatrix}
+ 1&5&5&9&5&1&9&9\\
+ 5&9&1&1&5&9&9&5\\
+ 1&9&5&5&1&9&5&1\\
+ 5&5&1&5&5&1&5&1\\
+ 9&1&9&5&5&5&9&1\\
+ 1&1&5&1&5&5&5&5\\
+ 9&5&9&1&1&1&5&5\\
+ 5&1&1&9&1&5&5&9
+ \end{pmatrix}.
+\]
+The checker evaluates every one of the $\binom{64}{2}=2016$ two-cell
+changes using both direct Gram energy and the interaction formula;
+their minimum is zero. It also evaluates all $\binom{64}{3}=41664$
+three-cell changes, whose minimum is $-24$. Explicitly, flipping cells
+with flattened indices $0,5,60$ gives energies
+$152\to160\to152\to128$. The first step of any single-entry path
+costs at least eight, so this path attains the minimum possible barrier.
+The one- and two-flip checks prove the claimed distance-three minimum.
+All calculations are exact integer operations, not a heuristic search
+certificate. The original randomized hill search merely found the
+matrix; none of the assertions depends on its search history.
+\end{proof}
+
+\begin{theorem}[Infinite strict two-flip traps]
+\label{thm:spectral-tensor-discrete-traps}
+For any sign Hadamard matrix $B$ of order $m\ge2$, the matrix
+$A\otimes B$ has positive energy $152m^3$ and strictly increases energy
+under every change of one or two entries. The exact minimum increases are
+\[
+ \min\Delta_1=16m-8,\qquad \min\Delta_2=32(m-1).
+\]
+In particular this gives infinitely many explicit nonglobal strict
+one- and two-entry local minima at known orders $8\cdot2^r$, $r\ge1$.
+\end{theorem}
+\begin{proof}
+Let $Q=AA^T$. The lift has row Gram $Q\otimes mI_m$, and
+$HH^TH=(Q A)\otimes mB$. If a base cell has single-flip change $d$,
+its lifted cells have change $md+8(m-1)$. Since the minimum base change
+is eight, the exact lifted minimum is $16m-8$.
+Energy scales as
+$\|(Q-8I_8)\otimes mI_m\|_F^2=m^3F(A)$.
+
+For two cells sharing neither row nor column, the interaction is at
+least $-16$, so their total increase is at least $32m-32$.
+For two cells in the same lifted row, if their Hadamard column indices
+differ, column-Gram orthogonality again makes the interaction $-16$.
+If those indices agree, their base columns differ and the exact lifted
+pair change is $m\Delta_{2,\mathrm{base}}+32(m-1)$, nonnegative in its
+first term. The same argument applies to a shared lifted column.
+Thus every pair costs at least $32(m-1)$. Equality is attained by lifting
+the neutral base pair $(0,0),(0,5)$ with the same Hadamard row and column
+indices. Positive energy proves nonglobality, since tensoring Walsh order eight with $B$ gives an order-$8m$
+Hadamard matrix.
+\end{proof}
+
+For completeness, the checker exhausts all $512$ normalized order-four
+sign matrices. Only the six Hadamard matrices are single-entry local
+minima. Row and column sign normalization preserves energy and the
+entry-flip graph, so order eight is the first admissible order at which
+this greedy-descent obstruction occurs. The example does not rule out
+nonlocal methods: its base has a certified three-flip escape. It does
+rule out a proof that arbitrary one- or two-entry improving moves must
+always reach a Hadamard matrix. No all-order construction is supplied.

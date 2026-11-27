@@ -1,0 +1,17 @@
+{
+  "challenge_module": "FaceChallenge",
+  "solution_module": "FaceSolution",
+  "theorem_names": [
+    "EntropyDesigns.SupportFace.card_source_coordinates",
+    "EntropyDesigns.SupportFace.source_collision_upper",
+    "EntropyDesigns.SupportFace.source_collision_equality_oa",
+    "EntropyDesigns.SupportFace.source_attaining_law"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "enable_nanoda": true
+}

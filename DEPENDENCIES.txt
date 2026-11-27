@@ -1,0 +1,4 @@
+Lean 4.35.0; mathlib canonical commit56a005855ea17e0b0958f73ec801ae140b0a1679.
+Exact transitive revisions in lake-manifest.json. Only Apache-2.0/MIT packages from the original audited manifest.
+No external proof implementation beyond these packages. Mathematical citations do not import code.
+Local .lake/packages may link to an existing build cache; it is ignored and is not a submission dependency.

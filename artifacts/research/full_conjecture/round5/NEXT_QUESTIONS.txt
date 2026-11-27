@@ -1,0 +1,38 @@
+RESEARCH TARGETS AFTER THE RESIDUE-SENSITIVE ENTROPY THEOREM
+
+1. Priority and interpretation.
+Compare the precise collision bound and equality classification with
+Lancaster1965, Gavinsky--Pudlak2016, Delsarte bounds, weighted binary
+orthogonal arrays, and Bierbrauer--Gopalakrishnan--Stinson1996.
+The weighted-frame and parity mechanisms are classical tools; an
+independent derivation does not establish novelty.
+
+2. Attainment, rather than another necessary bound.
+Prove an exact or sufficiently accurate upper bound on minimum joint
+entropy for d=4m-1 unbiased pairwise-independent bits. At present the
+proved direction is the lower bound. A measure in the explicit
+rounding window would already imply H(4m). Pairwise independence,
+optimal min-entropy of a single atom, and convex averaging do not
+supply that measure.
+
+3. Stability of the residue equality classification.
+At n=1 mod4 equality makes parity a linear combination of augmented
+coordinates and leaves only tetrahedral residual types. Quantify what
+near equality forces without assuming that low-weight bad atoms can
+be removed while preserving exact moments. A useful theorem would
+combine arithmetic rounding with control of the loss of isotropy.
+
+4. Residual Gram forms and carefully selected partial matrices.
+Completion up to seven missing rows is classical and eight can fail.
+Classify which extra hypotheses on residual rank-eight Gram forms
+avoid the known unextendible examples. Rational and integral
+completions alone do not force sign completions. No E8 equivalence
+has been established by this pass.
+
+5. Sign-sensitive capacities or moment formulations.
+Ordinary capacities of squared orthogonal entries equal1 universally.
+The exact quantum hierarchy must retain a two-copy coincidence
+defect; the one-copy maximum-entropy state can average away all
+flatness. Any useful existence principle must preserve the missing
+factor-level sign information and prove feasibility, rather than
+assuming it in a reformulation.

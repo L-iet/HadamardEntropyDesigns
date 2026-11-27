@@ -1,0 +1,17 @@
+RESEARCH QUESTIONS, NOT PROVED CLAIMS
+
+1. Four-phase route: construct BH(2t,4) outside the restricted Fourier
+   block families for arbitrary t. Optimizing rho4 is only a reformulation
+   unless an attainment or explicit construction theorem is supplied.
+2. Weighing route: characterize the block-triangle constraints and which
+   changes to nonzero blocks can remove their obstruction while preserving
+   the weighing equations. Near-full weight alone is insufficient.
+3. Spectral route: characterize sign matrices with rank-two Gram defect
+   beyond rectangular flips. Find operations with certified energy descent
+   that cannot stall above 8(n-1), without presupposing a target matrix.
+4. Quantum route: identify dimension-dependent or structurally restricted
+   descent statements that survive the flat sign-labeled counterexample.
+   Unrestricted quantum simulation does not itself give a real sign basis.
+5. Audit literature before claiming priority for any elementary theorem:
+   weighing-matrix completion, low-rank Gram defects, Butson phase
+   invariants, and flat tight-frame rigidity all have substantial histories.

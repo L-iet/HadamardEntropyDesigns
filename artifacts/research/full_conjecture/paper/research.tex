@@ -1,0 +1,622 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,mathtools,booktabs,array,xcolor}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=blue!45!black,citecolor=blue!45!black,urlcolor=blue!45!black,
+pdfauthor={Joshua Mark},pdftitle={Beyond asymptotic Hadamard existence: arithmetic and geometric research directions}}
+\setlength{\emergencystretch}{3em}
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{lemma}[proposition]{Lemma}
+\newtheorem{question}[proposition]{Research question}
+\newtheorem{remark}[proposition]{Remark}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\R}{\mathbb R}
+\newcommand{\N}{\mathbb N}
+\newcommand{\one}{\mathbf 1}
+\title{Beyond asymptotic Hadamard existence:\\arithmetic and geometric research directions}
+\author{Joshua Mark\thanks{ORCID: \href{https://orcid.org/0009-0003-5905-2382}{0009-0003-5905-2382}. AI tools assisted with literature research, mathematical exploration, experiments and exposition.}}
+\date{20 November 2026 --- working research notebook}
+\begin{document}
+\maketitle
+\begin{abstract}
+We investigate routes to exact Hadamard existence independent of sparse
+multibase representations. The most concrete arithmetic target is a
+congruence-constrained Hermitian norm problem in integral cyclic group
+rings: at its minimum energy, parity forces every coefficient to be a
+sign. A second route uses integer quadratic moment semigroups and their
+holes; a third uses low-rank integral Gram completion and row exchanges.
+We prove elementary reductions and obstructions, construct exact finite
+certificates, and identify several invalid strengthening attempts.
+No all-order existence theorem, new universal construction, or proof of
+the Hadamard conjecture is obtained. Open targets are explicitly separated
+from established facts and finite experiments. No Lean work is undertaken.
+\end{abstract}
+
+\section{Objective and source status}
+The target is
+\[
+\forall n\ge1,\quad 4\mid n\ \Longrightarrow\
+\exists H\in\{\pm1\}^{n\times n}:\ HH^{\mathsf T}=nI_n.
+\]
+This notebook does not assume a particular construction ansatz. It is
+separate from the existing asymptotic-existence project. The October
+2026 survey~\cite{Survey} still presents the universal statement as open;
+its finite-order table is not a proof of the universal assertion. Public
+source searches were checked again on 20 November 2026. This is a
+targeted investigation, not an exhaustive priority audit.
+
+We allow stronger theorems in other subjects as intermediate goals.
+However, an equivalent reformulation is not progress on existence, and
+a stronger statement may be false even if the Hadamard conjecture is
+true. We therefore ask, for each candidate: what implication is proved,
+what genuinely new mathematical step remains, and what counterexamples
+must that step survive?
+
+\section{Arithmetic norm representations at minimum energy}
+\subsection{A coefficient bound that need not be assumed}
+Let $m$ be odd and set
+\[
+ R_m=\Z[z]/(z^m-1),\quad z^*=z^{-1},\quad
+ J_m=1+z+\cdots+z^{m-1}.
+\]
+Represent every ring element uniquely with degree below $m$. For
+$A=\sum_j a_jz^j$, the coefficient of $1$ in $AA^*$ is $\sum_j a_j^2$.
+
+\begin{proposition}[Parity and minimum energy]\label{prop:energy}
+Suppose $A_1,\ldots,A_4\in R_m$ satisfy
+\begin{equation}\label{eq:norm}
+ A_i\equiv J_m\pmod{2R_m},\qquad
+ \sum_{i=1}^4 A_iA_i^*=4t\cdot1.
+\end{equation}
+Then $t\ge m$ and $t$ is odd. If $t=m$, every coefficient of every
+$A_i$ is $+1$ or $-1$.
+\end{proposition}
+\begin{proof}
+All $4m$ coefficients are odd. Comparing constant coefficients gives
+$\sum_{i,j}a_{ij}^2=4t\ge4m$. Equality forces every square to be one.
+The augmentation map $\varepsilon(A)=A(1)$ gives
+$\sum_i\varepsilon(A_i)^2=4t$. Since $m$ is odd, all four augmentations
+are odd, so the left side is $4$ modulo $8$. Hence $t$ is odd.
+\end{proof}
+
+Thus one can seek an integral norm theorem with a congruence condition,
+rather than impose exponentially many separate sign conditions.
+The difficult part has not disappeared: exact integral solutions at
+the minimum energy are still needed.
+
+\begin{question}[A broader arithmetic lifting problem]\label{q:norm}
+For every odd $m\ge1$ and every odd $t\ge m$, does
+\eqref{eq:norm} have a solution?
+\end{question}
+This question is deliberately stronger than the boundary case needed
+below. We have not proved that its elementary necessary conditions are
+sufficient, or even excluded further arithmetic obstructions. It is a
+testable question about a family of integral quadratic equations, not an
+asserted theorem. A useful first advance would be a sufficient condition
+for $t>m$ with explicit dependence on $m$, followed by an analysis of the
+obstructions as $t$ decreases to $m$. A theorem that works only far above
+$m$ would not by itself settle Hadamard existence.
+
+\subsection{The precise implication to Hadamard matrices}
+For a sign sequence $a=(a_0,\ldots,a_{m-1})$, write
+\[
+ P_a(s)=\sum_{j=0}^{m-1}a_ja_{j+s\bmod m}.
+\]
+The ring identity at $t=m$ says
+\begin{equation}\label{eq:scalar}
+ \sum_{i=1}^4P_{a_i}(s)=0\qquad(1\le s<m).
+\end{equation}
+Let $A,B,C,D$ now denote the corresponding circulant sign matrices, and
+let $R$ be the permutation matrix $R_{ij}=1$ when $i+j=0\pmod m$.
+The Goethals--Seidel construction~\cite[Theorem 3]{Survey} is
+\begin{equation}\label{eq:gs}
+ \begin{pmatrix}
+ A&BR&CR&DR\\
+ -BR&A&D^{\mathsf T}R&-C^{\mathsf T}R\\
+ -CR&-D^{\mathsf T}R&A&B^{\mathsf T}R\\
+ -DR&C^{\mathsf T}R&-B^{\mathsf T}R&A
+ \end{pmatrix}.
+\end{equation}
+Its Gram matrix is $4mI$ under~\eqref{eq:scalar}. This uses circulant
+commutativity and $RXR=X^{\mathsf T}$, and does not require the four
+circulants to be symmetric or pairwise amicable.
+
+\begin{proposition}[Conditional route to the full conjecture]
+If \eqref{eq:norm} is solvable at $t=m$ for every odd $m$, then the
+Hadamard conjecture holds. In particular an affirmative answer to
+Question~\ref{q:norm} would imply it.
+\end{proposition}
+\begin{proof}
+Proposition~\ref{prop:energy} and \eqref{eq:gs} give order $4m$ for each
+odd $m$. Every positive multiple of four is $4\cdot2^a m$ for some
+odd $m$, and $a$ Sylvester doublings give that order.
+\end{proof}
+
+The boundary assertion is an all-odd-length four-circulant existence
+problem, a stronger construction claim than unrestricted Hadamard
+existence. Writing it in ring language alone does not prove it.
+The potentially useful import is integral representation theory with
+congruences and controlled energy.
+Hermitian methods already occur in generalized Hadamard existence and
+completion~\cite{Brock}; the connection itself is not claimed as new.
+
+\subsection{Why several attractive shortcuts fail}
+At the trivial character $z=1$, the norm identity only requires a sum
+of four odd squares equal to $4t$. Other characters must satisfy the
+same identity simultaneously, with compatible integral coefficients.
+For example at $m=5$ the four sequences
+\[
+ a=b=(1,1,1,1,-1),\qquad c=d=(1,1,1,-1,-1)
+\]
+have row sums $(3,3,1,1)$, whose squares sum to $20$. Their summed
+autocorrelations at shifts $1,2$ are $4,-4$, so they fail
+\eqref{eq:scalar}. Lagrange's scalar four-square theorem is not the
+missing simultaneous representation theorem.
+
+Likewise, solving the norm equation over $\R[C_m]$, or character by
+character, does not provide the parity and integrality constraints.
+Classical positive spectral factorization permits coefficients outside
+the required arithmetic class. Perfect-reconstruction filter banks are
+a useful language for polynomial norm identities~\cite{Filters}, but
+their usual factorization freedom does not supply a binary solution.
+
+There is a more decisive warning about quaternions. Put
+$q_j=(a_j+b_j\mathbf i+c_j\mathbf j+d_j\mathbf k)/2$.
+Equation~\eqref{eq:scalar} forces only the \emph{real parts} of
+$\sum_jq_j\overline{q_{j+s}}$ to vanish. Setting the full quaternion
+correlation to zero adds three constraints. The half-unit alphabet is
+$q\mathcal Q_8\cup q^2\mathcal Q_8$, where
+$q=(1+\mathbf i+\mathbf j+\mathbf k)/2$; multiplication by $q^{-1}$
+sends it to $\mathcal Q_+=\mathcal Q_8\cup q\mathcal Q_8$ and preserves
+perfection. Bennett--Bright--Colinot--Nayak~\cite{Quaternion} rule out
+perfect $\mathcal Q_+$ sequences at lengths $35,47,53,59$, using their
+equivalence theorem and earlier nonexistence results. Therefore that
+stronger quaternionic statement is false, and cannot prove all orders.
+Our Hermitian sum of four norms does not impose those extra conditions.
+
+\subsection{Exact finite tests}
+The supplied code finds four binary sequences satisfying
+\eqref{eq:scalar} for $m=3,5,7,9$, and verifies the full Gram matrix of
+each resulting order-$4m$ matrix. It also finds solutions to
+\eqref{eq:norm} for $t=m+2$ at the same four $m$. In the latter case,
+one coefficient has magnitude three and all others have magnitude one,
+as the constant coefficient requires. These eight witnesses test only
+small cases, not the general lifting assertion. The length-five binary
+witness has quaternion correlation numerator $(0,0,-4,-4)$ at shift
+one, with denominator four: it exhibits exactly why scalar cancellation
+must not be strengthened inadvertently.
+
+\section{Algebraic statistics: integer moment semigroups}
+\subsection{Pairwise independence at the smallest possible support}
+For $z\in\{0,1\}^d$, define its quadratic moment column
+\[
+ \phi(z)=(1,(z_i)_i,(z_iz_j)_{i<j}),\qquad
+ b_{N,d}=(N,(N/2)_i,(N/4)_{i<j}).
+\]
+For $4\mid N$, a nonnegative integer solution of
+\begin{equation}\label{eq:mom}
+ \sum_z c_z\phi(z)=b_{N,d}
+\end{equation}
+is a multiset of $N$ binary observations whose coordinates are unbiased
+and pairwise independent. Replacing bits by signs and adjoining an
+all-one column gives $d+1$ orthogonal columns. Hence $N\ge d+1$.
+For $d=N-1$ the result is precisely a Hadamard matrix of order $N$.
+This tight-support boundary distinguishes the problem from approximate
+covariance matching or a polynomial-size orthogonal array.
+
+The general rare-object framework of Kuperberg--Lovett--Peled
+\cite{KLP} constructs regular combinatorial objects with polynomial
+overhead. Their discussion explicitly distinguishes minimal objects
+and notes the difficulty of Gaussian counting for Hadamard designs.
+The more recent partial-Hadamard counting theorem of Davis~\cite{Davis}
+works when the number of columns is at least a constant times the cube
+of the number of rows, not at square aspect ratio. Neither result
+supplies a tight-support existence theorem.
+
+\subsection{Signed feasibility is easy, positivity is not}
+Let $e_U$ denote the unit vector at the bit pattern with support $U$.
+\begin{proposition}[An explicit signed design]\label{prop:signed}
+For every $d\ge2$ and $4\mid N$, the following integer coefficients
+solve \eqref{eq:mom}:
+\[
+ c_\varnothing=\frac{N(d^2-5d+8)}8,\quad
+ c_{\{i\}}=\frac{N(3-d)}4,\quad
+ c_{\{i,j\}}=\frac N4,\quad
+ c_U=0\quad(|U|\ge3).
+\]
+\end{proposition}
+\begin{proof}
+For any pair $i,j$ the only contributing pattern is $\{i,j\}$.
+The first moment for $i$ is $N(3-d)/4+(d-1)N/4=N/2$.
+Adding all coefficients gives $N$. The first coefficient is integral
+because $d^2-5d+8$ is even.
+\end{proof}
+
+\begin{proposition}[All integer moment-preserving moves]\label{prop:moves}
+For each $T\subseteq[d]$ with $|T|\ge3$, set
+\[
+ M_T=\sum_{U\subseteq T}(-1)^{|T|-|U|}e_U.
+\]
+These moves form a $\Z$-basis of the integer kernel of the quadratic
+moment map. Consequently every integer solution of \eqref{eq:mom}
+is the signed solution above plus $\sum_{|T|\ge3}a_TM_T$ for integers
+$a_T$.
+\end{proposition}
+\begin{proof}
+Every moment monomial has degree at most two, so its alternating sum
+over a cube with at least three directions vanishes. Thus $M_T$ is in
+the kernel. Its coefficient at $T$ is one and its other nonzero
+coefficients are on strict subsets of $T$. Eliminate the coefficients
+of any kernel vector in decreasing support size. A remaining vector
+supported on sizes zero, one and two vanishes: pair moments first force
+the size-two coefficients to zero, then first moments force singletons
+to zero, and the total moment forces the empty coefficient to zero.
+This also proves independence and integrality of the reduction.
+\end{proof}
+
+This gives a concrete positivity problem for integer cube moves, not
+merely an analogy to algebraic geometry. In affine-semigroup language,
+the target is in the nonnegative rational cone and in the generated
+integer lattice. Such a point need not belong to the nonnegative
+integer semigroup: it may be a \emph{hole}. The theory of cut polytopes
+studies exactly this distinction~\cite{Ohsugi}.
+
+For $d=N=4$, the signed solution has empty coefficient $2$, four
+singleton coefficients $-1$, and six pair coefficients $1$. The
+uniform fractional solution has coefficient $1/4$ at all sixteen
+patterns. Yet no nonnegative integer solution exists: it would give
+five orthogonal nonzero columns in $\R^4$. The script independently
+exhausts all $\binom{19}{4}=3876$ four-row multisets. It also verifies
+an eight-row positive solution. This is a genuine hole, not an example
+at an admissible Hadamard boundary; the rank obstruction is intentional.
+It disproves any unrestricted ``fractional plus lattice implies
+integral'' bridge.
+
+The worthwhile broader problem is to understand which holes survive
+after spectral rank obstructions and symmetries are accounted for.
+At $d=N-1$, asserting absence of the particular central holes is
+equivalent to Hadamard existence, and we do not count it as a new theorem.
+A general Markov-basis connectivity theorem also does not settle this:
+connectivity of an already nonempty nonnegative fiber cannot establish
+that the fiber is nonempty.
+
+\section{Lattices, tight frames and completion}
+Let $n$ be a positive multiple of four, $1\le r<n$, and let
+$P\in\{\pm1\}^{(n-r)\times n}$ satisfy
+$PP^{\mathsf T}=nI_{n-r}$. Define the residual Gram matrix
+\[
+ C=nI_n-P^{\mathsf T}P.
+\]
+\begin{proposition}[Exact residual criterion]\label{prop:residual}
+The matrix $C$ is positive semidefinite, has rank $r$, satisfies
+$C^2=nC$, and has diagonal entries $r$. Moreover $P$ completes to a
+Hadamard matrix if and only if
+\begin{equation}\label{eq:factor}
+ C=B^{\mathsf T}B\quad\hbox{for some }B\in\{\pm1\}^{r\times n}.
+\end{equation}
+For even $n$, all off-diagonal entries of $C$ have parity $r$.
+\end{proposition}
+\begin{proof}
+$P^{\mathsf T}P/n$ is an orthogonal projection of rank $n-r$; its
+complement gives the assertions about $C$. Its diagonal is
+$n-(n-r)=r$. Off-diagonal entries are negatives of sums of $n-r$
+signs. A completion immediately gives \eqref{eq:factor}. Conversely,
+such a factor has rank $r$ and $BB^{\mathsf T}=nI_r$, because its
+nonzero Gram eigenvalues are all $n$. Its row space is the range of
+$C$, perpendicular to the row space of $P$, so stacking $P$ and $B$
+completes the matrix.
+\end{proof}
+
+\subsection{A finite-type reduction for each fixed defect}
+\begin{proposition}[Anchor enumeration]\label{prop:anchor}
+For a fixed $r$, deciding \eqref{eq:factor} reduces to at most
+$2^{r^2}$ sign anchor matrices, followed by exact rational linear
+algebra and sign tests on all columns. The set of possible anchored
+column types is finite independently of $n$.
+\end{proposition}
+\begin{proof}
+Choose $r$ linearly independent columns of any real Gram factor of
+$C$; equivalently choose an invertible principal submatrix $G$ of $C$.
+The Gram matrix of these anchors has diagonal $r$ and entries in the
+finite set $\{-r,-r+2,\ldots,r\}$. A sign factor must have an
+invertible $r\times r$ anchor matrix $S$ satisfying $S^{\mathsf T}S=G$.
+Enumerate the $2^{r^2}$ possible $S$. For each column $j$, let $z_j$
+be its $r$ correlations with the anchors. Its only possible factor
+column is
+\[
+ b_j=(S^{\mathsf T})^{-1}z_j.
+\]
+Test whether every entry of every $b_j$ is $\pm1$. Since $C$ has rank
+$r$, the Schur-complement identity forces these columns to have the
+whole Gram matrix $C$; a final exact Gram comparison also certifies it.
+There are only $(r+1)^r$ possible correlation vectors $z_j$. Both the
+anchor matrices and possible column types thus come from finite lists
+depending only on $r$, though their multiplicities depend on $n$.
+\end{proof}
+
+This is an elementary fixed-parameter decision reduction, not a proof
+that a factor exists. It suggests importing classification of integral
+quadratic forms and spherical configurations. Gram-factorization and
+lattice-reduction algorithms are already used for this problem;
+see Goldberger--Strassler~\cite{LLL}. No new algorithmic priority is
+claimed for the reduction.
+
+\begin{proposition}[An elementary defect-two completion]
+For even $n\ge2$, every real partial Hadamard matrix with $n-2$ rows
+and $n$ columns completes.
+\end{proposition}
+\begin{proof}
+Factor its rank-two residual as columns $v_j\in\R^2$. They have squared
+length two, and pairwise inner products in $\{-2,0,2\}$ by integrality,
+parity and Cauchy--Schwarz. Thus any two are parallel or orthogonal.
+Rank two forces exactly two perpendicular lines. Rotate the lines to
+the directions $(1,1)$ and $(1,-1)$. All columns then have sign
+coordinates, giving \eqref{eq:factor}. This independently recovers a
+small case of the classical completion theory.
+\end{proof}
+
+\subsection{A valid-order obstruction and a successful repair}
+Classical near-completion results reach seven missing rows; see
+Verheiden~\cite{Verheiden}. Beyond that range arbitrary partial matrices
+need not extend, and counterexamples to broad extension assertions
+are documented by Bulutoglu--Kaziska~\cite{BK}. We therefore tested
+completion and row exchange rather than assuming a greedy extension
+lemma.
+
+An exact seeded experiment with $200$ greedy starts at order $20$
+produced $80$ maximal matrices with $12$ rows and $120$ full matrices.
+These are properties of that sampling procedure, not estimates of all
+equivalence classes or all partial matrices. The first terminal example
+has rows
+\begin{center}\small\ttfamily
+\begin{tabular}{l}
+++++++++++++++++++++\\
+++++++++++----------\\
++++++-----+++++-----\\
+++--+---++--+-++-+-+\\
+++---++--+++--++--+-\\
++++-+-+---+-----++++\\
++-++----+++--+-+--++\\
++--++++-----++-+-++-\\
+++-+-+---+-+-+--++-+\\
++--+++-+--+---+++--+\\
++-++--+-+--+--++++--\\
+++--+--++--+-+-++-+-
+\end{tabular}
+\end{center}
+The JSON file, rather than the display, is the authoritative certificate.
+All pairwise row products are zero. No sign row is orthogonal to all
+twelve: independent verification exhausts the $\binom{19}{10}=92378$
+balanced vectors with first entry positive; every other vector is
+excluded by the all-one row or global negation.
+
+The rank-eight residual satisfies all PSD, integral, projection and
+parity conditions above, but has no sign Gram factor. Thus those
+conditions are insufficient even at order $20$, where Hadamard matrices
+exist. It is a counterexample to a completion shortcut, not to the
+Hadamard conjecture.
+
+Deleting any one of the twelve rows leaves only that same row, up to
+negation, as an orthogonal sign replacement; the supplied search checks
+all $2^{19}$ normalized sign vectors for each deletion. Therefore this
+example is frozen under one-row replacement. Deleting rows $4$ and $5$
+(indices starting at one), and inserting three rows instead, gives
+thirteen orthogonal rows and a full exact completion. The replacement
+rows are recorded as negative-entry bitmasks $429230,635086,713014$,
+with coordinate zero the least significant bit. A full order-$20$
+completion is stored and its Gram matrix is independently checked.
+
+\begin{question}[Exchange augmentation]\label{q:exchange}
+Which integral equal-norm tight-frame classes admit bounded-size
+exchanges that augment an orthogonal sign subframe? In the Hadamard
+case, can one identify an invariant that permits repeated augmentation
+without entering an unrepairable terminal configuration?
+\end{question}
+This asks for a broader structural exchange theorem, inspired by
+matroid augmentation, lattice theory and discrete Morse theory. The
+orthogonality system is not a matroid: the example above has a maximal
+set of size twelve as well as sets of size twenty. A universal theorem
+that every partial matrix at an admissible order can delete at most a
+fixed number $c$ of rows and insert one more row than it deleted would
+imply the full conjecture by iteration. The data already require
+$c\ge2$; no universal finite $c$ is established here. Classifying
+fixed-defect anchored configurations and their exchange costs is a
+concrete intermediate problem before making that much stronger claim.
+
+\begin{proposition}[Tensor amplification of a dead end]
+If a partial sign matrix $P$ has no orthogonal sign extension, and $H$
+is any square Hadamard matrix, then $P\otimes H$ also has no such
+extension.
+\end{proposition}
+\begin{proof}
+Write a putative extension as an $n\times s$ sign matrix $X$, where
+$s$ is the order of $H$. Orthogonality gives $PXH^{\mathsf T}=0$ up to
+the choice of vectorization convention. Since $H$ is invertible,
+$PX=0$. Every column of $X$ would be a sign extension of $P$, a
+contradiction.
+\end{proof}
+Thus arbitrary-extension failures are not isolated small-order accidents.
+This does not prove any lower bound on the number of rows needed to
+repair the amplified examples.
+
+\section{Geometric optimization and its exactness threshold}
+The orthogonal group gives another cross-disciplinary formulation:
+\[
+ F(U)=\sum_{i,j}|U_{ij}|\le n\sqrt n\qquad(U\in O(n)),
+\]
+with equality exactly at scaled Hadamard matrices. A naive plan is to
+prove a benign optimization landscape and follow gradient ascent.
+The following known basic family, independently certified here,
+disproves that plan~\cite{Almost}.
+
+\begin{proposition}[Strict local traps at admissible orders]
+For every $n>4$, $U=2J_n/n-I_n$ is a strict local maximum of $F$ on
+$O(n)$, but is not a scaled Hadamard matrix. Its value is $3n-4$.
+\end{proposition}
+\begin{proof}
+$U^2=I$. Its sign matrix is $S=J_n-2I_n$, and
+\[
+ S^{\mathsf T}U=2I_n+(1-4/n)J_n
+\]
+is positive definite: its eigenvalues are $n-2$ and $2$. In the open
+sign chamber containing $U$, $F(V)=\operatorname{tr}(S^{\mathsf T}V)$.
+Writing $S=UM$ with $M>0$, the orthogonal Procrustes inequality gives
+$\operatorname{tr}(M U^{\mathsf T}V)\le\operatorname{tr}M$, with
+equality only for $V=U$. To see uniqueness directly, diagonalize $M$:
+every diagonal entry of an orthogonal matrix is at most one, and all
+weights are strictly positive. Finally direct summation gives $3n-4$;
+the diagonal and off-diagonal magnitudes differ when $n>4$.
+\end{proof}
+Tensor products preserve these strict-local-maximum certificates:
+the sign matrices and positive polar factors tensor. Thus tensoring
+the order-eight trap produces traps at arbitrarily large admissible
+orders. This rejects a specific landscape claim, not every possible
+continuous objective or nonlocal optimization method.
+
+\begin{proposition}[How accurate an approximation would suffice]
+For any non-Hadamard sign matrix $A$ of even order $n>2$,
+\[
+ \operatorname{cond}_2(A)\ \ge\sqrt{\frac{n+2}{n-2}},
+\]
+where singular matrices have infinite condition number.
+\end{proposition}
+\begin{proof}
+A nonzero off-diagonal Gram entry has magnitude at
+least two. Its $2\times2$ principal submatrix has eigenvalues
+$n\pm|g|$, so interlacing gives the bound for nonsingular $A$.
+The singular case is immediate.
+\end{proof}
+
+For the intended even orders, the separation is $1+2/n+O(n^{-2})$.
+Thus a sign construction with condition number $1+o(1/n)$ would force
+eventual exact Hadamard existence. A bound merely tending to one does
+not. An eventual result would still need a rigorous finite treatment
+below its threshold to prove the full conjecture.
+
+\section{Why a local border cannot implement order induction}
+Absorption and trade arguments from design theory are attractive, but
+their local repair must respect a global rank constraint.
+\begin{proposition}[Preserved-rectangle obstruction]\label{prop:border}
+Let $H_n$ and $K_{n+s}$ be Hadamard matrices, $s>0$. Suppose a
+$k\times(n-c)$ rectangle of $H_n$ appears unchanged in $K_{n+s}$.
+Then $k\le c+s$. In particular preserving an $(n-r)\times(n-c)$
+rectangle requires $r+c\ge n-s$.
+\end{proposition}
+\begin{proof}
+After reordering, write the selected old rows as $[A\ B]$, with
+$B$ having $c$ columns, and the corresponding new rows as $[A\ D]$,
+with $D$ having $c+s$ columns. Orthogonality says
+\[
+ AA^{\mathsf T}+BB^{\mathsf T}=nI_k,\qquad
+ AA^{\mathsf T}+DD^{\mathsf T}=(n+s)I_k.
+\]
+Hence $DD^{\mathsf T}=sI_k+BB^{\mathsf T}$ is positive definite,
+and $k=\operatorname{rank}D\le c+s$.
+\end{proof}
+For example, adjoining four rows and columns while preserving almost
+all old rows and columns cannot work. An additive-order construction
+would need changes spread through a large part of the old matrix.
+This is stronger information than a failed numerical border search.
+
+The existence theorems proved by iterative absorption concern a fixed
+block hypergraph with sufficiently large host size~\cite{Absorption}.
+The equivalent Hadamard design has parameters
+$2$-$(4m-1,2m-1,m-1)$: its block size grows with its point set.
+Those fixed-block theorems therefore cannot be applied at these
+parameters without new uniform estimates and exact-support control.
+An absorption theorem for growing blocks at this tight boundary would
+be a substantial theorem in its own right; it is not available here.
+
+\section{Priorities after this first research pass}
+The first priority is Question~\ref{q:norm}: analyze integral
+congruence-constrained Hermitian representation over the cyclotomic
+components of $R_m$, including compatibility at primes dividing $m$.
+An independently interesting larger theorem would characterize which
+self-adjoint positive elements of an integral group ring are sums of
+four Hermitian norms in prescribed residue classes. Our scalar target
+would then be one specialization. Positivity and local congruence
+solvability must not be assumed sufficient without a proof; integral
+representation obstructions at small energy are exactly the issue.
+First seek obstructions and sufficient criteria above minimum energy,
+not a claimed local-to-global theorem. The boundary requires simultaneous
+control at all characters. Full quaternionic perfection has already
+been rejected by published counterexamples.
+
+The second priority is the integer moment problem: use
+Propositions~\ref{prop:signed}--\ref{prop:moves} to study conversion of
+signed designs into nonnegative ones. Identify an obstruction invariant
+or an elimination theorem beyond generic normality. The nonnormality
+example and the rank bound must be built into any proposed theorem.
+The central boundary case alone is equivalent to the original conjecture.
+
+The third priority is a classification of residual frames at fixed
+defect, with row-exchange costs. Proposition~\ref{prop:anchor} makes
+this finite at the level of column types. The certified order-twenty
+example is a useful adversarial test: direct extension and one-row
+replacement fail, while two-for-three exchange succeeds. This route
+still needs a way to reach a near-complete frame at every order; a
+terminal repair theorem alone cannot do that.
+
+We have proved reductions and negative tests, not a promising complete
+proof. The note's value is a set of precise, falsifiable intermediate
+questions and independently checked certificates. A list of connected
+subjects, an approximate solution, or a finite search success is not
+being presented as evidence that the full conjecture is proved.
+
+\section{Reproduction and scope}
+All files are under \path{research/full_conjecture/}. The scripts use
+Python's standard library only. No external research code, supplement
+or Lean proof was imported. Run \path{experiments/investigate.py},
+\path{experiments/exchange.py}, \path{experiments/moments.py},
+\path{experiments/norm_lifting.py}, then \path{experiments/verify.py}.
+The independent verifier checks the dead end, its augmentation and
+completion, and the sequence norm certificates using exact arithmetic.
+The kernel-basis and minimum-energy assertions have the paper proofs
+above; no Lean formalization or novelty claim is made.
+
+\begin{thebibliography}{10}
+\small\raggedright
+\bibitem{Survey} R. Egan, I. Kotsireas, S. London and P. \'O Cath\'ain,
+\emph{Recent progress in the construction of Hadamard matrices}, 2026.
+\url{https://arxiv.org/abs/2610.27175}.
+\bibitem{Quaternion} A. Bennett, C. Bright, P. Colinot and A. Nayak,
+\emph{Quaternionic Perfect Sequences and Hadamard Matrices}, 2026,
+Theorem 9 and introduction. \url{https://arxiv.org/abs/2601.22337}.
+\bibitem{KLP} G. Kuperberg, S. Lovett and R. Peled,
+\emph{Probabilistic existence of regular combinatorial structures},
+version 3, 2017. \url{https://arxiv.org/abs/1302.4295}.
+\bibitem{Davis} D. Davis, \emph{Counting partial Hadamard matrices in the
+cubic regime}, 2026, Theorem 1.1. \url{https://arxiv.org/abs/2603.30013}.
+\bibitem{Ohsugi} H. Ohsugi, \emph{Normality of cut polytopes of graphs
+is a minor closed property}, Discrete Math. 310 (2010), 1160--1166.
+\url{https://arxiv.org/abs/0906.5303}.
+\bibitem{LLL} A. Goldberger and Y. Strassler, \emph{A practical algorithm
+for completing half-Hadamard matrices using LLL}, J. Algebraic Combin.
+55 (2022), 217--244. Related authors' presentation:
+\url{https://www.netanya.ac.il/gur/data/Hadamard_Research/research9.pdf}.
+\bibitem{Verheiden} E. P. Verheiden, \emph{Arithmetical Properties of
+Combinatorial Matrices}, Ph.D. thesis, Caltech, 1978.
+\url{https://thesis.caltech.edu/2899/}.
+\bibitem{BK} D. A. Bulutoglu and D. M. Kaziska, \emph{A counterexample
+to Beder's conjectures about Hadamard matrices}, J. Statist. Plann.
+Inference 139 (2009), 3381--3383.
+\url{https://doi.org/10.1016/j.jspi.2009.02.003}.
+\bibitem{Almost} T. Banica, I. Nechita and K. \.Zyczkowski,
+\emph{Almost Hadamard matrices: general theory and examples},
+Open Syst. Inf. Dyn. 19 (2012), 1250024.
+\url{https://arxiv.org/abs/1202.2025}.
+\bibitem{Absorption} S. Glock, D. K\"uhn, A. Lo and D. Osthus,
+\emph{The existence of designs via iterative absorption: hypergraph
+$F$-designs for arbitrary $F$}, version 3.
+\url{https://arxiv.org/abs/1611.06827}.
+\bibitem{Filters} S.-M. Phoong and Y.-P. Lin,
+\emph{Lapped Hadamard transforms and filter banks},
+Proc. ICASSP 2003, vol. 6, 509--512.
+\url{https://doi.org/10.1109/ICASSP.2003.1201730}.
+\bibitem{Brock} B. W. Brock, \emph{Hermitian congruence and the existence
+and completion of generalized Hadamard matrices}, J. Combin. Theory
+Ser. A 49 (1988), 233--261.
+\url{https://doi.org/10.1016/0097-3165(88)90054-4}.
+\end{thebibliography}
+\end{document}

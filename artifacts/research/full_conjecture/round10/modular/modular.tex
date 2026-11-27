@@ -1,0 +1,144 @@
+\section{Modular lifting in the orders congruent to four modulo eight}
+\label{sec:four-mod-eight-lifting}
+
+The preceding lifting theorem used $N=4(q+1)$ with odd $q$, so its
+orders were divisible by eight. The complementary choice $N=4q$
+gives an especially simple result throughout the other admissible
+congruence class. Its only spurious modular extensions, once five
+orthogonal rows are present, are the rows already installed.
+This is a counting and lifting statement; it does not guarantee the
+surplus modular solutions needed for a new row. No novelty claim is
+made pending a targeted prior-art check.
+
+Let $P$ have $r$ orthogonal sign rows $p_i$ of length $N$. Count sign
+vectors up to negation, and write $M_q(P)$ for the number satisfying
+$Pv\equiv0\pmod q$ and $E(P)$ for the number satisfying $Pv=0$.
+
+\begin{theorem}[The row correction at orders $4\bmod8$]
+Let $q\ge3$ be any odd integer, $N=4q$, and $r\ge5$. Then
+\[
+ \boxed{E(P)=M_q(P)-r.}
+\]
+Every modular sign extension which is not exact is the sign or
+negative of exactly one existing row. Primality of $q$ is not required.
+\end{theorem}
+\begin{proof}
+For a modular sign vector $v$ put $d_i=p_i\cdot v$.
+Orthogonal rows differ in $N/2=2q$ positions, an even number, so
+all $d_i$ have the same residue modulo four. Every $d_i$ is even
+and divisible by odd $q$.
+
+If that common residue is two, each $d_i$ must be $2q$ or $-2q$,
+since the next possible magnitude $6q$ exceeds $N$. But Bessel gives
+\[
+ 4q^2r=\sum_i d_i^2\le N\|v\|^2=N^2=16q^2,
+\]
+contradicting $r\ge5$. Hence all $d_i$ are zero modulo four and
+therefore belong to $\{0,N,-N\}$. A nonzero value means
+$v=\pm p_i$, by equality in the sign-vector inner product bound.
+All other inner products then vanish by row orthogonality.
+Conversely every existing row is a modular sign vector because its
+nonzero self-inner-product is $N=4q$. The $r$ row classes are distinct,
+proving the count formula.
+\end{proof}
+
+\subsection{The sharp four-row boundary and closed quadruples}
+The five-row threshold has an exact geometric explanation. Call four
+orthogonal sign rows a \emph{closed quadruple} if their entrywise
+product is constant. This is standard terminology in Hadamard
+switching; see Orrick, \emph{Switching Operations for Hadamard
+Matrices}, Section 3.1 and Proposition 3.1,
+\url{https://arxiv.org/abs/math/0507515}.
+In particular the prohibition of such a quadruple inside a full
+Hadamard matrix of order $4\bmod8$ is classical.
+
+\begin{proposition}[Exact boundary correction]
+For four orthogonal sign rows of length $N=4q$, $q\ge3$ odd,
+\[
+ E(P)=M_q(P)-4-4\,\mathbf1_{\{P\text{ is closed}\}}.
+\]
+When the quadruple is closed, the four extra modular classes are
+represented by half-sums
+\[
+ v=\frac12\sum_{i=1}^4\sigma_i p_i,
+ \qquad\sigma_i\in\{\pm1\},\qquad
+ \prod_i\sigma_i=-c,
+\]
+where $c$ is the constant entrywise row product. Negating all four
+$\sigma_i$ gives the same antipodal class.
+\end{proposition}
+\begin{proof}
+The common-zero residue case in the preceding proof still produces
+only exact extensions and existing rows. In the common-two case,
+all four inner products are $\sigma_iN/2$, and Bessel is saturated.
+Thus $v$ has exactly the stated half-sum representation, with no
+orthogonal-complement component. Four signs sum to $+2$ or $-2$
+exactly when their product is $-1$. Consequently every coordinate
+of this half-sum is a sign if and only if
+$\prod_i p_{ij}=-\prod_i\sigma_i$ for every coordinate $j$.
+This is exactly the closed condition with the displayed restriction.
+Eight choices of $\sigma$ modulo simultaneous negation give four
+classes; independence of the four rows makes their half-sums distinct.
+\end{proof}
+
+For example $H_4\otimes\mathbf1_q$ is a closed quadruple with no
+exact extension, yet has eight modular classes: four installed rows
+and four half-sums. Thus subtracting only the original rows would
+give a false positive at this sharp boundary. The no-extension claim
+follows directly from its four length-$q$ block sums: orthogonality
+forces all sums zero, impossible for odd block size.
+
+\subsection{Finite algebra and the remaining positivity problem}
+For any integer modulus $q$, use the integral group algebra of
+$(\mathbb Z/q\mathbb Z)^r$ and let $c_j$ be column $j$ of $P$.
+Then
+\[
+ C_q(P)=[X^0]\prod_{j=1}^N(X^{c_j}+X^{-c_j})=2M_q(P).
+\]
+Under the five-row hypothesis,
+\[
+ \boxed{E(P)=\tfrac12C_q(P)-r.}
+\]
+Hence $C_q(P)>2r$ is an exact sufficient condition for a new sign row,
+and $C_q(P)=2r$ certifies terminality. The group-algebra formula
+works for composite odd $q$ as well as primes. For prime $q$ it can
+also be computed by finite-field Gaussian elimination or a Fourier
+character sum. When composite moduli are used, ordinary field row
+reduction must be replaced by valid arithmetic over the residue ring
+or a suitable Chinese-remainder procedure.
+
+For prime $q$, the row code $C\subseteq\mathbb F_q^N$ generated by
+$P$ is self-orthogonal, because $PP^{\mathsf T}=NI_r\equiv0\pmod q$.
+If its rank is $s$, then $s\le N/2$. An information-coordinate search
+therefore uses $2^{N-s-1}$ sign assignments; large real row count
+does not imply equally large modular rank. The existing rows already
+give $M_q(P)\ge r$. Proving the strict surplus needed for extension
+requires additional code structure, rather than rank alone.
+
+Exact examples from explicit Hadamard matrices illustrate the formula:
+\[
+\begin{array}{c|r|r|r|r}
+N&r&\operatorname{rank}_{q}P&M_q(P)&E(P)\\\hline
+12&5&5&18&13\\
+12&6&6&12&6\\
+12&10&6&12&2\\
+20&10&10&20&10\\
+20&18&10&20&2\\
+28&14&14&28&14\\
+28&26&14&28&2
+\end{array}
+\]
+Here $q=N/4$ and the matrices are constructed explicitly in the
+standard-library checker. An independent integer group-algebra
+calculation gives $C_3(P)=36$ for the five-row order-twelve example,
+so $36/2-5=13$ exactly. Its thirteen candidate classes need not all
+be mutually orthogonal: counting single-row extensions alone does
+not automatically supply a complete frame.
+
+Together, the $N=4(q+1)$ theorem for odd $q$ and the present
+$N=4q$ theorem treat both admissible residue classes modulo eight,
+with different explicit corrections. Neither asserts the requisite
+modular positivity uniformly, so neither proves the full Hadamard
+conjecture. Their concrete value is that they replace an approximate
+modular extension problem by an exact real one after accounting for
+fully classified exceptional configurations.

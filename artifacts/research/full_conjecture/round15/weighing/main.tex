@@ -1,0 +1,148 @@
+\section{A support-moving four-row repair of a weighing obstruction}
+\label{sec:weighing-switch-repair}
+
+The two-zero completion test detects an obstruction but does not
+produce a good weighing input. Here a local orthogonal operation
+changes such an input while preserving its weighing identity.
+The operation moves zero positions as well as signs. On the explicit
+unfillable $W(12,10)$ it produces a matrix admitting two Hadamard
+fillings. This is a repair at a known order, not an all-order theorem
+or a minimum-entry-distance claim.
+
+We use the preceding normalization for $W(n,n-2)$, $4\mid n$:
+the zero positions are diagonal two-square blocks and every
+off-diagonal block is Hadamard. Orthogonal row mixing and switching
+belong to the classical orthogonal-design setting; see, for context,
+Geramita--Verner, \emph{Orthogonal Designs with Zero Diagonal},
+\url{https://doi.org/10.4153/CJM-1976-028-3}.
+The criterion and finite repair below are independently checked;
+no novelty claim is made.
+
+\begin{theorem}[A four-row support-moving switch]
+Select two complete zero-row pairs, ordered as four rows, and let
+\[
+ Q=\frac12\begin{pmatrix}
+1&1&1&1\\1&-1&1&-1\\1&1&-1&-1\\1&-1&-1&1
+\end{pmatrix}.
+\]
+Replace those four rows by their product with $Q$, leaving all
+other rows unchanged. The output is another $W(n,n-2)$ if and
+only if the product of the four selected entries is $-1$ in every
+column outside the two selected zero-column pairs.
+When it succeeds, zero positions can move only inside the four-square
+submatrix formed by the selected row and zero-column pairs.
+\end{theorem}
+\begin{proof}
+The row operation is orthogonal, so the weighing Gram identity is
+preserved without further conditions. In a selected zero-column pair,
+the four-entry column has two zeros and two signs. Multiplication
+by $Q$ gives entries in $\{0,\pm1\}$ and squared norm two, hence
+exactly two nonzero signs. In any other column all four selected
+entries are signs. If their product is $-1$, each Walsh row has
+inner product $+2$ or $-2$ with that sign vector, so the output
+consists of four signs. If their product is $+1$, each inner product
+is zero or $\pm4$; norm preservation forces one output entry of
+magnitude two, which is forbidden. This proves necessity and
+sufficiency, including the support statement. Since the square output
+has Gram $(n-2)I$, its rows and columns still contain exactly two zeros.
+\end{proof}
+
+Unlike row permutations and sign changes, this operation need not
+preserve zero-fill feasibility. Its support motion is essential to
+the following small-support rigidity statement.
+
+\begin{proposition}[Two fixed-support row blocks cannot change feasibility]
+Suppose $W'$ is another normalized $W(n,n-2)$ with exactly the same
+zero positions as $W$, and only one or two zero-row pairs are allowed
+to differ. Then $W'$ is obtained from $W$ by signed row permutations
+inside those pairs. In particular their zero-preserving Hadamard
+completion problems are equivalent.
+\end{proposition}
+\begin{proof}
+The matrix $U=W'W^{\mathsf T}/(n-2)$ is orthogonal and satisfies
+$W'=UW$. Every unchanged row forces the corresponding row and
+column of $U$ to be a coordinate vector, so $U$ acts only on the
+selected pairs. For two pairs its four-square part has two-square
+blocks $\left(\begin{smallmatrix}P&Q_1\\R&P_1\end{smallmatrix}\right)$.
+Preserving the zero block in the first pair gives
+$Q_1W_{ji}=0$; preserving the second gives $RW_{ij}=0$.
+Both off-diagonal blocks are invertible Hadamard matrices, so
+$Q_1=R=0$. The remaining blocks $P,P_1$ are orthogonal. Each maps
+an off-diagonal two-square Hadamard block to another such block,
+and hence is a signed permutation: its entries are row inner products
+of two-square Hadamard matrices divided by two, thus $0,\pm1$.
+The one-pair case is the same argument without the cross blocks.
+Signed row permutations give bijections between sign completions.
+\end{proof}
+
+\subsection{An explicit escape from the order-twelve obstruction}
+For a self-contained input, put
+\[
+ F=\begin{pmatrix}1&1\\1&-1\end{pmatrix},\quad
+ I=I_2,\quad D=\begin{pmatrix}1&0\\0&-1\end{pmatrix},\quad
+ S=\begin{pmatrix}0&1\\1&0\end{pmatrix},
+\]
+and define the six-square block matrix
+\[
+ A=\begin{pmatrix}
+0&I&D&D&D&D\\S&0&-I&-I&I&I\\S&-D&0&I&-D&D\\
+S&-D&I&0&D&-D\\S&D&-D&D&0&-I\\S&D&D&-D&-I&0
+\end{pmatrix},\qquad W=A(I_6\otimes F).
+\]
+As certified previously, $WW^{\mathsf T}=10I_{12}$, but this input
+admits no zero-preserving Hadamard filling. The checker re-verifies
+that obstruction by exhausting all eight root states.
+
+Apply the theorem's $Q$ to rows $0,1,2,3$, with all indices zero-based.
+Every outside-column product is $-1$. The first four rows of the
+switched weighing matrix $\widetilde W$ become
+\[
+\begin{pmatrix}
+1&0&1&0&-1&1&-1&1&1&1&1&1\\
+0&-1&0&1&1&-1&1&-1&1&1&1&1\\
+-1&0&1&0&1&1&1&1&-1&1&-1&1\\
+0&1&0&1&1&1&1&1&1&-1&1&-1
+\end{pmatrix};
+\]
+the other eight rows are unchanged. In particular the two original
+zero-row pairs are reorganized into pairs $(0,2)$ and $(1,3)$.
+
+Here is a complete filling certificate. In each table row insert
+the indicated signs in the two listed zero columns, leaving all
+nonzeros of $\widetilde W$ unchanged:
+\[
+\begin{array}{c|c|c}
+\text{row}&\text{zero columns}&\text{inserted signs}\\\hline
+0&(1,3)&(-1,-1)\\1&(0,2)&(-1,1)\\
+2&(1,3)&(1,-1)\\3&(0,2)&(1,1)\\
+4&(4,5)&(1,-1)\\5&(4,5)&(-1,-1)\\
+6&(6,7)&(1,-1)\\7&(6,7)&(-1,-1)\\
+8&(8,9)&(-1,1)\\9&(8,9)&(1,1)\\
+10&(10,11)&(-1,1)\\11&(10,11)&(1,1)
+\end{array}
+\]
+The resulting sign matrix has exact Gram $12I_{12}$. Negating
+all inserted signs gives the second filling; the eight-state test
+certifies that these are the only two fillings of $\widetilde W$.
+
+The switch changes twenty-six matrix entries. Twenty-two originally
+nonzero entries change or become zero, and eight positions change
+zero/nonzero status (four holes are erased and four are introduced).
+Each completed Hadamard matrix disagrees with only twenty of the
+original $W$'s 120 prescribed nonzero signs; all disagreements lie
+in the four switched rows. These are exact measured costs, not
+proved global minima. For this fixed orientation of $Q$, precisely
+one of the fifteen original row-pair choices is admissible.
+
+The checker also records a bounded failed alternative: among 3,200
+specified equal-magnitude Householder selectors, none produced a
+nontrivial zero-preserving weighing switch on this input. This does
+not assert isolation under arbitrary operations. The successful
+four-row move preserves the weighing equation while changing the
+zero pairing, which the fixed-support rigidity proposition forbids
+for a feasibility-changing move of the same row-block size.
+
+This supplies an input-producing operation and an actual repair
+witness. It neither guarantees that a suitable quadruple exists
+for every weighing matrix nor shows that iterating these switches
+will always reach a completable input.

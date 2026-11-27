@@ -1,0 +1,98 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,hyperref}
+\newtheorem{theorem}{Theorem}
+\title{An exact self-dual-neighbor landscape at order twenty}
+\author{Joshua Mark}
+\date{20 November 2026; finite certificate, priority unestablished}
+\begin{document}\maketitle
+Fix the self-dual $[20,10]$ code $C$ over $\mathbb F_5$ certified in
+round10's \texttt{code\_traps/search.json}. It has twelve antipodal
+sign classes, forming a terminal real orthogonal frame and spanning
+$C$. Here a neighbor means a different self-dual code with
+intersection dimension nine.
+
+\begin{theorem}[Syndrome census identity]
+For a self-dual code $C$ of dimension $r$ over an odd prime field,
+each hyperplane $H\subset C$ determines exactly one other self-dual
+code $C_H$ containing $H$. If $B$ is a basis of $C$ and $v$ is an
+isotropic vector outside $C$, its nonzero projective syndrome
+$[Bv^T]$ labels $H=C\cap v^\perp$ and hence $C_H$.
+Consequently counting all sign vectors outside $C$ by projective
+syndrome counts all new sign classes in each neighbor. Adding the
+old sign classes annihilated by that syndrome gives its entire
+sign count. Neighbors with no outside sign cannot improve the count.
+\end{theorem}
+\begin{proof}
+The nondegenerate quotient $H^\perp/H$ has dimension two and contains
+the isotropic line $C/H$, hence is a hyperbolic plane. Its quadratic
+form has exactly two isotropic lines. The other one uniquely defines
+$C_H/H$. The functional $c\mapsto c\cdot v$ has kernel $H$;
+its projective coordinate in the dual basis is the syndrome.
+Any isotropic $v\in H^\perp\setminus C$ belongs to the other line,
+so all such vectors belong to that same unique neighbor.
+\end{proof}
+At length twenty every sign vector is isotropic modulo five because
+its squared norm is twenty. Normalize its first coordinate to $+1$.
+There are $2^{19}=524288$ such vectors. The script \texttt{census.py}
+visits all of them in Gray order, updating the ten-coordinate
+syndrome by one signed code column at each step. Twelve have zero
+syndrome; the rest occupy 417826 projective syndrome classes.
+
+\begin{theorem}[Complete improving-neighbor census for this code]
+Of the $(5^{10}-1)/4=2441406$ self-dual neighbors of $C$, exactly
+42 have more than twelve sign classes. Every one of those has
+twenty sign classes and forms a real Hadamard matrix. Ten retain
+ten old rows and add ten; thirty-two retain nine old rows and add
+eleven. Thus the code is not a local maximum for sign count, but
+every improving move loses at least two old rows.
+There are 2678 tied neighbors with twelve sign classes.
+The complete neighbor sign-count distribution is
+\[
+\begin{array}{c|rrrrrr}
+\text{sign count}&0&1&2&3&4&5\\\hline
+\text{neighbors}&94504&426152&792872&559560&330124&130000
+\end{array}
+\]
+\[
+\begin{array}{c|rrrrr}
+\text{sign count}&6&8&12&20&\text{all other counts}\\\hline
+\text{neighbors}&77096&28378&2678&42&0
+\end{array}
+\]
+\end{theorem}
+
+The Gray scan counts every neighbor with at least one outside sign.
+To recover the others without scanning all $5^{10}$ syndromes, form
+the length-twelve evaluation code
+$D=\{(\alpha(c_1),\ldots,\alpha(c_{12})): \alpha\in C^*\}$,
+where $c_i$ are the old sign representatives. Their spanning property
+makes $D$ ten-dimensional; its dual is two-dimensional. Directly
+enumerating its 25 words gives dual weight distribution
+$1+8z^8+8z^{10}+8z^{12}$.
+The MacWilliams identity~\cite{MW} recovers the weight counts of $D$:
+\[
+ A_w(D)=\frac1{25}\sum_j A_j(D^\perp)
+ \sum_{\ell=0}^w(-1)^\ell4^{w-\ell}
+       \binom j\ell\binom{12-j}{w-\ell}.
+\]
+A nonzero evaluation word with $k$ zero entries represents a
+hyperplane retaining $k$ old signs, and division by four removes
+scalar multiples. Subtracting the Gray-scan counts for each retention
+number gives exactly the neighbors with no outside signs. Every
+integer and divisibility assertion is checked. All 42 improving
+codes are additionally rebuilt by explicit neighbor pivots, and
+their complete sign lists and real Hadamard Gram identities checked.
+
+The runtime is a bounded finite enumeration, not an asymptotic search
+or a theorem about arbitrary code landscapes. In particular it does
+not rule out suboptimal local maxima at other codes or orders.
+It supplies a complete local landscape at one explicit terminal
+frame, with efficient general syndrome bookkeeping and no unknown
+Hadamard-existence assumption.
+\begin{thebibliography}{9}
+\bibitem{MW} J. MacWilliams, A theorem on the distribution of weights
+in a systematic code, Bell System Technical Journal 42 (1963),
+79--94. \url{https://doi.org/10.1002/j.1538-7305.1963.tb04003.x}.
+\end{thebibliography}
+\end{document}

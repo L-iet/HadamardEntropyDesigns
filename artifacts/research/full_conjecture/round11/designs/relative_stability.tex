@@ -1,0 +1,111 @@
+\section{Relative collision near-optimality does not give dimension-free stability}
+\label{sec:design-relative-stability}
+The next argument removes the earlier restriction $h>2(k-1)$.
+Throughout, $h=2^s$, $2\le k\le h$, and $S$ is the full $k$-block source
+support. The finite-field compressed laws remain exactly isotropic and
+strict local collision maxima by the preceding character-space proof.
+The coding inequality below is the classical Plotkin squared-sum argument;
+its original source is M. Plotkin, \emph{Binary codes with specified
+minimum distance} (1960), \url{https://doi.org/10.1109/TIT.1960.1057584}.
+The finite-field array input is classical. Novelty of these combined
+stability statements has not been established.
+
+\begin{proposition}[General support bound without a small-$k$ restriction]
+\label{prop:design-plotkin-support}
+For every $2\le k\le h$,
+\[
+ \omega(S)\le h\left\lfloor\frac{h}{h-k+1}\right\rfloor.
+\]
+Consequently any law supported on $S$ has distance from $\mathcal H_{kh}$
+at least
+$1-\frac1k\lfloor h/(h-k+1)\rfloor$, when this is positive.
+\end{proposition}
+\begin{proof}
+Group an orthogonal row set by the value of $x_1$, giving $h$ groups.
+For two rows in one group the kernel is $h c-2d$, where $c\ge1$ is
+the number of equal block seeds and $d\le k-1<h$ is the distance
+between their mixed-bit strings. Orthogonality forces $c=1$ and
+$d=h/2$. The mixed sign strings have length $k-1$ and pairwise inner
+product $-(h-k+1)$. If a group has $q$ rows, the squared norm of their
+sum is $q(k-1)-q(q-1)(h-k+1)\ge0$, giving
+$q\le h/(h-k+1)$. Sum over the $h$ groups and use the support witness.
+\end{proof}
+
+A stronger conclusion is available for a deliberately chosen compressed
+support $U\subset S$. Take slopes $P\subset\mathbb F_h$, $0\in P$,
+$|P|=k$, and use seeds $x_t=A+tB$ for $t\in P$. Denote the omitted
+slopes by $R=\mathbb F_h\setminus P$.
+\begin{theorem}[Spanning omitted slopes give the sharp distance]
+\label{thm:design-spanning-slopes}
+Assume $h/2<k<h$ and $R$ linearly spans the additive $s$-space
+$\mathbb F_h$. Then the orthogonality graph of the $h^2$ compressed
+augmented rows is exactly the disjoint union of $h$ cliques of size $h$,
+one for each fixed $B$.
+The uniform compressed law $\mu_P$ is a strict local collision maximum,
+with $C(\mu_P)=1/h^2$.
+If a Hadamard matrix of order $k$ exists, then the full global optimum
+at order $n=kh$ is $1/(kh)$ and
+\[
+ \frac{C(\mu_P)}{C_{\rm global}}=\frac{k}{h},\qquad
+ \inf_{\nu\in\mathcal H_{kh}}\|\mu_P-\nu\|_{\rm TV}=1-\frac1k.
+\]
+Such a slope set exists whenever $s\le h-k<h/2$.
+\end{theorem}
+\begin{proof}
+For two seed pairs let $a=\Delta A$, $b=\Delta B$.
+If $b=0$ and $a\ne0$, no block seeds agree and every mixed difference
+vanishes, so their rows are orthogonal. If $b\ne0$, the equation
+$a+tb=0$ holds for at most one observed slope, so the kernel is
+$h c-2d$ with $c\in\{0,1\}$. The number of negative mixed differences is
+\[
+ d=\#\{t\in P\setminus\{0\}:e(tb)=1\}
+   =h/2-\#\{t\in R:e(tb)=1\}.
+\]
+Spanning of $R$ and nonzero $e$ imply the last count is positive.
+Since $|R|<h/2$, it is also less than $h/2$. Thus $0<d<h/2$ and
+$hc-2d\ne0$. This proves the claimed graph and $\omega(U)=h$.
+The strict local maximum follows from the same complementary pair of
+block character spaces used in the concentration theorem; that proof
+requires only distinct slopes, not $h>2(k-1)$.
+
+The support witness gives the lower distance $1-1/k$. For each fixed
+$B$, complete its $h$-clique by the previous block construction using
+any normalized order-$k$ Hadamard matrix in place of Walsh. These $h$
+completions remain disjoint: the first Walsh block recovers $A$, the
+other blocks recover their sign multipliers and block seeds, and the
+normalized order-$k$ rows are distinct. They meet $U$ only in their
+own clique, since $\omega(U)=h$. Averaging the completed laws puts
+mass $\mu_P/k$ on $U$, attaining the distance. Tensoring the order-$k$
+Hadamard matrix with Walsh order $h$ gives the global endpoint, and
+the atom bound gives global optimality. Finally, choose $R$ to contain
+an additive basis and add arbitrary nonzero slopes until its size is
+$h-k$; then $0\in P$ as required.
+\end{proof}
+
+For example, take $h=16$, $k=12$, and omit the polynomial-coordinate
+basis slopes $R=\{1,2,4,8\}$. The resulting exactly isotropic law has
+only $256$ atoms on $191$ bits, collision $1/256$ versus optimum $1/192$,
+and distance exactly $11/12$ from every convex mixture of Hadamard laws.
+It is nevertheless a strict local collision maximum. The checker uses
+an original finite-field implementation modulo $x^4+x+1$ and the
+classical Paley order-twelve matrix for block completion.
+
+\begin{corollary}[A near-optimal relative regime]
+\label{cor:design-relative-regime}
+Suppose known Hadamard orders $k_i$ and powers of two $h_i$ satisfy
+$k_i/h_i\to1$ and
+$\log_2h_i\le h_i-k_i<h_i/2$.
+Then there are exactly isotropic strict local maxima whose collision
+divided by the global optimum tends to one, while their distance from
+all Hadamard mixtures tends to one.
+Their absolute collision deficit is
+\[
+ \frac1{k_i h_i}-\frac1{h_i^2}
+ =\frac{h_i-k_i}{k_i h_i^2}.
+\]
+\end{corollary}
+This is a relative-stability obstruction, not a contradiction of
+sufficiently small dimension-dependent absolute collision windows.
+Existence of a suitable infinite sequence of known orders can be
+supplied separately by Paley orders and irrational-rotation density.
+The theorem itself constructs laws only at already-known Hadamard orders.

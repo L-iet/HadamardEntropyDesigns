@@ -1,0 +1,845 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,mathtools,hyperref}
+\setlength{\emergencystretch}{3em}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\newcommand{\tr}{\operatorname{tr}}
+\title{Sharp collision-entropy bounds and exact rounding\\for pairwise-independent sign variables}
+\author{Joshua Mark\thanks{ORCID: \href{https://orcid.org/0009-0003-5905-2382}{0009-0003-5905-2382}. AI tools assisted with derivation, independent review, computation and exposition.}}
+\date{20 November 2026 --- research draft; priority not established}
+\begin{document}\maketitle
+\begin{abstract}
+We prove a residue-sensitive collision-probability bound for unbiased
+pairwise-independent sign variables, with a complete equality
+classification by Hadamard completion in at most three columns.
+We also derive a fixed-dimension sufficient condition for a probability
+distribution on sign vectors to contain an entire Hadamard matrix.
+The condition combines collision probability with an explicit error
+in its first and second moments. It yields positive Shannon-entropy
+windows for exact extraction, and a larger existence window using
+a classical seven-row completion theorem. We give a sharp collision
+benchmark at forbidden orders and explicit obstructions to diagonal
+balancing, natural operator capacities, convex exchangeable averaging,
+and entrywise modular lifting. These results distinguish genuine
+rounding certificates from relaxations that erase the sign constraints.
+No construction attaining the sufficient window in every admissible
+dimension is proved; the full Hadamard conjecture remains open.
+Novelty has not been established by a comprehensive prior-art review.
+\end{abstract}
+\section{A collision-entropy bound in every residue class}
+\label{sec:residue-bound}
+Let $d\ge2$ unbiased pairwise-independent sign variables have joint
+law $w$ on $\{\pm1\}^d$. Set
+\[
+ n=d+1,\qquad N=4\left\lceil\frac n4\right\rceil,
+ \qquad C(w)=\sum_xw_x^2.
+\]
+The integer $N$ is the smallest multiple of four at least $d+1$.
+The standard orthogonal-frame argument gives the atom bound
+$w_x\le1/n$; the entropy connection and its exact $N=n$ case are
+background~\cite{GP}. The residue-sensitive statement below is a
+derivation in this research pass; bibliographic priority is unestablished.
+
+\begin{theorem}[Residue-sensitive collision bound and equality]
+\label{thm:residue-bound}
+For every such law,
+\[
+ C(w)\le\frac1N,\qquad
+ H_2(w):=-\log C(w)\ge\log N,\qquad H(w)\ge\log N.
+\]
+If $C(w)=1/N$, the law is uniform on exactly $N$ atoms and their
+augmented sign matrix admits completion by $N-n\le3$ columns to a
+Hadamard matrix of order $N$. Conversely any order-$N$ Hadamard matrix
+gives a law attaining both entropy bounds. Consequently attainment
+of either entropy lower bound is equivalent to Hadamard existence
+at order $N$.
+\end{theorem}
+
+\begin{proof}
+Write $v_x=(1,x)\in\{\pm1\}^n$. Unbiased pairwise independence says
+\begin{equation}\label{eq:residue-frame}
+ \sum_xw_xv_xv_x^T=I_n.
+\end{equation}
+Thus $\sum_yw_y(v_x\cdot v_y)^2=n$ for each $x$, and
+$\sum_{x,y}w_xw_y(v_x\cdot v_y)^2=n$.
+In particular $w_x\le1/n$.
+
+\emph{Case $n\equiv0\pmod4$.}
+The atom bound gives $C\le1/n$. Equality forces every positive weight
+to equal $1/n$. The square augmented matrix has orthogonal columns
+by \eqref{eq:residue-frame}, and is Hadamard.
+
+\emph{Case $n\equiv3\pmod4$.}
+All dot products are odd. Distinct augmented atoms cannot be negatives
+of one another, and their squared dot products are at least one.
+Consequently
+\[
+ n\ge n^2C+(1-C),\qquad C\le\frac1{n+1}.
+\]
+Equality forces every distinct pair to have dot product $\pm1$.
+The pointwise identity then reads
+$n=n^2w_x+1-w_x$, forcing $w_x=1/(n+1)$.
+Let $V$ have these $N=n+1$ augmented rows. Then $V^TV=NI_n$;
+$K=NI_N-VV^T$ is positive semidefinite of rank one with diagonal
+one. Hence $K=ss^T$ for a sign vector $s$. Appending $s$ gives
+$[V\ s][V\ s]^T=NI_N$.
+
+\emph{Case $n\equiv2\pmod4$.}
+Here $n\ge6$. Divide the atoms by their parity
+$\epsilon_x=\prod_i x_i$; let their total masses be $a,1-a$.
+Two atoms in the same class have dot product $2\pmod4$, while
+cross-class dot products are $0\pmod4$. Therefore
+\[
+ n\ge n^2C+4\big(a^2+(1-a)^2-C\big)
+       \ge(n^2-4)C+2,
+\]
+giving $C\le1/(n+2)$. Equality forces $a=1/2$, within-class
+distinct dot products of magnitude two, and cross-class orthogonality.
+For a fixed atom the pointwise identity is then
+$n=n^2w_x+4(1/2-w_x)$, so $w_x=1/(n+2)$.
+For the resulting $N\times n$ matrix $V$, the positive semidefinite
+residual $K=NI_N-VV^T$ has rank two and diagonal two. Cross-class
+blocks vanish, so each of the two nonempty diagonal blocks has rank
+one. Write them $2ss^T$ and $2tt^T$, with $s,t$ sign vectors.
+Append rows $(s_i,s_i)$ on the first class and $(t_i,-t_i)$ on the
+second. These two added columns have row Gram matrix $K$, completing
+$V$ to a Hadamard matrix.
+
+\emph{Case $n\equiv1\pmod4$.}
+Here $n\ge5$. For any pair of atoms set
+$q_{xy}=\epsilon_x\epsilon_y(v_x\cdot v_y)$.
+Their Hamming distance shows $q_{xy}\equiv1\pmod4$. Thus
+\[
+ q_{xy}^2+2q_{xy}-3\ge0,
+\]
+with equality precisely at $q_{xy}\in\{-3,1\}$.
+Put $z=\sum_xw_x\epsilon_xv_x$. Since the $n$ coordinate functions
+of $v$ are orthonormal in $L^2(w)$, Bessel inequality gives
+$\|z\|^2\le\mathbb E\epsilon^2=1$. Equivalently, this follows by
+expanding $\mathbb E(\epsilon-z\cdot v)^2=1-\|z\|^2$.
+Summing the polynomial over pairs and retaining its diagonal terms gives
+\[
+ (n-1)(n+3)C\le n+2\|z\|^2-3\le n-1,
+\]
+so $C\le1/(n+3)$.
+
+At equality, $\epsilon_x=z\cdot v_x$ on the positive-weight support,
+and distinct pairs have $q_{xy}\in\{-3,1\}$. The polynomial's
+pointwise expectation equals
+$n+2\epsilon_xv_x\cdot z-3=n-1$; its only nonzero contribution
+comes from $y=x$. Hence again $w_x=1/(n+3)$.
+Switch row $v_x$ to $v'_x=\epsilon_xv_x$ and form $V'$.
+Its residual $K=NI_N-V'V'^T$ is positive semidefinite of rank three,
+has diagonal three, and off-diagonal entries in $\{3,-1\}$.
+Represent it as a Gram matrix of length-$\sqrt3$ vectors. Inner
+product three identifies equal vectors. Distinct types have Gram
+matrix $4I_t-J_t$, which is positive semidefinite only if $t\le4$.
+Assign the types distinct rows of
+\[
+ T=\begin{pmatrix}1&1&1\\1&-1&-1\\-1&1&-1\\-1&-1&1\end{pmatrix}.
+\]
+The resulting $N\times3$ sign matrix $R$ has $RR^T=K$.
+Then $[V'\ R]$ is a Hadamard matrix. This is an explicit completion;
+no external small-rank classification is needed.
+
+For the converse normalize the first column of an order-$N$ Hadamard
+matrix to all positive and keep $n$ columns including that column.
+The $N$ resulting rows are distinct: full rows differ in $N/2$
+coordinates, whereas at most three columns were deleted. For $N\ge8$
+this leaves a difference; at $N=4$, $n\ge3$ and at most one column
+was deleted. The uniform law on the remaining $d$ coordinates is
+unbiased and pairwise independent, with $C=1/N$ and $H=\log N$.
+Finally $H\ge-\log C$ by Jensen inequality, so equality in the Shannon
+lower bound forces $C=1/N$ as well.
+\end{proof}
+
+For example, four, five or six unbiased pairwise-independent sign bits
+each have Shannon entropy at least $\log8$. Eight, nine or ten such
+bits each have entropy at least $\log12$, attained by truncating an
+order-$12$ Hadamard matrix. These statements concern joint entropy,
+not min-entropy; a single atom can still saturate $1/(d+1)$.
+For $d=1$ the formula would be false, which is why $d\ge2$ is explicit.
+
+\paragraph{The unresolved step.}
+This proves a universal bound and a complete equality classification.
+It does not prove that an equality law exists in every admissible
+dimension. Such attainment for all $d$ is equivalent to the full
+Hadamard conjecture. The parity and Bessel argument gives a precise
+information-theoretic target; it does not by itself reach that target.
+\section{A quantitative discrete rounding bridge}
+\label{sec:discrete-rounding}
+This section gives a sufficient fixed-dimension certificate, rather than
+an existence proof. It combines the weighted clique inequality of
+Motzkin--Straus with an exact second-moment identity. The atom bound
+and its equality characterization are established background; see
+Gavinsky--Pudl\'ak, \emph{On the joint entropy of $d$-wise-independent
+variables}, Theorem 3.2 and Section 4
+(\url{https://users.math.cas.cz/~pudlak/pairwise.pdf}).
+The present quantitative combination is a derivation, not a priority claim.
+
+Let $n\ge4$ be even, $\Omega=\{-1,1\}^{n-1}$, and let $w$ be any
+probability measure on $\Omega$. Write
+\[
+ v_x=(1,x_1,\ldots,x_{n-1})\in\{-1,1\}^n,\quad
+ M=\sum_xw_xv_xv_x^T,\quad C=\sum_xw_x^2,\quad
+ E=\|M-I_n\|_F^2.
+\]
+Here $C$ is the probability that two independent draws coincide.
+The diagonal of $M$ is always one. Therefore $E$ is exactly twice
+the sum of the squared biases and squared pair correlations:
+\[
+ E=2\sum_i(\mathbb E x_i)^2+
+   2\sum_{i<j}(\mathbb E x_ix_j)^2.
+\]
+Balanced pairwise independence is equivalent to $E=0$.
+
+\begin{theorem}[Collision--moment rounding certificate]
+\label{thm:discrete-rounding}
+If
+\begin{equation}\label{eq:discrete-certificate}
+ (n^2-4)C>n+E-\frac4{n-1},
+\end{equation}
+then the support of $w$ contains $n$ atoms whose augmented vectors are
+mutually orthogonal. These vectors give a Hadamard matrix of order $n$.
+They can be extracted by repeated weight merging, without adding atoms.
+More generally, suppose every distinct nonorthogonal pair in the support
+has $|v_x\cdot v_y|\ge a$, where $0<a<n$. Then the sufficient condition is
+\[
+ (n^2-a^2)C>n+E-\frac{a^2}{n-1}.
+\]
+If the support lies in a single parity class and $4\mid n$, one may
+use $a=4$ (for $n>4$), improving the constant from $4$ to $16$.
+\end{theorem}
+\begin{proof}
+Join distinct support atoms when their augmented vectors are orthogonal,
+and let $A=\sum_{x,y:\,v_x\perp v_y}w_xw_y$ be the ordered edge weight.
+Every clique has size at most $n$. Exact expansion gives
+\[
+ \sum_{x,y}w_xw_y(v_x\cdot v_y)^2=\tr(M^2)=n+E.
+\]
+The diagonal contributes $n^2C$. Distinct nonedges contribute at least
+$a^2(1-C-A)$, so
+\[
+ A\ge1-\frac{n+E}{a^2}+\frac{n^2-a^2}{a^2}C.
+\]
+Under the displayed hypothesis this exceeds $1-1/(n-1)$.
+For completeness, the weighted clique inequality follows constructively:
+if positive-weight vertices $x,y$ are not adjacent, transfer their combined
+weight to whichever has larger weighted neighbor sum. The ordered edge
+weight does not decrease, and one positive-weight vertex disappears.
+Iterating yields a clique of size $r$, with edge weight
+$1-\sum_{i=1}^r u_i^2\le1-1/r$. Hence the resulting clique must have
+$r\ge n$, and orthogonality forces $r=n$. This is the classical
+Motzkin--Straus merging argument; its original source is
+\emph{Maxima for graphs and a new proof of a theorem of Tur\'an}
+(1965), \url{https://doi.org/10.4153/CJM-1965-053-6}.
+Finally, dot products are even when $n$ is even. Within one parity class,
+Hamming distances are even, so dot products are multiples of four if
+$4\mid n$.
+\end{proof}
+
+\begin{corollary}[Explicit collision gap]
+\label{cor:discrete-gap}
+An exactly balanced pairwise independent measure on $n-1$ bits with
+\[
+ C>\frac1n-\frac4{n(n-1)(n^2-4)}
+\]
+contains an order-$n$ Hadamard matrix in its support. Consequently,
+if no such matrix exists, every such measure satisfies the opposite
+nonstrict inequality. With single-parity support, replace both occurrences
+of $4$ in the correction by $16$, for $n>4$.
+\end{corollary}
+The standard atom estimate $w_x\le1/n$ implies $C\le1/n$;
+the corollary gives an explicit one-sided neighborhood below equality
+in which exact extraction already works. The correction is of order
+$n^{-4}$. We do not claim optimality. In particular, the uniform cube
+has $E=0$ but $C=2^{-(n-1)}$, far outside this neighborhood.
+Thus positivity of every moment matrix, or exact vanishing of all
+nonconstant Walsh coefficients of degrees one and two, does not itself
+supply this concentration certificate. The unresolved step is producing
+sufficiently concentrated measures for every $4\mid n$.
+
+\subsection{A sharp obstruction to entrywise finite-field lifting}
+A modular orthogonality route needs an additional global repair mechanism.
+Its elementary seed construction below is standard in modular-Hadamard
+literature; see Kuperberg, \emph{Hadamard matrices modulo $p$ and small
+modular Hadamard matrices}, Lemma 2.3,
+\url{https://arxiv.org/abs/1409.0148}.
+\begin{proposition}[Nonsingular modular seeds need not lift]
+\label{prop:discrete-modular}
+Let $m\ge3$, $n>4$, and $n\equiv4\pmod m$, and put $B=J_n-2I_n$.
+Then $BB^T\equiv nI_n\pmod m$, but $B$ is not a real Hadamard matrix.
+Moreover there is no real Hadamard matrix entrywise congruent to $B$
+modulo $m$. For every odd prime $p$, the choices $n=4+4pt$ with $t\ge1$
+give infinitely many admissible orders with an invertible modular seed
+that has no such sign lift.
+\end{proposition}
+\begin{proof}
+Direct multiplication gives $BB^T=4I_n+(n-4)J_n$.
+Its offdiagonal entries are the nonzero integer $n-4$, and are zero
+modulo $m$. Since $m\ge3$, the two signs have distinct residues modulo
+$m$, so the only possible entrywise sign lift of $B$ is $B$ itself.
+For $n=4+4pt$, $n\equiv4\ne0\pmod p$; thus modular orthogonality
+implies invertibility over $\mathbb F_p$.
+\end{proof}
+This refutes entrywise lifting, not unrestricted existence of another
+Hadamard matrix at the same order. It remains a counterexample after
+requiring admissible order, full modular rank, and exact sign entries.
+At $n=16,p=3$ the seed has every offdiagonal Gram entry equal to $12$.
+The unique sign lift is therefore already obstructed modulo $9$.
+More generally the obstruction occurs immediately modulo $p^2$ whenever
+$p$ does not divide $4t$.
+
+\subsection{A sharp collision obstruction in the forbidden parity}
+\begin{proposition}[Sharp weighted collision bound]
+\label{prop:discrete-parity-collision}
+Let $n\ge6$ with $n\equiv2\pmod4$. Every balanced pairwise independent
+measure on $n-1$ bits satisfies
+\[
+ C\le\frac1{n+2}.
+\]
+Whenever an order-$(n+2)$ Hadamard matrix exists, this bound is attained.
+In particular $C\le1/8$ for five bits is sharp, whereas the general
+atom estimate alone gives only $C\le1/6$.
+\end{proposition}
+\begin{proof}
+Three sign vectors of length $n\equiv2\pmod4$ cannot be mutually
+orthogonal: normalize the first to all ones; the other two balanced
+vectors would have to share exactly $n/4$ positive positions.
+Thus the orthogonality graph is triangle-free and the merging argument
+gives $A\le1/2$. Substituting $E=0,a=2$ into the energy bound yields
+\[
+ n\ge n^2C+4(1-C-A)\ge(n^2-4)C+2,
+\]
+which rearranges to the assertion. To attain it, normalize the first
+column of an order-$(n+2)$ Hadamard matrix and delete two other columns.
+The $n+2$ resulting length-$n$ rows are distinct: full rows differ in
+$(n+2)/2>2$ coordinates. Their uniform measure has balanced pairwise
+independent remaining $n-1$ coordinates and collision probability
+$1/(n+2)$.
+\end{proof}
+This sharp example calibrates the relaxation: exact degree-two moments
+can be achieved with only two more equal-weight atoms than the
+rank lower bound, even when the requested order is impossible. The
+near-equality certificate above uses a substantially smaller collision
+deficit. It supplies a verifiable sufficient bridge, but not a theorem
+that the bridge is attainable in every admissible dimension.
+
+
+\begin{theorem}[Equality rigidity and two-column reconstruction]
+\label{thm:discrete-parity-equality}
+For $n\ge6$, $n\equiv2\pmod4$, a balanced pairwise independent measure
+on $n-1$ bits attains $C=1/(n+2)$ if and only if it is uniform on
+$n+2$ distinct atoms whose augmented matrix can be completed by two
+sign columns to an order-$(n+2)$ Hadamard matrix.
+In particular the collision bound is attained if and only if an
+order-$(n+2)$ Hadamard matrix exists.
+\end{theorem}
+\begin{proof}
+Assume equality. The preceding energy bound and $A\le1/2$ must
+both be equalities. Hence $A=1/2$, and every distinct nonorthogonal
+support pair has dot product of magnitude two.
+Partition the augmented vectors by the parity of their number of
+negative entries. When $n\equiv2\pmod4$, same-parity dot products
+are congruent to two modulo four, and opposite-parity dot products
+are divisible by four. Thus same-parity pairs cannot be orthogonal,
+and every opposite-parity pair must be orthogonal: otherwise its
+nonzero magnitude would exceed two. The orthogonality graph is
+complete bipartite. Its two classes have masses $t$ and $1-t$;
+$A=2t(1-t)=1/2$ forces both masses to be $1/2$.
+For each support atom $x$, the pointwise identity $v_x^TMv_x=n$
+now reads
+\[
+ n=n^2w_x+4(1/2-w_x),
+\]
+so $w_x=(n-2)/(n^2-4)=1/(n+2)$. The support therefore has
+$m=n+2$ atoms. Form the $m\times n$ matrix $V$ with these rows.
+Exact moments imply $V^TV=mI_n$.
+
+Here is a self-contained completion argument. The residual matrix
+$D=mI_m-VV^T$ is positive semidefinite of rank two and has diagonal
+two. The opposite-parity orthogonality makes $D$ block diagonal on
+the two nonempty parity classes. Each diagonal block has positive
+rank; their ranks sum to two, so each has rank one. A positive
+semidefinite rank-one matrix with diagonal two has form $2ss^T$
+for a sign vector $s$. Write the two blocks as $2ss^T$ and $2tt^T$.
+Append to $V$ the two columns whose rows are $(s_i,s_i)$ on the
+first class and $(t_j,-t_j)$ on the second. Their Gram matrix is
+exactly $D$, so the resulting square sign matrix has row Gram
+$mI_m$ and is Hadamard. Conversely, deleting two nonconstant columns
+from any normalized order-$m$ Hadamard matrix gives the required
+uniform measure, as proved above.
+\end{proof}
+The equality statement is a rigidity theorem and an exact reconstruction
+algorithm. It does not establish that the collision maximum reaches
+this value when existence at the adjacent admissible order is unknown.
+\section{Entropy concentration: a sufficient bridge with a measurable gap}
+\label{sec:entropy-bridge}
+We use natural logarithms. Let $\mu$ be a balanced pairwise-independent
+probability measure on $n-1$ sign bits. Put
+$H(\mu)=-\sum_x\mu_x\log\mu_x$ and $C(\mu)=\sum_x\mu_x^2$.
+The background equality $H(\mu)=\log n$ if and only if its support
+is an equally weighted Hadamard design is established by
+Gavinsky--Pudl\'ak, Theorem 4.1~\cite{GP}. The quantitative implication
+below follows from the collision certificate of
+Theorem~\ref{thm:discrete-rounding}; we do not assert priority.
+
+\begin{corollary}[A positive entropy window suffices]\label{cor:entropy-window}
+For even $n\ge4$, define
+\[
+ \varepsilon_n=-\log\left(1-\frac4{(n-1)(n^2-4)}\right)>0.
+\]
+If $H(\mu)<\log n+\varepsilon_n$, the support of $\mu$ contains
+$n$ mutually orthogonal augmented sign vectors. In particular it
+contains an order-$n$ Hadamard matrix. Here
+$\varepsilon_n\sim4/n^3$.
+\end{corollary}
+\begin{proof}
+Jensen inequality gives
+$\log C=\log\mathbb E_{x\sim\mu}\mu_x
+\ge\mathbb E_{x\sim\mu}\log\mu_x=-H(\mu)$.
+The assumed entropy bound therefore implies
+\[
+ C>\frac1n-\frac4{n(n-1)(n^2-4)}.
+\]
+Apply Corollary~\ref{cor:discrete-gap}.
+\end{proof}
+This is a fixed-dimension extraction criterion with a nonzero window;
+it is not a construction of measures in that window. It changes an
+exact entropy target to an explicit approximation target, but attaining
+that target for all admissible orders is still unproved.
+
+\subsection{Why optimal min-entropy is insufficient}
+The entropy in this criterion cannot be replaced by min-entropy
+$H_{\min}(\mu)=-\log\max_x\mu_x$.
+\begin{proposition}[One saturated atom in every even dimension]
+\label{prop:minentropy-counter}
+For every even $n\ge4$ there is a balanced pairwise-independent measure
+on $n-1$ bits with $H_{\min}=\log n$. At $n=6$ this holds although
+no Hadamard matrix of order $6$ exists.
+\end{proposition}
+\begin{proof}
+Put mass $1/n$ on the all-positive vector and spread the remaining
+mass $(n-1)/n$ uniformly on the slice
+\[
+ \left\{x\in\{\pm1\}^{n-1}:\sum_i x_i=-1\right\}.
+\]
+Within the slice, permutation symmetry gives
+$\mathbb E x_i=-1/(n-1)$ and
+$\mathbb E x_ix_j=-1/(n-1)$ for distinct $i,j$, the latter by
+expanding $(\sum x_i)^2=1$. Mixing in the positive atom makes both
+moments zero. The slice has $\binom{n-1}{(n-2)/2}\ge n-1$ elements,
+so no other atom has mass exceeding $1/n$.
+At $n=6$ the ten slice atoms each have mass $1/12$, and the positive
+atom has mass $1/6$. Nevertheless a real Hadamard matrix of order
+$6$ is impossible: three orthogonal sign rows, after normalizing
+the first to all positive, would force their two positive supports
+to intersect in $6/4$ positions.
+\end{proof}
+Thus an information-theoretic bridge must control collision or Shannon
+entropy, not just the mass of the heaviest outcome. The construction
+and the implication are derived here; the general atom bound
+$\mu_x\le1/n$ is background~\cite{GP}.
+
+\subsection{A larger self-contained window when new rows are allowed}
+If only existence is required, an orthogonal clique of $n-1$ rows
+already suffices. Indeed, for its row matrix $X$,
+$P=I-X^TX/n$ is a rank-one orthogonal projection with every diagonal
+entry equal to $1/n$. Writing $P=zz^T$ with $\|z\|=1$ forces
+$|z_j|=n^{-1/2}$; the row $\sqrt n z^T$ is the final sign row.
+Using the merging argument with target clique size $n-1$ gives the
+self-contained sufficient condition
+\[
+ (n^2-4)C>n+E-\frac4{n-2}.
+\]
+At $E=0$, this is
+\[
+ C>\frac1n-\frac8{n(n-2)(n^2-4)}.
+\]
+It is also implied by
+$H(w)<\log n-\log(1-8/((n-2)(n^2-4)))$.
+The extra row need not lie in the original support. This entropy
+window is asymptotic to $8/n^3$ and needs no external classification.
+
+\subsection{A stronger existence window using a classical completion theorem}
+Verheiden's 1978 thesis, Theorem 4.5 on printed pages 22--23,
+states that every $(n-r)\times n$ partial Hadamard matrix, with
+$4\mid n$ and $r\le7$, completes to a full Hadamard
+matrix~\cite{Verheiden}. We inspected the original scanned statement
+and proof discussion. Its small-rank classification uses computation;
+we have not independently reproduced that classification. The next
+corollary explicitly uses this external mathematical input.
+
+\begin{corollary}[Completion-assisted rounding]\label{cor:completion-rounding}
+Let $4\mid n$, $n\ge12$, and let $w$ be any probability measure on
+$n-1$ sign bits, with $C$ and moment defect $E$ as in
+Theorem~\ref{thm:discrete-rounding}. If
+\[
+ (n^2-4)C>n+E-\frac4{n-8},
+\]
+then a Hadamard matrix of order $n$ exists. If $E=0$, it suffices that
+\[
+ C>\frac1n-\frac{32}{n(n-8)(n^2-4)}.
+\]
+Equivalently a sufficient Shannon-entropy window is
+\[
+ H(w)<\log n-\log\left(1-\frac{32}{(n-8)(n^2-4)}\right).
+\]
+The entropy conclusion here assumes $E=0$.
+\end{corollary}
+\begin{proof}
+The ordered orthogonality edge weight in the proof of
+Theorem~\ref{thm:discrete-rounding} exceeds $1-1/(n-8)$.
+Its deterministic weight-merging argument therefore extracts a clique
+of at least $n-7$ augmented sign vectors. Select $n-7$ of them and
+apply the stated completion theorem. Algebra gives the collision
+threshold; Jensen inequality gives the entropy version.
+\end{proof}
+Unlike the self-contained certificate, this conclusion allows the
+last seven rows to be outside the original support. The correction
+is asymptotic to $32/n^4$ in collision probability and $32/n^3$ in
+Shannon entropy. It still supplies no measure attaining the window.
+Weight merging is an extraction step; it does not preserve the
+pairwise-independence constraints and cannot be iterated as a
+moment-preserving construction without a separate argument.
+\section{A lattice-theoretic lead and a sharp small-defect boundary}
+\label{sec:completion-lead}
+The classical completion theorem suggests studying the orthogonal
+complement of a partial Hadamard matrix through arithmetic quadratic
+forms. It is not an automatic solution: rational orthogonality,
+integrality and sign entries are different requirements.
+
+Let $X$ have $n-r$ orthogonal sign rows of length $n$, so
+$XX^T=nI$. A real orthogonal completion $Y$ satisfies
+\[
+ Y^TY=nI-X^TX.
+\]
+The right side has rank $r$, diagonal entries $r$, integer entries,
+and rigid congruences inherited from signs. Completing $X$ to a
+Hadamard matrix asks for a factorization of this specific Gram matrix
+by an $r\times n$ \emph{sign} matrix. A general real, rational, or
+integer Gram factorization is a weaker problem.
+
+\begin{proposition}[Eight missing rows can already be fatal]
+\label{prop:eight-defect}
+Let $K$ be a Hadamard matrix of order $m$ and let $s>1$ be odd.
+Repeating every column $s$ times gives an $m\times ms$ partial
+Hadamard matrix with no additional orthogonal sign row.
+In particular there is an unextendible $4\times12$ example, with
+eight missing rows, although Hadamard matrices of order $12$ exist.
+\end{proposition}
+\begin{proof}
+The repeated matrix is $X=K\otimes(1,\ldots,1)$, and
+$XX^T=msI_m$. For a putative new sign row, let $b_j$ be its sum
+on the $j$th length-$s$ block. Orthogonality says $Kb=0$, so $b=0$
+by invertibility of $K$. Each $b_j$ is a sum of an odd number of
+signs and cannot be zero. Take $m=4,s=3$ for the example.
+\end{proof}
+This example is classical: the $4\times12$ pattern is displayed
+in Verheiden's Section 4~\cite{Verheiden}. Our proof makes its block
+obstruction explicit. Combined with his seven-row theorem, it shows
+that universal completion based only on the number of missing rows
+cannot be pushed from seven to eight.
+
+The thesis also uses arithmetic results of Kneser and others to
+restrict denominators of rational Gram completions. This is a
+concrete route for further research: classify the residual Gram
+forms and identify additional structure permitting sign factorizations
+at rank eight and beyond. An $E_8$ explanation or an all-rank
+completion theorem is not established here. In particular, the
+unextendible example shows that any useful theorem must select or
+modify the partial rows, rather than complete every possible choice.
+\section{Why standard balancing and capacity do not force flatness}
+\label{sec:capacity-obstruction}
+
+Operator scaling connects invariant theory, noncommutative rank and
+capacity; primary sources include Garg--Gurvits--Oliveira--Wigderson,
+\emph{Operator scaling: theory and applications},
+\url{https://arxiv.org/abs/1511.03730}, and Franks,
+\emph{Operator scaling with specified marginals},
+\url{https://arxiv.org/abs/1801.01412}. These theorems suggest a natural
+test: can balancing the entry magnitudes of an orthogonal matrix force
+a flat representative? The following elementary obstructions identify
+precisely what that test loses. The arguments below are independently
+derived; no external implementation is used.
+
+For $U\in O(n)$ write $B_{ij}=u_{ij}^2$. Then $B$ is doubly stochastic:
+it is nonnegative and every row and column sums to one. A matrix of
+this form is called orthostochastic. Flatness asks for the very special
+orthostochastic matrix $J_n/n$, not merely for prescribed marginals.
+The distance-minimization formulation itself is established literature;
+see Arasu--Mohan, \emph{Entropy of orthogonal matrices and minimum
+distance orthostochastic matrices from the uniform van der Waerden
+matrices}, Discrete Optimization 31 (2019), 115--144,
+\url{https://doi.org/10.1016/j.disopt.2018.10.001}.
+
+\begin{proposition}[Rigidity of positive diagonal balancing]
+Let $U\in O(n)$ and let $D,E$ be positive diagonal matrices.
+If $DUE\in O(n)$, then $DUE=U$ entry by entry.
+If the bipartite support graph of $U$ is connected, necessarily
+$D=cI_n$ and $E=c^{-1}I_n$ for some $c>0$.
+\end{proposition}
+\begin{proof}
+Put $a_i=D_{ii}^2$, $b_j=E_{jj}^2$, and
+$B'_{ij}=a_iB_{ij}b_j$. Both $B,B'$ are doubly stochastic and have
+the same support. For equally normalized nonnegative arrays, relative
+entropy is nonnegative, with equality exactly when the arrays agree.
+Here direct summation using the marginals gives
+\[
+ \sum_{ij:B_{ij}>0}B'_{ij}\log\frac{B'_{ij}}{B_{ij}}
+ =\sum_i\log a_i+\sum_j\log b_j,
+\]
+whereas the reverse relative entropy is the negative of that expression.
+Both are nonnegative, so both vanish and $B'=B$.
+Positive diagonal multipliers preserve the signs of every nonzero
+entry, proving $DUE=U$. On each support edge $a_ib_j=1$;
+connectedness propagates a common value of $a_i$ and its reciprocal
+among the $b_j$, giving the final statement.
+\end{proof}
+
+This does not claim that general left-right matrix scaling is powerless.
+It says that positive \emph{diagonal} scaling constrained to preserve
+orthogonality cannot change the matrix at all.
+
+\begin{proposition}[The natural classical and operator capacities are blind]
+Let $B$ be any doubly stochastic matrix. Define
+\[
+ p_B(x)=\prod_{i=1}^n\left(\sum_j B_{ij}x_j\right),\qquad
+ \operatorname{cap}(p_B)=\inf_{x_j>0}\frac{p_B(x)}{\prod_jx_j}.
+\]
+Also define the completely positive map
+\[
+ T_B(X)=\operatorname{diag}\bigl(B\operatorname{diag}(X)\bigr),
+ \qquad
+ \operatorname{cap}(T_B)=\inf_{X\succ0}
+       \frac{\det T_B(X)}{\det X}.
+\]
+Then both capacities equal $1$. Moreover
+$T_B(I)=T_B^*(I)=I$. Thus every orthogonal $U$, flat or not,
+already passes these balancing and capacity tests for $B=U\circ U$.
+\end{proposition}
+\begin{proof}
+Weighted arithmetic--geometric mean, followed by the column sums, gives
+\[
+ \prod_i\sum_jB_{ij}x_j
+ \ge\prod_{ij}x_j^{B_{ij}}=\prod_jx_j.
+\]
+Equality is achieved at $x=(1,\ldots,1)$, proving the polynomial claim.
+The Kraus matrices $K_{ij}=\sqrt{B_{ij}}E_{ij}$ represent $T_B$, so it
+is completely positive. For $X\succ0$, the preceding inequality and
+the determinant bound by the product of diagonal entries yield
+\[
+ \det T_B(X)\ge\prod_jX_{jj}\ge\det X.
+\]
+Taking $X=I$ proves the operator-capacity assertion. The row and column
+sums give the two marginal identities directly.
+\end{proof}
+
+The theorem is a limitation of these particular encodings, not a
+limitation of every invariant-theoretic construction. A successful
+encoding would have to retain constraints absent from row and column
+marginals and these constant capacities, such as simultaneous real
+sign cancellation between every pair of rows.
+
+\subsection{A quantitative separation despite perfect capacity}
+There is a uniform positive separation from flatness in every forbidden
+order $n\equiv2\pmod4$, $n>2$, even though the preceding capacities
+remain exactly $1$.
+
+\begin{proposition}[Elementary parity gap]
+Let $n\equiv2\pmod4$ and $U\in O(n)$. Then
+\[
+ F_4(U)-1\ge
+ \frac{\left(\sqrt{1+\sqrt{2(n-2)/n}}-1\right)^2}{n}
+ \ge \frac{2(n-2)}{9n^2}.
+\]
+Equivalently this lower bounds
+$\|U\circ U-J_n/n\|_F^2$, since that squared distance is $F_4(U)-1$.
+No optimality of the constants is asserted.
+\end{proposition}
+\begin{proof}
+For any sign matrix $H$ of order $n$, split its rows into two classes
+according to the parity of their number of negative entries.
+Two rows in the same class have inner product congruent to $2$
+modulo $4$, hence of magnitude at least $2$. If one class has $a$
+rows, there are $a(a-1)+(n-a)(n-a-1)\ge n(n-2)/2$ ordered pairs of
+distinct rows in the same class. Consequently
+\[
+ \|HH^{\mathsf T}-nI\|_F^2\ge2n(n-2).
+\]
+Choose $H_{ij}=\operatorname{sign}(u_{ij})$, with either sign allowed
+at zero, set $C=H/\sqrt n$, and let $d=\|C-U\|_F$.
+Entrywise,
+\[
+ \left(|u_{ij}|-n^{-1/2}\right)^2
+ =\frac{(u_{ij}^2-1/n)^2}{(|u_{ij}|+n^{-1/2})^2}
+ \le n(u_{ij}^2-1/n)^2,
+\]
+so $d^2\le n(F_4(U)-1)$. Writing $C=U+(C-U)$ and using the
+triangle inequality and $\|EE^{\mathsf T}\|_F\le\|E\|_F^2$ gives
+\[
+ L:=\sqrt{2(n-2)/n}\le\|CC^{\mathsf T}-I\|_F\le2d+d^2.
+\]
+Hence $d\ge\sqrt{1+L}-1$, proving the first bound.
+Finally $0\le L<\sqrt2$ and
+$(\sqrt{1+L}-1)^2=L^2/(1+\sqrt{1+L})^2\ge L^2/9$.
+\end{proof}
+
+For example, at order $6$ every orthogonal matrix passes both capacity
+tests with value exactly $1$, yet $F_4(U)\ge1+2/81$.
+At admissible orders the same capacity tests stay constant, so they
+cannot by themselves distinguish existence from nonexistence of a flat
+point. Proving a stronger real-sign-sensitive feasibility theorem remains
+an open research task; replacing it by ordinary bistochastic feasibility
+would remove the essential difficulty.
+
+\section{A complete hierarchy can still average away the obstruction}
+Let $\mathcal H=\mathbb C^n\otimes\mathbb C^n$, $D=n^2$.
+For $U\in O(n)$ set $v_U=\operatorname{vec}(U)/\sqrt n$ and
+$\sigma_U=v_Uv_U^*$. For any probability measure $\mu$ on $O(n)$,
+\[
+ \rho_k=\int\sigma_U^{\otimes k}\,d\mu(U)
+\]
+is permutation invariant and satisfies $\tr_{k+1}\rho_{k+1}=\rho_k$.
+Each conditional factor is a pure maximally entangled state, not an
+arbitrary relaxed state.
+\begin{proposition}[Exact false positive for one-copy uniformity]
+For every $n>1$ there is such a hierarchy with $\rho_1=I_D/D$,
+yet no factor in its specified representing measure is flat.
+\end{proposition}
+\begin{proof}
+Choose a uniform permutation matrix $P$ and independent uniform row
+signs $\epsilon_i\in\{\pm1\}$, and put $U=\operatorname{diag}(\epsilon)P$.
+The $(ij),(ab)$ entry of $\mathbb E\sigma_U$ is
+$\mathbb E(u_{ij}u_{ab})/n$. Row signs make it zero if $i\ne a$;
+if $i=a$ it vanishes unless $j=b$, since a permutation row has only
+one nonzero entry. The remaining value is $1/n^2$. Every sampled
+$U$ has zeros and so is nonflat. This gives the entire consistent
+hierarchy, not merely finitely many symmetric marginals.
+\end{proof}
+Consequently uniform averaged measurement probabilities, complete
+exchangeability, and maximally entangled conditional factors together
+do not imply flatness. Indeed $\rho_1$ has maximum entropy $\log D$,
+although its displayed ensemble consists solely of sparse matrices.
+
+\section{The precise two-copy obstruction}
+Index the standard basis of $\mathcal H$ by $a=(i,j)$ and define
+$C=\sum_{a=1}^D |a,a\rangle\langle a,a|$ on $\mathcal H^{\otimes2}$.
+For the above hierarchy,
+\begin{equation}\label{coincidence}
+ \tr(\rho_2 C)=\frac1{n^2}\int F_4(U)\,d\mu(U)
+ =\frac1{n^2}\left(1+\int\sum_{ij}(u_{ij}^2-1/n)^2d\mu\right).
+\end{equation}
+The last identity uses $\sum u_{ij}^2=n$. Thus $\tr(\rho_2C)\ge1/n^2$,
+with equality exactly when $\mu$ is supported on flat orthogonals.
+For the signed-permutation hierarchy it is instead $1/n$.
+This is a nonnegative variance that survives convex averaging.
+If the left side is at most $(1+\varepsilon)/n^2$, some factor has
+$\sum(u_{ij}^2-1/n)^2\le\varepsilon$; moreover the measure of factors
+with defect at least $\delta>0$ is at most $\varepsilon/\delta$.
+These statements follow from the integral identity and Markov's
+inequality. They provide approximate factors, not exact Hadamards.
+
+\section{An exact quantum moment characterization}
+Here an infinitely exchangeable hierarchy means a consistent sequence
+of permutation-invariant complex density matrices on
+$\mathcal H^{\otimes k}$ for all positive $k$. By the quantum de Finetti
+theorem~\cite{CFS}, it has a representation
+$\rho_k=\int\sigma^{\otimes k}d\nu(\sigma)$ over density matrices on
+$\mathcal H$. Only existence of this representation is used.
+We deliberately work over a complex Hilbert space and impose reality
+afterwards: the cited paper notes that the corresponding de Finetti
+statement fails for real quantum theory, so it cannot be imported
+unchanged on a real Hilbert space.
+Let $S$ swap the two whole $\mathcal H$ copies, and let $S_A$ swap
+only their first $\mathbb C^n$ subsystems. For $a<b$ put
+$L_{ab}=i(|a\rangle\langle b|-|b\rangle\langle a|)$, a Hermitian
+matrix. All the following constraints concern the same $\rho_2$.
+\begin{theorem}[Where the hierarchy becomes equivalent to existence]
+A real Hadamard matrix of order $n$ exists if and only if there is
+an infinitely exchangeable hierarchy satisfying
+\begin{align*}
+ \tr(\rho_2S)&=1,& \tr(\rho_2S_A)&=1/n,\\
+ \tr(\rho_2(L_{ab}\otimes L_{ab}))&=0\quad(a<b),&
+ \tr(\rho_2 C)&=1/n^2.
+\end{align*}
+Every de Finetti representing measure of such a hierarchy is supported
+on vectorized real scaled Hadamard matrices, up to irrelevant phases.
+\end{theorem}
+\begin{proof}
+The swap identity gives $\tr(\rho_2S)=\int\tr(\sigma^2)d\nu$.
+Since density-matrix purity is at most one, equality forces $\sigma$
+pure almost surely. Similarly
+$\tr(\rho_2S_A)=\int\tr(\sigma_A^2)d\nu$. The purity of a density
+matrix on $\mathbb C^n$ is at least $1/n$, with equality only at
+$I_n/n$, so $\sigma_A=I_n/n$ almost surely.
+For each $a<b$ the reality constraint reads
+$\int(\tr(\sigma L_{ab}))^2d\nu=0$. The integrand is a square of a
+real number, hence vanishes almost surely. The finitely many such
+constraints force $\sigma$ real. A real rank-one positive matrix has
+a real unit vector representative $v$. Reshape $v$ as an $n\times n$
+real matrix $B$. Then $BB^T=I_n/n$, so $U=\sqrt nB\in O(n)$.
+Finally $\tr(\rho_2 C)=\int\sum_a\sigma_{aa}^2d\nu$.
+Since $\sum_a\sigma_{aa}=1$, this is at least $1/D$ pointwise,
+and equality forces all $\sigma_{aa}=1/D$. Thus $u_{ij}^2=1/n$.
+The intersection of the finitely many full-measure sets still has
+full measure and is nonempty. Conversely a real flat orthogonal
+matrix gives the pure tensor hierarchy $\rho_k=\sigma_U^{\otimes k}$,
+which satisfies every displayed constraint.
+\end{proof}
+The theorem is a reformulation and an exact diagnostic, not a proof
+of feasibility. In particular the low-order equalities are only used
+together with infinite extendibility. We make no claim that an
+arbitrary symmetric two-copy positive matrix satisfying the equalities
+has a de Finetti representation. Replacing infinite extendibility by
+finite symmetry without proof would introduce an additional gap.
+
+\section{Implications for an entropy or tensor-stability bridge}
+An optimization over $\rho_1$ alone can reach its ideal entropy in
+every dimension using the signed-permutation example; it cannot
+force a single flat factor. A bridge must retain a nonlinear
+factor-level witness such as the coincidence defect in
+\eqref{coincidence}, or another constraint that forces the same
+nonnegative variance to vanish. Merely allowing correlations or
+symmetric extensions supplies no such vanishing. Even with the exact
+two-copy characterization, feasibility at all orders is the original
+existence issue in another language.
+
+
+\section{Which step would actually prove the conjecture?}
+The sufficient rounding inequality holds in the requested dimension;
+unlike tensor descent it needs no dimension reduction. The missing
+step is an existence theorem for distributions meeting that inequality
+for every $4\mid n$. Pairwise independence alone is easy, while
+concentration near the collision limit is the unresolved constraint.
+Optimal min-entropy, correct marginals, positive capacities, modular
+orthogonality and one-copy mixed-state entropy each lose information
+needed for that concentration or for real sign cancellation.
+
+The completion theorem gives a precise small-defect interface, but
+the eight-missing-row example rules out unconditional completion of
+arbitrary partial choices beyond it. A promising next question must
+therefore select better partial choices, prove a concentration theorem,
+or encode additional sign-sensitive constraints in an invariant or
+moment formulation. None of these existence statements is proved here.
+No Lean formalization, Git commit or publication was made in this pass.
+
+\begin{thebibliography}{9}
+\bibitem{GP} D. Gavinsky and P. Pudl\'ak,
+On the joint entropy of $d$-wise-independent variables,
+Commentationes Mathematicae Universitatis Carolinae 57 (2016), 333--343.
+\url{https://users.math.cas.cz/~pudlak/pairwise.pdf}.
+\bibitem{Verheiden} E. P. Verheiden,
+Arithmetical Properties of Combinatorial Matrices, Ph.D. thesis,
+California Institute of Technology (1978), Theorem 4.5, pp. 22--23.
+\url{https://thesis.caltech.edu/2899/}.
+\bibitem{CFS} C. M. Caves, C. A. Fuchs and R. Schack,
+Unknown quantum states: the quantum de Finetti representation,
+Journal of Mathematical Physics 43 (2002), 4537--4559.
+\url{https://arxiv.org/abs/quant-ph/0104088}.
+\end{thebibliography}
+\end{document}

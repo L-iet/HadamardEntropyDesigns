@@ -1,0 +1,159 @@
+% Source: round5/invariant/invariant.tex
+\section{Why standard balancing and capacity do not force flatness}
+\label{s09:sec:capacity-obstruction}
+
+Operator scaling connects invariant theory, noncommutative rank and
+capacity; primary sources include Garg--Gurvits--Oliveira--Wigderson,
+\emph{Operator scaling: theory and applications},
+\url{https://arxiv.org/abs/1511.03730}, and Franks,
+\emph{Operator scaling with specified marginals},
+\url{https://arxiv.org/abs/1801.01412}. These theorems suggest a natural
+test: can balancing the entry magnitudes of an orthogonal matrix force
+a flat representative? The following elementary obstructions identify
+precisely what that test loses. The arguments below are independently
+derived; no external implementation is used.
+
+For $U\in O(n)$ write $B_{ij}=u_{ij}^2$. Then $B$ is doubly stochastic:
+it is nonnegative and every row and column sums to one. A matrix of
+this form is called orthostochastic. Flatness asks for the very special
+orthostochastic matrix $J_n/n$, not merely for prescribed marginals.
+The distance-minimization formulation itself is established literature;
+see Arasu--Mohan, \emph{Entropy of orthogonal matrices and minimum
+distance orthostochastic matrices from the uniform van der Waerden
+matrices}, Discrete Optimization 31 (2019), 115--144,
+\url{https://doi.org/10.1016/j.disopt.2018.10.001}.
+
+\begin{proposition}[Rigidity of positive diagonal balancing]
+Let $U\in O(n)$ and let $D,E$ be positive diagonal matrices.
+If $DUE\in O(n)$, then $DUE=U$ entry by entry.
+If the bipartite support graph of $U$ is connected, necessarily
+$D=cI_n$ and $E=c^{-1}I_n$ for some $c>0$.
+\end{proposition}
+\begin{proof}
+Put $a_i=D_{ii}^2$, $b_j=E_{jj}^2$, and
+$B'_{ij}=a_iB_{ij}b_j$. Both $B,B'$ are doubly stochastic and have
+the same support. For equally normalized nonnegative arrays, relative
+entropy is nonnegative, with equality exactly when the arrays agree.
+Here direct summation using the marginals gives
+\[
+ \sum_{ij:B_{ij}>0}B'_{ij}\log\frac{B'_{ij}}{B_{ij}}
+ =\sum_i\log a_i+\sum_j\log b_j,
+\]
+whereas the reverse relative entropy is the negative of that expression.
+Both are nonnegative, so both vanish and $B'=B$.
+Positive diagonal multipliers preserve the signs of every nonzero
+entry, proving $DUE=U$. On each support edge $a_ib_j=1$;
+connectedness propagates a common value of $a_i$ and its reciprocal
+among the $b_j$, giving the final statement.
+\end{proof}
+
+\paragraph{Formalization.}
+The original Lean module \texttt{EntropyDesigns/PositiveScaling.lean}
+proves both conclusions, with orthogonality expressed by its exact
+row and column Gram identities and connectedness by paths in the
+bipartite support graph. The independent target is
+\texttt{positive\_\allowbreak diagonal\_\allowbreak balancing\_\allowbreak rigidity}.
+Its proof sums the nonnegative quantities
+$B_{ij}(a_ib_j-1)\log(a_ib_j)$ and uses both marginal identities;
+no entropy-uniqueness theorem is assumed.
+
+This does not claim that general left-right matrix scaling is powerless.
+It says that positive \emph{diagonal} scaling constrained to preserve
+orthogonality cannot change the matrix at all.
+
+\begin{proposition}[The natural classical and operator capacities are blind]
+Let $B$ be any doubly stochastic matrix. Define
+\[
+ p_B(x)=\prod_{i=1}^n\left(\sum_j B_{ij}x_j\right),\qquad
+ \operatorname{cap}(p_B)=\inf_{x_j>0}\frac{p_B(x)}{\prod_jx_j}.
+\]
+Also define the completely positive map
+\[
+ T_B(X)=\operatorname{diag}\bigl(B\operatorname{diag}(X)\bigr),
+ \qquad
+ \operatorname{cap}(T_B)=\inf_{X\succ0}
+       \frac{\det T_B(X)}{\det X}.
+\]
+Then both capacities equal $1$. Moreover
+$T_B(I)=T_B^*(I)=I$. Thus every orthogonal $U$, flat or not,
+already passes these balancing and capacity tests for $B=U\circ U$.
+\end{proposition}
+\begin{proof}
+Weighted arithmetic--geometric mean, followed by the column sums, gives
+\[
+ \prod_i\sum_jB_{ij}x_j
+ \ge\prod_{ij}x_j^{B_{ij}}=\prod_jx_j.
+\]
+Equality is achieved at $x=(1,\ldots,1)$, proving the polynomial claim.
+The Kraus matrices $K_{ij}=\sqrt{B_{ij}}E_{ij}$ represent $T_B$, so it
+is completely positive. For $X\succ0$, the preceding inequality and
+the determinant bound by the product of diagonal entries yield
+\[
+ \det T_B(X)\ge\prod_jX_{jj}\ge\det X.
+\]
+Taking $X=I$ proves the operator-capacity assertion. The row and column
+sums give the two marginal identities directly.
+\end{proof}
+
+The theorem is a limitation of these particular encodings, not a
+limitation of every invariant-theoretic construction. A successful
+encoding would have to retain constraints absent from row and column
+marginals and these constant capacities, such as simultaneous real
+sign cancellation between every pair of rows.
+
+\subsection{A quantitative separation despite perfect capacity}
+There is a uniform positive separation from flatness in every forbidden
+order $n\equiv2\pmod4$, $n>2$, even though the preceding capacities
+remain exactly $1$.
+
+\begin{proposition}[Elementary parity gap]
+Let $n\equiv2\pmod4$ and $U\in O(n)$. Then
+\[
+ F_4(U)-1\ge
+ \frac{\left(\sqrt{1+\sqrt{2(n-2)/n}}-1\right)^2}{n}
+ \ge \frac{2(n-2)}{9n^2}.
+\]
+Equivalently this lower bounds
+$\|U\circ U-J_n/n\|_F^2$, since that squared distance is $F_4(U)-1$.
+No optimality of the constants is asserted.
+\end{proposition}
+\begin{proof}
+For any sign matrix $H$ of order $n$, split its rows into two classes
+according to the parity of their number of negative entries.
+Two rows in the same class have inner product congruent to $2$
+modulo $4$, hence of magnitude at least $2$. If one class has $a$
+rows, there are $a(a-1)+(n-a)(n-a-1)\ge n(n-2)/2$ ordered pairs of
+distinct rows in the same class. Consequently
+\[
+ \|HH^{\mathsf T}-nI\|_F^2\ge2n(n-2).
+\]
+Choose $H_{ij}=\operatorname{sign}(u_{ij})$, with either sign allowed
+at zero, set $C=H/\sqrt n$, and let $d=\|C-U\|_F$.
+Entrywise,
+\[
+ \left(|u_{ij}|-n^{-1/2}\right)^2
+ =\frac{(u_{ij}^2-1/n)^2}{(|u_{ij}|+n^{-1/2})^2}
+ \le n(u_{ij}^2-1/n)^2,
+\]
+so $d^2\le n(F_4(U)-1)$. Writing $C=U+(C-U)$ and using the
+triangle inequality and $\|EE^{\mathsf T}\|_F\le\|E\|_F^2$ gives
+\[
+ L:=\sqrt{2(n-2)/n}\le\|CC^{\mathsf T}-I\|_F\le2d+d^2.
+\]
+Hence $d\ge\sqrt{1+L}-1$, proving the first bound.
+Finally $0\le L<\sqrt2$ and
+$(\sqrt{1+L}-1)^2=L^2/(1+\sqrt{1+L})^2\ge L^2/9$.
+\end{proof}
+
+For example, at order $6$ every orthogonal matrix passes both capacity
+tests with value exactly $1$, yet $F_4(U)\ge1+2/81$.
+At admissible orders the same capacity tests stay constant, so they
+cannot by themselves distinguish existence from nonexistence of a flat
+point. Proving a stronger real-sign-sensitive feasibility theorem remains
+an open research task; replacing it by ordinary bistochastic feasibility
+would remove the essential difficulty.
+
+
+\paragraph{Formalization of capacity blindness.} The theorem \texttt{doubly\_\allowbreak stochastic\_\allowbreak capacities\_\allowbreak are\_\allowbreak blind} proves both actual infimum capacities equal one. It includes a spectral proof of the complex positive-definite determinant bound, an explicit Kraus decomposition and positivity of all finite Kraus tensor amplifications, the exact Hilbert--Schmidt adjoint identity, both unital identities, and the specialization to every real orthogonal matrix. The independent specification uses the actual positive-vector and positive-definite-matrix infima. The elementary parity-gap theorem is formalized below.
+
+\paragraph{Formalization of the parity gap.} The theorem \texttt{elementary\_\allowbreak orthogonal\_\allowbreak parity\_\allowbreak gap} proves both displayed constants for every actual real orthogonal matrix with $n\equiv2\pmod4$, including the endpoint $n=2$. Its statement also gives the exact Frobenius variance identity. The proof derives the sign-matrix Gram-error floor from integer parity arithmetic, then proves the normalized sign-rounding and orthogonal Frobenius perturbation estimates and the final scalar square-root inequalities. Every principal assertion in this section is now formalized.

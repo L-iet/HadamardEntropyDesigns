@@ -1,0 +1,207 @@
+\section{A quantitative discrete rounding bridge}
+\label{sec:discrete-rounding}
+This section gives a sufficient fixed-dimension certificate, rather than
+an existence proof. It combines the weighted clique inequality of
+Motzkin--Straus with an exact second-moment identity. The atom bound
+and its equality characterization are established background; see
+Gavinsky--Pudl\'ak, \emph{On the joint entropy of $d$-wise-independent
+variables}, Theorem 3.2 and Section 4
+(\url{https://users.math.cas.cz/~pudlak/pairwise.pdf}).
+The present quantitative combination is a derivation, not a priority claim.
+
+Let $n\ge4$ be even, $\Omega=\{-1,1\}^{n-1}$, and let $w$ be any
+probability measure on $\Omega$. Write
+\[
+ v_x=(1,x_1,\ldots,x_{n-1})\in\{-1,1\}^n,\quad
+ M=\sum_xw_xv_xv_x^T,\quad C=\sum_xw_x^2,\quad
+ E=\|M-I_n\|_F^2.
+\]
+Here $C$ is the probability that two independent draws coincide.
+The diagonal of $M$ is always one. Therefore $E$ is exactly twice
+the sum of the squared biases and squared pair correlations:
+\[
+ E=2\sum_i(\mathbb E x_i)^2+
+   2\sum_{i<j}(\mathbb E x_ix_j)^2.
+\]
+Balanced pairwise independence is equivalent to $E=0$.
+
+\begin{theorem}[Collision--moment rounding certificate]
+\label{thm:discrete-rounding}
+If
+\begin{equation}\label{eq:discrete-certificate}
+ (n^2-4)C>n+E-\frac4{n-1},
+\end{equation}
+then the support of $w$ contains $n$ atoms whose augmented vectors are
+mutually orthogonal. These vectors give a Hadamard matrix of order $n$.
+They can be extracted by repeated weight merging, without adding atoms.
+More generally, suppose every distinct nonorthogonal pair in the support
+has $|v_x\cdot v_y|\ge a$, where $0<a<n$. Then the sufficient condition is
+\[
+ (n^2-a^2)C>n+E-\frac{a^2}{n-1}.
+\]
+If the support lies in a single parity class and $4\mid n$, one may
+use $a=4$ (for $n>4$), improving the constant from $4$ to $16$.
+\end{theorem}
+\begin{proof}
+Join distinct support atoms when their augmented vectors are orthogonal,
+and let $A=\sum_{x,y:\,v_x\perp v_y}w_xw_y$ be the ordered edge weight.
+Every clique has size at most $n$. Exact expansion gives
+\[
+ \sum_{x,y}w_xw_y(v_x\cdot v_y)^2=\tr(M^2)=n+E.
+\]
+The diagonal contributes $n^2C$. Distinct nonedges contribute at least
+$a^2(1-C-A)$, so
+\[
+ A\ge1-\frac{n+E}{a^2}+\frac{n^2-a^2}{a^2}C.
+\]
+Under the displayed hypothesis this exceeds $1-1/(n-1)$.
+For completeness, the weighted clique inequality follows constructively:
+if positive-weight vertices $x,y$ are not adjacent, transfer their combined
+weight to whichever has larger weighted neighbor sum. The ordered edge
+weight does not decrease, and one positive-weight vertex disappears.
+Iterating yields a clique of size $r$, with edge weight
+$1-\sum_{i=1}^r u_i^2\le1-1/r$. Hence the resulting clique must have
+$r\ge n$, and orthogonality forces $r=n$. This is the classical
+Motzkin--Straus merging argument; its original source is
+\emph{Maxima for graphs and a new proof of a theorem of Tur\'an}
+(1965), \url{https://doi.org/10.4153/CJM-1965-053-6}.
+Finally, dot products are even when $n$ is even. Within one parity class,
+Hamming distances are even, so dot products are multiples of four if
+$4\mid n$.
+\end{proof}
+
+\begin{corollary}[Explicit collision gap]
+\label{cor:discrete-gap}
+An exactly balanced pairwise independent measure on $n-1$ bits with
+\[
+ C>\frac1n-\frac4{n(n-1)(n^2-4)}
+\]
+contains an order-$n$ Hadamard matrix in its support. Consequently,
+if no such matrix exists, every such measure satisfies the opposite
+nonstrict inequality. With single-parity support, replace both occurrences
+of $4$ in the correction by $16$, for $n>4$.
+\end{corollary}
+The standard atom estimate $w_x\le1/n$ implies $C\le1/n$;
+the corollary gives an explicit one-sided neighborhood below equality
+in which exact extraction already works. The correction is of order
+$n^{-4}$. We do not claim optimality. In particular, the uniform cube
+has $E=0$ but $C=2^{-(n-1)}$, far outside this neighborhood.
+Thus positivity of every moment matrix, or exact vanishing of all
+nonconstant Walsh coefficients of degrees one and two, does not itself
+supply this concentration certificate. The unresolved step is producing
+sufficiently concentrated measures for every $4\mid n$.
+
+\subsection{A sharp obstruction to entrywise finite-field lifting}
+A modular orthogonality route needs an additional global repair mechanism.
+Its elementary seed construction below is standard in modular-Hadamard
+literature; see Kuperberg, \emph{Hadamard matrices modulo $p$ and small
+modular Hadamard matrices}, Lemma 2.3,
+\url{https://arxiv.org/abs/1409.0148}.
+\begin{proposition}[Nonsingular modular seeds need not lift]
+\label{prop:discrete-modular}
+Let $m\ge3$, $n>4$, and $n\equiv4\pmod m$, and put $B=J_n-2I_n$.
+Then $BB^T\equiv nI_n\pmod m$, but $B$ is not a real Hadamard matrix.
+Moreover there is no real Hadamard matrix entrywise congruent to $B$
+modulo $m$. For every odd prime $p$, the choices $n=4+4pt$ with $t\ge1$
+give infinitely many admissible orders with an invertible modular seed
+that has no such sign lift.
+\end{proposition}
+\begin{proof}
+Direct multiplication gives $BB^T=4I_n+(n-4)J_n$.
+Its offdiagonal entries are the nonzero integer $n-4$, and are zero
+modulo $m$. Since $m\ge3$, the two signs have distinct residues modulo
+$m$, so the only possible entrywise sign lift of $B$ is $B$ itself.
+For $n=4+4pt$, $n\equiv4\ne0\pmod p$; thus modular orthogonality
+implies invertibility over $\mathbb F_p$.
+\end{proof}
+This refutes entrywise lifting, not unrestricted existence of another
+Hadamard matrix at the same order. It remains a counterexample after
+requiring admissible order, full modular rank, and exact sign entries.
+At $n=16,p=3$ the seed has every offdiagonal Gram entry equal to $12$.
+The unique sign lift is therefore already obstructed modulo $9$.
+More generally the obstruction occurs immediately modulo $p^2$ whenever
+$p$ does not divide $4t$.
+
+\subsection{A sharp collision obstruction in the forbidden parity}
+\begin{proposition}[Sharp weighted collision bound]
+\label{prop:discrete-parity-collision}
+Let $n\ge6$ with $n\equiv2\pmod4$. Every balanced pairwise independent
+measure on $n-1$ bits satisfies
+\[
+ C\le\frac1{n+2}.
+\]
+Whenever an order-$(n+2)$ Hadamard matrix exists, this bound is attained.
+In particular $C\le1/8$ for five bits is sharp, whereas the general
+atom estimate alone gives only $C\le1/6$.
+\end{proposition}
+\begin{proof}
+Three sign vectors of length $n\equiv2\pmod4$ cannot be mutually
+orthogonal: normalize the first to all ones; the other two balanced
+vectors would have to share exactly $n/4$ positive positions.
+Thus the orthogonality graph is triangle-free and the merging argument
+gives $A\le1/2$. Substituting $E=0,a=2$ into the energy bound yields
+\[
+ n\ge n^2C+4(1-C-A)\ge(n^2-4)C+2,
+\]
+which rearranges to the assertion. To attain it, normalize the first
+column of an order-$(n+2)$ Hadamard matrix and delete two other columns.
+The $n+2$ resulting length-$n$ rows are distinct: full rows differ in
+$(n+2)/2>2$ coordinates. Their uniform measure has balanced pairwise
+independent remaining $n-1$ coordinates and collision probability
+$1/(n+2)$.
+\end{proof}
+This sharp example calibrates the relaxation: exact degree-two moments
+can be achieved with only two more equal-weight atoms than the
+rank lower bound, even when the requested order is impossible. The
+near-equality certificate above uses a substantially smaller collision
+deficit. It supplies a verifiable sufficient bridge, but not a theorem
+that the bridge is attainable in every admissible dimension.
+
+
+\begin{theorem}[Equality rigidity and two-column reconstruction]
+\label{thm:discrete-parity-equality}
+For $n\ge6$, $n\equiv2\pmod4$, a balanced pairwise independent measure
+on $n-1$ bits attains $C=1/(n+2)$ if and only if it is uniform on
+$n+2$ distinct atoms whose augmented matrix can be completed by two
+sign columns to an order-$(n+2)$ Hadamard matrix.
+In particular the collision bound is attained if and only if an
+order-$(n+2)$ Hadamard matrix exists.
+\end{theorem}
+\begin{proof}
+Assume equality. The preceding energy bound and $A\le1/2$ must
+both be equalities. Hence $A=1/2$, and every distinct nonorthogonal
+support pair has dot product of magnitude two.
+Partition the augmented vectors by the parity of their number of
+negative entries. When $n\equiv2\pmod4$, same-parity dot products
+are congruent to two modulo four, and opposite-parity dot products
+are divisible by four. Thus same-parity pairs cannot be orthogonal,
+and every opposite-parity pair must be orthogonal: otherwise its
+nonzero magnitude would exceed two. The orthogonality graph is
+complete bipartite. Its two classes have masses $t$ and $1-t$;
+$A=2t(1-t)=1/2$ forces both masses to be $1/2$.
+For each support atom $x$, the pointwise identity $v_x^TMv_x=n$
+now reads
+\[
+ n=n^2w_x+4(1/2-w_x),
+\]
+so $w_x=(n-2)/(n^2-4)=1/(n+2)$. The support therefore has
+$m=n+2$ atoms. Form the $m\times n$ matrix $V$ with these rows.
+Exact moments imply $V^TV=mI_n$.
+
+Here is a self-contained completion argument. The residual matrix
+$D=mI_m-VV^T$ is positive semidefinite of rank two and has diagonal
+two. The opposite-parity orthogonality makes $D$ block diagonal on
+the two nonempty parity classes. Each diagonal block has positive
+rank; their ranks sum to two, so each has rank one. A positive
+semidefinite rank-one matrix with diagonal two has form $2ss^T$
+for a sign vector $s$. Write the two blocks as $2ss^T$ and $2tt^T$.
+Append to $V$ the two columns whose rows are $(s_i,s_i)$ on the
+first class and $(t_j,-t_j)$ on the second. Their Gram matrix is
+exactly $D$, so the resulting square sign matrix has row Gram
+$mI_m$ and is Hadamard. Conversely, deleting two nonconstant columns
+from any normalized order-$m$ Hadamard matrix gives the required
+uniform measure, as proved above.
+\end{proof}
+The equality statement is a rigidity theorem and an exact reconstruction
+algorithm. It does not establish that the collision maximum reaches
+this value when existence at the adjacent admissible order is unknown.

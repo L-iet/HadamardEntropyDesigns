@@ -1,0 +1,69 @@
+{
+  "license": "Apache-2.0",
+  "author": "Joshua Mark",
+  "ORCID": "https://orcid.org/0009-0003-5905-2382",
+  "proofModules": [
+    "EntropySparseBuffer/SparseBufferBase.lean",
+    "EntropySparseBuffer/SparseBufferIsotropy.lean",
+    "EntropySparseBuffer/SparseBufferCollision.lean",
+    "EntropySparseBuffer/SparseBufferPrincipal.lean"
+  ],
+  "implementation": "Original formal proofs; uses original project Fourier, quantization and equality theorems and pinned permissively licensed mathlib. No external implementation copied.",
+  "independentSpecification": "BufferChallenge.lean; no definition holes",
+  "privateAxiomAudit": {
+    "status": "passed",
+    "actualExit": 0,
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "compiledProofSources": [
+      {
+        "module": "SparseBufferBase",
+        "actualExit": 0,
+        "sourceSHA256": "b316ab5454bac309409b8e74bbd7998aada20109ac99e0b07e200cff6161db79",
+        "oleanSHA256": "c5138a87dd4d1e2d19859dc5225948a6274ab610b59e0507e3629e784ff7ee75"
+      },
+      {
+        "module": "SparseBufferIsotropy",
+        "actualExit": 0,
+        "sourceSHA256": "c091ece91228f753d1f98f103823ad5ae2184979dd96532a504ff75d1892852d",
+        "oleanSHA256": "518b6ac0c1a16c761882873a8c3b88cb45313ac8bd3d79d36eba87f106612449"
+      },
+      {
+        "module": "SparseBufferCollision",
+        "actualExit": 0,
+        "sourceSHA256": "4668c455e8f27796dd325087a6959aed5cbaa53241f8c4be89bf439cb7021129",
+        "oleanSHA256": "0c2dd50d5067ff74c4c62135d593f9fab85db20a45e77b3318da500f3a104f33"
+      },
+      {
+        "module": "SparseBufferPrincipal",
+        "actualExit": 0,
+        "sourceSHA256": "6a4951ec61aaf288af644d3bdad59b1846b9dcf093bba994c4e04f70512de279",
+        "oleanSHA256": "ff706025085afce6c27f8c3ca4dac901c12f2d96f586d8bdfa37a81186ac4210"
+      }
+    ],
+    "scope": "Private full sparse-buffer principal theorem; no registry verification."
+  },
+  "privatePilot": {
+    "status": "passed",
+    "scope": "Private staged sparse-buffer pilot only; not owned snapshot or registry verification",
+    "leanKernelAccepted": true,
+    "nanodaAccepted": true,
+    "theoremNames": [
+      "EntropyDesigns.sparse_uniform_affine_buffer_obstruction"
+    ],
+    "definitionNames": [],
+    "sourceHashes": {
+      "BufferPilotChallenge.lean": "c182b8cba429a93ddef4b951d63fd3f62cf3bfc2704654745dd4535977c77216",
+      "BufferPilotSolution.lean": "d840fa8713f766ea0497f3406d3be7533972e6c4b99600a13f8daacb7c59efd2",
+      "comparator.json": "bc0719ffcbbea82bf1cea983697a40b690750dcad34bd7279ffb5b1968a22497"
+    },
+    "exports": {
+      "challenge": "0b1fca7ddc97c21308cbeb02907bf9d36d429b337e5119b24554e8891abb559d",
+      "solution": "6e24c4b74b65d62d857d3a0df1c582226db4e90a89576c36f3ab54bd9b134dbc"
+    }
+  },
+  "scope": "E32.01 only; every other pending claim remains pending. Fresh integrated verification required."
+}

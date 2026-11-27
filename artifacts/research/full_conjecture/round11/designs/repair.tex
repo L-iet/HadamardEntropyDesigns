@@ -1,0 +1,137 @@
+\section{Isotropic laws can be almost maximally far from Hadamard mixtures}
+\label{sec:design-hadamard-distance}
+A Hadamard law of order $n$ is the uniform law on the $n$ rows of a
+sign Hadamard matrix whose first column is all positive, after deleting
+that column. Let $\mathcal H_n$ be the convex hull of all such laws on
+$\{-1,1\}^{n-1}$. This section gives exact balanced pairwise-independent
+laws whose total variation distance from $\mathcal H_n$ tends to one,
+at orders where Hadamard matrices already exist. It also determines
+an exact global observation-trade budget for conversion into a disjoint
+union of Hadamard blocks. Thus a hypothetical procedure converting
+arbitrary isotropic laws into Hadamard mixtures cannot generally make
+only a small change.
+
+Orthogonal arrays, row multiplicities, and Rao-type simplicity arguments
+are established topics; a primary reference consulted here is
+Carlet--Kiss--Nagy, \emph{Simplicity conditions for binary orthogonal arrays},
+\url{https://arxiv.org/abs/2204.00835}. Our elementary character and
+block-Hadamard ingredients are classical. Priority for the quantitative
+distance and repair statements is not asserted.
+
+For a support $S$ of sign-bit vectors let $\omega(S)$ be the maximum
+size of a subset whose augmented rows $(1,x)$ are mutually orthogonal.
+\begin{lemma}[A support witness against all Hadamard mixtures]
+\label{lem:design-support-witness}
+If $\mu$ is any probability measure supported on $S$, then
+\[
+ \inf_{\nu\in\mathcal H_n}\|\mu-\nu\|_{\rm TV}
+ \ge1-\frac{\omega(S)}n.
+\]
+If a multiset of $D$ original rows is supported on $S$ and $n\mid D$,
+conversion to a union of $D/n$ order-$n$ Hadamard blocks requires at
+least $D(1-\omega(S)/n)$ observation replacements.
+\end{lemma}
+\begin{proof}
+Each Hadamard block has at most $\omega(S)$ rows in $S$, hence every
+mixture gives $\nu(S)\le\omega(S)/n$. Use
+$\|\mu-\nu\|_{\rm TV}\ge\mu(S)-\nu(S)$. A union of $D/n$ blocks
+can retain at most $(D/n)\omega(S)$ original observations.
+\end{proof}
+
+\begin{theorem}[Sharp distance and global repair family]
+\label{thm:design-sharp-distance}
+Let $k,h$ be powers of two, $k\ge2$ and $h>2(k-1)$. Put
+$n=kh$ and $D=h^k$. There is an explicit uniform $D$-atom law $\mu$
+on $n-1$ unbiased pairwise-independent bits for which
+\[
+ \inf_{\nu\in\mathcal H_n}\|\mu-\nu\|_{\rm TV}=1-\frac1k.
+\]
+Moreover the minimum number of observation replacements converting
+its $D$ distinct rows into a union of $D/n$ Hadamard blocks is exactly
+$D(1-1/k)$. Such a conversion can preserve distinctness of every row,
+so its endpoint has the same collision probability $1/D$ as $\mu$.
+Taking $h=2k$ and $k\to\infty$ gives distances tending to one.
+\end{theorem}
+\begin{proof}
+Write $h=2^s$ and $V=\mathbb F_2^s$. Fix nonzero $e\in V^*$.
+Take independent uniform seeds $x_1,\ldots,x_k\in V$ and observe
+\[
+ (\chi_\alpha(x_j))_{1\le j\le k,\ \alpha\ne0},\qquad
+ (\chi_e(x_1+x_j))_{2\le j\le k},
+ \quad\chi_\alpha(x)=(-1)^{\alpha(x)}.
+\]
+There are $k(h-1)+(k-1)=n-1$ bits, all distinct nonzero seed
+characters, so they are unbiased and pairwise independent. All block
+characters determine their seeds, giving $D=h^k$ distinct atoms.
+
+For two augmented rows corresponding to $x$ and $y$, their dot product is
+\[
+ h\#\{j:x_j=y_j\}+1-k+
+ \sum_{j=2}^k(-1)^{e(x_1+x_j+y_1+y_j)}.
+\]
+If they share any block seed, this is at least $h-2(k-1)>0$.
+Therefore any orthogonal set has all $x_1$ values distinct and size
+at most $h$. Conversely, for fixed offsets $c_2,\ldots,c_k$, the $h$
+seeds $x_1=a$, $x_j=a+c_j$ are mutually orthogonal: every mixed bit
+is constant along the set. These offset cliques partition the entire
+support. Thus $\omega(S)=h$, proving the lower bounds.
+
+We complete every offset clique explicitly. Arrange its augmented
+columns into $k$ blocks of length $h$: the first block is
+$(1,\chi_\alpha(x_1))$, and the $j$th is
+$(\chi_e(x_1+x_j),\chi_\alpha(x_j))$. On the clique these blocks
+are $h\times h$ Hadamard matrices $H_1,\ldots,H_k$:
+$H_1$ is Walsh and each other block is Walsh with permuted rows and
+possibly a negated constant column. Let $K$ be the normalized Walsh
+matrix of order $k$. The $kh$ rows indexed by $(a,t)$, with blocks
+\[
+ K_{t1}H_1(a),\ldots,K_{tk}H_k(a),
+\]
+form a Hadamard matrix. Indeed rows with different $a$ have zero inner
+product separately in every block; rows with the same $a$ have dot
+product $h\sum_jK_{tj}K_{t'j}=kh\mathbf1_{t=t'}$.
+Its constant augmented column is positive because $K_{t1}=1$.
+The first Walsh row of $K$ recovers the original clique. No other row
+belongs to $S$, since that would exceed $\omega(S)=h$.
+
+Completions of distinct offset cliques have disjoint supports. The first
+block determines $a$. In every other block the nonconstant coordinates
+have form $\sigma\chi_\alpha(b)$; for $h\ge4$ they determine both
+$\sigma$ and $b$ uniquely. Otherwise a nontrivial character would equal
+$-1$ at every nonzero frequency, contradicted by multiplying the values
+at two distinct frequencies and comparing their sum. The signs determine
+the Walsh row $t$, and the seeds determine the offsets $c_j=b_j-a$.
+
+Averaging all $h^{k-1}$ completed Hadamard laws assigns mass
+$1/(kD)$ to each original source row, namely $\mu/k$, and puts the
+remaining mass outside $S$. Its total variation distance is exactly
+$1-1/k$, proving sharpness. Finally choose any
+$D/n=h^{k-1}/k$ offset cliques and take the union of their completions.
+This integer exists since $k,h$ are powers of two and $h\ge2k$.
+The union has $D$ distinct rows and exactly $D/k$ original rows, achieving
+the observation-replacement lower bound. Both endpoint arrays have
+$D$ distinct equal-weight atoms and collision $1/D$.
+\end{proof}
+
+\paragraph{Consequences and scope.}
+The initial and final laws have identical first and second moments and
+identical collision probability, but only the final array is exhibited
+as a union of Hadamard blocks. The construction therefore supplies an
+exact large global trade, while proving that every such repair changes
+at least the stated fraction of observations. The theorem uses known
+power-of-two block matrices and does not produce a missing Hadamard
+order. For $k>2$ we make no local-optimality claim about the source law.
+
+\paragraph{A denominator caution.}
+For a rational pairwise-independent law on $n-1$ bits written with
+common denominator $D$, the standard atom bound gives integer
+multiplicities at most $\lfloor D/n\rfloor$. Consequently
+\[
+ C\le\frac{\lfloor D/n\rfloor}{D}
+ =\frac1n-\frac{D\bmod n}{nD}.
+\]
+In particular a nonuniform rational law requires $D\ge2n$.
+This is a simplicity/denominator restriction, not a new existence
+criterion. It refers to $n-1$ bits. For the punctured $N-4$-bit extraction
+input the corresponding atom bound is only $1/(N-3)$; collision at most
+$1/N$ does not justify replacing that atom bound by $1/N$.

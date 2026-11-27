@@ -1,0 +1,350 @@
+{
+  "status": "passed",
+  "arithmetic": "exact rational/integer",
+  "saturated_lattice_alternatives": [
+    {
+      "label": "classical repeated4by12",
+      "rows": 4,
+      "order": 12,
+      "halving_steps": 4,
+      "certificate": "odd-sum integer row-span vector",
+      "witness": [
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "witness_squared_norm": 3
+    },
+    {
+      "label": "three rows admitting affine-plane repair",
+      "rows": 3,
+      "order": 12,
+      "halving_steps": 2,
+      "certificate": "all-odd integer kernel vector",
+      "odd_kernel": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "kernel_squared_norm": 12
+    },
+    {
+      "label": "earlier order24 terminal16rows",
+      "rows": 16,
+      "order": 24,
+      "halving_steps": 20,
+      "certificate": "odd-sum integer row-span vector",
+      "witness": [
+        11,
+        -1,
+        -1,
+        2,
+        0,
+        -5,
+        -1,
+        -1,
+        -2,
+        2,
+        3,
+        -1,
+        -1,
+        -1,
+        0,
+        3,
+        2,
+        0,
+        -3,
+        -1,
+        -2,
+        0,
+        0,
+        0
+      ],
+      "witness_squared_norm": 201
+    },
+    {
+      "label": "earlier order24 terminal12rows",
+      "rows": 12,
+      "order": 24,
+      "halving_steps": 11,
+      "certificate": "all-odd integer kernel vector",
+      "odd_kernel": [
+        29,
+        -31,
+        -63,
+        61,
+        -11,
+        45,
+        1,
+        5,
+        -55,
+        9,
+        5,
+        5,
+        -43,
+        5,
+        5,
+        -7,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5
+      ],
+      "kernel_squared_norm": 16968
+    }
+  ],
+  "sparse_order24_witnesses": [
+    {
+      "witness": [
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      "weights": [
+        9,
+        1,
+        1,
+        1,
+        9,
+        9,
+        9,
+        9,
+        1,
+        1,
+        1,
+        9,
+        1,
+        1,
+        1,
+        9
+      ],
+      "heavy_rows": [
+        0,
+        4,
+        5,
+        6,
+        7,
+        11,
+        15
+      ],
+      "budget": 0
+    },
+    {
+      "witness": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        -1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      "weights": [
+        1,
+        1,
+        1,
+        1,
+        9,
+        1,
+        9,
+        9,
+        1,
+        9,
+        9,
+        1,
+        1,
+        1,
+        9,
+        9
+      ],
+      "heavy_rows": [
+        4,
+        6,
+        7,
+        9,
+        10,
+        14,
+        15
+      ],
+      "budget": 0
+    }
+  ],
+  "weighted_fiber_cases": [
+    {
+      "t": 1,
+      "repaired": 0,
+      "remaining_original_deletions": 1
+    },
+    {
+      "t": 1,
+      "repaired": 1,
+      "remaining_original_deletions": 0
+    },
+    {
+      "t": 2,
+      "repaired": 0,
+      "remaining_original_deletions": 2
+    },
+    {
+      "t": 2,
+      "repaired": 1,
+      "remaining_original_deletions": 1
+    },
+    {
+      "t": 2,
+      "repaired": 2,
+      "remaining_original_deletions": 0
+    },
+    {
+      "t": 4,
+      "repaired": 0,
+      "remaining_original_deletions": 4
+    },
+    {
+      "t": 4,
+      "repaired": 1,
+      "remaining_original_deletions": 3
+    },
+    {
+      "t": 4,
+      "repaired": 2,
+      "remaining_original_deletions": 2
+    },
+    {
+      "t": 4,
+      "repaired": 3,
+      "remaining_original_deletions": 1
+    },
+    {
+      "t": 4,
+      "repaired": 4,
+      "remaining_original_deletions": 0
+    }
+  ],
+  "unequal_odd_blocks": [
+    {
+      "size": 1,
+      "budget_for_nine_missing_rows": 9
+    },
+    {
+      "size": 3,
+      "budget_for_nine_missing_rows": 25
+    },
+    {
+      "size": 3,
+      "budget_for_nine_missing_rows": 25
+    },
+    {
+      "size": 5,
+      "budget_for_nine_missing_rows": 33
+    }
+  ],
+  "odd_coset_minimum_example": {
+    "row_masks": [
+      0,
+      16773120,
+      16519104,
+      9656012,
+      13838682,
+      14783914,
+      1944718,
+      11409518,
+      15230494,
+      5921970,
+      3487346,
+      13018356
+    ],
+    "minimum_squared_norm": 40,
+    "minimizing_vector": [
+      -1,
+      -1,
+      3,
+      -1,
+      1,
+      1,
+      -3,
+      -1,
+      1,
+      1,
+      -1,
+      1,
+      1,
+      -1,
+      -1,
+      -1,
+      1,
+      -1,
+      1,
+      -1,
+      1,
+      -1,
+      1,
+      1
+    ],
+    "free_sign_assignments": 2048,
+    "free_single_three_assignments": 24576,
+    "sign_solutions": 0,
+    "norm32_solutions": 0
+  },
+  "scope": "Finite certificates supplement the general proofs; no conjecture proof is claimed."
+}

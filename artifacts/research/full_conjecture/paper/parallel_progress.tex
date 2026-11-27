@@ -1,0 +1,791 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,mathtools,booktabs,xcolor}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=blue!45!black,citecolor=blue!45!black,urlcolor=blue!45!black,
+pdfauthor={Joshua Mark},pdftitle={Parallel progress toward exact Hadamard existence}}
+\setlength{\emergencystretch}{3em}
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{theorem}[proposition]{Theorem}
+\newtheorem{corollary}[proposition]{Corollary}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\R}{\mathbb R}
+\newcommand{\one}{\mathbf 1}
+\title{Parallel progress toward exact Hadamard existence}
+\author{Joshua Mark\thanks{ORCID: \href{https://orcid.org/0009-0003-5905-2382}{0009-0003-5905-2382}. AI tools assisted with parallel mathematical research, exposition and exact computation.}}
+\date{20 November 2026 --- research progress note}
+\begin{document}
+\maketitle
+\begin{abstract}
+We make progress on four independent routes to the Hadamard conjecture.
+A classical three-square theorem solves a uniform high-energy region of
+the cyclic Hermitian norm problem, with a smaller sufficient threshold
+at skew-character lengths. Integer moment analysis shows that coordinate
+cube moves cannot leave any saturated Hadamard array; richer trades are
+necessary. An exact order-twenty-four certificate disproves universal
+two-row augmentation. A tensor construction supplies non-Hadamard strict
+local minima of the quartic flattening objective at infinitely many
+admissible orders. The all-order Hadamard conjecture remains unproved.
+These deductions and finite certificates carry no claim of bibliographic
+novelty, and none is presented as a Lean formalization.
+\end{abstract}
+
+\section{What is established and what is still missing}
+The preceding research notebook posed a broader arithmetic question:
+for odd $m,t$, can four coefficientwise odd elements of
+$\Z[z]/(z^m-1)$ have Hermitian norm sum $4t$? Necessarily $t\ge m$.
+At $t=m$, energy forces every coefficient to be a sign, and the
+Goethals--Seidel transfer gives order $4m$; doubling then covers all
+multiples of four if that boundary can be reached for every odd $m$.
+We do not reach that boundary uniformly here.
+
+The main positive results are the uniform sufficient thresholds
+\[
+ t\ge\frac{m^2+3}{4},\qquad
+ t\ge\frac{m^2+6m+21}{16}
+ \quad\text{when an appropriate skew character exists}.
+\]
+The second threshold applies to primes $m\equiv3\pmod4$. Both remain
+quadratic rather than linear. They are sharp within the displayed
+construction families, not asserted to be optimal for the unrestricted
+norm problem. The moment branch also proves an explicit cofinite
+run-count bound in each fixed coordinate dimension.
+
+The arithmetic objects also have a direct lattice interpretation.
+The same Goethals--Seidel block identity works for integral circulants:
+a norm solution gives an odd integral matrix $K$ of order $4m$ with
+$KK^{\mathsf T}=4tI$. Each row has $4m$ odd entries, so its squared
+length is at least $4m$. Equality is exactly the sign-matrix case.
+Thus the new construction gives integral scaled isometries above their
+minimum possible energy; it does not attain that minimum uniformly.
+
+The negative results identify concrete missing ingredients. Ordinary
+cube-kernel generators are not a positive-conversion mechanism at the
+target; two-row exchanges do not always augment a partial matrix; and
+even a smooth quartic objective has strict nonglobal minima. These are
+obstructions to specific methods, not to the Hadamard conjecture.
+All new work remains separate from the existing Lean repository and
+the earlier asymptotic manuscript.
+
+\section{Arithmetic: a proved high-energy norm theorem}
+
+
+Put $R_m=\Z[z]/(z^m-1)$, let $z^*=z^{-1}$, and write
+$J=1+z+\cdots+z^{m-1}$. We seek
+\begin{equation}\label{eq:target}
+ A_i\equiv J\pmod{2R_m},\qquad
+ \sum_{i=0}^3A_iA_i^*=4t\cdot1.
+\end{equation}
+When $m$ is odd, elementary energy and augmentation arguments force
+$t\ge m$ and $t$ odd. At $t=m$, every coefficient is a sign, giving
+four periodic complementary binary sequences and hence, by the
+Goethals--Seidel construction, a Hadamard matrix of order $4m$.
+The general boundary problem is not solved here.
+
+\begin{theorem}[Uniform large-energy existence]\label{thm:main}
+If $m\ge1$ and $t$ are odd integers and $t\ge(m^2+3)/4$, then
+\eqref{eq:target} has a solution of the form
+\[
+ A_i=J+2x_i\cdot1,\qquad x_i\in\Z.
+\]
+For odd $m,t$, this particular form exists if and only if
+$t\ge(m^2+3)/4$.
+\end{theorem}
+\begin{proof}
+Since $JJ^*=mJ$ and $J^*=J$,
+\begin{equation}\label{eq:reduction}
+ \sum_{i=0}^3(J+2x_i)(J+2x_i)^*
+ =4\Bigl(m+\sum_i x_i\Bigr)J+4\sum_i x_i^2\cdot1.
+\end{equation}
+For $m>1$, $J$ and $1$ are linearly independent. Thus the target is
+equivalent to
+\begin{equation}\label{eq:four}
+ \sum_i x_i=-m,\qquad \sum_i x_i^2=t.
+\end{equation}
+For $m=1$, these conditions are still sufficient; necessity of the
+stated threshold merely says $t\ge1$ and follows from coefficient energy.
+
+Set $N=4t-m^2$. Under the hypotheses, $N\ge3$ and $N\equiv3\pmod8$.
+The Legendre--Gauss three-square theorem gives
+$N=u^2+v^2+w^2$ for integers $u,v,w$. All three are odd, because the
+only square residues modulo eight are $0,1,4$. By changing the sign of
+one of them if necessary, arrange
+$u+v+w\equiv m\pmod4$. Define
+\begin{align*}
+ x_0&=(-m+u+v+w)/4,& x_1&=(-m+u-v-w)/4,\\
+ x_2&=(-m-u+v-w)/4,& x_3&=(-m-u-v+w)/4.
+\end{align*}
+They are integers: the last three numerators differ from the first by
+twice a sum of two odd numbers. Their sum is $-m$, and the orthogonal
+four-square identity gives
+\[
+ \sum_i x_i^2=\frac{m^2+u^2+v^2+w^2}{4}=t.
+\]
+Equation~\eqref{eq:reduction} proves existence.
+
+Conversely, for $m>1$ any solution of this form obeys
+\eqref{eq:four}. Cauchy--Schwarz gives $4t\ge m^2$. Since
+$4t-m^2\equiv3\pmod8$, it is at least three. This is precisely
+$t\ge(m^2+3)/4$.
+\end{proof}
+
+The invoked classical three-square theorem has an elementary geometric
+proof in Ankeny~\cite{Ankeny}, whose Theorem 1 applies whenever the
+integer is not $4^a(8b+7)$. No code or proof supplement from that paper
+is used.
+
+\begin{corollary}
+The broader parity-constrained norm problem has a solution for every
+odd $t\ge m$ when $m=1$ or $m=3$.
+\end{corollary}
+For $m=5$ the theorem covers every odd $t\ge7$; a single binary boundary
+witness at $t=5$ therefore settles that entire fixed-$m$ question too.
+It does not settle all $m$.
+
+\begin{proposition}[Odd multiplier closure]\label{prop:multiplier}
+If \eqref{eq:target} has a solution at $(m,t)$ and $s$ is any positive
+odd integer, it has a solution at $(m,st)$.
+\end{proposition}
+\begin{proof}
+By Lagrange's four-square theorem choose integers $a,b,c,d$ with
+$a^2+b^2+c^2+d^2=s$. The integral matrix
+\[
+ M=\begin{pmatrix}
+ a&b&c&d\\-b&a&-d&c\\-c&d&a&-b\\-d&-c&b&a
+ \end{pmatrix}
+\]
+satisfies $M^{\mathsf T}M=sI_4$. Each row sum is odd, since its parity
+equals $a+b+c+d\equiv s\equiv1\pmod2$.
+Put $B_i=\sum_jM_{ij}A_j$. Then $B_i\equiv J\pmod2$, and expanding
+the Hermitian norm sum using real integer coefficients of $M$ gives
+\[
+ \sum_i B_iB_i^*=s\sum_jA_jA_j^*=4st.
+\]
+This only uses a constant integral orthogonal design; it does not
+assert a four-square composition identity with arbitrary group-ring
+Hermitian coefficients.
+\end{proof}
+
+\section*{Examples and scope}
+At $m=7$, the threshold is $t=13$. Taking $(u,v,w)=(1,1,1)$ gives
+$(x_0,x_1,x_2,x_3)=(-1,-2,-2,-2)$, hence constant coefficients
+$(-1,-3,-3,-3)$ and all remaining coefficients equal to one.
+At $m=9$, the threshold is $21$; choosing $(u,v,w)=(-1,1,1)$ gives
+$(-2,-3,-2,-2)$ and constant coefficients $(-3,-5,-3,-3)$.
+
+For $m>3$, $(m^2+3)/4>m$, so the constant-perturbation family cannot
+reach the Hadamard boundary. This follows from its sharp lower bound,
+not from a failure to search far enough. Applying odd multiplier closure
+to any known boundary solution gives infinitely many further energies,
+but it cannot lower an energy to the boundary.
+
+The remaining parameter strip for a fixed odd $m$ is finite:
+\[
+ m\le t<(m^2+3)/4,\qquad t\text{ odd}.
+\]
+It is an infinite family of strips as $m$ varies. A uniform theorem in
+that strip, especially near $t=m$, is still needed. The polynomial
+bound above is a proved partial answer to a stronger arithmetic question,
+not a new Hadamard-order existence result. Neither the three-square
+identity nor this elementary application is claimed as bibliographically
+novel without further investigation.
+
+\section*{A lower threshold from skew quadratic characters}
+Suppose $m\equiv3\pmod4$ and a polynomial $L\in R_m$ has constant
+coefficient zero, all other coefficients signs, and
+\[
+ L^*=-L,\qquad LL^*=m\cdot1-J.
+\]
+For every prime $p\equiv3\pmod4$ this is supplied by
+$L=\sum_{j=1}^{p-1}\chi(j)z^j$, where $\chi$ is the quadratic character
+modulo $p$, as in the Paley character construction~\cite{Paley}.
+For completeness, $\chi(-j)=-\chi(j)$ gives skewness. For $s\ne0$,
+\[
+ \sum_j\chi(j)\chi(j+s)
+ =\sum_{j\ne0}\chi(1+s/j)=-1:
+\]
+as $j$ ranges over the nonzero field elements, $1+s/j$ ranges over all
+field elements except one, and a nontrivial character sums to zero.
+The constant coefficient is $p-1$, giving the norm identity.
+
+\begin{theorem}[Skew-character large-energy region]\label{thm:skew}
+Under those hypotheses on $L$, the norm problem is solvable for every
+odd
+\[
+ t\ge T_m:=\frac{m^2+6m+21}{16}.
+\]
+In particular this holds for every prime $m\equiv3\pmod4$.
+The integer $T_m$ is odd. The threshold is sharp within the family
+used in this proof.
+\end{theorem}
+\begin{proof}
+Write $m=4k+3$ and $x=(3-m)/4=-k$. Then
+$T_m=k^2+3k+3$ is an odd integer.
+For odd integers $a,b,c$, set
+\[
+ A_1=L+a,\quad A_2=L+b,\quad A_3=L+c,\quad A_4=J+2x.
+\]
+Every coefficient is odd. Since $L^*=-L$, cross terms with a real
+constant vanish, and
+\[
+ (L+a)(L+a)^*=(m+a^2)\cdot1-J.
+\]
+The fourth norm is $4x^2\cdot1+(m+4x)J=4x^2\cdot1+3J$.
+Thus
+\[
+ \sum_{i=1}^4 A_iA_i^*
+ =\bigl(3m+4x^2+a^2+b^2+c^2\bigr)\cdot1.
+\]
+The required integer for the last three squares is
+$N=4t-3m-4x^2$. It is at least three precisely when $t\ge T_m$.
+Also $3m+4x^2=4k^2+12k+9\equiv1\pmod8$, while $4t\equiv4\pmod8$;
+hence $N\equiv3\pmod8$. The three-square theorem supplies odd
+$a,b,c$ with squared sum $N$. Conversely, any three odd integers have
+squared sum at least three, proving sharpness in this family.
+\end{proof}
+
+At $m=7$ this threshold is seven, so the entire broader problem is
+settled for that fixed length as well. At $m=11$ it is thirteen, leaving
+only the binary boundary case $t=11$ below the threshold. For large
+primes the threshold remains quadratic in $m$, so it does not reach
+the Hadamard boundary uniformly. The prime-power version of Paley's
+character construction lives in the group ring of the additive field,
+which need not be cyclic; no cyclic prime-power extension is asserted.
+
+\begin{proposition}[A zero-aligned character ansatz is impossible]
+With the same $m,L$, it is impossible that all four elements have the
+form
+\[
+ A_i=u_iL+v_i+2w_iJ,\qquad u_i,v_i\text{ odd},\quad w_i\in\Z,
+\]
+and their Hermitian norm sum is a scalar multiple of $1$.
+\end{proposition}
+\begin{proof}
+The coefficient multiplying $J$ in the sum of norms is
+\[
+ K=-\sum_i u_i^2+4\sum_i(w_iv_i+mw_i^2).
+\]
+Every summand in the last parentheses is even, since its parity is
+$w_i+w_i^2=0$. The four odd squares sum to four modulo eight.
+Therefore $K\equiv4\pmod8$, so it cannot vanish. The elements $J$ and
+$1$ are linearly independent because $m>1$.
+\end{proof}
+This is an obstruction to a restricted character ansatz, not to the
+general norm problem or to Hadamard existence. Theorem~\ref{thm:skew}
+avoids it by using an odd coefficient of $J$ in the fourth element.
+
+\section*{Exact checks}
+The standard-library script \path{verify_large_energy.py} constructs and
+checks examples at the threshold and several larger odd energies for
+every odd $m\le101$. It also tests odd multiplier closure using a direct
+cyclic autocorrelation check. The general assertions rest on the paper
+proofs; finite tests are additional checks only.
+
+% Self-contained mathematical fragment. Uses proposition/proof environments,
+% standard amsmath/amssymb, hyperref, and the parent note's \Z and \R macros.
+\section{Moment-semigroup progress: which moves can preserve positivity?}
+All results in this section have elementary proofs. They do not establish
+new Hadamard orders or a general positivity-conversion theorem. Their
+purpose is to discriminate between possible algebraic-statistics tools.
+In particular, generating the integer kernel is much weaker than connecting
+its nonnegative fibers.
+
+\subsection{Cube moves are frozen at every saturated Hadamard design}
+An observation is a bit vector in $\{0,1\}^d$, with integer multiplicity.
+A coordinate-subcube parity move fixes coordinates outside a set $T$ and
+adds one to the vertices of one parity inside that subcube while subtracting
+one from the other parity. When $|T|\ge3$, the move preserves every
+quadratic moment. Both signs of every translated move are allowed.
+
+\begin{proposition}[Isolation under all coordinate-cube moves]
+Let a binary strength-two orthogonal array have $N$ rows and $d=N-1$
+columns, with $N\ge8$. No nonzero integer multiple of any individual
+coordinate-subcube parity move of dimension at least three is feasible
+from its multiplicity vector while preserving nonnegativity.
+\end{proposition}
+\begin{proof}
+Replace bits by signs and adjoin the all-one column. The resulting square
+matrix $H$ has $H^{\mathsf T}H=NI$, hence $HH^{\mathsf T}=NI$. Its
+observations are distinct, and every two have Hamming distance $N/2$:
+their sign inner product after deleting the common first coordinate is
+$-1$, so $d-2\operatorname{dist}(x,y)=-1$. In particular no two
+supported observations are at Hamming distance two.
+
+Each parity class of a coordinate subcube of dimension at least three
+contains a pair of vertices at Hamming distance two: flip any two of its
+free coordinates. Either orientation of the move subtracts from all
+vertices of one such class. That class cannot lie in the support of the
+array. Some subtracted coordinate therefore has multiplicity zero, and
+every positive integer multiple makes it negative.
+\end{proof}
+
+Flipping a single coordinate produces a different array in the same
+quadratic-moment fiber: unbiasedness and pairwise independence are
+preserved, and none of the new distance-one neighbors was supported
+before. Thus even the collection of all translated coordinate-cube moves,
+in all dimensions, cannot connect these nonnegative fibers and cannot
+be a Markov basis for them. This is not just a failure of a low-dimensional truncation of the
+origin-anchored kernel basis. General non-coordinate trades are necessary.
+
+\paragraph{An exact degree-four trade outside this move family.}
+Take the Walsh matrix $H_{ab}=(-1)^{\langle a,b\rangle}$ of order eight,
+with $a,b\in\{0,1\}^3$ ordered by their integer values. Replace its
+first four rows by
+\[
+ r_i'=\frac12(r_0+r_1+r_2+r_3)-r_i\qquad(0\le i<4).
+\]
+The row transformation $J_4/2-I_4$ is orthogonal. Each column in these
+four rows has product $+1$, so its sum is $0$ or $\pm4$; the transformed
+entries are again signs. The first column remains all ones. Consequently
+both old and new matrices are Hadamard, and their seven-column arrays
+have the same quadratic moments.
+
+Represent a bit pattern by the mask whose bit $j$ is its $j$th coordinate.
+The old array has masks
+\[
+ \{0,85,102,51,120,45,30,75\}.
+\]
+The trade removes $\{0,85,102,51\}$ and inserts
+$\{119,34,17,68\}$. It preserves nonnegativity and has degree four
+(four observations on either side). Both endpoints are isolated under
+every coordinate-cube move by the proposition. The supplied checker
+enumerates all $939$ coordinate subcubes of dimensions three through
+seven and checks both orientations at both endpoints. This is the
+classical kind of closed-quadruple switching, independently checked here,
+not a claim of a new switching construction.
+
+\subsection{A second obstruction: move order in the anchored basis}
+\begin{proposition}[Sharp maximum-weight constraint]
+Every unbiased pairwise-independent distribution on $\{0,1\}^d$ whose
+support has Hamming weight at most $K$ satisfies
+\[
+ K\ge\left\lceil\frac{d+1}{2}\right\rceil.
+\]
+The bound is attained by a positive integer orthogonal array for every
+$d\ge2$.
+\end{proposition}
+\begin{proof}
+For the Hamming weight $W=\sum_i Z_i$, pairwise independence gives
+$\mathbb EW=d/2$ and $\mathbb EW^2=d(d+1)/4$. Since $W^2\le KW$,
+the asserted lower bound follows.
+
+For attainment put $s=\lfloor d/2\rfloor$ and
+$C_s=\binom{2s}{s}/(s+1)$. If $d=2s+1$, take every weight-$(s+1)$
+vector once and $C_s$ copies of the zero vector. If $d=2s$, take every
+weight-$s$ and every weight-$(s+1)$ vector once, together with $C_s$
+zero vectors. In either case the run count is
+\[
+ N=2\binom{2s}{s},
+\]
+and a fixed coordinate appears in $N/2$ rows while any fixed pair
+appears in $N/4$ rows. For odd $d$, these identities are
+\[
+ \binom{2s+1}{s+1}+C_s=2\binom{2s}{s},\quad
+ \binom{2s}{s}=N/2,\quad
+ \binom{2s-1}{s-1}=N/4.
+\]
+The even case is obtained by deleting a coordinate from the odd one,
+or directly by Pascal's identity. The maximum weight is exactly
+$s+1=\lceil(d+1)/2\rceil$.
+\end{proof}
+
+Start from the canonical signed solution supported at weights zero,
+one and two. If only origin-anchored basis moves $M_T$ with $|T|\le K$
+are used, with arbitrary integer coefficients, the result is still
+supported at weights at most $\max\{2,K\}$. Hence conversion to a positive
+design requires a move order at least $\lceil(d+1)/2\rceil$ when this
+exceeds two. This claim concerns that anchored basis. It does not rule
+out translated three-dimensional moves based at large-weight patterns;
+the preceding isolation proposition is a separate statement about their
+behavior at the saturated endpoints.
+
+\begin{proposition}[Exact limitation of monotone triple conversion]
+Write $L=N/4>0$. Starting from the canonical signed solution, allow only
+nonnegative multiples of the origin-anchored three-cube moves which add
+to singletons and triples and subtract from the empty set and pairs.
+For $d=4$ conversion is possible exactly when $L\ge2$; for $d=5$ it is
+possible exactly when $3\mid L$; for $d\ge6$ it is impossible.
+\end{proposition}
+\begin{proof}
+Let $t_T\ge0$ be the multiplicity of each triple move, and let
+$T_0=\sum_{|T|=3}t_T$. The final singleton counts require
+$3T_0\ge dL(d-3)$, while pair nonnegativity requires
+$3T_0\le\binom d2L$. For $d\ge6$ these inequalities are inconsistent.
+
+For $d=5$ they force equality and $T_0=10L/3$, hence $3\mid L$.
+Conversely, setting every triple multiplicity to $L/3$ works: the only
+remaining positive counts are $2L/3$ at the empty pattern and $L/3$
+at each of the ten triples. For $d=4$, the case $L=1$ would give five
+orthogonal nonzero columns in $\R^4$, which is impossible. For every
+$L\ge2$, set all four triple multiplicities to $\lfloor L/2\rfloor$.
+The resulting empty, singleton, pair and triple counts are respectively
+$2L-4\lfloor L/2\rfloor$, $-L+3\lfloor L/2\rfloor$,
+$L-2\lfloor L/2\rfloor$, and $\lfloor L/2\rfloor$, all nonnegative.
+\end{proof}
+For instance the unrestricted eight-run design on five coordinates
+exists by truncating Walsh order eight, but the triple-only conversion
+above cannot reach any positive design at $(N,d)=(8,5)$. The obstruction
+belongs to the move strategy, not to the moment target.
+
+\subsection{Why averaging over all coordinate permutations loses the target}
+\begin{proposition}[Exponential cost of full permutation symmetry]
+Let $N_{\mathrm{sym}}(d)$ be the least positive run count for a binary
+strength-two array whose pattern multiplicities are invariant under all
+coordinate permutations. Put
+\[
+ k_d=\min\{k\in\{0,\ldots,d\}:(2k-d)^2\le d\}.
+\]
+For $d\ge2$,
+\[
+ \binom d{k_d}\ \le N_{\mathrm{sym}}(d)
+ \le 2\binom{2\lfloor d/2\rfloor}{\lfloor d/2\rfloor}.
+\]
+In particular $N_{\mathrm{sym}}(d)=\Theta(2^d/\sqrt d)$.
+\end{proposition}
+\begin{proof}
+The Hamming weight has mean $d/2$ and variance $d/4$. At least one
+occupied weight $k$ has $(2k-d)^2\le d$. Full permutation symmetry
+then forces each of the $\binom dk$ patterns at that weight to have
+positive integer multiplicity. Throughout this central interval,
+$\binom dk\ge\binom d{k_d}$, proving the lower bound. The Catalan-shell
+construction above proves the upper bound. Finally
+$k_d=d/2-\sqrt d/2+O(1)$, so Stirling's formula gives the matching
+orders. More precisely the lower binomial is asymptotic to
+$e^{-1/2}2^d\sqrt{2/(\pi d)}$.
+\end{proof}
+Thus, for sufficiently large $d$, exact global symmetrization cannot
+preserve the saturated run count $N=d+1$. Selective symmetry or symmetry
+breaking is essential in that regime. The
+Catalan-shell constructions are related to the recent paper
+\emph{Catalan Bounds for Symmetric Strength-Two Orthogonal Arrays}
+by R. C. Karunanayaka,
+\url{https://doi.org/10.1002/jcd.70039}; no priority is claimed for them.
+The bound above concerns growth order and maximum weight, not the exact
+minimum run-count conjecture in that paper.
+
+\subsection{A positive result: a quadratic bound for the fixed-dimension conductor}
+\begin{proposition}[An explicit cofinite central ray]
+For each fixed $d\ge2$, every sufficiently large $N\equiv0\pmod4$
+admits a binary strength-two array on $d$ coordinates. An explicit
+threshold is
+\[
+ N\ge C_d=4(A-1)(B-1)<3(d+1)^2,
+\]
+where $a=4A$ is the least power of two at least $d+1$, and $b=4B$ is
+the first order at least $d+1$ in the sequence
+\[
+ b_e=\begin{cases}3^e+1&e\text{ odd},\\2(3^e+1)&e\text{ even}.
+ \end{cases}
+\]
+Here $N$ is positive, also when $C_d=0$.
+\end{proposition}
+\begin{proof}
+Sylvester gives order $a$. Paley's two constructions give order $b$:
+odd $e$ uses type I and even $e$ uses type II. Every $b_e$ has exact
+two-adic valuation two, while $A$ is a power of two, so $\gcd(A,B)=1$.
+Truncating the normalized matrices gives arrays with $d$ coordinates
+and run counts $a,b$. Concatenating observations adds moment vectors.
+The elementary two-generator numerical-semigroup theorem therefore
+gives every run count $4M$ with $M\ge(A-1)(B-1)$. For completeness,
+choose $u\in\{0,\ldots,B-1\}$ with $uA\equiv M\pmod B$. Then
+$M-uA\ge-B+1$, so its integer quotient by $B$ is nonnegative.
+
+We have $a<2(d+1)$. Consecutive displayed $b_e$ grow by a factor less
+than six, giving $b<6(d+1)$, including the initial case $b=4$.
+Consequently $C_d<ab/4<3(d+1)^2$.
+\end{proof}
+This result uses only classical Sylvester and Paley constructions, not
+the current project's asymptotic theorem. It proves finiteness and an
+explicit bound for central-ray holes when $d$ is fixed. It remains far
+from the diagonal $N=d+1$ needed for Hadamard existence. It is an
+elementary application of known constructions, not a claim of a new
+Hadamard bound.
+
+\paragraph{Reproduction.}
+The standard-library script \path{moments/check.py} checks the isolated
+endpoints and non-cube trade, all $939$ coordinate subcubes, the shell
+moment identities through $d=40$, low-dimensional explicit arrays,
+triple-conversion witnesses, and sample decompositions above the
+conductor thresholds. Results are in \path{moments/certificates.json}.
+None of these checks is a Lean formalization or a proof of unrestricted
+Hadamard existence.
+% Standalone section fragment. Uses amsmath, amssymb, amsthm and hyperref.
+% These elementary reductions are not claimed to have new bibliographic priority.
+\section{A sharper obstruction to bounded row-exchange augmentation}
+
+This pass gives a concrete negative result: replacing two rows is not
+enough for every augmenting exchange. The following finite certificate
+raises the necessary universal deletion bound from two to at least three.
+It does not establish any universal upper bound.
+
+\subsection{A small-dimensional exact enumeration theorem}
+\begin{proposition}[Cube intersections through information coordinates]
+Let $V\subseteq\mathbb R^n$ be a $q$-dimensional linear subspace. Then
+$|V\cap\{\pm1\}^n|\le2^q$. There is a set of $q$ coordinate positions
+such that the projection to those positions is injective on $V$.
+Consequently, if $V$ is given by rational linear equations, all its
+sign vectors can be enumerated by testing at most $2^q$ assignments,
+using exact rational arithmetic. Antipodal normalization reduces this
+to $2^{q-1}$ assignments when $q>0$.
+\end{proposition}
+\begin{proof}
+Choose a basis matrix for $V$ and $q$ linearly independent coordinate
+rows. Projection to those coordinates is an isomorphism onto
+$\mathbb R^q$. A sign vector projects to a sign vector, so there are
+at most $2^q$ possibilities. Each choice determines a unique candidate
+in $V$; check whether all remaining coordinates are signs. For rational
+data, elimination and all checks are exact. Negation pairs all nonzero
+cube vectors, allowing one information coordinate to be fixed positive.
+\end{proof}
+
+For a partial matrix with $m$ orthogonal rows at order $n$, deleting $k$
+rows leaves a kernel of dimension $q=n-m+k$. The enumeration cost is
+therefore exponential in the defect plus the deletion count, not in
+the full order. After enumeration, a $(k+1)$-clique in the candidate
+orthogonality graph is exactly an augmenting exchange for that deletion
+set. This gives an exact decision procedure for a specified exchange,
+not a theorem that such an exchange exists.
+
+There is also a rigid equality case, useful when classifying residual
+frames rather than only counting candidates.
+\begin{proposition}[Maximum cube intersections are duplication spaces]
+The bound $|V\cap\{\pm1\}^n|=2^q$ holds if and only if, after
+permuting and negating coordinates, $V$ consists of vectors constant
+on each of $q$ nonempty coordinate blocks.
+If $V$ is the residual space of a partial Hadamard matrix, all these
+blocks have size $n/q$. In that case completion is equivalent to the
+existence of a Hadamard matrix of order $q$.
+\end{proposition}
+\begin{proof}
+Choose information coordinates as above. Equality means every sign
+assignment to them extends to a sign vector. Each other coordinate is
+a linear form $f(\varepsilon)=\sum_i a_i\varepsilon_i$ taking only
+values $\pm1$ on the full $q$-cube. Its maximum is
+$\sum_i|a_i|=1$, whereas averaging $f^2$ gives $\sum_i a_i^2=1$.
+These two equalities force at most one nonzero coefficient, which is
+$+1$ or $-1$. Thus every coordinate is a signed copy of an information
+coordinate. The converse is immediate.
+
+For a partial Hadamard residual space, the orthogonal projector has
+constant diagonal $q/n$. The projector on a duplication block of size
+$s$ has diagonal $1/s$, so $s=n/q$ for every block. Inner products of
+sign vectors are then $(n/q)$ times the inner products of their $q$
+block values. A full orthogonal basis of sign vectors exists precisely
+when those block values form an order-$q$ Hadamard matrix.
+\end{proof}
+
+This shows why even a maximal number of sign candidates is not, without
+additional structure, an automatic completion theorem: the smaller
+Hadamard existence problem appears explicitly in the equality case.
+
+\subsection{An exact order-twenty-four certificate}
+Encode a sign row $x$ by the integer whose bit $j$ is one exactly when
+$x_j=-1$; the least significant bit is coordinate zero. The sixteen
+rows in this example are
+\begin{align*}
+ &0,\ 16773120,\ 16519104,\ 10359454,\ 7684730,\ 5820908,\ 9389414,\ 1547504,\\
+ &6736278,\ 11838780,\ 3701846,\ 13790378,\ 10646512,\ 2963882,\ 12892774,\ 5974836.
+\end{align*}
+Each row has length $24$. All distinct row pairs differ in exactly
+twelve positions, so their dot products vanish.
+
+\begin{proposition}[A three-row deletion barrier]
+This partial matrix has no augmenting exchange that deletes at most
+two rows. Deleting three rows does admit an augmenting exchange and
+a subsequent full completion. Thus any universal row-exchange
+augmentation theorem must permit at least three deletions.
+\end{proposition}
+\begin{proof}[Exact finite certificate]
+Independently of the low-dimensional enumeration procedure, the
+verifier exhausts all $2^{23}=8388608$ sign vectors normalized to have
+coordinate zero positive. For each vector, record the set of original
+rows to which it is \emph{not} orthogonal. Only vectors with at most
+two such rows can participate after at most two deletions. There are
+exactly $56$: sixteen have a singleton nonorthogonality support, and
+forty have support of size two. No vector has empty support.
+
+For each of the sixteen single-row deletions there is exactly one
+normalized candidate. Of the $\binom{16}{2}=120$ two-row deletions,
+one hundred have exactly two candidates, and twenty have four
+candidates. None of the latter candidate sets contains three mutually
+orthogonal rows. This exhausts all $1+16+120=137$ deletion sets and
+rules out an augmentation deleting at most two rows.
+
+Delete rows with zero-based indices $0,5,6$. Insert the four rows
+encoded by
+\[
+ 353924,\quad1104648,\quad2786850,\quad4759768.
+\]
+The thirteen retained rows and these four new rows are pairwise
+orthogonal. The resulting seventeen rows complete by adding
+\[
+ 5133676,\ 7583694,\ 9432922,\ 10076646,\ 10684492,\ 12653842,\ 15326908.
+\]
+The verifier checks the full order-$24$ Gram matrix by exact Hamming
+distances. The positive certificate and the exhaustive negative
+certificate together prove that the minimal deletion count is three.
+\end{proof}
+
+This is a counterexample to universal two-row augmentation, not a
+counterexample to Hadamard existence. It also demonstrates that
+``single-row frozen'' understates the actual obstruction: some
+two-row deletions have genuinely new candidates, but their mutual
+orthogonality graph still prevents an augmentation.
+
+The matrix was obtained from the first terminal case in a fixed-seed
+thirty-run order-$24$ experiment with a canonical three-row prefix.
+The row-count histogram was nineteen terminal sixteen-row matrices,
+two terminal twelve-row matrices, and nine full matrices. Those
+frequencies describe the sampling algorithm only. No claim about all
+partial matrices or all equivalence classes is inferred from them.
+
+\subsection{Files and independent reproduction}
+All files for this pass are in \path{research/full_conjecture/exchanges/}.
+Run \path{sample.py}, \path{augment.py}, then \path{verify.py}.
+The first two scripts use exact free-coordinate enumeration and clique
+search. The independent verifier does not use that enumeration or
+rational elimination: it traverses the entire normalized sign cube,
+records nonorthogonality supports, and checks every small deletion set.
+Its report is \path{verification.json}; the complete compact list of
+relevant candidate supports is in \path{independent24.json}.
+No Lean claim or bibliographic novelty claim is made.
+\section{A quartic obstruction to a benign optimization landscape}
+The previous note ruled out a naive local-maximization argument for
+the entrywise one-norm. We now test the smoother alternative
+\[
+ Q(U)=\sum_{ij}u_{ij}^4\qquad(U\in O(n)).
+\]
+It satisfies $Q(U)\ge1$, with equality exactly when $\sqrt nU$ is a
+Hadamard matrix. The arbitrary-exponent framework is classical
+\cite{ArbitraryP}; the calculations below are independently derived,
+and no novelty claim is made.
+
+\begin{proposition}[An infinite family of strict quartic traps]
+Let $A=2J_5/5-I_5$, and let $B=H/\sqrt k$ for any Hadamard matrix
+$H$ of order $k$. Then $U=A\otimes B$ is a strict local minimum of
+$Q$ on $O(5k)$, with value $29/25$. In fact its Hessian obeys
+\[
+ \left.\frac{d^2}{dt^2}Q(Ue^{tX})\right|_{t=0}
+ \ge\frac4{5k}\|X\|_F^2
+ \qquad(X^{\mathsf T}=-X).
+\]
+For $k=4\cdot2^a$, these are nonglobal local minima at the admissible
+orders $20\cdot2^a$.
+\end{proposition}
+\begin{proof}
+For an orthogonal matrix $V$, entrywise differentiation gives
+\begin{align*}
+ \left.\frac{d}{dt}Q(Ve^{tX})\right|_{0}
+ &=4\operatorname{tr}((V^{\circ3})^{\mathsf T}VX),\\
+ \left.\frac{d^2}{dt^2}Q(Ve^{tX})\right|_{0}
+ &=12\sum_{ij}v_{ij}^2(VX)_{ij}^2
+   +4\operatorname{tr}((V^{\circ3})^{\mathsf T}VX^2).
+\end{align*}
+At the claimed $U$, the symmetric matrix
+\[
+ M=U^{\mathsf T}U^{\circ3}
+  =\left(\frac7{25}I_5-\frac6{125}J_5\right)\otimes\frac1kI_k
+\]
+has eigenvalues $1/(25k)$ and $7/(25k)$. Thus $U$ is stationary.
+Its smallest squared entry is $4/(25k)$. Since
+$\|UX\|_F=\|X\|_F$ and $X^2=-X^{\mathsf T}X$,
+\[
+ Q''(0)\ge\left(\frac{48}{25k}-\frac{28}{25k}\right)\|X\|_F^2
+ =\frac4{5k}\|X\|_F^2.
+\]
+The positive definite tangent Hessian proves strict local minimality.
+Direct summation gives $Q(A)=29/25$ and $Q(B)=1$, hence the stated
+value. A Hadamard matrix of order $20$ is furnished by the certified
+length-five Goethals--Seidel witness; tensoring it with the Sylvester
+matrix of order $2^a$ gives a point of value one at the same order.
+Consequently these local minima are not global.
+\end{proof}
+
+The obstruction is uniform, not an inference from numerical Hessian
+eigenvalues. The exact script checks the algebra at orders $20,40,80$.
+It shows that changing the one-norm objective to the fourth-power
+objective does not by itself remove the false-minimum problem.
+
+\begin{proposition}[Coordinate rotations can miss a descent direction]
+At order $28$, let
+$U=(2J_7/7-I_7)\otimes(H_4/2)$. This matrix is stationary for $Q$.
+Every single Givens rotation has strictly positive second derivative,
+but a joint tangent direction has negative second derivative.
+\end{proposition}
+\begin{proof}
+For $A_n=2J_n/n-I_n$, direct substitution in the Hessian formula yields
+\[
+ \left.\frac{d^2}{dt^2}Q(A_ne^{tX})\right|_0
+ =-\frac{4(n-6)}n\|X\|_F^2
+  +\frac{8(n^2-16)}{n^3}\|X\one\|^2.
+\]
+Take $n=7$. A single Givens direction in the tensor matrix has
+curvature $34/343$ when its two coordinates belong to distinct
+order-seven blocks, and $412/343$ when they belong to the same block.
+Both are positive. Set
+$X_0=E_{01}+E_{12}-E_{02}$, where
+$E_{ij}=e_ie_j^{\mathsf T}-e_je_i^{\mathsf T}$. Then
+$X_0\one=0$ and $\|X_0\|_F^2=6$. The joint direction
+$X=X_0\otimes I_4$ gives curvature $-24/7$, since the fourth-power
+objective of the normalized Hadamard tensor factor is one.
+All values are also checked by the exact full tangent Hessian script.
+\end{proof}
+Thus testing all coordinate-pair second derivatives is not a sufficient
+second-order test even at an admissible order. This matters when
+importing coordinate descent or block-rotation methods from numerical
+optimization. The first proposition supplies genuine strict minima;
+the second supplies a different failure, namely a saddle hidden from
+every individual coordinate rotation.
+
+\section{Consequences for the next research step}
+The arithmetic result replaces an unrestricted search over odd
+coefficients by explicit uniform constructions in a large region.
+Its remaining task is to lower the threshold to the minimum energy,
+not to multiply known solutions by larger odd scalars. In the
+skew-character construction one channel still has a large row sum;
+the all-four aligned-character shortcut is ruled out by a parity
+obstruction. A successful extension must change that structure.
+
+The moment results require trades beyond coordinate subcubes and a
+positivity argument adapted to sparse saturated fibers. Their
+fixed-dimension conductor bound does not control the growing diagonal
+$N=d+1$. The exchange certificate raises the necessary universal
+deletion allowance to three but establishes no universal upper bound.
+The quartic result means that a proposed optimization proof needs a
+global argument or a way to escape genuine strict local minima.
+
+No claimed result here proves new universal Hadamard existence. The
+general proof remains open in this project. The deductions have been
+reviewed for their stated domains, and exact computations are reproduced
+from standard-library Python scripts. The scripts are checks of finite
+certificates; the infinite assertions rest on the proofs in this note.
+
+\section{Files and verification}
+Branch sources are under \path{arithmetic/}, \path{moments/},
+\path{exchanges/}, and \path{geometry/}, relative to
+\path{research/full_conjecture/}. Run
+\path{arithmetic/verify_large_energy.py}, \path{moments/check.py},
+\path{exchanges/test_cube.py}, \path{exchanges/verify.py}, and
+\path{geometry/verify.py}. The full-cube exchange verifier checks all
+$2^{23}$ normalized sign vectors independently of the rational
+nullspace search. The geometry proof uses an analytic Hessian lower
+bound, not floating-point eigenvalue tests. No external research
+proof code is imported, and no Lean work or Git commits were made.
+
+\begin{thebibliography}{9}
+\small\raggedright
+
+\bibitem{Ankeny} N. C. Ankeny, \emph{Sums of three squares},
+Proc. Amer. Math. Soc. 8 (1957), 316--319, Theorem 1.
+\url{https://doi.org/10.1090/S0002-9939-1957-0085275-8}.
+\bibitem{Paley} R. E. A. C. Paley, \emph{On orthogonal matrices},
+J. Math. Phys. 12 (1933), 311--320.
+\url{https://doi.org/10.1002/sapm1933121311}.
+
+\bibitem{ArbitraryP} T. Banica and I. Nechita,
+\emph{Almost Hadamard matrices: the case of arbitrary exponents},
+Discrete Appl. Math. 161 (2013), 2367--2379.
+\url{https://arxiv.org/abs/1211.2669}.
+\end{thebibliography}
+\end{document}

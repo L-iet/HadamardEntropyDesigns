@@ -1,0 +1,59 @@
+{
+  "checkedAtUTC": "2026-11-21T03:12:12.386902+00:00",
+  "pages": {
+    "collision_entropy.tex": 3,
+    "rounding_entropy.tex": 9,
+    "research.tex": 13
+  },
+  "checkersPassed": [
+    "discrete/check.py",
+    "check_entropy.py",
+    "check_residue.py",
+    "invariant/check.py",
+    "exchangeability/check_exact.py",
+    "exchangeability/check_residue.py"
+  ],
+  "typesettingChecksPassed": true,
+  "files": {
+    "build.py": "5aab6956e44c734424c9c8bc13e793f9a6ffce2df00b3fd156c01bd4deeebecf",
+    "check_entropy.py": "b5ff5cdab3fb13a7b71bd7b3bcb67d38d9049d103b7294b77d609c5dfa1bc555",
+    "check_residue.py": "131ea792208c546d33758df0cd8b605594386556bc8c272fb8ee19c65543f2fc",
+    "collision_entropy.pdf": "120daad738097020c0d96c2623030e152bc4b90ae322414480ce184714b86f6d",
+    "collision_entropy.tex": "3fd8622df4e742292e3ddf3a2ee4a498e5173e6e4aeabecbfb61d3ca68ced481",
+    "completion.tex": "54d16caefe341b980f049db70698f553129b2a62bc2eacf17438a2b704949ecc",
+    "discrete\\check.py": "ab744f008f2f5eb0ff86f85e89dbf8bc49198cc0b1fb8883cd2eebe4e7b0e7c8",
+    "discrete\\checks.json": "1a9d2bed31b08d57cf3bc8ff4fa7344358c6831b8d914f9f7fa761fc32e25cd8",
+    "discrete\\README.txt": "ff111f591c203e39bad49f2a87f76114bc9c1942c79472d50f5298b1987ba41c",
+    "discrete\\rounding.tex": "46899a46329ba55af22911c6a5d4068ea9d872d07267b969c253c811db128452",
+    "entropy.tex": "72aeaa22cfa90876a1c56d43e6151af6e8a0654cbaf7255b5c10d385d7285592",
+    "entropy_checks.json": "3bfc4371634b03dcc4fa61d9676051fc098cd3aa97c752d46dd197a809d9a7df",
+    "exchangeability\\check_exact.py": "4b19252284ceb423d0691b4b29f4628c3cf707096e292566dda57f8502447a70",
+    "exchangeability\\check_residue.py": "ccad1c5969310a538390ce5e3ff8369cca807d76c69836cc08b8e925fba81ef4",
+    "exchangeability\\exchangeability.pdf": "a9f3567e0c971ea8ccd5ff1647c764061247d93e43953cae9944878cc7191437",
+    "exchangeability\\exchangeability.tex": "dc524254d3db5007cfe5546e4e36e444c0ac953fe4087e83d377b58be3f247f6",
+    "exchangeability\\README.txt": "2931b39369025cb522ff942636fb002cfcadba6333cb75a30ab3a832d2a94d6d",
+    "exchangeability\\residue_review.txt": "3f731459c978916ac8e82e2afb70d9d81767f922acbf78677f8c42c103fd97e1",
+    "invariant\\check.py": "d6c36f16ea140ae1a109e774f3b0f674f6913944c216eb3729cb0b63080e3f71",
+    "invariant\\checks.json": "a679b0f6347ae62bcb75fe6f918258f555a53b5cd686960e1105b6e866b96355",
+    "invariant\\invariant.tex": "a6926f0e839b16d6835b38d927c59d4e5adfe100ed9748162c015a8005442ee3",
+    "invariant\\README.txt": "063a08effa029f969c9b6f8c69bae57ae5061fcc94c28441d6f3a738cbe4755a",
+    "research.pdf": "7dedaa4c7af71f14b342ce2120ff7170e9cfa8f89ee409d93b735023a9223f22",
+    "research.tex": "2936033b435758d22d700eab076a6efd8dc76f9b6a965fa4cb1691bef1c26468",
+    "residue.tex": "ca1df4aef79166318a84cd65e22b45bc569f4b35f12787d9f0bd00012fc81c76",
+    "residue_checks.json": "90094765eba19624f58640a43f72db9052b985ca3e872906df0b6967e83ad28a",
+    "rounding_entropy.pdf": "66f763c1c9d50efe56b6f0b2ed89028c97b3d0058eeaf31198a58b558610b452",
+    "rounding_entropy.tex": "1186d2610ab0b7c1c9414f6e6fd6d30829711e50d50e541284388ff13025e176",
+    "README.txt": "5260cdf9ed08e4e047749847ac053140e936a169fbfd5d8e86a1c674b823e2ac",
+    "NEXT_QUESTIONS.txt": "386dfe676f48fb7c62b5196419b00a4f411c546e215cb6765af4a7d64e6eaa2d"
+  },
+  "externalTheorems": {
+    "sevenRowCompletion": "Verheiden1978 Theorem4.5, read in original scan; classification not rerun",
+    "quantumDeFinetti": "CavesFuchsSchack2002, complex Hilbert-space formulation"
+  },
+  "scope": {
+    "hadamardConjectureProved": false,
+    "noveltyEstablished": false,
+    "leanFormalization": false,
+    "gitCommits": false
+  }
+}

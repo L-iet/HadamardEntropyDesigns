@@ -1,0 +1,33 @@
+{
+  "license": "Apache-2.0",
+  "author": "Joshua Mark",
+  "ORCID": "https://orcid.org/0009-0003-5905-2382",
+  "proofSource": "EntropyDesigns/CofiniteRay.lean",
+  "implementation": "Original proof; uses original project Paley modules and pinned permissively licensed mathlib. No external implementation copied.",
+  "mathematicalInputs": [
+    "Classical Sylvester and Paley Hadamard constructions",
+    "Two-generator Frobenius theorem, proved in mathlib NumberTheory/FrobeniusNumber.lean"
+  ],
+  "independentSpecification": "CofiniteChallenge.lean; no definition holes",
+  "privatePilot": {
+    "status": "passed",
+    "scope": "Private staged cofinite-array pilot only; not owned snapshot or registry verification",
+    "leanKernelAccepted": true,
+    "nanodaAccepted": true,
+    "theoremNames": [
+      "EntropyDesigns.explicit_cofinite_central_ray"
+    ],
+    "definitionNames": [],
+    "sourceHashes": {
+      "CofinitePilotChallenge.lean": "2fb3d3dd79b9f38642811202850b0c9b777735b28eeed45c7c5515a95f88a8c5",
+      "CofinitePilotSolution.lean": "e1a15f7382caf8dbf47550ab036081df9fba16990b8c250c4d7e9c13e5ba22b5",
+      "comparator.json": "a8a4fed6b44c5beb2a0877b1996152bff3b08a223b65671ba466506e780659ef"
+    },
+    "exports": {
+      "challenge": "91ab4b5d959dcc8a7a82079c1dd9bce3543c782497af2d3e50be13ef7b558443",
+      "solution": "2ab837b8efa29d59be4ab09aee43b405bc95d27988d40f774213619aebcb691e"
+    }
+  },
+  "pipeline": "Existing original Apache-2.0 multi-group infrastructure reused from sibling completion-theory; unchanged per-group size limits, strict source binding, and independent-kernel requirements.",
+  "scope": "E31.05 only; all other pending principal claims remain pending. Integrated checks still required."
+}

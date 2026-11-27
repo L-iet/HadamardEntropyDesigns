@@ -1,0 +1,188 @@
+{
+  "leanFiles": 786,
+  "intentionalChallengePlaceholders": 862,
+  "errors": [
+    "Missing verification artifact submission/comparator-result.json",
+    "Missing verification artifact submission/comparator-cofinite-result.json",
+    "Missing verification artifact submission/comparator-buffer-result.json",
+    "Missing verification artifact submission/comparator-radix-result.json",
+    "Missing verification artifact submission/comparator-trade-result.json",
+    "Missing verification artifact submission/comparator-boolean-result.json",
+    "Missing verification artifact submission/comparator-cubic-result.json",
+    "Missing verification artifact submission/comparator-affine-result.json",
+    "Missing verification artifact submission/comparator-support-result.json",
+    "Missing verification artifact submission/comparator-witness-result.json",
+    "Missing verification artifact submission/comparator-moments-result.json",
+    "Missing verification artifact submission/comparator-seed-repair-result.json",
+    "Missing verification artifact submission/comparator-symmetric-result.json",
+    "Missing verification artifact submission/comparator-collision-result.json",
+    "Missing verification artifact submission/comparator-quantum-result.json",
+    "Missing verification artifact submission/comparator-quantum-bounds-result.json",
+    "Missing verification artifact submission/comparator-face-result.json",
+    "Missing verification artifact submission/comparator-distance-result.json",
+    "Missing verification artifact submission/comparator-barrier-result.json",
+    "Missing verification artifact submission/comparator-family-result.json",
+    "Missing verification artifact submission/comparator-moderate-result.json",
+    "Missing verification artifact submission/comparator-plotkin-result.json",
+    "Missing verification artifact submission/comparator-spanning-result.json",
+    "Missing verification artifact submission/comparator-relative-result.json",
+    "Missing verification artifact submission/comparator-complete-sequence-result.json",
+    "Missing verification artifact submission/comparator-hierarchy-result.json",
+    "Missing verification artifact submission/comparator-gap-result.json",
+    "Missing verification artifact submission/comparator-prime-result.json",
+    "Missing verification artifact submission/comparator-project-result.json",
+    "Missing verification artifact submission/comparator-denominator-result.json",
+    "Missing verification artifact submission/comparator-prime-exponent-result.json",
+    "Missing verification artifact submission/comparator-translation-orbits-result.json",
+    "Missing verification artifact submission/comparator-permutation-cost-result.json",
+    "Missing verification artifact submission/comparator-simplex-entropy-result.json",
+    "Principal paper claims remain unformalized"
+  ],
+  "pendingPrincipalClaims": [
+    "E07.03",
+    "E08.02",
+    "E21.05",
+    "E26.03",
+    "E26.04",
+    "E26.05"
+  ],
+  "ready": false,
+  "comparisonGroups": [
+    {
+      "id": "main",
+      "config": "comparator.json"
+    },
+    {
+      "id": "cofinite",
+      "config": "comparator-cofinite.json"
+    },
+    {
+      "id": "buffer",
+      "config": "comparator-buffer.json"
+    },
+    {
+      "id": "radix",
+      "config": "comparator-radix.json"
+    },
+    {
+      "id": "trade",
+      "config": "comparator-trade.json"
+    },
+    {
+      "id": "boolean",
+      "config": "comparator-boolean.json"
+    },
+    {
+      "id": "cubic",
+      "config": "comparator-cubic.json"
+    },
+    {
+      "id": "affine",
+      "config": "comparator-affine.json"
+    },
+    {
+      "id": "support",
+      "config": "comparator-support.json"
+    },
+    {
+      "id": "witness",
+      "config": "comparator-witness.json"
+    },
+    {
+      "id": "moments",
+      "config": "comparator-moments.json"
+    },
+    {
+      "id": "seed-repair",
+      "config": "comparator-seed-repair.json"
+    },
+    {
+      "id": "symmetric",
+      "config": "comparator-symmetric.json"
+    },
+    {
+      "id": "collision",
+      "config": "comparator-collision.json"
+    },
+    {
+      "id": "quantum",
+      "config": "comparator-quantum.json"
+    },
+    {
+      "id": "quantum-bounds",
+      "config": "comparator-quantum-bounds.json"
+    },
+    {
+      "id": "face",
+      "config": "comparator-face.json"
+    },
+    {
+      "id": "distance",
+      "config": "comparator-distance.json"
+    },
+    {
+      "id": "barrier",
+      "config": "comparator-barrier.json"
+    },
+    {
+      "id": "family",
+      "config": "comparator-family.json"
+    },
+    {
+      "id": "moderate",
+      "config": "comparator-moderate.json"
+    },
+    {
+      "id": "plotkin",
+      "config": "comparator-plotkin.json"
+    },
+    {
+      "id": "spanning",
+      "config": "comparator-spanning.json"
+    },
+    {
+      "id": "relative",
+      "config": "comparator-relative.json"
+    },
+    {
+      "id": "complete-sequence",
+      "config": "comparator-complete-sequence.json"
+    },
+    {
+      "id": "hierarchy",
+      "config": "comparator-hierarchy.json"
+    },
+    {
+      "id": "gap",
+      "config": "comparator-gap.json"
+    },
+    {
+      "id": "prime",
+      "config": "comparator-prime.json"
+    },
+    {
+      "id": "project",
+      "config": "comparator-project.json"
+    },
+    {
+      "id": "denominator",
+      "config": "comparator-denominator.json"
+    },
+    {
+      "id": "prime-exponent",
+      "config": "comparator-prime-exponent.json"
+    },
+    {
+      "id": "translation-orbits",
+      "config": "comparator-translation-orbits.json"
+    },
+    {
+      "id": "permutation-cost",
+      "config": "comparator-permutation-cost.json"
+    },
+    {
+      "id": "simplex-entropy",
+      "config": "comparator-simplex-entropy.json"
+    }
+  ]
+}

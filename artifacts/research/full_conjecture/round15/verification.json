@@ -1,0 +1,49 @@
+{
+  "checkedAtUTC": "2026-11-21T06:31:45.301235+00:00",
+  "pages": {
+    "phase_escape.tex": 2,
+    "research.tex": 8
+  },
+  "checkersPassed": [
+    "phase/check.py",
+    "completion/check.py",
+    "exchanges/check.py",
+    "weighing/check.py"
+  ],
+  "typesettingChecksPassed": true,
+  "files": {
+    "build.py": "540b47ef03e3b16783404cc221e3f56ff411ef422082c405d5b508868a2feee3",
+    "completion\\check.py": "d064fdb5e6d55076dcaf6008a71264b1e9f923843ea983f5c482736d4c064871",
+    "completion\\checks.json": "347212bdf7d7696b7a5b02eeefe0c4a148a93ddb431a2962f3302367309c78a1",
+    "completion\\main.tex": "95f9c751d82829ed42546dc26270ee004a02978930b649d5e2f69efed1266d26",
+    "completion\\paper.pdf": "d27bc2065bcbb9c2a9a7073f8a41422c05c0e2a6c021e157a83bc7014bf5f2b0",
+    "completion\\paper.tex": "156b5a6e18db275f9c79284c4dbbfc8e940c9e7e3fbc823c0829048fc37a6611",
+    "completion\\README.txt": "8a7adb6b3a4bdc155e138a30571daea240616d51f1b07c92251bb71683a23232",
+    "exchanges\\check.py": "f3419d1b1e3b7bc506f8f24c18229921417f4569b6932e8665c96d382f247e1b",
+    "exchanges\\checks.json": "2b08b493283d0f134591780c27184ed3ea82c34769720440cd47d0bc21caf12f",
+    "exchanges\\main.tex": "f5c5a90f4a72900de2cf635f4e9971090345ba899b307a20488d8a34dd67bb87",
+    "exchanges\\README.txt": "d8004b4b40204d8e1fe5fa8cf3ddc6143da4fc91d4f9d833019ff8fd58dcf23a",
+    "phase\\check.py": "b06758e84ef2c6e9b694de822eff027c55b5b12a42e5c78ca92f2004a06292d1",
+    "phase\\checks.json": "ff8fc586a42655636cb883d44df6b3f7845c3694bd631fe7658f60b76209a8e9",
+    "phase\\main.tex": "286f74bc11996e75491fad289053f9eba3866eb5b19b347e62c85b3e70b43178",
+    "phase\\README.txt": "e823628964e0cc457de771ffd007903b68bb4f3c4993bfb77a7dbbe54d030d32",
+    "phase_escape.pdf": "2c9ce56a8e2973354682c3a3a8823ee2f1d2b104030ab9ec98ef5c96e2ec5c28",
+    "phase_escape.tex": "638f61694172818382e1ccc39eef39bd8b08d7498838e8f577fff37c73278f78",
+    "PRIOR_ART.txt": "523a2169f337c89061b9327f3a844693bc12315cfa897b9f7fa346a341dd4868",
+    "qa.py": "bd80c2a7e686496e9bd5106cfadf4b6cb4deb83d9314c76f54296a23b3734084",
+    "README.txt": "ed901ac60d9e34aa467c793f7a99526e944338c94fa95860ada1569972fae735",
+    "research.pdf": "70e3e043d79715b0506b58d68d9a01c903e960b2997f356d32b6c5bc6cf14e52",
+    "research.tex": "1e594860bec4133a80ced023fb1bd1f9a8bbcd44c26a946d1e5e0caacfb050f7",
+    "weighing\\check.py": "302d4afb7fd19682712e1502eb41f7715037469adcb95adac926249a91614ae3",
+    "weighing\\checks.json": "b8da46cdcad37df43ca4230adb591804f7ec3d773f2c40e4edf7251ed345feee",
+    "weighing\\main.tex": "0a2cc0a827d2feb0876597298ecb9fcacb591ae000c8a3c13a0e44ccd58afe04",
+    "weighing\\README.txt": "598d8711eecb578e1c6c3b558af8af394a2180694f6302044c92d0a2545aaadb"
+  },
+  "scope": {
+    "hadamardConjectureProved": false,
+    "unknownOrderConstructed": false,
+    "noveltyEstablished": false,
+    "leanFormalization": false,
+    "gitCommits": false
+  }
+}

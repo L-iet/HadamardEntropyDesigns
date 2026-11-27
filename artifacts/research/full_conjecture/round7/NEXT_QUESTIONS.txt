@@ -1,0 +1,36 @@
+NEXT CONSTRUCTION TARGETS
+
+1. Larger or nonlinear seeds for non-power-of-two orders.
+Fixed linear observables on the smallest binary seed force uniformity.
+A larger seed can have missing Fourier directions, but single-character
+compression only gives power-of-two supports. Investigate several free
+Fourier directions jointly, with nonnegative weights and provable
+collision concentration. Do not assume their feasibility at the target.
+
+2. Concentrated weighted approximate inputs.
+The correction theorem can use a law with collision>=1/N and Fourier
+moment maximum B<=1/(2048N^3). UniformN-point nonisotropic candidates
+cannot meet the goal through this affine repair, even with its optimal
+buffer for N>=20. A new construction must supply more than integer
+near-orthogonality of equal-weight rows, or use a different repair.
+
+3. Generalize the actual trap escape.
+The explicit two-block character construction admits optimal support
+overlap and a finite nonlocal rewiring route. Determine what structure
+in a broader local optimum would permit an analogous change of
+observables or a controlled-loss jump. No universal escape theorem is
+proved, and optimality of the bridge is only among straight mixtures.
+
+4. Odd-coset shortness rather than parity feasibility alone.
+The lattice alternative exactly decides absence of an all-odd integer
+kernel vector. The norm40 example proves that this does not decide
+whether a sign row exists. Any lattice-based existence argument needs
+a justified length bound or a repair selecting a different row space.
+Sparse parity witnesses can already guide which rows must be deleted.
+
+5. Prior-art review remains necessary.
+Character identities, code rewiring ingredients, arithmetic lattices
+and Fourier projection are classical. Compare the exact landscape,
+buffer-loss and repair statements with the literature before claiming
+priority. Preserve the distinction between a sufficient extraction
+condition and a theorem constructing its input at every order.

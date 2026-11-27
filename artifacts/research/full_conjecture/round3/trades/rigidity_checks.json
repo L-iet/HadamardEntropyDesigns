@@ -1,0 +1,451 @@
+{
+  "passed": true,
+  "roughPaleyOrders": [
+    {
+      "roughnessCutoff": 3,
+      "modulus": 24,
+      "prime": 19,
+      "order": 20,
+      "oddPart": 5,
+      "leastPrimeFactor": 5,
+      "minimumTradeVolumeAtLeastByDeterminantBound": 6,
+      "primalityMethod": "trial division through integer square root"
+    },
+    {
+      "roughnessCutoff": 7,
+      "modulus": 840,
+      "prime": 211,
+      "order": 212,
+      "oddPart": 53,
+      "leastPrimeFactor": 53,
+      "minimumTradeVolumeAtLeastByDeterminantBound": 9,
+      "primalityMethod": "trial division through integer square root"
+    },
+    {
+      "roughnessCutoff": 13,
+      "modulus": 120120,
+      "prime": 330331,
+      "order": 330332,
+      "oddPart": 82583,
+      "leastPrimeFactor": 269,
+      "minimumTradeVolumeAtLeastByDeterminantBound": 11,
+      "primalityMethod": "trial division through integer square root"
+    },
+    {
+      "roughnessCutoff": 19,
+      "modulus": 38798760,
+      "prime": 203693491,
+      "order": 203693492,
+      "oddPart": 50923373,
+      "leastPrimeFactor": 211,
+      "minimumTradeVolumeAtLeastByDeterminantBound": 11,
+      "primalityMethod": "trial division through integer square root"
+    },
+    {
+      "roughnessCutoff": 31,
+      "modulus": 802241960520,
+      "prime": 200560490131,
+      "order": 200560490132,
+      "oddPart": 50140122533,
+      "leastPrimeFactor": 193,
+      "minimumTradeVolumeAtLeastByDeterminantBound": 10,
+      "primalityMethod": "trial division through integer square root"
+    }
+  ],
+  "sampleSpanChecks": [
+    {
+      "order": 12,
+      "rows": 3,
+      "signVectors": 6,
+      "newSignVectorsUpToNegation": 0
+    },
+    {
+      "order": 20,
+      "rows": 5,
+      "signVectors": 10,
+      "newSignVectorsUpToNegation": 0
+    },
+    {
+      "order": 44,
+      "rows": 6,
+      "signVectors": 12,
+      "newSignVectorsUpToNegation": 0
+    },
+    {
+      "order": 212,
+      "rows": 8,
+      "signVectors": 16,
+      "newSignVectorsUpToNegation": 0
+    }
+  ],
+  "sharpDegreeSixTrade": {
+    "order": 12,
+    "rowIndices": [
+      0,
+      1,
+      2,
+      3,
+      5,
+      8
+    ],
+    "oldRows": [
+      [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      [
+        1,
+        -1,
+        1,
+        -1,
+        1,
+        1,
+        1,
+        -1,
+        -1,
+        -1,
+        1,
+        -1
+      ],
+      [
+        1,
+        -1,
+        -1,
+        1,
+        -1,
+        1,
+        1,
+        1,
+        -1,
+        -1,
+        -1,
+        1
+      ],
+      [
+        1,
+        1,
+        -1,
+        -1,
+        1,
+        -1,
+        1,
+        1,
+        1,
+        -1,
+        -1,
+        -1
+      ],
+      [
+        1,
+        -1,
+        1,
+        -1,
+        -1,
+        1,
+        -1,
+        1,
+        1,
+        1,
+        -1,
+        -1
+      ],
+      [
+        1,
+        -1,
+        -1,
+        1,
+        -1,
+        -1,
+        1,
+        -1,
+        1,
+        1,
+        1,
+        -1
+      ],
+      [
+        1,
+        -1,
+        -1,
+        -1,
+        1,
+        -1,
+        -1,
+        1,
+        -1,
+        1,
+        1,
+        1
+      ],
+      [
+        1,
+        1,
+        -1,
+        -1,
+        -1,
+        1,
+        -1,
+        -1,
+        1,
+        -1,
+        1,
+        1
+      ],
+      [
+        1,
+        1,
+        1,
+        -1,
+        -1,
+        -1,
+        1,
+        -1,
+        -1,
+        1,
+        -1,
+        1
+      ],
+      [
+        1,
+        1,
+        1,
+        1,
+        -1,
+        -1,
+        -1,
+        1,
+        -1,
+        -1,
+        1,
+        -1
+      ],
+      [
+        1,
+        -1,
+        1,
+        1,
+        1,
+        -1,
+        -1,
+        -1,
+        1,
+        -1,
+        -1,
+        1
+      ],
+      [
+        1,
+        1,
+        -1,
+        1,
+        1,
+        1,
+        -1,
+        -1,
+        -1,
+        1,
+        -1,
+        -1
+      ]
+    ],
+    "newRows": [
+      [
+        1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      [
+        1,
+        1,
+        -1,
+        1,
+        -1,
+        -1,
+        1,
+        1,
+        1,
+        1,
+        -1,
+        1
+      ],
+      [
+        1,
+        1,
+        1,
+        -1,
+        1,
+        -1,
+        1,
+        -1,
+        1,
+        1,
+        1,
+        -1
+      ],
+      [
+        1,
+        -1,
+        1,
+        1,
+        -1,
+        1,
+        1,
+        -1,
+        -1,
+        1,
+        1,
+        1
+      ],
+      [
+        1,
+        -1,
+        1,
+        -1,
+        -1,
+        1,
+        -1,
+        1,
+        1,
+        1,
+        -1,
+        -1
+      ],
+      [
+        1,
+        1,
+        1,
+        -1,
+        1,
+        1,
+        1,
+        1,
+        -1,
+        -1,
+        -1,
+        1
+      ],
+      [
+        1,
+        -1,
+        -1,
+        -1,
+        1,
+        -1,
+        -1,
+        1,
+        -1,
+        1,
+        1,
+        1
+      ],
+      [
+        1,
+        1,
+        -1,
+        -1,
+        -1,
+        1,
+        -1,
+        -1,
+        1,
+        -1,
+        1,
+        1
+      ],
+      [
+        1,
+        -1,
+        -1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        -1,
+        1,
+        -1
+      ],
+      [
+        1,
+        1,
+        1,
+        1,
+        -1,
+        -1,
+        -1,
+        1,
+        -1,
+        -1,
+        1,
+        -1
+      ],
+      [
+        1,
+        -1,
+        1,
+        1,
+        1,
+        -1,
+        -1,
+        -1,
+        1,
+        -1,
+        -1,
+        1
+      ],
+      [
+        1,
+        1,
+        -1,
+        1,
+        1,
+        1,
+        -1,
+        -1,
+        -1,
+        1,
+        -1,
+        -1
+      ]
+    ]
+  },
+  "universalHalfRowTradeChecks": [
+    {
+      "order": 8,
+      "tradeVolume": 4
+    },
+    {
+      "order": 12,
+      "tradeVolume": 6
+    },
+    {
+      "order": 20,
+      "tradeVolume": 10
+    },
+    {
+      "order": 44,
+      "tradeVolume": 22
+    }
+  ],
+  "scope": "finite checks supplement paper proofs; no full Hadamard proof or novelty claim"
+}

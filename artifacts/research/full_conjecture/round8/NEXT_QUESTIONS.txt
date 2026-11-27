@@ -1,0 +1,36 @@
+NEXT CONSTRUCTION QUESTIONS
+
+1. Use models rich enough for the residue class.
+The sharp cubic H12/H20 encodings are benchmarks with actual polynomial
+manifests. Full minimal-seed encodings of large N=4mod8 need degree at
+leastceil(r/2). Fixed-degree searches cannot cover that class at all
+scales. Investigate growing-degree Boolean families with exploitable
+character-sum structure, not only interpolation of already-known rows.
+
+2. Change minimal supports, not just their weights.
+On at mostN atoms the N-4-bit moment target forces uniformN. Failed
+minimal supports therefore require replacement or enlargement.
+Adaptive right-inverse correction on richer supports has an explicit
+conditioning and positivity cost; these hypotheses must be proved for
+any proposed near-extremal construction.
+
+3. Global entropy optimization must bypass stable competing minima.
+The complete four-bit Renyi diagram shows that changing entropy order
+does not force the wrong local minimum to destabilize. The transition
+is exactly characterized, but no general global continuation theorem
+follows. Nonlocal moves or an independent global argument remain needed.
+
+4. Lattice potentials need more than odd-coset shortness.
+The successful explicit12-to16row augmentation increases the odd
+kernel minimum from40toinfinity. Deletion alone trivially admits the
+deleted row as a short kernel vector, which does not establish an
+augmenting pair. Distinguish parity, vector length and compatibility
+of several inserted sign rows.
+
+5. Maintain scope and priority checks.
+These are constructions at classical known orders, analytic benchmark
+theorems, and conditional repair tools. They do not establish the
+missing near-optimal distribution at an unknown order. Compare the
+degree statements with Hadamard-code/Reed-Muller literature and the
+entropy polytope diagram with convex entropy optimization before
+claiming bibliographic novelty.

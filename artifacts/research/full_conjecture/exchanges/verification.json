@@ -1,0 +1,15 @@
+{
+  "normalizedVectorsExhausted": 8388608,
+  "deletionSetsChecked": 137,
+  "smallSupportCandidateCounts": {
+    "1": 16,
+    "2": 40
+  },
+  "pairDeletionCandidateCounts": {
+    "2": 100,
+    "4": 20
+  },
+  "minimalDeletedRows": 3,
+  "fullCompletionChecked": true,
+  "passed": true
+}

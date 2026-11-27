@@ -1,0 +1,21 @@
+{
+  "passed": true,
+  "order20TwoCodePool": {
+    "oldClasses": 12,
+    "sharedClasses": 10,
+    "modularPool": 22,
+    "newClasses": 20
+  },
+  "order12Incidence": {
+    "oldClasses": 12,
+    "retainedSpanSignClasses": 4,
+    "modularPool": 36,
+    "neighborSignCounts": [
+      12,
+      12,
+      12,
+      12
+    ],
+    "sumGainsMinusLosses": 0
+  }
+}

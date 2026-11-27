@@ -1,0 +1,223 @@
+% Source: arithmetic/large_energy.tex
+
+
+
+
+Put $R_m=\Z[z]/(z^m-1)$, let $z^*=z^{-1}$, and write
+$J=1+z+\cdots+z^{m-1}$. We seek
+\begin{equation}\label{s01:eq:target}
+ A_i\equiv J\pmod{2R_m},\qquad
+ \sum_{i=0}^3A_iA_i^*=4t\cdot1.
+\end{equation}
+When $m$ is odd, elementary energy and augmentation arguments force
+$t\ge m$ and $t$ odd. At $t=m$, every coefficient is a sign, giving
+four periodic complementary binary sequences and hence, by the
+Goethals--Seidel construction, a Hadamard matrix of order $4m$.
+The general boundary problem is not solved here.
+
+\begin{theorem}[Uniform large-energy existence]\label{s01:thm:main}
+If $m\ge1$ and $t$ are odd integers and $t\ge(m^2+3)/4$, then
+\eqref{s01:eq:target} has a solution of the form
+\[
+ A_i=J+2x_i\cdot1,\qquad x_i\in\Z.
+\]
+For odd $m,t$, this particular form exists if and only if
+$t\ge(m^2+3)/4$.
+\end{theorem}
+\begin{proof}
+Since $JJ^*=mJ$ and $J^*=J$,
+\begin{equation}\label{s01:eq:reduction}
+ \sum_{i=0}^3(J+2x_i)(J+2x_i)^*
+ =4\Bigl(m+\sum_i x_i\Bigr)J+4\sum_i x_i^2\cdot1.
+\end{equation}
+For $m>1$, $J$ and $1$ are linearly independent. Thus the target is
+equivalent to
+\begin{equation}\label{s01:eq:four}
+ \sum_i x_i=-m,\qquad \sum_i x_i^2=t.
+\end{equation}
+For $m=1$, these conditions are still sufficient; necessity of the
+stated threshold merely says $t\ge1$ and follows from coefficient energy.
+
+Set $N=4t-m^2$. Under the hypotheses, $N\ge3$ and $N\equiv3\pmod8$.
+The Legendre--Gauss three-square theorem gives
+$N=u^2+v^2+w^2$ for integers $u,v,w$. All three are odd, because the
+only square residues modulo eight are $0,1,4$. By changing the sign of
+one of them if necessary, arrange
+$u+v+w\equiv m\pmod4$. Define
+\begin{align*}
+ x_0&=(-m+u+v+w)/4,& x_1&=(-m+u-v-w)/4,\\
+ x_2&=(-m-u+v-w)/4,& x_3&=(-m-u-v+w)/4.
+\end{align*}
+They are integers: the last three numerators differ from the first by
+twice a sum of two odd numbers. Their sum is $-m$, and the orthogonal
+four-square identity gives
+\[
+ \sum_i x_i^2=\frac{m^2+u^2+v^2+w^2}{4}=t.
+\]
+Equation~\eqref{s01:eq:reduction} proves existence.
+
+Conversely, for $m>1$ any solution of this form obeys
+\eqref{s01:eq:four}. Cauchy--Schwarz gives $4t\ge m^2$. Since
+$4t-m^2\equiv3\pmod8$, it is at least three. This is precisely
+$t\ge(m^2+3)/4$.
+\end{proof}
+
+The invoked classical three-square theorem has an elementary geometric
+proof in Ankeny~\cite{s01:Ankeny}, whose Theorem 1 applies whenever the
+integer is not $4^a(8b+7)$. No code or proof supplement from that paper
+is used.
+
+\begin{corollary}
+The broader parity-constrained norm problem has a solution for every
+odd $t\ge m$ when $m=1$ or $m=3$.
+\end{corollary}
+For $m=5$ the theorem covers every odd $t\ge7$; a single binary boundary
+witness at $t=5$ therefore settles that entire fixed-$m$ question too.
+It does not settle all $m$.
+
+\begin{proposition}[Odd multiplier closure]\label{s01:prop:multiplier}
+If \eqref{s01:eq:target} has a solution at $(m,t)$ and $s$ is any positive
+odd integer, it has a solution at $(m,st)$.
+\end{proposition}
+\begin{proof}
+By Lagrange's four-square theorem choose integers $a,b,c,d$ with
+$a^2+b^2+c^2+d^2=s$. The integral matrix
+\[
+ M=\begin{pmatrix}
+ a&b&c&d\\-b&a&-d&c\\-c&d&a&-b\\-d&-c&b&a
+ \end{pmatrix}
+\]
+satisfies $M^{\mathsf T}M=sI_4$. Each row sum is odd, since its parity
+equals $a+b+c+d\equiv s\equiv1\pmod2$.
+Put $B_i=\sum_jM_{ij}A_j$. Then $B_i\equiv J\pmod2$, and expanding
+the Hermitian norm sum using real integer coefficients of $M$ gives
+\[
+ \sum_i B_iB_i^*=s\sum_jA_jA_j^*=4st.
+\]
+This only uses a constant integral orthogonal design; it does not
+assert a four-square composition identity with arbitrary group-ring
+Hermitian coefficients.
+\end{proof}
+
+\section*{Examples and scope}
+At $m=7$, the threshold is $t=13$. Taking $(u,v,w)=(1,1,1)$ gives
+$(x_0,x_1,x_2,x_3)=(-1,-2,-2,-2)$, hence constant coefficients
+$(-1,-3,-3,-3)$ and all remaining coefficients equal to one.
+At $m=9$, the threshold is $21$; choosing $(u,v,w)=(-1,1,1)$ gives
+$(-2,-3,-2,-2)$ and constant coefficients $(-3,-5,-3,-3)$.
+
+For $m>3$, $(m^2+3)/4>m$, so the constant-perturbation family cannot
+reach the Hadamard boundary. This follows from its sharp lower bound,
+not from a failure to search far enough. Applying odd multiplier closure
+to any known boundary solution gives infinitely many further energies,
+but it cannot lower an energy to the boundary.
+
+The remaining parameter strip for a fixed odd $m$ is finite:
+\[
+ m\le t<(m^2+3)/4,\qquad t\text{ odd}.
+\]
+It is an infinite family of strips as $m$ varies. A uniform theorem in
+that strip, especially near $t=m$, is still needed. The polynomial
+bound above is a proved partial answer to a stronger arithmetic question,
+not a new Hadamard-order existence result.
+
+\section*{A lower threshold from skew quadratic characters}
+Suppose $m\equiv3\pmod4$ and a polynomial $L\in R_m$ has constant
+coefficient zero, all other coefficients signs, and
+\[
+ L^*=-L,\qquad LL^*=m\cdot1-J.
+\]
+For every prime $p\equiv3\pmod4$ this is supplied by
+$L=\sum_{j=1}^{p-1}\chi(j)z^j$, where $\chi$ is the quadratic character
+modulo $p$, as in the Paley character construction~\cite{s01:Paley}.
+For completeness, $\chi(-j)=-\chi(j)$ gives skewness. For $s\ne0$,
+\[
+ \sum_j\chi(j)\chi(j+s)
+ =\sum_{j\ne0}\chi(1+s/j)=-1:
+\]
+as $j$ ranges over the nonzero field elements, $1+s/j$ ranges over all
+field elements except one, and a nontrivial character sums to zero.
+The constant coefficient is $p-1$, giving the norm identity.
+
+\begin{theorem}[Skew-character large-energy region]\label{s01:thm:skew}
+Under those hypotheses on $L$, the norm problem is solvable for every
+odd
+\[
+ t\ge T_m:=\frac{m^2+6m+21}{16}.
+\]
+In particular this holds for every prime $m\equiv3\pmod4$.
+The integer $T_m$ is odd. The threshold is sharp within the family
+used in this proof.
+\end{theorem}
+\begin{proof}
+Write $m=4k+3$ and $x=(3-m)/4=-k$. Then
+$T_m=k^2+3k+3$ is an odd integer.
+For odd integers $a,b,c$, set
+\[
+ A_1=L+a,\quad A_2=L+b,\quad A_3=L+c,\quad A_4=J+2x.
+\]
+Every coefficient is odd. Since $L^*=-L$, cross terms with a real
+constant vanish, and
+\[
+ (L+a)(L+a)^*=(m+a^2)\cdot1-J.
+\]
+The fourth norm is $4x^2\cdot1+(m+4x)J=4x^2\cdot1+3J$.
+Thus
+\[
+ \sum_{i=1}^4 A_iA_i^*
+ =\bigl(3m+4x^2+a^2+b^2+c^2\bigr)\cdot1.
+\]
+The required integer for the last three squares is
+$N=4t-3m-4x^2$. It is at least three precisely when $t\ge T_m$.
+Also $3m+4x^2=4k^2+12k+9\equiv1\pmod8$, while $4t\equiv4\pmod8$;
+hence $N\equiv3\pmod8$. The three-square theorem supplies odd
+$a,b,c$ with squared sum $N$. Conversely, any three odd integers have
+squared sum at least three, proving sharpness in this family.
+\end{proof}
+
+At $m=7$ this threshold is seven, so the entire broader problem is
+settled for that fixed length as well. At $m=11$ it is thirteen, leaving
+only the binary boundary case $t=11$ below the threshold. For large
+primes the threshold remains quadratic in $m$, so it does not reach
+the Hadamard boundary uniformly. The prime-power version of Paley's
+character construction lives in the group ring of the additive field,
+which need not be cyclic; no cyclic prime-power extension is asserted.
+
+\begin{proposition}[A zero-aligned character ansatz is impossible]
+With the same $m,L$, it is impossible that all four elements have the
+form
+\[
+ A_i=u_iL+v_i+2w_iJ,\qquad u_i,v_i\text{ odd},\quad w_i\in\Z,
+\]
+and their Hermitian norm sum is a scalar multiple of $1$.
+\end{proposition}
+\begin{proof}
+The coefficient multiplying $J$ in the sum of norms is
+\[
+ K=-\sum_i u_i^2+4\sum_i(w_iv_i+mw_i^2).
+\]
+Every summand in the last parentheses is even, since its parity is
+$w_i+w_i^2=0$. The four odd squares sum to four modulo eight.
+Therefore $K\equiv4\pmod8$, so it cannot vanish. The elements $J$ and
+$1$ are linearly independent because $m>1$.
+\end{proof}
+This is an obstruction to a restricted character ansatz, not to the
+general norm problem or to Hadamard existence. Theorem~\ref{s01:thm:skew}
+avoids it by using an odd coefficient of $J$ in the fourth element.
+
+\section*{Exact checks}
+The standard-library script \path{verify_large_energy.py} constructs and
+checks examples at the threshold and several larger odd energies for
+every odd $m\le101$. It also tests odd multiplier closure using a direct
+cyclic autocorrelation check. The general assertions rest on the paper
+proofs; finite tests are additional checks only.
+
+\begin{thebibliography}{2}
+\bibitem{s01:Ankeny} N. C. Ankeny, \emph{Sums of three squares},
+Proc. Amer. Math. Soc. 8 (1957), 316--319, Theorem 1.
+\url{https://doi.org/10.1090/S0002-9939-1957-0085275-8}.
+\bibitem{s01:Paley} R. E. A. C. Paley, \emph{On orthogonal matrices},
+J. Math. Phys. 12 (1933), 311--320.
+\url{https://doi.org/10.1002/sapm1933121311}.
+\end{thebibliography}
+

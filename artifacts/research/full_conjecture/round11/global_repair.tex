@@ -1,0 +1,493 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,mathtools,hyperref}
+\setlength{\emergencystretch}{3em}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\newcommand{\E}{\mathbb E}
+\newcommand{\tr}{\operatorname{tr}}
+\title{Limits of collision stability and global repair\\for pairwise-independent laws}
+\author{Joshua Mark\thanks{ORCID: \href{https://orcid.org/0009-0003-5905-2382}{0009-0003-5905-2382}. AI tools assisted with derivation, independent review, computation and exposition.}}
+\date{20 November 2026 --- research draft; priority not established}
+\begin{document}\maketitle
+\section{Isotropic laws can be almost maximally far from Hadamard mixtures}
+\label{sec:design-hadamard-distance}
+A Hadamard law of order $n$ is the uniform law on the $n$ rows of a
+sign Hadamard matrix whose first column is all positive, after deleting
+that column. Let $\mathcal H_n$ be the convex hull of all such laws on
+$\{-1,1\}^{n-1}$. This section gives exact balanced pairwise-independent
+laws whose total variation distance from $\mathcal H_n$ tends to one,
+at orders where Hadamard matrices already exist. It also determines
+an exact global observation-trade budget for conversion into a disjoint
+union of Hadamard blocks. Thus a hypothetical procedure converting
+arbitrary isotropic laws into Hadamard mixtures cannot generally make
+only a small change.
+
+Orthogonal arrays, row multiplicities, and Rao-type simplicity arguments
+are established topics; a primary reference consulted here is
+Carlet--Kiss--Nagy, \emph{Simplicity conditions for binary orthogonal arrays},
+\url{https://arxiv.org/abs/2204.00835}. Our elementary character and
+block-Hadamard ingredients are classical. Priority for the quantitative
+distance and repair statements is not asserted.
+
+For a support $S$ of sign-bit vectors let $\omega(S)$ be the maximum
+size of a subset whose augmented rows $(1,x)$ are mutually orthogonal.
+\begin{lemma}[A support witness against all Hadamard mixtures]
+\label{lem:design-support-witness}
+If $\mu$ is any probability measure supported on $S$, then
+\[
+ \inf_{\nu\in\mathcal H_n}\|\mu-\nu\|_{\rm TV}
+ \ge1-\frac{\omega(S)}n.
+\]
+If a multiset of $D$ original rows is supported on $S$ and $n\mid D$,
+conversion to a union of $D/n$ order-$n$ Hadamard blocks requires at
+least $D(1-\omega(S)/n)$ observation replacements.
+\end{lemma}
+\begin{proof}
+Each Hadamard block has at most $\omega(S)$ rows in $S$, hence every
+mixture gives $\nu(S)\le\omega(S)/n$. Use
+$\|\mu-\nu\|_{\rm TV}\ge\mu(S)-\nu(S)$. A union of $D/n$ blocks
+can retain at most $(D/n)\omega(S)$ original observations.
+\end{proof}
+
+\begin{theorem}[Sharp distance and global repair family]
+\label{thm:design-sharp-distance}
+Let $k,h$ be powers of two, $k\ge2$ and $h>2(k-1)$. Put
+$n=kh$ and $D=h^k$. There is an explicit uniform $D$-atom law $\mu$
+on $n-1$ unbiased pairwise-independent bits for which
+\[
+ \inf_{\nu\in\mathcal H_n}\|\mu-\nu\|_{\rm TV}=1-\frac1k.
+\]
+Moreover the minimum number of observation replacements converting
+its $D$ distinct rows into a union of $D/n$ Hadamard blocks is exactly
+$D(1-1/k)$. Such a conversion can preserve distinctness of every row,
+so its endpoint has the same collision probability $1/D$ as $\mu$.
+Taking $h=2k$ and $k\to\infty$ gives distances tending to one.
+\end{theorem}
+\begin{proof}
+Write $h=2^s$ and $V=\mathbb F_2^s$. Fix nonzero $e\in V^*$.
+Take independent uniform seeds $x_1,\ldots,x_k\in V$ and observe
+\[
+ (\chi_\alpha(x_j))_{1\le j\le k,\ \alpha\ne0},\qquad
+ (\chi_e(x_1+x_j))_{2\le j\le k},
+ \quad\chi_\alpha(x)=(-1)^{\alpha(x)}.
+\]
+There are $k(h-1)+(k-1)=n-1$ bits, all distinct nonzero seed
+characters, so they are unbiased and pairwise independent. All block
+characters determine their seeds, giving $D=h^k$ distinct atoms.
+
+For two augmented rows corresponding to $x$ and $y$, their dot product is
+\[
+ h\#\{j:x_j=y_j\}+1-k+
+ \sum_{j=2}^k(-1)^{e(x_1+x_j+y_1+y_j)}.
+\]
+If they share any block seed, this is at least $h-2(k-1)>0$.
+Therefore any orthogonal set has all $x_1$ values distinct and size
+at most $h$. Conversely, for fixed offsets $c_2,\ldots,c_k$, the $h$
+seeds $x_1=a$, $x_j=a+c_j$ are mutually orthogonal: every mixed bit
+is constant along the set. These offset cliques partition the entire
+support. Thus $\omega(S)=h$, proving the lower bounds.
+
+We complete every offset clique explicitly. Arrange its augmented
+columns into $k$ blocks of length $h$: the first block is
+$(1,\chi_\alpha(x_1))$, and the $j$th is
+$(\chi_e(x_1+x_j),\chi_\alpha(x_j))$. On the clique these blocks
+are $h\times h$ Hadamard matrices $H_1,\ldots,H_k$:
+$H_1$ is Walsh and each other block is Walsh with permuted rows and
+possibly a negated constant column. Let $K$ be the normalized Walsh
+matrix of order $k$. The $kh$ rows indexed by $(a,t)$, with blocks
+\[
+ K_{t1}H_1(a),\ldots,K_{tk}H_k(a),
+\]
+form a Hadamard matrix. Indeed rows with different $a$ have zero inner
+product separately in every block; rows with the same $a$ have dot
+product $h\sum_jK_{tj}K_{t'j}=kh\mathbf1_{t=t'}$.
+Its constant augmented column is positive because $K_{t1}=1$.
+The first Walsh row of $K$ recovers the original clique. No other row
+belongs to $S$, since that would exceed $\omega(S)=h$.
+
+Completions of distinct offset cliques have disjoint supports. The first
+block determines $a$. In every other block the nonconstant coordinates
+have form $\sigma\chi_\alpha(b)$; for $h\ge4$ they determine both
+$\sigma$ and $b$ uniquely. Otherwise a nontrivial character would equal
+$-1$ at every nonzero frequency, contradicted by multiplying the values
+at two distinct frequencies and comparing their sum. The signs determine
+the Walsh row $t$, and the seeds determine the offsets $c_j=b_j-a$.
+
+Averaging all $h^{k-1}$ completed Hadamard laws assigns mass
+$1/(kD)$ to each original source row, namely $\mu/k$, and puts the
+remaining mass outside $S$. Its total variation distance is exactly
+$1-1/k$, proving sharpness. Finally choose any
+$D/n=h^{k-1}/k$ offset cliques and take the union of their completions.
+This integer exists since $k,h$ are powers of two and $h\ge2k$.
+The union has $D$ distinct rows and exactly $D/k$ original rows, achieving
+the observation-replacement lower bound. Both endpoint arrays have
+$D$ distinct equal-weight atoms and collision $1/D$.
+\end{proof}
+
+\paragraph{Consequences and scope.}
+The initial and final laws have identical first and second moments and
+identical collision probability, but only the final array is exhibited
+as a union of Hadamard blocks. The construction therefore supplies an
+exact large global trade, while proving that every such repair changes
+at least the stated fraction of observations. The theorem uses known
+power-of-two block matrices and does not produce a missing Hadamard
+order. For $k>2$ we make no local-optimality claim about the source law.
+
+\paragraph{A denominator caution.}
+For a rational pairwise-independent law on $n-1$ bits written with
+common denominator $D$, the standard atom bound gives integer
+multiplicities at most $\lfloor D/n\rfloor$. Consequently
+\[
+ C\le\frac{\lfloor D/n\rfloor}{D}
+ =\frac1n-\frac{D\bmod n}{nD}.
+\]
+In particular a nonuniform rational law requires $D\ge2n$.
+This is a simplicity/denominator restriction, not a new existence
+criterion. It refers to $n-1$ bits. For the punctured $N-4$-bit extraction
+input the corresponding atom bound is only $1/(N-3)$; collision at most
+$1/N$ does not justify replacing that atom bound by $1/N$.
+\section{Optimal concentration on the same support is still a poor global solution}
+\label{sec:design-concentration}
+Keep the source support $S$ from Theorem~\ref{thm:design-sharp-distance}:
+$k$ independent seed blocks in $V=\mathbb F_2^s$, $h=2^s$, all their
+nonzero additive characters, and the $k-1$ mixed bits
+$\chi_e(x_1+x_j)$. This section optimizes collision over \emph{all}
+exactly isotropic weights on that support, rather than just its original
+uniform $h^k$-atom law. The finite-field array used for attainment is a
+classical index-one orthogonal-array construction; see K. A. Bush,
+\emph{Orthogonal Arrays of Index Unity} (1952),
+\url{https://doi.org/10.1214/aoms/1177729387}. It is credited as an
+input, not a new design or Hadamard construction. Priority for the
+combined concentration and distance statements is unestablished.
+
+\begin{theorem}[Exact fixed-support collision optimum]
+\label{thm:design-face-optimum}
+For $2\le k\le h$, every unbiased pairwise-independent law supported
+on $S$ has atom masses at most $1/h^2$ and collision at most $1/h^2$.
+The upper bound is attained. Every attaining law is uniform on $h^2$
+atoms; its projection onto any two seed blocks is a bijection onto
+$V^2$. Thus its seed rows form an $\mathrm{OA}(h^2,k,h,2)$, equivalently
+an index-one strength-two array (with additional mixed-bit constraints).
+\end{theorem}
+\begin{proof}
+All nonzero additive characters of block $i$ are observed. Means and
+cross-pair moments therefore give
+$\mathbb E\chi_\alpha(x_i)\chi_\beta(x_j)=0$ whenever
+$(\alpha,\beta)\ne(0,0)$. Fourier inversion says the block pair
+$(x_i,x_j)$ is uniform on $V^2$. An individual full seed atom has
+mass at most its block-pair marginal $1/h^2$, so
+$C=\sum w_x^2\le1/h^2$. Equality forces every positive weight to be
+$1/h^2$, and pairwise uniformity then forces each block-pair projection
+of its $h^2$ rows to be bijective.
+
+To attain the bound, identify $V$ with the additive group of
+$\mathbb F_h$, choose distinct slopes $t_1,\ldots,t_k\in\mathbb F_h$,
+and set $x_j=A+t_jB$ for uniform independent $A,B\in\mathbb F_h$.
+All block characters are distinct nonzero linear forms in $(A,B)$:
+if $\alpha(A+t_iB)=\beta(A+t_jB)$, comparison of the $A$ terms gives
+$\alpha=\beta$; for $i\ne j$, invertibility of multiplication by
+$t_i+t_j$ then forces $\alpha=0$, excluded. The mixed characters are
+$e((t_1+t_j)B)$; they are distinct nonzero forms with zero $A$ part,
+so they differ from all block forms as well. Every observed bit is
+therefore a distinct nonzero character of the two-block seed. The
+resulting law is unbiased and pairwise independent. Two block seeds
+recover $(A,B)$, so its support has $h^2$ distinct atoms.
+\end{proof}
+
+\begin{theorem}[Simultaneous face optimum, strict trap, and sharp distance]
+\label{thm:design-concentrated-trap}
+Now let $k,h$ be powers of two with $h>2(k-1)$ and $n=kh$.
+The finite-field law $\mu_*$ above is a global collision maximizer among
+isotropic laws supported on $S$, and a strict local collision maximum
+in the \emph{full} pairwise-independent law polytope on $n-1$ bits.
+Its collision is $1/h^2$, while the full global optimum is $1/(kh)$.
+Furthermore
+\[
+ \inf_{\nu\in\mathcal H_n}\|\mu_*-\nu\|_{\rm TV}=1-1/k.
+\]
+Exactly $h^2(1-1/k)$ observation replacements suffice and are necessary
+to turn its $h^2$ distinct rows into $h/k$ Hadamard blocks, while keeping
+collision $1/h^2$. Taking $h=k^2$ makes the local-to-global collision
+ratio $1/k\to0$ simultaneously with distance $1-1/k\to1$.
+\end{theorem}
+\begin{proof}
+The fixed-support maximum was just proved. For strict local maximality,
+consider any two distinct slopes. Their block character spaces are
+complementary $s$-dimensional subspaces of the $2s$-dimensional seed
+dual: their intersection is zero by the same slope argument. Every
+character of $(A,B)$ is consequently a constant, observed bit, or product
+of two observed bits. These degree-at-most-two real monomials span all
+functions on the $h^2$-atom support $U$ of $\mu_*$. Exact first and second
+moments therefore determine every weight on $U$ uniquely.
+A uniform measure with this property strictly exposes itself by its
+own gradient: for feasible $q$,
+$\mu_*\cdot(q-\mu_*)=-q(U^c)/h^2$, with equality only at $q=\mu_*$.
+A strictly exposed vertex of a finite polytope is a strict local maximum
+of the squared Euclidean norm: the negative linear directional term
+dominates its quadratic increment in a sufficiently small neighborhood.
+A quantitative version follows below.
+
+The universal support witness gives distance at least $1-1/k$ because
+$U\subset S$ and $\omega(S)=h$. For each fixed $B=b$, the $h$ points
+$x_j=A+t_jb$ form one offset clique from the preceding completion
+construction. The $h$ such cliques partition $U$. Complete them all by
+Walsh block mixing. Their completions are disjoint, each intersects $U$
+in its own $h$-clique, and averaging their Hadamard laws gives mass
+$\mu_*/k$ on $U$. This attains distance $1-1/k$ exactly. Taking any
+$h/k$ cliques and the union of their completions retains $h^2/k$ original
+rows out of $h^2$, attains the replacement lower bound, and keeps all
+rows distinct. The normalized Walsh order-$n$ matrix attains global
+collision $1/n$, which the standard atom bound shows is optimal.
+\end{proof}
+
+\begin{proposition}[A certified local barrier]
+\label{prop:design-concentrated-barrier}
+Put $m=h^2$ and $b=q(U^c)$ for a feasible competing law $q$. Then
+\[
+ C(q)-1/m\le-2b/m+(m+1)b^2.
+\]
+Hence every $0<b<2/[m(m+1)]$ strictly lowers collision, and every
+continuous feasible path from $\mu_*$ to a better law passes through
+collision at most $1/m-1/[m^2(m+1)]$. This barrier is not claimed optimal.
+\end{proposition}
+\begin{proof}
+Represent each seed character $\chi$ by a degree-at-most-two observable
+monomial $\psi_\chi$ using the complementary block spaces. The polynomials
+\[
+ F_u=\frac1m\sum_\chi\chi(u)\psi_\chi
+\]
+restrict to indicators of individual atoms on $U$ and satisfy
+$|F_u|\le1$ on the entire observable cube. Fixed moments give
+$q(u)+\mathbb E_q[\mathbf1_{U^c}F_u]=1/m$, so
+$|q(u)-1/m|\le b$. Thus
+$\|q-\mu_*\|_2^2\le mb^2+b^2$, while
+$\mu_*\cdot(q-\mu_*)=-b/m$. Expanding collision proves the inequality.
+Any better endpoint must have $b\ge2/[m(m+1)]$; continuity crosses
+$b=1/[m(m+1)]$, where the displayed collision loss is $1/[m^2(m+1)]$.
+\end{proof}
+
+These results show that even globally optimizing collision on a large,
+explicit, exactly isotropic support can leave an arbitrarily poor strict
+local solution that is almost maximally far from all Hadamard mixtures.
+The finite-field attainment theorem solves that support face completely;
+it does not solve the original all-order Hadamard existence problem.
+
+\begin{corollary}[Moderate-support regimes]
+\label{cor:design-moderate-support}
+Taking $h=2k$ gives $n=2k^2$ and a strict local maximum on just
+$m=h^2=2n$ atoms, with collision $1/(2n)$ and exact distance
+$1-\sqrt{2/n}$ from $\mathcal H_n$. Taking $h=k^2$ instead gives
+$n=k^3$, $m=k^4=n^{4/3}$, collision-to-global ratio $n^{-1/3}$,
+and exact distance $1-n^{-1/3}$ from $\mathcal H_n$.
+\end{corollary}
+\section{Relative collision near-optimality does not give dimension-free stability}
+\label{sec:design-relative-stability}
+The next argument removes the earlier restriction $h>2(k-1)$.
+Throughout, $h=2^s$, $2\le k\le h$, and $S$ is the full $k$-block source
+support. The finite-field compressed laws remain exactly isotropic and
+strict local collision maxima by the preceding character-space proof.
+The coding inequality below is the classical Plotkin squared-sum argument;
+its original source is M. Plotkin, \emph{Binary codes with specified
+minimum distance} (1960), \url{https://doi.org/10.1109/TIT.1960.1057584}.
+The finite-field array input is classical. Novelty of these combined
+stability statements has not been established.
+
+\begin{proposition}[General support bound without a small-$k$ restriction]
+\label{prop:design-plotkin-support}
+For every $2\le k\le h$,
+\[
+ \omega(S)\le h\left\lfloor\frac{h}{h-k+1}\right\rfloor.
+\]
+Consequently any law supported on $S$ has distance from $\mathcal H_{kh}$
+at least
+$1-\frac1k\lfloor h/(h-k+1)\rfloor$, when this is positive.
+\end{proposition}
+\begin{proof}
+Group an orthogonal row set by the value of $x_1$, giving $h$ groups.
+For two rows in one group the kernel is $h c-2d$, where $c\ge1$ is
+the number of equal block seeds and $d\le k-1<h$ is the distance
+between their mixed-bit strings. Orthogonality forces $c=1$ and
+$d=h/2$. The mixed sign strings have length $k-1$ and pairwise inner
+product $-(h-k+1)$. If a group has $q$ rows, the squared norm of their
+sum is $q(k-1)-q(q-1)(h-k+1)\ge0$, giving
+$q\le h/(h-k+1)$. Sum over the $h$ groups and use the support witness.
+\end{proof}
+
+A stronger conclusion is available for a deliberately chosen compressed
+support $U\subset S$. Take slopes $P\subset\mathbb F_h$, $0\in P$,
+$|P|=k$, and use seeds $x_t=A+tB$ for $t\in P$. Denote the omitted
+slopes by $R=\mathbb F_h\setminus P$.
+\begin{theorem}[Spanning omitted slopes give the sharp distance]
+\label{thm:design-spanning-slopes}
+Assume $h/2<k<h$ and $R$ linearly spans the additive $s$-space
+$\mathbb F_h$. Then the orthogonality graph of the $h^2$ compressed
+augmented rows is exactly the disjoint union of $h$ cliques of size $h$,
+one for each fixed $B$.
+The uniform compressed law $\mu_P$ is a strict local collision maximum,
+with $C(\mu_P)=1/h^2$.
+If a Hadamard matrix of order $k$ exists, then the full global optimum
+at order $n=kh$ is $1/(kh)$ and
+\[
+ \frac{C(\mu_P)}{C_{\rm global}}=\frac{k}{h},\qquad
+ \inf_{\nu\in\mathcal H_{kh}}\|\mu_P-\nu\|_{\rm TV}=1-\frac1k.
+\]
+Such a slope set exists whenever $s\le h-k<h/2$.
+\end{theorem}
+\begin{proof}
+For two seed pairs let $a=\Delta A$, $b=\Delta B$.
+If $b=0$ and $a\ne0$, no block seeds agree and every mixed difference
+vanishes, so their rows are orthogonal. If $b\ne0$, the equation
+$a+tb=0$ holds for at most one observed slope, so the kernel is
+$h c-2d$ with $c\in\{0,1\}$. The number of negative mixed differences is
+\[
+ d=\#\{t\in P\setminus\{0\}:e(tb)=1\}
+   =h/2-\#\{t\in R:e(tb)=1\}.
+\]
+Spanning of $R$ and nonzero $e$ imply the last count is positive.
+Since $|R|<h/2$, it is also less than $h/2$. Thus $0<d<h/2$ and
+$hc-2d\ne0$. This proves the claimed graph and $\omega(U)=h$.
+The strict local maximum follows from the same complementary pair of
+block character spaces used in the concentration theorem; that proof
+requires only distinct slopes, not $h>2(k-1)$.
+
+The support witness gives the lower distance $1-1/k$. For each fixed
+$B$, complete its $h$-clique by the previous block construction using
+any normalized order-$k$ Hadamard matrix in place of Walsh. These $h$
+completions remain disjoint: the first Walsh block recovers $A$, the
+other blocks recover their sign multipliers and block seeds, and the
+normalized order-$k$ rows are distinct. They meet $U$ only in their
+own clique, since $\omega(U)=h$. Averaging the completed laws puts
+mass $\mu_P/k$ on $U$, attaining the distance. Tensoring the order-$k$
+Hadamard matrix with Walsh order $h$ gives the global endpoint, and
+the atom bound gives global optimality. Finally, choose $R$ to contain
+an additive basis and add arbitrary nonzero slopes until its size is
+$h-k$; then $0\in P$ as required.
+\end{proof}
+
+For example, take $h=16$, $k=12$, and omit the polynomial-coordinate
+basis slopes $R=\{1,2,4,8\}$. The resulting exactly isotropic law has
+only $256$ atoms on $191$ bits, collision $1/256$ versus optimum $1/192$,
+and distance exactly $11/12$ from every convex mixture of Hadamard laws.
+It is nevertheless a strict local collision maximum. The checker uses
+an original finite-field implementation modulo $x^4+x+1$ and the
+classical Paley order-twelve matrix for block completion.
+
+\begin{corollary}[A near-optimal relative regime]
+\label{cor:design-relative-regime}
+Suppose known Hadamard orders $k_i$ and powers of two $h_i$ satisfy
+$k_i/h_i\to1$ and
+$\log_2h_i\le h_i-k_i<h_i/2$.
+Then there are exactly isotropic strict local maxima whose collision
+divided by the global optimum tends to one, while their distance from
+all Hadamard mixtures tends to one.
+Their absolute collision deficit is
+\[
+ \frac1{k_i h_i}-\frac1{h_i^2}
+ =\frac{h_i-k_i}{k_i h_i^2}.
+\]
+\end{corollary}
+This is a relative-stability obstruction, not a contradiction of
+sufficiently small dimension-dependent absolute collision windows.
+Existence of a suitable infinite sequence of known orders can be
+supplied separately by Paley orders and irrational-rotation density.
+The theorem itself constructs laws only at already-known Hadamard orders.
+\section{Near-optimal collision and entropy can coexist with maximal distance}
+\label{sec:relative-sequence}
+
+The omitted-slope theorem gives a particularly strong stability
+counterexample at infinitely many \emph{known} Hadamard orders.
+The existence ingredients are classical: Paley's construction
+(\emph{On Orthogonal Matrices}, 1933,
+\url{https://doi.org/10.1002/sapm1933121311}) and Sylvester tensoring.
+No bibliographic novelty is asserted for the resulting application.
+
+\begin{theorem}[No dimension-independent stability, even for exact moments]
+\label{thm:relative-no-stability}
+There are orders $n_j$ at which Hadamard matrices exist and exactly
+unbiased pairwise-independent laws $\mu_j$ on $n_j-1$ sign bits such that
+\[
+ n_j C(\mu_j)\longrightarrow1,\qquad
+ \inf_{\nu\in\mathcal H_{n_j}}\|\mu_j-\nu\|_{\rm TV}
+ \longrightarrow1.
+\]
+The laws can be chosen to be uniform vertices and strict local
+collision maxima of the full moment polytope. Moreover, for every
+R\'enyi order $\alpha>0$, including Shannon and min-entropy by their
+limiting conventions,
+\[
+ H_\alpha(\mu_j)-\min_{\lambda\ {\rm isotropic}}H_\alpha(\lambda)
+ \longrightarrow0.
+\]
+The same sequence works for all these entropy orders.
+\end{theorem}
+\begin{proof}
+We choose powers of two $h=2^s$ and known Hadamard orders $k$ with
+\[
+ k/h\to1,\quad k\to\infty,\quad
+ s\le g:=h-k<h/2.
+\]
+In $\mathbb F_h$, choose $g$ nonzero omitted slopes containing an
+additive basis, so their complement has $k$ slopes and contains zero.
+The preceding theorem constructs the uniform law on $h^2$ atoms,
+with exact moments, strict local maximality, and
+\[
+ n=kh,\qquad C(\mu)=h^{-2},\qquad
+ \inf_{\nu\in\mathcal H_n}\|\mu-\nu\|_{\rm TV}=1-\frac1k.
+\]
+An $H_k$ tensor a Sylvester $H_h$ gives an $H_n$, so the comparison
+class is nonempty. The relative collision ratio is $n/h^2=k/h$.
+
+For any isotropic law on $n-1$ bits, let $v_x=(1,x)$.
+Since $\sum_xw_xv_xv_x^T=I_n$, each positive rank-one summand
+is bounded by $I_n$, giving $nw_x\le1$.
+Every R\'enyi entropy is therefore at least $\log n$.
+A Hadamard law attains this value. The uniform $h^2$-atom law has
+all its R\'enyi entropies equal to $2\log h$, and its common excess is
+\[
+                  2\log h-\log(kh)=\log(h/k)\to0.
+\]
+
+It remains to justify the simultaneous choices without an unproved
+prime-pattern assumption. Put $q=3^{2u+1}$ and $k=q+1$; Paley gives
+an $H_k$ since $q\equiv3\pmod4$. Let
+$h=2^{\lceil\log_2 q\rceil}$. The fractional parts of
+$(2u+1)\log_2 3$ are dense modulo one, because the increment
+$\log_2 9$ is irrational. Thus for each integer $t\ge4$ we may choose
+an arbitrarily large, increasing $u$ for which
+\[
+       1-\frac2t<\frac qh<1-\frac1t.
+\]
+In particular choose $h\ge t^3$ and
+$g=h-q-1\ge\log_2h$. The latter follows for all sufficiently large
+hits since $h-q>h/t$ and $h/\log h\to\infty$.
+Then $0<g<h/2$, $g\ge s$, $k/h\to1$, and $k\to\infty$.
+Density of irrational rotations is elementary: pigeonhole finitely
+many orbit points to obtain an arbitrarily small nonzero rotation
+step; its multiples form a fine net. The same argument applies
+after discarding any finite prefix, ensuring arbitrarily large hits.
+No assumption on infinitely many Mersenne primes, or other special
+prime patterns, enters the proof.
+\end{proof}
+
+Equivalently, for any $\epsilon,\eta>0$ there is a known Hadamard
+order $n$ and an exact isotropic law with
+$C\ge(1-\epsilon)/n$ but distance at least $1-\eta$ from
+\emph{every convex mixture} of order-$n$ Hadamard laws.
+Consequently no dimension-independent modulus tending to zero can
+bound this distance from relative collision error, nor from additive
+Shannon-entropy excess. This is an instability theorem across
+dimensions, not a failure of compactness or stability at fixed $n$.
+
+The laws here have $n-1$ bits. They must not be identified with the
+$N-4$-bit input of the earlier extraction theorem. Their absolute
+deficit is $(h-k)/(kh^2)$; no sufficiently small fixed-order deficit
+is asserted. Nor do we claim that the $h^2$ observations can be
+partitioned into order-$kh$ blocks with unchanged collision:
+the Paley multiplier $k$ generally does not divide $h$. The distance
+upper bound uses a convex average, which needs no such divisibility.
+
+\end{document}

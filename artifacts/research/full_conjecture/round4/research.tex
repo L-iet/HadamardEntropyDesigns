@@ -1,0 +1,646 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,mathtools,hyperref}
+\setlength{\emergencystretch}{3em}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\newcommand{\tr}{\operatorname{tr}}
+\title{Tensor stability, activation thresholds\\and limitations of dimension reduction}
+\author{Joshua Mark\thanks{ORCID: \href{https://orcid.org/0009-0003-5905-2382}{0009-0003-5905-2382}. AI tools assisted with derivation, independent review, computation and exposition.}}
+\date{20 November 2026 --- research draft; priority not established}
+\begin{document}
+\maketitle
+\begin{abstract}
+We give an elementary tangent-trace proof that the orthogonal matrices
+whose every self-tensor power locally minimizes entrywise $p$-energy,
+$p>2$, are exactly scaled real Hadamard matrices. The same argument
+characterizes tensor-stable local maxima for $1<p<2$. On the complex
+unitary group the characterization holds for every $p>0$, $p\ne2$,
+including $p=1$. The real endpoint $p=1$ fails. The proof supplies
+explicit finite-power necessary inequalities, a two-column curvature
+certificate, and a dimension-independent quartic flatness estimate.
+These are characterization and instability results, not a proof of
+real Hadamard existence. Priority has not been established.
+\end{abstract}
+
+\section{Tensor-stable extrema over the real and complex fields}
+Let $F_p(U)=\sum_{ij}|u_{ij}|^p$. A row-orthonormal matrix with $n$
+columns is \emph{flat} if every entry has magnitude $n^{-1/2}$.
+For a square real matrix this says precisely that $\sqrt nU$ is a
+Hadamard matrix. Over $\mathbb C$, it says that $\sqrt nU$ is complex
+Hadamard. We use the real Frobenius metric on the tangent spaces.
+
+\begin{theorem}[Tensor stability]\label{thm:unified}
+Let $n\ge2$ and let $U$ be square orthogonal or unitary.
+\begin{enumerate}
+\item Over $\mathbb R$, for every finite $p>2$, all positive
+self-tensor powers of $U$ are local minima of $F_p$ if and only if
+$U$ is flat. For $1<p<2$, replace minima by maxima.
+\item Over $\mathbb C$, for every finite $p>2$, the same local-minimum
+characterization holds. For every $0<p<2$, the local-maximum
+characterization holds, including $p=1$.
+\end{enumerate}
+Every nonflat critical point in the indicated smooth domain has a
+strict second-variation violation at some finite tensor power. For
+$p<2$ this assertion assumes that its entries are nonzero; a matrix
+with a zero entry is already excluded as a local maximum.
+\end{theorem}
+
+The orthogonal $p>2$ conclusion was established in the preceding
+research pass by a factored direction. Here the proof needs neither
+spectral assumptions on a critical matrix nor a factorization of the
+Hessian witness. The real and complex row-Stiefel analogues also hold
+by the same right-action computation below.
+
+\begin{lemma}[Zeros and the strict moment comparison]\label{lem:moments}
+For $0<p<2$, a row-orthonormal real or complex matrix with a zero entry
+cannot locally maximize $F_p$ under right unitary or orthogonal
+rotations. For a matrix without zero entries put
+\[
+ q=F_p(U),\quad r=\sum_{ij}|u_{ij}|^{p-2},\quad \rho=\frac{r}{nq}.
+\]
+For $p>2$ the same definitions allow zeros. Then $\rho<1$ when
+$p>2$ and $U$ is nonflat, whereas $\rho>1$ when $0<p<2$ and $U$ is
+nonflat. Equality occurs precisely at flat matrices.
+\end{lemma}
+\begin{proof}
+If $u_{ij}=0$, choose $\ell$ with $u_{i\ell}\ne0$ and rotate columns
+$j,\ell$ through angle $t$. In
+$F_p(U(t))+F_p(U(-t))-2F_p(U)$, entries initially nonzero contribute
+$O(t^2)$, since their linear terms cancel. Initially zero entries
+contribute $2c|t|^p+o(|t|^p)$ with total $c>0$. This is positive for
+small nonzero $t$ because $p<2$, contradicting a local maximum.
+This argument also covers the nondifferentiable range $p\le1$.
+
+For $d$ rows list the $dn$ squared magnitudes as $x_i$, so
+$\sum x_i=d$, and set $a=(p-2)/2$. The identity
+\[
+ dnq-dr=\sum_{i<j}(x_i-x_j)(x_i^a-x_j^a)
+\]
+is strictly positive for $a>0$ and strictly negative for $a<0$
+unless all $x_i$ agree. This proves the assertions.
+\end{proof}
+
+\section{The two tangent-trace identities}
+The real identity is proved explicitly in
+Theorem~\ref{thm:trace-test} below. For a square matrix, the trace over
+a Frobenius-orthonormal skew basis is
+\begin{equation}\label{eq:real-trace}
+ \operatorname{Tr}_{\mathbb R}\operatorname{Hess}F_p(U)
+ =\frac p2\big((p-1)r-(n+p-2)q\big).
+\end{equation}
+The formula here denotes the sum of second derivatives along
+$Ue^{tX}$; it is valid without criticality. At a critical point it
+is the tangent-Hessian trace. The normalized basis is
+$(E_{ab}-E_{ba})/\sqrt2$ for $a<b$.
+
+\begin{lemma}[Complex tangent trace]\label{lem:complex-trace}
+For a row-orthonormal complex matrix with $n$ columns,
+\begin{equation}\label{eq:complex-trace}
+ \sum_X\frac{d^2}{dt^2}F_p(Ue^{tX})\bigg|_{t=0}
+ =\frac p2\big(pr-(2n+p-2)q\big),
+\end{equation}
+where the sum is over the Frobenius-orthonormal anti-Hermitian basis
+\[
+ iE_{aa},\qquad (E_{ab}-E_{ba})/\sqrt2,\qquad
+ i(E_{ab}+E_{ba})/\sqrt2\quad(a<b).
+\]
+For $p<2$ assume nonzero entries; for $p>2$ zeros are allowed.
+\end{lemma}
+\begin{proof}
+For a fixed generator, write $z=u_{ij}$, $v=(UX)_{ij}$ and
+$w=(UX^2)_{ij}$. At $z\ne0$, differentiation gives
+\[
+ \frac1p\frac{d^2}{dt^2}|(Ue^{tX})_{ij}|^p\bigg|_{t=0}
+ =|z|^{p-2}|v|^2+(p-2)|z|^{p-4}
+       \big(\Re(\bar zv)\big)^2+|z|^{p-2}\Re(\bar zw).
+\]
+At a zero entry for $p>2$ this second derivative is zero.
+Summing over the stated basis gives, pointwise,
+\[
+ \sum_X |(UX)_{ij}|^2=1,\qquad
+ \sum_X\big(\Re(\bar u_{ij}(UX)_{ij})\big)^2
+       =\frac{|u_{ij}|^2(1-|u_{ij}|^2)}2,
+ \qquad \sum_X X^2=-nI.
+\]
+For the middle identity, the diagonal imaginary generator contributes
+zero; each real and imaginary off-diagonal pair contributes
+$|u_{ij}|^2|u_{ia}|^2/2$. The first identity uses the same pairs and
+the unit norm of row $i$. Substitution and summation over entries
+give \eqref{eq:complex-trace}.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:unified}]
+At $U^{\otimes k}$ the column number is $n^k$ and the two moments are
+$q^k,r^k$. Dividing the real trace by $pn^kq^k/2$ gives
+\[
+ (p-1)\rho^k-1-\frac{p-2}{n^k}.
+\]
+For a nonflat matrix this is eventually negative for $p>2$, and
+eventually positive for $1<p<2$. Dividing the complex trace by the
+same positive quantity gives
+\[
+ p\rho^k-2-\frac{p-2}{n^k},
+\]
+which is eventually negative for $p>2$ and eventually positive for
+every $0<p<2$. A negative trace has a negative summand, and a positive
+trace has a positive summand. This contradicts the appropriate local
+extremum. Lemma~\ref{lem:moments} handles zeros in the maximum case.
+At critical points the exhibited second derivatives are Hessian
+violations. Jensen inequality gives the converse: flat matrices are
+global minima for $p>2$, global maxima for $0<p<2$, and remain flat
+under tensor powers. The row-orthonormal argument is identical; the
+right-rotation curves remain in its manifold.
+\end{proof}
+
+For example, sufficient strict-violation powers in the complex case
+are $k>\log(p/2)/\log(1/\rho)$ for $p>2$ and
+$k>\log(2/p)/\log\rho$ for $0<p<2$. These bounds need not be sharp.
+The real maximum bound is $k>\log(1/(p-1))/\log\rho$.
+Criticality of the seed propagates to tensor powers in the nonzero
+domain: if $W=|U|^{p-2}\circ U$, criticality means $U^*W$ is
+self-adjoint, and the corresponding tensor matrix is $(U^*W)^{\otimes k}$.
+
+\section{Endpoints, prior work, and the existence gap}
+At $p=2$ the energy is constant. The real endpoint $p=1$ fails:
+for every $n>4$, $U=2J_n/n-I_n$ is nonflat, orthogonal, and all its
+self-tensor powers are strict local maxima of $F_1$ on the real
+orthogonal group. Indeed its sign matrix is $A=J_n-2I_n$, and
+\[
+ U^TA=(1-4/n)J_n+2I_n\succ0.
+\]
+Near $U$ the signs are fixed, so the Hessian is
+$-\operatorname{tr}(U^TA X^TX)<0$ for nonzero real skew $X$.
+Tensor powers preserve positivity of this critical matrix.
+This endpoint behavior is consistent with the established real
+almost-Hadamard theory~\cite{BN,BNZ}.
+
+The complex almost-Hadamard conjecture of Banica and Nechita asks
+whether a \emph{single} local maximum of $F_1$ on $U(n)$ must be
+flat~\cite{Complex}. Our complex theorem assumes local maximality at
+\emph{every} self-tensor power. It therefore does not settle that
+stronger one-copy conjecture. In particular, tensor closure of a
+class of balanced critical points does not establish tensor closure
+of local maxima. Targeted searches did not establish bibliographic
+priority for the tensor characterization; no novelty is claimed.
+
+For real Hadamard existence the missing implication is different:
+compactness supplies a local or global minimum in each dimension,
+but it does not supply one whose every tensor power is locally
+minimizing. Lifting and improving a nonflat point changes the
+dimension. Neither this theorem nor its quantitative corollaries
+extract an original-dimensional Hadamard matrix.
+\section{A trace certificate and quantitative finite-power stability}
+This section gives a second proof of tensor destabilization, using the
+trace of the entire tangent Hessian. It produces a two-column rotation
+in the lifted dimension and a bound on the energy of any matrix whose
+specified tensor power is locally minimizing. Neither conclusion
+supplies a descent in the original dimension.
+
+Let $U\in\mathbb R^{d\times n}$ have orthonormal rows, $1\le d\le n$,
+$n\ge2$, and let $p>2$. Write
+\[
+ q=\sum_{ij}|u_{ij}|^p,\qquad r=\sum_{ij}|u_{ij}|^{p-2},
+ \qquad \rho=\frac{r}{nq}.
+\]
+By strict Chebyshev inequality, $0<\rho\le1$, with equality exactly
+when every entry has magnitude $n^{-1/2}$.
+
+\begin{theorem}[Finite-power trace test]\label{thm:trace-test}
+If $U^{\otimes k}$ is a local minimum of the entrywise $p$-energy on
+the row-Stiefel manifold, then
+\begin{equation}\label{eq:trace-test}
+ (p-1)\rho^k\ \ge\ 1+\frac{p-2}{n^k}.
+\end{equation}
+In particular, a nonflat $U$ has a strictly negative second variation
+along a single two-column rotation of $U^{\otimes k}$ whenever
+$k>\log(p-1)/\log(1/\rho)$. The second-variation conclusion does not
+require that $U$ be critical.
+\end{theorem}
+
+\begin{proof}
+For any real row-orthonormal $V$ with $N$ columns, let
+$Q=\sum |v_{ij}|^p$ and $R=\sum |v_{ij}|^{p-2}$. For
+$X_{ab}=E_{ab}-E_{ba}$, direct differentiation of
+$F_p(Ve^{tX_{ab}})$ gives
+\begin{align*}
+ \frac1p\frac{d^2}{dt^2}F_p(Ve^{tX_{ab}})\bigg|_{t=0}
+ ={}&(p-1)\sum_i\bigl(|v_{ia}|^{p-2}v_{ib}^2
+               +|v_{ib}|^{p-2}v_{ia}^2\bigr)\\
+ &-\sum_i\bigl(|v_{ia}|^p+|v_{ib}|^p\bigr).
+\end{align*}
+Summing over $a<b$ and using $\sum_bv_{ib}^2=1$ yields
+\begin{equation}\label{eq:curvature-trace}
+ \frac1p\sum_{a<b}\frac{d^2}{dt^2}F_p(Ve^{tX_{ab}})\bigg|_{t=0}
+   =(p-1)R-(N+p-2)Q.
+\end{equation}
+For $V=U^{\otimes k}$ we have $N=n^k$, $Q=q^k$, $R=r^k$.
+A local minimum has nonnegative second derivative on every such
+curve, which gives \eqref{eq:trace-test}. If
+$(p-1)\rho^k<1$, the displayed sum is strictly negative; at least one
+of its summands is strictly negative. Smoothness at zero is valid
+because $p>2$.
+\end{proof}
+
+The column pair can be checked without forming the tensor matrix.
+Define $c_a=\sum_i|u_{ia}|^p$ and
+$D_{ab}=\sum_i|u_{ia}|^{p-2}u_{ib}^2$. For distinct column words
+$\mathbf a,\mathbf b\in\{1,\ldots,n\}^k$, the second derivative divided
+by $p$ is exactly
+\[
+ (p-1)\left(\prod_{j=1}^kD_{a_jb_j}
+             +\prod_{j=1}^kD_{b_ja_j}\right)
+       -\prod_{j=1}^kc_{a_j}-\prod_{j=1}^kc_{b_j}.
+\]
+This is an explicit certificate formula, not a claim of a polynomial
+time search algorithm. A two-column rotation of a tensor matrix
+usually does not factor as rotations of its original factors.
+
+\begin{corollary}[Dimension-independent quartic stability bound]
+\label{cor:quartic-rate}
+Let $e=nF_4(U)/d\ge1$. If $U^{\otimes k}$ is a local minimum, then
+\[
+ e\le \left(\frac{3}{1+2/n^k}\right)^{1/k}<3^{1/k}.
+\]
+Furthermore
+\[
+ \sum_{ij}\left(u_{ij}^2-\frac1n\right)^2
+      =\frac dn(e-1),\qquad
+ \frac1d\min_{H\in\{\pm1\}^{d\times n}}
+       \left\|U-\frac H{\sqrt n}\right\|_F^2
+      \le e-1<3^{1/k}-1.
+\]
+Thus the normalized squared distance to a flat sign array is
+$O(1/k)$, uniformly in the matrix dimensions.
+\end{corollary}
+
+\begin{proof}
+At $p=4$ we have $r=d$, hence $\rho=1/e$; apply
+\eqref{eq:trace-test}. The first distance identity follows by expanding
+the square and using $\sum u_{ij}^2=d$. Choose each sign of $H$ to
+match $u_{ij}$ (arbitrarily at zero) and use
+\[
+ (|u_{ij}|-n^{-1/2})^2
+ =\frac{(u_{ij}^2-n^{-1})^2}{(|u_{ij}|+n^{-1/2})^2}
+ \le n(u_{ij}^2-n^{-1})^2.
+\]
+Finally $3^{1/k}-1\sim(\log3)/k$.
+\end{proof}
+
+The closest flat sign array in this estimate need not have orthogonal
+rows. The estimate therefore proves neither a nearby Hadamard matrix
+nor Hadamard existence. It quantifies a necessary condition on local
+minima in tensor powers.
+
+\subsection{Complex flatness and collision entropy}
+For complex row-orthonormal $U$, put again $e=nF_4(U)/d$. The complex
+trace identity gives the slightly stronger necessary condition
+\[
+ e\le\left(\frac{2}{1+1/n^k}\right)^{1/k}<2^{1/k}
+\]
+when $U^{\otimes k}$ is locally minimizing. The same variance identity
+holds with $u_{ij}^2$ replaced by $|u_{ij}|^2$; replacing signs by
+arbitrary unit complex phases gives the corresponding distance bound.
+This follows by choosing the phase of each entry to match $u_{ij}$.
+
+There is a direct information-theoretic interpretation of both bounds.
+Define a probability distribution on the $dn$ entry positions by
+$P_{ij}=|u_{ij}|^2/d$, and let $Q_{ij}=1/(dn)$ be uniform. Its
+order-two R\'enyi divergence from uniform, here defined explicitly, is
+\[
+ D_2(P\Vert Q)=\log\sum_{ij}\frac{P_{ij}^2}{Q_{ij}}
+             =\log e.
+\]
+The entry distribution of $U^{\otimes k}$ is $P^{\otimes k}$, so
+$D_2(P^{\otimes k}\Vert Q^{\otimes k})=kD_2(P\Vert Q)$.
+Consequently finite-power local minimality forces
+\[
+ D_2(P\Vert Q)<\frac{\log3}{k}\quad\text{over }\mathbb R,
+ \qquad
+ D_2(P\Vert Q)<\frac{\log2}{k}\quad\text{over }\mathbb C.
+\]
+This expresses the curvature test as an entropy-deficit bound. It
+does not assert that an arbitrary nearly uniform entry distribution
+can be realized by a flat orthogonal matrix of the original size.
+
+\section{Exact activation thresholds and delayed instability}
+
+Put $F_p(U)=\sum_{ij}|u_{ij}|^p$ on $O(n)$, where $p>2$.
+A negative tangent Hessian means negative second derivative along
+$Ue^{tX}$ for a real skew-symmetric $X$. This note sharpens the finite
+tensor activation theorem with exact examples; it does not establish
+Hadamard existence or claim priority.
+
+\begin{theorem}\label{activation:main}
+Let $A=2J_5/5-I_5$, $s=p-2$, and
+\[
+ b=2/5,\qquad c=(3/5)^{p-1}+(2/5)^{p-1},\qquad
+ R(p)=c/b^s=\tfrac35(\tfrac32)^s+\tfrac25.
+\]
+For every positive integer $k$, the least eigenvalue of the tangent
+Hessian of $F_p$ at $A^{\otimes k}$, with the Frobenius metric on
+skew generators, is exactly
+\[
+ \lambda_k=p\big((p-1)b^{ks}-c^k\big).
+\]
+Consequently it is a strict local minimum if $R(p)^k<p-1$, has positive
+semidefinite singular Hessian if equality holds, and has a negative
+tangent direction if $R(p)^k>p-1$. The first negative-Hessian power is
+\[
+ k_-(p)=\left\lfloor\frac{\log(p-1)}{\log R(p)}\right\rfloor+1.
+\]
+The equality case does not assert local minimality.
+\end{theorem}
+\begin{proof}
+Write $d=(3/5)^{p-1}$ and $e=(2/5)^{p-1}$. The entrywise gradient
+matrix is $W=eJ_5-(d+e)I_5$, so $M=A^TW$ is symmetric and $A$ is
+critical. On $\mathbf1^\perp$, $M$ has eigenvalue $c=d+e$, while on
+$\mathbf1$ it has eigenvalue $h=-d+4e$. For $p>2$,
+$3e<2d$, hence $-c<h<c$. Thus $\|M\|_{\rm op}=c$.
+Tensor multiplicativity gives criticality and $M_k=M^{\otimes k}$.
+Every entry of $A^{\otimes k}$ has magnitude at least $b^k$.
+For any skew $X$, orthogonality and the operator norm bound imply
+\[
+ T_k(X):=\sum_{ij}|(A^{\otimes k})_{ij}|^s
+                 ((A^{\otimes k}X)_{ij})^2\ge b^{ks}\|X\|_F^2,
+ \qquad
+ S_k(X):=\tr(M_kX^TX)\le c^k\|X\|_F^2.
+\]
+Here the last bound remains valid if $M_k$ has negative eigenvalues.
+The derivative identity $F_p''=p[(p-1)T_k-S_k]$ gives the claimed
+lower bound for the least Hessian eigenvalue.
+
+To attain it, take a skew matrix $Y$ supported on the oriented triangle
+$0\to1\to2\to0$, with entries $+1$ on these three edges and $-1$
+on reversed edges. Take symmetric $Z$ supported on the undirected
+cycle $0,1,2,3,0$, with successive edge values $+1,-1,+1,-1$.
+Both have zero diagonal and zero row and column sums. Consequently
+$AY=-Y$, $AZ=-Z$, and $MY=cY$, $MZ=cZ$.
+For $X=Y\otimes Z^{\otimes(k-1)}$, each nonzero entry has distinct
+row and column indices in every coordinate. Thus it encounters only
+magnitude-$b^k$ entries of $A^{\otimes k}$ in $T_k$, and
+\[
+ T_k(X)=b^{ks}\|X\|_F^2,\qquad S_k(X)=c^k\|X\|_F^2.
+\]
+The matrix $X$ is nonzero and skew, proving sharpness. Positive
+definite Hessian at a critical point yields a strict local minimum.
+\end{proof}
+
+\begin{corollary}[Two copies do not suffice]
+For $p=3$, $A$ and $A^{\otimes2}$ are strict local minima, while
+$A^{\otimes3}$ has a negative tangent direction. For $p=201/100$,
+the first four tensor powers are strict local minima, while the fifth
+has a negative tangent direction.
+\end{corollary}
+\begin{proof}
+At $p=3$, $R=13/10$ and $R^2<2<R^3$.
+For $p=201/100$, exact integer exponentiation verifies
+\[
+ (1004062/10^6)^{100}<3/2<(1004063/10^6)^{100}.
+\]
+Put $a=\frac35(1004062/10^6)+\frac25$ and
+$z=\frac35(1004063/10^6)+\frac25$. Exact rational arithmetic gives
+$z^4<101/100<a^5$. Hence $R^4<p-1<R^5$.
+\end{proof}
+
+The example at $p=3$ refutes universal two-copy negative-Hessian
+activation, including when the seed is a strict local minimum.
+The first-power dimension here is five, so it is not itself an
+admissible Hadamard order. Tensoring with a normalized Hadamard matrix
+also preserves this exact Hessian classification: the minimum entry
+weight and the operator norm of the critical matrix both acquire
+the same positive factor. An attaining generator is the generator
+above tensored with the identity on the flat factor. Thus taking
+$A\otimes(H_4/2)$ gives the same examples in initial dimension twenty.
+For its $k$th self-power the flat factor has order $4^k$; the Hessian
+least eigenvalue is multiplied by $(4^k)^{-(p-2)/2}$.
+
+All activation indices in this specific family are at most five.
+Indeed convexity of $\log(\frac35e^{s\log(3/2)}+\frac25)$ gives
+$\log R\ge\frac35s\log(3/2)$, whereas $\log(1+s)<s$.
+Since $3\log(3/2)>1$, it follows that $5\log R>\log(p-1)$.
+Moreover the threshold tends to $5/(3\log(3/2))\simeq4.1105$ as
+$p\downarrow2$. This proves that five is attained, but does not
+settle whether other critical points require arbitrarily many copies.
+
+\section{Factored directions for comparison}
+For the following refinement, let $U\in O(n)$ be critical, put
+$W=|U|^{p-2}\circ U$ and $M=U^TW=M^T$, and define
+\[
+ T(V)=\sum_{ij}|u_{ij}|^{p-2}(UV)_{ij}^2,
+ \qquad S(V)=\tr(MV^TV).
+\]
+The second variation in a skew generator is $p((p-1)T-S)$.
+The symmetric and skew orthonormal basis trace sums are respectively
+$((r+q)/2,(n+1)q/2)$ and $((r-q)/2,(n-1)q/2)$ for $(T,S)$.
+Since $r<nq$, the ratio-selection argument selects symmetric $Z$ and
+skew $Y$ with positive $S$ and ratios less than one. This remains
+valid when some basis $S$-values are negative: if every positive-$S$
+ratio exceeded the quotient of the sums, summing $T-cS$ would be
+strictly positive, a contradiction (the nonpositive-$S$ terms are
+nonnegative). Tensor products factor both quadratic forms. This is
+the factored-direction proof preserved in the previous research pass.
+\section{Interaction-only descent and an obstruction to dimension reduction}
+\label{sec:interaction-descent}
+
+Throughout this section $p>2$, $U\in O(n)$ is critical for
+$F_p(U)=\sum_{ij}|u_{ij}|^p$, and $n\ge2$. Use the quantities
+$q,r,T,S,M$ from the tensor-stability theorem. The following refinement
+locates the destabilizing direction entirely outside the tangent space
+of independently varying tensor factors.
+
+\begin{proposition}[Trace-free activation]
+If $U$ is nonflat, there are a skew-symmetric $Y$ and a symmetric
+trace-zero $Z$ with $S(Y),S(Z)>0$ such that
+\[
+ \alpha=\frac{T(Y)}{S(Y)}\le\frac{r-q}{(n-1)q}<1,
+ \qquad
+ \beta=\frac{T(Z)}{S(Z)}\le
+ b_0:=\frac{nr+(n-2)q}{(n+2)(n-1)q}<1.
+\]
+Moreover $0<b_0<b=(r+q)/((n+1)q)$. For any integer $k\ge2$ satisfying
+$(p-1)\alpha\beta^{k-1}<1$, the generator
+$X=Y\otimes Z^{\otimes(k-1)}$ gives negative tangent Hessian at
+$U^{\otimes k}$. One sufficient choice is
+\[
+ k=2+\left\lceil\frac{\log(p-1)}{\log(1/b_0)}\right\rceil.
+\]
+\end{proposition}
+\begin{proof}
+In the symmetric matrices, the scalar direction $I_n/\sqrt n$ is
+orthogonal to the trace-zero subspace. Its $T$- and $S$-values both
+equal $q/n$. Subtracting these from the symmetric trace sums gives,
+for any Frobenius-orthonormal basis $\mathcal B_0$ of the symmetric
+trace-zero matrices,
+\[
+ \sum_{Z\in\mathcal B_0}T(Z)=\frac{r+q}{2}-\frac qn,
+ \qquad
+ \sum_{Z\in\mathcal B_0}S(Z)=\frac{(n+1)q}{2}-\frac qn.
+\]
+The second sum is positive. The ratio-selection argument therefore
+produces the asserted $Z$; the skew selection is unchanged.
+The strict inequality $r<nq$ gives $b_0<1$, and direct subtraction gives
+\[
+ b-b_0=\frac{2(nq-r)}{(n+1)(n+2)(n-1)q}>0.
+\]
+The numerator of $b_0$ is positive, including $n=2$, because $r>0$.
+The tensor Hessian factors as
+$pS(Y)S(Z)^{k-1}((p-1)\alpha\beta^{k-1}-1)$.
+This proves both negativity and the sufficient bound.
+\end{proof}
+
+\begin{proposition}[The descent is invisible to one-factor tangents]
+Let $k\ge2$, and let $X$ be a trace-free activating generator as above.
+Every one-factor partial trace of $X$ vanishes. Equivalently, $X$ is
+Frobenius-orthogonal to
+\[
+ \mathcal L_k=\left\{
+ \sum_{a=1}^k I^{\otimes(a-1)}\otimes A_a\otimes
+ I^{\otimes(k-a)}: A_a^{\mathsf T}=-A_a\right\}.
+\]
+This is the relative tangent space of the manifold of independent
+tensor factors at $U^{\otimes k}$.
+\end{proposition}
+\begin{proof}
+For elementary tensors, the partial trace retaining factor $a$ is
+the $a$th factor multiplied by the traces of all the others.
+For $a=1$, it contains $(\operatorname{tr}Z)^{k-1}=0$.
+For $a>1$, it contains $\operatorname{tr}Y=0$. Partial trace is adjoint
+to insertion of identities, proving the orthogonality statement.
+Differentiating $\bigotimes_a(Ue^{tA_a})$ gives
+$U^{\otimes k}\sum_a I^{\otimes(a-1)}\otimes A_a\otimes
+I^{\otimes(k-a)}$. Left multiplication by the orthogonal
+$U^{\otimes k}$ preserves the Frobenius inner product.
+\end{proof}
+
+\begin{proposition}[Independent factors cannot realize the lifted gain]
+Suppose $U$ is a local minimum of $F_p$ on $O(n)$ and put $q=F_p(U)$.
+Then $U^{\otimes k}$ is a local minimum of $F_p$ restricted to the
+manifold of independent tensor factors, for every $k$. At a critical
+$U$, its Hessian on relative product tangents is
+\[
+ \operatorname{Hess}F_p\big|_{\mathcal L_k}
+ \left[\sum_a I^{\otimes(a-1)}\otimes A_a\otimes
+ I^{\otimes(k-a)}\right]
+ =q^{k-1}\sum_a \operatorname{Hess}F_p(U)[A_a].
+\]
+If $U$ is nonflat, choose the interaction-only negative direction $X$
+above and let $W(t)=U^{\otimes k}e^{tX}$. For the local nearest-point
+projection $P$ onto the product manifold,
+\[
+ F_p(W(t))=q^k-c t^2+o(t^2)\quad(c>0),\qquad
+ q^k\le F_p(P(W(t)))=q^k+O(t^4).
+\]
+Thus nearest-product projection loses the entire quadratic improvement.
+\end{proposition}
+\begin{proof}
+Entrywise energy is exactly multiplicative:
+$F_p(\bigotimes_a V_a)=\prod_a F_p(V_a)$.
+Nearby factors have energy at least $q$, proving restricted minimality.
+Twice differentiating the product shows the stated Hessian: all cross
+terms vanish by criticality. The local product map is an immersion,
+since its factor tangent summands are pairwise orthogonal (each $A_a$
+has trace zero); it is locally an embedded manifold. Its Euclidean
+nearest-point projection is smooth near the base point, and its
+differential is orthogonal projection onto the tangent space.
+The preceding proposition gives
+$P(W(t))=U^{\otimes k}+O(t^2)$. Restricted criticality and a bounded
+second derivative give the $O(t^4)$ energy estimate, while restricted
+minimality gives its sign. Taylor's theorem in the full orthogonal
+group gives the negative quadratic coefficient for $W$.
+\end{proof}
+
+This is a precise limitation on one natural extraction procedure, not
+a theorem excluding every nonlinear dimension-reduction argument.
+The partial traces here are traces of the \emph{relative tangent
+generator} $X$; no assertion about reduced physical states is needed.
+
+\begin{proposition}[An exactly stationary partial-trace extraction]
+ Let $k\ge2$ and $X=Y\otimes Z^{\otimes(k-1)}$, where $Y$ is real skew-symmetric,
+$Z$ is real symmetric, and the eigenvalues of $Z$ occur in opposite
+pairs, allowing zeros. Set
+\[
+ A_a(t)=n^{-(k-1)}\operatorname{Tr}_{\widehat a}(e^{tX}),
+ \qquad a=1,\ldots,k,
+\]
+where the trace retains factor $a$. For all sufficiently small real
+$t$, every $A_a(t)$ is symmetric positive definite. Consequently the
+orthogonal polar factor of every $A_a(t)$ is exactly $I_n$.
+Thus extracting $U\operatorname{polar}(A_a(t))$ from a lifted curve
+returns the original $U$ in every factor, exactly rather than only
+to first order.
+\end{proposition}
+\begin{proof}
+Use the convergent power series for the exponential. In the partial
+trace retaining factor $1$, the coefficient of $t^m/m!$ is
+$Y^m(\operatorname{tr}Z^m)^{k-1}$; for odd $m$ this vanishes by the
+paired spectrum of $Z$. All even powers of $Y$ are symmetric.
+For a retained factor $a>1$, the coefficient is
+$Z^m\operatorname{tr}(Y^m)(\operatorname{tr}Z^m)^{k-2}$.
+Odd powers of a real skew-symmetric matrix have trace zero, and
+all powers of $Z$ are symmetric. Thus all $A_a(t)$ are symmetric.
+Since $A_a(0)=I_n$, continuity makes them positive definite near zero.
+The orthogonal polar factor of a positive definite matrix is $I_n$.
+\end{proof}
+
+This obstruction occurs for a genuinely decreasing curve, not just an
+arbitrary interaction. Take $p=4$, $U=2J_5/5-I_5$, and let $Y$ be the
+oriented triangle on indices $0,1,2$, with nonzero entries
+$Y_{01}=Y_{12}=Y_{20}=1$ and their skew counterparts. Let $Z$ be the
+symmetric alternating four-cycle with
+$Z_{01}=1,Z_{12}=-1,Z_{23}=1,Z_{30}=-1$ and their symmetric counterparts.
+Then $Z$ has paired spectrum: conjugation by
+$D=\operatorname{diag}(1,-1,1,-1,1)$ takes $Z$ to $-Z$.
+The exact tangent Hessian at $U\otimes U$ in direction $Y\otimes Z$
+is $-192/625$. Hence this full energy strictly decreases for sufficiently
+small nonzero $t$, whereas the partial-trace polar extraction returns
+$U$ exactly. To check the base minimum directly,
+$M=\frac7{25}I_5-\frac6{125}J_5$ and every $u_{ij}^2\ge4/25$.
+Thus $T(A)\ge(4/25)\|A\|_F^2$ and
+$S(A)\le(7/25)\|A\|_F^2$, giving
+$4(3T(A)-S(A))\ge(4/5)\|A\|_F^2$ for every skew $A$.
+This proves that $U$ is a strict local minimum.
+
+\subsection{An exact example where flatness does not descend}
+Even an exactly flat tensor-square dimension need not permit a flat
+matrix in the original dimension. There is no Hadamard matrix of order
+$6$: normalizing one row to $+1$, orthogonality forces every other row
+to have three positive entries; two such rows cannot have zero inner
+product, since their positive-support intersection would have size
+$6/4$, which is not an integer.
+
+For completeness, an entirely explicit Hadamard matrix of order
+$36=6^2$ can be built as follows. Let indices of $C$ be
+$\{\infty\}\cup\mathbb F_{17}$, set its diagonal to zero,
+$C_{\infty a}=C_{a\infty}=1$, and
+$C_{ab}=\chi(a-b)$ for distinct finite indices, where $\chi$ is the
+quadratic character modulo $17$. Then $C$ is symmetric and
+$C^2=17I_{18}$. These are finite identities, also checked directly in
+the accompanying exact verifier. Consequently
+\[
+ H=\begin{pmatrix}C+I&C-I\\ C-I&-C-I\end{pmatrix}
+ \quad\text{satisfies}\quad HH^{\mathsf T}=36I_{36}.
+\]
+Indeed its diagonal Gram blocks are
+$(C+I)^2+(C-I)^2=36I$, and its off-diagonal blocks vanish by
+commutation. Thus a dimension-independent rule taking a flat
+$n^2$-dimensional orthogonal matrix to a flat $n$-dimensional one is
+impossible. The example uses a forbidden base order and does not
+settle what can be extracted at orders divisible by four.
+
+\begin{thebibliography}{9}
+\bibitem{BN} T. Banica and I. Nechita, Almost Hadamard matrices:
+the case of arbitrary exponents, Discrete Applied Mathematics 161
+(2013), 2367--2379. \url{https://arxiv.org/abs/1211.2669}.
+\bibitem{BNZ} T. Banica, I. Nechita and K. \.{Z}yczkowski,
+Almost Hadamard matrices: general theory and examples,
+Open Systems and Information Dynamics 19 (2012).
+\url{https://arxiv.org/abs/1202.2025}.
+\bibitem{Complex} T. Banica and I. Nechita,
+Almost Hadamard matrices with complex entries (2017).
+\url{https://arxiv.org/abs/1702.02220}.
+\end{thebibliography}
+\end{document}

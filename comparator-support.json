@@ -1,0 +1,22 @@
+{
+  "challenge_module": "SupportChallenge",
+  "solution_module": "SupportSolution",
+  "theorem_names": [
+    "EntropyDesigns.fixedSupport_degree_sub_two_extension_iff",
+    "EntropyDesigns.fixed_support_hadamard_degree_criterion",
+    "EntropyDesigns.fixed_support_pairwise_observables_criterion",
+    "EntropyDesigns.degree_sub_two_encoding_iff_complement_capacity",
+    "EntropyDesigns.minimal_seed_degree_saturation",
+    "EntropyDesigns.four_omitted_labels_degree_exact",
+    "EntropyDesigns.punctured_reed_muller_radical_dimensions",
+    "EntropyDesigns.punctured_observable_bounds",
+    "EntropyDesigns.four_omitted_punctured_encoding_impossible"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "enable_nanoda": true
+}

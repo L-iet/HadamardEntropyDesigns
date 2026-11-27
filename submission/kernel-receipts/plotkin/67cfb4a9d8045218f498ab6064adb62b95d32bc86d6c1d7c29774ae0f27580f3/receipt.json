@@ -1,0 +1,40 @@
+{
+  "key": "67cfb4a9d8045218f498ab6064adb62b95d32bc86d6c1d7c29774ae0f27580f3",
+  "metadata": {
+    "group": "plotkin",
+    "configPath": "comparator-plotkin.json",
+    "configSHA256": "153a14643e3ccd22f1e2ea4c0eab33cfa8f8b7b652d54f890c98656b9b6ad2fc",
+    "theoremNames": [
+      "EntropyDesigns.binarySeed_bijective",
+      "EntropyDesigns.ConcentratedFamily.concentrated_witness_exists",
+      "EntropyDesigns.ConcentratedFamily.concentrated_sharp_distance",
+      "EntropyDesigns.ConcentratedFamily.concentrated_exact_repair",
+      "EntropyDesigns.ConcentratedFamily.concentrated_all_repairs_lower",
+      "EntropyDesigns.ConcentratedFamily.concentrated_canonical_limits",
+      "EntropyDesigns.PlotkinSupport.seed_clique_plotkin_bound",
+      "EntropyDesigns.PlotkinSupport.observed_clique_plotkin_bound",
+      "EntropyDesigns.PlotkinSupport.observed_orthogonality_plotkin_bound",
+      "EntropyDesigns.PlotkinSupport.source_plotkin_distance_bound"
+    ],
+    "definitionNames": [],
+    "exports": {
+      "challenge": "c937fcd5af3b025b34d440f45eac730c22498794540154a767809b080af5b18f",
+      "solution": "8fdc0586f9716d1b4f86b5f030369538e016c6aa148cc479c6b146add256252c"
+    },
+    "environment": {
+      "toolchain": "leanprover/lean4:v4.35.0",
+      "toolchainSHA256": "ca5f1f601d34c49079e38d7e7041eb0f2a9c227fbc1df0f404820069a052330c",
+      "binaries": {
+        "lean": "ec7a472d1c12a09b0c0c718f7427c2be527b3f5f07810fdbe076c2507c7a91ea",
+        "lake": "023feb24d3e7244fe671dba79f1cd1affc6c7a7cacfe497bf3675febb506578c",
+        "leanexport": "bda24bb3fafaf299ba472f944942d6293294b76559fafc9f166badd7c0f981b3",
+        "leanchecker": "9ef6baeb28d5e28897d5ed6dddd60ff81e511d97374013ece435dff38e9e0137",
+        "nanoda_bin": "de57d9dd7f647eb57398bc3dab4dcaa1d64f961f3f49964d5455fbddc73b35a8"
+      }
+    }
+  },
+  "capturedAtUTC": "2026-11-25T01:09:14.673262+00:00",
+  "reportSHA256": "34a8bcd1ca88fc2d8c80fcdd2e69f70e883ba112a44f4b1509901c885af0def5",
+  "logSHA256": "125a3b9b2884fddc9a2bb2354fe3ca1adcf8209d4f8115fb28898ec7d5b972e4",
+  "scope": "Immutable original Comparator exit0 with explicit Lean/NanoDa acceptance of the exact exports/config/checker environment. Local diagnostic, not registry verification."
+}

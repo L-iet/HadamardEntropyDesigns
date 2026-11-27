@@ -1,0 +1,132 @@
+\section{A trace certificate and quantitative finite-power stability}
+This section gives a second proof of tensor destabilization, using the
+trace of the entire tangent Hessian. It produces a two-column rotation
+in the lifted dimension and a bound on the energy of any matrix whose
+specified tensor power is locally minimizing. Neither conclusion
+supplies a descent in the original dimension.
+
+Let $U\in\mathbb R^{d\times n}$ have orthonormal rows, $1\le d\le n$,
+$n\ge2$, and let $p>2$. Write
+\[
+ q=\sum_{ij}|u_{ij}|^p,\qquad r=\sum_{ij}|u_{ij}|^{p-2},
+ \qquad \rho=\frac{r}{nq}.
+\]
+By strict Chebyshev inequality, $0<\rho\le1$, with equality exactly
+when every entry has magnitude $n^{-1/2}$.
+
+\begin{theorem}[Finite-power trace test]\label{thm:trace-test}
+If $U^{\otimes k}$ is a local minimum of the entrywise $p$-energy on
+the row-Stiefel manifold, then
+\begin{equation}\label{eq:trace-test}
+ (p-1)\rho^k\ \ge\ 1+\frac{p-2}{n^k}.
+\end{equation}
+In particular, a nonflat $U$ has a strictly negative second variation
+along a single two-column rotation of $U^{\otimes k}$ whenever
+$k>\log(p-1)/\log(1/\rho)$. The second-variation conclusion does not
+require that $U$ be critical.
+\end{theorem}
+
+\begin{proof}
+For any real row-orthonormal $V$ with $N$ columns, let
+$Q=\sum |v_{ij}|^p$ and $R=\sum |v_{ij}|^{p-2}$. For
+$X_{ab}=E_{ab}-E_{ba}$, direct differentiation of
+$F_p(Ve^{tX_{ab}})$ gives
+\begin{align*}
+ \frac1p\frac{d^2}{dt^2}F_p(Ve^{tX_{ab}})\bigg|_{t=0}
+ ={}&(p-1)\sum_i\bigl(|v_{ia}|^{p-2}v_{ib}^2
+               +|v_{ib}|^{p-2}v_{ia}^2\bigr)\\
+ &-\sum_i\bigl(|v_{ia}|^p+|v_{ib}|^p\bigr).
+\end{align*}
+Summing over $a<b$ and using $\sum_bv_{ib}^2=1$ yields
+\begin{equation}\label{eq:curvature-trace}
+ \frac1p\sum_{a<b}\frac{d^2}{dt^2}F_p(Ve^{tX_{ab}})\bigg|_{t=0}
+   =(p-1)R-(N+p-2)Q.
+\end{equation}
+For $V=U^{\otimes k}$ we have $N=n^k$, $Q=q^k$, $R=r^k$.
+A local minimum has nonnegative second derivative on every such
+curve, which gives \eqref{eq:trace-test}. If
+$(p-1)\rho^k<1$, the displayed sum is strictly negative; at least one
+of its summands is strictly negative. Smoothness at zero is valid
+because $p>2$.
+\end{proof}
+
+The column pair can be checked without forming the tensor matrix.
+Define $c_a=\sum_i|u_{ia}|^p$ and
+$D_{ab}=\sum_i|u_{ia}|^{p-2}u_{ib}^2$. For distinct column words
+$\mathbf a,\mathbf b\in\{1,\ldots,n\}^k$, the second derivative divided
+by $p$ is exactly
+\[
+ (p-1)\left(\prod_{j=1}^kD_{a_jb_j}
+             +\prod_{j=1}^kD_{b_ja_j}\right)
+       -\prod_{j=1}^kc_{a_j}-\prod_{j=1}^kc_{b_j}.
+\]
+This is an explicit certificate formula, not a claim of a polynomial
+time search algorithm. A two-column rotation of a tensor matrix
+usually does not factor as rotations of its original factors.
+
+\begin{corollary}[Dimension-independent quartic stability bound]
+\label{cor:quartic-rate}
+Let $e=nF_4(U)/d\ge1$. If $U^{\otimes k}$ is a local minimum, then
+\[
+ e\le \left(\frac{3}{1+2/n^k}\right)^{1/k}<3^{1/k}.
+\]
+Furthermore
+\[
+ \sum_{ij}\left(u_{ij}^2-\frac1n\right)^2
+      =\frac dn(e-1),\qquad
+ \frac1d\min_{H\in\{\pm1\}^{d\times n}}
+       \left\|U-\frac H{\sqrt n}\right\|_F^2
+      \le e-1<3^{1/k}-1.
+\]
+Thus the normalized squared distance to a flat sign array is
+$O(1/k)$, uniformly in the matrix dimensions.
+\end{corollary}
+
+\begin{proof}
+At $p=4$ we have $r=d$, hence $\rho=1/e$; apply
+\eqref{eq:trace-test}. The first distance identity follows by expanding
+the square and using $\sum u_{ij}^2=d$. Choose each sign of $H$ to
+match $u_{ij}$ (arbitrarily at zero) and use
+\[
+ (|u_{ij}|-n^{-1/2})^2
+ =\frac{(u_{ij}^2-n^{-1})^2}{(|u_{ij}|+n^{-1/2})^2}
+ \le n(u_{ij}^2-n^{-1})^2.
+\]
+Finally $3^{1/k}-1\sim(\log3)/k$.
+\end{proof}
+
+The closest flat sign array in this estimate need not have orthogonal
+rows. The estimate therefore proves neither a nearby Hadamard matrix
+nor Hadamard existence. It quantifies a necessary condition on local
+minima in tensor powers.
+
+\subsection{Complex flatness and collision entropy}
+For complex row-orthonormal $U$, put again $e=nF_4(U)/d$. The complex
+trace identity gives the slightly stronger necessary condition
+\[
+ e\le\left(\frac{2}{1+1/n^k}\right)^{1/k}<2^{1/k}
+\]
+when $U^{\otimes k}$ is locally minimizing. The same variance identity
+holds with $u_{ij}^2$ replaced by $|u_{ij}|^2$; replacing signs by
+arbitrary unit complex phases gives the corresponding distance bound.
+This follows by choosing the phase of each entry to match $u_{ij}$.
+
+There is a direct information-theoretic interpretation of both bounds.
+Define a probability distribution on the $dn$ entry positions by
+$P_{ij}=|u_{ij}|^2/d$, and let $Q_{ij}=1/(dn)$ be uniform. Its
+order-two R\'enyi divergence from uniform, here defined explicitly, is
+\[
+ D_2(P\Vert Q)=\log\sum_{ij}\frac{P_{ij}^2}{Q_{ij}}
+             =\log e.
+\]
+The entry distribution of $U^{\otimes k}$ is $P^{\otimes k}$, so
+$D_2(P^{\otimes k}\Vert Q^{\otimes k})=kD_2(P\Vert Q)$.
+Consequently finite-power local minimality forces
+\[
+ D_2(P\Vert Q)<\frac{\log3}{k}\quad\text{over }\mathbb R,
+ \qquad
+ D_2(P\Vert Q)<\frac{\log2}{k}\quad\text{over }\mathbb C.
+\]
+This expresses the curvature test as an entropy-deficit bound. It
+does not assert that an arbitrary nearly uniform entry distribution
+can be realized by a flat orthogonal matrix of the original size.

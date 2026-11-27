@@ -1,0 +1,92 @@
+% Source: round9/exchanges/exchanges.tex
+
+For four unbiased pairwise-independent sign bits, the free Walsh
+coefficients are $a\in\mathbb R^5$, comprising the four triple
+characters and the quadruple character. The feasible polytope is
+\[
+ P=\{a:1+v\cdot a\ge0\text{ for all }v\in\{\pm1\}^5,
+ \ \prod_i v_i=1\}.
+\]
+The map from bit strings to these sixteen $v$ is a bijection.
+The previously established vertex description is
+$\{\pm e_i\}_{i=1}^5\cup\{s/3:\prod_i s_i=1\}$.
+Its collision probability is $C(a)=(1+\|a\|^2)/16$.
+The ten first vertices give uniform eight-atom laws with collision
+$1/8$; the sixteen latter vertices have one atom of weight $1/6$,
+ten of weight $1/12$, and collision $7/72$.
+
+\begin{theorem}[A finite exact escape rule]
+At any weighted vertex $a=s/3$, choose any $i\in\{1,\ldots,5\}$
+and replace the law by the uniform vertex $b=s_i e_i$.
+This is an edge move of the feasible moment polytope, preserves all
+normalization, positivity and pairwise constraints, and changes
+twelve atom weights. It increases collision by exactly $1/36$.
+Along its feasible interpolation $a(t)=(1-t)a+tb$,
+\[
+ C(a(t))=\frac7{72}-\frac{t}{36}+\frac{t^2}{18}.
+\]
+It initially decreases collision, returns to the initial value at
+$t=1/2$, and reaches its minimum $3/32$ at $t=1/4$.
+\end{theorem}
+\begin{proof}
+The weighted vertex has five active inequalities, with normals
+$s$ multiplied coordinatewise by each sign vector having four minus
+signs. At $b$, all except the normal whose plus position is $i$
+remain active. These four normals are independent, so their common
+face has dimension at most one. The segment between the two distinct
+vertices lies in that face, hence is an edge. Its midpoint is a
+strict convex combination of two laws; no nonnegativity is lost.
+The weighted support has eleven atoms, the uniform support eight,
+and their intersection seven, leaving a twelve-atom union.
+All twelve weights change: the nonzero differences have magnitudes
+$1/24$, $1/12$ or $1/8$. Expanding
+$\|a(t)\|^2=5/9-4t/9+8t^2/9$ proves the formula.
+The edge is a circuit in the normalization/pairwise moment kernel:
+its support-restricted kernel has dimension one, and every entry of
+its direction on those twelve atoms is nonzero.
+\end{proof}
+
+\begin{theorem}[The unavoidable barrier is exactly $1/288$]
+Every continuous feasible path from a weighted vertex to any uniform
+vertex passes through a law of collision at most $3/32$.
+The preceding edge path attains this upper bound on its minimum, so
+it is optimal in the maximin sense. In particular no continuously
+collision-nondecreasing path escapes a weighted vertex to an optimum.
+\end{theorem}
+\begin{proof}
+We first show that every $a\in P$ with $|a_i|=1/2$ satisfies
+$\|a\|^2\le1/2$. Permute coordinates to take $i=1$.
+If $a_1=1/2$, write $y=(a_2,\ldots,a_5)$. The constraints with
+$v_1=-1$ use the eight four-dimensional odd-parity sign vectors.
+They consist of $\pm h_j$, where the four rows $h_j$ of $J_4-2I_4$
+are mutually orthogonal with squared norm four. Thus
+$|h_j\cdot y|\le1/2$, and
+\[
+ \|y\|^2=\frac14\sum_{j=1}^4(h_j\cdot y)^2\le1/4.
+\]
+If $a_1=-1/2$, use $v_1=+1$ instead; the even-parity four-sign
+vectors likewise consist of the signed rows of a Hadamard matrix
+of order four. The identical bound follows. More generally the
+argument shows $\|a\|^2\le a_i^2+(1-|a_i|)^2$.
+
+At a weighted vertex all five coordinate magnitudes are $1/3$;
+at a uniform vertex one is one. The intermediate value theorem
+forces some coordinate to cross magnitude $1/2$ along every
+continuous connecting path. At that point collision is at most
+$(1+1/2)/16=3/32$. The displayed edge path has minimum exactly that
+value. Since $7/72-3/32=1/288$, the claimed barrier follows.
+\end{proof}
+
+This is an actual nonlocal twelve-atom correction rule on the fully
+solved four-bit testbed. It demonstrates that strict local collision
+maxima can require a quantified loss before an exact feasible path
+reaches a better distribution. It does not assert that every higher
+dimensional moment polytope has such a bounded circuit or favorable
+endpoint. The four-dimensional Hadamard frame used to certify the
+barrier is supplied explicitly; no unknown-order construction is
+assumed or obtained.
+
+
+\paragraph{Formalization of the sharp barrier.} The Lean theorems \texttt{four\_\allowbreak bit\_\allowbreak all\_\allowbreak path\_\allowbreak barrier}, \texttt{four\_\allowbreak bit\_\allowbreak barrier\_\allowbreak sharpness}, and \texttt{four\_\allowbreak bit\_\allowbreak no\_\allowbreak monotone\_\allowbreak escape} prove the full second theorem for the sixteen translated weighted laws and ten uniform parity laws. The proof derives the Walsh parameters and collision identity from the actual cube moment constraints, bounds every half-coordinate crossing, and applies the intermediate value theorem. The explicit feasible interpolation attains collision $3/32$, hence the loss $1/288$ is exact. The exposed-edge and circuit assertions are formalized below.
+
+\paragraph{Formalization of the exact escape rule.} The Lean theorems \texttt{four\_\allowbreak bit\_\allowbreak escape\_\allowbreak exposed\_\allowbreak edge}, \texttt{four\_\allowbreak bit\_\allowbreak escape\_\allowbreak supported\_\allowbreak kernel}, \texttt{four\_\allowbreak bit\_\allowbreak escape\_\allowbreak circuit}, and \texttt{four\_\allowbreak bit\_\allowbreak exact\_\allowbreak escape\_\allowbreak rule} complete the first theorem as well. They prove exposure in the full probability polytope, identify the support-restricted moment kernel with the edge-direction line, establish its twelve-atom circuit support, and verify every stated collision value and inequality. All sixteen weighted translates and five aligned parity choices are covered.

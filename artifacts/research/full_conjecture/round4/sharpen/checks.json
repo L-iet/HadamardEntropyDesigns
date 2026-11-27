@@ -1,0 +1,27 @@
+{
+  "integerExponentChecks": [
+    {
+      "p": 3,
+      "firstNegativePower": 3,
+      "secondHessianEigenvalue": "93/625"
+    },
+    {
+      "p": 4,
+      "firstNegativePower": 2,
+      "secondHessianEigenvalue": "-4/625"
+    },
+    {
+      "p": 5,
+      "firstNegativePower": 2,
+      "secondHessianEigenvalue": "-3009/78125"
+    },
+    {
+      "p": 6,
+      "firstNegativePower": 2,
+      "secondHessianEigenvalue": "-2094/78125"
+    }
+  ],
+  "p201over100FirstNegativePower": 5,
+  "exactRootBracketVerified": true,
+  "directTwoCopyWitnessesVerified": true
+}

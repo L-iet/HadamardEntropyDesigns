@@ -1,0 +1,147 @@
+\section{Rational dilations of arithmetic frames and an exact completion obstruction}
+\label{sec:rational-dilations}
+
+Concatenation produces the partial matrices used in the arithmetic
+branch. It is useful to understand the remaining completion problem
+as an explicit orthogonal dilation. The elementary calculation below
+separates real or rational completion from the sign constraints.
+No novelty is claimed for the linear algebra or the quaternion
+sum-of-four-squares construction.
+
+Let $a<b$ be positive multiples of four, let $A$ be an order-$a$
+Hadamard matrix, and partition an order-$b$ Hadamard matrix as
+$H_b=\binom{B}{E}$, with $B$ having $a$ rows. Put $d=b-a$ and $n=a+b$.
+Then $P=[A\ B]$ is an $a$-row sign frame of width $n$.
+
+\begin{theorem}[An exact residual parameterization]
+\label{dil:parameterization}
+The real matrices
+\[
+ Z=\begin{pmatrix}A&B\\B^T&D\end{pmatrix},\qquad ZZ^T=nI_n,
+\]
+are exactly those with
+\[
+ \boxed{D=\frac1b\left(-B^TA^TB+E^TVE\right),\qquad
+                         VV^T=nI_d.}
+\]
+In particular a rational such $Z$ always exists. Its only possibly
+nonsign entries are in the lower-right $b$-square block.
+A sign-valued completion with this prescribed transpose corner
+exists if and only if some such $V$ makes every entry of $D$ equal
+to $+1$ or $-1$.
+\end{theorem}
+\begin{proof}
+The top block already has Gram $nI_a$. The remaining equations are
+\[
+ AB+BD^T=0,\qquad B^TB+DD^T=nI_b.
+\]
+Conjugate $D$ by the orthogonal matrix
+$W=\binom{B}{E}/\sqrt b$. The first equation forces
+\[
+ WDW^T=\begin{pmatrix}-A^T&F\\0&V\end{pmatrix}.
+\]
+The second requires its product with its transpose to be
+$\operatorname{diag}(aI_a,nI_d)$.
+Since $A^TA=aI_a$, this forces $FF^T=0$, hence $F=0$,
+and leaves exactly $VV^T=nI_d$. Transforming back gives the formula.
+
+For rational existence write $n=u_0^2+u_1^2+u_2^2+u_3^2$ by
+Lagrange's four-square theorem. The quaternion multiplication matrix
+\[
+ Q=\begin{pmatrix}
+ u_0&u_1&u_2&u_3\\
+ -u_1&u_0&-u_3&u_2\\
+ -u_2&u_3&u_0&-u_1\\
+ -u_3&-u_2&u_1&u_0
+ \end{pmatrix}
+\]
+satisfies $QQ^T=nI_4$. Since $d$ is a multiple of four, take $V$
+block diagonal with $d/4$ copies of $Q$. It is integral, and the
+displayed formula gives a rational $D$. The sign-valued criterion
+is then simply the definition of a Hadamard matrix with these
+prescribed three blocks.
+\end{proof}
+
+The free real parameter lies in a scaled $O(d)$, rather than $O(n)$.
+This is a reduction of the completion variables, not a proof of
+flatness. In particular rational scaled orthogonality supplies no
+general sign-rounding theorem.
+
+\subsection{A structured order-twenty obstruction and its smallest repair}
+Take $A=H_8$ in the standard Sylvester order, and let $B$ be the
+first eight rows of the normalized Paley type-II $H_{12}$ constructed
+from the prime five. The exact frame $[A\ B]$ has eight orthogonal
+rows of length twenty. It cannot be completed to a Hadamard matrix
+while preserving all eight rows.
+
+Here is a finite exhaustive certificate of that assertion.
+Its row span modulo five has dimension eight. The four-dimensional
+hyperbolic quotient therefore has exactly twelve self-dual
+extensions, the two rulings of the preceding pass's $6$-square grid.
+The checker reconstructs all twelve codes and exhausts each
+systematic sign assignment. Each code has exactly twelve sign
+classes, and those classes are real orthogonal because the
+prescribed eight rows fix their parity. Thus the exact maximum
+orthogonal frame preserving these eight rows is twelve, not twenty.
+The row residues of any full Hadamard completion would lie in one
+of these self-dual extensions, contradicting its sign count.
+
+Deleting one prescribed row does permit a full completion.
+The checker enumerates modular candidates orthogonal to the retained
+seven rows, makes an explicit self-dual neighbor pivot, and obtains
+twenty pairwise orthogonal sign classes preserving exactly seven of
+the eight originals. The certificate and row index are in
+\path{dilations/checks.json}. The minimum original-row loss for a
+full completion is consequently exactly one.
+This is a known-order example; it proves neither a uniform bounded
+repair theorem nor failure of the arithmetic construction at other orders.
+
+The continuous family is nonempty despite the sign obstruction.
+Using the quaternion parameters $(4,2,0,0)$ gives $VV^T=20I_4$.
+The checker verifies the full rational $20$-square Gram identity,
+with lower-right entries ranging from $-2$ to $8/3$ and
+\[
+                    \sum_{ij}D_{ij}^4-144=\frac{6976}{27}.
+\]
+Rounding its entries to signs does not produce a Hadamard matrix.
+
+\subsection{A quantitative flatness gap when the prescribed rows cannot complete}
+\begin{proposition}[A rounding threshold for real completions]
+\label{dil:flatness-gap}
+Let $n$ be a positive multiple of four and let $Z$ be any real matrix
+with $ZZ^T=nI_n$. Define
+\[
+ \Delta=\sum_{ij}(Z_{ij}^2-1)^2=\sum_{ij}Z_{ij}^4-n^2.
+\]
+If
+\[
+ \Delta<(\sqrt{n+2}-\sqrt n)^2,
+\]
+rounding each entry to a sign gives a Hadamard matrix.
+Consequently if some prescribed sign rows cannot be completed,
+every real completion preserving them has
+$\Delta\ge(\sqrt{n+2}-\sqrt n)^2>1/(n+2)$.
+\end{proposition}
+\begin{proof}
+Let $H$ be the entrywise sign rounding (choose $+1$ at zero)
+and write $F=H-Z$. The scalar inequality
+$(|z|-1)^2\le(z^2-1)^2$ gives $\|F\|_F\le\sqrt\Delta$.
+Since $\|Z\|_{\rm op}=\sqrt n$,
+\[
+ \|HH^T-nI_n\|_{\rm op}
+ \le2\sqrt n\,\sqrt\Delta+\Delta<2.
+\]
+The diagonal is zero, and every off-diagonal entry of this error
+is an even integer, since $n$ is even and $H$ is a sign matrix.
+The operator norm bounds every entry in magnitude, so all entries
+vanish. Prescribed sign rows remain unchanged by rounding.
+Finally
+$(\sqrt{n+2}-\sqrt n)^2
+=4/(\sqrt{n+2}+\sqrt n)^2>1/(n+2)$.
+\end{proof}
+
+For the order-twenty frame this gives an explicit positive quartic
+gap for every continuous completion preserving the eight rows.
+A continuous optimizer cannot remove that gap without changing
+prescribed rows. This pinpoints a real limitation of feeding an
+arithmetic partial frame into a monotone completion method.

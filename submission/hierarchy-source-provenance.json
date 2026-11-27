@@ -1,0 +1,166 @@
+{
+  "license": "Apache-2.0",
+  "author": "Joshua Mark",
+  "ORCID": "https://orcid.org/0009-0003-5905-2382",
+  "privatePilot": {
+    "status": "passed",
+    "scope": "Private FULL E08.01: actual all-level complex density hierarchy in every n>1; normalized pure maximally entangled nonflat real-orthogonal factors and exactly maximally mixed one-copy state. Not public snapshot or registry verification",
+    "leanKernelAccepted": true,
+    "nanodaAccepted": true,
+    "theoremNames": [
+      "EntropyDesigns.ExchangeableHierarchy.pureTensor_posSemidef",
+      "EntropyDesigns.ExchangeableHierarchy.pureTensor_trace",
+      "EntropyDesigns.ExchangeableHierarchy.pureTensor_consistent",
+      "EntropyDesigns.ExchangeableHierarchy.uniformHierarchy_posSemidef",
+      "EntropyDesigns.ExchangeableHierarchy.uniformHierarchy_reindex",
+      "EntropyDesigns.ExchangeableHierarchy.uniformHierarchy_trace",
+      "EntropyDesigns.ExchangeableHierarchy.uniformHierarchy_consistent",
+      "EntropyDesigns.ExchangeableHierarchy.randomSign_sum",
+      "EntropyDesigns.ExchangeableHierarchy.randomSign_pair_sum",
+      "EntropyDesigns.ExchangeableHierarchy.signedShift_orthogonal",
+      "EntropyDesigns.ExchangeableHierarchy.signedShift_has_zero",
+      "EntropyDesigns.ExchangeableHierarchy.signedShift_not_flat",
+      "EntropyDesigns.ExchangeableHierarchy.shiftVector_normalized",
+      "EntropyDesigns.ExchangeableHierarchy.shiftVector_reduced_state",
+      "EntropyDesigns.ExchangeableHierarchy.shiftEnsemble_one_copy",
+      "EntropyDesigns.ExchangeableHierarchy.full_shift_hierarchy",
+      "EntropyDesigns.ExchangeableHierarchy.every_dimension_false_positive"
+    ],
+    "definitionNames": [
+      "EntropyDesigns.ExchangeableHierarchy.tensorVector",
+      "EntropyDesigns.ExchangeableHierarchy.pureTensor",
+      "EntropyDesigns.ExchangeableHierarchy.traceFirst",
+      "EntropyDesigns.ExchangeableHierarchy.uniformHierarchy",
+      "EntropyDesigns.ExchangeableHierarchy.randomSign",
+      "EntropyDesigns.ExchangeableHierarchy.signedShift",
+      "EntropyDesigns.ExchangeableHierarchy.shiftVector",
+      "EntropyDesigns.ExchangeableHierarchy.shiftEnsemble",
+      "EntropyDesigns.ExchangeableHierarchy.shiftHierarchy",
+      "EntropyDesigns.ExchangeableHierarchy.FullShiftHierarchy"
+    ],
+    "sourceHashes": {
+      "HierarchyPilotChallenge.lean": "a0c615f3592db0b36a651ba623bf8566af81ed9c47d2b39703ab8669021a39b8",
+      "HierarchyPilotSolution.lean": "f90e63fb75f1d4f5d4057ea4749cecce5b0373954608e0262a4341a42543465e",
+      "comparator.json": "bbbcab684084f49cdfb1163de8bbbd783cb40efcb35f7f4f177265ec7554e6d6"
+    },
+    "exports": {
+      "challenge": "70b0379dffd75722e5ac4a4f5a7956608b98fa95fc7510d4088cee4226cbe876",
+      "solution": "47e97c9c567ec09185037a48cbe66007528a23ef7ccaa7562df7f9bd2386401b"
+    }
+  },
+  "privateCompileReceipts": [
+    {
+      "module": "HierarchyPilotChallenge",
+      "actualExitCode": 0,
+      "sourceSHA256": "a0c615f3592db0b36a651ba623bf8566af81ed9c47d2b39703ab8669021a39b8",
+      "oleanSHA256": "efb69e40c7151a055be5c0ecb44ec2fe16801600c9a83f23531dd948f454e1f4",
+      "supportBindings": {
+        "PureTensors": {
+          "actualExitCode": 0,
+          "sourceSHA256": "6f760b4c07f6c5c2883066b0647e62e9782b109dbb879dc84237565228fd863b",
+          "oleanSHA256": "7e3978d678290a734aaadb9c14fea11d50bcee55f3deff069632a4859fa08d96",
+          "axiomAudit": "'EntropyDesigns.ExchangeableHierarchy.pureTensor_posSemidef' depends on axioms: [propext, Classical.choice, Quot.sound]\n'EntropyDesigns.ExchangeableHierarchy.tensorVector_cons' depends on axioms: [propext, Classical.choice, Quot.sound]\n'EntropyDesigns.ExchangeableHierarchy.tensorVector_reindex' depends on axioms: [propext, Classical.choice, Quot.sound]\n'EntropyDesigns.ExchangeableHierarchy.pureTensor_trace' depends on axioms: [propext, Classical.choice, Quot.sound]\n'EntropyDesigns.ExchangeableHierarchy.pureTensor_consistent' depends on axioms: [propext, Classical.choice, Quot.sound]\n'EntropyDesigns.ExchangeableHierarchy.uniformHierarchy_posSemidef' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'EntropyDesigns.ExchangeableHierarchy.uniformHierarchy_reindex' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'EntropyDesigns.ExchangeableHierarchy.uniformHierarchy_trace' depends on axioms: [propext, Classical.choice, Quot.sound]\n'EntropyDesigns.ExchangeableHierarchy.uniformHierarchy_consistent' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n",
+          "scope": "Generic actual complex finite pure-tensor density hierarchy only. Signed-permutation ensemble, uniform one-copy state and full E08.01 remain pending."
+        },
+        "SignAverages": {
+          "actualExitCode": 0,
+          "sourceSHA256": "3f0a3c57fc3ffe7a7b47a35bc81464fb2d8498f2142648908f031c67f8c05cfb",
+          "oleanSHA256": "e5d94d547c82de073abecdacf4d2b5386c2635ab025ac8f92a03aa8df45eb21b",
+          "axiomAudit": "'EntropyDesigns.ExchangeableHierarchy.randomSign_mul_self' depends on axioms: [propext, Classical.choice, Quot.sound]\n'EntropyDesigns.ExchangeableHierarchy.flipSignAt_involutive' depends on axioms: [propext, Quot.sound]\n'EntropyDesigns.ExchangeableHierarchy.randomSign_flip_self' depends on axioms: [propext, Classical.choice, Quot.sound]\n'EntropyDesigns.ExchangeableHierarchy.randomSign_flip_other' depends on axioms: [propext, Classical.choice, Quot.sound]\n'EntropyDesigns.ExchangeableHierarchy.randomSign_sum' depends on axioms: [propext, Classical.choice, Quot.sound]\n'EntropyDesigns.ExchangeableHierarchy.randomSign_pair_sum_zero' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'EntropyDesigns.ExchangeableHierarchy.randomSign_pair_sum' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+          "scope": "Exact independent finite sign first/second averages only; actual signed-shift matrices and full E08.01 remain pending."
+        },
+        "SignedShifts": {
+          "actualExitCode": 0,
+          "sourceSHA256": "30d4841d816be036cd37237766a92320d00e6235458d23b5de1eff5dba09b3f4",
+          "oleanSHA256": "3e404c0ef2c3f56b50fef28104a360ab0cd37017bf08589a01c2ca57926c9f4e",
+          "axiomAudit": "'EntropyDesigns.ExchangeableHierarchy.signedShift_row_moment' depends on axioms: [propext, Classical.choice, Quot.sound]\n'EntropyDesigns.ExchangeableHierarchy.signedShift_gram' depends on axioms: [propext, Classical.choice, Quot.sound]\n'EntropyDesigns.ExchangeableHierarchy.signedShift_orthogonal' depends on axioms: [propext, Classical.choice, Quot.sound]\n'EntropyDesigns.ExchangeableHierarchy.signedShift_values' depends on axioms: [propext, Classical.choice, Quot.sound]\n'EntropyDesigns.ExchangeableHierarchy.signedShift_has_zero' depends on axioms: [propext, Classical.choice, Quot.sound]\n'EntropyDesigns.ExchangeableHierarchy.signedShift_squared_norm' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'EntropyDesigns.ExchangeableHierarchy.shift_indicator_sum' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+          "scope": "Original actual signed-shift orthogonal matrices and finite identities only. Normalized complex ensemble and full E08.01 remain pending."
+        },
+        "ShiftVectors": {
+          "actualExitCode": 0,
+          "sourceSHA256": "3577af2a0bf105a8cdec18e08a2332f4b4616afc1f91d521b862749c1437f148",
+          "oleanSHA256": "7449e545aa8de8ac49cf72cd271194da20dc87b8431e36021c118bb357d618f7",
+          "axiomAudit": "'EntropyDesigns.ExchangeableHierarchy.shiftVector_pair' depends on axioms: [propext, Classical.choice, Quot.sound]\n'EntropyDesigns.ExchangeableHierarchy.shiftVector_normalized' depends on axioms: [propext, Classical.choice, Quot.sound]\n'EntropyDesigns.ExchangeableHierarchy.shiftVector_reduced_state' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'EntropyDesigns.ExchangeableHierarchy.signedShift_not_flat' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+          "scope": "Actual normalized pure maximally entangled signed-shift factors with no flat orthogonal factor. Uniform one-copy ensemble and full E08.01 remain pending."
+        },
+        "ShiftAverages": {
+          "actualExitCode": 0,
+          "sourceSHA256": "ef03afd03d3f85583464ba7ce18880870ad46a911543aa6a01e1f5f1b1420ff6",
+          "oleanSHA256": "ff8263ea15ee135767df828ae4cd8d2c960beafa7552e78edf2fbe8aa80770a4",
+          "axiomAudit": "'EntropyDesigns.ExchangeableHierarchy.signedShift_entry_sum' depends on axioms: [propext, Classical.choice, Quot.sound]\n'EntropyDesigns.ExchangeableHierarchy.shiftEnsemble_entry_sum' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'EntropyDesigns.ExchangeableHierarchy.shiftEnsemble_one_copy' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+          "scope": "Actual finite signed-shift complex ensemble has exactly uniform one-copy state. Full all-level hierarchy packaging and E08.01 independent/public acceptance remain pending."
+        },
+        "HierarchyWitness": {
+          "actualExitCode": 0,
+          "sourceSHA256": "5fa7734d5c8c2631ac2d90b2bf9ea403a126cae9f895a20274622b5594d21dc7",
+          "oleanSHA256": "3714b972753f72d072d1a89ce5177407182582fd975ed983d85261acfcc47be8",
+          "axiomAudit": "'EntropyDesigns.ExchangeableHierarchy.full_shift_hierarchy' depends on axioms: [propext, Classical.choice, Quot.sound]\n'EntropyDesigns.ExchangeableHierarchy.every_dimension_false_positive' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n",
+          "scope": "Full mathematical E08.01 actual finite complex density hierarchy in every n>1, from actual nonflat orthogonals with normalized pure maximally entangled factors, all levels PSD/trace/consistent/symmetric and uniform one-copy state. Independent/public acceptance still required."
+        }
+      },
+      "baselineSHA256": "98bbd6c026b5c0ed62c2cefaf8062cf9c0de7fdefa727da3693d01a756981941"
+    },
+    {
+      "module": "HierarchyPilotSolution",
+      "actualExitCode": 0,
+      "sourceSHA256": "f90e63fb75f1d4f5d4057ea4749cecce5b0373954608e0262a4341a42543465e",
+      "oleanSHA256": "ef25699fcc1448d7b4dd3a9d12616a06ec4ba7d1e9d3386a475e822efcc605d9",
+      "supportBindings": {
+        "PureTensors": {
+          "actualExitCode": 0,
+          "sourceSHA256": "6f760b4c07f6c5c2883066b0647e62e9782b109dbb879dc84237565228fd863b",
+          "oleanSHA256": "7e3978d678290a734aaadb9c14fea11d50bcee55f3deff069632a4859fa08d96",
+          "axiomAudit": "'EntropyDesigns.ExchangeableHierarchy.pureTensor_posSemidef' depends on axioms: [propext, Classical.choice, Quot.sound]\n'EntropyDesigns.ExchangeableHierarchy.tensorVector_cons' depends on axioms: [propext, Classical.choice, Quot.sound]\n'EntropyDesigns.ExchangeableHierarchy.tensorVector_reindex' depends on axioms: [propext, Classical.choice, Quot.sound]\n'EntropyDesigns.ExchangeableHierarchy.pureTensor_trace' depends on axioms: [propext, Classical.choice, Quot.sound]\n'EntropyDesigns.ExchangeableHierarchy.pureTensor_consistent' depends on axioms: [propext, Classical.choice, Quot.sound]\n'EntropyDesigns.ExchangeableHierarchy.uniformHierarchy_posSemidef' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'EntropyDesigns.ExchangeableHierarchy.uniformHierarchy_reindex' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'EntropyDesigns.ExchangeableHierarchy.uniformHierarchy_trace' depends on axioms: [propext, Classical.choice, Quot.sound]\n'EntropyDesigns.ExchangeableHierarchy.uniformHierarchy_consistent' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n",
+          "scope": "Generic actual complex finite pure-tensor density hierarchy only. Signed-permutation ensemble, uniform one-copy state and full E08.01 remain pending."
+        },
+        "SignAverages": {
+          "actualExitCode": 0,
+          "sourceSHA256": "3f0a3c57fc3ffe7a7b47a35bc81464fb2d8498f2142648908f031c67f8c05cfb",
+          "oleanSHA256": "e5d94d547c82de073abecdacf4d2b5386c2635ab025ac8f92a03aa8df45eb21b",
+          "axiomAudit": "'EntropyDesigns.ExchangeableHierarchy.randomSign_mul_self' depends on axioms: [propext, Classical.choice, Quot.sound]\n'EntropyDesigns.ExchangeableHierarchy.flipSignAt_involutive' depends on axioms: [propext, Quot.sound]\n'EntropyDesigns.ExchangeableHierarchy.randomSign_flip_self' depends on axioms: [propext, Classical.choice, Quot.sound]\n'EntropyDesigns.ExchangeableHierarchy.randomSign_flip_other' depends on axioms: [propext, Classical.choice, Quot.sound]\n'EntropyDesigns.ExchangeableHierarchy.randomSign_sum' depends on axioms: [propext, Classical.choice, Quot.sound]\n'EntropyDesigns.ExchangeableHierarchy.randomSign_pair_sum_zero' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'EntropyDesigns.ExchangeableHierarchy.randomSign_pair_sum' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+          "scope": "Exact independent finite sign first/second averages only; actual signed-shift matrices and full E08.01 remain pending."
+        },
+        "SignedShifts": {
+          "actualExitCode": 0,
+          "sourceSHA256": "30d4841d816be036cd37237766a92320d00e6235458d23b5de1eff5dba09b3f4",
+          "oleanSHA256": "3e404c0ef2c3f56b50fef28104a360ab0cd37017bf08589a01c2ca57926c9f4e",
+          "axiomAudit": "'EntropyDesigns.ExchangeableHierarchy.signedShift_row_moment' depends on axioms: [propext, Classical.choice, Quot.sound]\n'EntropyDesigns.ExchangeableHierarchy.signedShift_gram' depends on axioms: [propext, Classical.choice, Quot.sound]\n'EntropyDesigns.ExchangeableHierarchy.signedShift_orthogonal' depends on axioms: [propext, Classical.choice, Quot.sound]\n'EntropyDesigns.ExchangeableHierarchy.signedShift_values' depends on axioms: [propext, Classical.choice, Quot.sound]\n'EntropyDesigns.ExchangeableHierarchy.signedShift_has_zero' depends on axioms: [propext, Classical.choice, Quot.sound]\n'EntropyDesigns.ExchangeableHierarchy.signedShift_squared_norm' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'EntropyDesigns.ExchangeableHierarchy.shift_indicator_sum' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+          "scope": "Original actual signed-shift orthogonal matrices and finite identities only. Normalized complex ensemble and full E08.01 remain pending."
+        },
+        "ShiftVectors": {
+          "actualExitCode": 0,
+          "sourceSHA256": "3577af2a0bf105a8cdec18e08a2332f4b4616afc1f91d521b862749c1437f148",
+          "oleanSHA256": "7449e545aa8de8ac49cf72cd271194da20dc87b8431e36021c118bb357d618f7",
+          "axiomAudit": "'EntropyDesigns.ExchangeableHierarchy.shiftVector_pair' depends on axioms: [propext, Classical.choice, Quot.sound]\n'EntropyDesigns.ExchangeableHierarchy.shiftVector_normalized' depends on axioms: [propext, Classical.choice, Quot.sound]\n'EntropyDesigns.ExchangeableHierarchy.shiftVector_reduced_state' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'EntropyDesigns.ExchangeableHierarchy.signedShift_not_flat' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+          "scope": "Actual normalized pure maximally entangled signed-shift factors with no flat orthogonal factor. Uniform one-copy ensemble and full E08.01 remain pending."
+        },
+        "ShiftAverages": {
+          "actualExitCode": 0,
+          "sourceSHA256": "ef03afd03d3f85583464ba7ce18880870ad46a911543aa6a01e1f5f1b1420ff6",
+          "oleanSHA256": "ff8263ea15ee135767df828ae4cd8d2c960beafa7552e78edf2fbe8aa80770a4",
+          "axiomAudit": "'EntropyDesigns.ExchangeableHierarchy.signedShift_entry_sum' depends on axioms: [propext, Classical.choice, Quot.sound]\n'EntropyDesigns.ExchangeableHierarchy.shiftEnsemble_entry_sum' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'EntropyDesigns.ExchangeableHierarchy.shiftEnsemble_one_copy' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+          "scope": "Actual finite signed-shift complex ensemble has exactly uniform one-copy state. Full all-level hierarchy packaging and E08.01 independent/public acceptance remain pending."
+        },
+        "HierarchyWitness": {
+          "actualExitCode": 0,
+          "sourceSHA256": "5fa7734d5c8c2631ac2d90b2bf9ea403a126cae9f895a20274622b5594d21dc7",
+          "oleanSHA256": "3714b972753f72d072d1a89ce5177407182582fd975ed983d85261acfcc47be8",
+          "axiomAudit": "'EntropyDesigns.ExchangeableHierarchy.full_shift_hierarchy' depends on axioms: [propext, Classical.choice, Quot.sound]\n'EntropyDesigns.ExchangeableHierarchy.every_dimension_false_positive' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n",
+          "scope": "Full mathematical E08.01 actual finite complex density hierarchy in every n>1, from actual nonflat orthogonals with normalized pure maximally entangled factors, all levels PSD/trace/consistent/symmetric and uniform one-copy state. Independent/public acceptance still required."
+        }
+      },
+      "baselineSHA256": "98bbd6c026b5c0ed62c2cefaf8062cf9c0de7fdefa727da3693d01a756981941"
+    }
+  ],
+  "privateAxiomAudit": "'EntropyDesigns.ExchangeableHierarchy.pureTensor_posSemidef' depends on axioms: [propext, Classical.choice, Quot.sound]\n'EntropyDesigns.ExchangeableHierarchy.pureTensor_trace' depends on axioms: [propext, Classical.choice, Quot.sound]\n'EntropyDesigns.ExchangeableHierarchy.pureTensor_consistent' depends on axioms: [propext, Classical.choice, Quot.sound]\n'EntropyDesigns.ExchangeableHierarchy.uniformHierarchy_posSemidef' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'EntropyDesigns.ExchangeableHierarchy.uniformHierarchy_reindex' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'EntropyDesigns.ExchangeableHierarchy.uniformHierarchy_trace' depends on axioms: [propext, Classical.choice, Quot.sound]\n'EntropyDesigns.ExchangeableHierarchy.uniformHierarchy_consistent' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'EntropyDesigns.ExchangeableHierarchy.randomSign_sum' depends on axioms: [propext, Classical.choice, Quot.sound]\n'EntropyDesigns.ExchangeableHierarchy.randomSign_pair_sum' depends on axioms: [propext, Classical.choice, Quot.sound]\n'EntropyDesigns.ExchangeableHierarchy.signedShift_orthogonal' depends on axioms: [propext, Classical.choice, Quot.sound]\n'EntropyDesigns.ExchangeableHierarchy.signedShift_has_zero' depends on axioms: [propext, Classical.choice, Quot.sound]\n'EntropyDesigns.ExchangeableHierarchy.signedShift_not_flat' depends on axioms: [propext, Classical.choice, Quot.sound]\n'EntropyDesigns.ExchangeableHierarchy.shiftVector_normalized' depends on axioms: [propext, Classical.choice, Quot.sound]\n'EntropyDesigns.ExchangeableHierarchy.shiftVector_reduced_state' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'EntropyDesigns.ExchangeableHierarchy.shiftEnsemble_one_copy' depends on axioms: [propext, Classical.choice, Quot.sound]\n'EntropyDesigns.ExchangeableHierarchy.full_shift_hierarchy' depends on axioms: [propext, Classical.choice, Quot.sound]\n'EntropyDesigns.ExchangeableHierarchy.every_dimension_false_positive' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n",
+  "moduleMapping": {
+    "PureTensors": "EntropyExchangeableHierarchy.PureTensors",
+    "SignAverages": "EntropyExchangeableHierarchy.SignAverages",
+    "SignedShifts": "EntropyExchangeableHierarchy.SignedShifts",
+    "ShiftVectors": "EntropyExchangeableHierarchy.ShiftVectors",
+    "ShiftAverages": "EntropyExchangeableHierarchy.ShiftAverages",
+    "HierarchyWitness": "EntropyExchangeableHierarchy.HierarchyWitness"
+  },
+  "baselineSourceHashes": "Choose a uniform permutation matrix $P$ and independent uniform row",
+  "scope": "FULL E08.01 all-dimension actual finite complex density hierarchy and nonflat signed-shift ensemble, exact uniform one-copy state and normalized pure maximally entangled factors. Six original Apache2 modules; mathlib Apache2 is the only external proof code. Existing classical quantum-information citations retained. E08.02 remains pending. No registry verification claimed."
+}

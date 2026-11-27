@@ -1,0 +1,87 @@
+\section{A quartic obstruction to a benign optimization landscape}
+The previous note ruled out a naive local-maximization argument for
+the entrywise one-norm. We now test the smoother alternative
+\[
+ Q(U)=\sum_{ij}u_{ij}^4\qquad(U\in O(n)).
+\]
+It satisfies $Q(U)\ge1$, with equality exactly when $\sqrt nU$ is a
+Hadamard matrix. The arbitrary-exponent framework is classical
+\cite{ArbitraryP}; the calculations below are independently derived,
+and no novelty claim is made.
+
+\begin{proposition}[An infinite family of strict quartic traps]
+Let $A=2J_5/5-I_5$, and let $B=H/\sqrt k$ for any Hadamard matrix
+$H$ of order $k$. Then $U=A\otimes B$ is a strict local minimum of
+$Q$ on $O(5k)$, with value $29/25$. In fact its Hessian obeys
+\[
+ \left.\frac{d^2}{dt^2}Q(Ue^{tX})\right|_{t=0}
+ \ge\frac4{5k}\|X\|_F^2
+ \qquad(X^{\mathsf T}=-X).
+\]
+For $k=4\cdot2^a$, these are nonglobal local minima at the admissible
+orders $20\cdot2^a$.
+\end{proposition}
+\begin{proof}
+For an orthogonal matrix $V$, entrywise differentiation gives
+\begin{align*}
+ \left.\frac{d}{dt}Q(Ve^{tX})\right|_{0}
+ &=4\operatorname{tr}((V^{\circ3})^{\mathsf T}VX),\\
+ \left.\frac{d^2}{dt^2}Q(Ve^{tX})\right|_{0}
+ &=12\sum_{ij}v_{ij}^2(VX)_{ij}^2
+   +4\operatorname{tr}((V^{\circ3})^{\mathsf T}VX^2).
+\end{align*}
+At the claimed $U$, the symmetric matrix
+\[
+ M=U^{\mathsf T}U^{\circ3}
+  =\left(\frac7{25}I_5-\frac6{125}J_5\right)\otimes\frac1kI_k
+\]
+has eigenvalues $1/(25k)$ and $7/(25k)$. Thus $U$ is stationary.
+Its smallest squared entry is $4/(25k)$. Since
+$\|UX\|_F=\|X\|_F$ and $X^2=-X^{\mathsf T}X$,
+\[
+ Q''(0)\ge\left(\frac{48}{25k}-\frac{28}{25k}\right)\|X\|_F^2
+ =\frac4{5k}\|X\|_F^2.
+\]
+The positive definite tangent Hessian proves strict local minimality.
+Direct summation gives $Q(A)=29/25$ and $Q(B)=1$, hence the stated
+value. A Hadamard matrix of order $20$ is furnished by the certified
+length-five Goethals--Seidel witness; tensoring it with the Sylvester
+matrix of order $2^a$ gives a point of value one at the same order.
+Consequently these local minima are not global.
+\end{proof}
+
+The obstruction is uniform, not an inference from numerical Hessian
+eigenvalues. The exact script checks the algebra at orders $20,40,80$.
+It shows that changing the one-norm objective to the fourth-power
+objective does not by itself remove the false-minimum problem.
+
+\begin{proposition}[Coordinate rotations can miss a descent direction]
+At order $28$, let
+$U=(2J_7/7-I_7)\otimes(H_4/2)$. This matrix is stationary for $Q$.
+Every single Givens rotation has strictly positive second derivative,
+but a joint tangent direction has negative second derivative.
+\end{proposition}
+\begin{proof}
+For $A_n=2J_n/n-I_n$, direct substitution in the Hessian formula yields
+\[
+ \left.\frac{d^2}{dt^2}Q(A_ne^{tX})\right|_0
+ =-\frac{4(n-6)}n\|X\|_F^2
+  +\frac{8(n^2-16)}{n^3}\|X\one\|^2.
+\]
+Take $n=7$. A single Givens direction in the tensor matrix has
+curvature $34/343$ when its two coordinates belong to distinct
+order-seven blocks, and $412/343$ when they belong to the same block.
+Both are positive. Set
+$X_0=E_{01}+E_{12}-E_{02}$, where
+$E_{ij}=e_ie_j^{\mathsf T}-e_je_i^{\mathsf T}$. Then
+$X_0\one=0$ and $\|X_0\|_F^2=6$. The joint direction
+$X=X_0\otimes I_4$ gives curvature $-24/7$, since the fourth-power
+objective of the normalized Hadamard tensor factor is one.
+All values are also checked by the exact full tangent Hessian script.
+\end{proof}
+Thus testing all coordinate-pair second derivatives is not a sufficient
+second-order test even at an admissible order. This matters when
+importing coordinate descent or block-rotation methods from numerical
+optimization. The first proposition supplies genuine strict minima;
+the second supplies a different failure, namely a saddle hidden from
+every individual coordinate rotation.

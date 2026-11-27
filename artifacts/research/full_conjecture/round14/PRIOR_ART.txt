@@ -1,0 +1,34 @@
+ATTRIBUTION AND SCOPE
+
+Fourth-cycle phase invariants and complex Hadamard equivalence:
+Tadej and Zyczkowski, A concise guide to complex Hadamard matrices:
+https://arxiv.org/abs/quant-ph/0512154
+The finite dephasing average and rounding thresholds are independently
+derived here. Priority for these elementary estimates is unestablished.
+
+Conference normalization and orthogonal-design background:
+Geramita and Verner, Orthogonal Designs with Zero Diagonal (1976):
+https://doi.org/10.4153/CJM-1976-028-3
+The conference normalization theorem is an explicit input where used;
+it is not claimed as a new result.
+
+Hadamard energy minimization and local traps are established topics:
+Finding a Hadamard Matrix by Simulated Quantum Annealing (2018):
+https://pmc.ncbi.nlm.nih.gov/articles/PMC7512635/
+The general phenomenon of local trapping is not claimed new.
+The branch records exact finite witnesses and tensor formulas.
+
+The Bloch-sphere representation of two-dimensional quantum pure
+states is classical. A residual two-dimensional projection is used
+as a completion criterion, not as an all-order existence theorem.
+Additional primary sources appear in the branch proof.
+The real codimension-four completion input is due to Marshall Hall.
+Verheiden's primary dissertation describes this input and its
+codimension-seven extension:
+https://thesis.caltech.edu/2899/
+The automatic quaternary two-column completion consequence must not
+be advertised as an independent replacement for that classical input.
+
+This pass does not establish bibliographic novelty or mathematical
+priority. Public mathematical papers were consulted; no implementation
+from them was copied. All certificate arithmetic is independently coded.

@@ -1,0 +1,188 @@
+\section{Parity witnesses, weighted repair budgets, and their exact limit}
+\label{sec:parity-repair}
+
+The odd-block argument extends to arbitrary integer witnesses, including
+overlapping or unequal odd blocks. The extension supplies explicit
+constraints on \emph{which} rows a repair must remove. Saturated-lattice
+duality also identifies exactly what these certificates detect: absence
+of an all-odd integer kernel vector. A certified order-twenty-four
+example shows why that arithmetic test still falls short of sign
+extension. Arithmetic completion is a classical subject; a relevant
+primary source is Verheiden's thesis,
+\emph{Arithmetical Properties of Combinatorial Matrices} (1978),
+\url{https://thesis.caltech.edu/2899/}, and his article
+\emph{Integral and rational completions of Hadamard matrices},
+\url{https://doi.org/10.1016/0097-3165(80)90028-X}.
+The results below have self-contained proofs; no novelty claim is made.
+
+\begin{theorem}[Weighted odd-witness budget]
+Let $P$ have $r$ orthogonal sign rows $p_1,\ldots,p_r$ of length $N$,
+and let $f\in\mathbb Z^N$ have odd coordinate sum. Set
+\[
+ R=NI_N-P^{\mathsf T}P,\qquad
+ C_f=f^{\mathsf T}Rf
+     =N\|f\|^2-\sum_i(p_i\cdot f)^2\ge0.
+\]
+If rows indexed by $D$ are deleted and $L$ mutually orthogonal sign
+rows are inserted, orthogonal also to all retained rows, then
+\[
+ L\le C_f+\sum_{i\in D}(p_i\cdot f)^2.
+\]
+Consequently full completion requires
+\[
+ \sum_{i\in D}\bigl((p_i\cdot f)^2-1\bigr)
+       \ge N-r-C_f.
+\]
+Every odd-sum integer $f$ gives such an inequality, so a collection
+of witnesses gives simultaneous weighted constraints on row selection.
+\end{theorem}
+\begin{proof}
+Bessel's inequality for orthogonal rows of squared norm $N$ bounds
+the sum of squared inner products with $f$ by $N\|f\|^2$.
+For every sign row $v$, $v\cdot f\equiv\sum_j f_j\equiv1\pmod2$,
+so $(v\cdot f)^2\ge1$. Subtracting the contributions of the retained
+rows proves the first inequality. A full completion inserts
+$L=N-r+|D|$, giving the second.
+\end{proof}
+
+For a signed indicator $f$ of an odd block of size $s$, the constant
+is $C_f=Ns-\sum_i(p_i\cdot f)^2$. The theorem applies independently
+to every block, with no equality-of-sizes or disjointness assumption.
+If $f$ lies in the rational row span of $P$, then $C_f=0$ and no
+additional sign row exists. The budget then depends only on the
+deleted rows' squared overlaps with the witness.
+
+\begin{proposition}[The first possible parity deficit is eight]
+Assume $4\mid N$ and write $d=N-r$. For every odd-sum integer $f$,
+\[
+ C_f\equiv d\pmod8.
+\]
+Thus for $0\le d\le7$ these witness inequalities automatically give
+$C_f\ge d$; they cannot certify failure of full completion without
+row deletion. At $d=8$, the value $C_f=0$ is possible.
+\end{proposition}
+\begin{proof}
+Every $p_i\cdot f$ is odd, hence its square is $1$ modulo $8$.
+Also $\|f\|^2$ is odd, so $N\|f\|^2\equiv N\pmod8$ because
+$4\mid N$. Therefore $C_f\equiv N-r\pmod8$.
+Nonnegativity gives the remaining assertion. The repeated $4\times12$
+seed supplies the value zero at defect eight. This congruence alone
+does not prove the classical seven-row completion theorem.
+\end{proof}
+
+\subsection{What the certificate detects exactly}
+\begin{theorem}[Saturated-lattice alternative]
+For any rational row space $V\subseteq\mathbb Q^N$, exactly one of
+the following holds:
+\begin{enumerate}
+\item $V\cap\mathbb Z^N$ contains a vector with odd coordinate sum;
+\item $V^\perp\cap\mathbb Z^N$ contains a vector all of whose
+coordinates are odd.
+\end{enumerate}
+For a partial Hadamard row space, the first case supplies a zero-budget
+witness. The second case supplies arithmetic parity feasibility,
+but does not assert a sign vector exists.
+\end{theorem}
+\begin{proof}
+Put $\Lambda=V\cap\mathbb Z^N$ and
+$K=V^\perp\cap\mathbb Z^N$. Both are primitive: an integer multiple
+lying in the relevant rational subspace implies the original vector
+lies there. A primitive subgroup of $\mathbb Z^N$ has a basis
+extendible to an integer unimodular basis, so reduction modulo $2$
+preserves its rank. If $\dim V=r$, the images $\bar\Lambda,\bar K$
+in $\mathbb F_2^N$ have dimensions $r,N-r$ and are orthogonal.
+Thus $\bar K=\bar\Lambda^\perp$. The all-ones vector lies in
+$\bar K$ exactly when every vector of $\bar\Lambda$ has even
+coordinate sum. This is precisely the stated alternative.
+\end{proof}
+
+There is a simple exact algorithm for this alternative. Starting with
+an independent integer row basis, find a dependence modulo $2$.
+The corresponding sum of basis rows has even entries; divide it by
+$2$ and replace any participating row. Rational span is preserved,
+and the squared covolume decreases by a factor $4$. As it stays a
+positive integer, the procedure terminates with independent reductions
+modulo $2$. Its row lattice has odd index in the saturated lattice,
+so it has the same reduction modulo $2$. An odd-sum basis row is
+therefore a complete certificate for the first case. Otherwise select
+a full-rank odd minor, set free kernel coordinates to $1$, and solve
+for the pivot coordinates. Their denominators are odd, and clearing
+those denominators produces the all-odd integer kernel vector.
+The accompanying checker implements this procedure from scratch.
+
+\subsection{Sparse certificates beyond uniform repeated seeds}
+For the earlier terminal $16\times24$ frame, encoded by row masks
+\[
+\begin{gathered}
+0,16773120,16519104,10359454,7684730,5820908,9389414,1547504,\\
+6736278,11838780,3701846,13790378,10646512,2963882,12892774,5974836,
+\end{gathered}
+\]
+with bit $j$ indicating entry $-1$ at zero-based coordinate $j$,
+there are two particularly short witnesses:
+\[
+ f=e_2+e_8+e_{19},\qquad g=e_9-e_{10}+e_{22}.
+\]
+Direct integer calculation gives $C_f=C_g=0$ and
+$\|f\|^2=\|g\|^2=3$. This certifies unextendibility without
+enumerating candidate sign rows. The row indices having absolute
+overlap $3$ are respectively
+\[
+ A=\{0,4,5,6,7,11,15\},\qquad
+ B=\{4,6,7,9,10,14,15\};
+\]
+all other overlaps have magnitude $1$. Any augmenting exchange must
+delete a row from each of $A$ and $B$. These necessary conditions
+do not by themselves establish the previously certified three-row
+exchange barrier, but they give concrete filters for a repair search.
+
+There is also a positive case where the weighted budget selects an
+optimal constructive route. In the repeated order-twelve tensor
+family after $k$ fibers have been repaired, a triple-indicator
+witness has zero budget. Original repeated rows have overlap
+magnitude $3$, while installed affine-plane rows have overlap
+magnitude $1$. Deleting $a$ original rows and $b$ installed rows
+can therefore insert at most $9a+b$ rows. Net growth is at most
+$8a$, so deleting only installed rows cannot augment the frame.
+Full completion requires at least $t-k$ more original-row deletions,
+regardless of how many installed rows are removed. The explicit fiber
+repair attains this bound: sacrifice one original row and insert the
+nine words $(x,y,x+y,x-y)$ over $\mathbb F_3$, interpreted as one
+negative position per triple. This supplies a certified choice of
+which class of rows to preserve during constructive repair.
+
+\subsection{Odd integer feasibility still misses a Euclidean gap}
+The lattice alternative has an explicit limitation. Consider the
+$12\times24$ partial frame with row masks
+\[
+\begin{gathered}
+0,16773120,16519104,9656012,13838682,14783914,\\
+1944718,11409518,15230494,5921970,3487346,13018356.
+\end{gathered}
+\]
+Its rows are orthogonal. Its integer kernel contains
+\[
+\begin{split}
+v={}&(-1,-1,3,-1,1,1,-3,-1,1,1,-1,1,\\
+&1,-1,-1,-1,1,-1,1,-1,1,-1,1,1),
+\end{split}
+\]
+with $\|v\|^2=40$. Nevertheless its odd integer kernel has no vector
+of squared norm $24$ or $32$, so its shortest odd vector has squared
+norm exactly $40$.
+
+Here this last assertion is a finite exact certificate. Rational
+elimination selects twelve free coordinates. Enumerating their
+$2^{11}=2048$ sign assignments up to global negation rules out norm
+$24$. A norm-$32$ all-odd vector would have exactly one coordinate
+of magnitude $3$ and every other coordinate of magnitude $1$.
+If that exceptional coordinate is a pivot, it is covered by the same
+2048 assignments. If it is free, there are another
+$12\cdot2^{11}=24576$ assignments to check. None gives norm $32$.
+Every all-odd vector has squared norm congruent to $24$ modulo $8$,
+and the displayed vector attains the next possibility, $40$.
+The verifier performs all these checks with exact integer and rational
+arithmetic. Thus the frame has no sign extension despite passing the
+all-odd kernel feasibility test. Real progress beyond parity requires
+controlling the short-vector problem, not merely clearing denominator
+or congruence obstructions.

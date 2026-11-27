@@ -1,0 +1,300 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,mathtools,hyperref}
+\setlength{\emergencystretch}{3em}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\newcommand{\R}{\mathbb R}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\Sym}{\operatorname{Sym}}
+\newcommand{\Skew}{\operatorname{Skew}}
+\title{Tensor powers destabilize nonflat critical points\\of entrywise orthogonal $p$-energies}
+\author{Joshua Mark\thanks{ORCID: \href{https://orcid.org/0009-0003-5905-2382}{0009-0003-5905-2382}. AI tools assisted with research, derivation, adversarial review, computation and exposition.}}
+\date{20 November 2026 --- research draft; priority not established}
+\begin{document}
+\maketitle
+\begin{abstract}
+For every finite real $p>2$, we prove that a nonflat critical point of
+the entrywise $p$-energy on the real orthogonal group acquires a negative
+tangent-Hessian direction at some finite self-tensor power. The proof
+uses symmetric and skew-symmetric trace averages and strict Chebyshev
+inequality. It gives an explicit bound on the number of tensor factors
+and a factored descent direction. Consequently the orthogonal matrices
+whose every tensor power is a local minimum are exactly the scaled
+Hadamard matrices. This does not prove that such matrices exist in
+every admissible dimension: tensor lifting changes the dimension, and
+no descent back to the original dimension is established. Novelty is
+not asserted pending a comprehensive literature review.
+\end{abstract}
+
+\section{Main statement}
+For $n\ge2$ and $2<p<\infty$, define
+\[
+ F_p(U)=\sum_{i,j=1}^n |u_{ij}|^p\qquad(U\in O(n)).
+\]
+Call $U$ flat if all its entries have magnitude $1/\sqrt n$.
+Flatness is equivalent to $\sqrt nU$ being a Hadamard matrix.
+Jensen's inequality and $\sum u_{ij}^2=n$ give
+\[
+ F_p(U)\ge n^{2-p/2},
+\]
+with equality exactly when $U$ is flat. Entrywise norm optimization
+and its differential framework have been studied in the almost-Hadamard
+literature~\cite{BN}. Our assertion concerns stability under arbitrary
+\emph{self-tensor powers}, not just the landscape at one fixed order.
+
+\begin{theorem}[Finite tensor destabilization]\label{thm:main}
+Let $U\in O(n)$ be a nonflat critical point of $F_p$. Put
+\[
+ q=\sum_{ij}|u_{ij}|^p,\qquad
+ r=\sum_{ij}|u_{ij}|^{p-2},\qquad
+ b=\frac{r+q}{(n+1)q}.
+\]
+Then $0<b<1$. For some positive integer $k$, the critical point
+$U^{\otimes k}\in O(n^k)$ has a nonzero skew-symmetric tangent
+generator $X$ such that
+\[
+ \left.\frac{d^2}{dt^2}F_p(U^{\otimes k}e^{tX})\right|_{t=0}<0.
+\]
+One may take
+\begin{equation}\label{eq:kbound}
+ k=2+\left\lceil\frac{\log(p-1)}{\log(1/b)}\right\rceil.
+\end{equation}
+The direction can be chosen in the factored form
+$X=Y\otimes Z^{\otimes(k-1)}$, with $Y$ skew-symmetric and $Z$
+symmetric. Both may be chosen from elementary matrix bases.
+\end{theorem}
+
+The result allows zero entries. The function $|x|^p$ is $C^2$ on the
+whole real line for every $p>2$, with second derivative zero at zero.
+No spectral positivity assumption on the critical-point matrix below
+is needed.
+
+\section{Derivative and trace identities}
+Write
+\[
+ W=\bigl(|u_{ij}|^{p-2}u_{ij}\bigr)_{ij},\qquad M=U^{\mathsf T}W.
+\]
+Differentiation in skew directions shows that criticality is equivalent
+to $M$ being symmetric. Its trace is $q$.
+For any real $n\times n$ matrix $V$, set
+\[
+ T(V)=\sum_{ij}|u_{ij}|^{p-2}(UV)_{ij}^2,\qquad
+ S(V)=\tr(M V^{\mathsf T}V).
+\]
+We always have $T(V)\ge0$, but individual values of $S$ may be negative.
+For a skew-symmetric $V$,
+\begin{equation}\label{eq:hessian}
+ \left.\frac{d^2}{dt^2}F_p(Ue^{tV})\right|_0
+ =p\bigl((p-1)T(V)-S(V)\bigr).
+\end{equation}
+Indeed the unreduced second derivative is
+$p(p-1)\sum |u_{ij}|^{p-2}(UV)_{ij}^2+
+p\tr(W^{\mathsf T}UV^2)$; symmetry of $M$ and
+$V^2=-V^{\mathsf T}V$ give the formula.
+
+\begin{lemma}[Symmetric and skew trace sums]\label{lem:traces}
+Let $\mathcal B_+$ and $\mathcal B_-$ be Frobenius-orthonormal bases
+of the symmetric and skew-symmetric matrices respectively. Then
+\begin{align*}
+ \sum_{Z\in\mathcal B_+}T(Z)&=(r+q)/2,&
+ \sum_{Z\in\mathcal B_+}S(Z)&=(n+1)q/2,\\
+ \sum_{Y\in\mathcal B_-}T(Y)&=(r-q)/2,&
+ \sum_{Y\in\mathcal B_-}S(Y)&=(n-1)q/2.
+\end{align*}
+\end{lemma}
+\begin{proof}
+For the unit row vector $u_i$ of $U$, the squared norms of the
+symmetric and skew projections of $u_i^{\mathsf T}e_j^{\mathsf T}$
+are $(1+u_{ij}^2)/2$ and $(1-u_{ij}^2)/2$. Equivalently, direct
+summation over $E_{ii}$ and $(E_{ij}\pm E_{ji})/\sqrt2$ gives
+\[
+ \sum_{Z\in\mathcal B_\pm}(UZ)_{ij}^2
+ =\frac{1\pm u_{ij}^2}{2}.
+\]
+Multiply by $|u_{ij}|^{p-2}$ and sum to obtain the $T$ identities.
+The same elementary bases satisfy
+\[
+ \sum_{Z\in\mathcal B_\pm}Z^{\mathsf T}Z
+ =\frac{n\pm1}{2}I_n.
+\]
+Taking their trace product with $M$ proves the $S$ identities.
+\end{proof}
+
+\begin{lemma}[Strict moment inequality]\label{lem:cheb}
+For a nonflat $U$, $q\le r<nq$.
+\end{lemma}
+\begin{proof}
+The first inequality follows from $|u_{ij}|\le1$. For the second,
+list the $n^2$ squared entries as $x_1,\ldots,x_{n^2}$ and put
+$a=(p-2)/2>0$. Then $\sum x_i=n$, $\sum x_i^a=r$, and
+$\sum x_i^{a+1}=q$. Strict Chebyshev inequality follows directly from
+\[
+ n^2q-nr
+ =\sum_{i<j}(x_i-x_j)(x_i^a-x_j^a)>0.
+\]
+Every summand is nonnegative; at least one is positive because the
+$x_i$ are not all equal. This argument includes zero entries.
+\end{proof}
+
+\begin{lemma}[Ratio selection without positivity of every denominator]
+Suppose finitely many pairs $(T_i,S_i)$ have $T_i\ge0$ and
+$\sum S_i>0$. Some $i$ has $S_i>0$ and
+\[
+ T_i/S_i\le\frac{\sum T_j}{\sum S_j}.
+\]
+\end{lemma}
+\begin{proof}
+Set the displayed aggregate ratio to $c\ge0$. If all positive-$S_i$
+terms had $T_i>cS_i$, while nonpositive-$S_i$ terms satisfy
+$T_i\ge0\ge cS_i$, summing would contradict the definition of $c$.
+\end{proof}
+
+\section{Proof of tensor destabilization}
+Apply the trace sums and ratio-selection lemma to choose $Y\in
+\mathcal B_-$ and $Z\in\mathcal B_+$ with positive $S$-values and
+\[
+ \alpha:=\frac{T(Y)}{S(Y)}
+ \le\frac{r-q}{(n-1)q}<1,\qquad
+ \beta:=\frac{T(Z)}{S(Z)}\le b<1.
+\]
+The upper bound on $\alpha$ is nonnegative, and the choices exist
+because $n\ge2$ and $q>0$.
+
+At the tensor power, $W_k=W^{\otimes k}$ and $M_k=M^{\otimes k}$.
+Hence $U^{\otimes k}$ is still critical. For
+$X=Y\otimes Z^{\otimes(k-1)}$, which is nonzero and skew-symmetric,
+tensor factorization of the sums and traces gives
+\[
+ T_k(X)=T(Y)T(Z)^{k-1},\qquad
+ S_k(X)=S(Y)S(Z)^{k-1}.
+\]
+Its Hessian is therefore
+\begin{equation}\label{eq:tensorhessian}
+ pS(Y)S(Z)^{k-1}
+ \bigl((p-1)\alpha\beta^{k-1}-1\bigr).
+\end{equation}
+If $\alpha=0$, $k=1$ already works. Otherwise, choose $k$ as in
+\eqref{eq:kbound}. Since $\alpha<1$, $\beta\le b<1$, and
+$k-1>\log(p-1)/\log(1/b)$, the bracket is negative. This proves
+Theorem~\ref{thm:main}.
+
+\begin{corollary}[Characterization by tensor stability]
+For $p>2$, the following are equivalent for $U\in O(n)$:
+\begin{enumerate}
+\item Every positive self-tensor power of $U$ is a local minimum of
+the entrywise $p$-energy in its ambient orthogonal group.
+\item Every positive self-tensor power is critical with positive
+semidefinite tangent Hessian.
+\item $U$ is flat, so $\sqrt nU$ is a Hadamard matrix.
+\end{enumerate}
+\end{corollary}
+\begin{proof}
+The first implication is the second-order necessary condition. The
+theorem proves the second implication to flatness. If $U$ is flat,
+every tensor power is flat and attains the Jensen lower bound globally.
+\end{proof}
+
+\begin{corollary}[Strict eventual submultiplicativity]
+Let $m_p(n)=\min_{U\in O(n)}F_p(U)$. If there is no Hadamard matrix
+of order $n$, then for some positive $k$,
+\[
+ m_p(n^k)<m_p(n)^k.
+\]
+Equivalently, equality for every $k$ occurs precisely when order $n$
+admits a Hadamard matrix.
+\end{corollary}
+\begin{proof}
+Compactness gives a minimizer $U$, which is critical and nonflat under
+the hypothesis. The negative Hessian direction strictly decreases
+$F_p$ near $U^{\otimes k}$, whose value is $m_p(n)^k$. Conversely a
+flat matrix and all its tensor powers attain the Jensen lower bounds.
+\end{proof}
+
+\begin{corollary}[Rectangular row-orthonormal frames]
+The tensor-destabilization theorem and tensor-stability characterization
+also hold on
+\[
+ \operatorname{St}(d,n)=\{U\in\R^{d\times n}:UU^{\mathsf T}=I_d\},
+ \qquad 1\le d\le n,\quad n\ge2.
+\]
+Here flat means every entry has magnitude $1/\sqrt n$, so the scaled
+matrix is a rectangular partial Hadamard matrix. The tensor powers have
+shape $d^k\times n^k$, and the same bound~\eqref{eq:kbound} uses the
+number $n$ of columns.
+\end{corollary}
+\begin{proof}
+Right multiplication by $O(n)$ acts transitively on this Stiefel
+manifold, so criticality is again equivalent to symmetry of the
+$n\times n$ matrix $M=U^{\mathsf T}W$. All rows still have norm one,
+so both trace-sum identities are unchanged. For strict Chebyshev, there
+are now $dn$ squared entries summing to $d$; the same pair sum is
+$dnq-dr>0$ unless every entry is flat. Thus $r<nq$ still holds and
+the ratio and tensor arguments apply without change. Positive
+$S(Y),S(Z)$ ensure that $UY$ and $UZ$ are nonzero. Indeed, if
+$UV=0$ for a symmetric or skew $V$, then $VU^{\mathsf T}=0$ and
+$V$ annihilates the range of $M$, implying $S(V)=0$.
+The factored actual tangent is therefore nonzero. Finally flat row frames minimize the energy
+globally, by Jensen separately on each unit row, with value
+$d n^{1-p/2}$.
+\end{proof}
+
+\section{A local minimum that becomes unstable after two copies}
+For $p=4$, let $A=2J_5/5-I_5$. The earlier note proves that
+$A\otimes(H_k/\sqrt k)$ is a strict local minimum with value $29/25$
+for any Hadamard factor. At $A$,
+\[
+ M=\frac7{25}I_5-\frac6{125}J_5.
+\]
+Let $Y=E_{01}+E_{12}-E_{02}$ be a skew triangle circulation. Let $Z$
+be symmetric, with $Z_{01}=1$, $Z_{12}=-1$, $Z_{23}=1$,
+$Z_{30}=-1$, the transposed entries equal, and all other entries zero.
+Both have row sums zero and zero diagonal, and
+$\|Y\|_F^2=6$, $\|Z\|_F^2=8$. Thus
+\[
+ T(Y)=\tfrac4{25}\|Y\|_F^2,\quad
+ S(Y)=\tfrac7{25}\|Y\|_F^2,
+\]
+with the same identities for $Z$. Consequently at $A\otimes A$ the
+direction $Y\otimes Z$ has quartic curvature
+\[
+ 4\cdot\frac{49}{625}\cdot48
+ \left(3\frac{16}{49}-1\right)=-\frac{192}{625}.
+\]
+Tensoring with a flat factor preserves this displayed curvature when
+the tangent generator is tensored with an identity. In particular a
+strict local minimum at order $20$ becomes unstable after taking its
+tensor square at order $400$. This is consistent with stability under
+flat tensor factors: self-tensoring inserts a second nonflat factor.
+
+\section{Scope, checks and priority}
+The proof is uniform in all real finite $p>2$, not a claim inferred
+from numerical Hessian spectra. The accompanying standard-library
+Python checker verifies the trace formulas, stationarity, ratio choices,
+and factored negative curvatures with exact rational arithmetic for
+integer exponents $p=3,4,5,6,8$ and several critical matrices. It also
+checks the two-copy curvature directly at order $25$.
+
+A separate mathematical review checked the trace formulas, strictness
+with zeros, possibly indefinite $M$, and the tensor factorization.
+This is not a Lean proof or a substitute for external peer review.
+Targeted primary-literature searches on almost-Hadamard matrices,
+tensor stability, local norm extrema and tensor-power descent did not
+locate this precise statement. That does not establish priority.
+
+Most importantly, this result does not show that a tensor-stable local
+minimum exists in any prescribed dimension. Tensor descent occurs in
+$O(n^k)$, and no mechanism here transfers it back to $O(n)$. Therefore
+the characterization is an optimization result and a research lead,
+not a proof of the Hadamard conjecture.
+
+\begin{thebibliography}{1}
+\bibitem{BN} T. Banica and I. Nechita,
+\emph{Almost Hadamard matrices: the case of arbitrary exponents},
+Discrete Appl. Math. 161 (2013), 2367--2379.
+\url{https://arxiv.org/abs/1211.2669}.
+\end{thebibliography}
+\end{document}

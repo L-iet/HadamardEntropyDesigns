@@ -1,0 +1,108 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,hyperref}
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}[theorem]{Corollary}
+\newcommand{\tr}{\operatorname{tr}}
+\title{Exact tensor activation thresholds for a five-dimensional reflection}
+\author{Joshua Mark}
+\date{20 November 2026; research derivation, priority not established}
+\begin{document}\maketitle
+Put $F_p(U)=\sum_{ij}|u_{ij}|^p$ on $O(n)$, where $p>2$.
+A negative tangent Hessian means negative second derivative along
+$Ue^{tX}$ for a real skew-symmetric $X$. This note sharpens the finite
+tensor activation theorem with exact examples; it does not establish
+Hadamard existence or claim priority.
+
+\begin{theorem}\label{main}
+Let $A=2J_5/5-I_5$, $s=p-2$, and
+\[
+ b=2/5,\qquad c=(3/5)^{p-1}+(2/5)^{p-1},\qquad
+ R(p)=c/b^s=\tfrac35(\tfrac32)^s+\tfrac25.
+\]
+For every positive integer $k$, the least eigenvalue of the tangent
+Hessian of $F_p$ at $A^{\otimes k}$, with the Frobenius metric on
+skew generators, is exactly
+\[
+ \lambda_k=p\big((p-1)b^{ks}-c^k\big).
+\]
+Consequently it is a strict local minimum if $R(p)^k<p-1$, has positive
+semidefinite singular Hessian if equality holds, and has a negative
+tangent direction if $R(p)^k>p-1$. The first negative-Hessian power is
+\[
+ k_-(p)=\left\lfloor\frac{\log(p-1)}{\log R(p)}\right\rfloor+1.
+\]
+The equality case does not assert local minimality.
+\end{theorem}
+\begin{proof}
+Write $d=(3/5)^{p-1}$ and $e=(2/5)^{p-1}$. The entrywise gradient
+matrix is $W=eJ_5-(d+e)I_5$, so $M=A^TW$ is symmetric and $A$ is
+critical. On $\mathbf1^\perp$, $M$ has eigenvalue $c=d+e$, while on
+$\mathbf1$ it has eigenvalue $h=-d+4e$. For $p>2$,
+$3e<2d$, hence $-c<h<c$. Thus $\|M\|_{\rm op}=c$.
+Tensor multiplicativity gives criticality and $M_k=M^{\otimes k}$.
+Every entry of $A^{\otimes k}$ has magnitude at least $b^k$.
+For any skew $X$, orthogonality and the operator norm bound imply
+\[
+ T_k(X):=\sum_{ij}|(A^{\otimes k})_{ij}|^s
+                 ((A^{\otimes k}X)_{ij})^2\ge b^{ks}\|X\|_F^2,
+ \qquad
+ S_k(X):=\tr(M_kX^TX)\le c^k\|X\|_F^2.
+\]
+Here the last bound remains valid if $M_k$ has negative eigenvalues.
+The derivative identity $F_p''=p[(p-1)T_k-S_k]$ gives the claimed
+lower bound for the least Hessian eigenvalue.
+
+To attain it, take a skew matrix $Y$ supported on the oriented triangle
+$0\to1\to2\to0$, with entries $+1$ on these three edges and $-1$
+on reversed edges. Take symmetric $Z$ supported on the undirected
+cycle $0,1,2,3,0$, with successive edge values $+1,-1,+1,-1$.
+Both have zero diagonal and zero row and column sums. Consequently
+$AY=-Y$, $AZ=-Z$, and $MY=cY$, $MZ=cZ$.
+For $X=Y\otimes Z^{\otimes(k-1)}$, each nonzero entry has distinct
+row and column indices in every coordinate. Thus it encounters only
+magnitude-$b^k$ entries of $A^{\otimes k}$ in $T_k$, and
+\[
+ T_k(X)=b^{ks}\|X\|_F^2,\qquad S_k(X)=c^k\|X\|_F^2.
+\]
+The matrix $X$ is nonzero and skew, proving sharpness. Positive
+definite Hessian at a critical point yields a strict local minimum.
+\end{proof}
+
+\begin{corollary}[Two copies do not suffice]
+For $p=3$, $A$ and $A^{\otimes2}$ are strict local minima, while
+$A^{\otimes3}$ has a negative tangent direction. For $p=201/100$,
+the first four tensor powers are strict local minima, while the fifth
+has a negative tangent direction.
+\end{corollary}
+\begin{proof}
+At $p=3$, $R=13/10$ and $R^2<2<R^3$.
+For $p=201/100$, exact integer exponentiation verifies
+\[
+ (1004062/10^6)^{100}<3/2<(1004063/10^6)^{100}.
+\]
+Put $a=\frac35(1004062/10^6)+\frac25$ and
+$z=\frac35(1004063/10^6)+\frac25$. Exact rational arithmetic gives
+$z^4<101/100<a^5$. Hence $R^4<p-1<R^5$.
+\end{proof}
+
+The example at $p=3$ refutes universal two-copy negative-Hessian
+activation, including when the seed is a strict local minimum.
+The first-power dimension here is five, so it is not itself an
+admissible Hadamard order. Tensoring with a normalized Hadamard matrix
+also preserves this exact Hessian classification: the minimum entry
+weight and the operator norm of the critical matrix both acquire
+the same positive factor. An attaining generator is the generator
+above tensored with the identity on the flat factor. Thus taking
+$A\otimes(H_4/2)$ gives the same examples in initial dimension twenty.
+For its $k$th self-power the flat factor has order $4^k$; the Hessian
+least eigenvalue is multiplied by $(4^k)^{-(p-2)/2}$.
+
+All activation indices in this specific family are at most five.
+Indeed convexity of $\log(\frac35e^{s\log(3/2)}+\frac25)$ gives
+$\log R\ge\frac35s\log(3/2)$, whereas $\log(1+s)<s$.
+Since $3\log(3/2)>1$, it follows that $5\log R>\log(p-1)$.
+Moreover the threshold tends to $5/(3\log(3/2))\simeq4.1105$ as
+$p\downarrow2$. This proves that five is attained, but does not
+settle whether other critical points require arbitrarily many copies.
+\end{document}

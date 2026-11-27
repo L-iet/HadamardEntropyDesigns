@@ -1,0 +1,58 @@
+{
+  "passed": true,
+  "smallTraps": [
+    {
+      "bits": 4,
+      "support": 11,
+      "momentColumnRank": 11,
+      "collision": "7/72",
+      "strictDualExposingCertificate": true
+    },
+    {
+      "bits": 5,
+      "support": 11,
+      "momentColumnRank": 11,
+      "collision": "7/72",
+      "strictDualExposingCertificate": true
+    }
+  ],
+  "d4Vertices": 26,
+  "d4CollisionCounts": {
+    "1/8": 10,
+    "7/72": 16
+  },
+  "allD4VerticesStrictLocalMaxima": true,
+  "directD7InterpolationCheckedOnWholeCube": true,
+  "infiniteFamilyChecks": [
+    {
+      "s": 2,
+      "bits": 7,
+      "hadamardOrder": 8,
+      "support": 16,
+      "collision": "1/16",
+      "globalCollision": "1/8",
+      "ratio": "1/2",
+      "strictRadius": "1/136"
+    },
+    {
+      "s": 3,
+      "bits": 15,
+      "hadamardOrder": 16,
+      "support": 64,
+      "collision": "1/64",
+      "globalCollision": "1/16",
+      "ratio": "1/4",
+      "strictRadius": "1/2080"
+    },
+    {
+      "s": 4,
+      "bits": 31,
+      "hadamardOrder": 32,
+      "support": 256,
+      "collision": "1/256",
+      "globalCollision": "1/32",
+      "ratio": "1/8",
+      "strictRadius": "1/32896"
+    }
+  ]
+}

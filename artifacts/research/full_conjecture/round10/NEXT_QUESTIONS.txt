@@ -1,0 +1,32 @@
+NEXT TARGETS
+
+1. Prove large restricted-alphabet counts, rather than just compatibility.
+   Self-duality alone can give zero sign words. Even five prescribed
+   orthogonal rows can leave a self-dual extension with only eight
+   sign classes at order20. A general theorem must exploit additional
+   structure or permit changes of code.
+
+2. Understand code-neighbor exchanges that replace old rows.
+   Extension-guided pivots preserve all old sign words, but a terminal
+   real partial frame makes such growth impossible. A viable all-order
+   argument must avoid those frames or exchange some of their rows.
+   Do not assume every incomplete orthogonal frame has an extension.
+   The new incidence criterion is M_G-r_C >
+   (r_C-b_G)*p^(h-1), with h the retained-space codimension in C.
+   Find conditions forcing this surplus for some retained space G;
+   unrestricted averaging can be negative and is insufficient.
+   At h=1 the modular pool is exactly the union of two codes, so
+   no further clique search is needed, but the count remains essential.
+
+3. Connect concentration and coding without assuming a target exists.
+   Nullspace elimination reaches a vertex, possibly a suboptimal one.
+   Bridges to an already-known optimum are conditional tools.
+   A proof needs an actual unknown-order target or an escape guarantee.
+
+4. Expand approximate constructions beyond the excluded seed models.
+   The new error floor assumes exact balance, uniform seed weights,
+   and output degree<=r-2. Nonuniform laws, different seed sizes, or
+   higher-degree constructions are not covered by that obstruction.
+
+None of these tasks is resolved merely by an equivalent reformulation
+of the conjecture or successful computations at known orders.

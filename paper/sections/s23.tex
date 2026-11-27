@@ -1,0 +1,150 @@
+% Source: round10/nonlinear/quantitative.tex
+\section{Quantitative low-degree barriers and support repair}
+\label{s23:sec:nonlinear-quantitative}
+The statements concern uniform laws on $N$ binary seed labels, with
+$N\equiv4\pmod8$, $r\ge4$, and Boolean output degree at most $r-2$.
+They do not automatically constrain nonuniform measures or larger seed
+models. Put $S\subset\mathbb F_2^r$, $|S|=N$, $T=S^c\ne\varnothing$,
+and $a=r-\operatorname{affdim}(T)$. The preceding pass proved that the
+even restriction code of $\mathrm{RM}(r-2,r)$ has binary bilinear rank
+$N-2a-2$. We recall the reason: its dual consists of affine functions
+supported on $S$, of dimension $a$; the even code radical is that dual
+plus the constant function. Reed--Muller duality and the Boolean-code
+background can be found in Carlet's primary monograph,
+\url{https://www.math.univ-paris13.fr/~carlet/book-fcts-Bool-vect-crypt-codes.pdf}.
+All estimates below have explicit proofs.
+
+\begin{theorem}[A quantitative moment-error floor]
+\label{s23:thm:nonlinear-moment-floor}
+Suppose $m=N-4$ Boolean sign observables $X_1,\ldots,X_m$ have exact
+zero means on $S$, with degree at most $r-2$. They need not be pairwise
+independent. At least $\max\{0,2a-3\}$ unordered pairs have nonzero
+correlation. In particular their augmented moment error satisfies
+\[
+ E:=\left\|\mathbb E[(1,X)(1,X)^T]-I_{m+1}\right\|_F^2
+ \ge\frac{32}{N^2}\max\{0,2a-3\}.
+\]
+For four omitted labels and $r\ge5$, this gives
+$E\ge32(2r-9)/N^2$, since $a\ge r-3$.
+\end{theorem}
+\begin{proof}
+Write $B_{zi}=(1-X_i(z))/2$ and $G=B^TB$ over $\mathbb F_2$.
+Balanced columns have weight $N/2$, even, and belong to the even
+restriction code, so $\operatorname{rank}G\le N-2a-2$.
+The exact pairwise-independent target would be $G_*=I+J_m$,
+nonsingular because $m$ is even. Let $q_{ij}=\sum_{z\in S}X_i(z)X_j(z)$.
+Balancedness gives $q_{ij}\in4\mathbb Z$ and
+\[
+ G_{ij}=1+q_{ij}/4\pmod2\quad(i\ne j),\qquad G_{ii}=0.
+\]
+Thus $G=I+J+A_H$, where $H$ is the graph of pairs with $q_{ij}/4$ odd.
+Let $e$ be its number of edges. Each nontrivial connected component of
+$H$ with $v$ vertices has at least $v-1$ edges, while its $I+A_H$ block
+has rank at least one. Isolated vertices contribute no nullity. Hence
+$\operatorname{nullity}(I+A_H)\le e$. Adding the rank-one matrix $J$
+gives $\operatorname{nullity}G\le e+1$.
+But the rank bound gives $\operatorname{nullity}G\ge2a-2$, so
+$e\ge2a-3$. Each such pair has $|q_{ij}|\ge4$; the Frobenius error
+counts every unordered correlation twice. This proves the bound.
+\end{proof}
+
+\paragraph{Formalization of the moment-error floor.}
+Both the general bound and the four-omitted-label consequence are
+formalized for the actual augmented Gram error. The formal proof removes
+at most one observable per nonzero correlation, bounds the remaining
+uncorrelated family by the even restriction-code rank, and proves that
+every nonzero balanced correlation has magnitude at least four.
+Each unordered pair contributes twice to the Frobenius error.
+The independent \texttt{MomentChallenge} has no definition holes.
+
+The edge-count estimate is sharp at the binary-Gram level: if
+$q=2a-3$ is positive and $m\ge2q$, take $H$ to be a matching of $q$
+edges. Since $q$ is odd, $I+J+A_H$ has nullity $q+1=2a-2$.
+Indeed its kernel vectors have common unmatched-coordinate value $u$,
+and the sum on each matched pair equals $u$; the $q$ pair choices and
+$u$ are free. This does not assert that the matching Gram is realized
+by balanced low-degree truth columns with the smallest possible real
+correlations. Thus no sharpness claim is made for the moment-error
+constant as a distribution theorem.
+
+\begin{theorem}[Minimum support edits to unlock degree repair]
+\label{s23:thm:nonlinear-minimum-edits}
+For this support operation no congruence condition on $N$ is needed.
+Assume $|T|\ge r+1$. The smallest number of one-for-one seed support
+exchanges needed to make the omitted labels affinely span the entire
+$r$-space is exactly $a=r-\operatorname{affdim}(T)$.
+For any already-known exact law carried on $S$, its output truth rows
+can be transferred through these exchanges while preserving its entire
+observable distribution, hence every moment and its collision probability.
+All intermediate truth functions can have degree at most $r-1$; at the
+final support they can have degree at most $r-2$.
+\end{theorem}
+\begin{proof}
+One replacement raises affine dimension by at most one, giving the
+lower bound $a$. For the upper bound, retain an affine basis of $T$,
+of size $r-a+1$. There are at least $a$ redundant points because
+$|T|\ge r+1$. Remove redundant points one at a time and replace them
+with points outside the current affine span. Each replacement raises
+the span dimension by one; after $a$ exchanges it is full.
+
+A replacement of omitted point $t$ by included point $s$ replaces
+included seed label $s$ by $t$. Transfer the output row at $s$ to $t$,
+leaving every other output row fixed. This changes no observable atom
+or weight. Extend each Boolean truth function by zero on omitted labels
+and change its value at one omitted point to make total parity zero;
+this gives degree at most $r-1$. At the final support, choose an affine
+basis in the complement and change only those outside values to cancel
+the $r+1$ affine parity syndromes. The corresponding $(r+1)$-square
+matrix of affine evaluations is invertible, so the repair exists and
+lies in $\mathrm{RM}(r-2,r)$. No truth value at a positive-mass seed is
+altered by these outside repairs.
+\end{proof}
+\paragraph{Formalization of minimum support repair.}
+The full minimum-exchange statement is formalized using actual recursive
+one-for-one paths. Finite affine bases give a repaired support at exactly
+the affine codimension, and a shortest-path bound proves minimality.
+Explicit transpositions transfer the truth rows. The path records both
+complete output-law equality and degree-$r-1$ encodability at every
+state; the final spanning complement gives degree $r-2$.
+The independent \texttt{SeedRepairChallenge} has no definition holes.
+
+This operation escapes a low-rank \emph{seed encoding}. It preserves the
+observable law rather than producing a new or more concentrated law,
+so it is not a missing-distribution construction.
+
+\subsection{Four omitted labels: Fourier sparsity versus capacity}
+Let $N=2^r-4$ and let $\mu$ be uniform on $S$. For a nonzero character
+$c$, the full-cube sum vanishes and
+\[
+ \widehat\mu(c)=\mathbb E_\mu(-1)^{c\cdot z}
+ =-\frac1N\sum_{z\in T}(-1)^{c\cdot z}.
+\]
+Four distinct omitted points have two affine types. Exact character
+counting gives:
+\[
+ \begin{array}{c|c|c|c}
+ T\text{ type}&\operatorname{affdim}T&
+ \#\{c\ne0:\widehat\mu(c)\ne0\}&
+ \text{even restriction bilinear rank}\\\hline
+ \text{affine plane}&2&2^{r-2}-1&N-2r+2\\
+ \text{affine-independent tetrahedron}&3&5\cdot2^{r-3}-1&N-2r+4
+ \end{array}
+\]
+For the plane translate to $\{0,e_1,e_2,e_1+e_2\}$; its character sum
+is four precisely when the first two frequency coordinates vanish.
+For the tetrahedron use $\{0,e_1,e_2,e_3\}$; its sum is four, two,
+zero, or minus two according as the first three frequency coordinates
+have weights zero, one, two, or three. Translation only changes signs.
+Thus the Fourier-sparser seed is also the lower-capacity low-degree
+encoding. At twelve labels the two cases have three versus nine nonzero
+seed Fourier modes and, by the preceding exact classification, five
+versus seven possible quadratic unbiased pairwise-independent bits.
+Neither reaches the eight-bit extraction target.
+
+The table is an exact narrow-model tradeoff, not a general uncertainty
+bound or an argument that many Fourier modes guarantee attainment.
+For $|T|=4<r+1$, the support-edit theorem cannot unlock a degree-$r-2$
+full basis at all: no four omitted labels can span the seed space when
+$r\ge4$. Higher output degree, a different seed size, or a different
+weight model is necessary.
+

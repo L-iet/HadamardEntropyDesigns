@@ -1,0 +1,36 @@
+NEXT RESEARCH QUESTIONS
+
+1. Improve counts, not just compatibility.
+The quotient grid provides an exact optimum when the remaining
+orthogonal quotient has dimensionfour, and global moments provide
+a certificate in higher dimension. Find retained spaces with
+favorable grid weights or moment inequalities at unknown orders.
+Neither structure alone guarantees a near-complete frame.
+
+2. Replace uniform random neighbor steps with a proved guided rule.
+The full known-order census has only42 improving neighbors among
+2441406. The exact walk drift lowers above-mean sign counts in
+expectation. A guided all-order rule needs a guaranteed improving
+choice or a controlled route through equal/worse counts.
+One finite census does not exclude other suboptimal local maxima.
+
+3. Seek global constructions beyond decomposition into Hadamard blocks.
+Even relative collision approaching its optimum and vanishing additive
+entropy excess do not give dimension-independent closeness to any
+Hadamard mixture. The new spanning-omitted-slopes construction proves
+this with EXACT moments at known orders, not approximate examples.
+Any successful near-extremal argument needs dimension dependence or
+additional structural assumptions; it cannot rely on relative error alone.
+The exact isotropic source family is distance1-1/k from every
+Hadamard mixture, with a sharp nearly-total row replacement budget.
+This defeats a universal small-repair principle but leaves
+unrestricted global constructions and higher-dimensional models open.
+Its n-1-bit target must not be conflated with the N-4-bit extraction law.
+
+4. Explore higher completion moments or quotient geometry at rank>=3.
+The second-moment certificate succeeds on one retained-space H20
+example and fails on a weaker one. Higher moments depend on isotropic
+span ranks of tuples; any usefulness needs actual quantitative data
+or uniform bounds, not just a formal expansion.
+
+Novelty, all-order positivity, and the full conjecture remain open here.

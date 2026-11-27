@@ -1,0 +1,94 @@
+\section{Why even the minimal affine Fourier buffer is insufficient}
+\label{s32:sec:minimal-buffer-obstruction}
+The preceding Fourier correction is useful for appropriately weighted,
+very accurate inputs. Here we show a limitation that also applies to
+the \emph{smallest} nonnegative buffer, rather than just its universal
+upper bound. The argument uses elementary low-degree concentration;
+it does not exclude other nonlinear correction procedures.
+
+Let $N\ge20$ be a multiple of four, $d=N-4$, $M=2^d$ and
+$K=d(d+1)/2$. Let $P$ be uniform on $N$ distinct points of the
+$d$-bit cube. For $1\le|S|\le2$, let
+$m_S=\mathbb E_P\chi_S$, and put
+\[
+ f(x)=\sum_{1\le|S|\le2}m_S\chi_S(x),\qquad
+ \sigma^2=\sum_Sm_S^2.
+\]
+For any feasible buffer $\beta\ge0$, consider
+\[
+ Q_\beta(x)=\frac{P(x)+(\beta-f(x))/M}{1+\beta}.
+\]
+Its least nonnegative choice is
+$\beta_* =\max(0,\max_x(f(x)-MP(x)))$.
+
+\begin{theorem}[Sparse uniform candidates cannot enter the extraction window]
+\label{s32:thm:minimal-buffer-obstruction}
+If $P$ is not already unbiased and pairwise independent, then every
+nonnegative correction $Q_\beta$ in this family satisfies
+\[
+ \frac1N-C(Q_\beta)\ge\frac1{8N^2\sqrt K}>
+ \frac1{8N^3}>\frac1{1024N^4}.
+\]
+In particular none enters the sufficient window proved in round six.
+If $P$ is already exactly isotropic, its uniform $N$ atoms already
+give a Hadamard matrix by the residue equality theorem.
+\end{theorem}
+\begin{proof}
+All expectations in the next paragraph are under the uniform cube.
+Fourier orthogonality gives $\mathbb E f=0$ and
+$\mathbb E f^2=\sigma^2$. Cauchy--Schwarz gives
+$\|f\|_\infty\le\sqrt K\sigma$, so
+\[
+ \mathbb E|f|\ge\frac{\sigma}{\sqrt K},\qquad
+ \mathbb E f_+=\tfrac12\mathbb E|f|
+       \ge\frac{\sigma}{2\sqrt K}.
+\]
+Let $T$ be the $N$-point support of $P$. Its contribution to
+$\mathbb E f_+$ is at most $(N/M)\sqrt K\sigma$.
+Since $M\ge4NK$, a positive contribution of at least
+$\sigma/(4\sqrt K)$ remains outside $T$. Hence
+\[
+ \beta_*\ge\max_{x\notin T}f(x)
+          \ge\frac{\sigma}{4\sqrt K}.
+\]
+A nonzero $m_S$ is an even integer divided by $N$; therefore
+$\sigma\ge2/N$, and
+$\beta\ge\beta_0:=1/(2N\sqrt K)$.
+
+The exact collision identity for the correction, valid for every
+feasible $\beta$, is
+\[
+ C(Q_\beta)=\frac1M+
+ \frac{1/N-(1+\sigma^2)/M}{(1+\beta)^2}
+ \le\frac1M+\frac{1/N-1/M}{(1+\beta_0)^2}.
+\]
+Here the negative $\sigma^2$ term was discarded \emph{before}
+comparing denominators, so no unproved sign assumption is needed.
+Since $M\ge2N$, $\beta_0\le1$, and
+$1-(1+\beta_0)^{-2}\ge\beta_0/2$, subtraction from $1/N$ gives
+the claimed lower bound. Also $\sqrt K<N$.
+
+For completeness, $2^{16}=65536\ge4\cdot20\cdot136$ verifies
+$M\ge4NK$ at $N=20$. Increasing $N$ by four multiplies $M$ by
+$16$, while $NK$ grows by a factor at most
+$(24/20)(20\cdot21)/(16\cdot17)=63/34<2$.
+Thus the inequality holds for all stated $N$.
+\end{proof}
+
+The conclusion concerns sparse \emph{uniform} starting laws. It does
+not negate the correction theorem for nonuniform weighted candidates
+whose initial concentration and moment accuracy are both sufficient.
+Finding such candidates is still an existence problem, not a
+consequence of the correction identity.
+
+\paragraph{Formalization.}
+The full theorem is formalized for $d\ge16$ with $N=d+4$ a multiple
+of four. The independent specification includes both the zero-defect
+Hadamard conclusion and the universal collision obstruction for every
+feasible buffer. In particular the proof does not assume the buffer
+dominates the Fourier polynomial on the original support. It derives
+the necessary off-support bound from the corrected law's actual
+nonnegativity, counts the low characters exactly, proves the cube-size
+estimate, and uses exact sign-moment quantization. The companion
+\texttt{BufferChallenge} has no definition holes. The new proof modules
+are compiled with a one-gigabyte per-module memory limit.

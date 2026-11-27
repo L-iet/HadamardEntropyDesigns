@@ -1,0 +1,163 @@
+{
+  "passed": true,
+  "saturatingTruncations": [
+    {
+      "n": 3,
+      "hadamardOrder": 4,
+      "collision": "1/4"
+    },
+    {
+      "n": 4,
+      "hadamardOrder": 4,
+      "collision": "1/4"
+    },
+    {
+      "n": 5,
+      "hadamardOrder": 8,
+      "collision": "1/8"
+    },
+    {
+      "n": 6,
+      "hadamardOrder": 8,
+      "collision": "1/8"
+    },
+    {
+      "n": 7,
+      "hadamardOrder": 8,
+      "collision": "1/8"
+    },
+    {
+      "n": 8,
+      "hadamardOrder": 8,
+      "collision": "1/8"
+    },
+    {
+      "n": 9,
+      "hadamardOrder": 12,
+      "collision": "1/12"
+    },
+    {
+      "n": 10,
+      "hadamardOrder": 12,
+      "collision": "1/12"
+    },
+    {
+      "n": 11,
+      "hadamardOrder": 12,
+      "collision": "1/12"
+    },
+    {
+      "n": 12,
+      "hadamardOrder": 12,
+      "collision": "1/12"
+    },
+    {
+      "n": 13,
+      "hadamardOrder": 16,
+      "collision": "1/16"
+    },
+    {
+      "n": 14,
+      "hadamardOrder": 16,
+      "collision": "1/16"
+    },
+    {
+      "n": 15,
+      "hadamardOrder": 16,
+      "collision": "1/16"
+    },
+    {
+      "n": 16,
+      "hadamardOrder": 16,
+      "collision": "1/16"
+    },
+    {
+      "n": 17,
+      "hadamardOrder": 20,
+      "collision": "1/20"
+    },
+    {
+      "n": 18,
+      "hadamardOrder": 20,
+      "collision": "1/20"
+    },
+    {
+      "n": 19,
+      "hadamardOrder": 20,
+      "collision": "1/20"
+    },
+    {
+      "n": 20,
+      "hadamardOrder": 20,
+      "collision": "1/20"
+    },
+    {
+      "n": 21,
+      "hadamardOrder": 24,
+      "collision": "1/24"
+    },
+    {
+      "n": 22,
+      "hadamardOrder": 24,
+      "collision": "1/24"
+    },
+    {
+      "n": 23,
+      "hadamardOrder": 24,
+      "collision": "1/24"
+    },
+    {
+      "n": 24,
+      "hadamardOrder": 24,
+      "collision": "1/24"
+    },
+    {
+      "n": 29,
+      "hadamardOrder": 32,
+      "collision": "1/32"
+    },
+    {
+      "n": 30,
+      "hadamardOrder": 32,
+      "collision": "1/32"
+    },
+    {
+      "n": 31,
+      "hadamardOrder": 32,
+      "collision": "1/32"
+    },
+    {
+      "n": 32,
+      "hadamardOrder": 32,
+      "collision": "1/32"
+    }
+  ],
+  "threeColumnReconstructions": [
+    {
+      "order": 8,
+      "deletedColumnTriples": 35
+    },
+    {
+      "order": 12,
+      "deletedColumnTriples": 165
+    },
+    {
+      "order": 16,
+      "deletedColumnTriples": 455
+    },
+    {
+      "order": 20,
+      "deletedColumnTriples": 12
+    },
+    {
+      "order": 24,
+      "deletedColumnTriples": 12
+    },
+    {
+      "order": 32,
+      "deletedColumnTriples": 12
+    }
+  ],
+  "uniformCubeCases": 5,
+  "scope": "Exact finite checks support the written universal proof."
+}

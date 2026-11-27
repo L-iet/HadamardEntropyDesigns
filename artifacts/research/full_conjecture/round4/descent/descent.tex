@@ -1,0 +1,187 @@
+\section{Interaction-only descent and an obstruction to dimension reduction}
+\label{sec:interaction-descent}
+
+Throughout this section $p>2$, $U\in O(n)$ is critical for
+$F_p(U)=\sum_{ij}|u_{ij}|^p$, and $n\ge2$. Use the quantities
+$q,r,T,S,M$ from the tensor-stability theorem. The following refinement
+locates the destabilizing direction entirely outside the tangent space
+of independently varying tensor factors.
+
+\begin{proposition}[Trace-free activation]
+If $U$ is nonflat, there are a skew-symmetric $Y$ and a symmetric
+trace-zero $Z$ with $S(Y),S(Z)>0$ such that
+\[
+ \alpha=\frac{T(Y)}{S(Y)}\le\frac{r-q}{(n-1)q}<1,
+ \qquad
+ \beta=\frac{T(Z)}{S(Z)}\le
+ b_0:=\frac{nr+(n-2)q}{(n+2)(n-1)q}<1.
+\]
+Moreover $0<b_0<b=(r+q)/((n+1)q)$. For any integer $k\ge2$ satisfying
+$(p-1)\alpha\beta^{k-1}<1$, the generator
+$X=Y\otimes Z^{\otimes(k-1)}$ gives negative tangent Hessian at
+$U^{\otimes k}$. One sufficient choice is
+\[
+ k=2+\left\lceil\frac{\log(p-1)}{\log(1/b_0)}\right\rceil.
+\]
+\end{proposition}
+\begin{proof}
+In the symmetric matrices, the scalar direction $I_n/\sqrt n$ is
+orthogonal to the trace-zero subspace. Its $T$- and $S$-values both
+equal $q/n$. Subtracting these from the symmetric trace sums gives,
+for any Frobenius-orthonormal basis $\mathcal B_0$ of the symmetric
+trace-zero matrices,
+\[
+ \sum_{Z\in\mathcal B_0}T(Z)=\frac{r+q}{2}-\frac qn,
+ \qquad
+ \sum_{Z\in\mathcal B_0}S(Z)=\frac{(n+1)q}{2}-\frac qn.
+\]
+The second sum is positive. The ratio-selection argument therefore
+produces the asserted $Z$; the skew selection is unchanged.
+The strict inequality $r<nq$ gives $b_0<1$, and direct subtraction gives
+\[
+ b-b_0=\frac{2(nq-r)}{(n+1)(n+2)(n-1)q}>0.
+\]
+The numerator of $b_0$ is positive, including $n=2$, because $r>0$.
+The tensor Hessian factors as
+$pS(Y)S(Z)^{k-1}((p-1)\alpha\beta^{k-1}-1)$.
+This proves both negativity and the sufficient bound.
+\end{proof}
+
+\begin{proposition}[The descent is invisible to one-factor tangents]
+Let $k\ge2$, and let $X$ be a trace-free activating generator as above.
+Every one-factor partial trace of $X$ vanishes. Equivalently, $X$ is
+Frobenius-orthogonal to
+\[
+ \mathcal L_k=\left\{
+ \sum_{a=1}^k I^{\otimes(a-1)}\otimes A_a\otimes
+ I^{\otimes(k-a)}: A_a^{\mathsf T}=-A_a\right\}.
+\]
+This is the relative tangent space of the manifold of independent
+tensor factors at $U^{\otimes k}$.
+\end{proposition}
+\begin{proof}
+For elementary tensors, the partial trace retaining factor $a$ is
+the $a$th factor multiplied by the traces of all the others.
+For $a=1$, it contains $(\operatorname{tr}Z)^{k-1}=0$.
+For $a>1$, it contains $\operatorname{tr}Y=0$. Partial trace is adjoint
+to insertion of identities, proving the orthogonality statement.
+Differentiating $\bigotimes_a(Ue^{tA_a})$ gives
+$U^{\otimes k}\sum_a I^{\otimes(a-1)}\otimes A_a\otimes
+I^{\otimes(k-a)}$. Left multiplication by the orthogonal
+$U^{\otimes k}$ preserves the Frobenius inner product.
+\end{proof}
+
+\begin{proposition}[Independent factors cannot realize the lifted gain]
+Suppose $U$ is a local minimum of $F_p$ on $O(n)$ and put $q=F_p(U)$.
+Then $U^{\otimes k}$ is a local minimum of $F_p$ restricted to the
+manifold of independent tensor factors, for every $k$. At a critical
+$U$, its Hessian on relative product tangents is
+\[
+ \operatorname{Hess}F_p\big|_{\mathcal L_k}
+ \left[\sum_a I^{\otimes(a-1)}\otimes A_a\otimes
+ I^{\otimes(k-a)}\right]
+ =q^{k-1}\sum_a \operatorname{Hess}F_p(U)[A_a].
+\]
+If $U$ is nonflat, choose the interaction-only negative direction $X$
+above and let $W(t)=U^{\otimes k}e^{tX}$. For the local nearest-point
+projection $P$ onto the product manifold,
+\[
+ F_p(W(t))=q^k-c t^2+o(t^2)\quad(c>0),\qquad
+ q^k\le F_p(P(W(t)))=q^k+O(t^4).
+\]
+Thus nearest-product projection loses the entire quadratic improvement.
+\end{proposition}
+\begin{proof}
+Entrywise energy is exactly multiplicative:
+$F_p(\bigotimes_a V_a)=\prod_a F_p(V_a)$.
+Nearby factors have energy at least $q$, proving restricted minimality.
+Twice differentiating the product shows the stated Hessian: all cross
+terms vanish by criticality. The local product map is an immersion,
+since its factor tangent summands are pairwise orthogonal (each $A_a$
+has trace zero); it is locally an embedded manifold. Its Euclidean
+nearest-point projection is smooth near the base point, and its
+differential is orthogonal projection onto the tangent space.
+The preceding proposition gives
+$P(W(t))=U^{\otimes k}+O(t^2)$. Restricted criticality and a bounded
+second derivative give the $O(t^4)$ energy estimate, while restricted
+minimality gives its sign. Taylor's theorem in the full orthogonal
+group gives the negative quadratic coefficient for $W$.
+\end{proof}
+
+This is a precise limitation on one natural extraction procedure, not
+a theorem excluding every nonlinear dimension-reduction argument.
+The partial traces here are traces of the \emph{relative tangent
+generator} $X$; no assertion about reduced physical states is needed.
+
+\begin{proposition}[An exactly stationary partial-trace extraction]
+ Let $k\ge2$ and $X=Y\otimes Z^{\otimes(k-1)}$, where $Y$ is real skew-symmetric,
+$Z$ is real symmetric, and the eigenvalues of $Z$ occur in opposite
+pairs, allowing zeros. Set
+\[
+ A_a(t)=n^{-(k-1)}\operatorname{Tr}_{\widehat a}(e^{tX}),
+ \qquad a=1,\ldots,k,
+\]
+where the trace retains factor $a$. For all sufficiently small real
+$t$, every $A_a(t)$ is symmetric positive definite. Consequently the
+orthogonal polar factor of every $A_a(t)$ is exactly $I_n$.
+Thus extracting $U\operatorname{polar}(A_a(t))$ from a lifted curve
+returns the original $U$ in every factor, exactly rather than only
+to first order.
+\end{proposition}
+\begin{proof}
+Use the convergent power series for the exponential. In the partial
+trace retaining factor $1$, the coefficient of $t^m/m!$ is
+$Y^m(\operatorname{tr}Z^m)^{k-1}$; for odd $m$ this vanishes by the
+paired spectrum of $Z$. All even powers of $Y$ are symmetric.
+For a retained factor $a>1$, the coefficient is
+$Z^m\operatorname{tr}(Y^m)(\operatorname{tr}Z^m)^{k-2}$.
+Odd powers of a real skew-symmetric matrix have trace zero, and
+all powers of $Z$ are symmetric. Thus all $A_a(t)$ are symmetric.
+Since $A_a(0)=I_n$, continuity makes them positive definite near zero.
+The orthogonal polar factor of a positive definite matrix is $I_n$.
+\end{proof}
+
+This obstruction occurs for a genuinely decreasing curve, not just an
+arbitrary interaction. Take $p=4$, $U=2J_5/5-I_5$, and let $Y$ be the
+oriented triangle on indices $0,1,2$, with nonzero entries
+$Y_{01}=Y_{12}=Y_{20}=1$ and their skew counterparts. Let $Z$ be the
+symmetric alternating four-cycle with
+$Z_{01}=1,Z_{12}=-1,Z_{23}=1,Z_{30}=-1$ and their symmetric counterparts.
+Then $Z$ has paired spectrum: conjugation by
+$D=\operatorname{diag}(1,-1,1,-1,1)$ takes $Z$ to $-Z$.
+The exact tangent Hessian at $U\otimes U$ in direction $Y\otimes Z$
+is $-192/625$. Hence this full energy strictly decreases for sufficiently
+small nonzero $t$, whereas the partial-trace polar extraction returns
+$U$ exactly. To check the base minimum directly,
+$M=\frac7{25}I_5-\frac6{125}J_5$ and every $u_{ij}^2\ge4/25$.
+Thus $T(A)\ge(4/25)\|A\|_F^2$ and
+$S(A)\le(7/25)\|A\|_F^2$, giving
+$4(3T(A)-S(A))\ge(4/5)\|A\|_F^2$ for every skew $A$.
+This proves that $U$ is a strict local minimum.
+
+\subsection{An exact example where flatness does not descend}
+Even an exactly flat tensor-square dimension need not permit a flat
+matrix in the original dimension. There is no Hadamard matrix of order
+$6$: normalizing one row to $+1$, orthogonality forces every other row
+to have three positive entries; two such rows cannot have zero inner
+product, since their positive-support intersection would have size
+$6/4$, which is not an integer.
+
+For completeness, an entirely explicit Hadamard matrix of order
+$36=6^2$ can be built as follows. Let indices of $C$ be
+$\{\infty\}\cup\mathbb F_{17}$, set its diagonal to zero,
+$C_{\infty a}=C_{a\infty}=1$, and
+$C_{ab}=\chi(a-b)$ for distinct finite indices, where $\chi$ is the
+quadratic character modulo $17$. Then $C$ is symmetric and
+$C^2=17I_{18}$. These are finite identities, also checked directly in
+the accompanying exact verifier. Consequently
+\[
+ H=\begin{pmatrix}C+I&C-I\\ C-I&-C-I\end{pmatrix}
+ \quad\text{satisfies}\quad HH^{\mathsf T}=36I_{36}.
+\]
+Indeed its diagonal Gram blocks are
+$(C+I)^2+(C-I)^2=36I$, and its off-diagonal blocks vanish by
+commutation. Thus a dimension-independent rule taking a flat
+$n^2$-dimensional orthogonal matrix to a flat $n$-dimensional one is
+impossible. The example uses a forbidden base order and does not
+settle what can be extracted at orders divisible by four.

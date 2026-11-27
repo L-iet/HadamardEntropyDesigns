@@ -1,0 +1,55 @@
+{
+  "checkedAtUTC": "2026-11-21T05:39:46.999471+00:00",
+  "pages": {
+    "phase_route.tex": 3,
+    "spectral_repair.tex": 3,
+    "research.tex": 10
+  },
+  "checkersPassed": [
+    "quaternary/check.py",
+    "weighing/check.py",
+    "spectral/check.py",
+    "quantum/check.py"
+  ],
+  "typesettingChecksPassed": true,
+  "files": {
+    "build.py": "af5995d52a93f7423dea9ede178bee20b83a7db746ae49fcacfcd99ab9991dd4",
+    "NEXT_QUESTIONS.txt": "ee65daadb89ed433055577d2506e9b1af933f398d041a6c57b3791910bb24d5e",
+    "phase_route.pdf": "560f2d1c7988bacafc2e4eef0b508fd6af00576edf477eda4a983b2563ec481e",
+    "phase_route.tex": "ad460be6fcccdd11133fb781035623f0cdf68f76b7e07a090adc1f447088c591",
+    "PRIOR_ART.txt": "4a795ac5a9c88ffa92c30dfaf4c819b52c3bffb009497c84c17849d7d5d51103",
+    "qa.py": "c007b9cdcdee6251d0144fb62183c09d286371fc61464d4762ca6abd6f211c3c",
+    "quantum\\check.py": "f5df38b421731f23ec843f441a6b29145bf2e865e6e227c617e728423dd05845",
+    "quantum\\checks.json": "9e2a5c164af61035027188bad78d99e554a80e834b1f4670836d600abde75830",
+    "quantum\\paper.pdf": "27ae4b200ebaf50b2454ecb92a3f4048bdac0022f56a3f37168f73eaa7c39ddc",
+    "quantum\\paper.tex": "f955ffb2895aa42efbc27ecdc856db7a7196938ed2328f732e6b3d100ab0e544",
+    "quantum\\quantum.tex": "0d813d95be3b9b74c175bc42117a78576b02c798b78a3a5aa18769f500bb0ab4",
+    "quantum\\README.txt": "a16648782673f3ae4cdae4f5de1e4e0f2e84b98434ffb586b5302b13b7df6662",
+    "quaternary\\check.py": "a87c2a5abb54dd8946d1492875aeb6ac79ffb36f004812ac117ae8df4306625a",
+    "quaternary\\checks.json": "c8195eb9790625ca497a7675ac28afd4bfd6c748362efe6dff9ac7a5910b4a1e",
+    "quaternary\\quaternary.tex": "9ebf321ed869dad6c03db9fa5df66314100ab126cf0996b6bb1408000bd152d9",
+    "quaternary\\README.txt": "617de68c3fdc7b3ab898daf98b0a92a7a40e2c9a2d09767f7deef533c8e76438",
+    "README.txt": "dc922d9d24ad1b3872c536618f84d6e0a45ad3496a7582a4b3e88707460b3fd2",
+    "research.pdf": "5d5f7881ee09d16814e6655dfb0583079cd2d4160c538cfc8d827f1534206dd2",
+    "research.tex": "b6026520c28d7ea759f5152fdad0ba7b256ec462d79ef483cd7d2bb3c1578d27",
+    "spectral\\check.py": "c10b3f7d89ecac3537d1bea57adcca54bc9384e2140ed35b49360596db96964e",
+    "spectral\\checks.json": "02fc0bbef101311f75b17aa1bbe3fec79e832c959ee42d7a3f6836804f030ecd",
+    "spectral\\rank_two.tex": "c8be0593c988ec8fb9b980b4b012366c62208f2e1fed0fd0fdc6996999b62360",
+    "spectral\\README.txt": "04fdea449d8ccb588d9064bb4c1f5ee2c242107a494518f62c3e3dc1a961da43",
+    "spectral_repair.pdf": "c14698f04ca4c9f25aa4c345b584ebe442b0a0b2db294c203d0bee37ab1c0b73",
+    "spectral_repair.tex": "5540b9d01ec003016bacdce22942dba0c4fa17905e3b32ae7c3b92f5e6772cfa",
+    "weighing\\check.py": "ddebbeba5bf2fb06fabf80c43ab9bc5978cc7779c3da7e85b3cc121a678e0da8",
+    "weighing\\checks.json": "e52a0701457c1d101a5473a360625fd852344e0ea2847881ac85b0f6e949c477",
+    "weighing\\README.txt": "ea09cb6ba549b923d77f8b1b638568ec6ed3d16eb2c65f9758a4af8684b2b048",
+    "weighing\\search.json": "3ab123de7c644c0df9f67c029c76d08799f7748841347945fbb12397548018b5",
+    "weighing\\search.py": "9a7f04b98f600b277f11b0f07ea9ace7400bcc2b0a59fa7659a47d69c0639cd5",
+    "weighing\\weighing.tex": "32a727257fae5246aa46eb8b935ff86a038847deb63970ef7d60495c6404b5cf"
+  },
+  "scope": {
+    "hadamardConjectureProved": false,
+    "unknownOrderConstructed": false,
+    "noveltyEstablished": false,
+    "leanFormalization": false,
+    "gitCommits": false
+  }
+}

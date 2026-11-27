@@ -1,0 +1,17 @@
+{
+  "challenge_module": "DistanceChallenge",
+  "solution_module": "DistanceSolution",
+  "theorem_names": [
+    "EntropyDesigns.SupportFace.uniform_source_sharp_distance",
+    "EntropyDesigns.SupportFace.collision_preserving_exact_repair",
+    "EntropyDesigns.SupportFace.source_all_repairs_lower",
+    "EntropyDesigns.SupportFace.sharp_distance_tends_to_one"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "enable_nanoda": true
+}

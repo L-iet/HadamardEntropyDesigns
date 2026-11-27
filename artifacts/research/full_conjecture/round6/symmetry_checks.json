@@ -1,0 +1,422 @@
+{
+  "passed": true,
+  "exactSymmetricMaxima": [
+    {
+      "bits": 2,
+      "maximumSymmetricCollision": "1/4",
+      "sliceMasses": [
+        [
+          0,
+          "1/4"
+        ],
+        [
+          1,
+          "1/2"
+        ],
+        [
+          2,
+          "1/4"
+        ]
+      ]
+    },
+    {
+      "bits": 3,
+      "maximumSymmetricCollision": "1/4",
+      "sliceMasses": [
+        [
+          0,
+          "1/4"
+        ],
+        [
+          1,
+          "0"
+        ],
+        [
+          2,
+          "3/4"
+        ]
+      ]
+    },
+    {
+      "bits": 4,
+      "maximumSymmetricCollision": "1/8",
+      "sliceMasses": [
+        [
+          0,
+          "0"
+        ],
+        [
+          1,
+          "1/2"
+        ],
+        [
+          3,
+          "1/2"
+        ]
+      ]
+    },
+    {
+      "bits": 5,
+      "maximumSymmetricCollision": "7/72",
+      "sliceMasses": [
+        [
+          0,
+          "1/6"
+        ],
+        [
+          1,
+          "0"
+        ],
+        [
+          3,
+          "5/6"
+        ]
+      ]
+    },
+    {
+      "bits": 6,
+      "maximumSymmetricCollision": "7/144",
+      "sliceMasses": [
+        [
+          0,
+          "1/12"
+        ],
+        [
+          3,
+          "5/6"
+        ],
+        [
+          6,
+          "1/12"
+        ]
+      ]
+    },
+    {
+      "bits": 7,
+      "maximumSymmetricCollision": "3/80",
+      "sliceMasses": [
+        [
+          0,
+          "1/8"
+        ],
+        [
+          1,
+          "0"
+        ],
+        [
+          4,
+          "7/8"
+        ]
+      ]
+    },
+    {
+      "bits": 8,
+      "maximumSymmetricCollision": "3/160",
+      "sliceMasses": [
+        [
+          0,
+          "1/16"
+        ],
+        [
+          4,
+          "7/8"
+        ],
+        [
+          8,
+          "1/16"
+        ]
+      ]
+    },
+    {
+      "bits": 9,
+      "maximumSymmetricCollision": "23/1400",
+      "sliceMasses": [
+        [
+          0,
+          "1/10"
+        ],
+        [
+          1,
+          "0"
+        ],
+        [
+          5,
+          "9/10"
+        ]
+      ]
+    },
+    {
+      "bits": 10,
+      "maximumSymmetricCollision": "53/6048",
+      "sliceMasses": [
+        [
+          0,
+          "1/12"
+        ],
+        [
+          5,
+          "1/2"
+        ],
+        [
+          6,
+          "5/12"
+        ]
+      ]
+    },
+    {
+      "bits": 11,
+      "maximumSymmetricCollision": "53/6048",
+      "sliceMasses": [
+        [
+          0,
+          "1/12"
+        ],
+        [
+          1,
+          "0"
+        ],
+        [
+          6,
+          "11/12"
+        ]
+      ]
+    },
+    {
+      "bits": 12,
+      "maximumSymmetricCollision": "145/25872",
+      "sliceMasses": [
+        [
+          0,
+          "1/14"
+        ],
+        [
+          6,
+          "1/2"
+        ],
+        [
+          7,
+          "3/7"
+        ]
+      ]
+    },
+    {
+      "bits": 13,
+      "maximumSymmetricCollision": "145/25872",
+      "sliceMasses": [
+        [
+          0,
+          "1/14"
+        ],
+        [
+          1,
+          "0"
+        ],
+        [
+          7,
+          "13/14"
+        ]
+      ]
+    },
+    {
+      "bits": 14,
+      "maximumSymmetricCollision": "37/9152",
+      "sliceMasses": [
+        [
+          0,
+          "1/16"
+        ],
+        [
+          7,
+          "1/2"
+        ],
+        [
+          8,
+          "7/16"
+        ]
+      ]
+    },
+    {
+      "bits": 15,
+      "maximumSymmetricCollision": "37/9152",
+      "sliceMasses": [
+        [
+          0,
+          "1/16"
+        ],
+        [
+          1,
+          "0"
+        ],
+        [
+          8,
+          "15/16"
+        ]
+      ]
+    },
+    {
+      "bits": 16,
+      "maximumSymmetricCollision": "1447/463320",
+      "sliceMasses": [
+        [
+          0,
+          "1/18"
+        ],
+        [
+          8,
+          "1/2"
+        ],
+        [
+          9,
+          "4/9"
+        ]
+      ]
+    },
+    {
+      "bits": 17,
+      "maximumSymmetricCollision": "1447/463320",
+      "sliceMasses": [
+        [
+          0,
+          "1/18"
+        ],
+        [
+          1,
+          "0"
+        ],
+        [
+          9,
+          "17/18"
+        ]
+      ]
+    },
+    {
+      "bits": 18,
+      "maximumSymmetricCollision": "4881/1944800",
+      "sliceMasses": [
+        [
+          0,
+          "1/20"
+        ],
+        [
+          9,
+          "1/2"
+        ],
+        [
+          10,
+          "9/20"
+        ]
+      ]
+    },
+    {
+      "bits": 19,
+      "maximumSymmetricCollision": "4881/1944800",
+      "sliceMasses": [
+        [
+          0,
+          "1/20"
+        ],
+        [
+          1,
+          "0"
+        ],
+        [
+          10,
+          "19/20"
+        ]
+      ]
+    },
+    {
+      "bits": 20,
+      "maximumSymmetricCollision": "16817/8129264",
+      "sliceMasses": [
+        [
+          0,
+          "1/22"
+        ],
+        [
+          10,
+          "1/2"
+        ],
+        [
+          11,
+          "5/11"
+        ]
+      ]
+    },
+    {
+      "bits": 21,
+      "maximumSymmetricCollision": "16817/8129264",
+      "sliceMasses": [
+        [
+          0,
+          "1/22"
+        ],
+        [
+          1,
+          "0"
+        ],
+        [
+          11,
+          "21/22"
+        ]
+      ]
+    },
+    {
+      "bits": 22,
+      "maximumSymmetricCollision": "19603/11286912",
+      "sliceMasses": [
+        [
+          0,
+          "1/24"
+        ],
+        [
+          11,
+          "1/2"
+        ],
+        [
+          12,
+          "11/24"
+        ]
+      ]
+    },
+    {
+      "bits": 23,
+      "maximumSymmetricCollision": "19603/11286912",
+      "sliceMasses": [
+        [
+          0,
+          "1/24"
+        ],
+        [
+          1,
+          "0"
+        ],
+        [
+          12,
+          "23/24"
+        ]
+      ]
+    },
+    {
+      "bits": 24,
+      "maximumSymmetricCollision": "208037/140616112",
+      "sliceMasses": [
+        [
+          0,
+          "1/26"
+        ],
+        [
+          12,
+          "1/2"
+        ],
+        [
+          13,
+          "6/13"
+        ]
+      ]
+    }
+  ],
+  "feasibleThreeSliceBases": 2888,
+  "binomialModeCases": 2142,
+  "scope": "Finite exact checks support the analytic theorems; entropy series inequality is proved in the text."
+}

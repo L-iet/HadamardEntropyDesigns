@@ -1,0 +1,53 @@
+\section{A transfer from existing Hadamard-order gap bounds}
+\label{sec:stability-hadamard-gap-transfer}
+The prime construction is an independent published-input route. More
+generally, any uniform gap theorem for \emph{known Hadamard orders}
+can be used directly, potentially giving substantially stronger rates.
+The following statement deliberately isolates its hypothesis; applying a
+particular gap bound requires proving or citing that bound separately.
+
+\begin{theorem}[Uniform Hadamard-gap transfer]
+\label{thm:stability-hadamard-gap-transfer}
+Suppose $G$ is nonnegative and nondecreasing, $G(x)=o(x)$, and every
+sufficiently large interval $[x-G(x),x]$ contains a known Hadamard order.
+For dyadic $h=2^s$ put $A(h)=G(h)+s+1$. Then for every sufficiently large
+$h$ there is a known Hadamard order $k$ with
+\[
+ 2A(h)\le h-k\le3A(h).
+\]
+Consequently there is a uniform $h^2$-atom exactly isotropic strict local
+collision maximum on $n-1$ bits, $n=kh$, with exact distance $1-1/k$
+from all Hadamard mixtures and
+\[
+ \text{relative collision deficit}=\Theta(A(h)/h),\quad
+ \text{absolute deficit}=\Theta(A(h)/h^3),\quad
+ |\operatorname{supp}\mu|-n=\Theta(hA(h)).
+\]
+\end{theorem}
+\begin{proof}
+Apply the gap hypothesis at $x=h-2A(h)$. It gives
+$k\in[x-G(x),x]$, with $G(x)\le G(h)\le A(h)$.
+Thus $2A(h)\le h-k\le3A(h)$, and eventually
+$s\le h-k<h/2$. Choose the omitted slopes to contain an additive basis
+and apply Theorem~\ref{thm:design-spanning-slopes}. Its exact identities
+are $1-C/(1/n)=(h-k)/h$, $1/n-C=(h-k)/(kh^2)$, and
+$h^2-n=h(h-k)$. Since $k\sim h$, the stated estimates follow.
+\end{proof}
+
+For a polynomial gap input $G(x)=Cx^\theta$, $0<\theta<1$, the same
+exponents as the prime-gap transfer result. For a subpolynomial input
+\[
+ G(x)=\exp\!\left(O\!\left(\frac{\log x}{\log\log x}\right)\right)
+\]
+with a nondecreasing majorant, the conclusion strengthens to
+\begin{align*}
+ \text{relative deficit}&=n^{-1/2+o(1)},&
+ \text{absolute deficit}&=n^{-3/2+o(1)},\\
+ |\operatorname{supp}\mu|&=n+n^{1/2+o(1)},&
+ \operatorname{dist}_{\rm TV}(\mu,\mathcal H_n)&=1-\Theta(n^{-1/2}).
+\end{align*}
+These are conditional on the stated gap input, not on RH or any
+arithmetic-progression conjecture. In particular, a gap theorem already
+proved elsewhere in the project can be inserted here with its exact
+scope and provenance. This transfer does not independently prove that
+gap theorem or the Hadamard conjecture.

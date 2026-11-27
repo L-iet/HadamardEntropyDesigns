@@ -1,0 +1,28 @@
+{
+  "project": "entropy-designs",
+  "paperPages": 72,
+  "comparedTheorems": 573,
+  "comparedDefinitions": 246,
+  "paperClaimRecords": 89,
+  "provedClaimRecords": 84,
+  "unfinishedClaimRecords": 5,
+  "unsubmittedPrincipalClaims": [
+    "E07.03",
+    "E08.02",
+    "E26.03",
+    "E26.04",
+    "E26.05"
+  ],
+  "proofBuild": "passed",
+  "axiomAudit": "passed",
+  "auditedDeclarations": 819,
+  "localComparator": "passed dual-kernel checks, using fresh acceptance or revalidated byte-identical exported-proof receipts as recorded per group",
+  "paperSnapshotCurrent": true,
+  "submissionReady": true,
+  "readinessMode": "local preparation of declared verified scope",
+  "formalizationDevelopment": "paused",
+  "principalCoverageComplete": false,
+  "registryVerified": false,
+  "registrationPerformed": false,
+  "publicImmutableCommitRequired": true
+}

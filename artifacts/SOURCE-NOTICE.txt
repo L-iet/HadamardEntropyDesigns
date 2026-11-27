@@ -1,0 +1,12 @@
+Snapshot of this project author's prior research drafts, exact Python experiments, data and PDFs.
+Original source: D:/Papers/Hadamard/research/full_conjecture, captured 21 November 2026.
+Apache-2.0, Joshua Mark; root repository LICENSE applies.
+No externally authored paper PDFs, third-party Lean source or build cache is included.
+All four companion repos retain the same historical reference archive for reproducibility.
+Archive membership is not a claim that every result there belongs to this paper or is Lean formalized.
+Older verification reports describe their original paths and scopes, not a new registry verification.
+The original duplicate license file is omitted; mathematical citations retain their attribution.
+
+The baseline directory preserves the author's existing main paper.
+Where present, improvement preserves quantitative-extension paper/data/Python artifacts.
+The old Lean extension is not imported as an undeclared local dependency.

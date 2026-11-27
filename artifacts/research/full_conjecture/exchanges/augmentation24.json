@@ -1,0 +1,1788 @@
+{
+  "n": 24,
+  "oldRows": 16,
+  "minimalDeletedRows": 3,
+  "allSmallerDeletionSetsExhausted": true,
+  "deleted": [
+    0,
+    5,
+    6
+  ],
+  "newMasks": [
+    353924,
+    1104648,
+    2786850,
+    4759768
+  ],
+  "augmentedMasks": [
+    16773120,
+    16519104,
+    10359454,
+    7684730,
+    1547504,
+    6736278,
+    11838780,
+    3701846,
+    13790378,
+    10646512,
+    2963882,
+    12892774,
+    5974836,
+    353924,
+    1104648,
+    2786850,
+    4759768
+  ],
+  "completedMasks": [
+    16773120,
+    16519104,
+    10359454,
+    7684730,
+    1547504,
+    6736278,
+    11838780,
+    3701846,
+    13790378,
+    10646512,
+    2963882,
+    12892774,
+    5974836,
+    353924,
+    1104648,
+    2786850,
+    4759768,
+    5133676,
+    7583694,
+    9432922,
+    10076646,
+    10684492,
+    12653842,
+    15326908
+  ],
+  "attempts": [
+    {
+      "deleted": [],
+      "candidateCount": 0,
+      "assignmentCount": 128,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        0
+      ],
+      "candidateCount": 1,
+      "assignmentCount": 256,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        1
+      ],
+      "candidateCount": 1,
+      "assignmentCount": 256,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        2
+      ],
+      "candidateCount": 1,
+      "assignmentCount": 256,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        3
+      ],
+      "candidateCount": 1,
+      "assignmentCount": 256,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        4
+      ],
+      "candidateCount": 1,
+      "assignmentCount": 256,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        5
+      ],
+      "candidateCount": 1,
+      "assignmentCount": 256,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        6
+      ],
+      "candidateCount": 1,
+      "assignmentCount": 256,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        7
+      ],
+      "candidateCount": 1,
+      "assignmentCount": 256,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        8
+      ],
+      "candidateCount": 1,
+      "assignmentCount": 256,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        9
+      ],
+      "candidateCount": 1,
+      "assignmentCount": 256,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        10
+      ],
+      "candidateCount": 1,
+      "assignmentCount": 256,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        11
+      ],
+      "candidateCount": 1,
+      "assignmentCount": 256,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        12
+      ],
+      "candidateCount": 1,
+      "assignmentCount": 256,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        13
+      ],
+      "candidateCount": 1,
+      "assignmentCount": 256,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        14
+      ],
+      "candidateCount": 1,
+      "assignmentCount": 256,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        15
+      ],
+      "candidateCount": 1,
+      "assignmentCount": 256,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        0,
+        1
+      ],
+      "candidateCount": 2,
+      "assignmentCount": 512,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        0,
+        2
+      ],
+      "candidateCount": 2,
+      "assignmentCount": 512,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        0,
+        3
+      ],
+      "candidateCount": 2,
+      "assignmentCount": 512,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        0,
+        4
+      ],
+      "candidateCount": 2,
+      "assignmentCount": 512,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        0,
+        5
+      ],
+      "candidateCount": 2,
+      "assignmentCount": 512,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        0,
+        6
+      ],
+      "candidateCount": 2,
+      "assignmentCount": 512,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        0,
+        7
+      ],
+      "candidateCount": 2,
+      "assignmentCount": 512,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        0,
+        8
+      ],
+      "candidateCount": 2,
+      "assignmentCount": 512,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        0,
+        9
+      ],
+      "candidateCount": 2,
+      "assignmentCount": 512,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        0,
+        10
+      ],
+      "candidateCount": 2,
+      "assignmentCount": 512,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        0,
+        11
+      ],
+      "candidateCount": 2,
+      "assignmentCount": 512,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        0,
+        12
+      ],
+      "candidateCount": 2,
+      "assignmentCount": 512,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        0,
+        13
+      ],
+      "candidateCount": 2,
+      "assignmentCount": 512,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        0,
+        14
+      ],
+      "candidateCount": 2,
+      "assignmentCount": 512,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        0,
+        15
+      ],
+      "candidateCount": 2,
+      "assignmentCount": 512,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        1,
+        2
+      ],
+      "candidateCount": 2,
+      "assignmentCount": 512,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        1,
+        3
+      ],
+      "candidateCount": 2,
+      "assignmentCount": 512,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        1,
+        4
+      ],
+      "candidateCount": 4,
+      "assignmentCount": 512,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        1,
+        5
+      ],
+      "candidateCount": 4,
+      "assignmentCount": 512,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        1,
+        6
+      ],
+      "candidateCount": 4,
+      "assignmentCount": 512,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        1,
+        7
+      ],
+      "candidateCount": 2,
+      "assignmentCount": 512,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        1,
+        8
+      ],
+      "candidateCount": 2,
+      "assignmentCount": 512,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        1,
+        9
+      ],
+      "candidateCount": 2,
+      "assignmentCount": 512,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        1,
+        10
+      ],
+      "candidateCount": 2,
+      "assignmentCount": 512,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        1,
+        11
+      ],
+      "candidateCount": 2,
+      "assignmentCount": 512,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        1,
+        12
+      ],
+      "candidateCount": 2,
+      "assignmentCount": 512,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        1,
+        13
+      ],
+      "candidateCount": 4,
+      "assignmentCount": 512,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        1,
+        14
+      ],
+      "candidateCount": 2,
+      "assignmentCount": 512,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        1,
+        15
+      ],
+      "candidateCount": 2,
+      "assignmentCount": 512,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        2,
+        3
+      ],
+      "candidateCount": 4,
+      "assignmentCount": 512,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        2,
+        4
+      ],
+      "candidateCount": 2,
+      "assignmentCount": 512,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        2,
+        5
+      ],
+      "candidateCount": 2,
+      "assignmentCount": 512,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        2,
+        6
+      ],
+      "candidateCount": 2,
+      "assignmentCount": 512,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        2,
+        7
+      ],
+      "candidateCount": 4,
+      "assignmentCount": 512,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        2,
+        8
+      ],
+      "candidateCount": 2,
+      "assignmentCount": 512,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        2,
+        9
+      ],
+      "candidateCount": 2,
+      "assignmentCount": 512,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        2,
+        10
+      ],
+      "candidateCount": 4,
+      "assignmentCount": 512,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        2,
+        11
+      ],
+      "candidateCount": 2,
+      "assignmentCount": 512,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        2,
+        12
+      ],
+      "candidateCount": 2,
+      "assignmentCount": 512,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        2,
+        13
+      ],
+      "candidateCount": 2,
+      "assignmentCount": 512,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        2,
+        14
+      ],
+      "candidateCount": 2,
+      "assignmentCount": 512,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        2,
+        15
+      ],
+      "candidateCount": 4,
+      "assignmentCount": 512,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        3,
+        4
+      ],
+      "candidateCount": 2,
+      "assignmentCount": 512,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        3,
+        5
+      ],
+      "candidateCount": 2,
+      "assignmentCount": 512,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        3,
+        6
+      ],
+      "candidateCount": 2,
+      "assignmentCount": 512,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        3,
+        7
+      ],
+      "candidateCount": 4,
+      "assignmentCount": 512,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        3,
+        8
+      ],
+      "candidateCount": 2,
+      "assignmentCount": 512,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        3,
+        9
+      ],
+      "candidateCount": 2,
+      "assignmentCount": 512,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        3,
+        10
+      ],
+      "candidateCount": 4,
+      "assignmentCount": 512,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        3,
+        11
+      ],
+      "candidateCount": 2,
+      "assignmentCount": 512,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        3,
+        12
+      ],
+      "candidateCount": 2,
+      "assignmentCount": 512,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        3,
+        13
+      ],
+      "candidateCount": 2,
+      "assignmentCount": 512,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        3,
+        14
+      ],
+      "candidateCount": 2,
+      "assignmentCount": 512,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        3,
+        15
+      ],
+      "candidateCount": 4,
+      "assignmentCount": 512,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        4,
+        5
+      ],
+      "candidateCount": 4,
+      "assignmentCount": 512,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        4,
+        6
+      ],
+      "candidateCount": 4,
+      "assignmentCount": 512,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        4,
+        7
+      ],
+      "candidateCount": 2,
+      "assignmentCount": 512,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        4,
+        8
+      ],
+      "candidateCount": 2,
+      "assignmentCount": 512,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        4,
+        9
+      ],
+      "candidateCount": 2,
+      "assignmentCount": 512,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        4,
+        10
+      ],
+      "candidateCount": 2,
+      "assignmentCount": 512,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        4,
+        11
+      ],
+      "candidateCount": 2,
+      "assignmentCount": 512,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        4,
+        12
+      ],
+      "candidateCount": 2,
+      "assignmentCount": 512,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        4,
+        13
+      ],
+      "candidateCount": 4,
+      "assignmentCount": 512,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        4,
+        14
+      ],
+      "candidateCount": 2,
+      "assignmentCount": 512,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        4,
+        15
+      ],
+      "candidateCount": 2,
+      "assignmentCount": 512,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        5,
+        6
+      ],
+      "candidateCount": 4,
+      "assignmentCount": 512,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        5,
+        7
+      ],
+      "candidateCount": 2,
+      "assignmentCount": 512,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        5,
+        8
+      ],
+      "candidateCount": 2,
+      "assignmentCount": 512,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        5,
+        9
+      ],
+      "candidateCount": 2,
+      "assignmentCount": 512,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        5,
+        10
+      ],
+      "candidateCount": 2,
+      "assignmentCount": 512,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        5,
+        11
+      ],
+      "candidateCount": 2,
+      "assignmentCount": 512,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        5,
+        12
+      ],
+      "candidateCount": 2,
+      "assignmentCount": 512,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        5,
+        13
+      ],
+      "candidateCount": 4,
+      "assignmentCount": 512,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        5,
+        14
+      ],
+      "candidateCount": 2,
+      "assignmentCount": 512,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        5,
+        15
+      ],
+      "candidateCount": 2,
+      "assignmentCount": 512,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        6,
+        7
+      ],
+      "candidateCount": 2,
+      "assignmentCount": 512,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        6,
+        8
+      ],
+      "candidateCount": 2,
+      "assignmentCount": 512,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        6,
+        9
+      ],
+      "candidateCount": 2,
+      "assignmentCount": 512,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        6,
+        10
+      ],
+      "candidateCount": 2,
+      "assignmentCount": 512,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        6,
+        11
+      ],
+      "candidateCount": 2,
+      "assignmentCount": 512,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        6,
+        12
+      ],
+      "candidateCount": 2,
+      "assignmentCount": 512,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        6,
+        13
+      ],
+      "candidateCount": 4,
+      "assignmentCount": 512,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        6,
+        14
+      ],
+      "candidateCount": 2,
+      "assignmentCount": 512,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        6,
+        15
+      ],
+      "candidateCount": 2,
+      "assignmentCount": 512,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        7,
+        8
+      ],
+      "candidateCount": 2,
+      "assignmentCount": 512,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        7,
+        9
+      ],
+      "candidateCount": 2,
+      "assignmentCount": 512,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        7,
+        10
+      ],
+      "candidateCount": 4,
+      "assignmentCount": 512,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        7,
+        11
+      ],
+      "candidateCount": 2,
+      "assignmentCount": 512,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        7,
+        12
+      ],
+      "candidateCount": 2,
+      "assignmentCount": 512,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        7,
+        13
+      ],
+      "candidateCount": 2,
+      "assignmentCount": 512,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        7,
+        14
+      ],
+      "candidateCount": 2,
+      "assignmentCount": 512,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        7,
+        15
+      ],
+      "candidateCount": 4,
+      "assignmentCount": 512,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        8,
+        9
+      ],
+      "candidateCount": 2,
+      "assignmentCount": 512,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        8,
+        10
+      ],
+      "candidateCount": 2,
+      "assignmentCount": 512,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        8,
+        11
+      ],
+      "candidateCount": 2,
+      "assignmentCount": 512,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        8,
+        12
+      ],
+      "candidateCount": 2,
+      "assignmentCount": 512,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        8,
+        13
+      ],
+      "candidateCount": 2,
+      "assignmentCount": 512,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        8,
+        14
+      ],
+      "candidateCount": 2,
+      "assignmentCount": 512,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        8,
+        15
+      ],
+      "candidateCount": 2,
+      "assignmentCount": 512,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        9,
+        10
+      ],
+      "candidateCount": 2,
+      "assignmentCount": 512,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        9,
+        11
+      ],
+      "candidateCount": 2,
+      "assignmentCount": 512,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        9,
+        12
+      ],
+      "candidateCount": 2,
+      "assignmentCount": 512,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        9,
+        13
+      ],
+      "candidateCount": 2,
+      "assignmentCount": 512,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        9,
+        14
+      ],
+      "candidateCount": 2,
+      "assignmentCount": 512,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        9,
+        15
+      ],
+      "candidateCount": 2,
+      "assignmentCount": 512,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        10,
+        11
+      ],
+      "candidateCount": 2,
+      "assignmentCount": 512,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        10,
+        12
+      ],
+      "candidateCount": 2,
+      "assignmentCount": 512,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        10,
+        13
+      ],
+      "candidateCount": 2,
+      "assignmentCount": 512,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        10,
+        14
+      ],
+      "candidateCount": 2,
+      "assignmentCount": 512,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        10,
+        15
+      ],
+      "candidateCount": 4,
+      "assignmentCount": 512,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        11,
+        12
+      ],
+      "candidateCount": 2,
+      "assignmentCount": 512,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        11,
+        13
+      ],
+      "candidateCount": 2,
+      "assignmentCount": 512,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        11,
+        14
+      ],
+      "candidateCount": 2,
+      "assignmentCount": 512,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        11,
+        15
+      ],
+      "candidateCount": 2,
+      "assignmentCount": 512,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        12,
+        13
+      ],
+      "candidateCount": 2,
+      "assignmentCount": 512,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        12,
+        14
+      ],
+      "candidateCount": 2,
+      "assignmentCount": 512,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        12,
+        15
+      ],
+      "candidateCount": 2,
+      "assignmentCount": 512,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        13,
+        14
+      ],
+      "candidateCount": 2,
+      "assignmentCount": 512,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        13,
+        15
+      ],
+      "candidateCount": 2,
+      "assignmentCount": 512,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        14,
+        15
+      ],
+      "candidateCount": 2,
+      "assignmentCount": 512,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        0,
+        1,
+        2
+      ],
+      "candidateCount": 3,
+      "assignmentCount": 1024,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        0,
+        1,
+        3
+      ],
+      "candidateCount": 3,
+      "assignmentCount": 1024,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        0,
+        1,
+        4
+      ],
+      "candidateCount": 5,
+      "assignmentCount": 1024,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        0,
+        1,
+        5
+      ],
+      "candidateCount": 5,
+      "assignmentCount": 1024,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        0,
+        1,
+        6
+      ],
+      "candidateCount": 5,
+      "assignmentCount": 1024,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        0,
+        1,
+        7
+      ],
+      "candidateCount": 3,
+      "assignmentCount": 1024,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        0,
+        1,
+        8
+      ],
+      "candidateCount": 6,
+      "assignmentCount": 1024,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        0,
+        1,
+        9
+      ],
+      "candidateCount": 3,
+      "assignmentCount": 1024,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        0,
+        1,
+        10
+      ],
+      "candidateCount": 6,
+      "assignmentCount": 1024,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        0,
+        1,
+        11
+      ],
+      "candidateCount": 3,
+      "assignmentCount": 1024,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        0,
+        1,
+        12
+      ],
+      "candidateCount": 3,
+      "assignmentCount": 1024,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        0,
+        1,
+        13
+      ],
+      "candidateCount": 5,
+      "assignmentCount": 1024,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        0,
+        1,
+        14
+      ],
+      "candidateCount": 3,
+      "assignmentCount": 1024,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        0,
+        1,
+        15
+      ],
+      "candidateCount": 3,
+      "assignmentCount": 1024,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        0,
+        2,
+        3
+      ],
+      "candidateCount": 5,
+      "assignmentCount": 1024,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        0,
+        2,
+        4
+      ],
+      "candidateCount": 3,
+      "assignmentCount": 1024,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        0,
+        2,
+        5
+      ],
+      "candidateCount": 3,
+      "assignmentCount": 1024,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        0,
+        2,
+        6
+      ],
+      "candidateCount": 3,
+      "assignmentCount": 1024,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        0,
+        2,
+        7
+      ],
+      "candidateCount": 5,
+      "assignmentCount": 1024,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        0,
+        2,
+        8
+      ],
+      "candidateCount": 3,
+      "assignmentCount": 1024,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        0,
+        2,
+        9
+      ],
+      "candidateCount": 3,
+      "assignmentCount": 1024,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        0,
+        2,
+        10
+      ],
+      "candidateCount": 5,
+      "assignmentCount": 1024,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        0,
+        2,
+        11
+      ],
+      "candidateCount": 3,
+      "assignmentCount": 1024,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        0,
+        2,
+        12
+      ],
+      "candidateCount": 3,
+      "assignmentCount": 1024,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        0,
+        2,
+        13
+      ],
+      "candidateCount": 3,
+      "assignmentCount": 1024,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        0,
+        2,
+        14
+      ],
+      "candidateCount": 3,
+      "assignmentCount": 1024,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        0,
+        2,
+        15
+      ],
+      "candidateCount": 5,
+      "assignmentCount": 1024,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        0,
+        3,
+        4
+      ],
+      "candidateCount": 3,
+      "assignmentCount": 1024,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        0,
+        3,
+        5
+      ],
+      "candidateCount": 3,
+      "assignmentCount": 1024,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        0,
+        3,
+        6
+      ],
+      "candidateCount": 3,
+      "assignmentCount": 1024,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        0,
+        3,
+        7
+      ],
+      "candidateCount": 5,
+      "assignmentCount": 1024,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        0,
+        3,
+        8
+      ],
+      "candidateCount": 3,
+      "assignmentCount": 1024,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        0,
+        3,
+        9
+      ],
+      "candidateCount": 3,
+      "assignmentCount": 1024,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        0,
+        3,
+        10
+      ],
+      "candidateCount": 5,
+      "assignmentCount": 1024,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        0,
+        3,
+        11
+      ],
+      "candidateCount": 3,
+      "assignmentCount": 1024,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        0,
+        3,
+        12
+      ],
+      "candidateCount": 3,
+      "assignmentCount": 1024,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        0,
+        3,
+        13
+      ],
+      "candidateCount": 3,
+      "assignmentCount": 1024,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        0,
+        3,
+        14
+      ],
+      "candidateCount": 3,
+      "assignmentCount": 1024,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        0,
+        3,
+        15
+      ],
+      "candidateCount": 5,
+      "assignmentCount": 1024,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        0,
+        4,
+        5
+      ],
+      "candidateCount": 5,
+      "assignmentCount": 1024,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        0,
+        4,
+        6
+      ],
+      "candidateCount": 5,
+      "assignmentCount": 1024,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        0,
+        4,
+        7
+      ],
+      "candidateCount": 3,
+      "assignmentCount": 1024,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        0,
+        4,
+        8
+      ],
+      "candidateCount": 3,
+      "assignmentCount": 1024,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        0,
+        4,
+        9
+      ],
+      "candidateCount": 3,
+      "assignmentCount": 1024,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        0,
+        4,
+        10
+      ],
+      "candidateCount": 3,
+      "assignmentCount": 1024,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        0,
+        4,
+        11
+      ],
+      "candidateCount": 3,
+      "assignmentCount": 1024,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        0,
+        4,
+        12
+      ],
+      "candidateCount": 3,
+      "assignmentCount": 1024,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        0,
+        4,
+        13
+      ],
+      "candidateCount": 5,
+      "assignmentCount": 1024,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        0,
+        4,
+        14
+      ],
+      "candidateCount": 3,
+      "assignmentCount": 1024,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        0,
+        4,
+        15
+      ],
+      "candidateCount": 3,
+      "assignmentCount": 1024,
+      "augmentationExists": false
+    },
+    {
+      "deleted": [
+        0,
+        5,
+        6
+      ],
+      "candidateCount": 14,
+      "assignmentCount": 1024,
+      "augmentationExists": true
+    }
+  ]
+}

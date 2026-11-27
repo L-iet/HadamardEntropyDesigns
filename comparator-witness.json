@@ -1,0 +1,16 @@
+{
+  "challenge_module": "WitnessChallenge",
+  "solution_module": "WitnessSolution",
+  "theorem_names": [
+    "EntropyDesigns.SupportWitness.hadamard_mixture_support_witness",
+    "EntropyDesigns.SupportWitness.hadamard_block_replacement_bound",
+    "EntropyDesigns.SupportWitness.augmentedSignMatrix_isHadamard"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "enable_nanoda": true
+}

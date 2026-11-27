@@ -1,0 +1,322 @@
+{
+  "license": "Apache-2.0",
+  "author": "Joshua Mark",
+  "ORCID": "https://orcid.org/0009-0003-5905-2382",
+  "originalFiniteConstructionSources": {
+    "license": "Apache-2.0",
+    "author": "Joshua Mark",
+    "origin": "Author\u2019s existing lean/ finite construction proofs; no changes to original files.",
+    "licenseSHA256": "b40930bbcf80744c86c46a12bc9da056641d722716c378f5659b9e555ef833e1",
+    "modulesInDependencyOrder": [
+      "HadamardMultibase.Basic",
+      "HadamardMultibase.PackedPositions",
+      "HadamardMultibase.PeriodPositions",
+      "HadamardMultibase.CraigenBlock",
+      "HadamardMultibase.CraigenCirculant",
+      "HadamardMultibase.SignedPermutation",
+      "HadamardMultibase.CraigenShuffle",
+      "HadamardMultibase.CraigenSupport",
+      "HadamardMultibase.CraigenScalar",
+      "HadamardMultibase.CoefficientSpace",
+      "HadamardMultibase.CraigenInduction",
+      "HadamardMultibase.CraigenHadamard",
+      "HadamardMultibase.Golay",
+      "HadamardMultibase.GolaySeeds",
+      "HadamardMultibase.GolayAlgebra",
+      "HadamardMultibase.GolayPolynomial",
+      "HadamardMultibase.PeriodicAlgebra",
+      "HadamardMultibase.PeriodicGolay",
+      "HadamardMultibase.PartitionedFamily",
+      "HadamardMultibase.GolayPlacement",
+      "HadamardMultibase.Transfer",
+      "HadamardMultibase.CraigenTransfer",
+      "HadamardMultibase.GolayOperations",
+      "HadamardMultibase.Turyn"
+    ],
+    "sourceHashes": {
+      "HadamardMultibase.Basic": "c593acdc7ae8e68bf3bd5a7e56158030ffd4f66aec83be0264530ef607dc3329",
+      "HadamardMultibase.PackedPositions": "c1a8024b62516962a2529a3470d77636b4c5ef77e455bf4c695d5014ed6cc87a",
+      "HadamardMultibase.PeriodPositions": "3a5920d8df093b53477a01fa0a0bf37dcefc84c8d54e9cb570917985118d5acc",
+      "HadamardMultibase.CraigenBlock": "a06bdaa4e5050957a2d22a1a01ae87fb2a8b75e77a11b1a362be27718705afbe",
+      "HadamardMultibase.CraigenCirculant": "981d4a6ae64bb09fa522353611af1aaa7876fe1f446bd49b6e8c96e810736515",
+      "HadamardMultibase.SignedPermutation": "1333974f28561f58e9e0ba0ecc4bf49329651edb83aa3416efb317f2084d8cea",
+      "HadamardMultibase.CraigenShuffle": "ff4015878903d129a07f74b2118c4c2ab5def51ed427395dbb6ffe8c698d1f09",
+      "HadamardMultibase.CraigenSupport": "6b0bb50eceb69691ad10a3e0a926d337b5141fb655943c854647a7906086add4",
+      "HadamardMultibase.CraigenScalar": "c51772bb77b695987c9259dec7c195b0e5310ab1698a0240353461086312f51b",
+      "HadamardMultibase.CoefficientSpace": "b7a5ce34aa3250fc39e0d773559efc14a62ee2a7d3f22fd4f69e0cfee0d83f0d",
+      "HadamardMultibase.CraigenInduction": "c409602c8875f11f6c55d6ea9a6d2b1cafb5e0ae8d334a6306894951abf3c09e",
+      "HadamardMultibase.CraigenHadamard": "699b71480b7f3630b0cad3b89fc18912fbb2497cb6f71041574b966be943746c",
+      "HadamardMultibase.Golay": "5d6fe40211517f41c28b478e3e97c49b044e5a0dc8bf1e583f10309c3b623b6e",
+      "HadamardMultibase.GolaySeeds": "2c41fee80426f9a9c333e7bc504a0d3d74ffe7f2baae88c9e02a24c354e28d19",
+      "HadamardMultibase.GolayAlgebra": "7d9100201e945b2064ff6a2f2f6ebffeb870b85f98cd4bfe73c2a82cf5703297",
+      "HadamardMultibase.GolayPolynomial": "715534dbda014d4d56d96cd60f6297fca298ba7304eca671b28f8309fa882b58",
+      "HadamardMultibase.PeriodicAlgebra": "5ca09effb60f895b8d92aec336ca7786db8e58045446155226fc10e6fd719677",
+      "HadamardMultibase.PeriodicGolay": "d00eae07808ef813e3deeff2353184928f4f976b50848870061384b59f556b55",
+      "HadamardMultibase.PartitionedFamily": "bd810bd1073faa825f26aaf264bec343ca6079dc7c066b5b8e14eab40a6e03a0",
+      "HadamardMultibase.GolayPlacement": "1ace856d3d5a1a691cc548138d80911cda7bdb8aab67cdb3b19167bd80ef9052",
+      "HadamardMultibase.Transfer": "2cc6cdac93a5d36d861b98b009ff0d2b401be769934e6d8647ee8f4f617c0210",
+      "HadamardMultibase.CraigenTransfer": "65379ed6c1823e2965d2cbcc6c196215966b586a4899b238ca108702b39e0436",
+      "HadamardMultibase.GolayOperations": "1be428b6dc38baf47a55284c14ec4daf98ad30ebc2469ea5c458694a84ced5b5",
+      "HadamardMultibase.Turyn": "1adc23b123f77449c2795584838abfe0ab8d400fe02d501f4d7fbbbd9fd7e664"
+    },
+    "stagedChanges": {
+      "HadamardMultibase.Basic": "Only the umbrella Mathlib.Tactic import is replaced with explicit tactic-module imports to keep compilation within the 1024MB cap. Mathematical definitions and proof bodies are unchanged; original source hash retained separately.",
+      "HadamardMultibase.CraigenShuffle": "Adds the explicit Mathlib.LinearAlgebra.Matrix.Reindex import previously supplied indirectly by the umbrella tactic import; mathematical definitions and proof bodies unchanged.",
+      "HadamardMultibase.GolaySeeds": "Restricts the original explicit seed module to the length-two seed needed for radix scaling; unused length-ten and length-twenty-six data/certificates omitted to avoid unnecessary finite evaluation.",
+      "HadamardMultibase.Turyn": "Retains the full generic Golay product and power proofs; omits unused monoid-family convenience theorems requiring the unused ten/twenty-six seeds."
+    },
+    "stagedSourceHashes": {
+      "HadamardMultibase.Basic": "596fd0ae877e00fad81762a3c902a9f26fd8269f72ff3e48397f0baf9375c2b1",
+      "HadamardMultibase.PackedPositions": "c1a8024b62516962a2529a3470d77636b4c5ef77e455bf4c695d5014ed6cc87a",
+      "HadamardMultibase.PeriodPositions": "3a5920d8df093b53477a01fa0a0bf37dcefc84c8d54e9cb570917985118d5acc",
+      "HadamardMultibase.CraigenBlock": "a06bdaa4e5050957a2d22a1a01ae87fb2a8b75e77a11b1a362be27718705afbe",
+      "HadamardMultibase.CraigenCirculant": "981d4a6ae64bb09fa522353611af1aaa7876fe1f446bd49b6e8c96e810736515",
+      "HadamardMultibase.SignedPermutation": "1333974f28561f58e9e0ba0ecc4bf49329651edb83aa3416efb317f2084d8cea",
+      "HadamardMultibase.CraigenShuffle": "fc2c6b8dae2974fc6ced487a35ee416331031bab918ef7b66616a48af0f92021",
+      "HadamardMultibase.CraigenSupport": "6b0bb50eceb69691ad10a3e0a926d337b5141fb655943c854647a7906086add4",
+      "HadamardMultibase.CraigenScalar": "c51772bb77b695987c9259dec7c195b0e5310ab1698a0240353461086312f51b",
+      "HadamardMultibase.CoefficientSpace": "b7a5ce34aa3250fc39e0d773559efc14a62ee2a7d3f22fd4f69e0cfee0d83f0d",
+      "HadamardMultibase.CraigenInduction": "c409602c8875f11f6c55d6ea9a6d2b1cafb5e0ae8d334a6306894951abf3c09e",
+      "HadamardMultibase.CraigenHadamard": "699b71480b7f3630b0cad3b89fc18912fbb2497cb6f71041574b966be943746c",
+      "HadamardMultibase.Golay": "5d6fe40211517f41c28b478e3e97c49b044e5a0dc8bf1e583f10309c3b623b6e",
+      "HadamardMultibase.GolaySeeds": "7fcf4c63c6f851e1bc13f5b7096e9e3b0e54c353206fb43fa74ea2c6beb34a02",
+      "HadamardMultibase.GolayAlgebra": "7d9100201e945b2064ff6a2f2f6ebffeb870b85f98cd4bfe73c2a82cf5703297",
+      "HadamardMultibase.GolayPolynomial": "715534dbda014d4d56d96cd60f6297fca298ba7304eca671b28f8309fa882b58",
+      "HadamardMultibase.PeriodicAlgebra": "5ca09effb60f895b8d92aec336ca7786db8e58045446155226fc10e6fd719677",
+      "HadamardMultibase.PeriodicGolay": "d00eae07808ef813e3deeff2353184928f4f976b50848870061384b59f556b55",
+      "HadamardMultibase.PartitionedFamily": "bd810bd1073faa825f26aaf264bec343ca6079dc7c066b5b8e14eab40a6e03a0",
+      "HadamardMultibase.GolayPlacement": "1ace856d3d5a1a691cc548138d80911cda7bdb8aab67cdb3b19167bd80ef9052",
+      "HadamardMultibase.Transfer": "2cc6cdac93a5d36d861b98b009ff0d2b401be769934e6d8647ee8f4f617c0210",
+      "HadamardMultibase.CraigenTransfer": "65379ed6c1823e2965d2cbcc6c196215966b586a4899b238ca108702b39e0436",
+      "HadamardMultibase.GolayOperations": "1be428b6dc38baf47a55284c14ec4daf98ad30ebc2469ea5c458694a84ced5b5",
+      "HadamardMultibase.Turyn": "9c27bc73efb4d6d738f3281bc319d182e146e91ae232bbd9695f654b4c0e88a5"
+    }
+  },
+  "privateAxiomAudit": {
+    "status": "passed",
+    "actualExit": 0,
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "mainReceipt": {
+      "module": "RadixCertificateDraft",
+      "actualExit": 0,
+      "sourceSHA256": "2822db65d3044e8e64571c3e55e976a4055e33d82c8eb87238f2904293107409",
+      "oleanSHA256": "39a4ff70c62e930a45bc9b418d32583cbdf74ed95cc2830074f39debf0e3ff4f"
+    },
+    "constructionSourceReceipts": [
+      {
+        "module": "HadamardMultibase.Basic",
+        "actualExit": 0,
+        "canonicalSourceSHA256": "596fd0ae877e00fad81762a3c902a9f26fd8269f72ff3e48397f0baf9375c2b1",
+        "oleanSHA256": "4b7197219ed49da1eccd282c35e09efe226c85a72a3d7316deb6d11280130c63"
+      },
+      {
+        "module": "HadamardMultibase.PackedPositions",
+        "actualExit": 0,
+        "canonicalSourceSHA256": "c1a8024b62516962a2529a3470d77636b4c5ef77e455bf4c695d5014ed6cc87a",
+        "oleanSHA256": "8e24538eaf1c6b034e3d13442aeeaf90bb92d8fe88ee27865089565e242b8e71"
+      },
+      {
+        "module": "HadamardMultibase.PeriodPositions",
+        "actualExit": 0,
+        "canonicalSourceSHA256": "3a5920d8df093b53477a01fa0a0bf37dcefc84c8d54e9cb570917985118d5acc",
+        "oleanSHA256": "66642ae7dc871f51a6c7698e6af0f15030e8891264661e454d695f221515d3eb"
+      },
+      {
+        "module": "HadamardMultibase.CraigenBlock",
+        "actualExit": 0,
+        "canonicalSourceSHA256": "a06bdaa4e5050957a2d22a1a01ae87fb2a8b75e77a11b1a362be27718705afbe",
+        "oleanSHA256": "4d481e80602e880da778ab92b855395e02717c42cf2664594901bf64c44bb9e3"
+      },
+      {
+        "module": "HadamardMultibase.CraigenCirculant",
+        "actualExit": 0,
+        "canonicalSourceSHA256": "981d4a6ae64bb09fa522353611af1aaa7876fe1f446bd49b6e8c96e810736515",
+        "oleanSHA256": "4886c03da8120d56f5b7ecd8edf17d4dd7490499aaa41cb39875385a7e20efc6"
+      },
+      {
+        "module": "HadamardMultibase.SignedPermutation",
+        "actualExit": 0,
+        "canonicalSourceSHA256": "1333974f28561f58e9e0ba0ecc4bf49329651edb83aa3416efb317f2084d8cea",
+        "oleanSHA256": "2bec5f97a5bb27602bb5e8675df7a671be425a3798118015417f9f8197576ab3"
+      },
+      {
+        "module": "HadamardMultibase.CraigenShuffle",
+        "actualExit": 0,
+        "canonicalSourceSHA256": "fc2c6b8dae2974fc6ced487a35ee416331031bab918ef7b66616a48af0f92021",
+        "oleanSHA256": "f46a975d5fb47fbf5653a03ddfc8b63ed50a835d095a2aa791e5347a7c4bee49"
+      },
+      {
+        "module": "HadamardMultibase.CraigenSupport",
+        "actualExit": 0,
+        "canonicalSourceSHA256": "6b0bb50eceb69691ad10a3e0a926d337b5141fb655943c854647a7906086add4",
+        "oleanSHA256": "99c542e9a2edfb7649ace5aae7c9f2f5a7b31949f7d287bae414694a2de395a2"
+      },
+      {
+        "module": "HadamardMultibase.CraigenScalar",
+        "actualExit": 0,
+        "canonicalSourceSHA256": "c51772bb77b695987c9259dec7c195b0e5310ab1698a0240353461086312f51b",
+        "oleanSHA256": "f3b9e87beabb1d40ac7ac71436dca66ca38811c8c61bd25785e1cb372591da3f"
+      },
+      {
+        "module": "HadamardMultibase.CoefficientSpace",
+        "actualExit": 0,
+        "canonicalSourceSHA256": "b7a5ce34aa3250fc39e0d773559efc14a62ee2a7d3f22fd4f69e0cfee0d83f0d",
+        "oleanSHA256": "b907dbe2cf6a92fd60b8c3fa2ea0a8c5c9a0a84c665e51ec88204bdc8659585a"
+      },
+      {
+        "module": "HadamardMultibase.CraigenInduction",
+        "actualExit": 0,
+        "canonicalSourceSHA256": "c409602c8875f11f6c55d6ea9a6d2b1cafb5e0ae8d334a6306894951abf3c09e",
+        "oleanSHA256": "43c011b44c0a385a5446b8c7122134c480dd3115aefd5eef5459e07e7dd3c653"
+      },
+      {
+        "module": "HadamardMultibase.CraigenHadamard",
+        "actualExit": 0,
+        "canonicalSourceSHA256": "699b71480b7f3630b0cad3b89fc18912fbb2497cb6f71041574b966be943746c",
+        "oleanSHA256": "2cf0d14d817f8df9911aaca35eeaadca240f6687d0da9b28fd6d71bb663345ea"
+      },
+      {
+        "module": "HadamardMultibase.Golay",
+        "actualExit": 0,
+        "canonicalSourceSHA256": "5d6fe40211517f41c28b478e3e97c49b044e5a0dc8bf1e583f10309c3b623b6e",
+        "oleanSHA256": "c5358bfbb545a1740071e317584206a2f04e2ddc3c1419f0b98e8646e832e58e"
+      },
+      {
+        "module": "HadamardMultibase.GolaySeeds",
+        "actualExit": 0,
+        "canonicalSourceSHA256": "7fcf4c63c6f851e1bc13f5b7096e9e3b0e54c353206fb43fa74ea2c6beb34a02",
+        "oleanSHA256": "fb90af4ee525ce5514b2a57f797eb136aa19451bee63b719f436436dd612a124"
+      },
+      {
+        "module": "HadamardMultibase.GolayAlgebra",
+        "actualExit": 0,
+        "canonicalSourceSHA256": "7d9100201e945b2064ff6a2f2f6ebffeb870b85f98cd4bfe73c2a82cf5703297",
+        "oleanSHA256": "50b7f9d955d16fa3420e7e3696070cdd546e507513bafb9ce72df5e60c8073f4"
+      },
+      {
+        "module": "HadamardMultibase.GolayPolynomial",
+        "actualExit": 0,
+        "canonicalSourceSHA256": "715534dbda014d4d56d96cd60f6297fca298ba7304eca671b28f8309fa882b58",
+        "oleanSHA256": "6e6bdd2ba9705e3f64cc4acdc157242040c162eb1060b01e59095b8a6cca1c51"
+      },
+      {
+        "module": "HadamardMultibase.PeriodicAlgebra",
+        "actualExit": 0,
+        "canonicalSourceSHA256": "5ca09effb60f895b8d92aec336ca7786db8e58045446155226fc10e6fd719677",
+        "oleanSHA256": "47bc89eb180e2b12049838af0e044015e6b021d33a96b89e21405b02c9025ebd"
+      },
+      {
+        "module": "HadamardMultibase.PeriodicGolay",
+        "actualExit": 0,
+        "canonicalSourceSHA256": "d00eae07808ef813e3deeff2353184928f4f976b50848870061384b59f556b55",
+        "oleanSHA256": "f9eeafa474a8a90c9f5393e3e344d236c24300813e8ff468a4d1006446802237"
+      },
+      {
+        "module": "HadamardMultibase.PartitionedFamily",
+        "actualExit": 0,
+        "canonicalSourceSHA256": "bd810bd1073faa825f26aaf264bec343ca6079dc7c066b5b8e14eab40a6e03a0",
+        "oleanSHA256": "aabcceca1566123c21cc6aa7cc87643567def8247ca183d48025b135d0c91bb8"
+      },
+      {
+        "module": "HadamardMultibase.GolayPlacement",
+        "actualExit": 0,
+        "canonicalSourceSHA256": "1ace856d3d5a1a691cc548138d80911cda7bdb8aab67cdb3b19167bd80ef9052",
+        "oleanSHA256": "3d31b6bc7d85c4fd71b375ca8b5528d0e5d2b9322bd927c8a517cd6ad8129e2f"
+      },
+      {
+        "module": "HadamardMultibase.Transfer",
+        "actualExit": 0,
+        "canonicalSourceSHA256": "2cc6cdac93a5d36d861b98b009ff0d2b401be769934e6d8647ee8f4f617c0210",
+        "oleanSHA256": "725344e626dc8625553e91d1639e092dd480df98d4711c79b5eb55c02fd6db57"
+      },
+      {
+        "module": "HadamardMultibase.CraigenTransfer",
+        "actualExit": 0,
+        "canonicalSourceSHA256": "65379ed6c1823e2965d2cbcc6c196215966b586a4899b238ca108702b39e0436",
+        "oleanSHA256": "115cf9654d624c0467fcec5ad44308a518b58f7e9be4645e28f5f9963fdfcb2c"
+      },
+      {
+        "module": "HadamardMultibase.GolayOperations",
+        "actualExit": 0,
+        "canonicalSourceSHA256": "1be428b6dc38baf47a55284c14ec4daf98ad30ebc2469ea5c458694a84ced5b5",
+        "oleanSHA256": "8f01c7fb1466714f8ed05efd6616c31fac8ab67ec75fa17310d59b48e6579b3f"
+      },
+      {
+        "module": "HadamardMultibase.Turyn",
+        "actualExit": 0,
+        "canonicalSourceSHA256": "9c27bc73efb4d6d738f3281bc319d182e146e91ae232bbd9695f654b4c0e88a5",
+        "oleanSHA256": "041bac3c0f88b22202ef3dcc46772bd88642e6885789e0a0aa0f3046970a430f"
+      }
+    ],
+    "logBoundsReceipt": {
+      "module": "RadixLogBounds",
+      "actualExit": 0,
+      "actualSession": 2054,
+      "sourceSHA256": "9cb35fa792097a764a62c406c029aaed27af8c774b64396787e2867195664a21",
+      "oleanSHA256": "58b36d5df4e003d78f0b1ca4021a906b30866bc08d2a9f282bb54f2590096767"
+    },
+    "scope": "Private finite radix theorem, not owned or registry verification."
+  },
+  "privatePilot": {
+    "status": "passed",
+    "scope": "Private staged finite-radix pilot only; not owned snapshot or registry verification",
+    "leanKernelAccepted": true,
+    "nanodaAccepted": true,
+    "theoremNames": [
+      "EntropyDesigns.finite_radix_hadamard_bound",
+      "HadamardMultibase.autocorrelation._proof_2"
+    ],
+    "definitionNames": [],
+    "sourceHashes": {
+      "RadixPilotChallenge.lean": "b0d894c1e4f8bac8f57189e6ac496df33862d96abe40f8601b6fbcd0398065f3",
+      "RadixPilotSolution.lean": "c6af39cc762f764576bf4e639d2d64ee989a9114ee67f164db87cd8b8eadc170",
+      "comparator.json": "fdc9f5725c6b5a6435981e02e65ad80f617ea54900d2e37b10905d7f7d23e483"
+    },
+    "exports": {
+      "challenge": "2502c5b46102fdeb9f7f92571f0bf31d9144015bcc1f658b3e2a0bd89272f810",
+      "solution": "96645fab9c38610743aefa1c48f083e434672c7af029e8899ad2b1bb05f5cd7b"
+    }
+  },
+  "definitionComparison": "All computational definitions strictly compared; the identical-typed generated autocorrelation index-bound proof is additionally a theorem target. Zero definition holes.",
+  "attributionFiles": [
+    "licenses/hadamard-finite-LICENSE.txt",
+    "licenses/hadamard-finite-NOTICE.txt"
+  ],
+  "scope": "General finite radix theorem and explicit coefficient only. Numerical covering examples still require separate kernel certificates. Integrated verification required.",
+  "ownedChangeNotices": {
+    "Basic.lean": "Replaced the umbrella tactic import with explicit tactic modules for bounded compilation. Mathematical definitions and proof bodies are unchanged.",
+    "CraigenShuffle.lean": "Added an explicit Matrix.Reindex import previously supplied indirectly. Mathematical definitions and proof bodies are unchanged.",
+    "GolaySeeds.lean": "Retained only the length-two seed needed by radix scaling; unused larger seed data and certificates are omitted.",
+    "Turyn.lean": "Retained generic Golay multiplication and power proofs; unused specific monoid-family corollaries are omitted."
+  },
+  "ownedConstructionSourceHashes": {
+    "HadamardMultibase\\Basic.lean": "a2c85d6ac783c32fcdb8462e40664b2316db305337da8ff7025453c2fa407544",
+    "HadamardMultibase\\CoefficientSpace.lean": "b7a5ce34aa3250fc39e0d773559efc14a62ee2a7d3f22fd4f69e0cfee0d83f0d",
+    "HadamardMultibase\\CraigenBlock.lean": "a06bdaa4e5050957a2d22a1a01ae87fb2a8b75e77a11b1a362be27718705afbe",
+    "HadamardMultibase\\CraigenCirculant.lean": "981d4a6ae64bb09fa522353611af1aaa7876fe1f446bd49b6e8c96e810736515",
+    "HadamardMultibase\\CraigenHadamard.lean": "699b71480b7f3630b0cad3b89fc18912fbb2497cb6f71041574b966be943746c",
+    "HadamardMultibase\\CraigenInduction.lean": "c409602c8875f11f6c55d6ea9a6d2b1cafb5e0ae8d334a6306894951abf3c09e",
+    "HadamardMultibase\\CraigenScalar.lean": "c51772bb77b695987c9259dec7c195b0e5310ab1698a0240353461086312f51b",
+    "HadamardMultibase\\CraigenShuffle.lean": "839d6b8fa1763db2fe7ad5af95b10bd59e454de33f6dc6cca5cd2cdeda0ca3d6",
+    "HadamardMultibase\\CraigenSupport.lean": "6b0bb50eceb69691ad10a3e0a926d337b5141fb655943c854647a7906086add4",
+    "HadamardMultibase\\CraigenTransfer.lean": "65379ed6c1823e2965d2cbcc6c196215966b586a4899b238ca108702b39e0436",
+    "HadamardMultibase\\Golay.lean": "5d6fe40211517f41c28b478e3e97c49b044e5a0dc8bf1e583f10309c3b623b6e",
+    "HadamardMultibase\\GolayAlgebra.lean": "7d9100201e945b2064ff6a2f2f6ebffeb870b85f98cd4bfe73c2a82cf5703297",
+    "HadamardMultibase\\GolayOperations.lean": "1be428b6dc38baf47a55284c14ec4daf98ad30ebc2469ea5c458694a84ced5b5",
+    "HadamardMultibase\\GolayPlacement.lean": "1ace856d3d5a1a691cc548138d80911cda7bdb8aab67cdb3b19167bd80ef9052",
+    "HadamardMultibase\\GolayPolynomial.lean": "715534dbda014d4d56d96cd60f6297fca298ba7304eca671b28f8309fa882b58",
+    "HadamardMultibase\\GolaySeeds.lean": "df81f397ae52483b9a70a2bdac9401a268b76d74cb058c0e9298cd5f0c582cfb",
+    "HadamardMultibase\\PackedPositions.lean": "c1a8024b62516962a2529a3470d77636b4c5ef77e455bf4c695d5014ed6cc87a",
+    "HadamardMultibase\\PartitionedFamily.lean": "bd810bd1073faa825f26aaf264bec343ca6079dc7c066b5b8e14eab40a6e03a0",
+    "HadamardMultibase\\PeriodicAlgebra.lean": "5ca09effb60f895b8d92aec336ca7786db8e58045446155226fc10e6fd719677",
+    "HadamardMultibase\\PeriodicGolay.lean": "d00eae07808ef813e3deeff2353184928f4f976b50848870061384b59f556b55",
+    "HadamardMultibase\\PeriodPositions.lean": "3a5920d8df093b53477a01fa0a0bf37dcefc84c8d54e9cb570917985118d5acc",
+    "HadamardMultibase\\SignedPermutation.lean": "1333974f28561f58e9e0ba0ecc4bf49329651edb83aa3416efb317f2084d8cea",
+    "HadamardMultibase\\Transfer.lean": "2cc6cdac93a5d36d861b98b009ff0d2b401be769934e6d8647ee8f4f617c0210",
+    "HadamardMultibase\\Turyn.lean": "d0a6565646c45d877909d19ce574d196f78d871b37e95f2e8d492885be02f211"
+  }
+}

@@ -1,0 +1,33 @@
+PRIMARY SOURCES AND ATTRIBUTION
+
+Butson, Generalized Hadamard matrices (1962):
+https://doi.org/10.1090/S0002-9939-1962-0142557-0
+Four-phase Hadamard matrices and their realification are classical.
+
+Egan and collaborators, generalized Hadamard morphisms:
+https://ajc.maths.uq.edu.au/pdf/73/ajc_v73_p501.pdf
+Related classical phase-alphabet morphisms.
+
+Tadej and Zyczkowski, A concise guide to complex Hadamard matrices:
+https://arxiv.org/abs/quant-ph/0512154
+Equivalence invariants, Fourier matrices and block deformations.
+
+Geramita and Verner, Orthogonal Designs with Zero Diagonal (1976):
+https://doi.org/10.4153/CJM-1976-028-3
+Primary reference for the classical conference normalization results.
+
+Orrick, Switching operations for Hadamard matrices:
+https://arxiv.org/abs/math/0507515
+Background on sign-matrix switching; not a claimed source of the
+specific repair-energy theorem.
+
+Kotowski and Oszmaniec, Pretty-good simulation of all quantum measurements:
+https://arxiv.org/abs/2501.09339
+Relevant unrestricted measurement simulation and Naimark results.
+Their near-flat effects concern weights, not entrywise-flat sign vectors.
+The fixed-sign-label TV obstruction here does not contradict that work.
+
+Papers were consulted for mathematical content and attribution.
+No external implementation was copied. Our proofs and exact checkers
+are recorded locally; similarity to established theorems remains possible.
+No novelty or priority claim is established by this research pass.

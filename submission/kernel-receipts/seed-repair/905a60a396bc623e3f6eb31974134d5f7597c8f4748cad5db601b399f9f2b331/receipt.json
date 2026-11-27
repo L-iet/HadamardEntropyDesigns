@@ -1,0 +1,33 @@
+{
+  "key": "905a60a396bc623e3f6eb31974134d5f7597c8f4748cad5db601b399f9f2b331",
+  "metadata": {
+    "group": "seed-repair",
+    "configPath": "comparator-seed-repair.json",
+    "configSHA256": "9515f9710df8a9f7a19bc068e5d9328597931a2306010ceb7f5e78bbef4990cf",
+    "theoremNames": [
+      "EntropyDesigns.SupportRepair.minimum_support_exchanges",
+      "EntropyDesigns.SupportRepair.boolean_support_exchange_lower",
+      "EntropyDesigns.SupportRepair.one_exchange_truth_law_preserved"
+    ],
+    "definitionNames": [],
+    "exports": {
+      "challenge": "ec2de7843d382b0ebd641c2bdf36498d03f15e093ee644aca08527e473e05f74",
+      "solution": "77c855f4f5f00a151d6101edd8525b3566225346052dea0e8ca38265a45d668a"
+    },
+    "environment": {
+      "toolchain": "leanprover/lean4:v4.35.0",
+      "toolchainSHA256": "ca5f1f601d34c49079e38d7e7041eb0f2a9c227fbc1df0f404820069a052330c",
+      "binaries": {
+        "lean": "ec7a472d1c12a09b0c0c718f7427c2be527b3f5f07810fdbe076c2507c7a91ea",
+        "lake": "023feb24d3e7244fe671dba79f1cd1affc6c7a7cacfe497bf3675febb506578c",
+        "leanexport": "bda24bb3fafaf299ba472f944942d6293294b76559fafc9f166badd7c0f981b3",
+        "leanchecker": "9ef6baeb28d5e28897d5ed6dddd60ff81e511d97374013ece435dff38e9e0137",
+        "nanoda_bin": "de57d9dd7f647eb57398bc3dab4dcaa1d64f961f3f49964d5455fbddc73b35a8"
+      }
+    }
+  },
+  "capturedAtUTC": "2026-11-24T19:19:57.605721+00:00",
+  "reportSHA256": "b3b5a76231f0c387ede867cca2fd486f57195c576e84cb98bf13f310c07c8762",
+  "logSHA256": "125a3b9b2884fddc9a2bb2354fe3ca1adcf8209d4f8115fb28898ec7d5b972e4",
+  "scope": "Immutable original Comparator exit0 with explicit Lean/NanoDa acceptance of the exact exports/config/checker environment. Local diagnostic, not registry verification."
+}

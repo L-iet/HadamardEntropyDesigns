@@ -1,0 +1,24 @@
+{
+  "challenge_module": "ModerateChallenge",
+  "solution_module": "ModerateSolution",
+  "theorem_names": [
+    "EntropyDesigns.binarySeed_bijective",
+    "EntropyDesigns.ConcentratedFamily.concentrated_witness_exists",
+    "EntropyDesigns.ConcentratedFamily.concentrated_sharp_distance",
+    "EntropyDesigns.ConcentratedFamily.concentrated_exact_repair",
+    "EntropyDesigns.ConcentratedFamily.concentrated_all_repairs_lower",
+    "EntropyDesigns.ConcentratedFamily.concentrated_canonical_limits",
+    "EntropyDesigns.ModerateSupport.linear_scale_identities",
+    "EntropyDesigns.ModerateSupport.cubic_scale_identities",
+    "EntropyDesigns.ModerateSupport.regime_witness_exists",
+    "EntropyDesigns.ModerateSupport.linear_regime_exists",
+    "EntropyDesigns.ModerateSupport.cubic_regime_exists"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "enable_nanoda": true
+}

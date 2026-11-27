@@ -1,0 +1,20 @@
+{
+  "challenge_module": "BooleanChallenge",
+  "solution_module": "BooleanSolution",
+  "theorem_names": [
+    "EntropyDesigns.lowDegreeBooleanCode_finrank",
+    "EntropyDesigns.lowDegreeBooleanCode_duality",
+    "EntropyDesigns.lowDegreeBooleanCode_extension_criterion",
+    "EntropyDesigns.four_bit_cubic_extension",
+    "EntropyDesigns.five_bit_affine_complement_cubic_extension",
+    "EntropyDesigns.booleanSupport_extension_criterion_all_degrees",
+    "EntropyDesigns.minimal_binary_seed_growing_degree"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "enable_nanoda": true
+}

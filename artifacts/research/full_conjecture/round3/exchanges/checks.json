@@ -1,0 +1,72 @@
+{
+  "passed": true,
+  "baseNormalizedCubeVectorsExhausted": 8388608,
+  "singletonCaps": 16,
+  "pairCaps": 120,
+  "halfOverlapPairCaps": 20,
+  "baseMinimalExchangeCost": 3,
+  "uniformTensorExchangeCost": 3,
+  "uniformScope": "every Hadamard tensor factor, by the paper proof",
+  "tensorChecks": [
+    {
+      "factorOrder": 1,
+      "shape": [
+        16,
+        24
+      ],
+      "oneLiftedExchangeRows": 17,
+      "allFibersRepairedRows": 17,
+      "fullCompletionChecked": true
+    },
+    {
+      "factorOrder": 2,
+      "shape": [
+        32,
+        48
+      ],
+      "oneLiftedExchangeRows": 33,
+      "allFibersRepairedRows": 34,
+      "fullCompletionChecked": true
+    },
+    {
+      "factorOrder": 4,
+      "shape": [
+        64,
+        96
+      ],
+      "oneLiftedExchangeRows": 65,
+      "allFibersRepairedRows": 68,
+      "fullCompletionChecked": true
+    },
+    {
+      "factorOrder": 8,
+      "shape": [
+        128,
+        192
+      ],
+      "oneLiftedExchangeRows": 129,
+      "allFibersRepairedRows": 136,
+      "fullCompletionChecked": true
+    }
+  ],
+  "independentTensorCandidateChecks": [
+    {
+      "case": "same_base",
+      "candidateLines": 2,
+      "assignmentsTested": 131072
+    },
+    {
+      "case": "different_fibers",
+      "candidateLines": 2,
+      "assignmentsTested": 131072
+    },
+    {
+      "case": "same_fiber",
+      "candidateLines": 6,
+      "assignmentsTested": 131072
+    }
+  ],
+  "unboundedExchangeCostProved": false,
+  "fullHadamardConjectureProved": false,
+  "noveltyClaim": false
+}

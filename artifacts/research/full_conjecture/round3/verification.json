@@ -1,0 +1,46 @@
+{
+  "checkedAtUTC": "2026-11-21T02:39:02.639511+00:00",
+  "pages": {
+    "geometry\\tensor_stability.tex": 5,
+    "research.tex": 13
+  },
+  "branchChecksPassed": {
+    "geometry/checks.json": true,
+    "arithmetic/checks.json": true,
+    "trades/rigidity_checks.json": true,
+    "exchanges/checks.json": true
+  },
+  "typesettingChecksPassed": true,
+  "files": {
+    "arithmetic\\check.py": "b1b84ed9e126659802ac27740c8becc9fcaaadb1d870e133ce497c3ef0539626",
+    "arithmetic\\checks.json": "da62b3164d55c8c92e29b6fd5fbbc9655f0159f2048c81427c4acb011dcd15ef",
+    "arithmetic\\README.txt": "f37780d8ff367e4963b5b7f0ffb7944adb7eb3b0b2edf1ea60a9e68c8ea782f5",
+    "arithmetic\\sharp_character_span.tex": "26f5db07d1ee8c762016a7569c7fd64ec9f15c2ae90e51f4f64a25c423488def",
+    "build.py": "f6e6eb0eb5793e424c52fe2f581698ee706dfd2a1904ccfd0a25eab1cfda8c46",
+    "exchanges\\check.py": "daeef8e4fda13c006c88a0d9d2d538cdd5bab4acd39ba09ae913070cea4b70ce",
+    "exchanges\\checks.json": "98f59392f0047be65d6efd3f3a76e95491b778a10dc885a4036e1f05023f92d3",
+    "exchanges\\README.txt": "7845196def74fb021dac05fe471ccb25143f6da2dba4762906fb12dd8fef3d94",
+    "exchanges\\tensor_barrier.tex": "bf9fd0e2c37af20608d4827c4ceaccb983ce42d281919de1bd14c6e3ed422d08",
+    "geometry\\check.py": "d34257bb2b004ae1e7a65fd295c859fb3418d2926670b3243ab8d43598a9d011",
+    "geometry\\checks.json": "37f21529e286378dfcdff770e9f8450c98f3361e5e6f39173ee5fbf49890969d",
+    "geometry\\tensor_stability.pdf": "e32c550d29317c506f12023a8763fcb0cd0775a9994aa4c4c062979a67b3a6ca",
+    "geometry\\tensor_stability.tex": "d7edab20a7d701ae3cdf98d05acba53de024df51777881211d282cc292c8fbba",
+    "README.txt": "3c53bb4728ec2186a4002682bcd3413ef50847881ab3428669449940996b4ef8",
+    "research.pdf": "05d26df1cffd37383b2d293b9d2973237b51cd298e91647a73c8ae987bf883d8",
+    "research.tex": "225ddafbb93e32e4bd220c929562fd897ff28a0d19f46dd032b9e7ea80b29274",
+    "trades\\analytic_notes.txt": "b82946c0891263f426597db226877dda0461b66fd6cb03f1c12dd73ad67b4367",
+    "trades\\check_rigidity.py": "3125b3c1405721c8ecd8c4293aac6ff1ed9c051a9bc6e09160d8ade272cd4ecd",
+    "trades\\classification.json": "a2a1f108798405c56518a604396b0e23803181df63fe5d45e15bbfeb3e7ebd38",
+    "trades\\classify.py": "e48c39a4b02ba4c24cbd2496dd45ac60daf123cd439dda349bca3ab1f79829d1",
+    "trades\\README.txt": "4f4a2d39dd1494891f6d4068ba7b2075ee5df3322ff0a3081ce2532bd7ce06e4",
+    "trades\\rigidity.tex": "d31d06993e577a97350eb6bee8b80bf12407250b858a488cd578874cad45683a",
+    "trades\\rigidity_checks.json": "95555969b976a886ea1512abfd50d9817726d73bdad1eea69e418829798f738e"
+  },
+  "scope": {
+    "tensorDestabilization": "paper proof for every real finite p>2; exact rational checks for integer p",
+    "hadamardConjectureProved": false,
+    "noveltyEstablished": false,
+    "leanFormalization": false,
+    "existingLeanRepositoryEdited": false
+  }
+}

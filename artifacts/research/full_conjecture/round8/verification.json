@@ -1,0 +1,53 @@
+{
+  "checkedAtUTC": "2026-11-21T03:53:08.674747+00:00",
+  "pages": {
+    "nonlinear_encodings.tex": 3,
+    "renyi_transition.tex": 3,
+    "research.tex": 8
+  },
+  "checkersPassed": [
+    "nonlinear/check.py",
+    "weights/check_exact.py",
+    "check_renyi.py",
+    "lattice/check.py"
+  ],
+  "typesettingChecksPassed": true,
+  "files": {
+    "build.py": "ec474db133c1b218ca2b67fd0ee0cd8565c65a1426e9d9ff32ecf0f0bd3925ff",
+    "check_renyi.py": "fa1676b6f0ddabbb2eca3e4c7fdb90895670e0b875a4c19bd21f37f8d5b91b51",
+    "lattice\\check.py": "880bbbc5d0a6d493588ddeb98aa722e64b7bb97f4143e36356c20aee5e5665c8",
+    "lattice\\checks.json": "c66d18379f3f0056d97e7f14a99476c6723bee450effc24219138291fe379366",
+    "lattice\\lattice.tex": "45028914d565416c7ac1a8f4bc9c31cfc168389b00c1ffb87577b4b5fdb95cf4",
+    "lattice\\README.txt": "4f8f6ff153b335132b87fb4884344dcf7bed16cca900a28ddaae0c12741f686f",
+    "nonlinear\\check.py": "a71fddda03152dff39d3da041c9a221130bf73f03e9087f5f6e289c03531680a",
+    "nonlinear\\checks.json": "f7f143b3a716a0aff8b62c7df9091096f52326d1f56aa8aa92d7a9d6177b12e8",
+    "nonlinear\\cubic_explore.py": "510c14b2ebdf5286c024af2f8cff47a267d4b6dba8a4c51af9aa0756493e79e1",
+    "nonlinear\\degree_explore.py": "e0aeb5d0acb3e255dc095c8ca82b02472903ce98e44d7100e66860f068baa1e0",
+    "nonlinear\\encoding.tex": "d68989d0c51e985614fec6732700b9bed9cbe0556ec4531f94c06cc09581f05f",
+    "nonlinear\\encodings.json": "34f040b8a6036d1c942cb77ba49dbbcfd1cca30afe6a4d61f81cf7e5158cea2c",
+    "nonlinear\\explore.py": "dad553f780de3a065b62b915a2a814f0c65d52480668788f0693eb9069caa917",
+    "nonlinear\\quadratic_search.py": "001e186013a44183496a917e9b610d4de5199f150df3564e92a000dfcb165359",
+    "nonlinear\\README.txt": "0dd7d968792a62d2ef591785ef0d14d7cf4303e17cb45a118381a169135fa2fc",
+    "nonlinear_encodings.pdf": "04a2ac9bd0149841dbfbb749e1e481feb53e29d8459c8c3009f1469e76ff60e2",
+    "nonlinear_encodings.tex": "37076c0f7edffd047a0195a2d9b56396cc151eac487fddfbef9a5287f84c9cb0",
+    "README.txt": "8f047638f9bed7d4944498fba24a1126baed9a801c4b21379ccff1eab40e990b",
+    "renyi_checks.json": "1007fc709fd03c18341d074e1b53a1896a62afe0cc295c5f919b7ccc2b4ae251",
+    "renyi_phase.tex": "d712faac8cf25d1a6fe6a9f9e6df130e75c6532640530fc6fca916007c9df722",
+    "renyi_transition.pdf": "a5f916495c88d717ab9f3f44aaee720db1d3167aaee6659ee64a6292e4025efd",
+    "renyi_transition.tex": "9fc23a1522ee278735d3ba402d07437a0d34b795ca425d7339a19b105f0afcc4",
+    "research.pdf": "b178931f9660cc35d0843c60d91c834d4339042e1fa6c29e216026a332be10e2",
+    "research.tex": "722c4cd4e488120dd78ed0cb58b62897f6d56739151b8fc76116214a06a3984d",
+    "weights\\check_exact.py": "5e00e511d7d33d7475c51150b794fcbfe88eec828f757a6e08dc2a6027b4e6fc",
+    "weights\\README.txt": "89a996ef35ee9d1dfbf55949eb9da96e66bbf859667bdf2b757f9ea80fedae32",
+    "weights\\weights.pdf": "55f6bbd5df4542f470bea43da2e5a58338c6ef6ad386df8c99edd87061bd9898",
+    "weights\\weights.tex": "25d353955c0d595a66ae1a3b7d7c3402f5c07836797c4570fc1650be0fe4814d",
+    "NEXT_QUESTIONS.txt": "e9ca308a3dcb26b016b9013d2822b698eb551c3472ebec0748a406fc6ab243f3"
+  },
+  "scope": {
+    "hadamardConjectureProved": false,
+    "unknownOrderDistributionConstructed": false,
+    "noveltyEstablished": false,
+    "leanFormalization": false,
+    "gitCommits": false
+  }
+}

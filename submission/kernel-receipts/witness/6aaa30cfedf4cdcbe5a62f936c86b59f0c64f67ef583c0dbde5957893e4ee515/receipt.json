@@ -1,0 +1,33 @@
+{
+  "key": "6aaa30cfedf4cdcbe5a62f936c86b59f0c64f67ef583c0dbde5957893e4ee515",
+  "metadata": {
+    "group": "witness",
+    "configPath": "comparator-witness.json",
+    "configSHA256": "4edf1355bafd6113304be46577afc4e3376cfeac0c7465afb542e630a02f2c05",
+    "theoremNames": [
+      "EntropyDesigns.SupportWitness.hadamard_mixture_support_witness",
+      "EntropyDesigns.SupportWitness.hadamard_block_replacement_bound",
+      "EntropyDesigns.SupportWitness.augmentedSignMatrix_isHadamard"
+    ],
+    "definitionNames": [],
+    "exports": {
+      "challenge": "fdac4cf554e529c33f28e32d94ef68cf80665cd57715d4a0101a2edc91431c3c",
+      "solution": "cc387be70a726ea4082a15b5131852885bd3a28414b473c3fe1510b81c2096b8"
+    },
+    "environment": {
+      "toolchain": "leanprover/lean4:v4.35.0",
+      "toolchainSHA256": "ca5f1f601d34c49079e38d7e7041eb0f2a9c227fbc1df0f404820069a052330c",
+      "binaries": {
+        "lean": "ec7a472d1c12a09b0c0c718f7427c2be527b3f5f07810fdbe076c2507c7a91ea",
+        "lake": "023feb24d3e7244fe671dba79f1cd1affc6c7a7cacfe497bf3675febb506578c",
+        "leanexport": "bda24bb3fafaf299ba472f944942d6293294b76559fafc9f166badd7c0f981b3",
+        "leanchecker": "9ef6baeb28d5e28897d5ed6dddd60ff81e511d97374013ece435dff38e9e0137",
+        "nanoda_bin": "de57d9dd7f647eb57398bc3dab4dcaa1d64f961f3f49964d5455fbddc73b35a8"
+      }
+    }
+  },
+  "capturedAtUTC": "2026-11-24T19:19:56.477378+00:00",
+  "reportSHA256": "2793c7f6aef5fbebf745be878e4382a26ec57813dadfe2a4fab88563607a3bdb",
+  "logSHA256": "125a3b9b2884fddc9a2bb2354fe3ca1adcf8209d4f8115fb28898ec7d5b972e4",
+  "scope": "Immutable original Comparator exit0 with explicit Lean/NanoDa acceptance of the exact exports/config/checker environment. Local diagnostic, not registry verification."
+}

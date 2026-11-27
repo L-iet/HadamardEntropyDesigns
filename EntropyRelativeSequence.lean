@@ -1,0 +1,3 @@
+module
+public import EntropyConcentratedFamily
+public import EntropyRelativeSequence.LawSequences

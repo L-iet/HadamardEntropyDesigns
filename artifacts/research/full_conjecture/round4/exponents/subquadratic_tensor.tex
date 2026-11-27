@@ -1,0 +1,180 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,hyperref}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newcommand{\tr}{\operatorname{tr}}
+\title{Subquadratic entrywise energies: tensor stability and its endpoint}
+\author{Joshua Mark}
+\date{20 November 2026; research draft, priority not established}
+\begin{document}\maketitle
+\begin{abstract}
+For every $1<p<2$, an orthogonal matrix whose every self-tensor power is
+a local maximum of its entrywise $p$-energy is necessarily flat. Together
+with the superquadratic result this gives the same tensor-stability
+characterization on both sides of $p=2$. An indefinite or singular
+critical matrix is handled separately, rather than assumed positive.
+The endpoint $p=1$ is genuinely different. No existence theorem for
+Hadamard matrices follows from this characterization.
+\end{abstract}
+
+Put $F_p(U)=\sum_{ij}|u_{ij}|^p$ on $O(n)$, $n\ge2$. Flat means
+$|u_{ij}|=n^{-1/2}$ everywhere.
+\begin{theorem}\label{main}
+Fix $1<p<2$. The following conditions on $U\in O(n)$ are equivalent:
+(i) every positive self-tensor power of $U$ is a local maximum of $F_p$;
+(ii) $U$ is flat.
+More precisely, every nonflat critical point with no zero entries has
+a positive tangent-Hessian direction at some finite self-tensor power.
+\end{theorem}
+
+\begin{lemma}[Zero entries exclude local maxima]\label{zeros}
+For $1<p<2$, every local maximum of $F_p$ on $O(n)$ has no zero entry.
+\end{lemma}
+\begin{proof}
+Suppose $u_{ij}=0$. Some $u_{kj}\ne0$ since column $j$ is a unit vector.
+Rotate rows $i,k$ by angle $t$, obtaining $U(t)$. At entries initially
+nonzero, the contribution to $F_p(U(t))-F_p(U)$ is its linear term plus
+$O(t^2)$. At an initially zero entry the contribution is
+$|t|^p|U'(0)_{ab}|^p+o(|t|^p)$. There are finitely many entries.
+Since $F_p$ is $C^1$ for $p>1$, a local maximum is critical and the
+total linear term is zero. Thus the difference is
+$c|t|^p+O(t^2)+o(|t|^p)$, where $c\ge |u_{kj}|^p>0$.
+Since $p<2$, it is positive for sufficiently small nonzero $t$.
+\end{proof}
+
+Assume henceforth all entries are nonzero and $U$ is critical. Define
+\[
+ W=(|u_{ij}|^{p-2}u_{ij}),\quad M=U^TW=M^T,\quad
+ q=\tr M=F_p(U)>0,\quad r=\sum_{ij}|u_{ij}|^{p-2}.
+\]
+For real $V$, put
+\[
+ T(V)=\sum_{ij}|u_{ij}|^{p-2}(UV)_{ij}^2,\qquad
+ S(V)=\tr(MV^TV).
+\]
+Now $T(V)>0$ for every nonzero $V$, since all weights are positive and
+$U$ invertible. For skew $V$, direct differentiation gives
+\begin{equation}\label{hess}
+ F_p''(Ue^{tV})|_0=p((p-1)T(V)-S(V)).
+\end{equation}
+All tensor powers remain critical, and $M_k=M^{\otimes k}$. For a
+skew $Y$ and symmetric $Z$, the skew matrix
+$X=Y\otimes Z^{\otimes(k-1)}$ satisfies
+\begin{equation}\label{factor}
+ T_k(X)=T(Y)T(Z)^{k-1},\qquad S_k(X)=S(Y)S(Z)^{k-1}.
+\end{equation}
+These identities follow by expanding the entry sums and traces; they
+do not presume that $M$ is positive semidefinite.
+
+\begin{proof}[Proof of Theorem~\ref{main}]
+First deal with the spectrum of $M$. If $M$ has a negative eigenvalue
+$\lambda$, it also has a positive eigenvalue $\mu$, because $\tr M=q>0$.
+For corresponding unit eigenvectors $v,w$, the orthogonal vectors
+$v\otimes w,w\otimes v$ are both eigenvectors of $M^{\otimes2}$ with
+eigenvalue $\lambda\mu<0$. A nonzero skew rotation supported on their
+span therefore has $S_2(X)<0$, hence strictly positive Hessian by
+\eqref{hess}. If instead $M\succeq0$ is singular, choose a unit kernel
+vector $v$ and $Z=vv^T$. Then $S(Z)=0<T(Z)$. For any nonzero skew
+$Y$, \eqref{factor} gives $S_2(Y\otimes Z)=0<T_2(Y\otimes Z)$,
+again a positive Hessian. Both cases destabilize at $k=2$.
+
+It remains that $M\succ0$, so $S(V)>0$ for every nonzero $V$.
+For Frobenius-orthonormal symmetric and skew bases $\mathcal B_+$,
+$\mathcal B_-$, direct sums over $E_{ii}$ and
+$(E_{ij}\pm E_{ji})/\sqrt2$ give
+\[
+ \sum_{\mathcal B_+}T=(r+q)/2,\quad
+ \sum_{\mathcal B_+}S=(n+1)q/2,
+ \qquad
+ \sum_{\mathcal B_-}T=(r-q)/2,\quad
+ \sum_{\mathcal B_-}S=(n-1)q/2.
+\]
+For completeness, the pointwise squared sums are
+$\sum_{\mathcal B_\pm}(UV)_{ij}^2=(1\pm u_{ij}^2)/2$;
+the corresponding sums of $V^TV$ are $(n\pm1)I/2$.
+Let $x_i$ list the $n^2$ positive squared entries and
+$a=(p-2)/2<0$. Since $U$ is nonflat,
+\[
+ n^2q-nr=\sum_{i<j}(x_i-x_j)(x_i^a-x_j^a)<0,
+\]
+so $r>nq$. Weighted averaging using the strictly positive denominators
+therefore selects elementary basis elements $Y,Z$ with
+\[
+ \alpha:=T(Y)/S(Y)\ge\frac{r-q}{(n-1)q}>1,\qquad
+ \beta:=T(Z)/S(Z)\ge b:=\frac{r+q}{(n+1)q}>1.
+\]
+The Hessian in the factored direction is
+\[
+ pS(Y)S(Z)^{k-1}\big((p-1)\alpha\beta^{k-1}-1\big).
+\]
+It is positive, for example, at
+\[
+ k=2+\left\lceil\frac{\log(1/(p-1))}{\log b}\right\rceil.
+\]
+This proves the more precise assertion. Lemma~\ref{zeros} and
+criticality of local maxima give (i)$\Rightarrow$(ii). Conversely,
+concavity of $x^{p/2}$ and $\sum u_{ij}^2=n$ imply
+$F_p(U)\le n^{2-p/2}$, with equality precisely at flat matrices.
+Tensor powers of a flat matrix remain flat, hence are global maxima.
+\end{proof}
+
+\section*{The endpoint is different: an explicit counterexample}
+For $n>4$ put $U=2J/n-I$, with $J$ the all-ones matrix. This matrix is
+orthogonal, nonflat and has no zero entries. Its sign matrix is
+$A=J-2I$, and
+\[
+ M=U^TA=(1-4/n)J+2I\succ0.
+\]
+Near $U$, the signs are constant, so $F_1(V)=\tr(A^TV)$.
+The first derivative vanishes, and the Hessian is
+$-\tr(MX^TX)<0$ for every nonzero skew $X$. Thus $U$ is a strict
+local maximum. Every tensor power has sign matrix $A^{\otimes k}$
+and critical matrix $M^{\otimes k}\succ0$, and is likewise a strict
+local maximum. This directly proves failure of Theorem~\ref{main} at
+$p=1$, consistent with the almost-Hadamard literature. At $p=2$ the
+energy is identically $n$, another essential exception.
+
+\section*{Complex scope and remaining gap}
+The real theorem also destabilizes a real nonflat critical matrix
+inside $U(n)$ whenever the real hypotheses apply: its exhibited real
+skew directions are allowed skew-Hermitian directions. Multiplication
+by diagonal unitary matrices and row/column permutations preserves
+this conclusion. The factored-direction method in this note does not
+directly prove the analogous assertion for an arbitrary complex
+unitary matrix. Its second variation includes both
+$| (UX)_{ij}|^2$ and $(\Re(\bar u_{ij}(UX)_{ij}))^2$, whose tensor
+behavior is not the single quadratic form used above. A formal
+replacement of transpose by adjoint would therefore be unjustified.
+A separate full-tangent-trace proof in the companion
+\texttt{tensor\_trace.tex} establishes the complex tensor-stability
+characterization; it avoids that factorization obstacle.
+Recent numerical work contributed by Banica concerns the separate
+conjecture that local maxima of $F_1$ on the complex unitary group are
+already flat~\cite{Hexagon}. Our real endpoint counterexample does not
+contradict that conjecture: maximality on $O(n)$ need not survive the
+additional tangent directions in $U(n)$.
+For earlier complex critical-point and Hessian theory, see
+Banica--Nechita~\cite{Complex}. Tensor-closure statements for specially
+balanced critical classes should not be read as tensor-closure of all
+complex local maxima.
+The real characterization itself does not force a stable point to
+exist at a prescribed dimension and does not settle the Hadamard
+conjecture.
+
+\begin{thebibliography}{9}
+\bibitem{BN} T. Banica and I. Nechita, Almost Hadamard matrices:
+the case of arbitrary exponents, Discrete Applied Mathematics 161
+(2013), 2367--2379. \url{https://arxiv.org/abs/1211.2669}.
+\bibitem{BNZ} T. Banica, I. Nechita and K. \.{Z}yczkowski,
+Almost Hadamard matrices: general theory and examples,
+Open Systems and Information Dynamics 19 (2012).
+\url{https://arxiv.org/abs/1202.2025}.
+\bibitem{Hexagon} Numerical evidence for the almost Hadamard conjecture,
+contributed by T. Banica, Hexagon preprint 2611.00632v1,
+19 November 2026. \url{https://hexagonmath.org/2611.00632v1}.
+\bibitem{Complex} T. Banica and I. Nechita, Almost Hadamard matrices
+with complex entries, Advances in Operator Theory 3 (2018), 149--189.
+\url{https://arxiv.org/abs/1702.02220}.
+\end{thebibliography}
+\end{document}

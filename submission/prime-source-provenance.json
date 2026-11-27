@@ -1,0 +1,225 @@
+{
+  "license": "Apache-2.0",
+  "author": "Joshua Mark",
+  "ORCID": "https://orcid.org/0009-0003-5905-2382",
+  "privatePilot": {
+    "status": "passed",
+    "scope": "Private FULL E26.02 ordinary prime-gap transfer under exactly its stated prime interval hypothesis, actual complete law family, exact support/collisions, full-order real-power BigTheta rates and sharp attained mixture distance. Seven original Apache2 modules. Not public snapshot or registry verification",
+    "leanKernelAccepted": true,
+    "nanodaAccepted": true,
+    "theoremNames": [
+      "EntropyDesigns.binarySeed_bijective",
+      "EntropyDesigns.ConcentratedFamily.concentrated_witness_exists",
+      "EntropyDesigns.ConcentratedFamily.concentrated_sharp_distance",
+      "EntropyDesigns.ConcentratedFamily.concentrated_exact_repair",
+      "EntropyDesigns.ConcentratedFamily.concentrated_all_repairs_lower",
+      "EntropyDesigns.ConcentratedFamily.concentrated_canonical_limits",
+      "EntropyDesigns.SpanningSlopes.spanning_slope_data_exists",
+      "EntropyDesigns.SpanningSlopes.spanning_slopes_orthogonal_iff",
+      "EntropyDesigns.SpanningSlopes.spanning_plane_code_injective",
+      "EntropyDesigns.SpanningSlopes.spanning_plane_orthogonality_number",
+      "EntropyDesigns.SpanningSlopes.source_optimizer_of_known_hadamard",
+      "EntropyDesigns.SpanningSlopes.spanning_plane_full_properties",
+      "EntropyDesigns.SpanningSlopes.spanning_witness_exists",
+      "EntropyDesigns.RelativeSequence.inverse_order_tends_zero",
+      "EntropyDesigns.RelativeSequence.sharp_distance_tends_one",
+      "EntropyDesigns.RelativeSequence.entropy_scale_tends_zero",
+      "EntropyDesigns.RelativeSequence.collision_deficit_identity",
+      "EntropyDesigns.RelativeSequence.selected_hadamard_orders",
+      "EntropyDesigns.RelativeSequence.selected_order_limits",
+      "EntropyDesigns.RelativeSequence.relative_spanning_laws",
+      "EntropyDesigns.RelativeSequence.renyi_all_lower",
+      "EntropyDesigns.RelativeSequence.renyi_all_uniform",
+      "EntropyDesigns.RelativeSequence.minEntropy_lower",
+      "EntropyDesigns.RelativeSequence.minEntropy_uniform",
+      "EntropyDesigns.RelativeSequence.plane_entropy_excess",
+      "EntropyDesigns.RelativeSequence.plane_uniform_vertex",
+      "EntropyDesigns.RelativeSequence.complete_spanning_witness_exists",
+      "EntropyDesigns.RelativeSequence.complete_law_data_exists",
+      "EntropyDesigns.RelativeSequence.known_scaled_hadamard_exists",
+      "EntropyDesigns.RelativeSequence.full_unconditional_sequence",
+      "EntropyDesigns.RelativeSequence.spanning_summary_input",
+      "EntropyDesigns.GapTransfer.dyadic_order_tends_infinity",
+      "EntropyDesigns.GapTransfer.dyadic_buffer_ratio_zero",
+      "EntropyDesigns.GapTransfer.dyadic_buffer_positive",
+      "EntropyDesigns.GapTransfer.dyadic_buffer_eventually_small",
+      "EntropyDesigns.GapTransfer.shifted_dyadic_tends_infinity",
+      "EntropyDesigns.GapTransfer.buffered_hadamard_order_exists",
+      "EntropyDesigns.GapTransfer.gap_rate_bounds",
+      "EntropyDesigns.GapTransfer.isTheta_of_nonnegative_bounds",
+      "EntropyDesigns.GapTransfer.complete_law_support_card",
+      "EntropyDesigns.GapTransfer.complete_law_rate_bounds",
+      "EntropyDesigns.GapTransfer.indexed_buffered_laws",
+      "EntropyDesigns.GapTransfer.uniform_hadamard_gap_transfer",
+      "EntropyDesigns.PrimeTransfer.integer_of_real_hadamard",
+      "EntropyDesigns.PrimeTransfer.prime_known_order",
+      "EntropyDesigns.PrimeTransfer.prime_interval_known_order",
+      "EntropyDesigns.PrimeTransfer.uniform_prime_gap_known_orders",
+      "EntropyDesigns.PrimeTransfer.power_gap_sublinear",
+      "EntropyDesigns.PrimeTransfer.power_prime_gap_known_orders",
+      "EntropyDesigns.PrimeTransfer.scaled_power_sublinear",
+      "EntropyDesigns.PrimeTransfer.scaled_power_nonnegative_monotone",
+      "EntropyDesigns.PrimeTransfer.polynomial_buffer_ratio",
+      "EntropyDesigns.PrimeTransfer.polynomial_buffer_isTheta",
+      "EntropyDesigns.PrimeTransfer.product_order_isTheta",
+      "EntropyDesigns.PrimeTransfer.product_order_power_scale",
+      "EntropyDesigns.PrimeTransfer.quotient_power_full_order",
+      "EntropyDesigns.PrimeTransfer.polynomial_full_order_rates",
+      "EntropyDesigns.PrimeTransfer.ordinary_prime_gap_transfer"
+    ],
+    "definitionNames": [
+      "EntropyDesigns.RelativeSequence.FullSpanningWitness",
+      "EntropyDesigns.RelativeSequence.renyiOffOne",
+      "EntropyDesigns.RelativeSequence.renyiEntropy",
+      "EntropyDesigns.RelativeSequence.maxWeight",
+      "EntropyDesigns.RelativeSequence.minEntropy",
+      "EntropyDesigns.RelativeSequence.CompleteSpanningWitness",
+      "EntropyDesigns.RelativeSequence.CompleteLawData.law",
+      "EntropyDesigns.shannon",
+      "EntropyDesigns.Concentration.observedAtoms",
+      "EntropyDesigns.GapTransfer.dyadicBuffer",
+      "EntropyDesigns.GapTransfer.knownHadamardOrder",
+      "EntropyDesigns.GapTransfer.uniformGapInput",
+      "EntropyDesigns.PrimeTransfer.scaledPowerGap"
+    ],
+    "sourceHashes": {
+      "PrimePilotChallenge.lean": "5595491ea8d8f187f07ae90187738d723cb86fec08550a435d3b90d340c5c373",
+      "PrimePilotSolution.lean": "117021b6fa7f91ddf915ec2e0fe337d0cfcdc5be85fe75a94f0f3e5d6384a06f",
+      "comparator.json": "b031a2f3b060b49f455e633538a9bd87a865d2fa3353b6ff8de5ece04d6e4361"
+    },
+    "exports": {
+      "challenge": "030344b90acb7d03f6f19aa8850f84aeb7d5741cf689a1d9a24cf8c1a6702daa",
+      "solution": "97206ee26c4064c647ae29e49c0a68e7b87da9838fd95c0af0f41a03bc18ce34"
+    }
+  },
+  "privateCompileReceipts": [
+    {
+      "module": "PrimePilotChallenge",
+      "actualExitCode": 0,
+      "sourceSHA256": "5595491ea8d8f187f07ae90187738d723cb86fec08550a435d3b90d340c5c373",
+      "oleanSHA256": "87ec678c9b1f1d813588d867349e92081d324d25a66f92b80257b8570a74190f",
+      "supportBindings": {
+        "PrimeBridge": {
+          "actualExitCode": 0,
+          "sourceSHA256": "c092e15838d67dc71436a5de5b160bbeabb38407cc36580565cb22dd5b6d8385",
+          "oleanSHA256": "33e99fe58766b86c523724855210aa1b11be163c4f17c32666898d88dd5bdb8f",
+          "axiomAudit": "'EntropyDesigns.PrimeTransfer.integer_of_real_hadamard' depends on axioms: [propext, Classical.choice, Quot.sound]\n'EntropyDesigns.PrimeTransfer.prime_known_order' depends on axioms: [propext, Classical.choice, Quot.sound]\n'EntropyDesigns.PrimeTransfer.prime_interval_known_order' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+          "scope": "Original prime-gap bridge support only: actual integral Paley known orders and finite interval implication. Full E26.02 asymptotic rates remain pending."
+        },
+        "UniformPrimeGap": {
+          "actualExitCode": 0,
+          "sourceSHA256": "bae7e586d6f5f306412e1831ab59366e439ecc0a349c9cbc2a01ecaedf9f00bf",
+          "oleanSHA256": "f2b58552e24c1ebefb157b0365721980e518917542725cf94f7a60c44f14f5f1",
+          "axiomAudit": "'EntropyDesigns.PrimeTransfer.uniform_prime_gap_known_orders' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+          "scope": "Original prime-gap bridge support only: actual integral Paley known orders and finite interval implication. Full E26.02 asymptotic rates remain pending."
+        },
+        "PolynomialPrimeInput": {
+          "actualExitCode": 0,
+          "sourceSHA256": "586c75c8944dea382c44ca560a194914782403e7c8e0db277321ab9a36006802",
+          "oleanSHA256": "f29616189399eab2bcc755274ecef4948982cff8c54c4a6da8db32a67cf1644d",
+          "axiomAudit": "'EntropyDesigns.PrimeTransfer.power_gap_sublinear' depends on axioms: [propext, Classical.choice, Quot.sound]\n'EntropyDesigns.PrimeTransfer.power_prime_gap_known_orders' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+          "scope": "Original prime-gap bridge support only: actual integral Paley known orders and finite interval implication. Full E26.02 asymptotic rates remain pending."
+        },
+        "ScaledPowerGap": {
+          "actualExitCode": 0,
+          "sourceSHA256": "234683510191cca53f3417ae7b71f14e51495a863727806580c18676b5c7b7f9",
+          "oleanSHA256": "4b27e35b8bf0379bff0fbc60219ca6dc4f11084cf2927cc0e3cea7acbe402189",
+          "axiomAudit": "'EntropyDesigns.PrimeTransfer.scaled_power_sublinear' depends on axioms: [propext, Classical.choice, Quot.sound]\n'EntropyDesigns.PrimeTransfer.scaled_power_nonnegative_monotone' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'EntropyDesigns.PrimeTransfer.polynomial_buffer_ratio' depends on axioms: [propext, Classical.choice, Quot.sound]\n'EntropyDesigns.PrimeTransfer.polynomial_buffer_isTheta' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+          "scope": "Original prime-gap bridge support only: actual integral Paley known orders and finite interval implication. Full E26.02 asymptotic rates remain pending."
+        },
+        "OrderPowerScale": {
+          "actualExitCode": 0,
+          "sourceSHA256": "21fe5658e24f423045c18459c76ae46c726a71978e72e4a2e262cf58d19a4d88",
+          "oleanSHA256": "1c990ee5083d62a4d0a96d8fea844ebc6e24423a4dd41876672d504abed39fbd",
+          "axiomAudit": "'EntropyDesigns.PrimeTransfer.product_order_isTheta' depends on axioms: [propext, Classical.choice, Quot.sound]\n'EntropyDesigns.PrimeTransfer.product_order_power_scale' depends on axioms: [propext, Classical.choice, Quot.sound]\n'EntropyDesigns.PrimeTransfer.quotient_power_full_order' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+          "scope": "Original prime-gap bridge support only: actual integral Paley known orders and finite interval implication. Full E26.02 asymptotic rates remain pending."
+        },
+        "PolynomialLawRates": {
+          "actualExitCode": 0,
+          "sourceSHA256": "92cfc7fca10fee02f98f3477de1b64d67ba7eacad311a8bfff2a2a329e6a5c0a",
+          "oleanSHA256": "e947969c03753ce5e5158afe69bd3e161a2c90def60e282b41ec894b1d3894b2",
+          "axiomAudit": "'EntropyDesigns.PrimeTransfer.polynomial_full_order_rates' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+          "scope": "Original prime-gap bridge support only: actual integral Paley known orders and finite interval implication. Full E26.02 asymptotic rates remain pending."
+        },
+        "PrimeLawTransfer": {
+          "actualExitCode": 0,
+          "sourceSHA256": "12482e9946846bc1cf974e03e95bd1e7a4996359a5dbd871757d4bf4c02fc749",
+          "oleanSHA256": "1576f268662ea6ca746be821dff407b77359bd7839a265590d714d3aeea4e51f",
+          "axiomAudit": "'EntropyDesigns.PrimeTransfer.ordinary_prime_gap_transfer' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+          "scope": "Full mathematical E26.02 ordinary prime-gap transfer with actual complete law family, exact collision/global/support identities, full-order real-power BigTheta deficit rates and sharp attained mixture distance. Independent/public checks still required. No BHP/RH input supplied."
+        }
+      },
+      "baselineSHA256": "39e61585a36ab1a1f11fe61a9598f8345f3dd37c21af55952c73b26c59775e91"
+    },
+    {
+      "module": "PrimePilotSolution",
+      "actualExitCode": 0,
+      "sourceSHA256": "117021b6fa7f91ddf915ec2e0fe337d0cfcdc5be85fe75a94f0f3e5d6384a06f",
+      "oleanSHA256": "8f7d8ed1e5af36b878b4e3190dbb9cbc7086146b5b45177bbd4536337cb856a4",
+      "supportBindings": {
+        "PrimeBridge": {
+          "actualExitCode": 0,
+          "sourceSHA256": "c092e15838d67dc71436a5de5b160bbeabb38407cc36580565cb22dd5b6d8385",
+          "oleanSHA256": "33e99fe58766b86c523724855210aa1b11be163c4f17c32666898d88dd5bdb8f",
+          "axiomAudit": "'EntropyDesigns.PrimeTransfer.integer_of_real_hadamard' depends on axioms: [propext, Classical.choice, Quot.sound]\n'EntropyDesigns.PrimeTransfer.prime_known_order' depends on axioms: [propext, Classical.choice, Quot.sound]\n'EntropyDesigns.PrimeTransfer.prime_interval_known_order' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+          "scope": "Original prime-gap bridge support only: actual integral Paley known orders and finite interval implication. Full E26.02 asymptotic rates remain pending."
+        },
+        "UniformPrimeGap": {
+          "actualExitCode": 0,
+          "sourceSHA256": "bae7e586d6f5f306412e1831ab59366e439ecc0a349c9cbc2a01ecaedf9f00bf",
+          "oleanSHA256": "f2b58552e24c1ebefb157b0365721980e518917542725cf94f7a60c44f14f5f1",
+          "axiomAudit": "'EntropyDesigns.PrimeTransfer.uniform_prime_gap_known_orders' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+          "scope": "Original prime-gap bridge support only: actual integral Paley known orders and finite interval implication. Full E26.02 asymptotic rates remain pending."
+        },
+        "PolynomialPrimeInput": {
+          "actualExitCode": 0,
+          "sourceSHA256": "586c75c8944dea382c44ca560a194914782403e7c8e0db277321ab9a36006802",
+          "oleanSHA256": "f29616189399eab2bcc755274ecef4948982cff8c54c4a6da8db32a67cf1644d",
+          "axiomAudit": "'EntropyDesigns.PrimeTransfer.power_gap_sublinear' depends on axioms: [propext, Classical.choice, Quot.sound]\n'EntropyDesigns.PrimeTransfer.power_prime_gap_known_orders' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+          "scope": "Original prime-gap bridge support only: actual integral Paley known orders and finite interval implication. Full E26.02 asymptotic rates remain pending."
+        },
+        "ScaledPowerGap": {
+          "actualExitCode": 0,
+          "sourceSHA256": "234683510191cca53f3417ae7b71f14e51495a863727806580c18676b5c7b7f9",
+          "oleanSHA256": "4b27e35b8bf0379bff0fbc60219ca6dc4f11084cf2927cc0e3cea7acbe402189",
+          "axiomAudit": "'EntropyDesigns.PrimeTransfer.scaled_power_sublinear' depends on axioms: [propext, Classical.choice, Quot.sound]\n'EntropyDesigns.PrimeTransfer.scaled_power_nonnegative_monotone' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'EntropyDesigns.PrimeTransfer.polynomial_buffer_ratio' depends on axioms: [propext, Classical.choice, Quot.sound]\n'EntropyDesigns.PrimeTransfer.polynomial_buffer_isTheta' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+          "scope": "Original prime-gap bridge support only: actual integral Paley known orders and finite interval implication. Full E26.02 asymptotic rates remain pending."
+        },
+        "OrderPowerScale": {
+          "actualExitCode": 0,
+          "sourceSHA256": "21fe5658e24f423045c18459c76ae46c726a71978e72e4a2e262cf58d19a4d88",
+          "oleanSHA256": "1c990ee5083d62a4d0a96d8fea844ebc6e24423a4dd41876672d504abed39fbd",
+          "axiomAudit": "'EntropyDesigns.PrimeTransfer.product_order_isTheta' depends on axioms: [propext, Classical.choice, Quot.sound]\n'EntropyDesigns.PrimeTransfer.product_order_power_scale' depends on axioms: [propext, Classical.choice, Quot.sound]\n'EntropyDesigns.PrimeTransfer.quotient_power_full_order' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+          "scope": "Original prime-gap bridge support only: actual integral Paley known orders and finite interval implication. Full E26.02 asymptotic rates remain pending."
+        },
+        "PolynomialLawRates": {
+          "actualExitCode": 0,
+          "sourceSHA256": "92cfc7fca10fee02f98f3477de1b64d67ba7eacad311a8bfff2a2a329e6a5c0a",
+          "oleanSHA256": "e947969c03753ce5e5158afe69bd3e161a2c90def60e282b41ec894b1d3894b2",
+          "axiomAudit": "'EntropyDesigns.PrimeTransfer.polynomial_full_order_rates' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+          "scope": "Original prime-gap bridge support only: actual integral Paley known orders and finite interval implication. Full E26.02 asymptotic rates remain pending."
+        },
+        "PrimeLawTransfer": {
+          "actualExitCode": 0,
+          "sourceSHA256": "12482e9946846bc1cf974e03e95bd1e7a4996359a5dbd871757d4bf4c02fc749",
+          "oleanSHA256": "1576f268662ea6ca746be821dff407b77359bd7839a265590d714d3aeea4e51f",
+          "axiomAudit": "'EntropyDesigns.PrimeTransfer.ordinary_prime_gap_transfer' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+          "scope": "Full mathematical E26.02 ordinary prime-gap transfer with actual complete law family, exact collision/global/support identities, full-order real-power BigTheta deficit rates and sharp attained mixture distance. Independent/public checks still required. No BHP/RH input supplied."
+        }
+      },
+      "baselineSHA256": "39e61585a36ab1a1f11fe61a9598f8345f3dd37c21af55952c73b26c59775e91"
+    }
+  ],
+  "privateAxiomAudit": "'EntropyDesigns.binarySeed_bijective' depends on axioms: [propext, Classical.choice, Quot.sound]\n'EntropyDesigns.ConcentratedFamily.concentrated_witness_exists' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'EntropyDesigns.ConcentratedFamily.concentrated_sharp_distance' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'EntropyDesigns.ConcentratedFamily.concentrated_exact_repair' depends on axioms: [propext, Classical.choice, Quot.sound]\n'EntropyDesigns.ConcentratedFamily.concentrated_all_repairs_lower' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'EntropyDesigns.ConcentratedFamily.concentrated_canonical_limits' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'EntropyDesigns.SpanningSlopes.spanning_slope_data_exists' depends on axioms: [propext, Classical.choice, Quot.sound]\n'EntropyDesigns.SpanningSlopes.spanning_slopes_orthogonal_iff' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'EntropyDesigns.SpanningSlopes.spanning_plane_code_injective' depends on axioms: [propext, Classical.choice, Quot.sound]\n'EntropyDesigns.SpanningSlopes.spanning_plane_orthogonality_number' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'EntropyDesigns.SpanningSlopes.source_optimizer_of_known_hadamard' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'EntropyDesigns.SpanningSlopes.spanning_plane_full_properties' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'EntropyDesigns.SpanningSlopes.spanning_witness_exists' depends on axioms: [propext, Classical.choice, Quot.sound]\n'EntropyDesigns.RelativeSequence.inverse_order_tends_zero' depends on axioms: [propext, Classical.choice, Quot.sound]\n'EntropyDesigns.RelativeSequence.sharp_distance_tends_one' depends on axioms: [propext, Classical.choice, Quot.sound]\n'EntropyDesigns.RelativeSequence.entropy_scale_tends_zero' depends on axioms: [propext, Classical.choice, Quot.sound]\n'EntropyDesigns.RelativeSequence.collision_deficit_identity' depends on axioms: [propext, Classical.choice, Quot.sound]\n'EntropyDesigns.RelativeSequence.selected_hadamard_orders' depends on axioms: [propext, Classical.choice, Quot.sound]\n'EntropyDesigns.RelativeSequence.selected_order_limits' depends on axioms: [propext, Classical.choice, Quot.sound]\n'EntropyDesigns.RelativeSequence.relative_spanning_laws' depends on axioms: [propext, Classical.choice, Quot.sound]\n'EntropyDesigns.RelativeSequence.renyi_all_lower' depends on axioms: [propext, Classical.choice, Quot.sound]\n'EntropyDesigns.RelativeSequence.renyi_all_uniform' depends on axioms: [propext, Classical.choice, Quot.sound]\n'EntropyDesigns.RelativeSequence.minEntropy_lower' depends on axioms: [propext, Classical.choice, Quot.sound]\n'EntropyDesigns.RelativeSequence.minEntropy_uniform' depends on axioms: [propext, Classical.choice, Quot.sound]\n'EntropyDesigns.RelativeSequence.plane_entropy_excess' depends on axioms: [propext, Classical.choice, Quot.sound]\n'EntropyDesigns.RelativeSequence.plane_uniform_vertex' depends on axioms: [propext, Classical.choice, Quot.sound]\n'EntropyDesigns.RelativeSequence.complete_spanning_witness_exists' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'EntropyDesigns.RelativeSequence.complete_law_data_exists' depends on axioms: [propext, Classical.choice, Quot.sound]\n'EntropyDesigns.RelativeSequence.known_scaled_hadamard_exists' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'EntropyDesigns.RelativeSequence.full_unconditional_sequence' depends on axioms: [propext, Classical.choice, Quot.sound]\n'EntropyDesigns.RelativeSequence.spanning_summary_input' depends on axioms: [propext, Classical.choice, Quot.sound]\n'EntropyDesigns.GapTransfer.dyadic_order_tends_infinity' depends on axioms: [propext, Classical.choice, Quot.sound]\n'EntropyDesigns.GapTransfer.dyadic_buffer_ratio_zero' depends on axioms: [propext, Classical.choice, Quot.sound]\n'EntropyDesigns.GapTransfer.dyadic_buffer_positive' depends on axioms: [propext, Classical.choice, Quot.sound]\n'EntropyDesigns.GapTransfer.dyadic_buffer_eventually_small' depends on axioms: [propext, Classical.choice, Quot.sound]\n'EntropyDesigns.GapTransfer.shifted_dyadic_tends_infinity' depends on axioms: [propext, Classical.choice, Quot.sound]\n'EntropyDesigns.GapTransfer.buffered_hadamard_order_exists' depends on axioms: [propext, Classical.choice, Quot.sound]\n'EntropyDesigns.GapTransfer.gap_rate_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]\n'EntropyDesigns.GapTransfer.isTheta_of_nonnegative_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]\n'EntropyDesigns.GapTransfer.complete_law_support_card' depends on axioms: [propext, Classical.choice, Quot.sound]\n'EntropyDesigns.GapTransfer.complete_law_rate_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]\n'EntropyDesigns.GapTransfer.indexed_buffered_laws' depends on axioms: [propext, Classical.choice, Quot.sound]\n'EntropyDesigns.GapTransfer.uniform_hadamard_gap_transfer' depends on axioms: [propext, Classical.choice, Quot.sound]\n'EntropyDesigns.PrimeTransfer.integer_of_real_hadamard' depends on axioms: [propext, Classical.choice, Quot.sound]\n'EntropyDesigns.PrimeTransfer.prime_known_order' depends on axioms: [propext, Classical.choice, Quot.sound]\n'EntropyDesigns.PrimeTransfer.prime_interval_known_order' depends on axioms: [propext, Classical.choice, Quot.sound]\n'EntropyDesigns.PrimeTransfer.uniform_prime_gap_known_orders' depends on axioms: [propext, Classical.choice, Quot.sound]\n'EntropyDesigns.PrimeTransfer.power_gap_sublinear' depends on axioms: [propext, Classical.choice, Quot.sound]\n'EntropyDesigns.PrimeTransfer.power_prime_gap_known_orders' depends on axioms: [propext, Classical.choice, Quot.sound]\n'EntropyDesigns.PrimeTransfer.scaled_power_sublinear' depends on axioms: [propext, Classical.choice, Quot.sound]\n'EntropyDesigns.PrimeTransfer.scaled_power_nonnegative_monotone' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'EntropyDesigns.PrimeTransfer.polynomial_buffer_ratio' depends on axioms: [propext, Classical.choice, Quot.sound]\n'EntropyDesigns.PrimeTransfer.polynomial_buffer_isTheta' depends on axioms: [propext, Classical.choice, Quot.sound]\n'EntropyDesigns.PrimeTransfer.product_order_isTheta' depends on axioms: [propext, Classical.choice, Quot.sound]\n'EntropyDesigns.PrimeTransfer.product_order_power_scale' depends on axioms: [propext, Classical.choice, Quot.sound]\n'EntropyDesigns.PrimeTransfer.quotient_power_full_order' depends on axioms: [propext, Classical.choice, Quot.sound]\n'EntropyDesigns.PrimeTransfer.polynomial_full_order_rates' depends on axioms: [propext, Classical.choice, Quot.sound]\n'EntropyDesigns.PrimeTransfer.ordinary_prime_gap_transfer' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+  "moduleMapping": {
+    "PrimeBridge": "EntropyPrimeTransfer.PrimeBridge",
+    "UniformPrimeGap": "EntropyPrimeTransfer.UniformPrimeGap",
+    "PolynomialPrimeInput": "EntropyPrimeTransfer.PolynomialPrimeInput",
+    "ScaledPowerGap": "EntropyPrimeTransfer.ScaledPowerGap",
+    "OrderPowerScale": "EntropyPrimeTransfer.OrderPowerScale",
+    "PolynomialLawRates": "EntropyPrimeTransfer.PolynomialLawRates",
+    "PrimeLawTransfer": "EntropyPrimeTransfer.PrimeLawTransfer"
+  },
+  "baselineSourceHashes": "The prime-gap transfer\nand stability consequences below still have separate proof obligations.",
+  "scope": "FULL E26.02 ordinary-prime-gap transfer under exactly its stated explicit prime-interval hypothesis; actual complete law family and integral Paley orders, exact support/collisions, full-order real-power BigTheta rates and sharp attained mixture distance. Seven original Apache2 modules; mathlib Apache2 is the only external proof code. Classical Paley citation retained. No BHP/RH input claimed. No registry verification claimed."
+}

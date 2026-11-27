@@ -1,0 +1,168 @@
+\section{Tensor products preserve a three-row exchange barrier}
+For a partial Hadamard matrix $P$, let $\rho(P)$ be the minimum number
+of old rows deleted in an exchange which inserts one more row than it
+deletes, all retained and inserted rows remaining mutually orthogonal.
+Set $\rho(P)=\infty$ if there is no such exchange. The previous pass
+certified $\rho(P)=3$ for one $16\times24$ matrix. Here we prove a
+uniform preservation theorem, rather than search larger isolated orders.
+No claim of bibliographic novelty is made.
+
+\begin{proposition}[Tensoring cannot amplify the exchange cost upward]
+If $H$ is a full Hadamard matrix, then
+\[
+ \rho(P\otimes H)\le\rho(P).
+\]
+\end{proposition}
+\begin{proof}
+Choose any row $h$ of $H$. A $k$-for-$(k+1)$ exchange of rows $p_i$
+for rows $v_j$ lifts to an exchange of $p_i\otimes h$ for $v_j\otimes h$.
+Rows in other Hadamard fibers are orthogonal to every inserted row,
+while the same-fiber checks reduce to the original exchange.
+\end{proof}
+Thus repeated full-Hadamard tensoring alone cannot turn a finite
+exchange lower bound into an unbounded one. The interesting issue is
+whether the tensor permits a cheaper exchange by using non-product rows.
+
+\subsection{A condition excluding cheaper non-product exchanges}
+For a row-index set $I$, let $\mathcal C_I$ consist of the sign vectors
+orthogonal to all rows of $P$ outside $I$. Sign vectors differing only
+by a global minus sign are treated as one line. Write the order as $n$.
+
+\begin{proposition}[A general span-rigidity criterion]
+Suppose $P$ is maximal and, for every index set $I$ of size at most $c$,
+\[
+ \mathcal C_I\subseteq\operatorname{span}\{p_i:i\in I\}.
+\]
+Then no tensor $P\otimes H$ with a full Hadamard factor admits an
+augmenting exchange deleting at most $c$ rows.
+\end{proposition}
+\begin{proof}
+For a deletion set $D$ of size $k\le c$, let $I$ be its projection
+onto the original row indices. Reshape a candidate as $X$. As in the
+proof below, every column belongs to $\mathcal C_I$, so $X$ lies in
+$\operatorname{span}(p_i:i\in I)\otimes\R^s$. Orthogonality to the
+retained tensor rows then forces $X$ into the span of the $k$ deleted
+tensor rows. That space has dimension $k$ and cannot contain $k+1$
+mutually orthogonal nonzero rows.
+\end{proof}
+The order-twenty-four example fails this criterion at some pairs: its
+two extra sign lines span a third direction. Their particular geometry,
+rather than span rigidity, supplies the stronger preservation below.
+
+\begin{theorem}[Preservation under half-overlap pair structure]
+Suppose $P$ is maximal and has the following properties:
+\begin{enumerate}
+\item $\mathcal C_{\{i\}}$ has just the line of $p_i$.
+\item For every pair $i,j$, either $\mathcal C_{\{i,j\}}$ has only the
+lines of $p_i,p_j$, or it has exactly four lines. In the latter case
+the two extra lines can be oriented as $x,y$ so that
+\[
+ x\cdot y=0,\qquad
+ (p_i\cdot x,p_j\cdot x)=(p_i\cdot y,p_j\cdot y)
+ =\tfrac n2(1,\sigma),\quad\sigma\in\{\pm1\}.
+\]
+\end{enumerate}
+Then for every full Hadamard matrix $H$, $P\otimes H$ has no augmenting
+exchange deleting at most two rows. In particular, if $\rho(P)=3$, then
+$\rho(P\otimes H)=3$.
+\end{theorem}
+\begin{proof}
+Let $H$ have order $s$, with rows $h_b$, and reshape a proposed sign
+row of length $ns$ as an $n\times s$ sign matrix $X$. Its correlations
+with the old tensor rows are the entries of $PXH^{\mathsf T}$.
+If the deleted tensor rows project to original row-index set $I$,
+every column of $X$ belongs to $\mathcal C_I$: for $k\notin I$,
+$p_kXH^{\mathsf T}=0$ implies $p_kX=0$.
+
+With no deletions, this contradicts maximality. With one deletion
+$(i,b)$, every column is $\pm p_i$, so $X=p_i\otimes\varepsilon$;
+the remaining fiber constraints force $\varepsilon$ to be proportional
+to $h_b$. The only candidate line is the removed tensor row.
+
+If both deleted rows have the same original index $i$ and different
+fibers $b,c$, the same argument gives $X=p_i\otimes\varepsilon$, now
+with $\varepsilon\in\operatorname{span}(h_b,h_c)\cap\{\pm1\}^s$.
+That intersection has only $\pm h_b,\pm h_c$. Indeed write
+$\varepsilon=\alpha h_b+\beta h_c$; the two orthogonal sign rows
+agree and disagree on nonempty sets, so both $\alpha+\beta$ and
+$\alpha-\beta$ are signs. Consequently one coefficient is zero and
+the other is a sign. There are at most two candidate lines.
+
+It remains to delete $(i,b),(j,c)$ with $i\ne j$. Fourier inversion
+along the Hadamard factor gives
+\[
+ p_iX=\alpha h_b,\qquad p_jX=\beta h_c.
+\]
+For each column of $X$, the possible correlation pairs with $p_i,p_j$
+are $\pm(n,0)$, $\pm(0,n)$ and, when present,
+$\pm(n/2)(1,\sigma)$. Their absolute magnitudes are constant across
+columns, because $h_b,h_c$ have sign entries. If one of $\alpha,\beta$
+vanishes, the candidate is one of the removed old tensor rows. If both
+are nonzero, the extra pair type is necessary, and its fixed correlation
+ratio forces $h_b$ and $h_c$ to be proportional. Thus $b=c$; otherwise
+there are again only the two removed candidate lines.
+
+In the remaining case put $h=h_b=h_c$ and orient globally so that the
+extra correlation pair is $(n/2)(1,\sigma)h$.
+Let
+\[
+ w=(p_i+\sigma p_j)/2,\qquad z=(x-y)/2.
+\]
+Projection onto $\operatorname{span}(p_i,p_j)$ shows that
+$x=w+z$, $y=w-z$, $w\perp z$, and
+$\|w\|^2=\|z\|^2=n/2$. To justify the residual cancellation, the
+residuals of $x,y$ each have squared norm $n/2$ and inner product
+$-n/2$, so they are negatives of each other. Every extra tensor
+candidate therefore has the form
+\[
+ W_{\varepsilon}=w\otimes h+z\otimes\varepsilon,
+ \qquad\varepsilon\in\{\pm1\}^s.
+\]
+Neither removed old tensor row is orthogonal to any $W_\varepsilon$.
+For two extra candidates,
+\[
+ W_\varepsilon\cdot W_\delta
+ =\tfrac n2(s+\varepsilon\cdot\delta),
+\]
+which is zero exactly when $\delta=-\varepsilon$. Thus the candidate
+orthogonality graph consists of the old orthogonal pair and a matching
+on the extra candidates. It has no triangle, so no three mutually
+orthogonal replacement rows exist. All cases are exhausted.
+The upper bound from the preceding proposition proves equality when
+$\rho(P)=3$.
+\end{proof}
+
+\subsection{An infinite family with exact exchange cost three}
+The independently certified $16\times24$ matrix from the previous pass
+satisfies the hypotheses. Among its $120$ two-row deletions, one hundred
+have only the two old candidate lines. The other twenty have exactly
+two extra lines. Those extras are mutually orthogonal, their
+correlations with the two old rows are all $\pm12$, and the two
+correlation vectors are parallel. All these identities are checked
+exactly from the exhaustive sign-cube certificate.
+
+\begin{corollary}
+For every Hadamard order $s$, there is a maximal partial matrix of
+shape $16s\times24s$ whose minimum augmenting exchange deletes exactly
+three rows. In particular such examples exist at every order
+$24\cdot2^a$.
+\end{corollary}
+
+This is a statement about partial matrices and the cost of escaping
+their terminal configurations. It does not produce new Hadamard orders.
+The base three-for-four exchange has an explicit full completion. Apply
+that exchange separately in each of the $s$ Hadamard fibers. After
+$s$ exchanges the result is $Q\otimes H$, where the base $17$-row
+matrix $Q$ completes; hence this whole tensor family can be completed
+after those $s$ exchanges. A single lifted exchange is only claimed
+to augment the tensor partial matrix, not necessarily complete it.
+
+\paragraph{Exact checks.}
+The script \path{round3/exchanges/check.py} re-enumerates all $2^{23}$
+normalized sign vectors for the base matrix, verifies the pair-structure
+hypotheses for all $120$ pairs, and checks lifted exchanges and
+completions at tensor-factor orders $1,2,4,8$. Additional exact
+low-dimensional nullspace enumeration at factor order two confirms
+the predicted candidate sets in each of the three deletion cases.
+The uniform statement rests on the proof above. No Lean verification
+or novelty claim is made.

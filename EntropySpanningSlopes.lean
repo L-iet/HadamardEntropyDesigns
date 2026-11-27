@@ -1,0 +1,3 @@
+module
+public import EntropyConcentratedFamily
+public import EntropySpanningSlopes.SpanningExistence
