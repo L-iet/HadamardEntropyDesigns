@@ -42,6 +42,12 @@ The recorder checks all configured proof and independent specification entry poi
 
 The structure/scanner tests run before Lean setup in CI. Tests that use `.lake/` create their fixture parent themselves; they do not assume a downloaded cache or a previous build. No README, technical-guide, paper-disclosure wording, or abstract prefix is enforced by the theorem-coverage check. The guide above lists unfinished results for readers.
 
+## Routine GitHub checks and official verification
+
+The ordinary push/pull-request workflow runs structure/scanner tests, builds the Lean proofs, audits target axioms and pinned licenses, and validates metadata. It does not run Comparator, install its sandbox, or require a sandboxed comparison report. A standard GitHub runner may not provide the `nanoda_bin` executable that Comparator needs.
+
+Full Challenge/Solution comparison remains available through the separate manually triggered **Official Palomar mechanical preflight** workflow and the comparison scripts below. Palomar registration still requires its official mechanical verification, including both Lean and NanoDa acceptance. A routine CI pass is not that verification.
+
 ### Independent statements and proof checking
 
 Comparator is Lean's tool for comparing a submitted proof against an independently written statement. A `Challenge` module specifies statements using mathlib and core Lean; a `Solution` module supplies their proofs. Intentional placeholders occur only in the independent specification, which the solution must not import. They are not accepted proof dependencies.
@@ -94,7 +100,7 @@ python scripts/run_local_comparator.py --config comparator.json
 
 Local reports are in `submission/local-comparator*-result.json`. A documentation-only rebinding may update the source inventory after a disclosure-check script changes; it records the previous published report, checks that all Lean sources, build inputs, and exported proof bytes are unchanged, and does not claim another kernel run. They record actual kernel acceptance, or explicitly identified reuse of earlier acceptance for byte-identical exports. Such reports do not establish sandboxed registry verification. Earlier tensor-stability and phase-geometry receipts do not record original checker-binary digests; that limitation remains disclosed in their evidence.
 
-For sandboxed checks on a compatible Linux host with bubblewrap installed:
+For sandboxed checks on a compatible Linux host with bubblewrap and the configured Lean/NanoDa checker executables installed:
 
 ```sh
 python scripts/run_comparator.py

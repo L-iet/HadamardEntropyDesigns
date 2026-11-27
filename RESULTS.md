@@ -4,17 +4,17 @@ The [README](README.md) highlights three leading theorems. The main results are 
 
 ## A family with an exactly attained distance
 
-Let $h=2^s$, and let $k$ be a known Hadamard order with $s\le h-k<h/2$. A finite-field construction produces an unbiased pairwise-independent law on $kh-1$ signs, uniform on $h^2$ atoms, that is a strict local collision maximum and satisfies
+Let $`h=2^s`$, and let $`k`$ be a known Hadamard order with $`s\le h-k<h/2`$. A finite-field construction produces an unbiased pairwise-independent law on $`kh-1`$ signs, uniform on $`h^2`$ atoms, that is a strict local collision maximum and satisfies
 
 $$
 C(\mu)=h^{-2},\qquad \inf_{\nu\in\mathcal H_{kh}}\|\mu-\nu\|_{\rm TV}=1-\frac1k.
 $$
 
-Here $\mathcal H_{kh}$ denotes convex mixtures of laws obtained from order-$kh$ Hadamard matrices. Choosing $k/h\to1$ while $k\to\infty$ yields the instability theorem in the README.
+Here $`\mathcal H_{kh}`$ denotes convex mixtures of laws obtained from order-$`kh`$ Hadamard matrices. Choosing $`k/h\to1`$ while $`k\to\infty`$ yields the instability theorem in the README.
 
 ## Additional proved results
 
-- Exact finite-field families with an attained distance of $1-1/k$ from all Hadamard mixtures.
+- Exact finite-field families with an attained distance of $`1-1/k`$ from all Hadamard mixtures.
 - Quantitative collision-defect identities, weight stability, and extraction of nearly orthogonal configurations.
 - Moment-correction constructions with explicit positivity and error bounds.
 - A finite support-reduction algorithm that preserves feasibility and does not decrease collision probability.
@@ -74,7 +74,7 @@ The [paper](paper/main.pdf) supplies the definitions, hypotheses, proofs, and pr
 - Punctured-observable bounds, without completion.
 - Exact finite obstruction.
 - A finite exact escape rule.
-- The unavoidable barrier is exactly $1/288$.
+- The unavoidable barrier is exactly $`1/288`$.
 - A quantitative moment-error floor.
 - Minimum support edits to unlock degree repair.
 - An exact monotone support-reduction algorithm.
@@ -85,7 +85,7 @@ The [paper](paper/main.pdf) supplies the definitions, hypotheses, proofs, and pr
 - Simultaneous face optimum, strict trap, and sharp distance.
 - A certified local barrier.
 - Moderate-support regimes.
-- General support bound without a small-$k$ restriction.
+- General support bound without a small-$`k`$ restriction.
 - Spanning omitted slopes give the sharp distance.
 - A near-optimal relative regime.
 - No dimension-independent stability, even for exact moments.
