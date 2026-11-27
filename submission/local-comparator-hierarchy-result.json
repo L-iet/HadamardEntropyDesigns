@@ -1054,7 +1054,7 @@
     "FaceSolution.lean": "e784392a702aa361ea14d25d8972e6904a3813db666762b1574fcabafcd2cee4",
     "FamilyChallenge.lean": "874458e1f9b3bc0b495421863118485d566e8ae35dcebe6143c067dd7c922138",
     "FamilySolution.lean": "dad5b071975208218d920338475cf46ac72fddca8c3c094e506666f69f8797f2",
-    "formalization.yaml": "be466105e260e33c99aeb13ad509c50daa7f25080e60a2ebd5f3d9389a0eeaac",
+    "formalization.yaml": "93445d05d4130963e32bb4e2d37dcabaa752b0699b1817eb8f69071c18d8a100",
     "GapChallenge.lean": "74741430cf48c969b67ec2e4674ba535d32de0fb2deabe91d36a742ef482732a",
     "GapSolution.lean": "0b7fd3ea351cf04ed0787f8fc44d8384f14bc57370f81a555cb8ef4aba8b1376",
     "HadamardMultibase/AdditionalSeeds.lean": "0edc0884708815d8d36317567987821124913434fb4db1b50c9e4cbe9ccb7a08",
@@ -1231,5 +1231,6 @@
   "kernelReceiptSHA256": "6ff970984ad421d5dcce16f34d88b3c08e83a2af7f22752faf3f8b34544e28b2",
   "kernelReceiptPath": "submission/kernel-receipts/hierarchy/f64660b5d68e9db6f6a24934dbfa3c358c7f969e6c1004f3766e014d9a66c855",
   "nonProofMaintenance": "submission/nonproof-maintenance.json",
-  "kernelProcessesRerunForMaintenance": false
+  "kernelProcessesRerunForMaintenance": false,
+  "metadataDescriptionMaintenance": "submission/metadata-description-maintenance.json"
 }

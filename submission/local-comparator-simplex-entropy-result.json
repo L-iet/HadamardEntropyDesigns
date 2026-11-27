@@ -1100,7 +1100,7 @@
     "FaceSolution.lean": "e784392a702aa361ea14d25d8972e6904a3813db666762b1574fcabafcd2cee4",
     "FamilyChallenge.lean": "874458e1f9b3bc0b495421863118485d566e8ae35dcebe6143c067dd7c922138",
     "FamilySolution.lean": "dad5b071975208218d920338475cf46ac72fddca8c3c094e506666f69f8797f2",
-    "formalization.yaml": "be466105e260e33c99aeb13ad509c50daa7f25080e60a2ebd5f3d9389a0eeaac",
+    "formalization.yaml": "93445d05d4130963e32bb4e2d37dcabaa752b0699b1817eb8f69071c18d8a100",
     "GapChallenge.lean": "74741430cf48c969b67ec2e4674ba535d32de0fb2deabe91d36a742ef482732a",
     "GapSolution.lean": "0b7fd3ea351cf04ed0787f8fc44d8384f14bc57370f81a555cb8ef4aba8b1376",
     "HadamardMultibase/AdditionalSeeds.lean": "0edc0884708815d8d36317567987821124913434fb4db1b50c9e4cbe9ccb7a08",
@@ -1277,5 +1277,6 @@
   "kernelReceiptSHA256": "54f0c2f1968a2d6ab6c2aefe8d4a6a7c93d9f81981e4a84a56ce922859ec3685",
   "kernelReceiptPath": "submission/kernel-receipts/simplex-entropy/40c0ab4621524aebb8834bf6fcf53a9ba321ea06d4342c2739f523bfd7dfde89",
   "nonProofMaintenance": "submission/nonproof-maintenance.json",
-  "kernelProcessesRerunForMaintenance": false
+  "kernelProcessesRerunForMaintenance": false,
+  "metadataDescriptionMaintenance": "submission/metadata-description-maintenance.json"
 }

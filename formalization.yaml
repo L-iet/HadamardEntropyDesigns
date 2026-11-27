@@ -2,7 +2,7 @@
   "version": "v0.4",
   "project": {
     "name": "Pairwise-independent designs, entropy, and stability",
-    "description": "Verified submission scope: 84 of 89 principal manuscript claim records, restricted to the declarations selected by each Comparator configuration. Pairwise-independent designs, entropy, and stability. The manuscript also contains explicitly unsubmitted results listed in paper/ALIGNMENT.json and submission/SCOPE.json. Proof development is paused; full-manuscript formalization is not claimed.",
+    "description": "We construct exactly unbiased pairwise-independent sign distributions whose entropy approaches the minimum while their total variation distance from every Hadamard mixture approaches one. We prove sharp dimension-sensitive collision and Shannon entropy bounds, with attainment equivalent to Hadamard existence at the associated order. We also show that replacements of uniformly bounded numbers of observations cannot connect certain infinite families of designs while preserving their first and second moments. See README.md for the main theorem statements, RESULTS.md for further results, paper/main.pdf for proofs and citations, and TECHNICAL.md for formalization coverage and build details.",
     "authors": [
       "Joshua Mark"
     ],

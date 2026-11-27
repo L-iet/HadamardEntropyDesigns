@@ -1,0 +1,188 @@
+{
+  "updatedAtUTC": "2026-11-27T03:43:49.618921+00:00",
+  "previousPublishedCommit": "5b632ec5fd17aca2349e22d7ede0499e15f5322c",
+  "changedField": "formalization.yaml: project.description",
+  "oldMetadataSHA256": "be466105e260e33c99aeb13ad509c50daa7f25080e60a2ebd5f3d9389a0eeaac",
+  "newMetadataSHA256": "93445d05d4130963e32bb4e2d37dcabaa752b0699b1817eb8f69071c18d8a100",
+  "onlyDescriptionChanged": true,
+  "allLeanSourcesTargetsAndBuildInputsUnchanged": true,
+  "proofChecksRerun": false,
+  "reason": "Plain-English project summaries only. Actual prior build, axiom-audit and kernel evidence is retained, with unchanged proof bytes; original check timestamps are preserved.",
+  "comparisonReports": [
+    {
+      "path": "submission/local-comparator-affine-result.json",
+      "previousReportSHA256": "0fdadcd1999d623a7508b8f0fc5a7591c71ca1e84f1ba088b1695730d787a080",
+      "exportsUnchanged": true
+    },
+    {
+      "path": "submission/local-comparator-barrier-result.json",
+      "previousReportSHA256": "a1e0818c47980cfda8656eb84b97fb36106fe1c822ee05744aefa39a85c041fd",
+      "exportsUnchanged": true
+    },
+    {
+      "path": "submission/local-comparator-boolean-result.json",
+      "previousReportSHA256": "60b3107d68e4708dffe608443b5c53a2293e4495b58b0c98531c382bbd7c1840",
+      "exportsUnchanged": true
+    },
+    {
+      "path": "submission/local-comparator-buffer-result.json",
+      "previousReportSHA256": "1a95d9d5b3bcaa0eeeb897e82a28183dc488f3068db6b1fc5f8b599327fedb2b",
+      "exportsUnchanged": true
+    },
+    {
+      "path": "submission/local-comparator-cofinite-result.json",
+      "previousReportSHA256": "0f03a8f7f27dc4ee18a02a619e7bbbe2c001f43f6c1d8f1601622cbfc0656fd1",
+      "exportsUnchanged": true
+    },
+    {
+      "path": "submission/local-comparator-collision-result.json",
+      "previousReportSHA256": "1ff853fca96cd9409a36287b627cbe67ee0f01c379d1d8b16aabc36b27dd7055",
+      "exportsUnchanged": true
+    },
+    {
+      "path": "submission/local-comparator-complete-sequence-result.json",
+      "previousReportSHA256": "124addab1dc4c2336d1fdcb8e5eea861ffe11128fb826e4a9ef1dc183cecf49a",
+      "exportsUnchanged": true
+    },
+    {
+      "path": "submission/local-comparator-cubic-result.json",
+      "previousReportSHA256": "91c2c8d10427b953a05d0a76c9dd1f884d970a070eceb911343e6f20e446f948",
+      "exportsUnchanged": true
+    },
+    {
+      "path": "submission/local-comparator-denominator-result.json",
+      "previousReportSHA256": "bc9a39a73732c5c47a4cb4edb13bf5b8b1a2ba0009894442dba4bcc1899bc3df",
+      "exportsUnchanged": true
+    },
+    {
+      "path": "submission/local-comparator-distance-result.json",
+      "previousReportSHA256": "3b95e3bbd307c340a17000561ed9346fb66acdf24e043d588cd2bf788234a518",
+      "exportsUnchanged": true
+    },
+    {
+      "path": "submission/local-comparator-face-result.json",
+      "previousReportSHA256": "121b31b020a2c5641ce3b05d8fcd270c5cc6cdf19d7b4455d853f83f3c12cac1",
+      "exportsUnchanged": true
+    },
+    {
+      "path": "submission/local-comparator-family-result.json",
+      "previousReportSHA256": "95795a2bc0ce74c759fdfcae94b80d39941db197d0b3c7733d27a7d1f51c7327",
+      "exportsUnchanged": true
+    },
+    {
+      "path": "submission/local-comparator-gap-result.json",
+      "previousReportSHA256": "3540fd2a58d06dfba1e4b6af71f2436c502d8247ca8d59f788943a3d21253343",
+      "exportsUnchanged": true
+    },
+    {
+      "path": "submission/local-comparator-hierarchy-result.json",
+      "previousReportSHA256": "11df5d9360027d4a8a7a7b2166a4383287f3ea3128b76c71422dc157e72d80e9",
+      "exportsUnchanged": true
+    },
+    {
+      "path": "submission/local-comparator-moderate-result.json",
+      "previousReportSHA256": "1a97f2161ddba08822564d75e5e9474f9708e3b87ff12a379d9d2c6824fe5874",
+      "exportsUnchanged": true
+    },
+    {
+      "path": "submission/local-comparator-moments-result.json",
+      "previousReportSHA256": "cdcdb49ce9360a5624edcddaf049ec29ce4cbb7c8d13091c4dae1bb6932bef60",
+      "exportsUnchanged": true
+    },
+    {
+      "path": "submission/local-comparator-permutation-cost-result.json",
+      "previousReportSHA256": "6b6161ba21068a8014517c1fad08d5b5197669a44a8e59807bc3b5ce35ea1c9f",
+      "exportsUnchanged": true
+    },
+    {
+      "path": "submission/local-comparator-plotkin-result.json",
+      "previousReportSHA256": "929505612648cb1a3133e2c34d64a84d1655955db8603c385c298112ad7c2b48",
+      "exportsUnchanged": true
+    },
+    {
+      "path": "submission/local-comparator-prime-exponent-result.json",
+      "previousReportSHA256": "ae11825b8fd613dc0b1e740b074d87f71089ddeeec3a310f887ce4bd1c61d3ab",
+      "exportsUnchanged": true
+    },
+    {
+      "path": "submission/local-comparator-prime-result.json",
+      "previousReportSHA256": "daaaa890aa6e9c66234fdbea5afe35fa9687549ac89bd10482e42e8313b0b3e4",
+      "exportsUnchanged": true
+    },
+    {
+      "path": "submission/local-comparator-project-result.json",
+      "previousReportSHA256": "22ba2d35c374844cf6cd1190e1081a392197c1acd8bb4e1bb47f71879a69de78",
+      "exportsUnchanged": true
+    },
+    {
+      "path": "submission/local-comparator-quadratic-classification-result.json",
+      "previousReportSHA256": "46710ffd1f101f6bdc5fea35b88bb834002095cbabb59bcc37680d03cc35e195",
+      "exportsUnchanged": true
+    },
+    {
+      "path": "submission/local-comparator-quantum-bounds-result.json",
+      "previousReportSHA256": "02c7a939948d2923e678b9ec2f2d4bc99e2f8dd2dbe25a67c51227f7b006d5cb",
+      "exportsUnchanged": true
+    },
+    {
+      "path": "submission/local-comparator-quantum-result.json",
+      "previousReportSHA256": "91bd79ccd4f08410b3d93a751de02fdfa7f8b4e12e346cbfc70f23193e17e4af",
+      "exportsUnchanged": true
+    },
+    {
+      "path": "submission/local-comparator-radix-result.json",
+      "previousReportSHA256": "1dd186130321b51b479c3835a76a27d388474fe6ea2dc8b82584929e32bfc7df",
+      "exportsUnchanged": true
+    },
+    {
+      "path": "submission/local-comparator-relative-result.json",
+      "previousReportSHA256": "2e5f859c47cd4794b297dbe85a797bda6ed2a8c119b42baba2db29b1bc77d7c1",
+      "exportsUnchanged": true
+    },
+    {
+      "path": "submission/local-comparator-seed-repair-result.json",
+      "previousReportSHA256": "dffde1f9ecf7a081a93eb9d34aa04ba52edd07e055b343585fd240053301de5f",
+      "exportsUnchanged": true
+    },
+    {
+      "path": "submission/local-comparator-simplex-entropy-result.json",
+      "previousReportSHA256": "ce780b0eb93355d3807a69b0db748120a83d335659f20d362d8755680a788b46",
+      "exportsUnchanged": true
+    },
+    {
+      "path": "submission/local-comparator-spanning-result.json",
+      "previousReportSHA256": "289e2c8be223f076af2e2031c54e6f3edbffdbf9b35efc12d4259faae3423ec7",
+      "exportsUnchanged": true
+    },
+    {
+      "path": "submission/local-comparator-support-result.json",
+      "previousReportSHA256": "cbf9215bf729685f54eede1234be7b5768730f46f9e03021e66d0c26f4ccc5da",
+      "exportsUnchanged": true
+    },
+    {
+      "path": "submission/local-comparator-symmetric-result.json",
+      "previousReportSHA256": "ea861ec715c26b02835b05bfdbed7ac35c3c68c180fb765b317738c2cac45ebb",
+      "exportsUnchanged": true
+    },
+    {
+      "path": "submission/local-comparator-trade-result.json",
+      "previousReportSHA256": "0957f336d1f895cc4d79eb1ee8a48a1814856bc47a33b7e13093a4b5fed63417",
+      "exportsUnchanged": true
+    },
+    {
+      "path": "submission/local-comparator-translation-orbits-result.json",
+      "previousReportSHA256": "94616f8db494f01e98c73a1bbc482b626ffba5df60c9b07519d7d811729acb5e",
+      "exportsUnchanged": true
+    },
+    {
+      "path": "submission/local-comparator-witness-result.json",
+      "previousReportSHA256": "3463a5fd61e5605f11847d0d9104c981a2066558fc922fb161736c9f17fd5550",
+      "exportsUnchanged": true
+    },
+    {
+      "path": "submission/local-comparator-result.json",
+      "previousReportSHA256": "721d2a7488e52439478e894c908eb47d9304d8e053f148cddf8c968a22515d4c",
+      "exportsUnchanged": true
+    }
+  ]
+}
