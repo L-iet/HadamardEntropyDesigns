@@ -22,6 +22,7 @@ jobs:
           python3 scripts/test_comparison_groups.py
           python3 scripts/test_comparison_coverage.py
           python3 scripts/test_submission_scope.py
+          python3 scripts/check_paper_entry.py
           python3 scripts/check_submission.py
       - uses: leanprover/lean-action@38fbc41a8c28c4cbaec22d7f7de508ec2e7c0dd9
         with:

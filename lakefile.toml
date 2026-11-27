@@ -1,6 +1,6 @@
 name = "entropy_designs"
 version = "0.1.0"
-defaultTargets = ["EntropyDesigns", "Solution", "CofiniteSolution", "BufferSolution", "RadixSolution", "TradeSolution", "BooleanSolution", "CubicSolution", "AffineSolution", "SupportSolution", "WitnessSolution", "MomentSolution", "SeedRepairSolution", "SymmetricSolution", "CollisionSolution", "QuantumSolution", "QuantumBoundsSolution", "FaceSolution", "DistanceSolution", "BarrierSolution", "FamilySolution", "ModerateSolution", "PlotkinSolution", "SpanningSolution", "RelativeSolution", "SequenceSolution", "HierarchySolution", "GapSolution", "PrimeSolution", "ProjectSolution", "DenominatorSolution", "PrimeExponentSolution", "TranslationOrbitSolution", "PermutationCostSolution", "SimplexEntropySolution", "QuadraticClassificationSolution"]
+defaultTargets = ["PaperChallenge", "PaperSolution", "EntropyDesigns", "Solution", "CofiniteSolution", "BufferSolution", "RadixSolution", "TradeSolution", "BooleanSolution", "CubicSolution", "AffineSolution", "SupportSolution", "WitnessSolution", "MomentSolution", "SeedRepairSolution", "SymmetricSolution", "CollisionSolution", "QuantumSolution", "QuantumBoundsSolution", "FaceSolution", "DistanceSolution", "BarrierSolution", "FamilySolution", "ModerateSolution", "PlotkinSolution", "SpanningSolution", "RelativeSolution", "SequenceSolution", "HierarchySolution", "GapSolution", "PrimeSolution", "ProjectSolution", "DenominatorSolution", "PrimeExponentSolution", "TranslationOrbitSolution", "PermutationCostSolution", "SimplexEntropySolution", "QuadraticClassificationSolution"]
 
 [[require]]
 name = "mathlib"
@@ -418,4 +418,11 @@ moreLeanArgs = ["-M1024"]
 
 [[lean_lib]]
 name = "QuadraticClassificationSolution"
+moreLeanArgs = ["-M1024"]
+
+[[lean_lib]]
+name = "PaperChallenge"
+
+[[lean_lib]]
+name = "PaperSolution"
 moreLeanArgs = ["-M1024"]

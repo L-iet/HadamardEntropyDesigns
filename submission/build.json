@@ -1,6 +1,8 @@
 {
-  "status": "passed",
-  "checkedAtUTC": "2026-11-26T18:51:53.354723+00:00",
+  "status": "pending",
+  "reason": "New paper-level packaging has not been locally compiled or compared; user requested no local Lean builds, Comparator or kernel reruns.",
+  "paperEntry": "submission/PAPER_ENTRY.json",
+  "historicalEvidence": "submission/history/1fb7daa5e4635a16a353825131a4bfc10990c5b0",
   "proofHashes": {
     "AffineChallenge.lean": "8f7df90cfc51aef40789d8f83a1a145159fce731004aebc82d7eb695b67794bb",
     "AffineSolution.lean": "248bbdf725f07d0e13ec1de7eac723a061c692aba1e1d6ca73b79d0e58fd3c7f",
@@ -15,41 +17,40 @@
     "CofiniteSolution.lean": "b40e368d4eb9e1d7c477331decb6ff3c49e78a2ee981ad71957df0fa94b2e8e9",
     "CollisionChallenge.lean": "15adea48f33ce1fda272ce21b792ecf5b540ae4f53197bf5ba6533fb144c1944",
     "CollisionSolution.lean": "51754bccf6dc5e8dcf8b8d8a62eae0cb982672fdcd684fa1b806242c0d207f83",
-    "comparator-affine.json": "1e51993e5aa5576ac9d2180cf3446ff573fd5cb43717efee53589c870279c006",
-    "comparator-barrier.json": "54b00ed3183baa37366d6f91d12ac1fe14cbd75c57806592cadbc3415d6fe000",
-    "comparator-boolean.json": "fc541379914a10f0a68861aaa44bb5f4878266110706be63c9beffdbb21ca568",
-    "comparator-buffer.json": "55867e607d17c195707e22bac2c18f94055207b716de8f22d1a6a559a2e0dbc5",
-    "comparator-cofinite.json": "2af16a942e4f5f5dea141af309a7fa1230612ada0f695ef1cab728bbee70f0a5",
-    "comparator-collision.json": "12561d291a81b6e5d4ae5c270cd9bd37bdbcc9c74d6628228970fe62193e3e59",
-    "comparator-complete-sequence.json": "ceb82dc3e06aa35f04122bb0dc011470a6a13c9ff0396067d3f0341c3bf77e02",
-    "comparator-cubic.json": "6f0c0f7e4f96303fa0e447034dc7a333efc97b96671b6adff0ba1be8ee3dbf5c",
-    "comparator-denominator.json": "52784338a43a3f5935fdb0f5cb30adfe6f26867713280ae79940d8b704f01bb0",
-    "comparator-distance.json": "03adf7f40ada88e198defe5f670d962eae31cb3874921258898499f321fe36b9",
-    "comparator-face.json": "815ce3475cb47c0d354590f5a17e5861f315a567e8b920564d0a49e2c2223b55",
-    "comparator-family.json": "dd1d1d0a6f23807e22bc366df6e9a676bfc7fd5de35c15a6fef1df77d64f6c76",
-    "comparator-gap.json": "1026cfe42378ad23bc59fae7848143fc5fcdbd4a51668a57d9e7322ffd01da9a",
-    "comparator-hierarchy.json": "c17bca5905fe839c301b83515afacdc7775fb6fdc47758c92ceda3a880a8090b",
-    "comparator-moderate.json": "e064ce25064a06e23687353456a8709781c3473b43c5c5d81d771d2b631bb935",
-    "comparator-moments.json": "5539e87558ea7b8e63044f961601acc5cf1e09bae4ebcb7d0e97803c53f60cdd",
-    "comparator-permutation-cost.json": "6b6aea3bbeff5cbc2638532541f5caaa034f7d9febcdaf366aacb25e4271ec28",
-    "comparator-plotkin.json": "153a14643e3ccd22f1e2ea4c0eab33cfa8f8b7b652d54f890c98656b9b6ad2fc",
-    "comparator-prime-exponent.json": "0df6eee001c0726b6cf00a3154f8f3a3260126ffc7ac96da9d6dccab55205f7c",
-    "comparator-prime.json": "0b11513bef4f2a8cf774bb2fbed9bd1f4997247ed33dc7a321bb4e53102894dd",
-    "comparator-project.json": "45772a039012ec3fad4e6536d465a81970d16e3764d3d7bd7b42dc52eef858bf",
-    "comparator-quadratic-classification.json": "8344995b326420f78334938a8ebf9969a8ebbe909416462b66d64a57049eee44",
-    "comparator-quantum-bounds.json": "8bf75e4c8fbb2a68cfd4609e933ed267df2e09a304c2fdb8b387e4055e7c0516",
-    "comparator-quantum.json": "d1d3b87c39a202b657463ac2a496a78cb5dc57c80829904b24ac3d252889a240",
-    "comparator-radix.json": "fb4e86cc4dc05534a67d6d631c8536248535fc338cf71f3eb27045e91d4ab28b",
-    "comparator-relative.json": "e178a9e4b6e6d8ed5d50bcf8f05a147eb4c950da52e56557fc7c4fd6872988bb",
-    "comparator-seed-repair.json": "9515f9710df8a9f7a19bc068e5d9328597931a2306010ceb7f5e78bbef4990cf",
-    "comparator-simplex-entropy.json": "db84cdd6a18d36442555e241cbbd525141119a03878dd89a99131dfd24517d83",
-    "comparator-spanning.json": "f341294f0b9e08aeab06e03a329f7ce1d928d13619fda93c3f69239efa6b20b8",
-    "comparator-support.json": "810e3bb3c89d7f5ae1178e6c8b00169629b7b7e2bee62f2301d9bc240d21c6d2",
-    "comparator-symmetric.json": "291e01592c9873dea5b5f6e130361812388f5826c4706c60f54a7b518c00e647",
-    "comparator-trade.json": "6cc621c910b991010a2d7b07af2ebd79da710b8d1207c8373bdfc26aa59e7c6d",
-    "comparator-translation-orbits.json": "d124e97e112012d91497fb02ecd51061633f1aa30534de280e64ad50cb399150",
-    "comparator-witness.json": "4edf1355bafd6113304be46577afc4e3376cfeac0c7465afb542e630a02f2c05",
-    "comparator.json": "ee502ee0719e9b06e85c648ccfc7946fd53e653a5eab8896669c0a9721d382f8",
+    "configs/development/comparator-affine.json": "1e51993e5aa5576ac9d2180cf3446ff573fd5cb43717efee53589c870279c006",
+    "configs/development/comparator-barrier.json": "54b00ed3183baa37366d6f91d12ac1fe14cbd75c57806592cadbc3415d6fe000",
+    "configs/development/comparator-boolean.json": "fc541379914a10f0a68861aaa44bb5f4878266110706be63c9beffdbb21ca568",
+    "configs/development/comparator-buffer.json": "55867e607d17c195707e22bac2c18f94055207b716de8f22d1a6a559a2e0dbc5",
+    "configs/development/comparator-cofinite.json": "2af16a942e4f5f5dea141af309a7fa1230612ada0f695ef1cab728bbee70f0a5",
+    "configs/development/comparator-collision.json": "12561d291a81b6e5d4ae5c270cd9bd37bdbcc9c74d6628228970fe62193e3e59",
+    "configs/development/comparator-complete-sequence.json": "ceb82dc3e06aa35f04122bb0dc011470a6a13c9ff0396067d3f0341c3bf77e02",
+    "configs/development/comparator-cubic.json": "6f0c0f7e4f96303fa0e447034dc7a333efc97b96671b6adff0ba1be8ee3dbf5c",
+    "configs/development/comparator-denominator.json": "52784338a43a3f5935fdb0f5cb30adfe6f26867713280ae79940d8b704f01bb0",
+    "configs/development/comparator-distance.json": "03adf7f40ada88e198defe5f670d962eae31cb3874921258898499f321fe36b9",
+    "configs/development/comparator-face.json": "815ce3475cb47c0d354590f5a17e5861f315a567e8b920564d0a49e2c2223b55",
+    "configs/development/comparator-family.json": "dd1d1d0a6f23807e22bc366df6e9a676bfc7fd5de35c15a6fef1df77d64f6c76",
+    "configs/development/comparator-gap.json": "1026cfe42378ad23bc59fae7848143fc5fcdbd4a51668a57d9e7322ffd01da9a",
+    "configs/development/comparator-hierarchy.json": "c17bca5905fe839c301b83515afacdc7775fb6fdc47758c92ceda3a880a8090b",
+    "configs/development/comparator-moderate.json": "e064ce25064a06e23687353456a8709781c3473b43c5c5d81d771d2b631bb935",
+    "configs/development/comparator-moments.json": "5539e87558ea7b8e63044f961601acc5cf1e09bae4ebcb7d0e97803c53f60cdd",
+    "configs/development/comparator-permutation-cost.json": "6b6aea3bbeff5cbc2638532541f5caaa034f7d9febcdaf366aacb25e4271ec28",
+    "configs/development/comparator-plotkin.json": "153a14643e3ccd22f1e2ea4c0eab33cfa8f8b7b652d54f890c98656b9b6ad2fc",
+    "configs/development/comparator-prime-exponent.json": "0df6eee001c0726b6cf00a3154f8f3a3260126ffc7ac96da9d6dccab55205f7c",
+    "configs/development/comparator-prime.json": "0b11513bef4f2a8cf774bb2fbed9bd1f4997247ed33dc7a321bb4e53102894dd",
+    "configs/development/comparator-project.json": "45772a039012ec3fad4e6536d465a81970d16e3764d3d7bd7b42dc52eef858bf",
+    "configs/development/comparator-quadratic-classification.json": "8344995b326420f78334938a8ebf9969a8ebbe909416462b66d64a57049eee44",
+    "configs/development/comparator-quantum-bounds.json": "8bf75e4c8fbb2a68cfd4609e933ed267df2e09a304c2fdb8b387e4055e7c0516",
+    "configs/development/comparator-quantum.json": "d1d3b87c39a202b657463ac2a496a78cb5dc57c80829904b24ac3d252889a240",
+    "configs/development/comparator-radix.json": "fb4e86cc4dc05534a67d6d631c8536248535fc338cf71f3eb27045e91d4ab28b",
+    "configs/development/comparator-relative.json": "e178a9e4b6e6d8ed5d50bcf8f05a147eb4c950da52e56557fc7c4fd6872988bb",
+    "configs/development/comparator-seed-repair.json": "9515f9710df8a9f7a19bc068e5d9328597931a2306010ceb7f5e78bbef4990cf",
+    "configs/development/comparator-simplex-entropy.json": "db84cdd6a18d36442555e241cbbd525141119a03878dd89a99131dfd24517d83",
+    "configs/development/comparator-spanning.json": "f341294f0b9e08aeab06e03a329f7ce1d928d13619fda93c3f69239efa6b20b8",
+    "configs/development/comparator-support.json": "810e3bb3c89d7f5ae1178e6c8b00169629b7b7e2bee62f2301d9bc240d21c6d2",
+    "configs/development/comparator-symmetric.json": "291e01592c9873dea5b5f6e130361812388f5826c4706c60f54a7b518c00e647",
+    "configs/development/comparator-trade.json": "6cc621c910b991010a2d7b07af2ebd79da710b8d1207c8373bdfc26aa59e7c6d",
+    "configs/development/comparator-translation-orbits.json": "d124e97e112012d91497fb02ecd51061633f1aa30534de280e64ad50cb399150",
+    "configs/development/comparator-witness.json": "4edf1355bafd6113304be46577afc4e3376cfeac0c7465afb542e630a02f2c05",
     "CubicChallenge.lean": "3f2c7cb45edc5443e8e67bdba8c1e6e088ebd06b6ceb0f4e231f6ad5c04c5dfc",
     "CubicSolution.lean": "8e32b0a1505736f0caf762dc60f7c9f44142e264dcf3ee4d491a5d4c11f3b429",
     "DenominatorChallenge.lean": "972cf21b10b8bf6dac7bc312ff80f4f14a9f6625f2e79c652daa0c6ef115918b",
@@ -1016,7 +1017,7 @@
     "FaceSolution.lean": "e784392a702aa361ea14d25d8972e6904a3813db666762b1574fcabafcd2cee4",
     "FamilyChallenge.lean": "874458e1f9b3bc0b495421863118485d566e8ae35dcebe6143c067dd7c922138",
     "FamilySolution.lean": "dad5b071975208218d920338475cf46ac72fddca8c3c094e506666f69f8797f2",
-    "formalization.yaml": "93445d05d4130963e32bb4e2d37dcabaa752b0699b1817eb8f69071c18d8a100",
+    "formalization.yaml": "74086208644d699195a10e9737de8ec2c571d40c3e414776d6c4026bed05c55f",
     "GapChallenge.lean": "74741430cf48c969b67ec2e4674ba535d32de0fb2deabe91d36a742ef482732a",
     "GapSolution.lean": "0b7fd3ea351cf04ed0787f8fc44d8384f14bc57370f81a555cb8ef4aba8b1376",
     "HadamardMultibase/AdditionalSeeds.lean": "0edc0884708815d8d36317567987821124913434fb4db1b50c9e4cbe9ccb7a08",
@@ -1111,7 +1112,7 @@
     "HierarchyChallenge.lean": "a0c615f3592db0b36a651ba623bf8566af81ed9c47d2b39703ab8669021a39b8",
     "HierarchySolution.lean": "9dd920551f56cb2f619c8a629d40056b375b36bf028ace893f63b0d75324990e",
     "lake-manifest.json": "8dd57114805b13e90cf9d0e58d29aa0740efc9afb1df2c777b578d390e11fcf9",
-    "lakefile.toml": "ad067bb1f66e905efaeb5412e1c7bf880c6659864f7ec7cb8996274b510cd2c7",
+    "lakefile.toml": "fc886bc45c4914acf0aafc944f2cfb05b29cb0322d148b881684e91c26b269ee",
     "lean-toolchain": "ca5f1f601d34c49079e38d7e7041eb0f2a9c227fbc1df0f404820069a052330c",
     "ModerateChallenge.lean": "aa3b68f0ec94fa3ea537e0dd8fda6321b9d4f700059dbdfa2ccf91801a034ce9",
     "ModerateSolution.lean": "02b7fcd6441571478b0ca5a204caab93467fe701a37171b01f69885f0289022a",
@@ -1150,11 +1151,11 @@
     "scripts/generate_nonuniform_trap_certificates.py": "65614d406846e486710e8305cc40a65c5d70839de49b89928ed2ef6772d727dc",
     "scripts/record_verified_sources.py": "a65955cd63da65219862ac8c33cee63a361ba754dd17744120eb7700423a3180",
     "scripts/refresh_paper_bundle.py": "d325a7ee181f15bf453a5400438da482e1407cbd98326f9dabdbe1490156d862",
-    "scripts/run_comparator.py": "08fb96667362688db116509d118004f2980a2d19cb151758cd64323eaa37f698",
+    "scripts/run_comparator.py": "763a6919dcc7f3f8b600ec52cd17f25494d269ac838b97f2f7020cb796825bc5",
     "scripts/run_local_comparator.py": "9eff93809db05890ec3b0617a410a6e7f461f3a81a9e1444c2258ea0e79efa63",
     "scripts/submission_scope.py": "b0727b8c3e76580a60ae3029c8e16781242e3e8c9cf6a93c7df49c4dff8afd96",
     "scripts/test_comparison_coverage.py": "174307ba963f618fdd41b4393aa81001da7e8bc485846feb618ff84a4aafcd33",
-    "scripts/test_comparison_groups.py": "163d4716cc8452401ba631eefb0301bdb83e3b773947c1aea980a70518b24516",
+    "scripts/test_comparison_groups.py": "1aa05a853c604cd258def9b6217e0fda3f4cd086e9e9f317bb27041a3faa430e",
     "scripts/test_construction_provenance.py": "6ff1e72cc609dc4e5405525bfc4ece4ce26bc5a45e8ae85807448ccfbd85869d",
     "scripts/test_submission_checks.py": "0c9683e30c46ba9b0862c139e7535242a48bae399c5ddbdc5019a9a91d8a03ed",
     "scripts/test_submission_scope.py": "e5968648baed0b26e8e0ace8a1e1cf57c8455b709218ebf47a66abbfecea6e82",
@@ -1168,8 +1169,8 @@
     "Solution.lean": "1c364d1c3c4e45def89e806308e0f3339362945cb5b621df66d62adfd7652602",
     "SpanningChallenge.lean": "5a5e6baf1258d6bb4fabeb32a04ace7eb16414596947158b0a19c6f70d54232b",
     "SpanningSolution.lean": "4b4e9114908e698f3fa38d8e50d1abfbf3b9c39f6cf300cea3e839f247ebfc1b",
-    "submission/comparison-groups.json": "62d5f344891910212f2c0f47871dc2f6b8c0597ac0764c7a389e798bff9e653a",
-    "submission/SCOPE.json": "45f925bffd7070ccf4b3dae70fa92409b61c270a415ba16788064c0a41dca82a",
+    "submission/comparison-groups.json": "cd9599a2140da14b3eacc13b5012fb5bd1e98278506a99edd9d46c266918e5d8",
+    "submission/SCOPE.json": "5f089b8e96f46b397327a6c2c844f3cd85325ee29e4bfa0d5b19cc13f6b62324",
     "SupportChallenge.lean": "e2f23899a3717648179f22e9d18e46689474d103244b422cdad5a867415be90a",
     "SupportSolution.lean": "4aef60fc3ab7b5998d7a4fbcf45e68f3aa0727e91f43bcdd9c27dccebec38e9b",
     "SymmetricChallenge.lean": "9aa1cdf17624eea7f0512de4aea0e5dc9acaa62a6f403343669fe2d64b98f7cb",
@@ -1179,238 +1180,13 @@
     "TranslationOrbitChallenge.lean": "5f71a9ce650c755eba262d38157e87b1987499ea1624fe7739795eaad9b325a4",
     "TranslationOrbitSolution.lean": "a095af86635aee94d880f7e08f9de86c885ba6ff9bfb443a060d2cddeae6739c",
     "WitnessChallenge.lean": "b9af7008e817466068bda6b72f71c6cc545e59c0f345606d4b317c568f39c72e",
-    "WitnessSolution.lean": "37db21f46123b056a99044b1d17a8cfc8b15782df7efa316481f92a0b8308efb"
+    "WitnessSolution.lean": "37db21f46123b056a99044b1d17a8cfc8b15782df7efa316481f92a0b8308efb",
+    "configs/development/comparator-main.json": "ee502ee0719e9b06e85c648ccfc7946fd53e653a5eab8896669c0a9721d382f8",
+    "comparator.json": "7f20e51dc7934c6fa0e4f6d8d73d4576aa16a145b3ee3b1939ffeeab1d0b5376",
+    "PaperChallenge.lean": "6f89a7678d8607699dde71305b027fdc374fac9ad531ecc177c7071e6e16cdc6",
+    "PaperSolution.lean": "c4596af6b59a235c0163786bead57e7dea3f573ff0fec391aecb9a956419f98e",
+    "scripts/check_paper_entry.py": "bf568902fe3c2c2cb6b2389f4f9f546081e9c7643db99d233f999ebd52018f92"
   },
-  "commands": [
-    [
-      "lake",
-      "build"
-    ],
-    [
-      "lake",
-      "build",
-      "Challenge",
-      "Solution",
-      "CofiniteChallenge",
-      "CofiniteSolution",
-      "BufferChallenge",
-      "BufferSolution",
-      "RadixChallenge",
-      "RadixSolution",
-      "TradeChallenge",
-      "TradeSolution",
-      "BooleanChallenge",
-      "BooleanSolution",
-      "CubicChallenge",
-      "CubicSolution",
-      "AffineChallenge",
-      "AffineSolution",
-      "SupportChallenge",
-      "SupportSolution",
-      "WitnessChallenge",
-      "WitnessSolution",
-      "MomentChallenge",
-      "MomentSolution",
-      "SeedRepairChallenge",
-      "SeedRepairSolution",
-      "SymmetricChallenge",
-      "SymmetricSolution",
-      "CollisionChallenge",
-      "CollisionSolution",
-      "QuantumChallenge",
-      "QuantumSolution",
-      "QuantumBoundsChallenge",
-      "QuantumBoundsSolution",
-      "FaceChallenge",
-      "FaceSolution",
-      "DistanceChallenge",
-      "DistanceSolution",
-      "BarrierChallenge",
-      "BarrierSolution",
-      "FamilyChallenge",
-      "FamilySolution",
-      "ModerateChallenge",
-      "ModerateSolution",
-      "PlotkinChallenge",
-      "PlotkinSolution",
-      "SpanningChallenge",
-      "SpanningSolution",
-      "RelativeChallenge",
-      "RelativeSolution",
-      "SequenceChallenge",
-      "SequenceSolution",
-      "HierarchyChallenge",
-      "HierarchySolution",
-      "GapChallenge",
-      "GapSolution",
-      "PrimeChallenge",
-      "PrimeSolution",
-      "ProjectChallenge",
-      "ProjectSolution",
-      "DenominatorChallenge",
-      "DenominatorSolution",
-      "PrimeExponentChallenge",
-      "PrimeExponentSolution",
-      "TranslationOrbitChallenge",
-      "TranslationOrbitSolution",
-      "PermutationCostChallenge",
-      "PermutationCostSolution",
-      "SimplexEntropyChallenge",
-      "SimplexEntropySolution",
-      "QuadraticClassificationChallenge",
-      "QuadraticClassificationSolution"
-    ],
-    [
-      "C:\\Users\\joshj\\AppData\\Local\\Programs\\Python\\Python313\\python.exe",
-      "scripts/audit_axioms.py"
-    ]
-  ],
-  "comparisonGroups": [
-    {
-      "id": "main",
-      "config": "comparator.json"
-    },
-    {
-      "id": "cofinite",
-      "config": "comparator-cofinite.json"
-    },
-    {
-      "id": "buffer",
-      "config": "comparator-buffer.json"
-    },
-    {
-      "id": "radix",
-      "config": "comparator-radix.json"
-    },
-    {
-      "id": "trade",
-      "config": "comparator-trade.json"
-    },
-    {
-      "id": "boolean",
-      "config": "comparator-boolean.json"
-    },
-    {
-      "id": "cubic",
-      "config": "comparator-cubic.json"
-    },
-    {
-      "id": "affine",
-      "config": "comparator-affine.json"
-    },
-    {
-      "id": "support",
-      "config": "comparator-support.json"
-    },
-    {
-      "id": "witness",
-      "config": "comparator-witness.json"
-    },
-    {
-      "id": "moments",
-      "config": "comparator-moments.json"
-    },
-    {
-      "id": "seed-repair",
-      "config": "comparator-seed-repair.json"
-    },
-    {
-      "id": "symmetric",
-      "config": "comparator-symmetric.json"
-    },
-    {
-      "id": "collision",
-      "config": "comparator-collision.json"
-    },
-    {
-      "id": "quantum",
-      "config": "comparator-quantum.json"
-    },
-    {
-      "id": "quantum-bounds",
-      "config": "comparator-quantum-bounds.json"
-    },
-    {
-      "id": "face",
-      "config": "comparator-face.json"
-    },
-    {
-      "id": "distance",
-      "config": "comparator-distance.json"
-    },
-    {
-      "id": "barrier",
-      "config": "comparator-barrier.json"
-    },
-    {
-      "id": "family",
-      "config": "comparator-family.json"
-    },
-    {
-      "id": "moderate",
-      "config": "comparator-moderate.json"
-    },
-    {
-      "id": "plotkin",
-      "config": "comparator-plotkin.json"
-    },
-    {
-      "id": "spanning",
-      "config": "comparator-spanning.json"
-    },
-    {
-      "id": "relative",
-      "config": "comparator-relative.json"
-    },
-    {
-      "id": "complete-sequence",
-      "config": "comparator-complete-sequence.json"
-    },
-    {
-      "id": "hierarchy",
-      "config": "comparator-hierarchy.json"
-    },
-    {
-      "id": "gap",
-      "config": "comparator-gap.json"
-    },
-    {
-      "id": "prime",
-      "config": "comparator-prime.json"
-    },
-    {
-      "id": "project",
-      "config": "comparator-project.json"
-    },
-    {
-      "id": "denominator",
-      "config": "comparator-denominator.json"
-    },
-    {
-      "id": "prime-exponent",
-      "config": "comparator-prime-exponent.json"
-    },
-    {
-      "id": "translation-orbits",
-      "config": "comparator-translation-orbits.json"
-    },
-    {
-      "id": "permutation-cost",
-      "config": "comparator-permutation-cost.json"
-    },
-    {
-      "id": "simplex-entropy",
-      "config": "comparator-simplex-entropy.json"
-    },
-    {
-      "id": "quadratic-classification",
-      "config": "comparator-quadratic-classification.json"
-    }
-  ],
-  "scope": "Fresh ordinary builds of all public proof and Challenge entry points plus complete configured declaration axiom audit. No new mathematical proofs added.",
-  "mathematicalSourceChanges": [],
-  "configurationSourceChanges": [],
-  "nonProofMaintenance": "submission/nonproof-maintenance.json",
-  "inventoryUpdatedAtUTC": "2026-11-27T03:23:27.712423+00:00",
-  "metadataDescriptionMaintenance": "submission/metadata-description-maintenance.json"
+  "notRegistryVerification": true,
+  "commands": []
 }

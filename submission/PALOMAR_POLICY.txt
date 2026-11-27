@@ -1,16 +1,22 @@
-Palomar requirements checked26November2026.
-https://github.com/PalomarRegistry/PalomarPolicy/blob/main/CONTRIBUTING.md
-https://github.com/PalomarRegistry/PalomarSubmission
+PAPER-LEVEL ENTRY AND DEVELOPMENT CHECKS
 
-Exactly one recognized Lakefile; committed pinned manifest; metadata v0.4;
-one compatible SPDX root license; ordinary module headers; Lean source
-files at most10000lines; each selected Challenge at most1000lines/100KiB.
-Only the three standard axioms; every selected theorem and definition must
-match its independent canonical-import Challenge. Every configuration is a
-separate Palomar entry. Paper gaps are explicitly excluded in SCOPE.json,
-metadata, README and the PDF; no full-paper coverage is silently inferred.
-Local preparation is not sandboxed registry verification or registration.
-The default --ready check retains its whole-paper requirement. The separate
-check_submission_preparation.py validates the declared submission scope;
---require-sandbox additionally requires actual sandboxed dual-kernel reports.
-No automatic submission, publication or security-control relaxation is made.
+Submit comparator.json at the repository root for the three headline result
+families. Other configurations are under configs/development/ and are optional
+separate entries, not prerequisites for this submission.
+
+The selected Challenge must be at most 100 KiB and 1,000 lines; warnings begin
+above 32 KiB or 300 lines. Its transitive imports must be approved libraries,
+not other project-specific Challenge modules. PaperChallenge.lean copies the
+needed concrete definitions and theorem statements instead of importing them.
+
+The new package is awaiting mechanical verification. No local Lean build,
+Comparator run, or kernel replay was performed for this packaging change.
+Historical reports retain their original snapshots under submission/history/.
+Only actual future acceptance of the new entry may change its verification status.
+
+The original proof development remains broader than the selected paper entry.
+Unformalized paper results are listed in TECHNICAL.md and the paper. Checks do
+not prescribe disclosure prose. The whole-development preparation and --ready
+gates are separate from selection of this one Palomar entry.
+
+https://github.com/PalomarRegistry/PalomarPolicy/blob/main/CONTRIBUTING.md

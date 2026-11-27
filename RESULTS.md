@@ -12,6 +12,8 @@ $$
 
 Here $`\mathcal H_{kh}`$ denotes convex mixtures of laws obtained from order-$`kh`$ Hadamard matrices. Choosing $`k/h\to1`$ while $`k\to\infty`$ yields the instability theorem in the README.
 
+The single paper-level Comparator entry covers the three README result families. The additional results below remain part of the broader proof development; they are not all selected by that entry. See [the technical guide](TECHNICAL.md) for the distinction.
+
 ## Additional proved results
 
 - Exact finite-field families with an attained distance of $`1-1/k`$ from all Hadamard mixtures.

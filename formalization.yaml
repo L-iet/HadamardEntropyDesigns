@@ -64,7 +64,7 @@
   },
   "review": {
     "status": "unchecked",
-    "notes": "Selected declarations have local build, axiom-audit and comparison evidence. This does not claim independent human review, whole-manuscript formalization beyond the declared scope, or Palomar registry acceptance."
+    "notes": "The original proof development has historical local verification evidence. The new default paper-level packaging selects the three headline result families and has not been locally compiled, compared, or kernel checked. See submission/PAPER_ENTRY.json; additional configurations are under configs/development/."
   },
   "limitations": [
     "Full Hadamard conjecture not proved.",
@@ -72,6 +72,7 @@
   ],
   "acknowledgements": "Joshua Mark ORCID: https://orcid.org/0009-0003-5905-2382. Lean/mathlib contributors and cited authors retain their credits. AI work is disclosed in automation.methods.",
   "notes": [
-    "Complete twelve-label quadratic5/7 classification and no-eight obstruction have an independent concrete Challenge. Original Apache-2.0 proof code and exact parity graph certificates; public verification tracked separately."
+    "Complete twelve-label quadratic5/7 classification and no-eight obstruction have an independent concrete Challenge. Original Apache-2.0 proof code and exact parity graph certificates; public verification tracked separately.",
+    "Default comparator.json selects PaperChallenge and PaperSolution for one paper-level entry. It does not register every theorem in the development configurations. New packaging awaits mechanical verification."
   ]
 }

@@ -1,10 +1,11 @@
 # SPDX-License-Identifier: Apache-2.0
-"""Run every sandboxed Comparator group and require both independent kernels."""
+"""Run the selected sandboxed Comparator entry; optionally check all development groups."""
 from pathlib import Path
 from datetime import datetime, timezone
+import argparse
 import json
 import subprocess
-from comparison_groups import load_groups
+from comparison_groups import load_groups, select_group
 from run_local_comparator import check_source_inventory, digest
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -15,12 +16,16 @@ def check_snapshot(hashes):
             raise SystemExit("Rebuild and audit changed source before comparison: " + name)
 
 def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--config", default="comparator.json")
+    parser.add_argument("--all-groups", action="store_true")
+    args = parser.parse_args()
     proof = ROOT / "submission/proof-hashes.json"
     if not proof.exists():
         raise SystemExit("Record verified source hashes before comparison")
     hashes = json.loads(proof.read_text(encoding="utf-8"))
     check_snapshot(hashes)
-    for group in load_groups(ROOT):
+    for group in (load_groups(ROOT) if args.all_groups else [select_group(ROOT, args.config)]):
         result = subprocess.run(["lake", "comparator", "--config", group["path"]], cwd=ROOT,
             capture_output=True, text=True, encoding="utf-8", errors="replace")
         log = result.stdout + result.stderr

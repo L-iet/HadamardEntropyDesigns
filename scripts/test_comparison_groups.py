@@ -55,4 +55,14 @@ class GroupsTest(unittest.TestCase):
             {"id":"algorithms","config":"missing.json"}])
         with self.assertRaises(FileNotFoundError):load_groups(self.root)
 
+    def test_paper_entry_with_relocated_development_config(self):
+        self.config("comparator.json","PaperChallenge","PaperSolution")
+        (self.root/"configs/development").mkdir(parents=True)
+        path="configs/development/comparator-main.json"
+        self.config(path,"Challenge","Solution")
+        self.manifest([{"id":"main","config":"comparator.json"},
+            {"id":"development-main","config":path}])
+        self.assertEqual(select_group(self.root,"comparator.json")["config"]["challenge_module"],"PaperChallenge")
+        self.assertEqual(select_group(self.root,path)["id"],"development-main")
+
 if __name__=="__main__":unittest.main()

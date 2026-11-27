@@ -22,5 +22,9 @@
     "E26.03",
     "E26.04",
     "E26.05"
-  ]
+  ],
+  "paperEntryConfig": "comparator.json",
+  "paperEntryStatus": "awaiting mechanical verification",
+  "localProofChecksRunForNewPackaging": false,
+  "historicalEvidence": "submission/history/1fb7daa5e4635a16a353825131a4bfc10990c5b0"
 }

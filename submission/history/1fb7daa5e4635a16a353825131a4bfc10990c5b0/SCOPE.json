@@ -1,0 +1,858 @@
+{
+  "schemaVersion": 1,
+  "mode": "configured-verified-results",
+  "formalizationDevelopment": "paused",
+  "principalClaimCount": 89,
+  "submittedPrincipalClaims": [
+    {
+      "id": "E04.01",
+      "title": "Denominator obstruction to a new sign row",
+      "declarations": [
+        "EntropyDesigns.DenominatorTrades.hadamard_new_row_denominator_obstruction"
+      ]
+    },
+    {
+      "id": "E04.02",
+      "title": "A prime-factor lower bound for positive trade volume",
+      "declarations": [
+        "EntropyDesigns.DenominatorTrades.bounded_degree_observation_trades_are_isolated"
+      ]
+    },
+    {
+      "id": "E04.03",
+      "title": "Uniform bounded-degree moves cannot suffice",
+      "declarations": [
+        "EntropyDesigns.PrimeExponentRigidity.infinitely_many_known_rigid_orders"
+      ]
+    },
+    {
+      "id": "E04.04",
+      "title": "A quantitative infinite subsequence",
+      "declarations": [
+        "EntropyDesigns.PrimeExponentRigidity.quantitative_infinite_rigidity_subsequence"
+      ]
+    },
+    {
+      "id": "E04.05",
+      "title": "A universal half-row trade",
+      "declarations": [
+        "EntropyDesigns.universal_half_row_observation_trade"
+      ]
+    },
+    {
+      "id": "E04.06",
+      "title": "Exponential multiplicity of isolated states",
+      "declarations": [
+        "EntropyDesigns.TranslationOrbits.exponential_multiplicity_of_states"
+      ]
+    },
+    {
+      "id": "E06.01",
+      "title": "Residue-sensitive collision bound and equality",
+      "declarations": [
+        "EntropyDesigns.sharp_sign_cube_entropy_bounds",
+        "EntropyDesigns.odd_frame_equality_uniform",
+        "EntropyDesigns.residue_two_frame_equality_uniform",
+        "EntropyDesigns.residue_one_frame_equality_uniform",
+        "EntropyDesigns.sharp_frame_equality_uniform",
+        "EntropyDesigns.sharp_frame_equality_support_card",
+        "EntropyDesigns.sharp_frame_entropy_equality_iff",
+        "EntropyDesigns.sharp_frame_equality_support_gram",
+        "EntropyDesigns.sharp_sign_cube_equality_completion",
+        "EntropyDesigns.cube_law_of_hadamard",
+        "EntropyDesigns.collision_attainment_iff_hadamard",
+        "EntropyDesigns.entropy_attainment_iff_hadamard"
+      ]
+    },
+    {
+      "id": "E07.01",
+      "title": "A positive entropy window suffices",
+      "declarations": [
+        "EntropyDesigns.collisionEntropyWindow_pos",
+        "EntropyDesigns.positive_entropy_window",
+        "EntropyDesigns.collisionEntropyWindow_nat_relative_limit"
+      ]
+    },
+    {
+      "id": "E07.02",
+      "title": "One saturated atom in every even dimension",
+      "declarations": [
+        "EntropyDesigns.even_dimension_saturated_atom"
+      ]
+    },
+    {
+      "id": "E08.01",
+      "title": "Exact false positive for one-copy uniformity",
+      "declarations": [
+        "EntropyDesigns.ExchangeableHierarchy.full_shift_hierarchy",
+        "EntropyDesigns.ExchangeableHierarchy.every_dimension_false_positive"
+      ]
+    },
+    {
+      "id": "E09.01",
+      "title": "Rigidity of positive diagonal balancing",
+      "declarations": [
+        "EntropyDesigns.positive_diagonal_balancing_rigidity"
+      ]
+    },
+    {
+      "id": "E09.02",
+      "title": "The natural classical and operator capacities are blind",
+      "declarations": [
+        "EntropyDesigns.doubly_stochastic_capacities_are_blind"
+      ]
+    },
+    {
+      "id": "E09.03",
+      "title": "Elementary parity gap",
+      "declarations": [
+        "EntropyDesigns.elementary_orthogonal_parity_gap"
+      ]
+    },
+    {
+      "id": "E10.01",
+      "title": "Collision--moment rounding certificate",
+      "declarations": [
+        "EntropyDesigns.collision_moment_sign_certificate",
+        "EntropyDesigns.even_sign_collision_rounding",
+        "EntropyDesigns.single_parity_collision_rounding"
+      ]
+    },
+    {
+      "id": "E10.02",
+      "title": "Explicit collision gap",
+      "declarations": [
+        "EntropyDesigns.explicit_collision_gap"
+      ]
+    },
+    {
+      "id": "E10.03",
+      "title": "Nonsingular modular seeds need not lift",
+      "declarations": [
+        "EntropyDesigns.modular_seed_without_sign_lift"
+      ]
+    },
+    {
+      "id": "E10.04",
+      "title": "Sharp weighted collision bound",
+      "declarations": [
+        "EntropyDesigns.residue_two_cube_collision_sharp"
+      ]
+    },
+    {
+      "id": "E10.05",
+      "title": "Equality rigidity and two-column reconstruction",
+      "declarations": [
+        "EntropyDesigns.parity_collision_equality_two_column_iff"
+      ]
+    },
+    {
+      "id": "E11.01",
+      "title": "Nonnegative defect decomposition",
+      "declarations": [
+        "EntropyDesigns.residue_frame_defect_decomposition",
+        "EntropyDesigns.residue_frame_deficit_nonneg",
+        "EntropyDesigns.residue_frame_bad_pair_mass",
+        "EntropyDesigns.residue_frame_weight_deviation"
+      ]
+    },
+    {
+      "id": "E11.02",
+      "title": "Explicit extraction from a sufficiently small deficit",
+      "declarations": [
+        "EntropyDesigns.small_deficit_exact_extraction",
+        "EntropyDesigns.small_deficit_preserving_reconstruction",
+        "EntropyDesigns.no_hadamard_forces_strict_collision_gap"
+      ]
+    },
+    {
+      "id": "E12.01",
+      "title": "Collision cost of full coordinate symmetry",
+      "declarations": [
+        "EntropyDesigns.SymmetricEntropy.symmetric_collision_upper",
+        "EntropyDesigns.SymmetricEntropy.collision_envelope_strict",
+        "EntropyDesigns.SymmetricEntropy.maximumSymmetricCollision_spec",
+        "EntropyDesigns.SymmetricEntropy.maximumSymmetricCollision_theta",
+        "EntropyDesigns.SymmetricEntropy.symmetric_no_attainment",
+        "EntropyDesigns.SymmetricEntropy.exists_matching_symmetric_law",
+        "EntropyDesigns.SymmetricEntropy.small_symmetric_attainment"
+      ]
+    },
+    {
+      "id": "E12.02",
+      "title": "Shannon entropy is almost maximal",
+      "declarations": [
+        "EntropyDesigns.SymmetricEntropy.symmetric_pairwise_shannon_lower"
+      ]
+    },
+    {
+      "id": "E13.01",
+      "title": "Local maximum criterion",
+      "declarations": [
+        "EntropyDesigns.finite_polytope_local_max_criterion",
+        "EntropyDesigns.uniform_cube_vertex_strict_local_collision"
+      ]
+    },
+    {
+      "id": "E13.02",
+      "title": "Explicit four- and five-bit traps",
+      "declarations": [
+        "EntropyDesigns.four_bit_nonglobal_trap",
+        "EntropyDesigns.five_bit_nonglobal_trap"
+      ]
+    },
+    {
+      "id": "E13.03",
+      "title": "A trap at admissible Hadamard order eight",
+      "declarations": [
+        "EntropyDesigns.order_eight_character_trap"
+      ]
+    },
+    {
+      "id": "E13.04",
+      "title": "Arbitrarily poor traps at admissible orders",
+      "declarations": [
+        "EntropyDesigns.arbitrarily_poor_character_traps",
+        "EntropyDesigns.character_trap_relative_collision_limit"
+      ]
+    },
+    {
+      "id": "E13.05",
+      "title": "A certified collision barrier",
+      "declarations": [
+        "EntropyDesigns.character_trap_global_path_barrier",
+        "EntropyDesigns.order_eight_global_path_barrier"
+      ]
+    },
+    {
+      "id": "E14.01",
+      "title": "Complete rigidity from additive coverage",
+      "declarations": [
+        "EntropyDesigns.observed_moments_iff_mask_cover",
+        "EntropyDesigns.full_mask_cover_uniform",
+        "EntropyDesigns.more_than_half_mask_cover",
+        "EntropyDesigns.missing_direction_laws",
+        "EntropyDesigns.characterTilt_endpoint_uniform",
+        "EntropyDesigns.binarySeed_bijective",
+        "EntropyDesigns.characterLevel_linear_fiber",
+        "EntropyDesigns.maskFunctional_nonzero",
+        "EntropyDesigns.maskFunctional_kernel_dimension",
+        "EntropyDesigns.spanning_characters_injective",
+        "EntropyDesigns.characterCode_collision"
+      ]
+    },
+    {
+      "id": "E14.02",
+      "title": "The smallest binary seed forces a power-of-two law",
+      "declarations": [
+        "EntropyDesigns.minimum_binary_seed_observed_law",
+        "EntropyDesigns.minimal_binary_seed_gap"
+      ]
+    },
+    {
+      "id": "E14.03",
+      "title": "Approximate moment version",
+      "declarations": [
+        "EntropyDesigns.approximate_mask_cover",
+        "EntropyDesigns.approximate_cover_error_obstruction"
+      ]
+    },
+    {
+      "id": "E15.01",
+      "title": "Maximum overlap and optimal straight bridge",
+      "declarations": [
+        "EntropyDesigns.trapInner_formula",
+        "EntropyDesigns.trapInner_zero_iff",
+        "EntropyDesigns.trapRow_injective",
+        "EntropyDesigns.trap_clique_card_le",
+        "EntropyDesigns.trap_maximum_clique_exists",
+        "EntropyDesigns.maximum_trap_clique_graph",
+        "EntropyDesigns.trap_columns_orthogonal",
+        "EntropyDesigns.trapCode_injective",
+        "EntropyDesigns.trapLaw_probability",
+        "EntropyDesigns.trapLaw_weights",
+        "EntropyDesigns.trapLaw_support_card",
+        "EntropyDesigns.trapLaw_collision",
+        "EntropyDesigns.trapLaw_mean",
+        "EntropyDesigns.trapLaw_pair",
+        "EntropyDesigns.trap_coordinate_card",
+        "EntropyDesigns.endpointLaw_probability",
+        "EntropyDesigns.endpointLaw_support_card",
+        "EntropyDesigns.endpointLaw_mean",
+        "EntropyDesigns.endpointLaw_pair",
+        "EntropyDesigns.endpointLaw_collision",
+        "EntropyDesigns.endpointLaw_global_maximum",
+        "EntropyDesigns.trap_endpoint_code_eq_iff",
+        "EntropyDesigns.trap_endpoint_common_atoms",
+        "EntropyDesigns.trap_endpoint_lawOverlap",
+        "EntropyDesigns.trap_bridge_feasible",
+        "EntropyDesigns.trap_bridge_collision",
+        "EntropyDesigns.trap_bridge_minimum",
+        "EntropyDesigns.trap_bridge_exact_loss",
+        "EntropyDesigns.optimizer_common_trap_atoms_bound",
+        "EntropyDesigns.optimizer_bridge_comparison",
+        "EntropyDesigns.trap_bridge_optimal_among_global_maximizers"
+      ]
+    },
+    {
+      "id": "E15.02",
+      "title": "Complete any maximum overlap subset",
+      "declarations": [
+        "EntropyDesigns.complete_maximum_trap_row_subset"
+      ]
+    },
+    {
+      "id": "E15.03",
+      "title": "Finite nonlocal rewiring",
+      "declarations": [
+        "EntropyDesigns.linearLaw_probability",
+        "EntropyDesigns.linearLaw_collision",
+        "EntropyDesigns.linearLaw_support_card",
+        "EntropyDesigns.linearLaw_collision_antitone_rank",
+        "EntropyDesigns.linearLaw_single_rank_step",
+        "EntropyDesigns.rewireMask_injective",
+        "EntropyDesigns.rewireMask_observed_nonzero",
+        "EntropyDesigns.rewireMask_initial_swap",
+        "EntropyDesigns.rewireLaw_feasible",
+        "EntropyDesigns.rewireCode_unchanged_column",
+        "EntropyDesigns.rewireCode_new_column",
+        "EntropyDesigns.rewireLaw_final",
+        "EntropyDesigns.rewiringList_nodup",
+        "EntropyDesigns.rewiringList_members",
+        "EntropyDesigns.rewiring_total_jumps",
+        "EntropyDesigns.rewiringSchedule_mask_step",
+        "EntropyDesigns.rewiringSchedule_feasible",
+        "EntropyDesigns.rewiringSchedule_initial",
+        "EntropyDesigns.rewiringSchedule_final",
+        "EntropyDesigns.maskPairLaw_rank_collision",
+        "EntropyDesigns.maskPairLaw_rank_support",
+        "EntropyDesigns.rewire_encoder_step",
+        "EntropyDesigns.rewireLaw_step_dichotomy",
+        "EntropyDesigns.rewiringSchedule_collision_nondecreasing",
+        "EntropyDesigns.rewiringRank_initial",
+        "EntropyDesigns.rewiringRank_final",
+        "EntropyDesigns.rewiring_support_halving_jump_count",
+        "EntropyDesigns.rewiring_support_preserving_jump_count",
+        "EntropyDesigns.initial_swap_preserves_support_collision",
+        "EntropyDesigns.initial_swap_bridge_minimum",
+        "EntropyDesigns.rewiringSchedule_segment_bound",
+        "EntropyDesigns.rewiringPath_start",
+        "EntropyDesigns.rewiringPath_join",
+        "EntropyDesigns.rewiringPath_finish",
+        "EntropyDesigns.rewiringPath_minimum",
+        "EntropyDesigns.rewiringPath_affine"
+      ]
+    },
+    {
+      "id": "E16.01",
+      "title": "Nonnegative exact correction",
+      "declarations": [
+        "EntropyDesigns.correctionBuffer_nonneg",
+        "EntropyDesigns.correctionBuffer_le_budget",
+        "EntropyDesigns.correctedLaw_nonneg",
+        "EntropyDesigns.correctedLaw_mass",
+        "EntropyDesigns.correctedLaw_mean",
+        "EntropyDesigns.correctedLaw_pair",
+        "EntropyDesigns.correctedLaw_collision_identity",
+        "EntropyDesigns.correctedLaw_collision_lower",
+        "EntropyDesigns.correctedLaw_variation_bound"
+      ]
+    },
+    {
+      "id": "E16.02",
+      "title": "A sufficient input window for exact extraction",
+      "declarations": [
+        "EntropyDesigns.correctedLaw_input_window",
+        "EntropyDesigns.correctedLaw_budget_input_window"
+      ]
+    },
+    {
+      "id": "E16.03",
+      "title": "Quantization obstruction for a uniform row candidate",
+      "declarations": [
+        "EntropyDesigns.uniform_candidate_correction_obstruction",
+        "EntropyDesigns.uniform_candidate_misses_extraction_window"
+      ]
+    },
+    {
+      "id": "E18.01",
+      "title": "Affine observable budget",
+      "declarations": [
+        "EntropyDesigns.affine_hadamard_seed_observable_budget"
+      ]
+    },
+    {
+      "id": "E18.02",
+      "title": "Complement criterion for low-degree extensions",
+      "declarations": [
+        "EntropyDesigns.booleanSupport_extension_criterion_all_degrees"
+      ]
+    },
+    {
+      "id": "E18.03",
+      "title": "Sharp cubic benchmarks at orders twelve and twenty",
+      "declarations": [
+        "EntropyDesigns.sharp_cubic_seed_benchmarks"
+      ]
+    },
+    {
+      "id": "E18.04",
+      "title": "Fixed algebraic degree cannot suffice asymptotically",
+      "declarations": [
+        "EntropyDesigns.minimal_binary_seed_growing_degree"
+      ]
+    },
+    {
+      "id": "E19.01",
+      "title": "Actual positive correction with an explicit margin",
+      "declarations": [
+        "EntropyDesigns.full_rank_positive_correction",
+        "EntropyDesigns.supportCorrection_input_window"
+      ]
+    },
+    {
+      "id": "E19.02",
+      "title": "No adaptive reweighting on a minimal-size support",
+      "declarations": [
+        "EntropyDesigns.minimal_support_uniform_rigidity",
+        "EntropyDesigns.no_reweighting_of_failed_uniform_frame"
+      ]
+    },
+    {
+      "id": "E20.01",
+      "title": "Binary rank of a minimal-support target",
+      "declarations": [
+        "EntropyDesigns.minimal_target_binary_rank"
+      ]
+    },
+    {
+      "id": "E20.02",
+      "title": "Support-overlap rigidity",
+      "declarations": [
+        "EntropyDesigns.minimal_support_code_rigidity"
+      ]
+    },
+    {
+      "id": "E20.03",
+      "title": "An explicit near-moment candidate",
+      "declarations": [
+        "EntropyDesigns.walsh_subset_candidate_full"
+      ]
+    },
+    {
+      "id": "E20.04",
+      "title": "A nonvacuous asymptotic obstruction to dimension-free rounding",
+      "declarations": [
+        "EntropyDesigns.paley_nonvacuous_rounding_obstruction"
+      ]
+    },
+    {
+      "id": "E21.01",
+      "title": "Even restriction code and its radical",
+      "declarations": [
+        "EntropyDesigns.punctured_reed_muller_radical_dimensions"
+      ]
+    },
+    {
+      "id": "E21.02",
+      "title": "Exact fixed-support criterion for a full basis",
+      "declarations": [
+        "EntropyDesigns.fixed_support_pairwise_observables_criterion"
+      ]
+    },
+    {
+      "id": "E21.03",
+      "title": "Degree saturation near a power of two",
+      "declarations": [
+        "EntropyDesigns.minimal_seed_degree_saturation"
+      ]
+    },
+    {
+      "id": "E21.04",
+      "title": "Punctured-observable bounds, without completion",
+      "declarations": [
+        "EntropyDesigns.punctured_observable_bounds"
+      ]
+    },
+    {
+      "id": "E21.05",
+      "title": "Exact finite obstruction",
+      "declarations": [
+        "EntropyDesigns.QuadraticRefinement.twelve_label_quadratic_classification",
+        "EntropyDesigns.QuadraticRefinement.twelve_label_no_eight"
+      ]
+    },
+    {
+      "id": "E22.01",
+      "title": "A finite exact escape rule",
+      "declarations": [
+        "EntropyDesigns.four_bit_escape_exposed_edge",
+        "EntropyDesigns.four_bit_escape_supported_kernel",
+        "EntropyDesigns.four_bit_escape_circuit",
+        "EntropyDesigns.four_bit_exact_escape_rule"
+      ]
+    },
+    {
+      "id": "E22.02",
+      "title": "The unavoidable barrier is exactly $1/288$",
+      "declarations": [
+        "EntropyDesigns.four_bit_all_path_barrier",
+        "EntropyDesigns.four_bit_barrier_sharpness",
+        "EntropyDesigns.four_bit_no_monotone_escape"
+      ]
+    },
+    {
+      "id": "E23.01",
+      "title": "A quantitative moment-error floor",
+      "declarations": [
+        "EntropyDesigns.punctured_moment_error_floor"
+      ]
+    },
+    {
+      "id": "E23.02",
+      "title": "Minimum support edits to unlock degree repair",
+      "declarations": [
+        "EntropyDesigns.SupportRepair.minimum_support_exchanges"
+      ]
+    },
+    {
+      "id": "E24.01",
+      "title": "An exact monotone support-reduction algorithm",
+      "declarations": [
+        "EntropyDesigns.FieldReduction.reductionStep_exact_endpoint",
+        "EntropyDesigns.FieldReduction.reductionStep_interpolation",
+        "EntropyDesigns.FieldReduction.bounded_vertex_reduction",
+        "EntropyDesigns.FieldReduction.rational_bounded_vertex_reduction",
+        "EntropyDesigns.rational_reduction_real_vertex"
+      ]
+    },
+    {
+      "id": "E24.02",
+      "title": "Sharp barrier for a specified straight bridge",
+      "declarations": [
+        "EntropyDesigns.straight_bridge_minimum",
+        "EntropyDesigns.straight_bridge_monotone",
+        "EntropyDesigns.disjoint_bridge_loss_sharp",
+        "EntropyDesigns.probabilityBlend_feasible"
+      ]
+    },
+    {
+      "id": "E25.01",
+      "title": "A support witness against all Hadamard mixtures",
+      "declarations": [
+        "EntropyDesigns.SupportWitness.hadamard_mixture_support_witness"
+      ]
+    },
+    {
+      "id": "E25.02",
+      "title": "Sharp distance and global repair family",
+      "declarations": [
+        "EntropyDesigns.SupportFace.uniform_source_sharp_distance",
+        "EntropyDesigns.SupportFace.collision_preserving_exact_repair",
+        "EntropyDesigns.SupportFace.source_all_repairs_lower",
+        "EntropyDesigns.SupportFace.sharp_distance_tends_to_one"
+      ]
+    },
+    {
+      "id": "E25.03",
+      "title": "Exact fixed-support collision optimum",
+      "declarations": [
+        "EntropyDesigns.SupportFace.card_source_coordinates",
+        "EntropyDesigns.SupportFace.source_collision_upper",
+        "EntropyDesigns.SupportFace.source_collision_equality_oa",
+        "EntropyDesigns.SupportFace.source_attaining_law"
+      ]
+    },
+    {
+      "id": "E25.04",
+      "title": "Simultaneous face optimum, strict trap, and sharp distance",
+      "declarations": [
+        "EntropyDesigns.binarySeed_bijective",
+        "EntropyDesigns.ConcentratedFamily.concentrated_witness_exists",
+        "EntropyDesigns.ConcentratedFamily.concentrated_sharp_distance",
+        "EntropyDesigns.ConcentratedFamily.concentrated_exact_repair",
+        "EntropyDesigns.ConcentratedFamily.concentrated_all_repairs_lower",
+        "EntropyDesigns.ConcentratedFamily.concentrated_canonical_limits"
+      ]
+    },
+    {
+      "id": "E25.05",
+      "title": "A certified local barrier",
+      "declarations": [
+        "EntropyDesigns.Concentration.face_optimum_barrier_bound",
+        "EntropyDesigns.Concentration.face_optimum_strict_local_collision",
+        "EntropyDesigns.Concentration.face_optimum_small_outside_collision",
+        "EntropyDesigns.Concentration.face_optimum_better_requires_outside_mass",
+        "EntropyDesigns.Concentration.face_optimum_path_barrier"
+      ]
+    },
+    {
+      "id": "E25.06",
+      "title": "Moderate-support regimes",
+      "declarations": [
+        "EntropyDesigns.binarySeed_bijective",
+        "EntropyDesigns.ConcentratedFamily.concentrated_witness_exists",
+        "EntropyDesigns.ConcentratedFamily.concentrated_sharp_distance",
+        "EntropyDesigns.ConcentratedFamily.concentrated_exact_repair",
+        "EntropyDesigns.ConcentratedFamily.concentrated_all_repairs_lower",
+        "EntropyDesigns.ConcentratedFamily.concentrated_canonical_limits",
+        "EntropyDesigns.ModerateSupport.linear_scale_identities",
+        "EntropyDesigns.ModerateSupport.cubic_scale_identities",
+        "EntropyDesigns.ModerateSupport.regime_witness_exists",
+        "EntropyDesigns.ModerateSupport.linear_regime_exists",
+        "EntropyDesigns.ModerateSupport.cubic_regime_exists"
+      ]
+    },
+    {
+      "id": "E25.07",
+      "title": "General support bound without a small-$k$ restriction",
+      "declarations": [
+        "EntropyDesigns.binarySeed_bijective",
+        "EntropyDesigns.ConcentratedFamily.concentrated_witness_exists",
+        "EntropyDesigns.ConcentratedFamily.concentrated_sharp_distance",
+        "EntropyDesigns.ConcentratedFamily.concentrated_exact_repair",
+        "EntropyDesigns.ConcentratedFamily.concentrated_all_repairs_lower",
+        "EntropyDesigns.ConcentratedFamily.concentrated_canonical_limits",
+        "EntropyDesigns.PlotkinSupport.seed_clique_plotkin_bound",
+        "EntropyDesigns.PlotkinSupport.observed_clique_plotkin_bound",
+        "EntropyDesigns.PlotkinSupport.observed_orthogonality_plotkin_bound",
+        "EntropyDesigns.PlotkinSupport.source_plotkin_distance_bound"
+      ]
+    },
+    {
+      "id": "E25.08",
+      "title": "Spanning omitted slopes give the sharp distance",
+      "declarations": [
+        "EntropyDesigns.binarySeed_bijective",
+        "EntropyDesigns.ConcentratedFamily.concentrated_witness_exists",
+        "EntropyDesigns.ConcentratedFamily.concentrated_sharp_distance",
+        "EntropyDesigns.ConcentratedFamily.concentrated_exact_repair",
+        "EntropyDesigns.ConcentratedFamily.concentrated_all_repairs_lower",
+        "EntropyDesigns.ConcentratedFamily.concentrated_canonical_limits",
+        "EntropyDesigns.SpanningSlopes.spanning_slope_data_exists",
+        "EntropyDesigns.SpanningSlopes.spanning_slopes_orthogonal_iff",
+        "EntropyDesigns.SpanningSlopes.spanning_plane_code_injective",
+        "EntropyDesigns.SpanningSlopes.spanning_plane_orthogonality_number",
+        "EntropyDesigns.SpanningSlopes.source_optimizer_of_known_hadamard",
+        "EntropyDesigns.SpanningSlopes.spanning_plane_full_properties",
+        "EntropyDesigns.SpanningSlopes.spanning_witness_exists"
+      ]
+    },
+    {
+      "id": "E25.09",
+      "title": "A near-optimal relative regime",
+      "declarations": [
+        "EntropyDesigns.RelativeSequence.relative_spanning_laws"
+      ]
+    },
+    {
+      "id": "E25.10",
+      "title": "No dimension-independent stability, even for exact moments",
+      "declarations": [
+        "EntropyDesigns.RelativeSequence.full_unconditional_sequence"
+      ]
+    },
+    {
+      "id": "E26.01",
+      "title": "No residue-class restriction is needed",
+      "declarations": [
+        "EntropyDesigns.odd_prime_twice_successor_hadamard"
+      ]
+    },
+    {
+      "id": "E26.02",
+      "title": "An ordinary-prime-gap transfer",
+      "declarations": [
+        "EntropyDesigns.PrimeTransfer.ordinary_prime_gap_transfer"
+      ]
+    },
+    {
+      "id": "E27.01",
+      "title": "Uniform Hadamard-gap transfer",
+      "declarations": [
+        "EntropyDesigns.GapTransfer.uniform_hadamard_gap_transfer"
+      ]
+    },
+    {
+      "id": "E28.01",
+      "title": "Unconditional near-square instability from the multiplier bound",
+      "declarations": [
+        "EntropyDesigns.ProjectInstability.unconditional_near_square_instability"
+      ]
+    },
+    {
+      "id": "E29.01",
+      "title": "Exact projective and commuting criteria",
+      "declarations": [
+        "EntropyDesigns.Quantum.exact_projective_commuting_criteria",
+        "EntropyDesigns.Quantum.exact_projectivity_defect",
+        "EntropyDesigns.Quantum.exact_ordered_commutator_energy"
+      ]
+    },
+    {
+      "id": "E29.02",
+      "title": "Uniform tight frames are uniformly almost commuting",
+      "declarations": [
+        "EntropyDesigns.Quantum.uniform_tight_povm_operator_bounds",
+        "EntropyDesigns.Quantum.actual_tensor_povm_no_activation"
+      ]
+    },
+    {
+      "id": "E30.01",
+      "title": "Simplex count",
+      "declarations": [
+        "EntropyDesigns.WeightedSimplex.power_product_simplex_bounds"
+      ]
+    },
+    {
+      "id": "E30.02",
+      "title": "Second-order entropy bound",
+      "declarations": [
+        "EntropyDesigns.WeightedSimplex.second_order_covering_upper"
+      ]
+    },
+    {
+      "id": "E30.03",
+      "title": "Finite radix certificate",
+      "declarations": [
+        "EntropyDesigns.finite_radix_hadamard_bound"
+      ]
+    },
+    {
+      "id": "E31.01",
+      "title": "Isolation under all coordinate-cube moves",
+      "declarations": [
+        "EntropyDesigns.saturated_coordinate_cube_isolation"
+      ]
+    },
+    {
+      "id": "E31.02",
+      "title": "Sharp maximum-weight constraint",
+      "declarations": [
+        "EntropyDesigns.pairwise_independent_weight_lower"
+      ]
+    },
+    {
+      "id": "E31.03",
+      "title": "Exact limitation of monotone triple conversion",
+      "declarations": [
+        "EntropyDesigns.monotone_triple_conversion_classification"
+      ]
+    },
+    {
+      "id": "E31.04",
+      "title": "Exponential cost of full permutation symmetry",
+      "declarations": [
+        "EntropyDesigns.PermutationCost.full_permutation_symmetry_exponential_cost"
+      ]
+    },
+    {
+      "id": "E31.05",
+      "title": "An explicit cofinite central ray",
+      "declarations": [
+        "EntropyDesigns.explicit_cofinite_central_ray"
+      ]
+    },
+    {
+      "id": "E32.01",
+      "title": "Sparse uniform candidates cannot enter the extraction window",
+      "declarations": [
+        "EntropyDesigns.sparse_uniform_affine_buffer_obstruction"
+      ]
+    },
+    {
+      "id": "E33.01",
+      "title": "Complete four-bit entropy diagram",
+      "declarations": [
+        "EntropyDesigns.four_bit_complete_entropy_diagram"
+      ]
+    },
+    {
+      "id": "E34.01",
+      "title": "Spanning-slope summary input",
+      "declarations": [
+        "EntropyDesigns.RelativeSequence.spanning_summary_input",
+        "EntropyDesigns.RelativeSequence.complete_spanning_witness_exists",
+        "EntropyDesigns.RelativeSequence.plane_entropy_excess"
+      ]
+    }
+  ],
+  "unsubmittedPrincipalClaims": [
+    {
+      "id": "E07.03",
+      "title": "Completion-assisted rounding",
+      "status": "excluded-pending-public-verification",
+      "reason": "A checked private proof exists, but source integration and public-project verification are unfinished. It is not included in the submitted formalization.",
+      "section": null
+    },
+    {
+      "id": "E08.02",
+      "title": "Where the hierarchy becomes equivalent to existence",
+      "status": "excluded-unformalized",
+      "reason": "The complete principal statement has not been formalized. Supporting lemmas or computational certificates do not establish the whole claim.",
+      "section": null
+    },
+    {
+      "id": "E26.03",
+      "title": "Unconditional polynomial rates",
+      "status": "excluded-unformalized",
+      "reason": "The complete principal statement has not been formalized. Supporting lemmas or computational certificates do not establish the whole claim.",
+      "section": null
+    },
+    {
+      "id": "E26.04",
+      "title": "Conditional RH rates",
+      "status": "excluded-unformalized",
+      "reason": "The complete principal statement has not been formalized. Supporting lemmas or computational certificates do not establish the whole claim.",
+      "section": null
+    },
+    {
+      "id": "E26.05",
+      "title": "Only sublinearly many extra atoms",
+      "status": "excluded-unformalized",
+      "reason": "The complete principal statement has not been formalized. Supporting lemmas or computational certificates do not establish the whole claim.",
+      "section": null
+    }
+  ],
+  "comparatorConfigurations": [
+    "comparator-affine.json",
+    "comparator-barrier.json",
+    "comparator-boolean.json",
+    "comparator-buffer.json",
+    "comparator-cofinite.json",
+    "comparator-collision.json",
+    "comparator-complete-sequence.json",
+    "comparator-cubic.json",
+    "comparator-denominator.json",
+    "comparator-distance.json",
+    "comparator-face.json",
+    "comparator-family.json",
+    "comparator-gap.json",
+    "comparator-hierarchy.json",
+    "comparator-moderate.json",
+    "comparator-moments.json",
+    "comparator-permutation-cost.json",
+    "comparator-plotkin.json",
+    "comparator-prime-exponent.json",
+    "comparator-prime.json",
+    "comparator-project.json",
+    "comparator-quadratic-classification.json",
+    "comparator-quantum-bounds.json",
+    "comparator-quantum.json",
+    "comparator-radix.json",
+    "comparator-relative.json",
+    "comparator-seed-repair.json",
+    "comparator-simplex-entropy.json",
+    "comparator-spanning.json",
+    "comparator-support.json",
+    "comparator-symmetric.json",
+    "comparator-trade.json",
+    "comparator-translation-orbits.json",
+    "comparator-witness.json",
+    "comparator.json"
+  ],
+  "proofCoverageComplete": false,
+  "privateDevelopmentIncluded": false,
+  "registryVerificationClaimed": false,
+  "scopeStatement": "The submission covers exactly the declarations selected by its Comparator configuration; it does not assert machine verification of excluded manuscript results."
+}

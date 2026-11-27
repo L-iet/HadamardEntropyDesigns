@@ -6,140 +6,144 @@
       "config": "comparator.json"
     },
     {
+      "id": "development-main",
+      "config": "configs/development/comparator-main.json"
+    },
+    {
       "id": "cofinite",
-      "config": "comparator-cofinite.json"
+      "config": "configs/development/comparator-cofinite.json"
     },
     {
       "id": "buffer",
-      "config": "comparator-buffer.json"
+      "config": "configs/development/comparator-buffer.json"
     },
     {
       "id": "radix",
-      "config": "comparator-radix.json"
+      "config": "configs/development/comparator-radix.json"
     },
     {
       "id": "trade",
-      "config": "comparator-trade.json"
+      "config": "configs/development/comparator-trade.json"
     },
     {
       "id": "boolean",
-      "config": "comparator-boolean.json"
+      "config": "configs/development/comparator-boolean.json"
     },
     {
       "id": "cubic",
-      "config": "comparator-cubic.json"
+      "config": "configs/development/comparator-cubic.json"
     },
     {
       "id": "affine",
-      "config": "comparator-affine.json"
+      "config": "configs/development/comparator-affine.json"
     },
     {
       "id": "support",
-      "config": "comparator-support.json"
+      "config": "configs/development/comparator-support.json"
     },
     {
       "id": "witness",
-      "config": "comparator-witness.json"
+      "config": "configs/development/comparator-witness.json"
     },
     {
       "id": "moments",
-      "config": "comparator-moments.json"
+      "config": "configs/development/comparator-moments.json"
     },
     {
       "id": "seed-repair",
-      "config": "comparator-seed-repair.json"
+      "config": "configs/development/comparator-seed-repair.json"
     },
     {
       "id": "symmetric",
-      "config": "comparator-symmetric.json"
+      "config": "configs/development/comparator-symmetric.json"
     },
     {
       "id": "collision",
-      "config": "comparator-collision.json"
+      "config": "configs/development/comparator-collision.json"
     },
     {
       "id": "quantum",
-      "config": "comparator-quantum.json"
+      "config": "configs/development/comparator-quantum.json"
     },
     {
       "id": "quantum-bounds",
-      "config": "comparator-quantum-bounds.json"
+      "config": "configs/development/comparator-quantum-bounds.json"
     },
     {
       "id": "face",
-      "config": "comparator-face.json"
+      "config": "configs/development/comparator-face.json"
     },
     {
       "id": "distance",
-      "config": "comparator-distance.json"
+      "config": "configs/development/comparator-distance.json"
     },
     {
       "id": "barrier",
-      "config": "comparator-barrier.json"
+      "config": "configs/development/comparator-barrier.json"
     },
     {
       "id": "family",
-      "config": "comparator-family.json"
+      "config": "configs/development/comparator-family.json"
     },
     {
       "id": "moderate",
-      "config": "comparator-moderate.json"
+      "config": "configs/development/comparator-moderate.json"
     },
     {
       "id": "plotkin",
-      "config": "comparator-plotkin.json"
+      "config": "configs/development/comparator-plotkin.json"
     },
     {
       "id": "spanning",
-      "config": "comparator-spanning.json"
+      "config": "configs/development/comparator-spanning.json"
     },
     {
       "id": "relative",
-      "config": "comparator-relative.json"
+      "config": "configs/development/comparator-relative.json"
     },
     {
       "id": "complete-sequence",
-      "config": "comparator-complete-sequence.json"
+      "config": "configs/development/comparator-complete-sequence.json"
     },
     {
       "id": "hierarchy",
-      "config": "comparator-hierarchy.json"
+      "config": "configs/development/comparator-hierarchy.json"
     },
     {
       "id": "gap",
-      "config": "comparator-gap.json"
+      "config": "configs/development/comparator-gap.json"
     },
     {
       "id": "prime",
-      "config": "comparator-prime.json"
+      "config": "configs/development/comparator-prime.json"
     },
     {
       "id": "project",
-      "config": "comparator-project.json"
+      "config": "configs/development/comparator-project.json"
     },
     {
       "id": "denominator",
-      "config": "comparator-denominator.json"
+      "config": "configs/development/comparator-denominator.json"
     },
     {
       "id": "prime-exponent",
-      "config": "comparator-prime-exponent.json"
+      "config": "configs/development/comparator-prime-exponent.json"
     },
     {
       "id": "translation-orbits",
-      "config": "comparator-translation-orbits.json"
+      "config": "configs/development/comparator-translation-orbits.json"
     },
     {
       "id": "permutation-cost",
-      "config": "comparator-permutation-cost.json"
+      "config": "configs/development/comparator-permutation-cost.json"
     },
     {
       "id": "simplex-entropy",
-      "config": "comparator-simplex-entropy.json"
+      "config": "configs/development/comparator-simplex-entropy.json"
     },
     {
       "id": "quadratic-classification",
-      "config": "comparator-quadratic-classification.json"
+      "config": "configs/development/comparator-quadratic-classification.json"
     }
   ]
 }

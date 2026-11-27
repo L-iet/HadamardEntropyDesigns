@@ -2,9 +2,19 @@
 
 This document contains the reproducibility and submission details for the mathematics introduced in the [README](README.md) and [further results](RESULTS.md).
 
+## One paper-level submission
+
+Select **`comparator.json` at the repository root**. It pairs `PaperChallenge.lean` with `PaperSolution.lean` and covers the three headline result families in the README: entropy instability, sharp entropy bounds with their Hadamard equality cases, and the impossibility of uniformly bounded observation trades. Six headline statements, one supporting bijection, and 35 concrete definitions are selected. It does not register every additional theorem in the paper.
+
+**This new packaging has not been locally compiled, compared, or kernel checked.** It was prepared without rerunning those checks, as requested. The original proof modules are unchanged, and their previous reports are preserved under `submission/history/`. Official mechanical verification must check the new combined entry; old separate passes are not presented as its acceptance.
+
+The Challenge is 22,006 bytes and 447 lines, below the 100 KiB and 1,000-line hard limits. It is above the 300-line auditability warning threshold. A deduplicated candidate containing all existing principal endpoint declarations was 185,314 bytes and 3,239 lines, so that complete set could not be included by straightforward consolidation.
+
+The previous 35 JSON configurations are now under [`configs/development/`](configs/development/README.md). They remain available for development and optional separate registrations, but are not prerequisites for this one paper-level submission. The static copy/provenance checks are in `scripts/check_paper_entry.py`; they do not execute Lean and do not establish compilation or type equality.
+
 ## What the formalization covers
 
-The public Lean development covers **84 of 89 principal manuscript results**. A principal result is one of the statements tracked in the paper-to-code correspondence, rather than a count of all supporting lemmas. The complete correspondence is in [paper/ALIGNMENT.json](paper/ALIGNMENT.json); [submission/SCOPE.json](submission/SCOPE.json) specifies which results are included in the prepared submission.
+The existing public proof development covers **84 of 89 principal manuscript results**. This is broader than the new three-family paper entry above. A principal result is one of the statements tracked in the paper-to-code correspondence, rather than a count of all supporting lemmas. The complete correspondence is in [paper/ALIGNMENT.json](paper/ALIGNMENT.json); [submission/SCOPE.json](submission/SCOPE.json) specifies which results are included in the prepared submission.
 
 The labels in those files are bookkeeping identifiers. The prefixes refer to the projects: TS means tensor stability, PG phase geometry, CT completion theory, and E entropy designs. RH means the Riemann hypothesis; GRH means its generalized version. These hypotheses occur only in statements explicitly identified as conditional. They distinguish statements and their proof status; they are not additional mathematical hypotheses. The final table below explains each label by its theorem title. Proof development is currently paused.
 
@@ -54,45 +64,9 @@ Comparator is Lean's tool for comparing a submitted proof against an independent
 
 The configurations below select groups of theorem statements and definitions. One configuration corresponds to one proposed Palomar entry, not automatically to every result in this paper. NanoDa is an independent proof checker; both it and Lean's own kernel must accept each group.
 
-| Group | Configuration |
-|---|---|
-| Affine | [comparator-affine.json](comparator-affine.json) |
-| Barrier | [comparator-barrier.json](comparator-barrier.json) |
-| Boolean | [comparator-boolean.json](comparator-boolean.json) |
-| Buffer | [comparator-buffer.json](comparator-buffer.json) |
-| Cofinite | [comparator-cofinite.json](comparator-cofinite.json) |
-| Collision | [comparator-collision.json](comparator-collision.json) |
-| Complete sequence | [comparator-complete-sequence.json](comparator-complete-sequence.json) |
-| Cubic | [comparator-cubic.json](comparator-cubic.json) |
-| Denominator | [comparator-denominator.json](comparator-denominator.json) |
-| Distance | [comparator-distance.json](comparator-distance.json) |
-| Face | [comparator-face.json](comparator-face.json) |
-| Family | [comparator-family.json](comparator-family.json) |
-| Gap | [comparator-gap.json](comparator-gap.json) |
-| Hierarchy | [comparator-hierarchy.json](comparator-hierarchy.json) |
-| Moderate | [comparator-moderate.json](comparator-moderate.json) |
-| Moments | [comparator-moments.json](comparator-moments.json) |
-| Permutation cost | [comparator-permutation-cost.json](comparator-permutation-cost.json) |
-| Plotkin | [comparator-plotkin.json](comparator-plotkin.json) |
-| Prime exponent | [comparator-prime-exponent.json](comparator-prime-exponent.json) |
-| Prime | [comparator-prime.json](comparator-prime.json) |
-| Project | [comparator-project.json](comparator-project.json) |
-| Quadratic classification | [comparator-quadratic-classification.json](comparator-quadratic-classification.json) |
-| Quantum bounds | [comparator-quantum-bounds.json](comparator-quantum-bounds.json) |
-| Quantum | [comparator-quantum.json](comparator-quantum.json) |
-| Radix | [comparator-radix.json](comparator-radix.json) |
-| Relative | [comparator-relative.json](comparator-relative.json) |
-| Seed repair | [comparator-seed-repair.json](comparator-seed-repair.json) |
-| Simplex entropy | [comparator-simplex-entropy.json](comparator-simplex-entropy.json) |
-| Spanning | [comparator-spanning.json](comparator-spanning.json) |
-| Support | [comparator-support.json](comparator-support.json) |
-| Symmetric | [comparator-symmetric.json](comparator-symmetric.json) |
-| Trade | [comparator-trade.json](comparator-trade.json) |
-| Translation orbits | [comparator-translation-orbits.json](comparator-translation-orbits.json) |
-| Witness | [comparator-witness.json](comparator-witness.json) |
-| Main statements | [comparator.json](comparator.json) |
+The default submission selects [`comparator.json`](comparator.json). The [development configuration catalog](configs/development/README.md) lists the remaining groups and their relocated paths.
 
-For local diagnostics of a selected group:
+For later local diagnostics of a selected group (not run for this packaging change):
 
 ```sh
 python scripts/run_local_comparator.py --config comparator.json
@@ -103,11 +77,11 @@ Local reports are in `submission/local-comparator*-result.json`. A documentation
 For sandboxed checks on a compatible Linux host with bubblewrap and the configured Lean/NanoDa checker executables installed:
 
 ```sh
-python scripts/run_comparator.py
+python scripts/run_comparator.py --config comparator.json
 python scripts/check_submission_preparation.py --require-sandbox
 ```
 
-Bubblewrap isolates the source build. The preparation check also validates source bindings, complete target audits, paper/PDF bindings, licenses, and metadata. `python scripts/check_submission.py --ready` is the stricter whole-paper gate: it additionally requires complete principal-result coverage, so it fails while any principal manuscript result remains unformalized.
+Bubblewrap isolates the source build. Use `--all-groups` only when intentionally checking the whole development collection. The whole-development preparation check also validates source bindings, complete target audits, paper/PDF bindings, licenses, and metadata. `python scripts/check_submission.py --ready` is the stricter whole-paper gate: it additionally requires complete principal-result coverage, so it fails while any principal manuscript result remains unformalized.
 
 ## Paper and publication
 

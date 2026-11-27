@@ -1,0 +1,477 @@
+{
+  "schemaVersion": 1,
+  "configuration": "comparator.json",
+  "challenge": "PaperChallenge.lean",
+  "solution": "PaperSolution.lean",
+  "status": "prepared-awaiting-verification",
+  "locallyCompiled": false,
+  "locallyCompared": false,
+  "localKernelChecksRun": false,
+  "previousPublishedCommit": "1fb7daa5e4635a16a353825131a4bfc10990c5b0",
+  "historicalEvidence": "submission/history/1fb7daa5e4635a16a353825131a4bfc10990c5b0",
+  "scope": "Three headline result families, not all 84 formalized principal manuscript records.",
+  "headlineTheoremNames": [
+    "EntropyDesigns.RelativeSequence.full_unconditional_sequence",
+    "EntropyDesigns.sharp_sign_cube_entropy_bounds",
+    "EntropyDesigns.sharp_sign_cube_equality_completion",
+    "EntropyDesigns.collision_attainment_iff_hadamard",
+    "EntropyDesigns.entropy_attainment_iff_hadamard",
+    "EntropyDesigns.PrimeExponentRigidity.infinitely_many_known_rigid_orders"
+  ],
+  "supportingTheoremNames": [
+    "EntropyDesigns.binarySeed_bijective"
+  ],
+  "concreteDefinitionNames": [
+    "EntropyDesigns.bitSign",
+    "EntropyDesigns.walshChar",
+    "EntropyDesigns.collision",
+    "EntropyDesigns.SupportFace.BlockSeeds",
+    "EntropyDesigns.SupportFace.NonzeroMask",
+    "EntropyDesigns.SupportFace.MixedBlock",
+    "EntropyDesigns.SupportFace.SourceCoordinate",
+    "EntropyDesigns.SupportFace.SourceOutcome",
+    "EntropyDesigns.SupportFace.sourceSign",
+    "EntropyDesigns.SupportFace.sourceCode",
+    "EntropyDesigns.SupportFace.sourceFeasible",
+    "EntropyDesigns.SupportFace.sourceSupported",
+    "EntropyDesigns.roundedDimension",
+    "EntropyDesigns.uniformFiniteLaw",
+    "EntropyDesigns.totalVariation",
+    "EntropyDesigns.SupportWitness.IsClique",
+    "EntropyDesigns.SupportWitness.blockLaws",
+    "EntropyDesigns.SupportFace.observedOrthogonal",
+    "EntropyDesigns.binarySeed",
+    "EntropyDesigns.SupportFace.boolBinaryEquiv",
+    "EntropyDesigns.SupportFace.fieldCoordinates",
+    "EntropyDesigns.SupportFace.fieldSeedEquiv",
+    "EntropyDesigns.SupportFace.slopeMap",
+    "EntropyDesigns.SupportFace.fieldSlopeSeeds",
+    "EntropyDesigns.ConcentratedFamily.planeSupport",
+    "EntropyDesigns.shannon",
+    "EntropyDesigns.RelativeSequence.renyiOffOne",
+    "EntropyDesigns.RelativeSequence.renyiEntropy",
+    "EntropyDesigns.RelativeSequence.maxWeight",
+    "EntropyDesigns.RelativeSequence.minEntropy",
+    "EntropyDesigns.RelativeSequence.CompleteLawData.law",
+    "EntropyDesigns.DenominatorTrades.IsReducedNormalizedObservationTrade",
+    "EntropyDesigns.PrimeExponentRigidity.IsRigidOrderAtDegree",
+    "EntropyDesigns.collisionEntropy",
+    "EntropyDesigns.augmentedSign"
+  ],
+  "challengeBytes": 22006,
+  "challengeLines": 447,
+  "hardLimits": {
+    "bytes": 102400,
+    "lines": 1000
+  },
+  "auditabilityWarning": "The Challenge exceeds the 300-line advisory threshold; it remains below both hard limits.",
+  "fullEndpointCandidate": {
+    "bytes": 185314,
+    "lines": 3239,
+    "fitsHardLimits": false
+  },
+  "sourceMap": [
+    {
+      "name": "EntropyDesigns.bitSign",
+      "kind": "def",
+      "originalFile": "BarrierChallenge.lean",
+      "originalDeclarationSHA256": "382387ca80e7b6b9c186b18fe6ee0b60996362541ac8b90fbd066dc3a3b06f1a",
+      "originalStartLine": 17,
+      "originalEndLine": 17
+    },
+    {
+      "name": "EntropyDesigns.walshChar",
+      "kind": "def",
+      "originalFile": "BarrierChallenge.lean",
+      "originalDeclarationSHA256": "05486689d77bf3abf49e4c7374456298bf48b5320e6304b47e61107c27c24a64",
+      "originalStartLine": 19,
+      "originalEndLine": 20
+    },
+    {
+      "name": "EntropyDesigns.collision",
+      "kind": "def",
+      "originalFile": "BarrierChallenge.lean",
+      "originalDeclarationSHA256": "cef309bdc28d0749294da141d385bc2dc4592e75d0f6079c9b96bcd3f3a44459",
+      "originalStartLine": 22,
+      "originalEndLine": 22
+    },
+    {
+      "name": "EntropyDesigns.SupportFace.BlockSeeds",
+      "kind": "abbrev",
+      "originalFile": "BarrierChallenge.lean",
+      "originalDeclarationSHA256": "a761efb6ea1995b55d99f61b355384f31d278ed43e577a09b4a79d9003f23e42",
+      "originalStartLine": 25,
+      "originalEndLine": 25
+    },
+    {
+      "name": "EntropyDesigns.SupportFace.NonzeroMask",
+      "kind": "abbrev",
+      "originalFile": "BarrierChallenge.lean",
+      "originalDeclarationSHA256": "b4b85c4cdcfaef0d79bd33bac55fa19ae40c31c120f889da643d7f898892e562",
+      "originalStartLine": 26,
+      "originalEndLine": 26
+    },
+    {
+      "name": "EntropyDesigns.SupportFace.MixedBlock",
+      "kind": "abbrev",
+      "originalFile": "BarrierChallenge.lean",
+      "originalDeclarationSHA256": "0c9b89023f3b9267dce0ae9aeee396a8455d03510f8abf6ff66b30f1b80a27b9",
+      "originalStartLine": 27,
+      "originalEndLine": 27
+    },
+    {
+      "name": "EntropyDesigns.SupportFace.SourceCoordinate",
+      "kind": "abbrev",
+      "originalFile": "BarrierChallenge.lean",
+      "originalDeclarationSHA256": "d749d003c1da566a1489705b55d8711628d55a837af8d7769b8321a5630fd509",
+      "originalStartLine": 28,
+      "originalEndLine": 28
+    },
+    {
+      "name": "EntropyDesigns.SupportFace.SourceOutcome",
+      "kind": "abbrev",
+      "originalFile": "BarrierChallenge.lean",
+      "originalDeclarationSHA256": "a1165d208bb49fbc40ae2eaa35f42b8d4dcdb27ca0f291b7ed627e2f7b4e6327",
+      "originalStartLine": 29,
+      "originalEndLine": 29
+    },
+    {
+      "name": "EntropyDesigns.SupportFace.sourceSign",
+      "kind": "def",
+      "originalFile": "BarrierChallenge.lean",
+      "originalDeclarationSHA256": "a3f9e86a0048520fdfbb877187b8663452da93f692b9532d4ac0d2c5f112f083",
+      "originalStartLine": 31,
+      "originalEndLine": 34
+    },
+    {
+      "name": "EntropyDesigns.SupportFace.sourceCode",
+      "kind": "def",
+      "originalFile": "BarrierChallenge.lean",
+      "originalDeclarationSHA256": "50eaea40f243b10e6b43f3e5f001e95fcef83a8be0f7cb8a9c3ea2e1cf6b4cb2",
+      "originalStartLine": 35,
+      "originalEndLine": 36
+    },
+    {
+      "name": "EntropyDesigns.SupportFace.sourceFeasible",
+      "kind": "def",
+      "originalFile": "BarrierChallenge.lean",
+      "originalDeclarationSHA256": "c8df96e44c467a3f55c02e7218c5840764da1bc682cf487be929dc40fb1f13ad",
+      "originalStartLine": 38,
+      "originalEndLine": 41
+    },
+    {
+      "name": "EntropyDesigns.SupportFace.sourceSupported",
+      "kind": "def",
+      "originalFile": "BarrierChallenge.lean",
+      "originalDeclarationSHA256": "8f823e50f5df6affcdfe0426399fba6bfeaf2fe152f43e926f7d7c2b6ca0353c",
+      "originalStartLine": 42,
+      "originalEndLine": 43
+    },
+    {
+      "name": "EntropyDesigns.roundedDimension",
+      "kind": "def",
+      "originalFile": "CollisionChallenge.lean",
+      "originalDeclarationSHA256": "120e1152a5e2411df2e98f79c41fffb9880c83b5583b6763083e846e26738059",
+      "originalStartLine": 13,
+      "originalEndLine": 13
+    },
+    {
+      "name": "EntropyDesigns.uniformFiniteLaw",
+      "kind": "def",
+      "originalFile": "SequenceChallenge.lean",
+      "originalDeclarationSHA256": "916697e824e0c63324c50e2c2dd8945905ad534cb9dbc142ae58bcf1a5a6411b",
+      "originalStartLine": 66,
+      "originalEndLine": 67
+    },
+    {
+      "name": "EntropyDesigns.totalVariation",
+      "kind": "def",
+      "originalFile": "SequenceChallenge.lean",
+      "originalDeclarationSHA256": "b03a260e9b081d2e27f621f902ea9c93f93d14dc531515b5480bc185a0670fc8",
+      "originalStartLine": 69,
+      "originalEndLine": 70
+    },
+    {
+      "name": "EntropyDesigns.SupportWitness.IsClique",
+      "kind": "def",
+      "originalFile": "SequenceChallenge.lean",
+      "originalDeclarationSHA256": "b215c842ac6e38c0edc18308592b9827ce1721e8939b7338659f44f343e5f00b",
+      "originalStartLine": 75,
+      "originalEndLine": 76
+    },
+    {
+      "name": "EntropyDesigns.SupportWitness.blockLaws",
+      "kind": "def",
+      "originalFile": "SequenceChallenge.lean",
+      "originalDeclarationSHA256": "2d2da1f6f30d56a408de5c56b68fec72f5f0c15d0c9c48935ebd112df8ddce67",
+      "originalStartLine": 82,
+      "originalEndLine": 83
+    },
+    {
+      "name": "EntropyDesigns.SupportFace.observedOrthogonal",
+      "kind": "def",
+      "originalFile": "SequenceChallenge.lean",
+      "originalDeclarationSHA256": "bc9ed07ead426d38d83524fcd2a8880a16df02b632e832c857420f59a3261dc5",
+      "originalStartLine": 90,
+      "originalEndLine": 91
+    },
+    {
+      "name": "EntropyDesigns.binarySeed",
+      "kind": "def",
+      "originalFile": "SequenceChallenge.lean",
+      "originalDeclarationSHA256": "686ed87b3dbd5cfcee1ae1fae5d0998d5c8a7b3084961a6f69b536048d9ff52e",
+      "originalStartLine": 159,
+      "originalEndLine": 160
+    },
+    {
+      "name": "EntropyDesigns.binarySeed_bijective",
+      "kind": "theorem",
+      "originalFile": "SequenceChallenge.lean",
+      "originalDeclarationSHA256": "d9fdd74b2a2042fcef745bae82c8a2a73b40aa33f013d7c10c2de9dac9f0a60c",
+      "originalStartLine": 162,
+      "originalEndLine": 162
+    },
+    {
+      "name": "EntropyDesigns.SupportFace.boolBinaryEquiv",
+      "kind": "def",
+      "originalFile": "SequenceChallenge.lean",
+      "originalDeclarationSHA256": "77c6b5f388e542cbc4a00e2d39ff0e33866993e224fbf08aee05d02727848f9a",
+      "originalStartLine": 165,
+      "originalEndLine": 166
+    },
+    {
+      "name": "EntropyDesigns.SupportFace.fieldCoordinates",
+      "kind": "def",
+      "originalFile": "SequenceChallenge.lean",
+      "originalDeclarationSHA256": "77a37237f631187aafed61f09c5600c9a4a0202da20323d75808aed79cf6214c",
+      "originalStartLine": 168,
+      "originalEndLine": 170
+    },
+    {
+      "name": "EntropyDesigns.SupportFace.fieldSeedEquiv",
+      "kind": "def",
+      "originalFile": "SequenceChallenge.lean",
+      "originalDeclarationSHA256": "bc03f6d578a3d5caf18807b4b4e6e09c3e4f01457dd35f435289b6c569ccead0",
+      "originalStartLine": 172,
+      "originalEndLine": 173
+    },
+    {
+      "name": "EntropyDesigns.SupportFace.slopeMap",
+      "kind": "def",
+      "originalFile": "SequenceChallenge.lean",
+      "originalDeclarationSHA256": "5825b556ae8e2f1120c3a3904910e0e01a379fcf46a03f5af123a24e1524f7d8",
+      "originalStartLine": 177,
+      "originalEndLine": 180
+    },
+    {
+      "name": "EntropyDesigns.SupportFace.fieldSlopeSeeds",
+      "kind": "def",
+      "originalFile": "SequenceChallenge.lean",
+      "originalDeclarationSHA256": "66402d99997fc4e387a4511d244f084b3b543205c44f7624e837c40fc3e8db99",
+      "originalStartLine": 183,
+      "originalEndLine": 185
+    },
+    {
+      "name": "EntropyDesigns.ConcentratedFamily.planeSupport",
+      "kind": "def",
+      "originalFile": "SequenceChallenge.lean",
+      "originalDeclarationSHA256": "a737644e85e30d0c328068d99497740d99cfe9a45c62e10b592dce29b0ed66f2",
+      "originalStartLine": 200,
+      "originalEndLine": 204
+    },
+    {
+      "name": "EntropyDesigns.shannon",
+      "kind": "def",
+      "originalFile": "SequenceChallenge.lean",
+      "originalDeclarationSHA256": "3fa52ca1e05f1bf4e82cc46f32eeabcc57e4e8e3905fb539edf4ad49043f17fb",
+      "originalStartLine": 436,
+      "originalEndLine": 437
+    },
+    {
+      "name": "EntropyDesigns.RelativeSequence.renyiOffOne",
+      "kind": "def",
+      "originalFile": "SequenceChallenge.lean",
+      "originalDeclarationSHA256": "2a627b93020c090ca9739081cd57cc7e36f06ff7e9333f83cca0807f157df9cc",
+      "originalStartLine": 445,
+      "originalEndLine": 446
+    },
+    {
+      "name": "EntropyDesigns.RelativeSequence.renyiEntropy",
+      "kind": "def",
+      "originalFile": "SequenceChallenge.lean",
+      "originalDeclarationSHA256": "90c9016ddd2220df4942ff482187106f27c9d03de5d6a288eb91d286eac294a9",
+      "originalStartLine": 449,
+      "originalEndLine": 450
+    },
+    {
+      "name": "EntropyDesigns.RelativeSequence.maxWeight",
+      "kind": "def",
+      "originalFile": "SequenceChallenge.lean",
+      "originalDeclarationSHA256": "4065fd19f5da99c680cae4b8b03a4f2a6c3ebb9256029b88365d7952abfc0985",
+      "originalStartLine": 452,
+      "originalEndLine": 453
+    },
+    {
+      "name": "EntropyDesigns.RelativeSequence.minEntropy",
+      "kind": "def",
+      "originalFile": "SequenceChallenge.lean",
+      "originalDeclarationSHA256": "28023da64d5614a5ae2a1de4f273feda216ee3cf00d60f0e2275b53c20a700a7",
+      "originalStartLine": 455,
+      "originalEndLine": 456
+    },
+    {
+      "name": "EntropyDesigns.RelativeSequence.CompleteLawData",
+      "kind": "structure",
+      "originalFile": "SequenceChallenge.lean",
+      "originalDeclarationSHA256": "7ab8e495e9caaa26c26d8227d15a7147197af67db275214d21a0519de085c112",
+      "originalStartLine": 489,
+      "originalEndLine": 526
+    },
+    {
+      "name": "EntropyDesigns.RelativeSequence.CompleteLawData.law",
+      "kind": "def",
+      "originalFile": "SequenceChallenge.lean",
+      "originalDeclarationSHA256": "346eb639ee0008b23933f5e78d0bcfeb8ffac0a936fff54211de09ae6db966b0",
+      "originalStartLine": 528,
+      "originalEndLine": 529
+    },
+    {
+      "name": "EntropyDesigns.RelativeSequence.full_unconditional_sequence",
+      "kind": "theorem",
+      "originalFile": "SequenceChallenge.lean",
+      "originalDeclarationSHA256": "ad01f3376c49178819ac4935fa02b522190bc837f6339c189fd2bebc2ce6a36e",
+      "originalStartLine": 584,
+      "originalEndLine": 608
+    },
+    {
+      "name": "EntropyDesigns.DenominatorTrades.IsReducedNormalizedObservationTrade",
+      "kind": "def",
+      "originalFile": "DenominatorChallenge.lean",
+      "originalDeclarationSHA256": "f41fd701ec62c576bb446aea980bf3a0be3f65e13a6419da2fa4a5718d7625bf",
+      "originalStartLine": 463,
+      "originalEndLine": 470
+    },
+    {
+      "name": "EntropyDesigns.PrimeExponentRigidity.IsRigidOrderAtDegree",
+      "kind": "def",
+      "originalFile": "PrimeExponentChallenge.lean",
+      "originalDeclarationSHA256": "d2d855ee3bcbf881dbb93d40663721c1b4eb4876546fb90ff6babc5fb1027d86",
+      "originalStartLine": 602,
+      "originalEndLine": 605
+    },
+    {
+      "name": "EntropyDesigns.PrimeExponentRigidity.infinitely_many_known_rigid_orders",
+      "kind": "theorem",
+      "originalFile": "PrimeExponentChallenge.lean",
+      "originalDeclarationSHA256": "f9009c1b860ee920ca53113d6118b35ddef8f2e1406b39362d6c18fb0a675f29",
+      "originalStartLine": 619,
+      "originalEndLine": 622
+    },
+    {
+      "name": "EntropyDesigns.collisionEntropy",
+      "kind": "def",
+      "originalFile": "Challenge.lean",
+      "originalDeclarationSHA256": "50c2f6d10f5ac0ab49d882ec509bc4565462fe81130108c46158caa92e5003b9",
+      "originalStartLine": 65,
+      "originalEndLine": 66
+    },
+    {
+      "name": "EntropyDesigns.augmentedSign",
+      "kind": "def",
+      "originalFile": "Challenge.lean",
+      "originalDeclarationSHA256": "d6cd69f6ba182d6214004a3ef20f0117445a84fd726a60028b79e11e37f1f7f4",
+      "originalStartLine": 67,
+      "originalEndLine": 68
+    },
+    {
+      "name": "EntropyDesigns.sharp_sign_cube_entropy_bounds",
+      "kind": "theorem",
+      "originalFile": "Challenge.lean",
+      "originalDeclarationSHA256": "21c4629bbd77c8083ce88222a58856ead83bf8091f785c808f2a059f8b431756",
+      "originalStartLine": 337,
+      "originalEndLine": 337
+    },
+    {
+      "name": "EntropyDesigns.sharp_sign_cube_equality_completion",
+      "kind": "theorem",
+      "originalFile": "Challenge.lean",
+      "originalDeclarationSHA256": "7b82df317f9d001aede4fe120da666a340518d20a169c1605a91ae7979873952",
+      "originalStartLine": 349,
+      "originalEndLine": 349
+    },
+    {
+      "name": "EntropyDesigns.collision_attainment_iff_hadamard",
+      "kind": "theorem",
+      "originalFile": "Challenge.lean",
+      "originalDeclarationSHA256": "362d3bab8cef5e9819c358d3e98bacd23303ba3c3297cfa2c839318ae19c85be",
+      "originalStartLine": 351,
+      "originalEndLine": 351
+    },
+    {
+      "name": "EntropyDesigns.entropy_attainment_iff_hadamard",
+      "kind": "theorem",
+      "originalFile": "Challenge.lean",
+      "originalDeclarationSHA256": "b67fb706306c319f7f158ee8e59944dd59b3d77f2247c66246144cda39660ade",
+      "originalStartLine": 352,
+      "originalEndLine": 352
+    }
+  ],
+  "existingProofSourceEdited": false,
+  "movedDevelopmentConfigurations": {
+    "comparator.json": "configs/development/comparator-main.json",
+    "comparator-cofinite.json": "configs/development/comparator-cofinite.json",
+    "comparator-buffer.json": "configs/development/comparator-buffer.json",
+    "comparator-radix.json": "configs/development/comparator-radix.json",
+    "comparator-trade.json": "configs/development/comparator-trade.json",
+    "comparator-boolean.json": "configs/development/comparator-boolean.json",
+    "comparator-cubic.json": "configs/development/comparator-cubic.json",
+    "comparator-affine.json": "configs/development/comparator-affine.json",
+    "comparator-support.json": "configs/development/comparator-support.json",
+    "comparator-witness.json": "configs/development/comparator-witness.json",
+    "comparator-moments.json": "configs/development/comparator-moments.json",
+    "comparator-seed-repair.json": "configs/development/comparator-seed-repair.json",
+    "comparator-symmetric.json": "configs/development/comparator-symmetric.json",
+    "comparator-collision.json": "configs/development/comparator-collision.json",
+    "comparator-quantum.json": "configs/development/comparator-quantum.json",
+    "comparator-quantum-bounds.json": "configs/development/comparator-quantum-bounds.json",
+    "comparator-face.json": "configs/development/comparator-face.json",
+    "comparator-distance.json": "configs/development/comparator-distance.json",
+    "comparator-barrier.json": "configs/development/comparator-barrier.json",
+    "comparator-family.json": "configs/development/comparator-family.json",
+    "comparator-moderate.json": "configs/development/comparator-moderate.json",
+    "comparator-plotkin.json": "configs/development/comparator-plotkin.json",
+    "comparator-spanning.json": "configs/development/comparator-spanning.json",
+    "comparator-relative.json": "configs/development/comparator-relative.json",
+    "comparator-complete-sequence.json": "configs/development/comparator-complete-sequence.json",
+    "comparator-hierarchy.json": "configs/development/comparator-hierarchy.json",
+    "comparator-gap.json": "configs/development/comparator-gap.json",
+    "comparator-prime.json": "configs/development/comparator-prime.json",
+    "comparator-project.json": "configs/development/comparator-project.json",
+    "comparator-denominator.json": "configs/development/comparator-denominator.json",
+    "comparator-prime-exponent.json": "configs/development/comparator-prime-exponent.json",
+    "comparator-translation-orbits.json": "configs/development/comparator-translation-orbits.json",
+    "comparator-permutation-cost.json": "configs/development/comparator-permutation-cost.json",
+    "comparator-simplex-entropy.json": "configs/development/comparator-simplex-entropy.json",
+    "comparator-quadratic-classification.json": "configs/development/comparator-quadratic-classification.json"
+  },
+  "newExplicitDefinitionTargets": [
+    "EntropyDesigns.SupportFace.BlockSeeds",
+    "EntropyDesigns.SupportFace.NonzeroMask",
+    "EntropyDesigns.SupportFace.MixedBlock",
+    "EntropyDesigns.SupportFace.SourceCoordinate",
+    "EntropyDesigns.SupportFace.SourceOutcome",
+    "EntropyDesigns.SupportFace.sourceSign",
+    "EntropyDesigns.SupportFace.sourceCode",
+    "EntropyDesigns.SupportFace.sourceFeasible",
+    "EntropyDesigns.SupportFace.sourceSupported",
+    "EntropyDesigns.SupportWitness.IsClique",
+    "EntropyDesigns.SupportWitness.blockLaws",
+    "EntropyDesigns.SupportFace.observedOrthogonal",
+    "EntropyDesigns.SupportFace.boolBinaryEquiv",
+    "EntropyDesigns.SupportFace.fieldCoordinates",
+    "EntropyDesigns.SupportFace.fieldSeedEquiv",
+    "EntropyDesigns.SupportFace.slopeMap",
+    "EntropyDesigns.SupportFace.fieldSlopeSeeds",
+    "EntropyDesigns.ConcentratedFamily.planeSupport"
+  ]
+}
