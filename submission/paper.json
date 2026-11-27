@@ -1,10 +1,10 @@
 {
   "pages": 72,
   "typesettingChecksPassed": true,
-  "pdfSHA256": "7b41e9e5609fb69d4de10f366c9024291dfbad94fafa883119bb741a67e1b85c",
+  "pdfSHA256": "393c3e012840ea6c8b478f2675776835332a768568ce2b8e26b316075e24c568",
   "sourceHashes": {
-    "formalization-status.tex": "3a07b6e7da6a8d24e240aee566e7c7e6ca61ce22c20343087c05b7890270eaa2",
-    "main.tex": "b794439bbeb93ae9a6c4ce977e06bf03c9f9cf63142d2acb10f519a631410fb8",
+    "formalization-status.tex": "c9dd13801faf4b079572245cefc4698207258f2b09ff2712b72a2fd51c5c0434",
+    "main.tex": "8c99eb0101232c5ed65f8945c3fb3dd7d4cee948c559b43cc630e7f8d08fdf9f",
     "sections/s01.tex": "1dfc0958ef951de5fea5f3454d41e1f49638f00bf0927dbfadac51b1d2447ce7",
     "sections/s02.tex": "81bface4758a06082c547a53654cdb797ed5a556530d87b29e8e43be480830ca",
     "sections/s03.tex": "40d8f08c3bf571d805fbb2f10471c651be5e36b2ee89b9d899e60b66b68fa1b0",

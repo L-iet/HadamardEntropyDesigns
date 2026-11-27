@@ -23,14 +23,14 @@
   },
   "sources": [
     {
-      "title": "Pairwise-independent designs, entropy, and stability research drafts",
+      "title": "Pairwise-independent designs: sharp entropy, concentration, and obstructions to global repair",
       "authors": [
         "Joshua Mark"
       ],
-      "type": "other",
+      "type": "paper",
       "location": "paper/main.tex",
       "relationship": "formalizes",
-      "note": "Consolidates prior local research notes; novelty unestablished. See provenance inventory."
+      "note": "Consolidates the research proofs and examples. See the title-page contribution account for AI assistance in research, derivation, computation, exposition and formalization, and the provenance inventory for source details."
     },
     {
       "title": "On the joint entropy of d-wise-independent variables",
@@ -52,15 +52,38 @@
       "location": "https://doi.org/10.1109/TIT.1960.1057584",
       "relationship": "background",
       "note": "Mathematical reference only; no source code imported. Exact substantive dependencies and classical inputs are described in the paper."
+    },
+    {
+      "title": "Sparse Multi-Base Representations and Asymptotic Existence of Hadamard Matrices",
+      "authors": [
+        "Joshua Mark"
+      ],
+      "type": "paper",
+      "id": "https://github.com/L-iet/HadamardTensorStability/blob/cae4ba24e5fd392fe6ecbf10675cdb66423c661b/artifacts/baseline/hadamard_multibase_final.pdf",
+      "relationship": "adapts",
+      "location": "Earlier multibase manuscript: uniform quantitative Hadamard-gap theorem and odd-multiplier existence bound.",
+      "note": "Substantive mathematical input to the unconditional instability sequence and uniform-gap transfer, not merely background. Source and licensed-reference records are in submission/complete-sequence-source-provenance.json and submission/gap-source-provenance.json. The earlier Lean formalization is recorded separately in related_formalizations."
     }
   ],
   "automation": {
     "methods": [
       {
         "method": "agent",
-        "tool_setup": "Codex: proof development, consolidation and checks; no expert review claimed."
+        "framework": "Codex",
+        "tool_setup": "AI-assisted research, mathematical exploration and derivation of statements, arguments and examples."
+      },
+      {
+        "method": "agent",
+        "framework": "Codex",
+        "tool_setup": "AI-assisted computation, proof development, consolidation and Lean formalization, including exact finite calculations and build, axiom-audit and proof-checking workflows."
+      },
+      {
+        "method": "agent",
+        "framework": "Codex",
+        "tool_setup": "AI-assisted mathematical exposition and manuscript preparation."
       }
-    ]
+    ],
+    "notes": "These methods record the material roles credited in the manuscript title-page contribution account (paper/main.tex, author footnote at line 21; paper/main.pdf, title page). The revised account explicitly names research, derivation, computation and exposition as well as formalization and checks. Pinned earlier contribution account: https://github.com/L-iet/HadamardEntropyDesigns/blob/5d87c90e06890b0139ff3b88b3fdbff964861c86/paper/main.tex#L21. Authorship and responsible maintenance are recorded separately in project.authors and project.responsible_maintainers."
   },
   "review": {
     "status": "unchecked",
@@ -74,5 +97,12 @@
   "notes": [
     "Complete twelve-label quadratic5/7 classification and no-eight obstruction have an independent concrete Challenge. Original Apache-2.0 proof code and exact parity graph certificates; public verification tracked separately.",
     "Default comparator.json selects PaperChallenge and PaperSolution for one paper-level entry. It does not register every theorem in the development configurations. New packaging awaits mechanical verification."
+  ],
+  "related_formalizations": [
+    {
+      "id": "https://github.com/L-iet/HadamardBound/tree/971eea9a79de3e3977f03c9c4dabea01532e83c8",
+      "relationship": "adapts",
+      "note": "Earlier Apache-2.0 Hadamard multibase Lean project by Joshua Mark. This repository includes a standalone source port of the proved existence/gap inputs in HadamardMultibase/. This is distinct from the prior mathematical manuscript; no sibling-directory runtime or compiled-artifact dependency is required. Retained source and license records identify the port."
+    }
   ]
 }

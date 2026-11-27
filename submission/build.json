@@ -1017,7 +1017,7 @@
     "FaceSolution.lean": "e784392a702aa361ea14d25d8972e6904a3813db666762b1574fcabafcd2cee4",
     "FamilyChallenge.lean": "874458e1f9b3bc0b495421863118485d566e8ae35dcebe6143c067dd7c922138",
     "FamilySolution.lean": "dad5b071975208218d920338475cf46ac72fddca8c3c094e506666f69f8797f2",
-    "formalization.yaml": "74086208644d699195a10e9737de8ec2c571d40c3e414776d6c4026bed05c55f",
+    "formalization.yaml": "692ef19d0ce83603385f7b6cf07343954fcea3464b1831f3c39d8e5991e76f3b",
     "GapChallenge.lean": "74741430cf48c969b67ec2e4674ba535d32de0fb2deabe91d36a742ef482732a",
     "GapSolution.lean": "0b7fd3ea351cf04ed0787f8fc44d8384f14bc57370f81a555cb8ef4aba8b1376",
     "HadamardMultibase/AdditionalSeeds.lean": "0edc0884708815d8d36317567987821124913434fb4db1b50c9e4cbe9ccb7a08",
@@ -1188,5 +1188,6 @@
     "scripts/check_paper_entry.py": "bf568902fe3c2c2cb6b2389f4f9f546081e9c7643db99d233f999ebd52018f92"
   },
   "notRegistryVerification": true,
-  "commands": []
+  "commands": [],
+  "palomarReviewRevision": "submission/palomar-review-update.json"
 }

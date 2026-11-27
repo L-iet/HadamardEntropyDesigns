@@ -18,15 +18,21 @@
 \newcommand{\Z}{\mathbb Z}
 \newcommand{\R}{\mathbb R}
 \title{Pairwise-independent designs: sharp entropy, concentration,\\and obstructions to global repair}
-\author{Joshua Mark\thanks{ORCID: \href{https://orcid.org/0009-0003-5905-2382}{0009-0003-5905-2382}. AI tools assisted with derivation, consolidation, formalization and checks.}}
+\author{Joshua Mark\thanks{ORCID: \href{https://orcid.org/0009-0003-5905-2382}{0009-0003-5905-2382}. AI tools assisted with research, mathematical derivation, computation, exposition, consolidation, checking and Lean formalization.}}
 \date{26 November 2026 --- declared formalization scope}
 \begin{document}\maketitle
 \begin{abstract}
-We consolidate finite sign-design entropy bounds, exact near-equality
-rounding, support rigidity, exchange barriers, and quantitative instability
-families. Pairwise-independent laws can have nearly optimal collision and
-entropy while remaining almost maximally far from every Hadamard mixture.
-The source proofs, examples and limitations are retained. The companion Lean project has the declared coverage below, which identifies the results still awaiting full formalization.
+We construct exactly unbiased pairwise-independent sign distributions whose
+entropy approaches the minimum while their total variation distance from
+every Hadamard mixture approaches one. We prove sharp dimension-sensitive
+collision and Shannon entropy bounds, characterize equality by Hadamard
+completion, and prove attainment equivalent to Hadamard existence at the
+associated order. For every fixed bound on the number of observations
+replaced in one move, infinitely many known Hadamard orders yield distinct
+designs that cannot be connected while preserving first and second moments.
+Further results give concentration, exact rounding, support rigidity and
+quantitative repair barriers. The formalization and selected submission
+scope are distinguished below.
 \end{abstract}
 \input{formalization-status}
 \tableofcontents
@@ -89,9 +95,11 @@ formal counts give $s-1$ support-halving, collision-doubling jumps and
 $h-s$ support-preserving jumps. The formal joined affine segments start at
 the trap law, end at the compressed law, remain feasible, and have exact
 attained minimum collision $3/(4h^2)$.
-The remaining
-coding, instability and rounding claims are separately tracked in
-paper/ALIGNMENT.json.
+The coding, instability and rounding results are individually tracked in
+ALIGNMENT.json. Existing source proofs cover 84 of the 89 principal claim
+records. The default paper-level comparison selects the three headline
+result families, rather than every formalized record; the new packaging
+awaits mechanical verification.
 This paper does not claim complete machine verification or the full conjecture.
 
 

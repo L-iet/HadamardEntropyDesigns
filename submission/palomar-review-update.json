@@ -1,0 +1,38 @@
+{
+  "updatedAtUTC": "2026-11-27T06:02:25.372269+00:00",
+  "previousPublishedCommit": "5d87c90e06890b0139ff3b88b3fdbff964861c86",
+  "changedVerifiedInventoryFiles": [
+    "formalization.yaml"
+  ],
+  "previousMetadataSHA256": "74086208644d699195a10e9737de8ec2c571d40c3e414776d6c4026bed05c55f",
+  "newMetadataSHA256": "692ef19d0ce83603385f7b6cf07343954fcea3464b1831f3c39d8e5991e76f3b",
+  "metadataChanges": [
+    "Expanded AI research, derivation, computation, exposition and formalization roles with pinned contribution account",
+    "Recorded substantive multibase mathematical source and separate related Lean formalization"
+  ],
+  "manuscriptChanges": [
+    "Updated author contribution account",
+    "Clarified exact existing proof coverage and selected submission scope",
+    "Expanded entropy headline abstract"
+  ],
+  "allLeanSourcesTargetsAndBuildInputsUnchanged": true,
+  "mathematicalTheoremStatementsUnchanged": true,
+  "paperRebuilt": true,
+  "paperTypesettingChecksPassed": true,
+  "newPaperPDFSHA256": "393c3e012840ea6c8b478f2675776835332a768568ce2b8e26b316075e24c568",
+  "paperSourceBundleSHA256": "ba5b88f1f1160695ecc5be962750f614214a36736036d9430cff81218f65c7df",
+  "updatedBindingRecords": [
+    "axioms.json",
+    "build.json",
+    "local-comparator-result.json",
+    "readiness.json",
+    "STATUS.json",
+    "submission-preparation.json",
+    "verification.json"
+  ],
+  "unchangedAcceptedProofEvidence": [],
+  "localLeanBuildRerun": false,
+  "localComparatorRerun": false,
+  "localKernelChecksRerun": false,
+  "evidencePolicy": "Only paper narrative and metadata changed. Original proof-check timestamps are retained. Pending paper-level packaging remains pending; no new acceptance is asserted."
+}
